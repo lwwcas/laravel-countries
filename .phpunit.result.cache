@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":326:{a:2:{s:7:"defects";a:2:{s:55:"Lwwcas\LaravelCountries\Tests\ExampleTest::true_is_true";i:4;s:58:"Lwwcas\LaravelCountries\Tests\MigrationsTest::true_is_true";i:4;}s:5:"times";a:2:{s:55:"Lwwcas\LaravelCountries\Tests\ExampleTest::true_is_true";d:0.054;s:58:"Lwwcas\LaravelCountries\Tests\MigrationsTest::true_is_true";d:0.094;}}}

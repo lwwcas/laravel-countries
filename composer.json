@@ -1,0 +1,65 @@
+{
+    "name": "lwwcas/laravel-countries",
+    "description": "A list of all countries, optimized for Laravel 8",
+    "homepage": "https://github.com/lwwcas/laravel-countries",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [{
+        "name": "Lucas Duarte Oliveira",
+        "email": "lwwcas@gmail.com",
+        "homepage": "http://www.lucasduarte.dev",
+        "role": "Developer"
+    }],
+    "keywords": [
+        "lwwcas",
+        "Lucas Duarte",
+        "laravel",
+        "countries",
+        "laravel-countries"
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "laravel/framework": "^8.12",
+        "astrotomic/laravel-translatable": "^11.8"
+    },
+    "require-dev": {
+        "doctrine/dbal": "^3.0",
+        "laravel/legacy-factories": "^1.0.4",
+        "orchestra/testbench": "~3.6.7 || ~3.7.8 || ~3.8.6 || ^4.8 || ^5.2 || ^6.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lwwcas\\LaravelCountries\\": "src",
+            "Lwwcas\\LaravelCountries\\Providers\\": "src/providers",
+            "Lwwcas\\LaravelCountries\\Models\\": "src/models",
+            "Lwwcas\\LaravelCountries\\Casts\\": "src/casts",
+            "Lwwcas\\LaravelCountries\\Database\\": "src/database",
+            "Lwwcas\\LaravelCountries\\Database\\Seeders\\": "src/database/seeders",
+            "Lwwcas\\LaravelCountries\\Database\\Seeders\\Countries\\": "src/database/seeders/countries"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lwwcas\\LaravelCountries\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lwwcas\\LaravelCountries\\Providers\\LaravelCountriesServiceProvider"
+            ],
+            "aliases": {
+                "LaravelCountries": "Lwwcas\\LaravelCountries\\LaravelCountriesFacade"
+            }
+        }
+    }
+}
