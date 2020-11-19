@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="ssets/map.jpg" />
+  <img src="https://github.com/lwwcas/laravel-countries/blob/master/assets/map.jpg" />
 </p>
 
 # Very short description of the package
