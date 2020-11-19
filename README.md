@@ -1,4 +1,6 @@
-![World Map](assets/map.jpg)
+<p align="center">
+  <img src="ssets/map.jpg" />
+</p>
 
 # Very short description of the package
 
