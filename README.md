@@ -6,7 +6,7 @@
 
 [![Total Downloads](https://img.shields.io/packagist/dt/lwwcas/laravel-countries.svg?style=flat-square)](https://packagist.org/packages/lwwcas/laravel-countries)
 
-# Very short description of the package
+# Very short description
 
 Laravel-Countries, is a package that contains everything you need to start a new project and have all countries, information and translations on hand.
 **And all this optimized for Laravel 8.**
