@@ -1,84 +1,84 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class CC_CocosKeelingIslands extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class CC_CocosKeelingIslands extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'oceania';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Cocos [Keeling] Islands';
+        $this->official_name = 'Territory of the Cocos (Keeling) Islands';
+        $this->iso_alpha_2 = 'CC';
+        $this->iso_alpha_3 = 'CCK';
+        $this->iso_numeric = '166';
+        $this->international_phone = '61';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'oceania'; 
+        $this->languages = ['en'];
+        $this->tld = ['.cc'];
+        $this->wmo = 'KK';
+        $this->geoname_id = '1547376';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Cocos [Keeling] Islands'; 
-        $this->official_name = 'Territory of the Cocos (Keeling) Islands'; 
-        $this->iso_alpha_2 = 'CC'; 
-        $this->iso_alpha_3 = 'CCK'; 
-        $this->iso_numeric = '166'; 
-        $this->international_phone = '61'; 
+        $this->emoji = [
+            'img' => '🇨🇨',
+            'uCode' => 'U+1F1E8 U+1F1E8',
+        ];
+        $this->color = [
+            'hex' => [
+            ],
+            'rgb' => [
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '12 30 S',
+                'desc' => '-12.200602531433105',
+            ],
+            'longitude' => [
+                'classic' => '96 50 E',
+                'desc' => '96.85894012451172',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '-11.833333',
+                'min' => '-12.204167',
+            ],
+            'longitude' => [
+                'max' => '96.918056',
+                'min' => '96.816667',
+            ],
+        ];
  
-        $this->languages = ["en"]; 
-        $this->tld = [".cc"]; 
-        $this->wmo = 'KK'; 
-        $this->geoname_id = '1547376'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇨🇨', 
-            'uCode' => 'U+1F1E8 U+1F1E8', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-            ], 
-            'rgb' => [ 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '12 30 S', 
-                'desc' => '-12.200602531433105', 
-            ], 
-            'longitude' => [ 
-                'classic' => '96 50 E', 
-                'desc' => '96.85894012451172', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '-11.833333', 
-                'min' => '-12.204167', 
-            ], 
-            'longitude' => [ 
-                'max' => '96.918056', 
-                'min' => '96.816667', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -118,8 +118,6 @@ class CC_CocosKeelingIslands extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

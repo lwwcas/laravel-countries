@@ -1,90 +1,90 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class CO_Colombia extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class CO_Colombia extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'americas';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Colombia';
+        $this->official_name = 'Republic of Colombia';
+        $this->iso_alpha_2 = 'CO';
+        $this->iso_alpha_3 = 'COL';
+        $this->iso_numeric = '170';
+        $this->international_phone = '57';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'americas'; 
+        $this->languages = ['es'];
+        $this->tld = ['.co'];
+        $this->wmo = 'CO';
+        $this->geoname_id = '3686110';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Colombia'; 
-        $this->official_name = 'Republic of Colombia'; 
-        $this->iso_alpha_2 = 'CO'; 
-        $this->iso_alpha_3 = 'COL'; 
-        $this->iso_numeric = '170'; 
-        $this->international_phone = '57'; 
+        $this->emoji = [
+            'img' => '🇨🇴',
+            'uCode' => 'U+1F1E8 U+1F1F4',
+        ];
+        $this->color = [
+            'hex' => [
+                '#ffff00',
+                '#0000ff',
+                '#ff0000',
+            ],
+            'rgb' => [
+                '255,255,0',
+                '0,0,255',
+                '255,0,0',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '4 00 N',
+                'desc' => '3.9976072311401367',
+            ],
+            'longitude' => [
+                'classic' => '72 00 W',
+                'desc' => '-73.27796936035156',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '13.383333',
+                'min' => '-4.214722',
+            ],
+            'longitude' => [
+                'max' => '-66.854722',
+                'min' => '-81.85',
+            ],
+        ];
  
-        $this->languages = ["es"]; 
-        $this->tld = [".co"]; 
-        $this->wmo = 'CO'; 
-        $this->geoname_id = '3686110'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇨🇴', 
-            'uCode' => 'U+1F1E8 U+1F1F4', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#ffff00', 
-                '#0000ff', 
-                '#ff0000', 
-            ], 
-            'rgb' => [ 
-                '255,255,0', 
-                '0,0,255', 
-                '255,0,0', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '4 00 N', 
-                'desc' => '3.9976072311401367', 
-            ], 
-            'longitude' => [ 
-                'classic' => '72 00 W', 
-                'desc' => '-73.27796936035156', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '13.383333', 
-                'min' => '-4.214722', 
-            ], 
-            'longitude' => [ 
-                'max' => '-66.854722', 
-                'min' => '-81.85', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -2096,8 +2096,6 @@ class CO_Colombia extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

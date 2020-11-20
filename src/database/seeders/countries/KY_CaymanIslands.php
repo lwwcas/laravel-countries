@@ -1,90 +1,90 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class KY_CaymanIslands extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class KY_CaymanIslands extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'americas';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Cayman Islands';
+        $this->official_name = 'Cayman Islands';
+        $this->iso_alpha_2 = 'KY';
+        $this->iso_alpha_3 = 'CYM';
+        $this->iso_numeric = '163';
+        $this->international_phone = '1-345';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'americas'; 
+        $this->languages = ['en'];
+        $this->tld = ['.ky'];
+        $this->wmo = 'GC';
+        $this->geoname_id = '3580718';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Cayman Islands'; 
-        $this->official_name = 'Cayman Islands'; 
-        $this->iso_alpha_2 = 'KY'; 
-        $this->iso_alpha_3 = 'CYM'; 
-        $this->iso_numeric = '163'; 
-        $this->international_phone = '1-345'; 
+        $this->emoji = [
+            'img' => '🇰🇾',
+            'uCode' => 'U+1F1F0 U+1F1FE',
+        ];
+        $this->color = [
+            'hex' => [
+                '#3f26bf',
+                '#ff3f34',
+                '#ffffff',
+            ],
+            'rgb' => [
+                '63,38,191',
+                '255,63,52',
+                '255,255,255',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '19 30 N',
+                'desc' => '19.308862686157227',
+            ],
+            'longitude' => [
+                'classic' => '80 30 W',
+                'desc' => '-81.25680541992188',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '19.75',
+                'min' => '19.25',
+            ],
+            'longitude' => [
+                'max' => '-79.716667',
+                'min' => '-81.416667',
+            ],
+        ];
  
-        $this->languages = ["en"]; 
-        $this->tld = [".ky"]; 
-        $this->wmo = 'GC'; 
-        $this->geoname_id = '3580718'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇰🇾', 
-            'uCode' => 'U+1F1F0 U+1F1FE', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#3f26bf', 
-                '#ff3f34', 
-                '#ffffff', 
-            ], 
-            'rgb' => [ 
-                '63,38,191', 
-                '255,63,52', 
-                '255,255,255', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '19 30 N', 
-                'desc' => '19.308862686157227', 
-            ], 
-            'longitude' => [ 
-                'classic' => '80 30 W', 
-                'desc' => '-81.25680541992188', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '19.75', 
-                'min' => '19.25', 
-            ], 
-            'longitude' => [ 
-                'max' => '-79.716667', 
-                'min' => '-81.416667', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -178,8 +178,6 @@ class KY_CaymanIslands extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

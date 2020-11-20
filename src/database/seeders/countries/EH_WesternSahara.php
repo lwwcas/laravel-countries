@@ -1,84 +1,84 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class EH_WesternSahara extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class EH_WesternSahara extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'africa';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Western Sahara';
+        $this->official_name = 'Sahrawi Arab Democratic Republic';
+        $this->iso_alpha_2 = 'EH';
+        $this->iso_alpha_3 = 'ESH';
+        $this->iso_numeric = '732';
+        $this->international_phone = '212';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'africa'; 
+        $this->languages = ['es'];
+        $this->tld = ['.eh'];
+        $this->wmo = '0';
+        $this->geoname_id = '2461445';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Western Sahara'; 
-        $this->official_name = 'Sahrawi Arab Democratic Republic'; 
-        $this->iso_alpha_2 = 'EH'; 
-        $this->iso_alpha_3 = 'ESH'; 
-        $this->iso_numeric = '732'; 
-        $this->international_phone = '212'; 
+        $this->emoji = [
+            'img' => '🇪🇭',
+            'uCode' => 'U+1F1EA U+1F1ED',
+        ];
+        $this->color = [
+            'hex' => [
+            ],
+            'rgb' => [
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '24 30 N',
+                'desc' => '25',
+            ],
+            'longitude' => [
+                'classic' => '13 00 W',
+                'desc' => '-13',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '27.666667',
+                'min' => '20.8',
+            ],
+            'longitude' => [
+                'max' => '-8.666667',
+                'min' => '-17.110556',
+            ],
+        ];
  
-        $this->languages = ["es"]; 
-        $this->tld = [".eh"]; 
-        $this->wmo = '0'; 
-        $this->geoname_id = '2461445'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇪🇭', 
-            'uCode' => 'U+1F1EA U+1F1ED', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-            ], 
-            'rgb' => [ 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '24 30 N', 
-                'desc' => '25', 
-            ], 
-            'longitude' => [ 
-                'classic' => '13 00 W', 
-                'desc' => '-13', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '27.666667', 
-                'min' => '20.8', 
-            ], 
-            'longitude' => [ 
-                'max' => '-8.666667', 
-                'min' => '-17.110556', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -433,8 +433,6 @@ class EH_WesternSahara extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

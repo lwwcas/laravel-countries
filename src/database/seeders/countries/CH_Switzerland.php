@@ -1,88 +1,88 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class CH_Switzerland extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class CH_Switzerland extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'europe';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Switzerland';
+        $this->official_name = 'Swiss Confederation';
+        $this->iso_alpha_2 = 'CH';
+        $this->iso_alpha_3 = 'CHE';
+        $this->iso_numeric = '756';
+        $this->international_phone = '41';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'europe'; 
+        $this->languages = ['de','fr','it'];
+        $this->tld = ['.ch'];
+        $this->wmo = 'SW';
+        $this->geoname_id = '2658434';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Switzerland'; 
-        $this->official_name = 'Swiss Confederation'; 
-        $this->iso_alpha_2 = 'CH'; 
-        $this->iso_alpha_3 = 'CHE'; 
-        $this->iso_numeric = '756'; 
-        $this->international_phone = '41'; 
+        $this->emoji = [
+            'img' => '🇨🇭',
+            'uCode' => 'U+1F1E8 U+1F1ED',
+        ];
+        $this->color = [
+            'hex' => [
+                '#ff0000',
+                '#ffffff',
+            ],
+            'rgb' => [
+                '255,0,0',
+                '255,255,255',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '47 00 N',
+                'desc' => '46.80379867553711',
+            ],
+            'longitude' => [
+                'classic' => '8 00 E',
+                'desc' => '8.222854614257812',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '47.8085',
+                'min' => '45.366667',
+            ],
+            'longitude' => [
+                'max' => '10.5',
+                'min' => '6',
+            ],
+        ];
  
-        $this->languages = ["de","fr","it"]; 
-        $this->tld = [".ch"]; 
-        $this->wmo = 'SW'; 
-        $this->geoname_id = '2658434'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇨🇭', 
-            'uCode' => 'U+1F1E8 U+1F1ED', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#ff0000', 
-                '#ffffff', 
-            ], 
-            'rgb' => [ 
-                '255,0,0', 
-                '255,255,255', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '47 00 N', 
-                'desc' => '46.80379867553711', 
-            ], 
-            'longitude' => [ 
-                'classic' => '8 00 E', 
-                'desc' => '8.222854614257812', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '47.8085', 
-                'min' => '45.366667', 
-            ], 
-            'longitude' => [ 
-                'max' => '10.5', 
-                'min' => '6', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -646,8 +646,6 @@ class CH_Switzerland extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

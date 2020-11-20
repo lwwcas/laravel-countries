@@ -1,90 +1,90 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class CM_Cameroon extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class CM_Cameroon extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'africa';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Cameroon';
+        $this->official_name = 'Republic of Cameroon';
+        $this->iso_alpha_2 = 'CM';
+        $this->iso_alpha_3 = 'CMR';
+        $this->iso_numeric = '120';
+        $this->international_phone = '237';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'africa'; 
+        $this->languages = ['en','fr'];
+        $this->tld = ['.cm'];
+        $this->wmo = 'CM';
+        $this->geoname_id = '2233387';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Cameroon'; 
-        $this->official_name = 'Republic of Cameroon'; 
-        $this->iso_alpha_2 = 'CM'; 
-        $this->iso_alpha_3 = 'CMR'; 
-        $this->iso_numeric = '120'; 
-        $this->international_phone = '237'; 
+        $this->emoji = [
+            'img' => '🇨🇲',
+            'uCode' => 'U+1F1E8 U+1F1F2',
+        ];
+        $this->color = [
+            'hex' => [
+                '#008000',
+                '#ff0000',
+                '#ffff00',
+            ],
+            'rgb' => [
+                '0,128,0',
+                '255,0,0',
+                '255,255,0',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '6 00 N',
+                'desc' => '5.685476779937744',
+            ],
+            'longitude' => [
+                'classic' => '12 00 E',
+                'desc' => '12.722877502441406',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '16',
+                'min' => '2.016667',
+            ],
+            'longitude' => [
+                'max' => '16',
+                'min' => '8.483333',
+            ],
+        ];
  
-        $this->languages = ["en","fr"]; 
-        $this->tld = [".cm"]; 
-        $this->wmo = 'CM'; 
-        $this->geoname_id = '2233387'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇨🇲', 
-            'uCode' => 'U+1F1E8 U+1F1F2', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#008000', 
-                '#ff0000', 
-                '#ffff00', 
-            ], 
-            'rgb' => [ 
-                '0,128,0', 
-                '255,0,0', 
-                '255,255,0', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '6 00 N', 
-                'desc' => '5.685476779937744', 
-            ], 
-            'longitude' => [ 
-                'classic' => '12 00 E', 
-                'desc' => '12.722877502441406', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '16', 
-                'min' => '2.016667', 
-            ], 
-            'longitude' => [ 
-                'max' => '16', 
-                'min' => '8.483333', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -1175,8 +1175,6 @@ class CM_Cameroon extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

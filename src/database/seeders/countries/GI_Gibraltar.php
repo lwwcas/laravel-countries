@@ -1,84 +1,84 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class GI_Gibraltar extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class GI_Gibraltar extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'europe';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Gibraltar';
+        $this->official_name = 'Gibraltar';
+        $this->iso_alpha_2 = 'GI';
+        $this->iso_alpha_3 = 'GIB';
+        $this->iso_numeric = '292';
+        $this->international_phone = '350';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'europe'; 
+        $this->languages = ['en'];
+        $this->tld = ['.gi'];
+        $this->wmo = 'GI';
+        $this->geoname_id = '2411586';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Gibraltar'; 
-        $this->official_name = 'Gibraltar'; 
-        $this->iso_alpha_2 = 'GI'; 
-        $this->iso_alpha_3 = 'GIB'; 
-        $this->iso_numeric = '292'; 
-        $this->international_phone = '350'; 
+        $this->emoji = [
+            'img' => '🇬🇮',
+            'uCode' => 'U+1F1EC U+1F1EE',
+        ];
+        $this->color = [
+            'hex' => [
+            ],
+            'rgb' => [
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '36 08 N',
+                'desc' => '36.135841369628906',
+            ],
+            'longitude' => [
+                'classic' => '5 21 W',
+                'desc' => '-5.349248886108398',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '36.15',
+                'min' => '36.1',
+            ],
+            'longitude' => [
+                'max' => '-5.333333',
+                'min' => '-5.35',
+            ],
+        ];
  
-        $this->languages = ["en"]; 
-        $this->tld = [".gi"]; 
-        $this->wmo = 'GI'; 
-        $this->geoname_id = '2411586'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇬🇮', 
-            'uCode' => 'U+1F1EC U+1F1EE', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-            ], 
-            'rgb' => [ 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '36 08 N', 
-                'desc' => '36.135841369628906', 
-            ], 
-            'longitude' => [ 
-                'classic' => '5 21 W', 
-                'desc' => '-5.349248886108398', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '36.15', 
-                'min' => '36.1', 
-            ], 
-            'longitude' => [ 
-                'max' => '-5.333333', 
-                'min' => '-5.35', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -105,8 +105,6 @@ class GI_Gibraltar extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

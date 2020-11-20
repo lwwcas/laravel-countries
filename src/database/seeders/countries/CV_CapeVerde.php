@@ -1,92 +1,92 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class CV_CapeVerde extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class CV_CapeVerde extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'africa';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Cape Verde';
+        $this->official_name = 'Republic of Cabo Verde';
+        $this->iso_alpha_2 = 'CV';
+        $this->iso_alpha_3 = 'CPV';
+        $this->iso_numeric = '132';
+        $this->international_phone = '238';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'africa'; 
+        $this->languages = ['pt'];
+        $this->tld = ['.cv'];
+        $this->wmo = 'CV';
+        $this->geoname_id = '3374766';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Cape Verde'; 
-        $this->official_name = 'Republic of Cabo Verde'; 
-        $this->iso_alpha_2 = 'CV'; 
-        $this->iso_alpha_3 = 'CPV'; 
-        $this->iso_numeric = '132'; 
-        $this->international_phone = '238'; 
+        $this->emoji = [
+            'img' => '🇨🇻',
+            'uCode' => 'U+1F1E8 U+1F1FB',
+        ];
+        $this->color = [
+            'hex' => [
+                '#0000ff',
+                '#ffffff',
+                '#ff0000',
+                '#ffff00',
+            ],
+            'rgb' => [
+                '0,0,255',
+                '255,255,255',
+                '255,0,0',
+                '255,255,0',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '16 00 N',
+                'desc' => '15.183002471923828',
+            ],
+            'longitude' => [
+                'classic' => '24 00 W',
+                'desc' => '-23.70345115661621',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '17.2',
+                'min' => '14.8',
+            ],
+            'longitude' => [
+                'max' => '-22.666667',
+                'min' => '-25.366667',
+            ],
+        ];
  
-        $this->languages = ["pt"]; 
-        $this->tld = [".cv"]; 
-        $this->wmo = 'CV'; 
-        $this->geoname_id = '3374766'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇨🇻', 
-            'uCode' => 'U+1F1E8 U+1F1FB', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#0000ff', 
-                '#ffffff', 
-                '#ff0000', 
-                '#ffff00', 
-            ], 
-            'rgb' => [ 
-                '0,0,255', 
-                '255,255,255', 
-                '255,0,0', 
-                '255,255,0', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '16 00 N', 
-                'desc' => '15.183002471923828', 
-            ], 
-            'longitude' => [ 
-                'classic' => '24 00 W', 
-                'desc' => '-23.70345115661621', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '17.2', 
-                'min' => '14.8', 
-            ], 
-            'longitude' => [ 
-                'max' => '-22.666667', 
-                'min' => '-25.366667', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -304,8 +304,6 @@ class CV_CapeVerde extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

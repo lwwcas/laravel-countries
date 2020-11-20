@@ -1,90 +1,90 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class AI_Anguilla extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class AI_Anguilla extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'americas';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Anguilla';
+        $this->official_name = 'Anguilla';
+        $this->iso_alpha_2 = 'AI';
+        $this->iso_alpha_3 = 'AIA';
+        $this->iso_numeric = '660';
+        $this->international_phone = '1-264';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'americas'; 
+        $this->languages = ['en'];
+        $this->tld = ['.ai'];
+        $this->wmo = '0';
+        $this->geoname_id = '3573511';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Anguilla'; 
-        $this->official_name = 'Anguilla'; 
-        $this->iso_alpha_2 = 'AI'; 
-        $this->iso_alpha_3 = 'AIA'; 
-        $this->iso_numeric = '660'; 
-        $this->international_phone = '1-264'; 
+        $this->emoji = [
+            'img' => '🇦🇮',
+            'uCode' => 'U+1F1E6 U+1F1EE',
+        ];
+        $this->color = [
+            'hex' => [
+                '#ff861f',
+                '#93ccea',
+                '#ffffff',
+            ],
+            'rgb' => [
+                '255,134,31',
+                '147,204,234',
+                '255,255,255',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '18 15 N',
+                'desc' => '18.22646713256836',
+            ],
+            'longitude' => [
+                'classic' => '63 10 W',
+                'desc' => '-63.0473518371582',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '18.6',
+                'min' => '18.15',
+            ],
+            'longitude' => [
+                'max' => '-62.916667',
+                'min' => '-63.433333',
+            ],
+        ];
  
-        $this->languages = ["en"]; 
-        $this->tld = [".ai"]; 
-        $this->wmo = '0'; 
-        $this->geoname_id = '3573511'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇦🇮', 
-            'uCode' => 'U+1F1E6 U+1F1EE', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#ff861f', 
-                '#93ccea', 
-                '#ffffff', 
-            ], 
-            'rgb' => [ 
-                '255,134,31', 
-                '147,204,234', 
-                '255,255,255', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '18 15 N', 
-                'desc' => '18.22646713256836', 
-            ], 
-            'longitude' => [ 
-                'classic' => '63 10 W', 
-                'desc' => '-63.0473518371582', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '18.6', 
-                'min' => '18.15', 
-            ], 
-            'longitude' => [ 
-                'max' => '-62.916667', 
-                'min' => '-63.433333', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -122,8 +122,6 @@ class AI_Anguilla extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

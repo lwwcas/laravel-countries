@@ -1,84 +1,84 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class GL_Greenland extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class GL_Greenland extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'americas';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Greenland';
+        $this->official_name = 'Greenland';
+        $this->iso_alpha_2 = 'GL';
+        $this->iso_alpha_3 = 'GRL';
+        $this->iso_numeric = '304';
+        $this->international_phone = '299';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'americas'; 
+        $this->languages = ['kl'];
+        $this->tld = ['.gl'];
+        $this->wmo = 'GL';
+        $this->geoname_id = '3425505';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Greenland'; 
-        $this->official_name = 'Greenland'; 
-        $this->iso_alpha_2 = 'GL'; 
-        $this->iso_alpha_3 = 'GRL'; 
-        $this->iso_numeric = '304'; 
-        $this->international_phone = '299'; 
+        $this->emoji = [
+            'img' => '🇬🇱',
+            'uCode' => 'U+1F1EC U+1F1F1',
+        ];
+        $this->color = [
+            'hex' => [
+            ],
+            'rgb' => [
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '72 00 N',
+                'desc' => '74.34954833984375',
+            ],
+            'longitude' => [
+                'classic' => '40 00 W',
+                'desc' => '-41.08988952636719',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '83.666667',
+                'min' => '51.7',
+            ],
+            'longitude' => [
+                'max' => '-12.133333',
+                'min' => '-73.05',
+            ],
+        ];
  
-        $this->languages = ["kl"]; 
-        $this->tld = [".gl"]; 
-        $this->wmo = 'GL'; 
-        $this->geoname_id = '3425505'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇬🇱', 
-            'uCode' => 'U+1F1EC U+1F1F1', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-            ], 
-            'rgb' => [ 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '72 00 N', 
-                'desc' => '74.34954833984375', 
-            ], 
-            'longitude' => [ 
-                'classic' => '40 00 W', 
-                'desc' => '-41.08988952636719', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '83.666667', 
-                'min' => '51.7', 
-            ], 
-            'longitude' => [ 
-                'max' => '-12.133333', 
-                'min' => '-73.05', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -22277,8 +22277,6 @@ class GL_Greenland extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

@@ -1,84 +1,84 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class CX_ChristmasIsland extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class CX_ChristmasIsland extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'oceania';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Christmas Island';
+        $this->official_name = 'Territory of Christmas Island';
+        $this->iso_alpha_2 = 'CX';
+        $this->iso_alpha_3 = 'CXR';
+        $this->iso_numeric = '162';
+        $this->international_phone = '61';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'oceania'; 
+        $this->languages = ['en'];
+        $this->tld = ['.cx'];
+        $this->wmo = 'KI';
+        $this->geoname_id = '2078138';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Christmas Island'; 
-        $this->official_name = 'Territory of Christmas Island'; 
-        $this->iso_alpha_2 = 'CX'; 
-        $this->iso_alpha_3 = 'CXR'; 
-        $this->iso_numeric = '162'; 
-        $this->international_phone = '61'; 
+        $this->emoji = [
+            'img' => '🇨🇽',
+            'uCode' => 'U+1F1E8 U+1F1FD',
+        ];
+        $this->color = [
+            'hex' => [
+            ],
+            'rgb' => [
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '10 30 S',
+                'desc' => '-10.490290641784668',
+            ],
+            'longitude' => [
+                'classic' => '105 40 E',
+                'desc' => '105.63275146484375',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '-10.4',
+                'min' => '-10.566667',
+            ],
+            'longitude' => [
+                'max' => '105.75',
+                'min' => '105.566667',
+            ],
+        ];
  
-        $this->languages = ["en"]; 
-        $this->tld = [".cx"]; 
-        $this->wmo = 'KI'; 
-        $this->geoname_id = '2078138'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇨🇽', 
-            'uCode' => 'U+1F1E8 U+1F1FD', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-            ], 
-            'rgb' => [ 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '10 30 S', 
-                'desc' => '-10.490290641784668', 
-            ], 
-            'longitude' => [ 
-                'classic' => '105 40 E', 
-                'desc' => '105.63275146484375', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '-10.4', 
-                'min' => '-10.566667', 
-            ], 
-            'longitude' => [ 
-                'max' => '105.75', 
-                'min' => '105.566667', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -106,8 +106,6 @@ class CX_ChristmasIsland extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

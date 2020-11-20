@@ -1,84 +1,84 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class GG_Guernsey extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class GG_Guernsey extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'europe';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Guernsey';
+        $this->official_name = 'Bailiwick of Guernsey';
+        $this->iso_alpha_2 = 'GG';
+        $this->iso_alpha_3 = 'GGY';
+        $this->iso_numeric = '831';
+        $this->international_phone = '44';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'europe'; 
+        $this->languages = ['en','fr'];
+        $this->tld = ['.gg'];
+        $this->wmo = '0';
+        $this->geoname_id = '3042362';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Guernsey'; 
-        $this->official_name = 'Bailiwick of Guernsey'; 
-        $this->iso_alpha_2 = 'GG'; 
-        $this->iso_alpha_3 = 'GGY'; 
-        $this->iso_numeric = '831'; 
-        $this->international_phone = '44'; 
+        $this->emoji = [
+            'img' => '🇬🇬',
+            'uCode' => 'U+1F1EC U+1F1EC',
+        ];
+        $this->color = [
+            'hex' => [
+            ],
+            'rgb' => [
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '49 28 N',
+                'desc' => '49.72008514404297',
+            ],
+            'longitude' => [
+                'classic' => '2 35 W',
+                'desc' => '-2.1999685764312744',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '49.733333',
+                'min' => '49.401111',
+            ],
+            'longitude' => [
+                'max' => '-2.158056',
+                'min' => '-2.7',
+            ],
+        ];
  
-        $this->languages = ["en","fr"]; 
-        $this->tld = [".gg"]; 
-        $this->wmo = '0'; 
-        $this->geoname_id = '3042362'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇬🇬', 
-            'uCode' => 'U+1F1EC U+1F1EC', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-            ], 
-            'rgb' => [ 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '49 28 N', 
-                'desc' => '49.72008514404297', 
-            ], 
-            'longitude' => [ 
-                'classic' => '2 35 W', 
-                'desc' => '-2.1999685764312744', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '49.733333', 
-                'min' => '49.401111', 
-            ], 
-            'longitude' => [ 
-                'max' => '-2.158056', 
-                'min' => '-2.7', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -113,8 +113,6 @@ class GG_Guernsey extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

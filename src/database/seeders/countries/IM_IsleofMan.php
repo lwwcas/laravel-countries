@@ -1,84 +1,84 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class IM_IsleofMan extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class IM_IsleofMan extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'europe';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Isle of Man';
+        $this->official_name = 'Isle of Man';
+        $this->iso_alpha_2 = 'IM';
+        $this->iso_alpha_3 = 'IMN';
+        $this->iso_numeric = '833';
+        $this->international_phone = '44';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'europe'; 
+        $this->languages = ['en','gv'];
+        $this->tld = ['.im'];
+        $this->wmo = '0';
+        $this->geoname_id = '3042225';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Isle of Man'; 
-        $this->official_name = 'Isle of Man'; 
-        $this->iso_alpha_2 = 'IM'; 
-        $this->iso_alpha_3 = 'IMN'; 
-        $this->iso_numeric = '833'; 
-        $this->international_phone = '44'; 
+        $this->emoji = [
+            'img' => '🇮🇲',
+            'uCode' => 'U+1F1EE U+1F1F2',
+        ];
+        $this->color = [
+            'hex' => [
+            ],
+            'rgb' => [
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '54 15 N',
+                'desc' => '54.22451400756836',
+            ],
+            'longitude' => [
+                'classic' => '4 30 W',
+                'desc' => '-4.562133312225342',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '54.4',
+                'min' => '54.033333',
+            ],
+            'longitude' => [
+                'max' => '-4.316667',
+                'min' => '-4.833333',
+            ],
+        ];
  
-        $this->languages = ["en","gv"]; 
-        $this->tld = [".im"]; 
-        $this->wmo = '0'; 
-        $this->geoname_id = '3042225'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇮🇲', 
-            'uCode' => 'U+1F1EE U+1F1F2', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-            ], 
-            'rgb' => [ 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '54 15 N', 
-                'desc' => '54.22451400756836', 
-            ], 
-            'longitude' => [ 
-                'classic' => '4 30 W', 
-                'desc' => '-4.562133312225342', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '54.4', 
-                'min' => '54.033333', 
-            ], 
-            'longitude' => [ 
-                'max' => '-4.316667', 
-                'min' => '-4.833333', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -137,8 +137,6 @@ class IM_IsleofMan extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

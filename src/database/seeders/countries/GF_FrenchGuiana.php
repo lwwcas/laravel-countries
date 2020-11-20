@@ -1,88 +1,88 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class GF_FrenchGuiana extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class GF_FrenchGuiana extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'americas';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'French Guiana';
+        $this->official_name = 'Guiana';
+        $this->iso_alpha_2 = 'GF';
+        $this->iso_alpha_3 = 'GUF';
+        $this->iso_numeric = '254';
+        $this->international_phone = '594';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'americas'; 
+        $this->languages = ['fr'];
+        $this->tld = ['.gf'];
+        $this->wmo = 'FG';
+        $this->geoname_id = '3381670';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'French Guiana'; 
-        $this->official_name = 'Guiana'; 
-        $this->iso_alpha_2 = 'GF'; 
-        $this->iso_alpha_3 = 'GUF'; 
-        $this->iso_numeric = '254'; 
-        $this->international_phone = '594'; 
+        $this->emoji = [
+            'img' => '🇬🇫',
+            'uCode' => 'U+1F1EC U+1F1EB',
+        ];
+        $this->color = [
+            'hex' => [
+                '#ffdb00',
+                '#63b76c',
+            ],
+            'rgb' => [
+                '255,219,0',
+                '99,183,108',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '4 00 N',
+                'desc' => '4.069991111755371',
+            ],
+            'longitude' => [
+                'classic' => '53 00 W',
+                'desc' => '-53.16830825805664',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '5.75',
+                'min' => '2.166667',
+            ],
+            'longitude' => [
+                'max' => '-51.65',
+                'min' => '-60',
+            ],
+        ];
  
-        $this->languages = ["fr"]; 
-        $this->tld = [".gf"]; 
-        $this->wmo = 'FG'; 
-        $this->geoname_id = '3381670'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇬🇫', 
-            'uCode' => 'U+1F1EC U+1F1EB', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#ffdb00', 
-                '#63b76c', 
-            ], 
-            'rgb' => [ 
-                '255,219,0', 
-                '99,183,108', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '4 00 N', 
-                'desc' => '4.069991111755371', 
-            ], 
-            'longitude' => [ 
-                'classic' => '53 00 W', 
-                'desc' => '-53.16830825805664', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '5.75', 
-                'min' => '2.166667', 
-            ], 
-            'longitude' => [ 
-                'max' => '-51.65', 
-                'min' => '-60', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -435,8 +435,6 @@ class GF_FrenchGuiana extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

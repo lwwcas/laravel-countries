@@ -1,88 +1,88 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class CY_Cyprus extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class CY_Cyprus extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'europe';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Cyprus';
+        $this->official_name = 'Republic of Cyprus';
+        $this->iso_alpha_2 = 'CY';
+        $this->iso_alpha_3 = 'CYP';
+        $this->iso_numeric = '196';
+        $this->international_phone = '357';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'europe'; 
+        $this->languages = ['el','tr','hy'];
+        $this->tld = ['.cy'];
+        $this->wmo = 'CY';
+        $this->geoname_id = '146669';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Cyprus'; 
-        $this->official_name = 'Republic of Cyprus'; 
-        $this->iso_alpha_2 = 'CY'; 
-        $this->iso_alpha_3 = 'CYP'; 
-        $this->iso_numeric = '196'; 
-        $this->international_phone = '357'; 
+        $this->emoji = [
+            'img' => '🇨🇾',
+            'uCode' => 'U+1F1E8 U+1F1FE',
+        ];
+        $this->color = [
+            'hex' => [
+                '#0000ff',
+                '#ffffff',
+            ],
+            'rgb' => [
+                '0,0,255',
+                '255,255,255',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '35 00 N',
+                'desc' => '35.11473846435547',
+            ],
+            'longitude' => [
+                'classic' => '33 00 E',
+                'desc' => '33.486717224121094',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '35.7',
+                'min' => '34.566667',
+            ],
+            'longitude' => [
+                'max' => '34.6',
+                'min' => '32.270833',
+            ],
+        ];
  
-        $this->languages = ["el","tr","hy"]; 
-        $this->tld = [".cy"]; 
-        $this->wmo = 'CY'; 
-        $this->geoname_id = '146669'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇨🇾', 
-            'uCode' => 'U+1F1E8 U+1F1FE', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#0000ff', 
-                '#ffffff', 
-            ], 
-            'rgb' => [ 
-                '0,0,255', 
-                '255,255,255', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '35 00 N', 
-                'desc' => '35.11473846435547', 
-            ], 
-            'longitude' => [ 
-                'classic' => '33 00 E', 
-                'desc' => '33.486717224121094', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '35.7', 
-                'min' => '34.566667', 
-            ], 
-            'longitude' => [ 
-                'max' => '34.6', 
-                'min' => '32.270833', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -286,8 +286,6 @@ class CY_Cyprus extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

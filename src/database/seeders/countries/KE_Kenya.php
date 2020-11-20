@@ -1,92 +1,92 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class KE_Kenya extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class KE_Kenya extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'africa';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Kenya';
+        $this->official_name = 'Republic of Kenya';
+        $this->iso_alpha_2 = 'KE';
+        $this->iso_alpha_3 = 'KEN';
+        $this->iso_numeric = '404';
+        $this->international_phone = '254';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'africa'; 
+        $this->languages = ['en','sw'];
+        $this->tld = ['.ke'];
+        $this->wmo = 'KN';
+        $this->geoname_id = '192950';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Kenya'; 
-        $this->official_name = 'Republic of Kenya'; 
-        $this->iso_alpha_2 = 'KE'; 
-        $this->iso_alpha_3 = 'KEN'; 
-        $this->iso_numeric = '404'; 
-        $this->international_phone = '254'; 
+        $this->emoji = [
+            'img' => '🇰🇪',
+            'uCode' => 'U+1F1F0 U+1F1EA',
+        ];
+        $this->color = [
+            'hex' => [
+                '#000000',
+                '#ff0000',
+                '#008000',
+                '#ffffff',
+            ],
+            'rgb' => [
+                '0,0,0',
+                '255,0,0',
+                '0,128,0',
+                '255,255,255',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '1 00 N',
+                'desc' => '0.5765031576156616',
+            ],
+            'longitude' => [
+                'classic' => '38 00 E',
+                'desc' => '37.83988952636719',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '4.883333',
+                'min' => '-4.716667',
+            ],
+            'longitude' => [
+                'max' => '41.8583834826',
+                'min' => '27.433333',
+            ],
+        ];
  
-        $this->languages = ["en","sw"]; 
-        $this->tld = [".ke"]; 
-        $this->wmo = 'KN'; 
-        $this->geoname_id = '192950'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇰🇪', 
-            'uCode' => 'U+1F1F0 U+1F1EA', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#000000', 
-                '#ff0000', 
-                '#008000', 
-                '#ffffff', 
-            ], 
-            'rgb' => [ 
-                '0,0,0', 
-                '255,0,0', 
-                '0,128,0', 
-                '255,255,255', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '1 00 N', 
-                'desc' => '0.5765031576156616', 
-            ], 
-            'longitude' => [ 
-                'classic' => '38 00 E', 
-                'desc' => '37.83988952636719', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '4.883333', 
-                'min' => '-4.716667', 
-            ], 
-            'longitude' => [ 
-                'max' => '41.8583834826', 
-                'min' => '27.433333', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -589,8 +589,6 @@ class KE_Kenya extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

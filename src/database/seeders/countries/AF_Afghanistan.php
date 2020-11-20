@@ -1,92 +1,92 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class AF_Afghanistan extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class AF_Afghanistan extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'asia';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Afghanistan';
+        $this->official_name = 'Islamic Republic of Afghanistan';
+        $this->iso_alpha_2 = 'AF';
+        $this->iso_alpha_3 = 'AFG';
+        $this->iso_numeric = '4';
+        $this->international_phone = '93';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'asia'; 
+        $this->languages = ['ps','uz','tk'];
+        $this->tld = ['.af'];
+        $this->wmo = 'AF';
+        $this->geoname_id = '1149361';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Afghanistan'; 
-        $this->official_name = 'Islamic Republic of Afghanistan'; 
-        $this->iso_alpha_2 = 'AF'; 
-        $this->iso_alpha_3 = 'AFG'; 
-        $this->iso_numeric = '4'; 
-        $this->international_phone = '93'; 
+        $this->emoji = [
+            'img' => '🇦🇫',
+            'uCode' => 'U+1F1E6 U+1F1EB',
+        ];
+        $this->color = [
+            'hex' => [
+                '#000000',
+                '#ff0000',
+                '#008000',
+                '#ffffff',
+            ],
+            'rgb' => [
+                '0,0,0',
+                '255,0,0',
+                '0,128,0',
+                '255,255,255',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '33 00 N',
+                'desc' => '33.833248138427734',
+            ],
+            'longitude' => [
+                'classic' => '65 00 E',
+                'desc' => '66.02528381347656',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '38.483611',
+                'min' => '29.383333',
+            ],
+            'longitude' => [
+                'max' => '74.8868713067',
+                'min' => '60.566667',
+            ],
+        ];
  
-        $this->languages = ["ps","uz","tk"]; 
-        $this->tld = [".af"]; 
-        $this->wmo = 'AF'; 
-        $this->geoname_id = '1149361'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇦🇫', 
-            'uCode' => 'U+1F1E6 U+1F1EB', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#000000', 
-                '#ff0000', 
-                '#008000', 
-                '#ffffff', 
-            ], 
-            'rgb' => [ 
-                '0,0,0', 
-                '255,0,0', 
-                '0,128,0', 
-                '255,255,255', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '33 00 N', 
-                'desc' => '33.833248138427734', 
-            ], 
-            'longitude' => [ 
-                'classic' => '65 00 E', 
-                'desc' => '66.02528381347656', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '38.483611', 
-                'min' => '29.383333', 
-            ], 
-            'longitude' => [ 
-                'max' => '74.8868713067', 
-                'min' => '60.566667', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -1401,8 +1401,6 @@ class AF_Afghanistan extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

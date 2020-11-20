@@ -1,92 +1,92 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class DJ_Djibouti extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class DJ_Djibouti extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'africa';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Djibouti';
+        $this->official_name = 'Republic of Djibouti';
+        $this->iso_alpha_2 = 'DJ';
+        $this->iso_alpha_3 = 'DJI';
+        $this->iso_numeric = '262';
+        $this->international_phone = '253';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'africa'; 
+        $this->languages = ['fr','ar'];
+        $this->tld = ['.dj'];
+        $this->wmo = 'DJ';
+        $this->geoname_id = '223816';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Djibouti'; 
-        $this->official_name = 'Republic of Djibouti'; 
-        $this->iso_alpha_2 = 'DJ'; 
-        $this->iso_alpha_3 = 'DJI'; 
-        $this->iso_numeric = '262'; 
-        $this->international_phone = '253'; 
+        $this->emoji = [
+            'img' => '🇩🇯',
+            'uCode' => 'U+1F1E9 U+1F1EF',
+        ];
+        $this->color = [
+            'hex' => [
+                '#75aadb',
+                '#008000',
+                '#ffffff',
+                '#ff0000',
+            ],
+            'rgb' => [
+                '117,170,219',
+                '0,128,0',
+                '255,255,255',
+                '255,0,0',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '11 30 N',
+                'desc' => '11.742591857910156',
+            ],
+            'longitude' => [
+                'classic' => '43 00 E',
+                'desc' => '42.63182830810547',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '13',
+                'min' => '10.9825',
+            ],
+            'longitude' => [
+                'max' => '43.451944',
+                'min' => '41',
+            ],
+        ];
  
-        $this->languages = ["fr","ar"]; 
-        $this->tld = [".dj"]; 
-        $this->wmo = 'DJ'; 
-        $this->geoname_id = '223816'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇩🇯', 
-            'uCode' => 'U+1F1E9 U+1F1EF', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#75aadb', 
-                '#008000', 
-                '#ffffff', 
-                '#ff0000', 
-            ], 
-            'rgb' => [ 
-                '117,170,219', 
-                '0,128,0', 
-                '255,255,255', 
-                '255,0,0', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '11 30 N', 
-                'desc' => '11.742591857910156', 
-            ], 
-            'longitude' => [ 
-                'classic' => '43 00 E', 
-                'desc' => '42.63182830810547', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '13', 
-                'min' => '10.9825', 
-            ], 
-            'longitude' => [ 
-                'max' => '43.451944', 
-                'min' => '41', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -287,8 +287,6 @@ class DJ_Djibouti extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

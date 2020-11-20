@@ -1,84 +1,84 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class FO_FaroeIslands extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class FO_FaroeIslands extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'europe';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Faroe Islands';
+        $this->official_name = 'Faroe Islands';
+        $this->iso_alpha_2 = 'FO';
+        $this->iso_alpha_3 = 'FRO';
+        $this->iso_numeric = '234';
+        $this->international_phone = '298';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'europe'; 
+        $this->languages = ['fo'];
+        $this->tld = ['.fo'];
+        $this->wmo = 'FA';
+        $this->geoname_id = '2622320';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Faroe Islands'; 
-        $this->official_name = 'Faroe Islands'; 
-        $this->iso_alpha_2 = 'FO'; 
-        $this->iso_alpha_3 = 'FRO'; 
-        $this->iso_numeric = '234'; 
-        $this->international_phone = '298'; 
+        $this->emoji = [
+            'img' => '🇫🇴',
+            'uCode' => 'U+1F1EB U+1F1F4',
+        ];
+        $this->color = [
+            'hex' => [
+            ],
+            'rgb' => [
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '62 00 N',
+                'desc' => '62.009559631347656',
+            ],
+            'longitude' => [
+                'classic' => '7 00 W',
+                'desc' => '-6.818255424499512',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '62.4',
+                'min' => '61.333333',
+            ],
+            'longitude' => [
+                'max' => '-6.25',
+                'min' => '-7.8',
+            ],
+        ];
  
-        $this->languages = ["fo"]; 
-        $this->tld = [".fo"]; 
-        $this->wmo = 'FA'; 
-        $this->geoname_id = '2622320'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇫🇴', 
-            'uCode' => 'U+1F1EB U+1F1F4', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-            ], 
-            'rgb' => [ 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '62 00 N', 
-                'desc' => '62.009559631347656', 
-            ], 
-            'longitude' => [ 
-                'classic' => '7 00 W', 
-                'desc' => '-6.818255424499512', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '62.4', 
-                'min' => '61.333333', 
-            ], 
-            'longitude' => [ 
-                'max' => '-6.25', 
-                'min' => '-7.8', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -339,8 +339,6 @@ class FO_FaroeIslands extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

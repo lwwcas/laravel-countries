@@ -1,84 +1,84 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class FK_FalklandIslands extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class FK_FalklandIslands extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'americas';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Falkland Islands';
+        $this->official_name = 'Falkland Islands';
+        $this->iso_alpha_2 = 'FK';
+        $this->iso_alpha_3 = 'FLK';
+        $this->iso_numeric = '238';
+        $this->international_phone = '500';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'americas'; 
+        $this->languages = ['en'];
+        $this->tld = ['.fk'];
+        $this->wmo = 'FK';
+        $this->geoname_id = '3474414';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Falkland Islands'; 
-        $this->official_name = 'Falkland Islands'; 
-        $this->iso_alpha_2 = 'FK'; 
-        $this->iso_alpha_3 = 'FLK'; 
-        $this->iso_numeric = '238'; 
-        $this->international_phone = '500'; 
+        $this->emoji = [
+            'img' => '🇫🇰',
+            'uCode' => 'U+1F1EB U+1F1F0',
+        ];
+        $this->color = [
+            'hex' => [
+            ],
+            'rgb' => [
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '51 45 S',
+                'desc' => '-51.77312469482422',
+            ],
+            'longitude' => [
+                'classic' => '59 00 W',
+                'desc' => '-59.727909088134766',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '-50.966667',
+                'min' => '-52.966667',
+            ],
+            'longitude' => [
+                'max' => '-57.666667',
+                'min' => '-61.433333',
+            ],
+        ];
  
-        $this->languages = ["en"]; 
-        $this->tld = [".fk"]; 
-        $this->wmo = 'FK'; 
-        $this->geoname_id = '3474414'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇫🇰', 
-            'uCode' => 'U+1F1EB U+1F1F0', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-            ], 
-            'rgb' => [ 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '51 45 S', 
-                'desc' => '-51.77312469482422', 
-            ], 
-            'longitude' => [ 
-                'classic' => '59 00 W', 
-                'desc' => '-59.727909088134766', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '-50.966667', 
-                'min' => '-52.966667', 
-            ], 
-            'longitude' => [ 
-                'max' => '-57.666667', 
-                'min' => '-61.433333', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -805,8 +805,6 @@ class FK_FalklandIslands extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

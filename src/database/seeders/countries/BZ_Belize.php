@@ -1,90 +1,90 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class BZ_Belize extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class BZ_Belize extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'americas';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Belize';
+        $this->official_name = 'Belize';
+        $this->iso_alpha_2 = 'BZ';
+        $this->iso_alpha_3 = 'BLZ';
+        $this->iso_numeric = '84';
+        $this->international_phone = '501';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'americas'; 
+        $this->languages = ['en','es'];
+        $this->tld = ['.bz'];
+        $this->wmo = 'BH';
+        $this->geoname_id = '3582678';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Belize'; 
-        $this->official_name = 'Belize'; 
-        $this->iso_alpha_2 = 'BZ'; 
-        $this->iso_alpha_3 = 'BLZ'; 
-        $this->iso_numeric = '84'; 
-        $this->international_phone = '501'; 
+        $this->emoji = [
+            'img' => '🇧🇿',
+            'uCode' => 'U+1F1E7 U+1F1FF',
+        ];
+        $this->color = [
+            'hex' => [
+                '#0066cc',
+                '#ff3f34',
+                '#ffffff',
+            ],
+            'rgb' => [
+                '0,102,204',
+                '255,63,52',
+                '255,255,255',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '17 15 N',
+                'desc' => '17.225292205810547',
+            ],
+            'longitude' => [
+                'classic' => '88 45 W',
+                'desc' => '-88.66973876953125',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '18.483333',
+                'min' => '15.9',
+            ],
+            'longitude' => [
+                'max' => '-87.483333',
+                'min' => '-89.216944',
+            ],
+        ];
  
-        $this->languages = ["en","es"]; 
-        $this->tld = [".bz"]; 
-        $this->wmo = 'BH'; 
-        $this->geoname_id = '3582678'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇧🇿', 
-            'uCode' => 'U+1F1E7 U+1F1FF', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#0066cc', 
-                '#ff3f34', 
-                '#ffffff', 
-            ], 
-            'rgb' => [ 
-                '0,102,204', 
-                '255,63,52', 
-                '255,255,255', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '17 15 N', 
-                'desc' => '17.225292205810547', 
-            ], 
-            'longitude' => [ 
-                'classic' => '88 45 W', 
-                'desc' => '-88.66973876953125', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '18.483333', 
-                'min' => '15.9', 
-            ], 
-            'longitude' => [ 
-                'max' => '-87.483333', 
-                'min' => '-89.216944', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -406,8 +406,6 @@ class BZ_Belize extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

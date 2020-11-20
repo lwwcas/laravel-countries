@@ -1,84 +1,84 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class BV_BouvetIsland extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class BV_BouvetIsland extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'oceania';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Bouvet Island';
+        $this->official_name = 'Bouvet Island';
+        $this->iso_alpha_2 = 'BV';
+        $this->iso_alpha_3 = 'BVT';
+        $this->iso_numeric = '74';
+        $this->international_phone = '47';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'oceania'; 
+        $this->languages = ['no','nb','nn'];
+        $this->tld = ['.bv'];
+        $this->wmo = 'BV';
+        $this->geoname_id = '3371123';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Bouvet Island'; 
-        $this->official_name = 'Bouvet Island'; 
-        $this->iso_alpha_2 = 'BV'; 
-        $this->iso_alpha_3 = 'BVT'; 
-        $this->iso_numeric = '74'; 
-        $this->international_phone = '47'; 
+        $this->emoji = [
+            'img' => '🇧🇻',
+            'uCode' => 'U+1F1E7 U+1F1FB',
+        ];
+        $this->color = [
+            'hex' => [
+            ],
+            'rgb' => [
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '54 26 S',
+                'desc' => '-54.4342041015625',
+            ],
+            'longitude' => [
+                'classic' => '3 24 E',
+                'desc' => '3.4102511405944824',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '-54.386111',
+                'min' => '-54.452778',
+            ],
+            'longitude' => [
+                'max' => '3.433889',
+                'min' => '3.285278',
+            ],
+        ];
  
-        $this->languages = ["no","nb","nn"]; 
-        $this->tld = [".bv"]; 
-        $this->wmo = 'BV'; 
-        $this->geoname_id = '3371123'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇧🇻', 
-            'uCode' => 'U+1F1E7 U+1F1FB', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-            ], 
-            'rgb' => [ 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '54 26 S', 
-                'desc' => '-54.4342041015625', 
-            ], 
-            'longitude' => [ 
-                'classic' => '3 24 E', 
-                'desc' => '3.4102511405944824', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '-54.386111', 
-                'min' => '-54.452778', 
-            ], 
-            'longitude' => [ 
-                'max' => '3.433889', 
-                'min' => '3.285278', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -123,8 +123,6 @@ class BV_BouvetIsland extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

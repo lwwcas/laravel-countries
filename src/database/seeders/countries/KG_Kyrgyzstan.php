@@ -1,88 +1,88 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class KG_Kyrgyzstan extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class KG_Kyrgyzstan extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'asia';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Kyrgyzstan';
+        $this->official_name = 'Kyrgyz Republic';
+        $this->iso_alpha_2 = 'KG';
+        $this->iso_alpha_3 = 'KGZ';
+        $this->iso_numeric = '417';
+        $this->international_phone = '996';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'asia'; 
+        $this->languages = ['ky','ru'];
+        $this->tld = ['.kg'];
+        $this->wmo = 'KG';
+        $this->geoname_id = '1527747';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Kyrgyzstan'; 
-        $this->official_name = 'Kyrgyz Republic'; 
-        $this->iso_alpha_2 = 'KG'; 
-        $this->iso_alpha_3 = 'KGZ'; 
-        $this->iso_numeric = '417'; 
-        $this->international_phone = '996'; 
+        $this->emoji = [
+            'img' => '🇰🇬',
+            'uCode' => 'U+1F1F0 U+1F1EC',
+        ];
+        $this->color = [
+            'hex' => [
+                '#ff0000',
+                '#ffff00',
+            ],
+            'rgb' => [
+                '255,0,0',
+                '255,255,0',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '41 00 N',
+                'desc' => '41.46435546875',
+            ],
+            'longitude' => [
+                'classic' => '75 00 E',
+                'desc' => '74.55522155761719',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '43.016667',
+                'min' => '39.25',
+            ],
+            'longitude' => [
+                'max' => '80.115833',
+                'min' => '69.333333',
+            ],
+        ];
  
-        $this->languages = ["ky","ru"]; 
-        $this->tld = [".kg"]; 
-        $this->wmo = 'KG'; 
-        $this->geoname_id = '1527747'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇰🇬', 
-            'uCode' => 'U+1F1F0 U+1F1EC', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#ff0000', 
-                '#ffff00', 
-            ], 
-            'rgb' => [ 
-                '255,0,0', 
-                '255,255,0', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '41 00 N', 
-                'desc' => '41.46435546875', 
-            ], 
-            'longitude' => [ 
-                'classic' => '75 00 E', 
-                'desc' => '74.55522155761719', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '43.016667', 
-                'min' => '39.25', 
-            ], 
-            'longitude' => [ 
-                'max' => '80.115833', 
-                'min' => '69.333333', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -1266,8 +1266,6 @@ class KG_Kyrgyzstan extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

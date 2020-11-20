@@ -1,84 +1,84 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class BL_SaintBarthelemy extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class BL_SaintBarthelemy extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'americas';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Saint Barthélemy';
+        $this->official_name = 'Collectivity of Saint Barthélemy';
+        $this->iso_alpha_2 = 'BL';
+        $this->iso_alpha_3 = 'BLM';
+        $this->iso_numeric = '652';
+        $this->international_phone = '590';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'americas'; 
+        $this->languages = ['fr'];
+        $this->tld = ['.bl'];
+        $this->wmo = '0';
+        $this->geoname_id = '3578476';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Saint Barthélemy'; 
-        $this->official_name = 'Collectivity of Saint Barthélemy'; 
-        $this->iso_alpha_2 = 'BL'; 
-        $this->iso_alpha_3 = 'BLM'; 
-        $this->iso_numeric = '652'; 
-        $this->international_phone = '590'; 
+        $this->emoji = [
+            'img' => '🇧🇱',
+            'uCode' => 'U+1F1E7 U+1F1F1',
+        ];
+        $this->color = [
+            'hex' => [
+            ],
+            'rgb' => [
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '17 90 N',
+                'desc' => '17.89626121520996',
+            ],
+            'longitude' => [
+                'classic' => '62 85 W',
+                'desc' => '-62.83061218261719',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '17.960853',
+                'min' => '17.8708287',
+            ],
+            'longitude' => [
+                'max' => '-62.7892148',
+                'min' => '-62.9118453',
+            ],
+        ];
  
-        $this->languages = ["fr"]; 
-        $this->tld = [".bl"]; 
-        $this->wmo = '0'; 
-        $this->geoname_id = '3578476'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇧🇱', 
-            'uCode' => 'U+1F1E7 U+1F1F1', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-            ], 
-            'rgb' => [ 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '17 90 N', 
-                'desc' => '17.89626121520996', 
-            ], 
-            'longitude' => [ 
-                'classic' => '62 85 W', 
-                'desc' => '-62.83061218261719', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '17.960853', 
-                'min' => '17.8708287', 
-            ], 
-            'longitude' => [ 
-                'max' => '-62.7892148', 
-                'min' => '-62.9118453', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -109,8 +109,6 @@ class BL_SaintBarthelemy extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

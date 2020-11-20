@@ -1,88 +1,88 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class HT_Haiti extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class HT_Haiti extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'americas';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Haiti';
+        $this->official_name = 'Republic of Haiti';
+        $this->iso_alpha_2 = 'HT';
+        $this->iso_alpha_3 = 'HTI';
+        $this->iso_numeric = '332';
+        $this->international_phone = '509';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'americas'; 
+        $this->languages = ['fr','ht'];
+        $this->tld = ['.ht'];
+        $this->wmo = 'HA';
+        $this->geoname_id = '3723988';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Haiti'; 
-        $this->official_name = 'Republic of Haiti'; 
-        $this->iso_alpha_2 = 'HT'; 
-        $this->iso_alpha_3 = 'HTI'; 
-        $this->iso_numeric = '332'; 
-        $this->international_phone = '509'; 
+        $this->emoji = [
+            'img' => '🇭🇹',
+            'uCode' => 'U+1F1ED U+1F1F9',
+        ];
+        $this->color = [
+            'hex' => [
+                '#0000ff',
+                '#ff0000',
+            ],
+            'rgb' => [
+                '0,0,255',
+                '255,0,0',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '19 00 N',
+                'desc' => '19.0732421875',
+            ],
+            'longitude' => [
+                'classic' => '72 25 W',
+                'desc' => '-72.24127960205078',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '20.083333',
+                'min' => '18.016667',
+            ],
+            'longitude' => [
+                'max' => '-71.633333',
+                'min' => '-74.483333',
+            ],
+        ];
  
-        $this->languages = ["fr","ht"]; 
-        $this->tld = [".ht"]; 
-        $this->wmo = 'HA'; 
-        $this->geoname_id = '3723988'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇭🇹', 
-            'uCode' => 'U+1F1ED U+1F1F9', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#0000ff', 
-                '#ff0000', 
-            ], 
-            'rgb' => [ 
-                '0,0,255', 
-                '255,0,0', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '19 00 N', 
-                'desc' => '19.0732421875', 
-            ], 
-            'longitude' => [ 
-                'classic' => '72 25 W', 
-                'desc' => '-72.24127960205078', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '20.083333', 
-                'min' => '18.016667', 
-            ], 
-            'longitude' => [ 
-                'max' => '-71.633333', 
-                'min' => '-74.483333', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -553,8 +553,6 @@ class HT_Haiti extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

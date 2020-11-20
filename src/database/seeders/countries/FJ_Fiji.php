@@ -1,86 +1,86 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class FJ_Fiji extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class FJ_Fiji extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'oceania';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Fiji';
+        $this->official_name = 'Republic of Fiji';
+        $this->iso_alpha_2 = 'FJ';
+        $this->iso_alpha_3 = 'FJI';
+        $this->iso_numeric = '242';
+        $this->international_phone = '679';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'oceania'; 
+        $this->languages = ['en','fj','hi','ur'];
+        $this->tld = ['.fj'];
+        $this->wmo = 'FJ';
+        $this->geoname_id = '2205218';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Fiji'; 
-        $this->official_name = 'Republic of Fiji'; 
-        $this->iso_alpha_2 = 'FJ'; 
-        $this->iso_alpha_3 = 'FJI'; 
-        $this->iso_numeric = '242'; 
-        $this->international_phone = '679'; 
+        $this->emoji = [
+            'img' => '🇫🇯',
+            'uCode' => 'U+1F1EB U+1F1EF',
+        ];
+        $this->color = [
+            'hex' => [
+                '#75aadb',
+            ],
+            'rgb' => [
+                '117,170,219',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '18 00 S',
+                'desc' => '-17.658161163330078',
+            ],
+            'longitude' => [
+                'classic' => '175 00 E',
+                'desc' => '178.1472625732422',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '-12.466667',
+                'min' => '-21.016667',
+            ],
+            'longitude' => [
+                'max' => '-179.983333',
+                'min' => '180',
+            ],
+        ];
  
-        $this->languages = ["en","fj","hi","ur"]; 
-        $this->tld = [".fj"]; 
-        $this->wmo = 'FJ'; 
-        $this->geoname_id = '2205218'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇫🇯', 
-            'uCode' => 'U+1F1EB U+1F1EF', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#75aadb', 
-            ], 
-            'rgb' => [ 
-                '117,170,219', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '18 00 S', 
-                'desc' => '-17.658161163330078', 
-            ], 
-            'longitude' => [ 
-                'classic' => '175 00 E', 
-                'desc' => '178.1472625732422', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '-12.466667', 
-                'min' => '-21.016667', 
-            ], 
-            'longitude' => [ 
-                'max' => '-179.983333', 
-                'min' => '180', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -1154,8 +1154,6 @@ class FJ_Fiji extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

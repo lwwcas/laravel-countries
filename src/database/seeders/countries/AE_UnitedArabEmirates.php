@@ -1,92 +1,92 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class AE_UnitedArabEmirates extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class AE_UnitedArabEmirates extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'asia';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'United Arab Emirates';
+        $this->official_name = 'United Arab Emirates';
+        $this->iso_alpha_2 = 'AE';
+        $this->iso_alpha_3 = 'ARE';
+        $this->iso_numeric = '784';
+        $this->international_phone = '971';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'asia'; 
+        $this->languages = ['ar'];
+        $this->tld = ['.ae',"\u0627\u0645\u0627\u0631\u0627\u062a."];
+        $this->wmo = 'ER';
+        $this->geoname_id = '290557';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'United Arab Emirates'; 
-        $this->official_name = 'United Arab Emirates'; 
-        $this->iso_alpha_2 = 'AE'; 
-        $this->iso_alpha_3 = 'ARE'; 
-        $this->iso_numeric = '784'; 
-        $this->international_phone = '971'; 
+        $this->emoji = [
+            'img' => '🇦🇪',
+            'uCode' => 'U+1F1E6 U+1F1EA',
+        ];
+        $this->color = [
+            'hex' => [
+                '#ff0000',
+                '#008000',
+                '#ffffff',
+                '#000000',
+            ],
+            'rgb' => [
+                '255,0,0',
+                '0,128,0',
+                '255,255,255',
+                '0,0,0',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '24 00 N',
+                'desc' => '23.684776306152344',
+            ],
+            'longitude' => [
+                'classic' => '54 00 E',
+                'desc' => '54.536643981933594',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '26.133333',
+                'min' => '22.166667',
+            ],
+            'longitude' => [
+                'max' => '58',
+                'min' => '45',
+            ],
+        ];
  
-        $this->languages = ["ar"]; 
-        $this->tld = [".ae","\u0627\u0645\u0627\u0631\u0627\u062a."]; 
-        $this->wmo = 'ER'; 
-        $this->geoname_id = '290557'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇦🇪', 
-            'uCode' => 'U+1F1E6 U+1F1EA', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#ff0000', 
-                '#008000', 
-                '#ffffff', 
-                '#000000', 
-            ], 
-            'rgb' => [ 
-                '255,0,0', 
-                '0,128,0', 
-                '255,255,255', 
-                '0,0,0', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '24 00 N', 
-                'desc' => '23.684776306152344', 
-            ], 
-            'longitude' => [ 
-                'classic' => '54 00 E', 
-                'desc' => '54.536643981933594', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '26.133333', 
-                'min' => '22.166667', 
-            ], 
-            'longitude' => [ 
-                'max' => '58', 
-                'min' => '45', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -593,8 +593,6 @@ class AE_UnitedArabEmirates extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

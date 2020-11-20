@@ -1,88 +1,88 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class BH_Bahrain extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class BH_Bahrain extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'asia';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Bahrain';
+        $this->official_name = 'Kingdom of Bahrain';
+        $this->iso_alpha_2 = 'BH';
+        $this->iso_alpha_3 = 'BHR';
+        $this->iso_numeric = '48';
+        $this->international_phone = '973';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'asia'; 
+        $this->languages = ['ar'];
+        $this->tld = ['.bh'];
+        $this->wmo = 'BN';
+        $this->geoname_id = '290291';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Bahrain'; 
-        $this->official_name = 'Kingdom of Bahrain'; 
-        $this->iso_alpha_2 = 'BH'; 
-        $this->iso_alpha_3 = 'BHR'; 
-        $this->iso_numeric = '48'; 
-        $this->international_phone = '973'; 
+        $this->emoji = [
+            'img' => '🇧🇭',
+            'uCode' => 'U+1F1E7 U+1F1ED',
+        ];
+        $this->color = [
+            'hex' => [
+                '#ff0000',
+                '#ffffff',
+            ],
+            'rgb' => [
+                '255,0,0',
+                '255,255,255',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '26 00 N',
+                'desc' => '26.094240188598633',
+            ],
+            'longitude' => [
+                'classic' => '50 33 E',
+                'desc' => '50.54299545288086',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '26.416667',
+                'min' => '25',
+            ],
+            'longitude' => [
+                'max' => '50.823333',
+                'min' => '45',
+            ],
+        ];
  
-        $this->languages = ["ar"]; 
-        $this->tld = [".bh"]; 
-        $this->wmo = 'BN'; 
-        $this->geoname_id = '290291'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇧🇭', 
-            'uCode' => 'U+1F1E7 U+1F1ED', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#ff0000', 
-                '#ffffff', 
-            ], 
-            'rgb' => [ 
-                '255,0,0', 
-                '255,255,255', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '26 00 N', 
-                'desc' => '26.094240188598633', 
-            ], 
-            'longitude' => [ 
-                'classic' => '50 33 E', 
-                'desc' => '50.54299545288086', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '26.416667', 
-                'min' => '25', 
-            ], 
-            'longitude' => [ 
-                'max' => '50.823333', 
-                'min' => '45', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -232,8 +232,6 @@ class BH_Bahrain extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

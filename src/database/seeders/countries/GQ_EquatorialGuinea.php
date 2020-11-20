@@ -1,92 +1,92 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class GQ_EquatorialGuinea extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class GQ_EquatorialGuinea extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'africa';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Equatorial Guinea';
+        $this->official_name = 'Republic of Equatorial Guinea';
+        $this->iso_alpha_2 = 'GQ';
+        $this->iso_alpha_3 = 'GNQ';
+        $this->iso_numeric = '226';
+        $this->international_phone = '240';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'africa'; 
+        $this->languages = ['es','fr'];
+        $this->tld = ['.gq'];
+        $this->wmo = 'GQ';
+        $this->geoname_id = '2309096';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Equatorial Guinea'; 
-        $this->official_name = 'Republic of Equatorial Guinea'; 
-        $this->iso_alpha_2 = 'GQ'; 
-        $this->iso_alpha_3 = 'GNQ'; 
-        $this->iso_numeric = '226'; 
-        $this->international_phone = '240'; 
+        $this->emoji = [
+            'img' => '🇬🇶',
+            'uCode' => 'U+1F1EC U+1F1F6',
+        ];
+        $this->color = [
+            'hex' => [
+                '#008000',
+                '#ffffff',
+                '#ff0000',
+                '#007fff',
+            ],
+            'rgb' => [
+                '0,128,0',
+                '255,255,255',
+                '255,0,0',
+                '0,127,255',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '2 00 N',
+                'desc' => '1.5331259965896606',
+            ],
+            'longitude' => [
+                'classic' => '10 00 E',
+                'desc' => '10.372581481933594',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '3.783333',
+                'min' => '-1.483333',
+            ],
+            'longitude' => [
+                'max' => '11.4',
+                'min' => '5.05',
+            ],
+        ];
  
-        $this->languages = ["es","fr"]; 
-        $this->tld = [".gq"]; 
-        $this->wmo = 'GQ'; 
-        $this->geoname_id = '2309096'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇬🇶', 
-            'uCode' => 'U+1F1EC U+1F1F6', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#008000', 
-                '#ffffff', 
-                '#ff0000', 
-                '#007fff', 
-            ], 
-            'rgb' => [ 
-                '0,128,0', 
-                '255,255,255', 
-                '255,0,0', 
-                '0,127,255', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '2 00 N', 
-                'desc' => '1.5331259965896606', 
-            ], 
-            'longitude' => [ 
-                'classic' => '10 00 E', 
-                'desc' => '10.372581481933594', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '3.783333', 
-                'min' => '-1.483333', 
-            ], 
-            'longitude' => [ 
-                'max' => '11.4', 
-                'min' => '5.05', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -303,8 +303,6 @@ class GQ_EquatorialGuinea extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

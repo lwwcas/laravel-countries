@@ -1,84 +1,84 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class HM_HeardIslandandMcDonaldIslands extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class HM_HeardIslandandMcDonaldIslands extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'oceania';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Heard Island and McDonald Islands';
+        $this->official_name = 'Heard Island and McDonald Islands';
+        $this->iso_alpha_2 = 'HM';
+        $this->iso_alpha_3 = 'HMD';
+        $this->iso_numeric = '672';
+        $this->international_phone = '672';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'oceania'; 
+        $this->languages = ['en'];
+        $this->tld = ['.hm','.aq'];
+        $this->wmo = '0';
+        $this->geoname_id = '1547314';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Heard Island and McDonald Islands'; 
-        $this->official_name = 'Heard Island and McDonald Islands'; 
-        $this->iso_alpha_2 = 'HM'; 
-        $this->iso_alpha_3 = 'HMD'; 
-        $this->iso_numeric = '672'; 
-        $this->international_phone = '672'; 
+        $this->emoji = [
+            'img' => '🇭🇲',
+            'uCode' => 'U+1F1ED U+1F1F2',
+        ];
+        $this->color = [
+            'hex' => [
+            ],
+            'rgb' => [
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '53 06 S',
+                'desc' => '-53.080108642578125',
+            ],
+            'longitude' => [
+                'classic' => '72 31 E',
+                'desc' => '73.56218719482422',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '-52.9',
+                'min' => '-53.2',
+            ],
+            'longitude' => [
+                'max' => '73.85',
+                'min' => '72.566667',
+            ],
+        ];
  
-        $this->languages = ["en"]; 
-        $this->tld = [".hm",".aq"]; 
-        $this->wmo = '0'; 
-        $this->geoname_id = '1547314'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇭🇲', 
-            'uCode' => 'U+1F1ED U+1F1F2', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-            ], 
-            'rgb' => [ 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '53 06 S', 
-                'desc' => '-53.080108642578125', 
-            ], 
-            'longitude' => [ 
-                'classic' => '72 31 E', 
-                'desc' => '73.56218719482422', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '-52.9', 
-                'min' => '-53.2', 
-            ], 
-            'longitude' => [ 
-                'max' => '73.85', 
-                'min' => '72.566667', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -143,8 +143,6 @@ class HM_HeardIslandandMcDonaldIslands extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

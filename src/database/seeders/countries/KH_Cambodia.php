@@ -1,88 +1,88 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class KH_Cambodia extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class KH_Cambodia extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'asia';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Cambodia';
+        $this->official_name = 'Kingdom of Cambodia';
+        $this->iso_alpha_2 = 'KH';
+        $this->iso_alpha_3 = 'KHM';
+        $this->iso_numeric = '116';
+        $this->international_phone = '855';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'asia'; 
+        $this->languages = ['km'];
+        $this->tld = ['.kh'];
+        $this->wmo = 'KP';
+        $this->geoname_id = '1831722';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Cambodia'; 
-        $this->official_name = 'Kingdom of Cambodia'; 
-        $this->iso_alpha_2 = 'KH'; 
-        $this->iso_alpha_3 = 'KHM'; 
-        $this->iso_numeric = '116'; 
-        $this->international_phone = '855'; 
+        $this->emoji = [
+            'img' => '🇰🇭',
+            'uCode' => 'U+1F1F0 U+1F1ED',
+        ];
+        $this->color = [
+            'hex' => [
+                '#ff0000',
+                '#0000ff',
+            ],
+            'rgb' => [
+                '255,0,0',
+                '0,0,255',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '13 00 N',
+                'desc' => '12.570423126220703',
+            ],
+            'longitude' => [
+                'classic' => '105 00 E',
+                'desc' => '104.81391143798828',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '17.483333',
+                'min' => '9.916667',
+            ],
+            'longitude' => [
+                'max' => '107.566667',
+                'min' => '102.358333',
+            ],
+        ];
  
-        $this->languages = ["km"]; 
-        $this->tld = [".kh"]; 
-        $this->wmo = 'KP'; 
-        $this->geoname_id = '1831722'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇰🇭', 
-            'uCode' => 'U+1F1F0 U+1F1ED', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#ff0000', 
-                '#0000ff', 
-            ], 
-            'rgb' => [ 
-                '255,0,0', 
-                '0,0,255', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '13 00 N', 
-                'desc' => '12.570423126220703', 
-            ], 
-            'longitude' => [ 
-                'classic' => '105 00 E', 
-                'desc' => '104.81391143798828', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '17.483333', 
-                'min' => '9.916667', 
-            ], 
-            'longitude' => [ 
-                'max' => '107.566667', 
-                'min' => '102.358333', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -893,8 +893,6 @@ class KH_Cambodia extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

@@ -1,88 +1,88 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class HK_HongKongSARChina extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class HK_HongKongSARChina extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'asia';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Hong Kong SAR China';
+        $this->official_name = 'Hong Kong Special Administrative Region of the People\'s Republic of China';
+        $this->iso_alpha_2 = 'HK';
+        $this->iso_alpha_3 = 'HKG';
+        $this->iso_numeric = '344';
+        $this->international_phone = '852';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'asia'; 
+        $this->languages = ['zh','en'];
+        $this->tld = ['.hk',".\u9999\u6e2f"];
+        $this->wmo = 'HK';
+        $this->geoname_id = '1819730';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Hong Kong SAR China'; 
-        $this->official_name = 'Hong Kong Special Administrative Region of the People\'s Republic of China'; 
-        $this->iso_alpha_2 = 'HK'; 
-        $this->iso_alpha_3 = 'HKG'; 
-        $this->iso_numeric = '344'; 
-        $this->international_phone = '852'; 
+        $this->emoji = [
+            'img' => '🇭🇰',
+            'uCode' => 'U+1F1ED U+1F1F0',
+        ];
+        $this->color = [
+            'hex' => [
+                '#ff0000',
+                '#ffffff',
+            ],
+            'rgb' => [
+                '255,0,0',
+                '255,255,255',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '22 15 N',
+                'desc' => '22.336156845092773',
+            ],
+            'longitude' => [
+                'classic' => '114 10 E',
+                'desc' => '114.18696594238281',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '22.566667',
+                'min' => '22.15',
+            ],
+            'longitude' => [
+                'max' => '114.433333',
+                'min' => '113.833333',
+            ],
+        ];
  
-        $this->languages = ["zh","en"]; 
-        $this->tld = [".hk",".\u9999\u6e2f"]; 
-        $this->wmo = 'HK'; 
-        $this->geoname_id = '1819730'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇭🇰', 
-            'uCode' => 'U+1F1ED U+1F1F0', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#ff0000', 
-                '#ffffff', 
-            ], 
-            'rgb' => [ 
-                '255,0,0', 
-                '255,255,255', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '22 15 N', 
-                'desc' => '22.336156845092773', 
-            ], 
-            'longitude' => [ 
-                'classic' => '114 10 E', 
-                'desc' => '114.18696594238281', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '22.566667', 
-                'min' => '22.15', 
-            ], 
-            'longitude' => [ 
-                'max' => '114.433333', 
-                'min' => '113.833333', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -201,8 +201,6 @@ class HK_HongKongSARChina extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

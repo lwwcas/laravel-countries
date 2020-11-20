@@ -1,84 +1,84 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class TF_FrenchSouthernTerritories extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class TF_FrenchSouthernTerritories extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'oceania';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'French Southern Territories';
+        $this->official_name = 'Territory of the French Southern and Antarctic Lands';
+        $this->iso_alpha_2 = 'TF';
+        $this->iso_alpha_3 = 'ATF';
+        $this->iso_numeric = '260';
+        $this->international_phone = '262';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'oceania'; 
+        $this->languages = ['fr'];
+        $this->tld = ['.tf'];
+        $this->wmo = '0';
+        $this->geoname_id = '1546748';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'French Southern Territories'; 
-        $this->official_name = 'Territory of the French Southern and Antarctic Lands'; 
-        $this->iso_alpha_2 = 'TF'; 
-        $this->iso_alpha_3 = 'ATF'; 
-        $this->iso_numeric = '260'; 
-        $this->international_phone = '262'; 
+        $this->emoji = [
+            'img' => '🇹🇫',
+            'uCode' => 'U+1F1F9 U+1F1EB',
+        ];
+        $this->color = [
+            'hex' => [
+            ],
+            'rgb' => [
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '',
+                'desc' => '-49.563865661621094',
+            ],
+            'longitude' => [
+                'classic' => '',
+                'desc' => '69.54277801513672',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '-37.783333',
+                'min' => '-50.016667',
+            ],
+            'longitude' => [
+                'max' => '77.6',
+                'min' => '50.233333',
+            ],
+        ];
  
-        $this->languages = ["fr"]; 
-        $this->tld = [".tf"]; 
-        $this->wmo = '0'; 
-        $this->geoname_id = '1546748'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇹🇫', 
-            'uCode' => 'U+1F1F9 U+1F1EB', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-            ], 
-            'rgb' => [ 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '', 
-                'desc' => '-49.563865661621094', 
-            ], 
-            'longitude' => [ 
-                'classic' => '', 
-                'desc' => '69.54277801513672', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '-37.783333', 
-                'min' => '-50.016667', 
-            ], 
-            'longitude' => [ 
-                'max' => '77.6', 
-                'min' => '50.233333', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -753,8 +753,6 @@ class TF_FrenchSouthernTerritories extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

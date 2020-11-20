@@ -1,88 +1,88 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class KZ_Kazakhstan extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class KZ_Kazakhstan extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'asia';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Kazakhstan';
+        $this->official_name = 'Republic of Kazakhstan';
+        $this->iso_alpha_2 = 'KZ';
+        $this->iso_alpha_3 = 'KAZ';
+        $this->iso_numeric = '398';
+        $this->international_phone = '7';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'asia'; 
+        $this->languages = ['kk','ru'];
+        $this->tld = ['.kz',".\u049b\u0430\u0437"];
+        $this->wmo = 'KZ';
+        $this->geoname_id = '1522867';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Kazakhstan'; 
-        $this->official_name = 'Republic of Kazakhstan'; 
-        $this->iso_alpha_2 = 'KZ'; 
-        $this->iso_alpha_3 = 'KAZ'; 
-        $this->iso_numeric = '398'; 
-        $this->international_phone = '7'; 
+        $this->emoji = [
+            'img' => '🇰🇿',
+            'uCode' => 'U+1F1F0 U+1F1FF',
+        ];
+        $this->color = [
+            'hex' => [
+                '#007fff',
+                '#ffff00',
+            ],
+            'rgb' => [
+                '0,127,255',
+                '255,255,0',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '48 00 N',
+                'desc' => '48.14600372314453',
+            ],
+            'longitude' => [
+                'classic' => '68 00 E',
+                'desc' => '67.17916870117188',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '55.330556',
+                'min' => '40.416667',
+            ],
+            'longitude' => [
+                'max' => '90',
+                'min' => '46.589722',
+            ],
+        ];
  
-        $this->languages = ["kk","ru"]; 
-        $this->tld = [".kz",".\u049b\u0430\u0437"]; 
-        $this->wmo = 'KZ'; 
-        $this->geoname_id = '1522867'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇰🇿', 
-            'uCode' => 'U+1F1F0 U+1F1FF', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#007fff', 
-                '#ffff00', 
-            ], 
-            'rgb' => [ 
-                '0,127,255', 
-                '255,255,0', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '48 00 N', 
-                'desc' => '48.14600372314453', 
-            ], 
-            'longitude' => [ 
-                'classic' => '68 00 E', 
-                'desc' => '67.17916870117188', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '55.330556', 
-                'min' => '40.416667', 
-            ], 
-            'longitude' => [ 
-                'max' => '90', 
-                'min' => '46.589722', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -3795,8 +3795,6 @@ class KZ_Kazakhstan extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

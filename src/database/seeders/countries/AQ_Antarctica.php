@@ -1,84 +1,84 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class AQ_Antarctica extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class AQ_Antarctica extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'oceania';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Antarctica';
+        $this->official_name = 'Antarctica';
+        $this->iso_alpha_2 = 'AQ';
+        $this->iso_alpha_3 = 'ATA';
+        $this->iso_numeric = '10';
+        $this->international_phone = '672';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'oceania'; 
+        $this->languages = [];
+        $this->tld = ['.aq'];
+        $this->wmo = 'AA';
+        $this->geoname_id = '6697173';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Antarctica'; 
-        $this->official_name = 'Antarctica'; 
-        $this->iso_alpha_2 = 'AQ'; 
-        $this->iso_alpha_3 = 'ATA'; 
-        $this->iso_numeric = '10'; 
-        $this->international_phone = '672'; 
+        $this->emoji = [
+            'img' => '🇦🇶',
+            'uCode' => 'U+1F1E6 U+1F1F6',
+        ];
+        $this->color = [
+            'hex' => [
+            ],
+            'rgb' => [
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '90 00 S',
+                'desc' => '-82.862752',
+            ],
+            'longitude' => [
+                'classic' => '0 00 E',
+                'desc' => '-135.0',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '-60.0',
+                'min' => '-90.0',
+            ],
+            'longitude' => [
+                'max' => '180.0',
+                'min' => '-180.0',
+            ],
+        ];
  
-        $this->languages = []; 
-        $this->tld = [".aq"]; 
-        $this->wmo = 'AA'; 
-        $this->geoname_id = '6697173'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇦🇶', 
-            'uCode' => 'U+1F1E6 U+1F1F6', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-            ], 
-            'rgb' => [ 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '90 00 S', 
-                'desc' => '-82.862752', 
-            ], 
-            'longitude' => [ 
-                'classic' => '0 00 E', 
-                'desc' => '-135.0', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '-60.0', 
-                'min' => '-90.0', 
-            ], 
-            'longitude' => [ 
-                'max' => '180.0', 
-                'min' => '-180.0', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -25538,8 +25538,6 @@ class AQ_Antarctica extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

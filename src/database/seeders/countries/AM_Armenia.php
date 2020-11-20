@@ -1,90 +1,90 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class AM_Armenia extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class AM_Armenia extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'asia';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Armenia';
+        $this->official_name = 'Republic of Armenia';
+        $this->iso_alpha_2 = 'AM';
+        $this->iso_alpha_3 = 'ARM';
+        $this->iso_numeric = '51';
+        $this->international_phone = '374';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'asia'; 
+        $this->languages = ['hy','ru'];
+        $this->tld = ['.am'];
+        $this->wmo = 'AY';
+        $this->geoname_id = '174982';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Armenia'; 
-        $this->official_name = 'Republic of Armenia'; 
-        $this->iso_alpha_2 = 'AM'; 
-        $this->iso_alpha_3 = 'ARM'; 
-        $this->iso_numeric = '51'; 
-        $this->international_phone = '374'; 
+        $this->emoji = [
+            'img' => '🇦🇲',
+            'uCode' => 'U+1F1E6 U+1F1F2',
+        ];
+        $this->color = [
+            'hex' => [
+                '#ff0000',
+                '#0000ff',
+                '#ffa500',
+            ],
+            'rgb' => [
+                '255,0,0',
+                '0,0,255',
+                '255,165,0',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '40 00 N',
+                'desc' => '40.29266357421875',
+            ],
+            'longitude' => [
+                'classic' => '45 00 E',
+                'desc' => '44.93947219848633',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '41.3',
+                'min' => '38.894167',
+            ],
+            'longitude' => [
+                'max' => '46.560556',
+                'min' => '43.4425',
+            ],
+        ];
  
-        $this->languages = ["hy","ru"]; 
-        $this->tld = [".am"]; 
-        $this->wmo = 'AY'; 
-        $this->geoname_id = '174982'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇦🇲', 
-            'uCode' => 'U+1F1E6 U+1F1F2', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#ff0000', 
-                '#0000ff', 
-                '#ffa500', 
-            ], 
-            'rgb' => [ 
-                '255,0,0', 
-                '0,0,255', 
-                '255,165,0', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '40 00 N', 
-                'desc' => '40.29266357421875', 
-            ], 
-            'longitude' => [ 
-                'classic' => '45 00 E', 
-                'desc' => '44.93947219848633', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '41.3', 
-                'min' => '38.894167', 
-            ], 
-            'longitude' => [ 
-                'max' => '46.560556', 
-                'min' => '43.4425', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -529,8 +529,6 @@ class AM_Armenia extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

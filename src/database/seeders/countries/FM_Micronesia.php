@@ -1,84 +1,84 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class FM_Micronesia extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class FM_Micronesia extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'oceania';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Micronesia';
+        $this->official_name = 'Federated States of Micronesia';
+        $this->iso_alpha_2 = 'FM';
+        $this->iso_alpha_3 = 'FSM';
+        $this->iso_numeric = '583';
+        $this->international_phone = '691';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'oceania'; 
+        $this->languages = ['en'];
+        $this->tld = ['.fm'];
+        $this->wmo = '0';
+        $this->geoname_id = '2081918';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Micronesia'; 
-        $this->official_name = 'Federated States of Micronesia'; 
-        $this->iso_alpha_2 = 'FM'; 
-        $this->iso_alpha_3 = 'FSM'; 
-        $this->iso_numeric = '583'; 
-        $this->international_phone = '691'; 
+        $this->emoji = [
+            'img' => '🇫🇲',
+            'uCode' => 'U+1F1EB U+1F1F2',
+        ];
+        $this->color = [
+            'hex' => [
+            ],
+            'rgb' => [
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '6 55 N',
+                'desc' => '6.869349002838135',
+            ],
+            'longitude' => [
+                'classic' => '158 15 E',
+                'desc' => '158.187255859375',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '10.093611',
+                'min' => '1.026389',
+            ],
+            'longitude' => [
+                'max' => '163.034444',
+                'min' => '137.425',
+            ],
+        ];
  
-        $this->languages = ["en"]; 
-        $this->tld = [".fm"]; 
-        $this->wmo = '0'; 
-        $this->geoname_id = '2081918'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇫🇲', 
-            'uCode' => 'U+1F1EB U+1F1F2', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-            ], 
-            'rgb' => [ 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '6 55 N', 
-                'desc' => '6.869349002838135', 
-            ], 
-            'longitude' => [ 
-                'classic' => '158 15 E', 
-                'desc' => '158.187255859375', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '10.093611', 
-                'min' => '1.026389', 
-            ], 
-            'longitude' => [ 
-                'max' => '163.034444', 
-                'min' => '137.425', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -406,8 +406,6 @@ class FM_Micronesia extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

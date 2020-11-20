@@ -1,94 +1,94 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class CF_CentralAfricanRepublic extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class CF_CentralAfricanRepublic extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'africa';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Central African Republic';
+        $this->official_name = 'Central African Republic';
+        $this->iso_alpha_2 = 'CF';
+        $this->iso_alpha_3 = 'CAF';
+        $this->iso_numeric = '140';
+        $this->international_phone = '236';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'africa'; 
+        $this->languages = ['fr','sg'];
+        $this->tld = ['.cf'];
+        $this->wmo = 'CE';
+        $this->geoname_id = '239880';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Central African Republic'; 
-        $this->official_name = 'Central African Republic'; 
-        $this->iso_alpha_2 = 'CF'; 
-        $this->iso_alpha_3 = 'CAF'; 
-        $this->iso_numeric = '140'; 
-        $this->international_phone = '236'; 
+        $this->emoji = [
+            'img' => '🇨🇫',
+            'uCode' => 'U+1F1E8 U+1F1EB',
+        ];
+        $this->color = [
+            'hex' => [
+                '#0000ff',
+                '#ffffff',
+                '#008000',
+                '#ffff00',
+                '#ff0000',
+            ],
+            'rgb' => [
+                '0,0,255',
+                '255,255,255',
+                '0,128,0',
+                '255,255,0',
+                '255,0,0',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '7 00 N',
+                'desc' => '6.574123382568359',
+            ],
+            'longitude' => [
+                'classic' => '21 00 E',
+                'desc' => '20.486923217773438',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '10.7',
+                'min' => '2.433333',
+            ],
+            'longitude' => [
+                'max' => '27.216667',
+                'min' => '14.533333',
+            ],
+        ];
  
-        $this->languages = ["fr","sg"]; 
-        $this->tld = [".cf"]; 
-        $this->wmo = 'CE'; 
-        $this->geoname_id = '239880'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇨🇫', 
-            'uCode' => 'U+1F1E8 U+1F1EB', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#0000ff', 
-                '#ffffff', 
-                '#008000', 
-                '#ffff00', 
-                '#ff0000', 
-            ], 
-            'rgb' => [ 
-                '0,0,255', 
-                '255,255,255', 
-                '0,128,0', 
-                '255,255,0', 
-                '255,0,0', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '7 00 N', 
-                'desc' => '6.574123382568359', 
-            ], 
-            'longitude' => [ 
-                'classic' => '21 00 E', 
-                'desc' => '20.486923217773438', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '10.7', 
-                'min' => '2.433333', 
-            ], 
-            'longitude' => [ 
-                'max' => '27.216667', 
-                'min' => '14.533333', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -1205,8 +1205,6 @@ class CF_CentralAfricanRepublic extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

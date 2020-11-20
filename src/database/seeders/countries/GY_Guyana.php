@@ -1,88 +1,88 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class GY_Guyana extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class GY_Guyana extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'americas';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Guyana';
+        $this->official_name = 'Co-operative Republic of Guyana';
+        $this->iso_alpha_2 = 'GY';
+        $this->iso_alpha_3 = 'GUY';
+        $this->iso_numeric = '328';
+        $this->international_phone = '592';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'americas'; 
+        $this->languages = ['en'];
+        $this->tld = ['.gy'];
+        $this->wmo = 'GY';
+        $this->geoname_id = '3378535';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Guyana'; 
-        $this->official_name = 'Co-operative Republic of Guyana'; 
-        $this->iso_alpha_2 = 'GY'; 
-        $this->iso_alpha_3 = 'GUY'; 
-        $this->iso_numeric = '328'; 
-        $this->international_phone = '592'; 
+        $this->emoji = [
+            'img' => '🇬🇾',
+            'uCode' => 'U+1F1EC U+1F1FE',
+        ];
+        $this->color = [
+            'hex' => [
+                '#fcf686',
+                '#119430',
+            ],
+            'rgb' => [
+                '252,246,134',
+                '17,148,48',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '5 00 N',
+                'desc' => '4.917311191558838',
+            ],
+            'longitude' => [
+                'classic' => '59 00 W',
+                'desc' => '-58.94346237182617',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '8.433333',
+                'min' => '1.316667',
+            ],
+            'longitude' => [
+                'max' => '-56',
+                'min' => '-61.233333',
+            ],
+        ];
  
-        $this->languages = ["en"]; 
-        $this->tld = [".gy"]; 
-        $this->wmo = 'GY'; 
-        $this->geoname_id = '3378535'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇬🇾', 
-            'uCode' => 'U+1F1EC U+1F1FE', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#fcf686', 
-                '#119430', 
-            ], 
-            'rgb' => [ 
-                '252,246,134', 
-                '17,148,48', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '5 00 N', 
-                'desc' => '4.917311191558838', 
-            ], 
-            'longitude' => [ 
-                'classic' => '59 00 W', 
-                'desc' => '-58.94346237182617', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '8.433333', 
-                'min' => '1.316667', 
-            ], 
-            'longitude' => [ 
-                'max' => '-56', 
-                'min' => '-61.233333', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -853,8 +853,6 @@ class GY_Guyana extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

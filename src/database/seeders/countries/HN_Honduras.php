@@ -1,88 +1,88 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class HN_Honduras extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class HN_Honduras extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'americas';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Honduras';
+        $this->official_name = 'Republic of Honduras';
+        $this->iso_alpha_2 = 'HN';
+        $this->iso_alpha_3 = 'HND';
+        $this->iso_numeric = '340';
+        $this->international_phone = '504';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'americas'; 
+        $this->languages = ['es'];
+        $this->tld = ['.hn'];
+        $this->wmo = 'HO';
+        $this->geoname_id = '3608932';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Honduras'; 
-        $this->official_name = 'Republic of Honduras'; 
-        $this->iso_alpha_2 = 'HN'; 
-        $this->iso_alpha_3 = 'HND'; 
-        $this->iso_numeric = '340'; 
-        $this->international_phone = '504'; 
+        $this->emoji = [
+            'img' => '🇭🇳',
+            'uCode' => 'U+1F1ED U+1F1F3',
+        ];
+        $this->color = [
+            'hex' => [
+                '#0000ff',
+                '#ffffff',
+            ],
+            'rgb' => [
+                '0,0,255',
+                '255,255,255',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '15 00 N',
+                'desc' => '14.975032806396484',
+            ],
+            'longitude' => [
+                'classic' => '86 30 W',
+                'desc' => '-86.2647705078125',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '17.45',
+                'min' => '13.016667',
+            ],
+            'longitude' => [
+                'max' => '-82.5',
+                'min' => '-89.333333',
+            ],
+        ];
  
-        $this->languages = ["es"]; 
-        $this->tld = [".hn"]; 
-        $this->wmo = 'HO'; 
-        $this->geoname_id = '3608932'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇭🇳', 
-            'uCode' => 'U+1F1ED U+1F1F3', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#0000ff', 
-                '#ffffff', 
-            ], 
-            'rgb' => [ 
-                '0,0,255', 
-                '255,255,255', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '15 00 N', 
-                'desc' => '14.975032806396484', 
-            ], 
-            'longitude' => [ 
-                'classic' => '86 30 W', 
-                'desc' => '-86.2647705078125', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '17.45', 
-                'min' => '13.016667', 
-            ], 
-            'longitude' => [ 
-                'max' => '-82.5', 
-                'min' => '-89.333333', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -899,8 +899,6 @@ class HN_Honduras extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

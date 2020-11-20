@@ -1,84 +1,84 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class KI_Kiribati extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class KI_Kiribati extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'oceania';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Kiribati';
+        $this->official_name = 'Independent and Sovereign Republic of Kiribati';
+        $this->iso_alpha_2 = 'KI';
+        $this->iso_alpha_3 = 'KIR';
+        $this->iso_numeric = '296';
+        $this->international_phone = '686';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'oceania'; 
+        $this->languages = ['en'];
+        $this->tld = ['.ki'];
+        $this->wmo = 'KB';
+        $this->geoname_id = '4030945';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Kiribati'; 
-        $this->official_name = 'Independent and Sovereign Republic of Kiribati'; 
-        $this->iso_alpha_2 = 'KI'; 
-        $this->iso_alpha_3 = 'KIR'; 
-        $this->iso_numeric = '296'; 
-        $this->international_phone = '686'; 
+        $this->emoji = [
+            'img' => '🇰🇮',
+            'uCode' => 'U+1F1F0 U+1F1EE',
+        ];
+        $this->color = [
+            'hex' => [
+            ],
+            'rgb' => [
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '1 25 N',
+                'desc' => '1.842833161354065',
+            ],
+            'longitude' => [
+                'classic' => '173 00 E',
+                'desc' => '-157.6758270263672',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '4.716667',
+                'min' => '-10.3',
+            ],
+            'longitude' => [
+                'max' => '-174.533333',
+                'min' => '179.716667',
+            ],
+        ];
  
-        $this->languages = ["en"]; 
-        $this->tld = [".ki"]; 
-        $this->wmo = 'KB'; 
-        $this->geoname_id = '4030945'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇰🇮', 
-            'uCode' => 'U+1F1F0 U+1F1EE', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-            ], 
-            'rgb' => [ 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '1 25 N', 
-                'desc' => '1.842833161354065', 
-            ], 
-            'longitude' => [ 
-                'classic' => '173 00 E', 
-                'desc' => '-157.6758270263672', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '4.716667', 
-                'min' => '-10.3', 
-            ], 
-            'longitude' => [ 
-                'max' => '-174.533333', 
-                'min' => '179.716667', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -961,8 +961,6 @@ class KI_Kiribati extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

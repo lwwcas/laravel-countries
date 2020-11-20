@@ -1,92 +1,92 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class IN_India extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class IN_India extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'asia';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'India';
+        $this->official_name = 'Republic of India';
+        $this->iso_alpha_2 = 'IN';
+        $this->iso_alpha_3 = 'IND';
+        $this->iso_numeric = '356';
+        $this->international_phone = '91';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'asia'; 
+        $this->languages = ['hi','en'];
+        $this->tld = ['.in'];
+        $this->wmo = 'IN';
+        $this->geoname_id = '1269750';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'India'; 
-        $this->official_name = 'Republic of India'; 
-        $this->iso_alpha_2 = 'IN'; 
-        $this->iso_alpha_3 = 'IND'; 
-        $this->iso_numeric = '356'; 
-        $this->international_phone = '91'; 
+        $this->emoji = [
+            'img' => '🇮🇳',
+            'uCode' => 'U+1F1EE U+1F1F3',
+        ];
+        $this->color = [
+            'hex' => [
+                '#ffa500',
+                '#00008b',
+                '#ffffff',
+                '#008000',
+            ],
+            'rgb' => [
+                '255,165,0',
+                '0,0,139',
+                '255,255,255',
+                '0,128,0',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '20 00 N',
+                'desc' => '23.4060115814209',
+            ],
+            'longitude' => [
+                'classic' => '77 00 E',
+                'desc' => '79.45809173583984',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '35.9558333333',
+                'min' => '6.755556',
+            ],
+            'longitude' => [
+                'max' => '97.35',
+                'min' => '67.016667',
+            ],
+        ];
  
-        $this->languages = ["hi","en"]; 
-        $this->tld = [".in"]; 
-        $this->wmo = 'IN'; 
-        $this->geoname_id = '1269750'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇮🇳', 
-            'uCode' => 'U+1F1EE U+1F1F3', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#ffa500', 
-                '#00008b', 
-                '#ffffff', 
-                '#008000', 
-            ], 
-            'rgb' => [ 
-                '255,165,0', 
-                '0,0,139', 
-                '255,255,255', 
-                '0,128,0', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '20 00 N', 
-                'desc' => '23.4060115814209', 
-            ], 
-            'longitude' => [ 
-                'classic' => '77 00 E', 
-                'desc' => '79.45809173583984', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '35.9558333333', 
-                'min' => '6.755556', 
-            ], 
-            'longitude' => [ 
-                'max' => '97.35', 
-                'min' => '67.016667', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -5911,8 +5911,6 @@ class IN_India extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

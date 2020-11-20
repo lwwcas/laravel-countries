@@ -1,88 +1,88 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class FI_Finland extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class FI_Finland extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'europe';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Finland';
+        $this->official_name = 'Republic of Finland';
+        $this->iso_alpha_2 = 'FI';
+        $this->iso_alpha_3 = 'FIN';
+        $this->iso_numeric = '246';
+        $this->international_phone = '358';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'europe'; 
+        $this->languages = ['fi','sv'];
+        $this->tld = ['.fi'];
+        $this->wmo = 'FI';
+        $this->geoname_id = '660013';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Finland'; 
-        $this->official_name = 'Republic of Finland'; 
-        $this->iso_alpha_2 = 'FI'; 
-        $this->iso_alpha_3 = 'FIN'; 
-        $this->iso_numeric = '246'; 
-        $this->international_phone = '358'; 
+        $this->emoji = [
+            'img' => '🇫🇮',
+            'uCode' => 'U+1F1EB U+1F1EE',
+        ];
+        $this->color = [
+            'hex' => [
+                '#ffffff',
+                '#0000ff',
+            ],
+            'rgb' => [
+                '255,255,255',
+                '0,0,255',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '64 00 N',
+                'desc' => '64.28858184814453',
+            ],
+            'longitude' => [
+                'classic' => '26 00 E',
+                'desc' => '25.989402770996094',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '70.083333',
+                'min' => '58.83',
+            ],
+            'longitude' => [
+                'max' => '32',
+                'min' => '18',
+            ],
+        ];
  
-        $this->languages = ["fi","sv"]; 
-        $this->tld = [".fi"]; 
-        $this->wmo = 'FI'; 
-        $this->geoname_id = '660013'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇫🇮', 
-            'uCode' => 'U+1F1EB U+1F1EE', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#ffffff', 
-                '#0000ff', 
-            ], 
-            'rgb' => [ 
-                '255,255,255', 
-                '0,0,255', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '64 00 N', 
-                'desc' => '64.28858184814453', 
-            ], 
-            'longitude' => [ 
-                'classic' => '26 00 E', 
-                'desc' => '25.989402770996094', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '70.083333', 
-                'min' => '58.83', 
-            ], 
-            'longitude' => [ 
-                'max' => '32', 
-                'min' => '18', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -2169,8 +2169,6 @@ class FI_Finland extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

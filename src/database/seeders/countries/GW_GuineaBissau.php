@@ -1,92 +1,92 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class GW_GuineaBissau extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class GW_GuineaBissau extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'africa';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Guinea-Bissau';
+        $this->official_name = 'Republic of Guinea-Bissau';
+        $this->iso_alpha_2 = 'GW';
+        $this->iso_alpha_3 = 'GNB';
+        $this->iso_numeric = '624';
+        $this->international_phone = '245';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'africa'; 
+        $this->languages = ['pt'];
+        $this->tld = ['.gw'];
+        $this->wmo = 'GW';
+        $this->geoname_id = '2372248';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Guinea-Bissau'; 
-        $this->official_name = 'Republic of Guinea-Bissau'; 
-        $this->iso_alpha_2 = 'GW'; 
-        $this->iso_alpha_3 = 'GNB'; 
-        $this->iso_numeric = '624'; 
-        $this->international_phone = '245'; 
+        $this->emoji = [
+            'img' => '🇬🇼',
+            'uCode' => 'U+1F1EC U+1F1FC',
+        ];
+        $this->color = [
+            'hex' => [
+                '#ff0000',
+                '#ffff00',
+                '#008000',
+                '#000000',
+            ],
+            'rgb' => [
+                '255,0,0',
+                '255,255,0',
+                '0,128,0',
+                '0,0,0',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '12 00 N',
+                'desc' => '12.115862846374512',
+            ],
+            'longitude' => [
+                'classic' => '15 00 W',
+                'desc' => '-14.748136520385742',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '12.683333',
+                'min' => '5',
+            ],
+            'longitude' => [
+                'max' => '-4',
+                'min' => '-16.651944',
+            ],
+        ];
  
-        $this->languages = ["pt"]; 
-        $this->tld = [".gw"]; 
-        $this->wmo = 'GW'; 
-        $this->geoname_id = '2372248'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇬🇼', 
-            'uCode' => 'U+1F1EC U+1F1FC', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#ff0000', 
-                '#ffff00', 
-                '#008000', 
-                '#000000', 
-            ], 
-            'rgb' => [ 
-                '255,0,0', 
-                '255,255,0', 
-                '0,128,0', 
-                '0,0,0', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '12 00 N', 
-                'desc' => '12.115862846374512', 
-            ], 
-            'longitude' => [ 
-                'classic' => '15 00 W', 
-                'desc' => '-14.748136520385742', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '12.683333', 
-                'min' => '5', 
-            ], 
-            'longitude' => [ 
-                'max' => '-4', 
-                'min' => '-16.651944', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -862,8 +862,6 @@ class GW_GuineaBissau extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

@@ -1,90 +1,90 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class DE_Germany extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class DE_Germany extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'europe';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Germany';
+        $this->official_name = 'Federal Republic of Germany';
+        $this->iso_alpha_2 = 'DE';
+        $this->iso_alpha_3 = 'DEU';
+        $this->iso_numeric = '276';
+        $this->international_phone = '49';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'europe'; 
+        $this->languages = ['de'];
+        $this->tld = ['.de'];
+        $this->wmo = 'DL';
+        $this->geoname_id = '2921044';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Germany'; 
-        $this->official_name = 'Federal Republic of Germany'; 
-        $this->iso_alpha_2 = 'DE'; 
-        $this->iso_alpha_3 = 'DEU'; 
-        $this->iso_numeric = '276'; 
-        $this->international_phone = '49'; 
+        $this->emoji = [
+            'img' => '🇩🇪',
+            'uCode' => 'U+1F1E9 U+1F1EA',
+        ];
+        $this->color = [
+            'hex' => [
+                '#000000',
+                '#ff0000',
+                '#ffd700',
+            ],
+            'rgb' => [
+                '0,0,0',
+                '255,0,0',
+                '255,215,0',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '51 00 N',
+                'desc' => '51.20246505737305',
+            ],
+            'longitude' => [
+                'classic' => '9 00 E',
+                'desc' => '10.382203102111816',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '55.05',
+                'min' => '47.266667',
+            ],
+            'longitude' => [
+                'max' => '15.033333',
+                'min' => '5.9',
+            ],
+        ];
  
-        $this->languages = ["de"]; 
-        $this->tld = [".de"]; 
-        $this->wmo = 'DL'; 
-        $this->geoname_id = '2921044'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇩🇪', 
-            'uCode' => 'U+1F1E9 U+1F1EA', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#000000', 
-                '#ff0000', 
-                '#ffd700', 
-            ], 
-            'rgb' => [ 
-                '0,0,0', 
-                '255,0,0', 
-                '255,215,0', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '51 00 N', 
-                'desc' => '51.20246505737305', 
-            ], 
-            'longitude' => [ 
-                'classic' => '9 00 E', 
-                'desc' => '10.382203102111816', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '55.05', 
-                'min' => '47.266667', 
-            ], 
-            'longitude' => [ 
-                'max' => '15.033333', 
-                'min' => '5.9', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -2348,8 +2348,6 @@ class DE_Germany extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

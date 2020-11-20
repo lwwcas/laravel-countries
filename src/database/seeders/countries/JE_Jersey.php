@@ -1,84 +1,84 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class JE_Jersey extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class JE_Jersey extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'europe';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Jersey';
+        $this->official_name = 'Bailiwick of Jersey';
+        $this->iso_alpha_2 = 'JE';
+        $this->iso_alpha_3 = 'JEY';
+        $this->iso_numeric = '832';
+        $this->international_phone = '44';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'europe'; 
+        $this->languages = ['en','fr'];
+        $this->tld = ['.je'];
+        $this->wmo = '0';
+        $this->geoname_id = '3042142';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Jersey'; 
-        $this->official_name = 'Bailiwick of Jersey'; 
-        $this->iso_alpha_2 = 'JE'; 
-        $this->iso_alpha_3 = 'JEY'; 
-        $this->iso_numeric = '832'; 
-        $this->international_phone = '44'; 
+        $this->emoji = [
+            'img' => '🇯🇪',
+            'uCode' => 'U+1F1EF U+1F1EA',
+        ];
+        $this->color = [
+            'hex' => [
+            ],
+            'rgb' => [
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '49 15 N',
+                'desc' => '49.2285041809082',
+            ],
+            'longitude' => [
+                'classic' => '2 10 W',
+                'desc' => '-2.1228928565979004',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '49.305833',
+                'min' => '49.112778',
+            ],
+            'longitude' => [
+                'max' => '-1.927778',
+                'min' => '-2.253889',
+            ],
+        ];
  
-        $this->languages = ["en","fr"]; 
-        $this->tld = [".je"]; 
-        $this->wmo = '0'; 
-        $this->geoname_id = '3042142'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇯🇪', 
-            'uCode' => 'U+1F1EF U+1F1EA', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-            ], 
-            'rgb' => [ 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '49 15 N', 
-                'desc' => '49.2285041809082', 
-            ], 
-            'longitude' => [ 
-                'classic' => '2 10 W', 
-                'desc' => '-2.1228928565979004', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '49.305833', 
-                'min' => '49.112778', 
-            ], 
-            'longitude' => [ 
-                'max' => '-1.927778', 
-                'min' => '-2.253889', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -121,8 +121,6 @@ class JE_Jersey extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

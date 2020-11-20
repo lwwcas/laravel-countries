@@ -1,94 +1,94 @@
-<?php 
- 
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
- 
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
- 
-class AG_AntiguaandBarbuda extends Seeder 
-{  
- 
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
- 
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'americas'; 
- 
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Antigua and Barbuda'; 
-        $this->official_name = 'Antigua and Barbuda'; 
-        $this->iso_alpha_2 = 'AG'; 
-        $this->iso_alpha_3 = 'ATG'; 
-        $this->iso_numeric = '28'; 
-        $this->international_phone = '1-268'; 
- 
-        $this->languages = ["en"]; 
-        $this->tld = [".ag"]; 
-        $this->wmo = 'AT'; 
-        $this->geoname_id = '3576396'; 
- 
-        $this->emoji = [ 
-            'img' => '🇦🇬', 
-            'uCode' => 'U+1F1E6 U+1F1EC', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#ff0000', 
-                '#ffffff', 
-                '#0000ff', 
-                '#000000', 
-                '#ffff00', 
-            ], 
-            'rgb' => [ 
-                '255,0,0', 
-                '255,255,255', 
-                '0,0,255', 
-                '0,0,0', 
-                '255,255,0', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '17 03 N', 
-                'desc' => '17.09273910522461', 
-            ], 
-            'longitude' => [ 
-                'classic' => '61 48 W', 
-                'desc' => '-61.81040954589844', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '17.733333', 
-                'min' => '16.916667', 
-            ], 
-            'longitude' => [ 
-                'max' => '-61.666667', 
-                'min' => '-62.333333', 
-            ], 
-        ]; 
- 
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+<?php
+
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class AG_AntiguaandBarbuda extends Seeder
+{
+
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
+
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'americas';
+
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Antigua and Barbuda';
+        $this->official_name = 'Antigua and Barbuda';
+        $this->iso_alpha_2 = 'AG';
+        $this->iso_alpha_3 = 'ATG';
+        $this->iso_numeric = '28';
+        $this->international_phone = '1-268';
+
+        $this->languages = ['en'];
+        $this->tld = ['.ag'];
+        $this->wmo = 'AT';
+        $this->geoname_id = '3576396';
+
+        $this->emoji = [
+            'img' => '🇦🇬',
+            'uCode' => 'U+1F1E6 U+1F1EC',
+        ];
+        $this->color = [
+            'hex' => [
+                '#ff0000',
+                '#ffffff',
+                '#0000ff',
+                '#000000',
+                '#ffff00',
+            ],
+            'rgb' => [
+                '255,0,0',
+                '255,255,255',
+                '0,0,255',
+                '0,0,0',
+                '255,255,0',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '17 03 N',
+                'desc' => '17.09273910522461',
+            ],
+            'longitude' => [
+                'classic' => '61 48 W',
+                'desc' => '-61.81040954589844',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '17.733333',
+                'min' => '16.916667',
+            ],
+            'longitude' => [
+                'max' => '-61.666667',
+                'min' => '-62.333333',
+            ],
+        ];
+
+        $this->geographical = json_decode($this->geographical(), true);
+
+        Builder::country($this);
+    }
+
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -159,8 +159,6 @@ class AG_AntiguaandBarbuda extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

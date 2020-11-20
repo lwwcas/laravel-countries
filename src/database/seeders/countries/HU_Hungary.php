@@ -1,90 +1,90 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class HU_Hungary extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class HU_Hungary extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'europe';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Hungary';
+        $this->official_name = 'Hungary';
+        $this->iso_alpha_2 = 'HU';
+        $this->iso_alpha_3 = 'HUN';
+        $this->iso_numeric = '348';
+        $this->international_phone = '36';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'europe'; 
+        $this->languages = ['hu'];
+        $this->tld = ['.hu'];
+        $this->wmo = 'HU';
+        $this->geoname_id = '719819';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Hungary'; 
-        $this->official_name = 'Hungary'; 
-        $this->iso_alpha_2 = 'HU'; 
-        $this->iso_alpha_3 = 'HUN'; 
-        $this->iso_numeric = '348'; 
-        $this->international_phone = '36'; 
+        $this->emoji = [
+            'img' => '🇭🇺',
+            'uCode' => 'U+1F1ED U+1F1FA',
+        ];
+        $this->color = [
+            'hex' => [
+                '#ff0000',
+                '#ffffff',
+                '#008000',
+            ],
+            'rgb' => [
+                '255,0,0',
+                '255,255,255',
+                '0,128,0',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '47 00 N',
+                'desc' => '47.165733337402344',
+            ],
+            'longitude' => [
+                'classic' => '20 00 E',
+                'desc' => '19.416574478149414',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '48.983333',
+                'min' => '45.75',
+            ],
+            'longitude' => [
+                'max' => '22.866667',
+                'min' => '16.183333',
+            ],
+        ];
  
-        $this->languages = ["hu"]; 
-        $this->tld = [".hu"]; 
-        $this->wmo = 'HU'; 
-        $this->geoname_id = '719819'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇭🇺', 
-            'uCode' => 'U+1F1ED U+1F1FA', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#ff0000', 
-                '#ffffff', 
-                '#008000', 
-            ], 
-            'rgb' => [ 
-                '255,0,0', 
-                '255,255,255', 
-                '0,128,0', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '47 00 N', 
-                'desc' => '47.165733337402344', 
-            ], 
-            'longitude' => [ 
-                'classic' => '20 00 E', 
-                'desc' => '19.416574478149414', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '48.983333', 
-                'min' => '45.75', 
-            ], 
-            'longitude' => [ 
-                'max' => '22.866667', 
-                'min' => '16.183333', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -717,8 +717,6 @@ class HU_Hungary extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

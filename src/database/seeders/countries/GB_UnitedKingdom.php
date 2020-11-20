@@ -1,90 +1,90 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class GB_UnitedKingdom extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class GB_UnitedKingdom extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'europe';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'United Kingdom';
+        $this->official_name = 'United Kingdom of Great Britain and Northern Ireland';
+        $this->iso_alpha_2 = 'GB';
+        $this->iso_alpha_3 = 'GBR';
+        $this->iso_numeric = '826';
+        $this->international_phone = '44';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'europe'; 
+        $this->languages = ['en'];
+        $this->tld = ['.uk'];
+        $this->wmo = 'UK';
+        $this->geoname_id = '2635167';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'United Kingdom'; 
-        $this->official_name = 'United Kingdom of Great Britain and Northern Ireland'; 
-        $this->iso_alpha_2 = 'GB'; 
-        $this->iso_alpha_3 = 'GBR'; 
-        $this->iso_numeric = '826'; 
-        $this->international_phone = '44'; 
+        $this->emoji = [
+            'img' => '🇬🇧',
+            'uCode' => 'U+1F1EC U+1F1E7',
+        ];
+        $this->color = [
+            'hex' => [
+                '#ff0000',
+                '#ffffff',
+                '#0000cc',
+            ],
+            'rgb' => [
+                '255,0,0',
+                '255,255,255',
+                '0,0,204',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '54 00 N',
+                'desc' => '54.56088638305664',
+            ],
+            'longitude' => [
+                'classic' => '2 00 W',
+                'desc' => '-2.2125117778778076',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '61.5',
+                'min' => '49.866667',
+            ],
+            'longitude' => [
+                'max' => '2.866667',
+                'min' => '-13.65',
+            ],
+        ];
  
-        $this->languages = ["en"]; 
-        $this->tld = [".uk"]; 
-        $this->wmo = 'UK'; 
-        $this->geoname_id = '2635167'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇬🇧', 
-            'uCode' => 'U+1F1EC U+1F1E7', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#ff0000', 
-                '#ffffff', 
-                '#0000cc', 
-            ], 
-            'rgb' => [ 
-                '255,0,0', 
-                '255,255,255', 
-                '0,0,204', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '54 00 N', 
-                'desc' => '54.56088638305664', 
-            ], 
-            'longitude' => [ 
-                'classic' => '2 00 W', 
-                'desc' => '-2.2125117778778076', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '61.5', 
-                'min' => '49.866667', 
-            ], 
-            'longitude' => [ 
-                'max' => '2.866667', 
-                'min' => '-13.65', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -4189,8 +4189,6 @@ class GB_UnitedKingdom extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

@@ -1,90 +1,90 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class KN_SaintKittsandNevis extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class KN_SaintKittsandNevis extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'americas';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Saint Kitts and Nevis';
+        $this->official_name = 'Federation of Saint Christopher and Nevisa';
+        $this->iso_alpha_2 = 'KN';
+        $this->iso_alpha_3 = 'KNA';
+        $this->iso_numeric = '659';
+        $this->international_phone = '1-869';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'americas'; 
+        $this->languages = ['en'];
+        $this->tld = ['.kn'];
+        $this->wmo = 'AT';
+        $this->geoname_id = '3575174';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Saint Kitts and Nevis'; 
-        $this->official_name = 'Federation of Saint Christopher and Nevisa'; 
-        $this->iso_alpha_2 = 'KN'; 
-        $this->iso_alpha_3 = 'KNA'; 
-        $this->iso_numeric = '659'; 
-        $this->international_phone = '1-869'; 
+        $this->emoji = [
+            'img' => '🇰🇳',
+            'uCode' => 'U+1F1F0 U+1F1F3',
+        ];
+        $this->color = [
+            'hex' => [
+                '#008000',
+                '#ff0000',
+                '#ffffff',
+            ],
+            'rgb' => [
+                '0,128,0',
+                '255,0,0',
+                '255,255,255',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '17 20 N',
+                'desc' => '17.24447250366211',
+            ],
+            'longitude' => [
+                'classic' => '62 45 W',
+                'desc' => '-62.643184661865234',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '17.416667',
+                'min' => '17.1',
+            ],
+            'longitude' => [
+                'max' => '-62.516667',
+                'min' => '-62.85',
+            ],
+        ];
  
-        $this->languages = ["en"]; 
-        $this->tld = [".kn"]; 
-        $this->wmo = 'AT'; 
-        $this->geoname_id = '3575174'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇰🇳', 
-            'uCode' => 'U+1F1F0 U+1F1F3', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#008000', 
-                '#ff0000', 
-                '#ffffff', 
-            ], 
-            'rgb' => [ 
-                '0,128,0', 
-                '255,0,0', 
-                '255,255,255', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '17 20 N', 
-                'desc' => '17.24447250366211', 
-            ], 
-            'longitude' => [ 
-                'classic' => '62 45 W', 
-                'desc' => '-62.643184661865234', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '17.416667', 
-                'min' => '17.1', 
-            ], 
-            'longitude' => [ 
-                'max' => '-62.516667', 
-                'min' => '-62.85', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -162,8 +162,6 @@ class KN_SaintKittsandNevis extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

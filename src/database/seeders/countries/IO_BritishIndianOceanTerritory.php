@@ -1,84 +1,84 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class IO_BritishIndianOceanTerritory extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class IO_BritishIndianOceanTerritory extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'oceania';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'British Indian Ocean Territory';
+        $this->official_name = 'British Indian Ocean Territory';
+        $this->iso_alpha_2 = 'IO';
+        $this->iso_alpha_3 = 'IOT';
+        $this->iso_numeric = '86';
+        $this->international_phone = '246';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'oceania'; 
+        $this->languages = ['en'];
+        $this->tld = ['.io'];
+        $this->wmo = '0';
+        $this->geoname_id = '1282588';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'British Indian Ocean Territory'; 
-        $this->official_name = 'British Indian Ocean Territory'; 
-        $this->iso_alpha_2 = 'IO'; 
-        $this->iso_alpha_3 = 'IOT'; 
-        $this->iso_numeric = '86'; 
-        $this->international_phone = '246'; 
+        $this->emoji = [
+            'img' => '🇮🇴',
+            'uCode' => 'U+1F1EE U+1F1F4',
+        ];
+        $this->color = [
+            'hex' => [
+            ],
+            'rgb' => [
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '6 00 S',
+                'desc' => '-6.196269989013672',
+            ],
+            'longitude' => [
+                'classic' => '71 30 E',
+                'desc' => '71.34793090820312',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '-5.233333',
+                'min' => '-7.35',
+            ],
+            'longitude' => [
+                'max' => '72.483333',
+                'min' => '71.265278',
+            ],
+        ];
  
-        $this->languages = ["en"]; 
-        $this->tld = [".io"]; 
-        $this->wmo = '0'; 
-        $this->geoname_id = '1282588'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇮🇴', 
-            'uCode' => 'U+1F1EE U+1F1F4', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-            ], 
-            'rgb' => [ 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '6 00 S', 
-                'desc' => '-6.196269989013672', 
-            ], 
-            'longitude' => [ 
-                'classic' => '71 30 E', 
-                'desc' => '71.34793090820312', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '-5.233333', 
-                'min' => '-7.35', 
-            ], 
-            'longitude' => [ 
-                'max' => '72.483333', 
-                'min' => '71.265278', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -252,8 +252,6 @@ class IO_BritishIndianOceanTerritory extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

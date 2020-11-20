@@ -1,90 +1,90 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class CD_CongoKinshasa extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class CD_CongoKinshasa extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'africa';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Congo - Kinshasa';
+        $this->official_name = 'Democratic Republic of the Congo';
+        $this->iso_alpha_2 = 'CD';
+        $this->iso_alpha_3 = 'COD';
+        $this->iso_numeric = '180';
+        $this->international_phone = '243';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'africa'; 
+        $this->languages = ['fr','ln','kg','sw','lu'];
+        $this->tld = ['.cd'];
+        $this->wmo = 'ZR';
+        $this->geoname_id = '203312';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Congo - Kinshasa'; 
-        $this->official_name = 'Democratic Republic of the Congo'; 
-        $this->iso_alpha_2 = 'CD'; 
-        $this->iso_alpha_3 = 'COD'; 
-        $this->iso_numeric = '180'; 
-        $this->international_phone = '243'; 
+        $this->emoji = [
+            'img' => '🇨🇩',
+            'uCode' => 'U+1F1E8 U+1F1E9',
+        ];
+        $this->color = [
+            'hex' => [
+                '#007fff',
+                '#ffff00',
+                '#ff0000',
+            ],
+            'rgb' => [
+                '0,127,255',
+                '255,255,0',
+                '255,0,0',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '0 00 N',
+                'desc' => '-2.879866123199463',
+            ],
+            'longitude' => [
+                'classic' => '25 00 E',
+                'desc' => '23.6563777923584',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '5.133333',
+                'min' => '-13.466667',
+            ],
+            'longitude' => [
+                'max' => '31.233333',
+                'min' => '12.266667',
+            ],
+        ];
  
-        $this->languages = ["fr","ln","kg","sw","lu"]; 
-        $this->tld = [".cd"]; 
-        $this->wmo = 'ZR'; 
-        $this->geoname_id = '203312'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇨🇩', 
-            'uCode' => 'U+1F1E8 U+1F1E9', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#007fff', 
-                '#ffff00', 
-                '#ff0000', 
-            ], 
-            'rgb' => [ 
-                '0,127,255', 
-                '255,255,0', 
-                '255,0,0', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '0 00 N', 
-                'desc' => '-2.879866123199463', 
-            ], 
-            'longitude' => [ 
-                'classic' => '25 00 E', 
-                'desc' => '23.6563777923584', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '5.133333', 
-                'min' => '-13.466667', 
-            ], 
-            'longitude' => [ 
-                'max' => '31.233333', 
-                'min' => '12.266667', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -2308,8 +2308,6 @@ class CD_CongoKinshasa extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

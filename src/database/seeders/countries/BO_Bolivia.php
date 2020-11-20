@@ -1,90 +1,90 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class BO_Bolivia extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class BO_Bolivia extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'americas';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Bolivia';
+        $this->official_name = 'Plurinational State of Bolivia';
+        $this->iso_alpha_2 = 'BO';
+        $this->iso_alpha_3 = 'BOL';
+        $this->iso_numeric = '68';
+        $this->international_phone = '591';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'americas'; 
+        $this->languages = ['es','ay','qu'];
+        $this->tld = ['.bo'];
+        $this->wmo = 'BO';
+        $this->geoname_id = '3923057';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Bolivia'; 
-        $this->official_name = 'Plurinational State of Bolivia'; 
-        $this->iso_alpha_2 = 'BO'; 
-        $this->iso_alpha_3 = 'BOL'; 
-        $this->iso_numeric = '68'; 
-        $this->international_phone = '591'; 
+        $this->emoji = [
+            'img' => '🇧🇴',
+            'uCode' => 'U+1F1E7 U+1F1F4',
+        ];
+        $this->color = [
+            'hex' => [
+                '#ff0000',
+                '#ffff00',
+                '#008000',
+            ],
+            'rgb' => [
+                '255,0,0',
+                '255,255,0',
+                '0,128,0',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '17 00 S',
+                'desc' => '-16.713054656982422',
+            ],
+            'longitude' => [
+                'classic' => '65 00 W',
+                'desc' => '-64.6666488647461',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '-9.666667',
+                'min' => '-22.883333',
+            ],
+            'longitude' => [
+                'max' => '-57.566667',
+                'min' => '-69.6',
+            ],
+        ];
  
-        $this->languages = ["es","ay","qu"]; 
-        $this->tld = [".bo"]; 
-        $this->wmo = 'BO'; 
-        $this->geoname_id = '3923057'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇧🇴', 
-            'uCode' => 'U+1F1E7 U+1F1F4', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#ff0000', 
-                '#ffff00', 
-                '#008000', 
-            ], 
-            'rgb' => [ 
-                '255,0,0', 
-                '255,255,0', 
-                '0,128,0', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '17 00 S', 
-                'desc' => '-16.713054656982422', 
-            ], 
-            'longitude' => [ 
-                'classic' => '65 00 W', 
-                'desc' => '-64.6666488647461', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '-9.666667', 
-                'min' => '-22.883333', 
-            ], 
-            'longitude' => [ 
-                'max' => '-57.566667', 
-                'min' => '-69.6', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -1127,8 +1127,6 @@ class BO_Bolivia extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}

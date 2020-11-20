@@ -1,88 +1,88 @@
-<?php 
+<?php
  
-namespace Lwwcas\LaravelCountries\Database\Seeders\Countries; 
+namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
+
+use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+
+class GT_Guatemala extends Seeder
+{
  
-use Lwwcas\LaravelCountries\Database\Seeders\Builder; 
-use Illuminate\Database\Seeder; 
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $lang = 'en';
  
-class GT_Guatemala extends Seeder 
-{  
+    /**
+     * Attribute that defines the language of countries
+     *
+     * @var string
+     */
+    public $region = 'americas';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $lang = 'en'; 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->name = 'Guatemala';
+        $this->official_name = 'Republic of Guatemala';
+        $this->iso_alpha_2 = 'GT';
+        $this->iso_alpha_3 = 'GTM';
+        $this->iso_numeric = '320';
+        $this->international_phone = '502';
  
-    /** 
-    * Attribute that defines the language of countries 
-    *  
-    * @var string 
-    */ 
-    public $region = 'americas'; 
+        $this->languages = ['es'];
+        $this->tld = ['.gt'];
+        $this->wmo = 'GU';
+        $this->geoname_id = '3595528';
  
-    /** 
-    * Run the database seeds. 
-    *  
-    * @return void 
-    */ 
-    public function run() 
-    {  
-        $this->name = 'Guatemala'; 
-        $this->official_name = 'Republic of Guatemala'; 
-        $this->iso_alpha_2 = 'GT'; 
-        $this->iso_alpha_3 = 'GTM'; 
-        $this->iso_numeric = '320'; 
-        $this->international_phone = '502'; 
+        $this->emoji = [
+            'img' => '🇬🇹',
+            'uCode' => 'U+1F1EC U+1F1F9',
+        ];
+        $this->color = [
+            'hex' => [
+                '#0066ff',
+                '#ffffff',
+            ],
+            'rgb' => [
+                '0,102,255',
+                '255,255,255',
+            ],
+        ];
+        $this->coordinates = [
+            'latitude' => [
+                'classic' => '15 30 N',
+                'desc' => '15.670565605163574',
+            ],
+            'longitude' => [
+                'classic' => '90 15 W',
+                'desc' => '-90.3486557006836',
+            ],
+        ];
+        $this->coordinates_limit = [
+            'latitude' => [
+                'max' => '17.816667',
+                'min' => '13.751111',
+            ],
+            'longitude' => [
+                'max' => '-87.05',
+                'min' => '-92.583333',
+            ],
+        ];
  
-        $this->languages = ["es"]; 
-        $this->tld = [".gt"]; 
-        $this->wmo = 'GU'; 
-        $this->geoname_id = '3595528'; 
+        $this->geographical = json_decode($this->geographical(), true);
  
-        $this->emoji = [ 
-            'img' => '🇬🇹', 
-            'uCode' => 'U+1F1EC U+1F1F9', 
-        ]; 
-        $this->color = [ 
-            'hex' => [ 
-                '#0066ff', 
-                '#ffffff', 
-            ], 
-            'rgb' => [ 
-                '0,102,255', 
-                '255,255,255', 
-            ], 
-        ]; 
-        $this->coordinates = [ 
-            'latitude' => [ 
-                'classic' => '15 30 N', 
-                'desc' => '15.670565605163574', 
-            ], 
-            'longitude' => [ 
-                'classic' => '90 15 W', 
-                'desc' => '-90.3486557006836', 
-            ], 
-        ]; 
-        $this->coordinates_limit = [ 
-            'latitude' => [ 
-                'max' => '17.816667', 
-                'min' => '13.751111', 
-            ], 
-            'longitude' => [ 
-                'max' => '-87.05', 
-                'min' => '-92.583333', 
-            ], 
-        ]; 
+        Builder::country($this);
+    }
  
-        $this->geographical = json_decode($this->geographical(), true); 
- 
-        Builder::country($this); 
-    }  
- 
-    public function geographical() 
-    {  
+    public function geographical()
+    {
         return '{
   "type": "FeatureCollection",
   "features": [
@@ -400,8 +400,6 @@ class GT_Guatemala extends Seeder
     }
   ]
 }
-'; 
-    }  
- 
-} 
- 
+';
+    }
+}
