@@ -108,10 +108,15 @@ Country::whereSlug('brasil')->first();
 ## Take a good look at the Model and see the package makes it easy
 
 [Country](https://github.com/lwwcas/laravel-countries/blob/master/src/models/Country.php)
+
 [CountryTranslation](https://github.com/lwwcas/laravel-countries/blob/master/src/models/CountryTranslation.php)
+
 [CountryRegion](https://github.com/lwwcas/laravel-countries/blob/master/src/models/CountryRegion.php)
+
 [CountryRegionTranslation](https://github.com/lwwcas/laravel-countries/blob/master/src/models/CountryRegionTranslation.php)
+
 [CountryGeographical](https://github.com/lwwcas/laravel-countries/blob/master/src/models/CountryGeographical.php)
+
 
 
 ### Example data
