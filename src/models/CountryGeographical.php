@@ -69,4 +69,18 @@ class CountryGeographical extends Model
     {
         return $query->where('uuid', $uuid);
     }
+
+    public function getGeodata()
+    {
+        $data = [
+            'type' => $this->type,
+            'features' => [
+                'type' => $this->features_type,
+                'properties' => json_decode($this->properties, true),
+                'geometry' => json_decode($this->geometry, true),
+            ],
+        ];
+
+        return $data;
+    }
 }

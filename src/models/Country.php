@@ -47,7 +47,6 @@ class Country extends Model
         'tld', //Top-level domain
         'wmo', //Country abbreviations by the World Meteorological Organization
         'geoname_id', // The GeoNames geographical database https://www.geonames.org/
-        'flag',
         'emoji',
         'color_hex',
         'color_rgb',
@@ -120,6 +119,18 @@ class Country extends Model
     }
 
     /**
+     * Find a country by uuid.
+     *
+     * @param string $uuid
+     *
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function scopeWhereUuid($query, $uuid)
+    {
+        return $query->where('uuid', $uuid)->withTranslation();
+    }
+
+    /**
      * Find a country by slug.
      *
      * @param string $slug
@@ -147,24 +158,87 @@ class Country extends Model
      * Find a country by iso.
      *
      * @param string $iso
-     * @param int    $lc_region_id
      *
      * @return Illuminate\Database\Eloquent\Collection
      */
-    public function scopeWhereIso($query, $iso, $lc_region_id)
+    public function scopeWhereIso($query, $iso)
     {
-        return $query->where('lc_region_id', $lc_region_id)->where('iso', $iso)->withTranslation();
+        return $query->where('iso_alpha_2', $iso)
+            ->orWhere('iso_alpha_3', $iso)
+            ->orWhere('iso_numeric', $iso)
+            ->withTranslation();
     }
 
     /**
-     * Find a country by uuid.
+     * Find a country by iso Alpha 2.
      *
-     * @param string $uuid
+     * @param string $isoAlpha2
      *
      * @return Illuminate\Database\Eloquent\Collection
      */
-    public function scopeWhereUuid($query, $uuid)
+    public function scopeWhereIsoAlpha2($query, $isoAlpha2)
     {
-        return $query->where('uuid', $uuid)->withTranslation();
+        return $query->where('iso_alpha_2', $isoAlpha2)->withTranslation();
+    }
+
+    /**
+     * Find a country by iso Alpha 3.
+     *
+     * @param string $isoAlpha3
+     *
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function scopeWhereIsoAlpha3($query, $isoAlpha3)
+    {
+        return $query->where('iso_alpha_3', $isoAlpha3)->withTranslation();
+    }
+
+    /**
+     * Find a country by iso Numeric.
+     *
+     * @param string $isoNumeric
+     *
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function scopeWhereIsoNumeric($query, $isoNumeric)
+    {
+        return $query->where('iso_numeric', $isoNumeric)->withTranslation();
+    }
+
+    /**
+     * Find a country by international phone.
+     *
+     * @param string $internationalPhone
+     *
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function scopeWherePhoneCode($query, $internationalPhone)
+    {
+        return $query->where('international_phone', $internationalPhone)->withTranslation();
+    }
+
+    /**
+     * Get the emojim art
+     */
+    public function emoji()
+    {
+        $emojin = json_decode($this->emoji, true);
+        return $emojin['img'] ?? null;
+    }
+
+    /**
+     * Get the colors
+     */
+    public function colors($type = 'hex')
+    {
+        $colors = [];
+        if ($type == 'hex') {
+            $colors = json_decode($this->color_hex, true);
+        }
+        if ($type == 'rgb') {
+            $colors = json_decode($this->color_rgb, true);
+        }
+
+        return $colors;
     }
 }
