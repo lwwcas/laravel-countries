@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": "^7.3|^8.0",
-        "laravel/framework": "^8.12",
+        "laravel/framework": "^8.12|^9.0",
         "astrotomic/laravel-translatable": "^11.8"
     },
     "require-dev": {
