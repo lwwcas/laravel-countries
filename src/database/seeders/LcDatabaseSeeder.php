@@ -189,6 +189,7 @@ class LcDatabaseSeeder extends Seeder
         $this->call(\Lwwcas\LaravelCountries\Database\Seeders\Countries\PE_Peru::class);
         $this->call(\Lwwcas\LaravelCountries\Database\Seeders\Countries\PF_FrenchPolynesia::class);
         $this->call(\Lwwcas\LaravelCountries\Database\Seeders\Countries\PG_PapuaNewGuinea::class);
+        $this->call(\Lwwcas\LaravelCountries\Database\Seeders\Countries\PH_Philippines::class);
         $this->call(\Lwwcas\LaravelCountries\Database\Seeders\Countries\PK_Pakistan::class);
         $this->call(\Lwwcas\LaravelCountries\Database\Seeders\Countries\PL_Poland::class);
         $this->call(\Lwwcas\LaravelCountries\Database\Seeders\Countries\PM_SaintPierreandMiquelon::class);
