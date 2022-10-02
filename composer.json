@@ -1,6 +1,6 @@
 {
     "name": "lwwcas/laravel-countries",
-    "description": "A list of all countries, optimized for Laravel 8",
+    "description": "A list of all countries, optimized for Laravel 8 and 9",
     "homepage": "https://github.com/lwwcas/laravel-countries",
     "type": "library",
     "license": "MIT",
