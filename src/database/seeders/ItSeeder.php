@@ -208,7 +208,6 @@ class ItSeeder extends Seeder
             'BY' => 'Bielorussia',
             'BA' => 'Bosnia Erzegovina',
             'BG' => 'Bulgaria',
-            'CY' => 'Cipro',
             'HR' => 'Croazia',
             'DK' => 'Danimarca',
             'EE' => 'Estonia',

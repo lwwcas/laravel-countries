@@ -210,7 +210,6 @@ class FrSeeder extends Seeder
             'BA' => 'Bosnie-Herzégovine',
             'BG' => 'Bulgarie',
             'BY' => 'Bélarus',
-            'CY' => 'Chypre',
             'HR' => 'Croatie',
             'DK' => 'Danemark',
             'ES' => 'Espagne',

@@ -250,7 +250,6 @@ class PtSeeder extends Seeder
             'KZ' => 'Casaquistão',
             'QA' => 'Catar',
             'CN' => 'China',
-            'CY' => 'Chipre',
             'SG' => 'Cingapura',
             'KP' => 'Coreia do Norte',
             'KR' => 'Coreia do Sul',

@@ -153,7 +153,6 @@ class EsSeeder extends Seeder
             'BA' => 'Bosnia-Herzegovina',
             'BG' => 'Bulgaria',
             'BE' => 'Bélgica',
-            'CY' => 'Chipre',
             'VA' => 'Ciudad del Vaticano',
             'HR' => 'Croacia',
             'DK' => 'Dinamarca',
