@@ -100,7 +100,6 @@ class FrSeeder extends Seeder
             'ET' => 'Éthiopie',
             'AI' => 'Anguilla',
             'AG' => 'Antigua-et-Barbuda',
-            'AN' => 'Antilles néerlandaises',
             'AR' => 'Argentine',
             'AW' => 'Aruba',
             'BS' => 'Bahamas',
