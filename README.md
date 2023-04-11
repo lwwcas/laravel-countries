@@ -36,7 +36,7 @@ Amongst many other information you'll be able to plot country maps:
 | Portuguese |
 | Spanish |
 | Italian |
-
+| Arabic |
 
 ## Requirements
 
