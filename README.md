@@ -33,6 +33,7 @@ Amongst many other information you'll be able to plot country maps:
 | Language |
 ------------------|
 | Arabic |
+| Dutch |
 | English |
 | Italian |
 | Portuguese |
