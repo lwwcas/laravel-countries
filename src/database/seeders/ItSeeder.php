@@ -100,7 +100,6 @@ class ItSeeder extends Seeder
             'ZW' => 'Zimbabwe',
             'AI' => 'Anguilla',
             'AG' => 'Antigua e Barbuda',
-            'AN' => 'Antille Olandesi',
             'AR' => 'Argentina',
             'AW' => 'Aruba',
             'BS' => 'Bahamas',

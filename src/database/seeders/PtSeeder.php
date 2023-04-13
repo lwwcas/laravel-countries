@@ -42,7 +42,6 @@ class PtSeeder extends Seeder
     {
         return [
             'AI' => 'Anguilla',
-            'AN' => 'Antilhas Holandesas',
             'AG' => 'Antígua e Barbuda',
             'AR' => 'Argentina',
             'AW' => 'Aruba',

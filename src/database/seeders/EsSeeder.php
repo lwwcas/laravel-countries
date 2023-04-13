@@ -43,7 +43,6 @@ class EsSeeder extends Seeder
         return [
             'AI' => 'Anguila',
             'AG' => 'Antigua y Barbuda',
-            'AN' => 'Antillas Neerlandesas',
             'AR' => 'Argentina',
             'AW' => 'Aruba',
             'BS' => 'Bahamas',
