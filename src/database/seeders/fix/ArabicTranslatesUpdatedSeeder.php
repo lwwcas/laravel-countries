@@ -3,7 +3,6 @@
 namespace Lwwcas\LaravelCountries\Database\Seeders\fix;
 
 use Illuminate\Database\Seeder;
-use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
 class ArabicTranslatesUpdatedSeeder extends Seeder
 {
