@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-countries` will be documented in this file
 
+## 3.4.3 - 2023-13-04
+
+- Adding Dutch language to country data and its translations
+
+## 3.4.1 - 2023-13-04
+
+- Adding Arabic language to country data and its translations
+
 ## 3.4.0 - 2023-13-04
 
 - Support Laravel 10.x
