@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-countries` will be documented in this file
 
+## 3.4.4 - 2023-13-04
+
+- Remove unused AN country, besides not being officially allocated to ISO 3166-1 alpha-2
+- Remove 'CY' duplicate
+- Minor fixes
+
 ## 3.4.3 - 2023-13-04
 
 - Adding Dutch language to country data and its translations
