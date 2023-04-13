@@ -266,6 +266,7 @@ class LcDatabaseSeeder extends Seeder
         $this->call(EsSeeder::class);
         $this->call(FrSeeder::class);
         $this->call(ItSeeder::class);
+        $this->call(ArSeeder::class);
         $this->call(NlSeeder::class);
     }
 }

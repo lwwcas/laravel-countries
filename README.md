@@ -10,7 +10,7 @@
 # Very short description
 
 Laravel-Countries, is a package that contains everything you need to start a new project and have all countries, information and translations on hand.
-**And all this optimized for Laravel 8 and 9.**
+**And all this optimized for Laravel 8, 9 and now 10.**
 
 The package provides all data directly to your database, allowing you to link to any other table in your database, in a simple and usual way.
 
@@ -32,11 +32,11 @@ Amongst many other information you'll be able to plot country maps:
 
 | Language |
 ------------------|
+| Arabic |
 | English |
+| Italian |
 | Portuguese |
 | Spanish |
-| Italian |
-
 
 ## Requirements
 
