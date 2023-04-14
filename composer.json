@@ -37,7 +37,8 @@
             "Lwwcas\\LaravelCountries\\Casts\\": "src/casts",
             "Lwwcas\\LaravelCountries\\Database\\": "src/database",
             "Lwwcas\\LaravelCountries\\Database\\Seeders\\": "src/database/seeders",
-            "Lwwcas\\LaravelCountries\\Database\\Seeders\\Countries\\": "src/database/seeders/countries"
+            "Lwwcas\\LaravelCountries\\Database\\Seeders\\Countries\\": "src/database/seeders/countries",
+            "Lwwcas\\LaravelCountries\\Database\\Seeders\\Languages\\": "src/database/seeders/languages"
         }
     },
     "autoload-dev": {

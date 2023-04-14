@@ -261,13 +261,7 @@ class LcDatabaseSeeder extends Seeder
         $this->call(\Lwwcas\LaravelCountries\Database\Seeders\Countries\ZM_Zambia::class);
         $this->call(\Lwwcas\LaravelCountries\Database\Seeders\Countries\ZW_Zimbabwe::class);
 
-        // Add all countries translations
-        $this->call(PtSeeder::class);
-        $this->call(EsSeeder::class);
-        $this->call(FrSeeder::class);
-        $this->call(ItSeeder::class);
-        $this->call(ArSeeder::class);
-        $this->call(NlSeeder::class);
-        $this->call(GermanLanguageSeeder::class);
+        // All countries translations
+        $this->call(LanguagesSeeder::class);
     }
 }
