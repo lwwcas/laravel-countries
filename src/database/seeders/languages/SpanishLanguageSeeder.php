@@ -1,10 +1,11 @@
 <?php
 
-namespace Lwwcas\LaravelCountries\Database\Seeders;
+namespace Lwwcas\LaravelCountries\Database\Seeders\Languages;
 
 use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class EsSeeder extends Seeder
+class SpanishLanguageSeeder extends Seeder
 {
 
     /**
