@@ -268,5 +268,6 @@ class LcDatabaseSeeder extends Seeder
         $this->call(ItSeeder::class);
         $this->call(ArSeeder::class);
         $this->call(NlSeeder::class);
+        $this->call(GermanLanguageSeeder::class);
     }
 }
