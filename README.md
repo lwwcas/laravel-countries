@@ -35,8 +35,10 @@ Amongst many other information you'll be able to plot country maps:
 | Arabic |
 | Dutch |
 | English |
+| German |
 | Italian |
 | Portuguese |
+| Russian |
 | Spanish |
 
 ## Requirements
