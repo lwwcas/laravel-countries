@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-countries` will be documented in this file
 
+## 3.4.6 - 2023-14-04
+
+- Adding Russian language to country data and its translations
+
 ## 3.4.5 - 2023-14-04
 
 - Refactor all seed naming system
