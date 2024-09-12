@@ -218,12 +218,12 @@ class Country extends Model
     }
 
     /**
-     * Get the emojim art
+     * Get the emoji art
      */
     public function emoji()
     {
-        $emojin = json_decode($this->emoji, true);
-        return $emojin['img'] ?? null;
+        $emoji = json_decode($this->emoji, true);
+        return $emoji['img'] ?? null;
     }
 
     /**
