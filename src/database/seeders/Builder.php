@@ -106,7 +106,6 @@ class Builder
         foreach ($countries as $iso => $country) {
             $response = Country::where('iso_alpha_2', $iso)
                 ->orWhere('iso_alpha_3', $iso)
-                ->orWhere('iso_numeric', $iso)
                 ->first();
 
             if ($response == null) {
