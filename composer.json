@@ -19,15 +19,16 @@
         "laravel-countries"
     ],
     "require": {
-        "php": "^7.3|^8.0|^8.1|^8.2",
-        "laravel/framework": "^8.12|^9.0|^10.0|^11.0",
-        "astrotomic/laravel-translatable": "^11.8"
+        "php": "^8.0|^8.1|^8.2",
+        "laravel/framework": "^9.0|^10.0|^11.0",
+        "astrotomic/laravel-translatable": "^11.8",
+        "spatie/laravel-package-tools": "^1.16.0"
     },
     "require-dev": {
         "doctrine/dbal": "^3.0",
         "laravel/legacy-factories": "^1.0.4",
-        "orchestra/testbench": "~3.6.7 || ~3.7.8 || ~3.8.6 || ^4.8 || ^5.2 || ^6.0",
-        "phpunit/phpunit": "^8.0"
+        "orchestra/testbench": "^7.0",
+        "phpunit/phpunit": "9.6.0"
     },
     "autoload": {
         "psr-4": {
