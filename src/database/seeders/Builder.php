@@ -13,6 +13,14 @@ use Lwwcas\LaravelCountries\Models\CountryTranslation;
 
 class Builder
 {
+
+    /**
+     * Create a country
+     *
+     * @param Seeder $country
+     * @return void
+     * @throws Exception
+     */
     public static function country(Seeder $country): void
     {
         $region = CountryRegion::whereSlug($country->region, $country->lang)
@@ -51,6 +59,11 @@ class Builder
         }
     }
 
+    /**
+     * Create the regions.
+     *
+     * @return void
+     */
     public static function regions(): void
     {
         $regions = [
@@ -73,6 +86,14 @@ class Builder
         return;
     }
 
+    /**
+     * Create regions translations.
+     *
+     * @param array $regions
+     * @param String $lang
+     * @return void
+     * @throws Exception
+     */
     public static function regionsTranslations(array $regions, String $lang): void
     {
         DB::beginTransaction();
@@ -99,6 +120,13 @@ class Builder
         return;
     }
 
+    /**
+     * Create countries translations.
+     *
+     * @param array $countries
+     * @param String $lang
+     * @return void
+     */
     public static function countriesTranslations(array $countries, String $lang): void
     {
         DB::beginTransaction();

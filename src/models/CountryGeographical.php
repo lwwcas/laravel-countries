@@ -42,6 +42,11 @@ class CountryGeographical extends Model
         'geometry' => Json::class,
     ];
 
+    /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
     public static function boot()
     {
         parent::boot();
@@ -70,6 +75,11 @@ class CountryGeographical extends Model
         return $query->where('uuid', $uuid);
     }
 
+    /**
+     * Get the geographical data as a GeoJSON feature collection.
+     *
+     * @return array
+     */
     public function getGeodata()
     {
         $data = [
