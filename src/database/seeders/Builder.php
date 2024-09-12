@@ -79,7 +79,7 @@ class Builder
 
         foreach ($regions as $slug => $region) {
             $response = CountryRegion::whereTranslation('locale', 'en')
-                ->whereTranslation('name', $slug)
+                ->whereTranslation('slug', $slug)
                 ->first();
 
             if ($response == null) {
