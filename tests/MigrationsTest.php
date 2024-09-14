@@ -3,7 +3,7 @@
 namespace Lwwcas\LaravelCountries\Tests;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Lwwcas\LaravelCountries\Providers\LaravelCountriesServiceProvider;
+use Lwwcas\LaravelCountries\Providers\CountriesServiceProvider;
 use Orchestra\Testbench\TestCase;
 
 class MigrationsTest extends TestCase
@@ -12,7 +12,7 @@ class MigrationsTest extends TestCase
 
     protected function getPackageProviders($app)
     {
-        return [LaravelCountriesServiceProvider::class];
+        return [CountriesServiceProvider::class];
     }
 
     protected function setUp(): void

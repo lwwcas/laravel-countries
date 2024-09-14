@@ -2,14 +2,14 @@
 
 namespace Lwwcas\LaravelCountries\Tests;
 
-use Lwwcas\LaravelCountries\Providers\LaravelCountriesServiceProvider;
+use Lwwcas\LaravelCountries\Providers\CountriesServiceProvider;
 use Orchestra\Testbench\TestCase;
 
 class ExampleTest extends TestCase
 {
     protected function getPackageProviders($app)
     {
-        return [LaravelCountriesServiceProvider::class];
+        return [CountriesServiceProvider::class];
     }
 
     /** @test */
