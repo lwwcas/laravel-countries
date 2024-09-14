@@ -1,13 +1,13 @@
 <?php
 
-namespace Lwwcas\LaravelCountries;
+namespace Lwwcas\LaravelCountries\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * @see \Lwwcas\LaravelCountries\Skeleton\SkeletonClass
  */
-class LaravelCountriesFacade extends Facade
+class WCountries extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -16,6 +16,6 @@ class LaravelCountriesFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'laravel-countries';
+        return 'w-countries';
     }
 }

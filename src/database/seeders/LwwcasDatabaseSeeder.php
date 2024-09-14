@@ -4,7 +4,7 @@ namespace Lwwcas\LaravelCountries\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class LcDatabaseSeeder extends Seeder
+class LwwcasDatabaseSeeder extends Seeder
 {
     /**
      * Seed the application's database.
@@ -262,6 +262,6 @@ class LcDatabaseSeeder extends Seeder
         $this->call(\Lwwcas\LaravelCountries\Database\Seeders\Countries\ZW_Zimbabwe::class);
 
         // All countries translations
-        $this->call(LanguagesSeeder::class);
+        // $this->call(LanguagesSeeder::class);
     }
 }

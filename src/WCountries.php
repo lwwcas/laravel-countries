@@ -2,7 +2,7 @@
 
 namespace Lwwcas\LaravelCountries;
 
-class LaravelCountries
+class WCountries
 {
     // Build your next great package.
 }
