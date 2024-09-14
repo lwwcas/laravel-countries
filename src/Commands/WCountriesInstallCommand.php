@@ -85,6 +85,11 @@ class WCountriesInstallCommand extends Command
         return 1;
     }
 
+    /**
+     * Publish the config file for the package.
+     *
+     * @return $this
+     */
     public function publishConfigFile(): self
     {
         $this->comment("Publishing config ...");
@@ -96,6 +101,12 @@ class WCountriesInstallCommand extends Command
         return $this;
     }
 
+    /**
+     * Ask the user if they want to run the seeds for the languages
+     * that are not English.
+     *
+     * @return $this
+     */
     public function askToRunSeeds(): self
     {
         $languages = array_keys($this->languages);
@@ -147,13 +158,19 @@ class WCountriesInstallCommand extends Command
         return $this;
     }
 
+    /**
+     * Run the selected language seeds.
+     *
+     * @param  array  $selectedLanguages
+     * @return $this
+     */
     public function runSeeds(array $selectedLanguages): self
     {
         $filteredLanguages = collect($this->languages)
             ->filter(function ($class, $language) use ($selectedLanguages) {
                 return in_array($language, $selectedLanguages);
             })
-            ->all(); // Converte de volta para array se necessário
+            ->all();
 
         if (in_array('None', $selectedLanguages)) {
             return $this;
@@ -170,6 +187,11 @@ class WCountriesInstallCommand extends Command
         return $this;
     }
 
+    /**
+     * Ask the user if they want to run the migrations.
+     *
+     * @return $this
+     */
     public function askToRunMigrations(): self
     {
         if ($this->confirm('Would you like to run the migrations now?')) {
@@ -190,6 +212,11 @@ class WCountriesInstallCommand extends Command
         return $this;
     }
 
+    /**
+     * Ask the user if they want to star the repository on GitHub.
+     *
+     * @return $this
+     */
     public function askToStarRepoOnGitHub(): self
     {
         $this->info('Consider leaving a star in the repository and helping us to be better.');
