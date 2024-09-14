@@ -27,7 +27,7 @@ class WCountriesInstallCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Read a feed that is in the database';
+    protected $description = 'Installs database migrations and seeders for the Laravel Countries package.';
 
     /**
      * Set the name of the package.
