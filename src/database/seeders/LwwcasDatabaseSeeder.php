@@ -261,7 +261,5 @@ class LwwcasDatabaseSeeder extends Seeder
         $this->call(\Lwwcas\LaravelCountries\Database\Seeders\Countries\ZM_Zambia::class);
         $this->call(\Lwwcas\LaravelCountries\Database\Seeders\Countries\ZW_Zimbabwe::class);
 
-        // All countries translations
-        // $this->call(LanguagesSeeder::class);
     }
 }
