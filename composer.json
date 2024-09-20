@@ -1,26 +1,36 @@
 {
     "name": "lwwcas/laravel-countries",
-    "description": "A list of all countries, optimized for Laravel 8 and 9",
+    "description": "A comprehensive package for managing country data in Laravel applications, including multilingual support, geographic coordinates, and detailed metadata for seamless integration with Laravel.",
     "homepage": "https://github.com/lwwcas/laravel-countries",
     "type": "library",
     "license": "MIT",
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "authors": [{
-        "name": "Lucas Duarte Oliveira",
+        "name": "Lucas Duarte Oliveira Monteiro",
         "email": "lwwcas@gmail.com",
         "homepage": "http://www.lucasduarte.dev",
         "role": "Developer"
     }],
     "keywords": [
-        "lwwcas",
-        "Lucas Duarte",
         "laravel",
         "countries",
-        "laravel-countries"
+        "geography",
+        "multilingual",
+        "coordinates",
+        "ISO codes",
+        "country data",
+        "laravel package",
+        "geolocation",
+        "geoJson",
+        "svg maps",
+        "world countries",
+        "lwwcas",
+        "Lucas Duarte"
     ],
     "require": {
         "php": "^8.0|^8.1|^8.2",
-        "laravel/framework": "^9.0|^10.0|^11.0",
+        "laravel/framework": "^9.0|^10.0|^11.0|dev-master",
         "astrotomic/laravel-translatable": "^11.8",
         "spatie/laravel-package-tools": "^1.16.0"
     },
@@ -28,21 +38,13 @@
         "doctrine/dbal": "^3.0",
         "laravel/legacy-factories": "^1.0.4",
         "orchestra/testbench": "^7.0",
-        "phpunit/phpunit": "9.6.0"
+        "phpunit/phpunit": "^9.6",
+        "mockery/mockery": "^1.4",
+        "pestphp/pest": "^1.21"
     },
     "autoload": {
         "psr-4": {
-            "Lwwcas\\LaravelCountries\\": "src",
-            "Lwwcas\\LaravelCountries\\Providers\\": "src/providers",
-            "Lwwcas\\LaravelCountries\\Facades\\": "src/facades",
-            "Lwwcas\\LaravelCountries\\Models\\": "src/models",
-            "Lwwcas\\LaravelCountries\\Casts\\": "src/casts",
-            "Lwwcas\\LaravelCountries\\Trait\\": "src/trait",
-            "Lwwcas\\LaravelCountries\\Commands\\": "src/commands",
-            "Lwwcas\\LaravelCountries\\Database\\": "src/database",
-            "Lwwcas\\LaravelCountries\\Database\\Seeders\\": "src/database/seeders",
-            "Lwwcas\\LaravelCountries\\Database\\Seeders\\Countries\\": "src/database/seeders/countries",
-            "Lwwcas\\LaravelCountries\\Database\\Seeders\\Languages\\": "src/database/seeders/languages"
+            "Lwwcas\\LaravelCountries\\": "src/"
         }
     },
     "autoload-dev": {
@@ -52,7 +54,9 @@
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "lint": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/phpcs --standard=PSR12 src/"
     },
     "config": {
         "sort-packages": true
@@ -65,6 +69,35 @@
             "aliases": {
                 "WCountries": "Lwwcas\\LaravelCountries\\Facades\\WCountries"
             }
+        },
+        "compatibility": {
+            "laravel": {
+                "current": "9.x, 10.x, 11.x",
+                "planned": ["12.x", "13.x"],
+                "untested": ["12.x", "13.x"]
+            }
+        },
+        "language-management": {
+            "default-language": "en",
+            "dynamic-install": true,
+            "supported-languages": ["ar", "nl", "en", "de", "it", "pt", "ru", "es"]
+        },
+        "features": {
+            "multilingual-support": "Fully supports translations for country names and metadata.",
+            "geographical-data": "Provides precise latitude/longitude coordinates and SVG maps for each country.",
+            "iso-support": "Handles ISO Alpha-2, Alpha-3, and numeric country codes with ease.",
+            "dynamic-language-install": "Languages can be installed or removed dynamically at any time.",
+            "query-scopes": "Predefined query scopes for easy access to country data.",
+            "country-relations": "Easily link country data to other models using foreign key relationships.",
+            "data-seeding": "Includes customizable seeders for automatic country data population.",
+            "artisan-commands": "Includes artisan commands for managing country and language data.",
+            "laravel-compatibility": "Supports Laravel 9.x, 10.x, 11.x, ensuring smooth integration."
         }
+
+    },
+    "support": {
+        "source": "https://github.com/lwwcas/laravel-countries",
+        "docs": "https://github.com/lwwcas/laravel-countries/docs",
+        "issues": "https://github.com/lwwcas/laravel-countries/issues"
     }
 }
