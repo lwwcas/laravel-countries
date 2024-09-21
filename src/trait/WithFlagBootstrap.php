@@ -39,7 +39,6 @@ trait WithFlagBootstrap
             ->withTranslation();
     }
 
-
     /**
      * Get the flag emoji as a string.
      *
