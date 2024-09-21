@@ -8,13 +8,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Lwwcas\LaravelCountries\Casts\Json;
+use Lwwcas\LaravelCountries\trait\WithCoordinatesBootstrap;
 use Lwwcas\LaravelCountries\trait\WithFlagBootstrap;
 
 class Country extends Model
 {
     use HasFactory,
         Translatable,
-        WithFlagBootstrap;
+        WithFlagBootstrap,
+        WithCoordinatesBootstrap;
 
     public $translationModel = CountryTranslation::class;
 
@@ -187,6 +189,18 @@ class Country extends Model
     }
 
     /**
+     * Find a country by official name.
+     *
+     * @param string $officialName
+     *
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function scopeWhereOficialName($query, $officialName)
+    {
+        return $query->whereTranslation('official_name', $officialName)->withTranslation();
+    }
+
+    /**
      * Find a country by iso.
      *
      * @param string $iso
@@ -239,6 +253,54 @@ class Country extends Model
     }
 
     /**
+     * Find a country by Geoname ID.
+     *
+     * @param int $geonameId
+     *
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function scopeWhereGeoname($query, $geonameId)
+    {
+        return $query->where('geoname_id', $geonameId)->withTranslation();
+    }
+
+    /**
+     * Find a country by WMO (World Meteorological Organization) code.
+     *
+     * @param string $wmo
+     *
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function scopeWhereWmo($query, $wmo)
+    {
+        return $query->where('wmo', $wmo)->withTranslation();
+    }
+
+    /**
+     * Find a country by WMO (World Meteorological Organization) code.
+     *
+     * @param string $wmo
+     *
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function scopeWhereWmoCode($query, $wmo)
+    {
+        return $query->whereWmo($wmo);
+    }
+
+    /**
+     * Find a country by WMO (World Meteorological Organization) code.
+     *
+     * @param string $wmo
+     *
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function scopeWhereWorldMeteorologicalOrganizationCode($query, $wmo)
+    {
+        return $query->whereWmo($wmo);
+    }
+
+    /**
      * Find a country by international phone.
      *
      * @param string $internationalPhone
@@ -248,6 +310,28 @@ class Country extends Model
     public function scopeWherePhoneCode($query, $internationalPhone)
     {
         return $query->where('international_phone', $internationalPhone)->withTranslation();
+    }
+
+    /**
+     * Find a country by domain (TLD).
+     *
+     * @param string $domain
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeWhereDomain($query, $domain)
+    {
+        $databaseDriver = config('database.default');
+        $domainInLowercase = Str::lower($domain);
+        $domainInJsonFormat = json_encode($domainInLowercase);
+
+        return match ($databaseDriver) {
+            'mysql', 'mariadb' => $query->whereRaw('JSON_CONTAINS(tld, ?)', [$domainInJsonFormat]),
+            'pgsql' => $query->whereRaw('tld @> ?', ['["' . $domainInLowercase . '"]']),
+            'sqlite' => $query->where('tld', 'LIKE', '%' . $domainInLowercase . '%'),
+            default => throw new \Exception("Unsupported database driver: $databaseDriver"),
+        };
+
     }
 
 }
