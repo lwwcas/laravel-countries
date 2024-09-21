@@ -3,14 +3,18 @@
 namespace Lwwcas\LaravelCountries\Models;
 
 use Astrotomic\Translatable\Translatable;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Lwwcas\LaravelCountries\Casts\Json;
+use Lwwcas\LaravelCountries\trait\WithFlagBootstrap;
 
 class Country extends Model
 {
-    use HasFactory, Translatable;
+    use HasFactory,
+        Translatable,
+        WithFlagBootstrap;
 
     public $translationModel = CountryTranslation::class;
 
@@ -92,7 +96,34 @@ class Country extends Model
     }
 
     /**
-     * Get the region.
+     * Perform any actions required before the model boots.
+     *
+     * @return void
+     */
+    protected static function booting()
+    {
+        parent::booting();
+
+        // Applying a global scope to always filter countries where 'visible' is true
+        static::addGlobalScope('visible', function (Builder $builder) {
+            $builder->where('visible', true);
+        });
+    }
+
+    /**
+     * Retrieve a query builder without applying the 'visible' global scope.
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function withNotVisible()
+    {
+        return static::withoutGlobalScope('visible');
+    }
+
+    /**
+     * Get the region that owns the Country
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function region()
     {
@@ -100,7 +131,9 @@ class Country extends Model
     }
 
     /**
-     * Get the geographical.
+     * Get the geographical data for the country.
+     *
+     * @return Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function geographical()
     {
@@ -108,10 +141,9 @@ class Country extends Model
     }
 
     /**
-     * Get all countries with translations
-     * in a optimized query
+     * Get all countries with translations.
      *
-     * @return Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Support\Collection|\Lwwcas\LaravelCountries\Models\Country[]
      */
     public static function _all()
     {
@@ -123,7 +155,7 @@ class Country extends Model
      *
      * @param string $uuid
      *
-     * @return Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeWhereUuid($query, $uuid)
     {
@@ -163,7 +195,8 @@ class Country extends Model
      */
     public function scopeWhereIso($query, $iso)
     {
-        return $query->where('iso_alpha_2', $iso)
+        return $query
+            ->where('iso_alpha_2', $iso)
             ->orWhere('iso_alpha_3', $iso)
             ->orWhere('iso_numeric', $iso)
             ->withTranslation();
@@ -217,28 +250,4 @@ class Country extends Model
         return $query->where('international_phone', $internationalPhone)->withTranslation();
     }
 
-    /**
-     * Get the emoji art
-     */
-    public function emoji()
-    {
-        $emoji = json_decode($this->emoji, true);
-        return $emoji['img'] ?? null;
-    }
-
-    /**
-     * Get the colors
-     */
-    public function colors($type = 'hex')
-    {
-        $colors = [];
-        if ($type == 'hex') {
-            $colors = json_decode($this->color_hex, true);
-        }
-        if ($type == 'rgb') {
-            $colors = json_decode($this->color_rgb, true);
-        }
-
-        return $colors;
-    }
 }
