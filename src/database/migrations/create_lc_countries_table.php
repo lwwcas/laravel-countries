@@ -18,17 +18,17 @@ return new class() extends Migration
             $table->tinyInteger('lc_region_id')->unsigned();
             $table->uuid('uuid')->unique();
             $table->string('official_name');
-            $table->string('iso_alpha_2', 3);
-            $table->string('iso_alpha_3', 4);
+            $table->string('iso_alpha_2', 10);
+            $table->string('iso_alpha_3', 10);
             $table->smallInteger('iso_numeric')->nullable();
             $table->string('geoname_id')->nullable();
 
             $table->string('international_phone', 150)->nullable();
             $table->json('languages')->nullable();
-            $table->string('tld')->nullable()->comment('Top-level domain');
+            $table->json('tld')->nullable()->comment('Top-level domain');
             $table->string('wmo')->nullable()->comment('Country abbreviations by the World Meteorological Organization');
 
-            $table->string('emoji');
+            $table->json('emoji');
             $table->json('color_hex');
             $table->json('color_rgb');
 

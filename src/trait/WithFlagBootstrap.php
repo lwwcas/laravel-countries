@@ -40,27 +40,6 @@ trait WithFlagBootstrap
     }
 
     /**
-     * Get the flag emoji as a string.
-     *
-     * @return string|null
-     */
-    public function emoji(): string|null
-    {
-        $emoji = json_decode($this->emoji, true);
-        return $emoji['img'] ?? null;
-    }
-
-    /**
-     * Get the flag as a string.
-     *
-     * @return string|null
-     */
-    public function flag(): string|null
-    {
-        return $this->emoji();
-    }
-
-    /**
      * Get the flag colors.
      *
      * @param string $type hex or rgb
@@ -71,13 +50,52 @@ trait WithFlagBootstrap
     {
         $colors = [];
         if ($type == 'hex') {
-            $colors = json_decode($this->color_hex, true);
+            $colors = $this->color_hex;
         }
         if ($type == 'rgb') {
-            $colors = json_decode($this->color_rgb, true);
+            $colors = $this->color_rgb;
         }
 
         return $colors;
+    }
+
+    /**
+     * Get the flag information of the country in a format that is easier to consume.
+     *
+     * @return string|null
+     */
+    public function flag()
+    {
+        return collect([
+            'emoji' => [
+                'icon' => $this->flagEmoji(),
+                'uCode' => $this->flagCode(),
+            ],
+            'colors' => [
+                'rgb' => $this->flagColorsInRgb(),
+                'hex' => $this->flagColorsInHex(),
+            ],
+        ]);
+    }
+
+    /**
+     * Get the flag emoji of the country.
+     *
+     * @return string|null
+     */
+    public function flagEmoji(): string|null
+    {
+        return $this->emoji['img'];
+    }
+
+    /**
+     * Get the flag's Unicode code point as a string.
+     *
+     * @return string|null
+     */
+    public function flagCode(): string|null
+    {
+        return $this->emoji['uCode'];
     }
 
     /**
@@ -156,7 +174,7 @@ trait WithFlagBootstrap
     public function generateFlagGradient(string $startsOn = null): string|null
     {
         $direction = $this->getGradientDirection($startsOn);
-        $hexColors = json_decode($this->color_hex, true);
+        $hexColors = $this->color_hex;
         if (empty($hexColors)) {
             return null;
         }
@@ -177,8 +195,8 @@ trait WithFlagBootstrap
 
     public function generateCombinedFlagGradient(Country $otherCountry, string $startsOn = null): string|null
     {
-        $thisColors = json_decode($this->color_hex);
-        $otherColors = json_decode($otherCountry->color_hex);
+        $thisColors = $this->color_hex;
+        $otherColors = $otherCountry->color_hex;
         $direction = $this->getGradientDirection($startsOn);
 
         $colors = array_merge($thisColors, $otherColors);
@@ -199,7 +217,7 @@ trait WithFlagBootstrap
      */
     public function generateFlagStripes(string $direction = 'horizontal'): string|null
     {
-        $colors = json_decode($this->color_hex);
+        $colors = $this->color_hex;
         if (empty($colors)) {
             return null;
         }
@@ -226,7 +244,7 @@ trait WithFlagBootstrap
      */
     public function generateFlagBorders(): string|null
     {
-        $colors = json_decode($this->color_hex);
+        $colors = $this->color_hex;
         if (empty($colors)) {
             return null;
         }

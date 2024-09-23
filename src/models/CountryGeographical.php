@@ -33,14 +33,17 @@ class CountryGeographical extends Model
     ];
 
     /**
-     * The attributes that should be cast to native types.
+     * Get the attributes that should be cast.
      *
-     * @var array
+     * @return array<string, string>
      */
-    protected $casts = [
-        'properties' => Json::class,
-        'geometry' => Json::class,
-    ];
+    protected function casts(): array
+    {
+        return [
+            'properties' => 'object',
+            'geometry' => 'object',
+        ];
+    }
 
     /**
      * The "booted" method of the model.
