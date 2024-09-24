@@ -1,6 +1,6 @@
 <?php
 
-namespace Lwwcas\LaravelCountries\trait;
+namespace Lwwcas\LaravelCountries\Trait;
 
 use Illuminate\Support\Str;
 use Lwwcas\LaravelCountries\Models\Country;
@@ -56,7 +56,7 @@ trait WithFlagBootstrap
             $colors = $this->color_rgb;
         }
 
-        return $colors;
+        return (array) $colors;
     }
 
     /**
