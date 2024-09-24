@@ -25,5 +25,5 @@ enum TLDEnum: string
     case RU = '.ru';
     case CN = '.cn';
     case SG = '.sg';
-    // Adicione mais TLDs conforme necessário
+
 }
