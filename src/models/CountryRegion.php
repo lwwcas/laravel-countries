@@ -3,6 +3,7 @@
 namespace Lwwcas\LaravelCountries\Models;
 
 use Astrotomic\Translatable\Translatable;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
@@ -44,6 +45,31 @@ class CountryRegion extends Model
         self::creating(function ($model) {
             $model->uuid = (string) Str::uuid();
         });
+    }
+
+    /**
+     * Perform any actions required before the model boots.
+     *
+     * @return void
+     */
+    protected static function booting()
+    {
+        parent::booting();
+
+        // Apply a global scope to always eager load the translations
+        static::addGlobalScope('translation', function (Builder $builder) {
+            $builder->withTranslation();
+        });
+    }
+
+    /**
+     * Retrieve a query builder without applying the 'translation' global scope.
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function withNotTranslation()
+    {
+        return static::withoutGlobalScope('translation');
     }
 
     /**

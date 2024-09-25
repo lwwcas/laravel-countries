@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use Lwwcas\LaravelCountries\Database\Factories\CountryFactory;
 use Lwwcas\LaravelCountries\trait\WithCoordinatesBootstrap;
 use Lwwcas\LaravelCountries\trait\WithFlagBootstrap;
 
@@ -121,8 +120,6 @@ class Country extends Model
         });
     }
 
-
-
     /**
      * Retrieve a query builder without applying the 'visible' global scope.
      *
@@ -187,12 +184,13 @@ class Country extends Model
         return $query->whereTranslation('slug', $slug);
     }
 
+
     /**
      * Find a country by name.
      *
      * @param string $name
      *
-     * @return Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeWhereName($query, $name)
     {
@@ -409,6 +407,7 @@ class Country extends Model
     {
         return $this->setVisibleFalse();
     }
+
 
 
 }

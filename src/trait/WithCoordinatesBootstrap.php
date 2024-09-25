@@ -9,11 +9,11 @@ trait WithCoordinatesBootstrap
      *
      * @return array<string, string> ['latitude' => '10 00 S', 'longitude' => '55 00 W']
      */
-    public function getClassicCoordinates(): array
+    public function coordinatesInClassic(): array
     {
         return [
-            'latitude' => $this->coordinates['latitude']['classic'] ?? '',
-            'longitude' => $this->coordinates['longitude']['classic'] ?? '',
+            'latitude' => $this->coordinates->latitude->classic ?? null,
+            'longitude' => $this->coordinates->longitude->classic ?? null,
         ];
     }
 
@@ -22,11 +22,11 @@ trait WithCoordinatesBootstrap
      *
      * @return array|null an array with keys 'latitude' and 'longitude' with decimal values, or null if the values are not set.
      */
-    public function getDecimalCoordinates()
+    public function coordinatesInDecimal(): array
     {
         return [
-            'latitude' => $this->coordinates['latitude']['desc'] ?? null,
-            'longitude' => $this->coordinates['longitude']['desc'] ?? null,
+            'latitude' => $this->coordinates->latitude->desc ?? null,
+            'longitude' => $this->coordinates->longitude->desc ?? null,
         ];
     }
 
@@ -37,12 +37,12 @@ trait WithCoordinatesBootstrap
      */
     public function getCenterOfLimits(): array
     {
-        $minLatitude = $this->coordinates_limit['latitude']['min'];
-        $maxLatitude = $this->coordinates_limit['latitude']['max'];
+        $minLatitude = $this->coordinates->latitude->desc;
+        $maxLatitude = $this->coordinates_limit->latitude->desc;
         $centerLatitude = ($minLatitude + $maxLatitude) / 2;
 
-        $minLongitude = $this->coordinates_limit['longitude']['min'];
-        $maxLongitude = $this->coordinates_limit['longitude']['max'];
+        $minLongitude = $this->coordinates->longitude->desc;
+        $maxLongitude = $this->coordinates_limit->longitude->desc;
         $centerLongitude = ($minLongitude + $maxLongitude) / 2;
 
         return [
@@ -56,9 +56,9 @@ trait WithCoordinatesBootstrap
      *
      * @return bool
      */
-    public function isInNorthernHemisphere()
+    public function isInNorthernHemisphere(): bool
     {
-        return $this->coordinates['latitude']['classic'] > 0;
+        return $this->coordinates->latitude->classic > 0;
     }
 
     /**
@@ -66,101 +66,192 @@ trait WithCoordinatesBootstrap
      *
      * @return bool
      */
-    public function isInSouthernHemisphere()
+    public function isInSouthernHemisphere(): bool
     {
-        return $this->coordinates['latitude']['classic'] < 0;
+        return $this->coordinates->latitude->classic < 0;
     }
 
     /**
-     * Convert a coordinate in the classic format (e.g. "42 30 N")
-     * to the decimal format (e.g. 42.50).
+     * Convert the country's coordinates from the classic format to the decimal format.
      *
-     * @param string $coordinate The coordinate in the classic format.
-     * @return float The coordinate in the decimal format.
+     * @return array<string, float> ['latitude' => float, 'longitude' => float]
      */
-    public function convertClassicToDecimal($coordinate)
+    public function convertClassicToDecimal(): array
     {
-        $pattern = '/(\d+) (\d+) ([NSWE])/';
-        preg_match($pattern, $coordinate, $matches);
+        $classicCoordinates = $this->coordinatesInClassic();
 
-        $wholeDegrees = (int) $matches[1];
-        $minutes = (int) $matches[2];
-        $direction = $matches[3];
+        return [
+            'latitude' => (string) $this->classicCoordinateToDecimal($classicCoordinates['latitude']),
+            'longitude' => (string) $this->classicCoordinateToDecimal($classicCoordinates['longitude']),
+        ];
+    }
 
-        $decimalDegrees = $wholeDegrees + ($minutes / 60);
+    /**
+     * Get the coordinates in decimal format with degrees, minutes, and seconds.
+     *
+     * @return string The coordinates in the format 'dd.dddd° dd dddd°' where 'dd' is the degree, 'ddd' is the minute, and 'dddd' is the second.
+     * Output example: 13.299612° S 176.170120° W
+     */
+    public function coordinatesInDecimalDegrees(): string
+    {
+        $coordinates = $this->coordinatesInDecimal();
 
-        if (in_array($direction, ['S', 'W'])) {
-            $decimalDegrees = -$decimalDegrees;
+        $latitude = (float) $coordinates['latitude'];
+        $latitudeDirection = $latitude < 0 ? 'S' : 'N';
+
+        $longitude = (float) $coordinates['longitude'];
+        $longitudeDirection = $longitude < 0 ? 'W' : 'E';
+
+        return sprintf('%.6f° %s %.6f° %s', abs($latitude), $latitudeDirection, abs($longitude), $longitudeDirection);
+    }
+
+
+    /**
+     * Get the coordinates in degrees minutes seconds format.
+     *
+     * @return string The coordinates in the format 'dd° mm' ss.s" direction' where 'dd' is the degree, 'mm' is the minute, 'ss.s' is the second, and 'direction' is 'N' or 'S'.
+     * Output example: 13° 17' 58.60" S 176° 10' 42.43" W
+     */
+    public function coordinatesInDegreesMinutesSeconds()
+    {
+        $coordinates = $this->coordinatesInDecimal();
+        $decimalLatitude = (float) $coordinates['latitude'];
+        $decimalLongitude = (float) $coordinates['longitude'];
+
+        /**
+         * Convert a coordinate in decimal format to the format 'dd° mm' ss.s" direction'
+         * where 'dd' is the degree, 'mm' is the minute, 'ss.s' is the second, and 'direction' is 'N' or 'S'.
+         * Output example: 13° 17' 58.60" S
+         *
+         * @param float $decimal The coordinate in decimal format.
+         * @return string The coordinate in the format 'dd° mm' ss.s" direction'
+         */
+        function convertToDMS($decimal)
+        {
+            $degrees = (int) abs($decimal);
+            $minutes = (int) abs(($decimal - $degrees) * 60);
+            $seconds = round(abs(($decimal - $degrees - $minutes / 60) * 3600), 2);
+
+            return sprintf("%d° %d' %.2f\" %s", $degrees, $minutes, $seconds, $decimal < 0 ? 'S' : 'N');
         }
 
-        return $decimalDegrees;
+        $latitudeDMS = convertToDMS($decimalLatitude);
+        $longitudeDMS = convertToDMS($decimalLongitude);
+
+        $longitudeDirection = $decimalLongitude < 0 ? 'W' : 'E';
+        $longitudeDMS = str_replace('N', $longitudeDirection, $longitudeDMS);
+        $longitudeDMS = str_replace('S', $longitudeDirection, $longitudeDMS);
+
+        return "$latitudeDMS $longitudeDMS";
     }
 
     /**
-     * Convert a coordinate in the decimal format (e.g. 42.50)
-     * to the classic format (e.g. "42 30 N").
+     * Get the coordinates in KML format.
+     * (Keyhole Markup Language)
      *
-     * @param float $decimal The coordinate in the decimal format.
-     * @param string $type The type of coordinate, either 'latitude' or 'longitude'.
-     * @return string The coordinate in the classic format.
+     * @return string The coordinates in KML format.
+     *
      */
-    public function convertDecimalToClassic($decimal, $type = 'latitude')
+    public function coordinatesInKLM(): string
     {
-        $sign = $type === 'latitude' ? ($decimal >= 0 ? 1 : -1) : ($decimal >= 0 ? 1 : -1);
-        $coordinate = abs($decimal);
-        $degrees = floor($coordinate);
-        $minutes = round(($coordinate - $degrees) * 60);
+        $decimalCoordinates = $this->coordinatesInDecimal();
+        $latitude = (float) $decimalCoordinates['latitude'];
+        $longitude = (float) $decimalCoordinates['longitude'];
 
-        $direction = $type === 'latitude'
-            ? ($sign === 1 ? 'N' : 'S')
-            : ($sign === 1 ? 'E' : 'W');
-
-        return sprintf('%d %02d %s', $degrees, $minutes, $direction);
+        return <<<KML
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+    <Placemark>
+        <name>{$this->official_name}</name>
+        <description>{$latitude},{$longitude}</description>
+        <Point>
+            <coordinates>{$longitude},{$latitude}</coordinates>
+        </Point>
+    </Placemark>
+</kml>
+KML;
     }
 
     /**
-     * Check if a given point (latitude and longitude) is inside the country's
-     * geographical boundaries.
+     * Get the coordinates in geo tags format.
      *
-     * @param float $latitude The latitude of the point to check.
-     * @param float $longitude The longitude of the point to check.
-     * @return bool True if the point is inside the country's boundaries, false otherwise.
+     * @return string The coordinates in geo tags format.
      */
-    public function isPointInsideCountryBoundaries(float $latitude, float $longitude): bool
+    public function coordinatesInGeoTags(): string
     {
-        $coordinatesLimit = json_decode($this->coordinates_limit, true);
+        $coordinates = $this->coordinatesInDecimal();
+        $latitude = (float) $coordinates['latitude'];
+        $longitude = (float) $coordinates['longitude'];
 
-        $latitudeMin = $coordinatesLimit['latitude']['min'];
-        $latitudeMax = $coordinatesLimit['latitude']['max'];
-        $longitudeMin = $coordinatesLimit['longitude']['min'];
-        $longitudeMax = $coordinatesLimit['longitude']['max'];
-
-        return $latitude >= $latitudeMin
-            && $latitude <= $latitudeMax
-            && $longitude >= $longitudeMin
-            && $longitude <= $longitudeMax;
+        return "geotagged\n" .
+            "geo:lat=" . number_format($latitude, 6) . "\n" .
+            "geo:lon=" . number_format($longitude, 6);
     }
 
     /**
-     * Check if the country's geographical boundaries cover a given range of coordinates.
+     * Get the coordinates in the format of a meta tag for ICBM (GeoURL).
      *
-     * @param float $minLatitude The minimum latitude of the range.
-     * @param float $maxLatitude The maximum latitude of the range.
-     * @param float $minLongitude The minimum longitude of the range.
-     * @param float $maxLongitude The maximum longitude of the range.
-     * @return bool True if the country covers the given range, false otherwise.
+     * @return string The coordinates in the format of a meta tag for ICBM (GeoURL).
      */
-    public function coversCoordinatesRange(float $minLatitude, float $maxLatitude, float $minLongitude, float $maxLongitude): bool
+    public function coordinatesInGeoTagsMetaTagICBM(): string {
+        $coordinates = $this->coordinatesInDecimal();
+        $latitude = (float) $coordinates['latitude'];
+        $longitude = (float) $coordinates['longitude'];
+
+        return '<meta name="ICBM" content="' . number_format($latitude, 6) . ', ' . number_format($longitude, 6) . '">';
+    }
+
+    /**
+     * Get the coordinates in geo meta tags format.
+     *
+     * @param string $locale The locale to use for the placename and region.
+     * @return string The coordinates in geo meta tags format.
+     */
+    public function coordinatesInGeoMetaTags(string $locale = 'en'): string
     {
-        $coordinatesLimit = json_decode($this->coordinates_limit, true);
+        $coordinates = $this->coordinatesInDecimal();
+        $latitude = (float) $coordinates['latitude'];
+        $longitude = (float) $coordinates['longitude'];
+        $placename = $this->translate($locale)->name ?? $this->official_name;
+        $region = $this->region()->first()->translate($locale)->name ?? '';
 
-        $latitudeInRange = $coordinatesLimit['latitude']['min'] <= $minLatitude
-            && $coordinatesLimit['latitude']['max'] >= $maxLatitude;
+        return '<meta name="geo.position" content="' . number_format($latitude, 6) . '; ' . number_format($longitude, 6) . '">' . PHP_EOL .
+            '<meta name="geo.placename" content="' . htmlspecialchars($placename) . '">' . PHP_EOL .
+            '<meta name="geo.region" content="' . htmlspecialchars($region) . '">';
+    }
 
-        $longitudeInRange = $coordinatesLimit['longitude']['min'] <= $minLongitude
-            && $coordinatesLimit['longitude']['max'] >= $maxLongitude;
+    /**
+     * Get the coordinates in geoJSON format.
+     *
+     * @return string The coordinates in geoJSON format.
+     */
+    public function coordinatesInGeoJSON(): string
+    {
+        $coordinates = $this->coordinatesInDecimal();
+        $latitude = (float) $coordinates['latitude'];
+        $longitude = (float) $coordinates['longitude'];
 
-        return $latitudeInRange && $longitudeInRange;
+        $geoJSON = [
+            'type' => 'Point',
+            'coordinates' => [$longitude, $latitude],
+        ];
+
+        return json_encode($geoJSON, JSON_PRETTY_PRINT);
+    }
+
+    /**
+     * Get the coordinates in CSV format.
+     * (Comma-Separated Values)
+     *
+     * @return string The coordinates in CSV format, with a header row.
+     */
+    public function coordinatesInCSV(): string
+    {
+        $coordinates = $this->coordinatesInDecimal();
+        $latitude = (float) $coordinates['latitude'];
+        $longitude = (float) $coordinates['longitude'];
+
+        return "latitude,longitude\n" . "{$latitude},{$longitude}";
     }
 
 }
