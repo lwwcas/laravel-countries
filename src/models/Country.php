@@ -125,7 +125,7 @@ class Country extends Model
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function withNotVisible()
+    public static function withNotVisible()
     {
         return static::withoutGlobalScope('visible');
     }
@@ -135,7 +135,7 @@ class Country extends Model
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function withNotTranslation()
+    public static function withNotTranslation()
     {
         return static::withoutGlobalScope('translation');
     }
@@ -184,7 +184,6 @@ class Country extends Model
         return $query->whereTranslation('slug', $slug);
     }
 
-
     /**
      * Find a country by name.
      *
@@ -206,7 +205,7 @@ class Country extends Model
      */
     public function scopeWhereOficialName($query, $officialName)
     {
-        return $query->whereTranslation('official_name', $officialName);
+        return $query->where('official_name', $officialName);
     }
 
     /**
@@ -337,7 +336,7 @@ class Country extends Model
             'mysql', 'mariadb' => $query->whereRaw('JSON_CONTAINS(tld, ?)', [$domainInJsonFormat]),
             'pgsql' => $query->whereRaw('tld @> ?', ['["' . $domainInLowercase . '"]']),
             'sqlite' => $query->where('tld', 'LIKE', '%' . $domainInLowercase . '%'),
-            default => throw new \Exception("Unsupported database driver: $databaseDriver"),
+            default => $query->where('tld', 'LIKE', '%' . $domainInLowercase . '%'),
         };
 
     }
@@ -407,7 +406,5 @@ class Country extends Model
     {
         return $this->setVisibleFalse();
     }
-
-
 
 }

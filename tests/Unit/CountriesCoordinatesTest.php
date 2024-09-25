@@ -3,7 +3,6 @@ use Lwwcas\LaravelCountries\Database\Factories\CountryFactory;
 use Lwwcas\LaravelCountries\Database\Factories\CountryRegionFactory;
 use Lwwcas\LaravelCountries\Database\Factories\CountryRegionTranslationFactory;
 use Lwwcas\LaravelCountries\Database\Factories\CountryTranslationFactory;
-use Lwwcas\LaravelCountries\Models\Country;
 
 it('returns coordinates in classic format', function () {
     $country = CountryFactory::new()->create([
@@ -288,6 +287,7 @@ it('returns coordinates in geo json format', function () {
 
     expect($data)->not()->toBeNull();
     expect($data)->toBeString();
+    expect($data)->toBeJson();
 
     expect($data)->toContain("\"type\": \"Point\"");
     expect($data)->toContain("-13.329661");

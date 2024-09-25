@@ -67,7 +67,7 @@ class CountryRegion extends Model
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function withNotTranslation()
+    public static function withNotTranslation()
     {
         return static::withoutGlobalScope('translation');
     }
