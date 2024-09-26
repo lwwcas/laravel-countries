@@ -1,5 +1,5 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
 use Illuminate\Database\Seeder;
@@ -7,21 +7,21 @@ use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
 class BZ_Belize extends Seeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'americas';
- 
+
     /**
      * Run the database seeds.
      *
@@ -29,60 +29,374 @@ class BZ_Belize extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Belize';
+
+        // Set the country's official name
         $this->official_name = 'Belize';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'BZ';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'BLZ';
-        $this->iso_numeric = '84';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
+        $this->iso_numeric = '084';
+
+        // Set the international dialing code
         $this->international_phone = '501';
- 
-        $this->languages = ['en','es'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['en']; // English is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.bz'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '25 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '10 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '50%'; // Percentage of the population with internet access
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Belize Computer Incident Response Team (Belize CIRT)';
+
+        // List popular web technologies in Belize
+        $this->popular_technologies = ['PHP', 'JavaScript', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'BH';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '3582678';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Belize dollar',
+            // Currency code
+            'code' => 'BZD',
+            // Currency symbol
+            'symbol' => 'BZ$',
+            // Main unit
+            'main_unit' => 'dollar',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['2', '5', '10', '20', '50', '100'],
+            // Main coins
+            'coins_main' => ['1'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 419199; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 22966; // km²
+
+        // Set the capital city
+        $this->capital = 'Belmopan';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            // Time zone identifier
+            'timezone_id' => 'America/Belize',
+            // Standard time offset
+            'standard_time' => 'UTC−6', // Central Standard Time
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1981-09-21'; // Date of independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Commonwealth of Nations',
+            'Organization of American States (OAS)',
+            'CARICOM',
+            'Central American Integration System (SICA)',
+            'World Trade Organization (WTO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 1.9; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = ['Christianity (Roman Catholicism, Protestantism)'];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary constitutional monarchy';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is popular
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Guatemala', 'iso_alpha_2' => 'GT'],
+            ['name' => 'Mexico', 'iso_alpha_2' => 'MX'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇧🇿',
+            // Unicode code points
             'uCode' => 'U+1F1E7 U+1F1FF',
+            // HTML entities
+            'html' => '&#x1F1E7;&#x1F1FF;',
+            // CSS entities
+            'css' => '\\1F1E7\\1F1FF',
+            // Decimal Unicode entities
+            'decimal' => '&#127463;&#127487;',
+            // Direct UTF-8 string
+            'utf8' => '🇧🇿',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDE7\uD83C\uDDFF',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-bz:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1E7;&#x1F1FF;',
         ];
-        $this->color = [
-            'hex' => [
-                '#0066cc',
-                '#ff3f34',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'dark blue',
+                // Hexadecimal color code
+                'hex' => '#003F87',
+                // RGB color values
+                'rgb' => '0,63,135',
+                // CMYK color values
+                'cmyk' => '100,53,0,47',
+                // HSL color values
+                'hsl' => '213,100%,26%',
+                // HSV color values
+                'hsv' => '213,100%,53%',
+                // Pantone color code
+                'pantone' => 'Reflex Blue C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,102,204',
-                '255,63,52',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#CE1126',
+                // RGB color values
+                'rgb' => '206,17,38',
+                // CMYK color values
+                'cmyk' => '0,92,82,19',
+                // HSL color values
+                'hsl' => '350,85%,44%',
+                // HSV color values
+                'hsv' => '350,92%,81%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#007A5E',
+                // RGB color values
+                'rgb' => '0,122,94',
+                // CMYK color values
+                'cmyk' => '100,0,23,52',
+                // HSL color values
+                'hsl' => '167,100%,24%',
+                // HSV color values
+                'hsv' => '167,100%,48%',
+                // Pantone color code
+                'pantone' => '3415 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '17 15 N',
-                'desc' => '17.225292205810547',
-            ],
-            'longitude' => [
-                'classic' => '88 45 W',
-                'desc' => '-88.66973876953125',
+            // Latitude in decimal degrees
+            'latitude' => '17.1899',
+            // Longitude in decimal degrees
+            'longitude' => '-88.4976',
+            // Degrees with decimal
+            'd' => '17.1899° N, 88.4976° W',
+            // Degrees, minutes, seconds
+            'dms' => '17°11\'23.64" N, 88°29\'51.36" W',
+            // Degrees and decimal minutes
+            'dm' => '17°11.394\' N, 88°29.856\' W',
+            // Various GPS formats
+            'gps' => [
+                [
+                    // Format description
+                    'format' => '[N,S]dd°mm\'ss.ssss", [E,W]ddd°mm\'ss.ssss"',
+                    // Coordinates in this format
+                    'coordinates' => 'N17°11\'23.64", W88°29\'51.36"',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd°mm\'ss.ssss"[N,S], ddd°mm\'ss.ssss"[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '17°11\'23.64"N, 88°29\'51.36"W',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd mm ss.ssss, [-]ddd mm ss.ssss',
+                    // Coordinates in this format
+                    'coordinates' => '17 11 23.64, -88 29 51.36',
+                ],
+                [
+                    // Format description
+                    'format' => 'ISO 6709: [-]ddmmss.ssss, [-]dddmmss.ssss',
+                    // Coordinates in this format
+                    'coordinates' => '171123.64, -0882951.36',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd.dddd [-]ddd.dddd',
+                    // Coordinates in this format
+                    'coordinates' => '17.1899 -88.4976',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd.ddddd°,[-]ddd.ddddd° (Dec Degs)',
+                    // Coordinates in this format
+                    'coordinates' => '17.18990°,-88.49760°',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd.ddddd[N,S]ddd.ddddd[E,W] (Dec Degs Micro)',
+                    // Coordinates in this format
+                    'coordinates' => '17.1899000N88.4976000W',
+                ],
+                [
+                    // Format description
+                    'format' => 'ddmm.mmmm[N,S]dddmm.mmmm[E,W] (Dec Min)',
+                    // Coordinates in this format
+                    'coordinates' => '1711.394N08829.856W',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd°mm\'ss.sss"[N,S], ddd°mm\'ss.sss"[E,W] (Deg Min Secs)',
+                    // Coordinates in this format
+                    'coordinates' => '17°11\'23.64"N, 88°29\'51.36"W',
+                ],
+                [
+                    // Format description
+                    'format' => 'ddmmss.sss[N,S]dddmmss.sss[E,W] (Deg Mins Secs)',
+                    // Coordinates in this format
+                    'coordinates' => '171123.64N0882951.36W',
+                ],
+                [
+                    // Format description
+                    'format' => '[N,S] dd mm.mmm [E,W] ddd mm.mmm',
+                    // Coordinates in this format
+                    'coordinates' => 'N 17 11.394 W 88 29.856',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd:mm:ss[N,S],ddd:mm:ss[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '17:11:23N,88:29:51W',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd:mm:ss.ss[N,S] ddd:mm:ss.ss[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '17:11:23.64N 88:29:51.36W',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd°mm\'ss"[N,S] ddd°mm\'ss"[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '17°11\'23"N 88°29\'51"W',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd°mm\'ss" [-]ddd°mm\'ss"',
+                    // Coordinates in this format
+                    'coordinates' => '17°11\'23" -88°29\'51"',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd mm\' ss" [N,S] ddd mm\' ss" [E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '17d 11\' 23" N 88d 29\' 51" W',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd.dddd[N,S] ddd.dddd[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '17.1899N 88.4976W',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd° mm.mmmmm [-]ddd° mm.mmmmm',
+                    // Coordinates in this format
+                    'coordinates' => '17° 11.394, -88° 29.856',
+                ],
+                [
+                    // Format description
+                    'format' => '[-] mmmm.mmmmm, [-] mmmm.mmmmm',
+                    // Coordinates in this format
+                    'coordinates' => '1711.394, -8829.856',
+                ],
+                [
+                    // Format description
+                    'format' => 'mmmm.mmmmm[N,S] mmmm.mmmmm[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '1711.394N, 8829.856W',
+                ],
             ],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '18.483333',
-                'min' => '15.9',
-            ],
-            'longitude' => [
-                'max' => '-87.483333',
-                'min' => '-89.216944',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

@@ -1,5 +1,5 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
 use Illuminate\Database\Seeder;
@@ -7,21 +7,21 @@ use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
 class AL_Albania extends Seeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'europe';
- 
+
     /**
      * Run the database seeds.
      *
@@ -29,58 +29,331 @@ class AL_Albania extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Albania';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Albania';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'AL';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'ALB';
-        $this->iso_numeric = '8';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
+        $this->iso_numeric = '008';
+
+        // Set the international dialing code
         $this->international_phone = '355';
- 
-        $this->languages = ['sq'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['sq']; // Albanian is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.al'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '30 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '20 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '72%'; // Percentage of the population with internet access
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'National Authority for Electronic Certification and Cyber Security'; // Government body responsible for cybersecurity
+
+        // List popular web technologies in Albania
+        $this->popular_technologies = ['PHP', 'JavaScript', 'WordPress', 'Laravel']; // Popular web technologies in Albania
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'AB';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '783754';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Albanian lek',
+            // Currency code
+            'code' => 'ALL',
+            // Currency symbol
+            'symbol' => 'L',
+            // Main unit
+            'main_unit' => 'lek',
+            // Subunit
+            'sub_unit' => 'qindarkë',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['200', '500', '1000', '2000', '5000'],
+            // Main coins
+            'coins_main' => ['5', '10', '20', '50', '100'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '20', '50'],
+        ];
+
+        // Set the population
+        $this->population = 2837743; // As of recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 28748; // km²
+
+        // Set the capital city
+        $this->capital = 'Tirana';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            // Time zone identifier
+            'timezone_id' => 'Europe/Tirane',
+            // Standard time offset
+            'standard_time' => 'UTC+1', // Central European Time
+            // Daylight saving time offset
+            'daylight_saving_time' => 'UTC+2', // Central European Summer Time
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1912-11-28'; // Date of Independence
+
+        // List international organizations the country is part of
+        $this->international_organizations = ['United Nations', 'NATO', 'Council of Europe', 'WTO', 'OSCE'];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 15.28; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = ['Islam', 'Christianity']; // Predominant religions
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary constitutional republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)';
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Montenegro', 'iso_alpha_2' => 'ME'],
+            ['name' => 'Kosovo', 'iso_alpha_2' => 'XK'],
+            ['name' => 'North Macedonia', 'iso_alpha_2' => 'MK'],
+            ['name' => 'Greece', 'iso_alpha_2' => 'GR'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇦🇱',
+            // Unicode code points
             'uCode' => 'U+1F1E6 U+1F1F1',
+            // HTML entities
+            'html' => '&#x1F1E6;&#x1F1F1;',
+            // CSS entities
+            'css' => '\\1F1E6\\1F1F1',
+            // Decimal Unicode entities
+            'decimal' => '&#127462;&#127473;',
+            // Direct UTF-8 string
+            'utf8' => '🇦🇱',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDE6\uD83C\uDDF1',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-al:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1E6;&#x1F1F1;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#000000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#E41B17',
+                // RGB color values
+                'rgb' => '228,27,23',
+                // CMYK color values
+                'cmyk' => '0,88,90,11',
+                // HSL color values
+                'hsl' => '2,81%,49%',
+                // HSV color values
+                'hsv' => '2,90%,89%',
+                // Pantone color code
+                'pantone' => 'Pantone 1795 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
-            'rgb' => [
-                '255,0,0',
-                '0,0,0',
+            [
+                // Color name
+                'name' => 'Black',
+                // Web color name
+                'web_name' => 'black',
+                // Hexadecimal color code
+                'hex' => '#000000',
+                // RGB color values
+                'rgb' => '0,0,0',
+                // CMYK color values
+                'cmyk' => '0,0,0,100',
+                // HSL color values
+                'hsl' => '0,0%,0%',
+                // HSV color values
+                'hsv' => '0,0%,0%',
+                // Pantone color code
+                'pantone' => 'Pantone Black C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '41 00 N',
-                'desc' => '41.11113357543945',
-            ],
-            'longitude' => [
-                'classic' => '20 00 E',
-                'desc' => '20.02745246887207',
+            // Latitude in decimal degrees
+            'latitude' => '41.3275',
+            // Longitude in decimal degrees
+            'longitude' => '19.8187',
+            // Degrees with decimal
+            'dd' => '41.3275° N, 19.8187° E',
+            // Degrees, minutes, seconds
+            'dms' => '41°19\'39.00" N, 19°49\'07.32" E',
+            // Degrees and decimal minutes
+            'dm' => '41°19.650\' N, 19°49.122\' E',
+            // Various GPS formats
+            'gps' => [
+                [
+                    // Format description
+                    'format' => '[N,S]dd°mm\'ss.ssss", [E,W]dd°mm\'ss.ssss"',
+                    // Coordinates in this format
+                    'coordinates' => 'N41°19\'39.00", E19°49\'07.32"',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd°mm\'ss.ssss"[N,S], dd°mm\'ss.ssss"[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '41°19\'39.00"N, 19°49\'07.32"E',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd mm ss.ssss, [-]dd mm ss.ssss',
+                    // Coordinates in this format
+                    'coordinates' => '41 19 39.00, 19 49 07.32',
+                ],
+                [
+                    // Format description
+                    'format' => 'ISO 6709: [-]ddmmss.ssss, [-]dddmmss.ssss',
+                    // Coordinates in this format
+                    'coordinates' => '411939.00, 0194907.32',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd.dddd [-]dd.dddd',
+                    // Coordinates in this format
+                    'coordinates' => '41.3275 19.8187',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd.ddddd°,[-]dd.ddddd° (Dec Degs)',
+                    // Coordinates in this format
+                    'coordinates' => '41.32750°,19.81870°',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd.ddddd[N,S]dd.ddddd[E,W] (Dec Degs Micro)',
+                    // Coordinates in this format
+                    'coordinates' => '41.3275000N19.8187000E',
+                ],
+                [
+                    // Format description
+                    'format' => 'ddmm.mmmm[N,S]ddmm.mmmm[E,W] (Dec Min)',
+                    // Coordinates in this format
+                    'coordinates' => '4119.650N01949.122E',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd°mm\'ss.sss"[N,S], dd°mm\'ss.sss"[E,W] (Deg Min Secs)',
+                    // Coordinates in this format
+                    'coordinates' => '41°19\'39.00"N, 19°49\'07.32"E',
+                ],
+                [
+                    // Format description
+                    'format' => 'ddmmss.sss[N,S]ddmmss.sss[E,W] (Deg Mins Secs)',
+                    // Coordinates in this format
+                    'coordinates' => '411939.00N0194907.32E',
+                ],
+                [
+                    // Format description
+                    'format' => '[N,S] dd mm.mmm [E,W] dd mm.mmm',
+                    // Coordinates in this format
+                    'coordinates' => 'N 41 19.650 E 19 49.122',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd:mm:ss[N,S],dd:mm:ss[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '41:19:39N,19:49:07E',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd:mm:ss.ss[N,S] dd:mm:ss.ss[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '41:19:39.00N 19:49:07.32E',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd°mm\'ss"[N,S] dd°mm\'ss"[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '41°19\'39"N 19°49\'07"E',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd°mm\'ss" [-]dd°mm\'ss"',
+                    // Coordinates in this format
+                    'coordinates' => '41°19\'39" 19°49\'07"',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd mm\' ss" [N,S] dd mm\' ss" [E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '41d 19\' 39" N 19d 49\' 07" E',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd.dddd[N,S] dd.dddd[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '41.3275N 19.8187E',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd° mm.mmmmm [-]dd° mm.mmmmm',
+                    // Coordinates in this format
+                    'coordinates' => '41° 19.650, 19° 49.122',
+                ],
+                [
+                    // Format description
+                    'format' => '[-] mmmm.mmmmm, [-] mmmm.mmmmm',
+                    // Coordinates in this format
+                    'coordinates' => '4119.650, 1949.122',
+                ],
+                [
+                    // Format description
+                    'format' => 'mmmm.mmmmm[N,S] mmmm.mmmmm[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '4119.650N, 1949.122E',
+                ],
             ],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '42.659167',
-                'min' => '39.65',
-            ],
-            'longitude' => [
-                'max' => '21.05',
-                'min' => '19.266667',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

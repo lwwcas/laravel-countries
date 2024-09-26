@@ -1,5 +1,5 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
 use Illuminate\Database\Seeder;
@@ -7,21 +7,21 @@ use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
 class AQ_Antarctica extends Seeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'oceania';
- 
+
     /**
      * Run the database seeds.
      *
@@ -29,54 +29,262 @@ class AQ_Antarctica extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Antarctica';
+
+        // Set the country's official name
         $this->official_name = 'Antarctica';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'AQ';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'ATA';
-        $this->iso_numeric = '10';
-        $this->international_phone = '672';
- 
-        $this->languages = [];
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
+        $this->iso_numeric = '010';
+
+        // Set the international dialing code
+        $this->international_phone = null; // Antarctica has no official international dialing code
+
+        // Define the languages spoken in the country
+        $this->languages = []; // No official languages; English is commonly used in research stations
+
+        // Define the top-level domain(s)
         $this->tld = ['.aq'];
-        $this->wmo = 'AA';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => null, // Not applicable
+            // Average mobile connection speed
+            'average_speed_mobile' => null, // Not applicable
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = null; // Not applicable
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = null; // Not applicable
+
+        // List popular web technologies in Antarctica
+        $this->popular_technologies = []; // Not applicable
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'AY';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '6697173';
- 
+
+        // Define the currency information
+        $this->currency = null; // No official currency
+
+        // Set the population
+        $this->population = 1100; // Seasonal population, varies from 1,000 in winter to 5,000 in summer
+
+        // Set the area in square kilometers
+        $this->area = 14000000; // km²
+
+        // Set the capital city
+        $this->capital = null; // No capital city
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            // Time zone identifier
+            'timezone_id' => null, // No official time zones; research stations use various time zones
+        ];
+
+        // Set the independence day
+        $this->independence_day = null; // Not applicable
+
+        // List international organizations the country is part of
+        $this->international_organizations = ['Antarctic Treaty System']; // Governed by the Antarctic Treaty
+
+        // Set the GDP in billions of USD
+        $this->gdp = null; // Not applicable
+
+        // List the predominant religions
+        $this->religions = []; // No indigenous population or predominant religions
+
+        // Describe the form of government
+        $this->government = 'Administered under the Antarctic Treaty System';
+
+        // Set the national sport
+        $this->national_sport = null; // Not applicable
+
+        // Define bordering countries
+        $this->borders = []; // No land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇦🇶',
+            // Unicode code points
             'uCode' => 'U+1F1E6 U+1F1F6',
+            // HTML entities
+            'html' => '&#x1F1E6;&#x1F1F6;',
+            // CSS entities
+            'css' => '\\1F1E6\\1F1F6',
+            // Decimal Unicode entities
+            'decimal' => '&#127462;&#127478;',
+            // Direct UTF-8 string
+            'utf8' => '🇦🇶',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDE6\uD83C\uDDF6',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-aq:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1E6;&#x1F1F6;',
         ];
-        $this->color = [
-            'hex' => [
-            ],
-            'rgb' => [
-            ],
-        ];
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = []; // Antarctica does not have an official flag
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '90 00 S',
-                'desc' => '-82.862752',
-            ],
-            'longitude' => [
-                'classic' => '0 00 E',
-                'desc' => '-135.0',
+            // Latitude in decimal degrees
+            'latitude' => '-90.0000', // South Pole
+            // Longitude in decimal degrees
+            'longitude' => '0.0000',  // All longitudinal lines meet at the poles
+            // Degrees with decimal
+            'd' => '90.0000° S, 0.0000° E',
+            // Degrees, minutes, seconds
+            'dms' => '90°00\'00.00" S, 0°00\'00.00" E',
+            // Degrees and decimal minutes
+            'dm' => '90°00.000\' S, 0°00.000\' E',
+            // Various GPS formats
+            'gps' => [
+                [
+                    // Format description
+                    'format' => '[N,S]dd°mm\'ss.ssss", [E,W]dd°mm\'ss.ssss"',
+                    // Coordinates in this format
+                    'coordinates' => 'S90°00\'00.00", E0°00\'00.00"',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd°mm\'ss.ssss"[N,S], dd°mm\'ss.ssss"[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '90°00\'00.00"S, 0°00\'00.00"E',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd mm ss.ssss, [-]dd mm ss.ssss',
+                    // Coordinates in this format
+                    'coordinates' => '-90 00 00.00, 0 00 00.00',
+                ],
+                [
+                    // Format description
+                    'format' => 'ISO 6709: [-]ddmmss.ssss, [-]dddmmss.ssss',
+                    // Coordinates in this format
+                    'coordinates' => '-900000.00, 0000000.00',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd.dddd [-]dd.dddd',
+                    // Coordinates in this format
+                    'coordinates' => '-90.0000 0.0000',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd.ddddd°,[-]dd.ddddd° (Dec Degs)',
+                    // Coordinates in this format
+                    'coordinates' => '-90.00000°,0.00000°',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd.ddddd[N,S]dd.ddddd[E,W] (Dec Degs Micro)',
+                    // Coordinates in this format
+                    'coordinates' => '90.0000000S0.0000000E',
+                ],
+                [
+                    // Format description
+                    'format' => 'ddmm.mmmm[N,S]ddmm.mmmm[E,W] (Dec Min)',
+                    // Coordinates in this format
+                    'coordinates' => '9000.000S0000.000E',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd°mm\'ss.sss"[N,S], dd°mm\'ss.sss"[E,W] (Deg Min Secs)',
+                    // Coordinates in this format
+                    'coordinates' => '90°00\'00.00"S, 0°00\'00.00"E',
+                ],
+                [
+                    // Format description
+                    'format' => 'ddmmss.sss[N,S]ddmmss.sss[E,W] (Deg Mins Secs)',
+                    // Coordinates in this format
+                    'coordinates' => '900000.00S0000000.00E',
+                ],
+                [
+                    // Format description
+                    'format' => '[N,S] dd mm.mmm [E,W] dd mm.mmm',
+                    // Coordinates in this format
+                    'coordinates' => 'S 90 00.000 E 0 00.000',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd:mm:ss[N,S],dd:mm:ss[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '90:00:00S,0:00:00E',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd:mm:ss.ss[N,S] dd:mm:ss.ss[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '90:00:00.00S 0:00:00.00E',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd°mm\'ss"[N,S] dd°mm\'ss"[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '90°00\'00"S 0°00\'00"E',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd°mm\'ss" [-]dd°mm\'ss"',
+                    // Coordinates in this format
+                    'coordinates' => '-90°00\'00" 0°00\'00"',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd mm\' ss" [N,S] dd mm\' ss" [E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '90d 00\' 00" S 0d 00\' 00" E',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd.dddd[N,S] dd.dddd[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '90.0000S 0.0000E',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd° mm.mmmmm [-]dd° mm.mmmmm',
+                    // Coordinates in this format
+                    'coordinates' => '-90° 00.000, 0° 00.000',
+                ],
+                [
+                    // Format description
+                    'format' => '[-] mmmm.mmmmm, [-] mmmm.mmmmm',
+                    // Coordinates in this format
+                    'coordinates' => '-9000.000, 0000.000',
+                ],
+                [
+                    // Format description
+                    'format' => 'mmmm.mmmmm[N,S] mmmm.mmmmm[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '9000.000S, 0000.000E',
+                ],
             ],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '-60.0',
-                'min' => '-90.0',
-            ],
-            'longitude' => [
-                'max' => '180.0',
-                'min' => '-180.0',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

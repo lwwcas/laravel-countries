@@ -1,5 +1,5 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
 use Illuminate\Database\Seeder;
@@ -7,21 +7,21 @@ use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
 class JP_Japan extends Seeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'asia';
- 
+
     /**
      * Run the database seeds.
      *
@@ -29,58 +29,338 @@ class JP_Japan extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Japan';
+
+        // Set the country's official name
         $this->official_name = 'Japan';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'JP';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'JPN';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '392';
+
+        // Set the international dialing code
         $this->international_phone = '81';
- 
-        $this->languages = ['ja'];
-        $this->tld = ['.jp',".\u307f\u3093\u306a"];
+
+        // Define the languages spoken in the country
+        $this->languages = ['ja']; // Japanese is the official language
+
+        // Define the top-level domain(s)
+        $this->tld = ['.jp'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '200 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '40 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '91%'; // Percentage of the population with internet access
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'National Center of Incident Readiness and Strategy for Cybersecurity (NISC)';
+
+        // List popular web technologies in Japan
+        $this->popular_technologies = ['PHP', 'JavaScript', 'Python', 'Ruby', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'JP';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1861060';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Japanese yen',
+            // Currency code
+            'code' => 'JPY',
+            // Currency symbol
+            'symbol' => '¥',
+            // Main unit
+            'main_unit' => 'yen',
+            // Subunit
+            'sub_unit' => null, // No subunit for yen
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 1,
+            // Banknotes in circulation
+            'banknotes' => ['1,000', '2,000', '5,000', '10,000'],
+            // Main coins
+            'coins_main' => ['1', '5', '10', '50', '100', '500'],
+        ];
+
+        // Set the population
+        $this->population = 125584838; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 377975; // km²
+
+        // Set the capital city
+        $this->capital = 'Tokyo';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Tokyo',
+                // Standard time offset
+                'standard_time' => 'UTC+9', // Japan Standard Time (JST)
+                // Daylight saving time is not observed in Japan
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '660-02-11'; // Traditional date for the founding of Japan
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'Organisation for Economic Co-operation and Development (OECD)',
+            'World Health Organization (WHO)',
+            'Asia-Pacific Economic Cooperation (APEC)',
+            'G7',
+            'G20',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 5081; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Shintoism',
+            'Buddhism',
+            'Christianity',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary constitutional monarchy';
+
+        // Set the national sport
+        $this->national_sport = 'Sumo'; // Sumo is the national sport, but baseball is widely popular
+
+        // Define bordering countries
+        $this->borders = []; // Japan is an island nation with no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇯🇵',
+            // Unicode code points
             'uCode' => 'U+1F1EF U+1F1F5',
+            // HTML entities
+            'html' => '&#x1F1EF;&#x1F1F5;',
+            // CSS entities
+            'css' => '\\1F1EF\\1F1F5',
+            // Decimal Unicode entities
+            'decimal' => '&#127471;&#127477;',
+            // Direct UTF-8 string
+            'utf8' => '🇯🇵',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDEF\uD83C\uDDF5',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-jp:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1EF;&#x1F1F5;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#BC002D',
+                // RGB color values
+                'rgb' => '188,0,45',
+                // CMYK color values
+                'cmyk' => '0,100,76,26',
+                // HSL color values
+                'hsl' => '346,100%,37%',
+                // HSV color values
+                'hsv' => '346,100%,74%',
+                // Pantone color code
+                'pantone' => '1795 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '36 00 N',
-                'desc' => '36.281646728515625',
-            ],
-            'longitude' => [
-                'classic' => '138 00 E',
-                'desc' => '139.0772705078125',
+            // Latitude in decimal degrees
+            'latitude' => '35.652832',
+            // Longitude in decimal degrees
+            'longitude' => '139.839478',
+            // Degrees with decimal
+            'd' => '35.652832° N, 139.839478° E',
+            // Degrees, minutes, seconds
+            'dms' => '35°39\'10.20" N, 139°50\'22.12" E',
+            // Degrees and decimal minutes
+            'dm' => '35°39.170\' N, 139°50.368\' E',
+            // Various GPS formats
+            'gps' => [
+                [
+                    // Format description
+                    'format' => '[N,S]dd°mm\'ss.ssss", [E,W]ddd°mm\'ss.ssss"',
+                    // Coordinates in this format
+                    'coordinates' => 'N35°39\'10.20", E139°50\'22.12"',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd°mm\'ss.ssss"[N,S], ddd°mm\'ss.ssss"[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '35°39\'10.20"N, 139°50\'22.12"E',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd mm ss.ssss, [-]ddd mm ss.ssss',
+                    // Coordinates in this format
+                    'coordinates' => '35 39 10.20, 139 50 22.12',
+                ],
+                [
+                    // Format description
+                    'format' => 'ISO 6709: [-]ddmmss.ssss, [-]dddmmss.ssss',
+                    // Coordinates in this format
+                    'coordinates' => '353910.20, 1395022.12',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd.dddd [-]ddd.dddd',
+                    // Coordinates in this format
+                    'coordinates' => '35.652832 139.839478',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd.ddddd°,[-]ddd.ddddd° (Dec Degs)',
+                    // Coordinates in this format
+                    'coordinates' => '35.652832°, 139.839478°',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd.ddddd[N,S]ddd.ddddd[E,W] (Dec Degs Micro)',
+                    // Coordinates in this format
+                    'coordinates' => '35.6528320N139.8394780E',
+                ],
+                [
+                    // Format description
+                    'format' => 'ddmm.mmmm[N,S]dddmm.mmmm[E,W] (Dec Min)',
+                    // Coordinates in this format
+                    'coordinates' => '3539.170N13950.368E',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd°mm\'ss.sss"[N,S], ddd°mm\'ss.sss"[E,W] (Deg Min Secs)',
+                    // Coordinates in this format
+                    'coordinates' => '35°39\'10.20"N, 139°50\'22.12"E',
+                ],
+                [
+                    // Format description
+                    'format' => 'ddmmss.sss[N,S]dddmmss.sss[E,W] (Deg Mins Secs)',
+                    // Coordinates in this format
+                    'coordinates' => '353910.20N1395022.12E',
+                ],
+                [
+                    // Format description
+                    'format' => '[N,S] dd mm.mmm [E,W] ddd mm.mmm',
+                    // Coordinates in this format
+                    'coordinates' => 'N 35 39.170 E 139 50.368',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd:mm:ss[N,S],ddd:mm:ss[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '35:39:10N,139:50:22E',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd:mm:ss.ss[N,S] ddd:mm:ss.ss[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '35:39:10.20N 139:50:22.12E',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd°mm\'ss"[N,S] ddd°mm\'ss"[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '35°39\'10"N 139°50\'22"E',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd°mm\'ss" [-]ddd°mm\'ss"',
+                    // Coordinates in this format
+                    'coordinates' => '35°39\'10" 139°50\'22"',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd mm\' ss" [N,S] ddd mm\' ss" [E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '35d 39\' 10" N 139d 50\' 22" E',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd.dddd[N,S] ddd.dddd[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '35.652832N 139.839478E',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd° mm.mmmmm [-]ddd° mm.mmmmm',
+                    // Coordinates in this format
+                    'coordinates' => '35° 39.170, 139° 50.368',
+                ],
+                [
+                    // Format description
+                    'format' => '[-] mmmm.mmmmm, [-] mmmm.mmmmm',
+                    // Coordinates in this format
+                    'coordinates' => '3539.170, 13950.368',
+                ],
+                [
+                    // Format description
+                    'format' => 'mmmm.mmmmm[N,S] mmmm.mmmmm[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '3539.170N, 13950.368E',
+                ],
             ],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '45.520833',
-                'min' => '20.416667',
-            ],
-            'longitude' => [
-                'max' => '154',
-                'min' => '122.933333',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

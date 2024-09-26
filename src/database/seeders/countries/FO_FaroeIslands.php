@@ -1,5 +1,5 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
 use Illuminate\Database\Seeder;
@@ -7,21 +7,21 @@ use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
 class FO_FaroeIslands extends Seeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'europe';
- 
+
     /**
      * Run the database seeds.
      *
@@ -29,54 +29,352 @@ class FO_FaroeIslands extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Faroe Islands';
+
+        // Set the country's official name
         $this->official_name = 'Faroe Islands';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'FO';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'FRO';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '234';
+
+        // Set the international dialing code
         $this->international_phone = '298';
- 
-        $this->languages = ['fo'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['fo', 'da']; // Faroese is the official language, with Danish widely spoken
+
+        // Define the top-level domain(s)
         $this->tld = ['.fo'];
-        $this->wmo = 'FA';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '120 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '60 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '98%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'None'; // No dedicated cybersecurity agency
+
+        // List popular web technologies in the Faroe Islands
+        $this->popular_technologies = ['PHP', 'JavaScript', 'React', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'FO';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2622320';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Danish krone',
+            // Currency code
+            'code' => 'DKK',
+            // Currency symbol
+            'symbol' => 'kr',
+            // Main unit
+            'main_unit' => 'krone',
+            // Subunit
+            'sub_unit' => 'øre',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['50', '100', '200', '500', '1000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10', '20'],
+            // Subunit coins
+            'coins_sub' => ['50 øre'],
+        ];
+
+        // Set the population
+        $this->population = 53358; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 1393; // km²
+
+        // Set the capital city
+        $this->capital = 'Tórshavn';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Atlantic/Faroe',
+                // Standard time offset
+                'standard_time' => 'UTC+0', // Western European Time (WET)
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+1', // Western European Summer Time (WEST)
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = null; // Faroe Islands is an autonomous territory of Denmark
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'Nordic Council',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 2.7; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Evangelical Lutheran)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Autonomous territory of Denmark';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football (soccer) is the most popular sport in the Faroe Islands
+
+        // Define bordering countries
+        $this->borders = []; // The Faroe Islands are located in the North Atlantic and have no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇫🇴',
+            // Unicode code points
             'uCode' => 'U+1F1EB U+1F1F4',
+            // HTML entities
+            'html' => '&#x1F1EB;&#x1F1F4;',
+            // CSS entities
+            'css' => '\\1F1EB\\1F1F4',
+            // Decimal Unicode entities
+            'decimal' => '&#127467;&#127476;',
+            // Direct UTF-8 string
+            'utf8' => '🇫🇴',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDEB\uD83C\uDDF4',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-fo:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1EB;&#x1F1F4;',
         ];
-        $this->color = [
-            'hex' => [
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Flag Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#0035AD',
+                // RGB color values
+                'rgb' => '0,53,173',
+                // CMYK color values
+                'cmyk' => '100,69,0,32',
+                // HSL color values
+                'hsl' => '220,100%,35%',
+                // HSV color values
+                'hsv' => '220,100%,68%',
+                // Pantone color code
+                'pantone' => 'Reflex Blue C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
+            [
+                // Color name
+                'name' => 'Flag Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#DA291C',
+                // RGB color values
+                'rgb' => '218,41,28',
+                // CMYK color values
+                'cmyk' => '0,81,87,15',
+                // HSL color values
+                'hsl' => '4,77%,48%',
+                // HSV color values
+                'hsv' => '4,87%,85%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Flag White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '62 00 N',
-                'desc' => '62.009559631347656',
-            ],
-            'longitude' => [
-                'classic' => '7 00 W',
-                'desc' => '-6.818255424499512',
+            // Latitude in decimal degrees
+            'latitude' => '62.0000',
+            // Longitude in decimal degrees
+            'longitude' => '-6.7833',
+            // Degrees with decimal
+            'd' => '62.0000° N, 6.7833° W',
+            // Degrees, minutes, seconds
+            'dms' => '62°0\'0.00" N, 6°46\'59.88" W',
+            // Degrees and decimal minutes
+            'dm' => '62°0.000\' N, 6°46.998\' W',
+            // Various GPS formats
+            'gps' => [
+                [
+                    // Format description
+                    'format' => '[N,S]dd°mm\'ss.ssss", [E,W]ddd°mm\'ss.ssss"',
+                    // Coordinates in this format
+                    'coordinates' => 'N62°0\'0.00", W6°46\'59.88"',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd°mm\'ss.ssss"[N,S], ddd°mm\'ss.ssss"[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '62°0\'0.00"N, 6°46\'59.88"W',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd mm ss.ssss, [-]ddd mm ss.ssss',
+                    // Coordinates in this format
+                    'coordinates' => '62 00 00.00, 6 46 59.88',
+                ],
+                [
+                    // Format description
+                    'format' => 'ISO 6709: [-]ddmmss.ssss, [-]dddmmss.ssss',
+                    // Coordinates in this format
+                    'coordinates' => '620000.00, 064659.88',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd.dddd [-]ddd.dddd',
+                    // Coordinates in this format
+                    'coordinates' => '62.0000 -6.7833',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd.ddddd°,[-]ddd.ddddd° (Dec Degs)',
+                    // Coordinates in this format
+                    'coordinates' => '62.00000°, -6.78330°',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd.ddddd[N,S]ddd.ddddd[E,W] (Dec Degs Micro)',
+                    // Coordinates in this format
+                    'coordinates' => '62.0000000N6.7833000W',
+                ],
+                [
+                    // Format description
+                    'format' => 'ddmm.mmmm[N,S]dddmm.mmmm[E,W] (Dec Min)',
+                    // Coordinates in this format
+                    'coordinates' => '6200.000N00646.998W',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd°mm\'ss.sss"[N,S], ddd°mm\'ss.sss"[E,W] (Deg Min Secs)',
+                    // Coordinates in this format
+                    'coordinates' => '62°0\'0.00"N, 6°46\'59.88"W',
+                ],
+                [
+                    // Format description
+                    'format' => 'ddmmss.sss[N,S]dddmmss.sss[E,W] (Deg Mins Secs)',
+                    // Coordinates in this format
+                    'coordinates' => '620000.00N0064659.88W',
+                ],
+                [
+                    // Format description
+                    'format' => '[N,S] dd mm.mmm [E,W] ddd mm.mmm',
+                    // Coordinates in this format
+                    'coordinates' => 'N 62 00.000 W 6 46.998',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd:mm:ss[N,S],ddd:mm:ss[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '62:00:00N,6:46:59W',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd:mm:ss.ss[N,S] ddd:mm:ss.ss[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '62:00:00.00N 6:46:59.88W',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd°mm\'ss"[N,S] ddd°mm\'ss"[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '62°0\'0"N 6°46\'59"W',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd°mm\'ss" [-]ddd°mm\'ss"',
+                    // Coordinates in this format
+                    'coordinates' => '62°0\'0" 6°46\'59"',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd mm\' ss" [N,S] ddd mm\' ss" [E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '62d 0\' 0" N 6d 46\' 59" W',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd.dddd[N,S] ddd.dddd[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '62.0000N 6.7833W',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd° mm.mmmmm [-]ddd° mm.mmmmm',
+                    // Coordinates in this format
+                    'coordinates' => '62° 00.000, -6° 46.998',
+                ],
+                [
+                    // Format description
+                    'format' => '[-] mmmm.mmmmm, [-] mmmm.mmmmm',
+                    // Coordinates in this format
+                    'coordinates' => '6200.000, 0646.998',
+                ],
+                [
+                    // Format description
+                    'format' => 'mmmm.mmmmm[N,S] mmmm.mmmmm[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '6200.000N, 0646.998W',
+                ],
             ],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '62.4',
-                'min' => '61.333333',
-            ],
-            'longitude' => [
-                'max' => '-6.25',
-                'min' => '-7.8',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

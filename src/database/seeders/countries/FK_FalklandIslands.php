@@ -1,5 +1,5 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
 use Illuminate\Database\Seeder;
@@ -7,21 +7,21 @@ use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
 class FK_FalklandIslands extends Seeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'americas';
- 
+
     /**
      * Run the database seeds.
      *
@@ -29,54 +29,371 @@ class FK_FalklandIslands extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Falkland Islands';
+
+        // Set the country's official name
         $this->official_name = 'Falkland Islands';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'FK';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'FLK';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '238';
+
+        // Set the international dialing code
         $this->international_phone = '500';
- 
-        $this->languages = ['en'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['en']; // English is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.fk'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '10 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '5 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '60%'; // Moderate internet penetration
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'None'; // No dedicated cybersecurity agency
+
+        // List popular web technologies in the Falkland Islands
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'FK';
-        $this->geoname_id = '3474414';
- 
+
+        // Set the GeoName ID for geographical data reference
+        $this->geoname_id = '3474415';
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Falkland Islands pound',
+            // Currency code
+            'code' => 'FKP',
+            // Currency symbol
+            'symbol' => '£',
+            // Main unit
+            'main_unit' => 'pound',
+            // Subunit
+            'sub_unit' => 'penny',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['1', '2', '5', '10', '20', '50 pence'],
+        ];
+
+        // Set the population
+        $this->population = 3480; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 12173; // km²
+
+        // Set the capital city
+        $this->capital = 'Stanley';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Atlantic/Stanley',
+                // Standard time offset
+                'standard_time' => 'UTC-3', // Falkland Islands Standard Time (FIST)
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = null; // The Falkland Islands is a British Overseas Territory
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations (Observer)',
+            'Commonwealth of Nations',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 0.22; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Anglicanism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'British Overseas Territory';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football (soccer) is popular in the Falklands
+
+        // Define bordering countries
+        $this->borders = []; // The Falkland Islands are located in the South Atlantic Ocean and do not border any countries
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇫🇰',
+            // Unicode code points
             'uCode' => 'U+1F1EB U+1F1F0',
+            // HTML entities
+            'html' => '&#x1F1EB;&#x1F1F0;',
+            // CSS entities
+            'css' => '\\1F1EB\\1F1F0',
+            // Decimal Unicode entities
+            'decimal' => '&#127467;&#127472;',
+            // Direct UTF-8 string
+            'utf8' => '🇫🇰',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDEB\uD83C\uDDF0',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-fk:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1EB;&#x1F1F0;',
         ];
-        $this->color = [
-            'hex' => [
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Union Jack Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#00247D',
+                // RGB color values
+                'rgb' => '0,36,125',
+                // CMYK color values
+                'cmyk' => '100,71,0,51',
+                // HSL color values
+                'hsl' => '224,100%,24%',
+                // HSV color values
+                'hsv' => '224,100%,49%',
+                // Pantone color code
+                'pantone' => '280 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
+            [
+                // Color name
+                'name' => 'Union Jack Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#CF142B',
+                // RGB color values
+                'rgb' => '207,20,43',
+                // CMYK color values
+                'cmyk' => '0,90,79,19',
+                // HSL color values
+                'hsl' => '350,82%,44%',
+                // HSV color values
+                'hsv' => '350,90%,81%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Union Jack White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Flag Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#D21034',
+                // RGB color values
+                'rgb' => '210,16,52',
+                // CMYK color values
+                'cmyk' => '0,92,75,18',
+                // HSL color values
+                'hsl' => '346,87%,44%',
+                // HSV color values
+                'hsv' => '346,92%,82%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '51 45 S',
-                'desc' => '-51.77312469482422',
-            ],
-            'longitude' => [
-                'classic' => '59 00 W',
-                'desc' => '-59.727909088134766',
+            // Latitude in decimal degrees
+            'latitude' => '-51.7963',
+            // Longitude in decimal degrees
+            'longitude' => '-59.5236',
+            // Degrees with decimal
+            'd' => '51.7963° S, 59.5236° W',
+            // Degrees, minutes, seconds
+            'dms' => '51°47\'46.68" S, 59°31\'25.00" W',
+            // Degrees and decimal minutes
+            'dm' => '51°47.778\' S, 59°31.416\' W',
+            // Various GPS formats
+            'gps' => [
+                [
+                    // Format description
+                    'format' => '[N,S]dd°mm\'ss.ssss", [E,W]ddd°mm\'ss.ssss"',
+                    // Coordinates in this format
+                    'coordinates' => 'S51°47\'46.68", W59°31\'25.00"',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd°mm\'ss.ssss"[N,S], ddd°mm\'ss.ssss"[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '51°47\'46.68"S, 59°31\'25.00"W',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd mm ss.ssss, [-]ddd mm ss.ssss',
+                    // Coordinates in this format
+                    'coordinates' => '51 47 46.68, 59 31 25.00',
+                ],
+                [
+                    // Format description
+                    'format' => 'ISO 6709: [-]ddmmss.ssss, [-]dddmmss.ssss',
+                    // Coordinates in this format
+                    'coordinates' => '514746.68, 593125.00',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd.dddd [-]ddd.dddd',
+                    // Coordinates in this format
+                    'coordinates' => '-51.7963 -59.5236',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd.ddddd°,[-]ddd.ddddd° (Dec Degs)',
+                    // Coordinates in this format
+                    'coordinates' => '-51.79630°, -59.52360°',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd.ddddd[N,S]ddd.ddddd[E,W] (Dec Degs Micro)',
+                    // Coordinates in this format
+                    'coordinates' => '51.7963000S59.5236000W',
+                ],
+                [
+                    // Format description
+                    'format' => 'ddmm.mmmm[N,S]dddmm.mmmm[E,W] (Dec Min)',
+                    // Coordinates in this format
+                    'coordinates' => '5147.778S05931.416W',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd°mm\'ss.sss"[N,S], ddd°mm\'ss.sss"[E,W] (Deg Min Secs)',
+                    // Coordinates in this format
+                    'coordinates' => '51°47\'46.68"S, 59°31\'25.00"W',
+                ],
+                [
+                    // Format description
+                    'format' => 'ddmmss.sss[N,S]dddmmss.sss[E,W] (Deg Mins Secs)',
+                    // Coordinates in this format
+                    'coordinates' => '514746.68S0593125.00W',
+                ],
+                [
+                    // Format description
+                    'format' => '[N,S] dd mm.mmm [E,W] ddd mm.mmm',
+                    // Coordinates in this format
+                    'coordinates' => 'S 51 47.778 W 59 31.416',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd:mm:ss[N,S],ddd:mm:ss[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '51:47:46S,-59:31:25W',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd:mm:ss.ss[N,S] ddd:mm:ss.ss[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '51:47:46.68S 59:31:25.00W',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd°mm\'ss"[N,S] ddd°mm\'ss"[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '51°47\'46"S 59°31\'25"W',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd°mm\'ss" [-]ddd°mm\'ss"',
+                    // Coordinates in this format
+                    'coordinates' => '51°47\'46" 59°31\'25"',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd mm\' ss" [N,S] ddd mm\' ss" [E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '51d 47\' 46" S 59d 31\' 25" W',
+                ],
+                [
+                    // Format description
+                    'format' => 'dd.dddd[N,S] ddd.dddd[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '51.7963S 59.5236W',
+                ],
+                [
+                    // Format description
+                    'format' => '[-]dd° mm.mmmmm [-]ddd° mm.mmmmm',
+                    // Coordinates in this format
+                    'coordinates' => '51° 47.778, -59° 31.416',
+                ],
+                [
+                    // Format description
+                    'format' => '[-] mmmm.mmmmm, [-] mmmm.mmmmm',
+                    // Coordinates in this format
+                    'coordinates' => '5147.778, 5931.416',
+                ],
+                [
+                    // Format description
+                    'format' => 'mmmm.mmmmm[N,S] mmmm.mmmmm[E,W]',
+                    // Coordinates in this format
+                    'coordinates' => '5147.778S, 5931.416W',
+                ],
             ],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '-50.966667',
-                'min' => '-52.966667',
-            ],
-            'longitude' => [
-                'max' => '-57.666667',
-                'min' => '-61.433333',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{
