@@ -41,24 +41,45 @@ class Country extends Model
      * @var array
      */
     protected $fillable = [
-        'uuid',
-        'lc_region_id',
-        'official_name',
-        'iso_alpha_2',
-        'iso_alpha_3',
-        'iso_numeric',
-        'international_phone',
-        'languages',
-        'tld', //Top-level domain
-        'wmo', //Country abbreviations by the World Meteorological Organization
-        'geoname_id', // The GeoNames geographical database https://www.geonames.org/
-        'emoji',
-        'color_hex',
-        'color_rgb',
-        'coordinates',
-        'coordinates_limit',
-        'visible',
+        'uid', // Unique identifier (ULID) for the country.
+        'lc_region_id', // Foreign key linking the country to a specific region.
+
+        'official_name', // The official name of the country (e.g., "United States of America").
+        'capital', // The capital city of the country.
+        'iso_alpha_2', // ISO 3166-1 alpha-2 country code (e.g., "US" for the United States).
+        'iso_alpha_3', // ISO 3166-1 alpha-3 country code (e.g., "USA" for the United States).
+        'iso_numeric', // ISO 3166-1 numeric country code (e.g., "840" for the United States).
+
+        'international_phone', // The country’s international dialing code (e.g., +1 for the United States).
+        'geoname_id', // The GeoNames geographical database ID for the country https://www.geonames.org/
+        'wmo', // Country abbreviations by the World Meteorological Organization (WMO).
+        'independence_day', // Year of the country's independence, if applicable.
+
+        'population', // The population of the country.
+        'area', // The area of the country in square kilometers (km²).
+        'gdp', // The Gross Domestic Product (GDP) of the country in billions of USD.
+
+        'languages', // Official languages spoken in the country.
+        'tld', // Top-level domain (e.g., ".us" for the United States).
+        'alternative_tld', // Alternative top-level domains (e.g., country-specific or alternative domain suffixes).
+        'borders', // List of bordering countries (if any).
+        'timezones', // The country's time zones, including main and additional ones.
+        'currency', // Information about the country's currency, including name, symbol, and units.
+
+        'flag_emoji', // The emoji representation of the country's flag.
+        'flag_colors', // Base colors of the flag.
+        'flag_colors_web', // Web-safe color names for the flag.
+        'flag_colors_contrast', // Contrast colors for improved readability on the flag.
+        'flag_colors_hex', // Hexadecimal color codes for the flag.
+        'flag_colors_rgb', // RGB (Red, Green, Blue) color values for the flag.
+        'flag_colors_cmyk', // CMYK (Cyan, Magenta, Yellow, Black) color values for the flag.
+        'flag_colors_hsl', // HSL (Hue, Saturation, Lightness) color values for the flag.
+        'flag_colors_hsv', // HSV (Hue, Saturation, Value) color values for the flag.
+        'flag_colors_pantone', // Pantone color codes for the flag.
+
+        'visible', // Boolean flag indicating whether the country is visible in the application.
     ];
+
 
     /**
      * The model's default values for attributes.
@@ -78,12 +99,22 @@ class Country extends Model
     {
         return [
             'languages' => 'array',
-            'color_hex' => 'array',
-            'color_rgb' => 'array',
-            'coordinates' => 'object',
-            'coordinates_limit' => 'object',
-            'emoji' => 'array',
-            'visible' => 'boolean',
+            'tld' => 'array',
+            'alternative_tld' => 'array',
+            'borders' => 'array',
+            'timezones' => 'array',
+            'currency' => 'array',
+
+            'flag_emoji' => 'array',
+            'flag_colors' => 'array',
+            'flag_colors_web' => 'array',
+            'flag_colors_contrast' => 'array',
+            'flag_colors_hex' => 'array',
+            'flag_colors_rgb' => 'array',
+            'flag_colors_cmyk' => 'array',
+            'flag_colors_hsl' => 'array',
+            'flag_colors_hsv' => 'array',
+            'flag_colors_pantone' => 'array',
         ];
     }
 
@@ -96,7 +127,7 @@ class Country extends Model
     {
         parent::boot();
         self::creating(function ($model) {
-            $model->uuid = (string) Str::uuid();
+            $model->uid = (string) Str::ulid();
         });
     }
 

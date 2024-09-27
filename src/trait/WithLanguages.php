@@ -66,7 +66,6 @@ trait WithLanguages
             }
         }
 
-        $this->comment('Running seeds...');
         $this->info('English is the default language and must be installed.');
         $this->info('However, other translations are optional.');
         $this->info('The following translations are available:');

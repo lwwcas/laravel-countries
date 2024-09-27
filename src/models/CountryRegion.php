@@ -6,7 +6,6 @@ use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
 
 class CountryRegion extends Model
 {
@@ -31,21 +30,25 @@ class CountryRegion extends Model
     public $translationForeignKey = 'lc_region_id';
 
     /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'uuid',
+        'iso_alpha_2', // The ISO 3166-1 alpha-2 country code (e.g., "US" for United States).
+        'icao',        // The ICAO (International Civil Aviation Organization) country code for aviation purposes.
+        'iucn',        // The IUCN (International Union for Conservation of Nature) region code for conservation data.
+        'tdwg',        // The TDWG (World Geographical Scheme for Recording Plant Distributions) code, used in biodiversity studies.
+        'visible',     // A boolean flag indicating if the country is visible in the application.
     ];
 
-    public static function boot()
-    {
-        parent::boot();
-        self::creating(function ($model) {
-            $model->uuid = (string) Str::uuid();
-        });
-    }
 
     /**
      * Perform any actions required before the model boots.

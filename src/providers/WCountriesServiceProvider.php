@@ -23,6 +23,8 @@ class WCountriesServiceProvider extends PackageServiceProvider
                 'create_lc_countries_table',
                 'create_lc_countries_translations_table',
                 'create_lc_countries_geographical_table',
+                'create_lc_countries_extras_table',
+                'create_lc_countries_coordinates_table',
             ])
             ->hasCommands([
                 WCountriesInstallCommand::class,
