@@ -261,7 +261,7 @@ class BN_BruneiDarussalam extends Seeder
             // Longitude in decimal degrees
             'longitude' => '114.7277',
             // Degrees with decimal
-            'd' => '4.5353° N, 114.7277° E',
+            'dd' => '4.5353° N, 114.7277° E',
             // Degrees, minutes, seconds
             'dms' => '4°32\'07.08" N, 114°43\'39.72" E',
             // Degrees and decimal minutes

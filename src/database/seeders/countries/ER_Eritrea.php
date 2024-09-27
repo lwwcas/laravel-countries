@@ -269,7 +269,7 @@ class ER_Eritrea extends Seeder
             // Longitude in decimal degrees
             'longitude' => '39.7823',
             // Degrees with decimal
-            'd' => '15.1794° N, 39.7823° E',
+            'dd' => '15.1794° N, 39.7823° E',
             // Degrees, minutes, seconds
             'dms' => '15°10\'45.84" N, 39°46\'56.28" E',
             // Degrees and decimal minutes

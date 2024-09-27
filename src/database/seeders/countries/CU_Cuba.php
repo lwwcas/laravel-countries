@@ -246,7 +246,7 @@ class CU_Cuba extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-82.3666',
             // Degrees with decimal
-            'd' => '23.1136° N, 82.3666° W',
+            'dd' => '23.1136° N, 82.3666° W',
             // Degrees, minutes, seconds
             'dms' => '23°6\'49.00" N, 82°21\'59.76" W',
             // Degrees and decimal minutes

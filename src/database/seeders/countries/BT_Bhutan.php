@@ -241,7 +241,7 @@ class BT_Bhutan extends Seeder
             // Longitude in decimal degrees
             'longitude' => '89.6329',
             // Degrees with decimal
-            'd' => '27.5142° N, 89.6329° E',
+            'dd' => '27.5142° N, 89.6329° E',
             // Degrees, minutes, seconds
             'dms' => '27°30\'51.12" N, 89°37\'58.44" E',
             // Degrees and decimal minutes

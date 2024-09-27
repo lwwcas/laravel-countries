@@ -235,7 +235,7 @@ class CH_Switzerland extends Seeder
             // Longitude in decimal degrees
             'longitude' => '8.2275',
             // Degrees with decimal
-            'd' => '46.8182° N, 8.2275° E',
+            'dd' => '46.8182° N, 8.2275° E',
             // Degrees, minutes, seconds
             'dms' => '46°49\'05.52" N, 8°13\'39.00" E',
             // Degrees and decimal minutes

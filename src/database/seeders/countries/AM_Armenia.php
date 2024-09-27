@@ -237,7 +237,7 @@ class AM_Armenia extends Seeder
             // Longitude in decimal degrees
             'longitude' => '44.4991',
             // Degrees with decimal
-            'd' => '40.1792° N, 44.4991° E',
+            'dd' => '40.1792° N, 44.4991° E',
             // Degrees, minutes, seconds
             'dms' => '40°10\'45.12" N, 44°29\'56.76" E',
             // Degrees and decimal minutes

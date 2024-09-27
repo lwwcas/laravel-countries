@@ -240,7 +240,7 @@ class FO_FaroeIslands extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-6.7833',
             // Degrees with decimal
-            'd' => '62.0000° N, 6.7833° W',
+            'dd' => '62.0000° N, 6.7833° W',
             // Degrees, minutes, seconds
             'dms' => '62°0\'0.00" N, 6°46\'59.88" W',
             // Degrees and decimal minutes

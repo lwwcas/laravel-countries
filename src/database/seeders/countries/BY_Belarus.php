@@ -246,7 +246,7 @@ class BY_Belarus extends Seeder
             // Longitude in decimal degrees
             'longitude' => '27.5590',
             // Degrees with decimal
-            'd' => '53.9006° N, 27.5590° E',
+            'dd' => '53.9006° N, 27.5590° E',
             // Degrees, minutes, seconds
             'dms' => '53°54\'02.16" N, 27°33\'32.40" E',
             // Degrees and decimal minutes

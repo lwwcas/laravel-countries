@@ -248,7 +248,7 @@ class GA_Gabon extends Seeder
             // Longitude in decimal degrees
             'longitude' => '11.6094',
             // Degrees with decimal
-            'd' => '0.8037° S, 11.6094° E',
+            'dd' => '0.8037° S, 11.6094° E',
             // Degrees, minutes, seconds
             'dms' => '0°48\'13.32" S, 11°36\'33.84" E',
             // Degrees and decimal minutes

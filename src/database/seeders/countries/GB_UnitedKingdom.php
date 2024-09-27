@@ -249,7 +249,7 @@ class GB_UnitedKingdom extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-0.1278',
             // Degrees with decimal
-            'd' => '51.5074° N, 0.1278° W',
+            'dd' => '51.5074° N, 0.1278° W',
             // Degrees, minutes, seconds
             'dms' => '51°30\'26.64" N, 0°7\'40.08" W',
             // Degrees and decimal minutes

@@ -247,7 +247,7 @@ class CR_CostaRica extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-83.7534',
             // Degrees with decimal
-            'd' => '9.7489° N, 83.7534° W',
+            'dd' => '9.7489° N, 83.7534° W',
             // Degrees, minutes, seconds
             'dms' => '9°44\'56.04" N, 83°45\'12.24" W',
             // Degrees and decimal minutes

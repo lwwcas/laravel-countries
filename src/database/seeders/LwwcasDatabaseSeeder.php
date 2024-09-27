@@ -13,8 +13,10 @@ class LwwcasDatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Builder::regions();
+        //Regions Base
+        $this->call(\Lwwcas\LaravelCountries\Database\Seeders\RegionsSeeder::class);
 
+        //Countries Base
         $this->call(\Lwwcas\LaravelCountries\Database\Seeders\Countries\AD_Andorra::class);
         $this->call(\Lwwcas\LaravelCountries\Database\Seeders\Countries\AE_UnitedArabEmirates::class);
         $this->call(\Lwwcas\LaravelCountries\Database\Seeders\Countries\AF_Afghanistan::class);

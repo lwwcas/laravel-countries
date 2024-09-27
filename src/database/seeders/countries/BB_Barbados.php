@@ -232,7 +232,7 @@ class BB_Barbados extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-59.5432',
             // Degrees with decimal
-            'd' => '13.1939° N, 59.5432° W',
+            'dd' => '13.1939° N, 59.5432° W',
             // Degrees, minutes, seconds
             'dms' => '13°11\'38.04" N, 59°32\'35.52" W',
             // Degrees and decimal minutes

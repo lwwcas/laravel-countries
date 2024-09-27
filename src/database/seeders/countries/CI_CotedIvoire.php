@@ -254,7 +254,7 @@ class CI_CotedIvoire extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-5.547080',
             // Degrees with decimal
-            'd' => '7.539989° N, 5.547080° W',
+            'dd' => '7.539989° N, 5.547080° W',
             // Degrees, minutes, seconds
             'dms' => '7°32\'23.96" N, 5°32\'49.49" W',
             // Degrees and decimal minutes

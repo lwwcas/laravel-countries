@@ -265,7 +265,7 @@ class AZ_Azerbaijan extends Seeder
             // Longitude in decimal degrees
             'longitude' => '49.8671',
             // Degrees with decimal
-            'd' => '40.4093° N, 49.8671° E',
+            'dd' => '40.4093° N, 49.8671° E',
             // Degrees, minutes, seconds
             'dms' => '40°24\'33.48" N, 49°52\'01.56" E',
             // Degrees and decimal minutes

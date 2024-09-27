@@ -243,7 +243,7 @@ class CN_China extends Seeder
             // Longitude in decimal degrees
             'longitude' => '116.383331',
             // Degrees with decimal
-            'd' => '39.916668° N, 116.383331° E',
+            'dd' => '39.916668° N, 116.383331° E',
             // Degrees, minutes, seconds
             'dms' => '39°55\'00.00" N, 116°22\'59.99" E',
             // Degrees and decimal minutes

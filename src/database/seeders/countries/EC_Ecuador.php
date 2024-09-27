@@ -252,7 +252,7 @@ class EC_Ecuador extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-78.1834',
             // Degrees with decimal
-            'd' => '1.8312° S, 78.1834° W',
+            'dd' => '1.8312° S, 78.1834° W',
             // Degrees, minutes, seconds
             'dms' => '1°49\'52.32" S, 78°11\'0.24" W',
             // Degrees and decimal minutes

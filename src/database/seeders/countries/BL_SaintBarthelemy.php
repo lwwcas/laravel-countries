@@ -233,7 +233,7 @@ class BL_SaintBarthelemy extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-62.8333',
             // Degrees with decimal
-            'd' => '17.9000° N, 62.8333° W',
+            'dd' => '17.9000° N, 62.8333° W',
             // Degrees, minutes, seconds
             'dms' => '17°54\'00.00" N, 62°49\'59.88" W',
             // Degrees and decimal minutes

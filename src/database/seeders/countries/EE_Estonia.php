@@ -251,7 +251,7 @@ class EE_Estonia extends Seeder
             // Longitude in decimal degrees
             'longitude' => '25.0136',
             // Degrees with decimal
-            'd' => '58.5953° N, 25.0136° E',
+            'dd' => '58.5953° N, 25.0136° E',
             // Degrees, minutes, seconds
             'dms' => '58°35\'43.08" N, 25°0\'49.20" E',
             // Degrees and decimal minutes

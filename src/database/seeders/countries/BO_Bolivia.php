@@ -246,7 +246,7 @@ class BO_Bolivia extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-68.1193',
             // Degrees with decimal
-            'd' => '16.4897° S, 68.1193° W',
+            'dd' => '16.4897° S, 68.1193° W',
             // Degrees, minutes, seconds
             'dms' => '16°29\'22.92" S, 68°7\'9.48" W',
             // Degrees and decimal minutes

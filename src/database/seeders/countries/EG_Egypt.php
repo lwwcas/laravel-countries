@@ -271,7 +271,7 @@ class EG_Egypt extends Seeder
             // Longitude in decimal degrees
             'longitude' => '30.8025',
             // Degrees with decimal
-            'd' => '26.8206° N, 30.8025° E',
+            'dd' => '26.8206° N, 30.8025° E',
             // Degrees, minutes, seconds
             'dms' => '26°49\'14.16" N, 30°48\'9.00" E',
             // Degrees and decimal minutes

@@ -232,7 +232,7 @@ class BM_Bermuda extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-64.7814',
             // Degrees with decimal
-            'd' => '32.2949° N, 64.7814° W',
+            'dd' => '32.2949° N, 64.7814° W',
             // Degrees, minutes, seconds
             'dms' => '32°17\'41.64" N, 64°46\'53.04" W',
             // Degrees and decimal minutes

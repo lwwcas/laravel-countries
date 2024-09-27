@@ -242,7 +242,7 @@ class BI_Burundi extends Seeder
             // Longitude in decimal degrees
             'longitude' => '29.9189',
             // Degrees with decimal
-            'd' => '3.3731° S, 29.9189° E',
+            'dd' => '3.3731° S, 29.9189° E',
             // Degrees, minutes, seconds
             'dms' => '3°22\'23.16" S, 29°55\'08.04" E',
             // Degrees and decimal minutes

@@ -282,7 +282,7 @@ class BR_Brazil extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-47.8828',
             // Degrees with decimal
-            'd' => '15.7939° S, 47.8828° W',
+            'dd' => '15.7939° S, 47.8828° W',
             // Degrees, minutes, seconds
             'dms' => '15°47\'38.04" S, 47°52\'58.08" W',
             // Degrees and decimal minutes

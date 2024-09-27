@@ -234,7 +234,7 @@ class AX_AlandIslands extends Seeder
             // Longitude in decimal degrees
             'longitude' => '19.9000',
             // Degrees with decimal
-            'd' => '60.1167° N, 19.9000° E',
+            'dd' => '60.1167° N, 19.9000° E',
             // Degrees, minutes, seconds
             'dms' => '60°07\'00.12" N, 19°54\'00.00" E',
             // Degrees and decimal minutes

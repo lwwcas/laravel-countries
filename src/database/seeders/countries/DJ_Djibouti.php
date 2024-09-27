@@ -269,7 +269,7 @@ class DJ_Djibouti extends Seeder
             // Longitude in decimal degrees
             'longitude' => '42.5903',
             // Degrees with decimal
-            'd' => '11.8251° N, 42.5903° E',
+            'dd' => '11.8251° N, 42.5903° E',
             // Degrees, minutes, seconds
             'dms' => '11°49\'30.36" N, 42°35\'25.08" E',
             // Degrees and decimal minutes

@@ -244,7 +244,7 @@ class CX_ChristmasIsland extends Seeder
             // Longitude in decimal degrees
             'longitude' => '105.6904',
             // Degrees with decimal
-            'd' => '10.4475° S, 105.6904° E',
+            'dd' => '10.4475° S, 105.6904° E',
             // Degrees, minutes, seconds
             'dms' => '10°26\'51.00" S, 105°41\'25.44" E',
             // Degrees and decimal minutes

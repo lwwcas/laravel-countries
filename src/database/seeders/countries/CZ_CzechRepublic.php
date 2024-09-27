@@ -252,7 +252,7 @@ class CZ_CzechRepublic extends Seeder
             // Longitude in decimal degrees
             'longitude' => '14.4378',
             // Degrees with decimal
-            'd' => '50.0755° N, 14.4378° E',
+            'dd' => '50.0755° N, 14.4378° E',
             // Degrees, minutes, seconds
             'dms' => '50°4\'31.80" N, 14°26\'16.08" E',
             // Degrees and decimal minutes

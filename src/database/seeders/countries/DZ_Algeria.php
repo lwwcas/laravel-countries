@@ -253,7 +253,7 @@ class DZ_Algeria extends Seeder
             // Longitude in decimal degrees
             'longitude' => '1.6596',
             // Degrees with decimal
-            'd' => '28.0339° N, 1.6596° E',
+            'dd' => '28.0339° N, 1.6596° E',
             // Degrees, minutes, seconds
             'dms' => '28°2\'2.04" N, 1°39\'34.56" E',
             // Degrees and decimal minutes

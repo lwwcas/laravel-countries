@@ -230,7 +230,7 @@ class AT_Austria extends Seeder
             // Longitude in decimal degrees
             'longitude' => '16.3738',
             // Degrees with decimal
-            'd' => '48.2082° N, 16.3738° E',
+            'dd' => '48.2082° N, 16.3738° E',
             // Degrees, minutes, seconds
             'dms' => '48°12\'29.52" N, 16°22\'25.68" E',
             // Degrees and decimal minutes

@@ -252,7 +252,7 @@ class AW_Aruba extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-69.9683',
             // Degrees with decimal
-            'd' => '12.5211° N, 69.9683° W',
+            'dd' => '12.5211° N, 69.9683° W',
             // Degrees, minutes, seconds
             'dms' => '12°31\'15.96" N, 69°58\'05.88" W',
             // Degrees and decimal minutes

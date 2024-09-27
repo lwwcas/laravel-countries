@@ -244,7 +244,7 @@ class BA_BosniaandHerzegovina extends Seeder
             // Longitude in decimal degrees
             'longitude' => '18.4131',
             // Degrees with decimal
-            'd' => '43.8563° N, 18.4131° E',
+            'dd' => '43.8563° N, 18.4131° E',
             // Degrees, minutes, seconds
             'dms' => '43°51\'22.68" N, 18°24\'47.16" E',
             // Degrees and decimal minutes

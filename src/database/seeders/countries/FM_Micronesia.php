@@ -244,7 +244,7 @@ class FM_Micronesia extends Seeder
             // Longitude in decimal degrees
             'longitude' => '150.5508',
             // Degrees with decimal
-            'd' => '7.4256° N, 150.5508° E',
+            'dd' => '7.4256° N, 150.5508° E',
             // Degrees, minutes, seconds
             'dms' => '7°25\'32.16" N, 150°33\'2.88" E',
             // Degrees and decimal minutes

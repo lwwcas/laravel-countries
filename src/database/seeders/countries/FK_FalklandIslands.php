@@ -259,7 +259,7 @@ class FK_FalklandIslands extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-59.5236',
             // Degrees with decimal
-            'd' => '51.7963° S, 59.5236° W',
+            'dd' => '51.7963° S, 59.5236° W',
             // Degrees, minutes, seconds
             'dms' => '51°47\'46.68" S, 59°31\'25.00" W',
             // Degrees and decimal minutes

@@ -262,7 +262,7 @@ class EH_WesternSahara extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-12.8858',
             // Degrees with decimal
-            'd' => '24.2155° N, 12.8858° W',
+            'dd' => '24.2155° N, 12.8858° W',
             // Degrees, minutes, seconds
             'dms' => '24°12\'55.80" N, 12°53\'8.88" W',
             // Degrees and decimal minutes

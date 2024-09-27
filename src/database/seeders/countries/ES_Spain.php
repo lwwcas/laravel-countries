@@ -241,7 +241,7 @@ class ES_Spain extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-3.7492',
             // Degrees with decimal
-            'd' => '40.4637° N, 3.7492° W',
+            'dd' => '40.4637° N, 3.7492° W',
             // Degrees, minutes, seconds
             'dms' => '40°27\'49.32" N, 3°44\'57.12" W',
             // Degrees and decimal minutes

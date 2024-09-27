@@ -220,7 +220,7 @@ class BH_Bahrain extends Seeder
             // Longitude in decimal degrees
             'longitude' => '50.5860',
             // Degrees with decimal
-            'd' => '26.2285° N, 50.5860° E',
+            'dd' => '26.2285° N, 50.5860° E',
             // Degrees, minutes, seconds
             'dms' => '26°13\'42.60" N, 50°35\'09.60" E',
             // Degrees and decimal minutes

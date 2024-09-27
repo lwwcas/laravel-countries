@@ -232,7 +232,7 @@ class BD_Bangladesh extends Seeder
             // Longitude in decimal degrees
             'longitude' => '90.4125',
             // Degrees with decimal
-            'd' => '23.8103° N, 90.4125° E',
+            'dd' => '23.8103° N, 90.4125° E',
             // Degrees, minutes, seconds
             'dms' => '23°48\'37.08" N, 90°24\'45.00" E',
             // Degrees and decimal minutes

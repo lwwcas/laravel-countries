@@ -194,7 +194,7 @@ class BW_Botswana extends Seeder
             'pantone' => '2905 C',
             // Contrast color for readability
             'contrast' => '#000000',
-        },
+        ],
         [
             // Color name
             'name' => 'Black',
@@ -214,7 +214,7 @@ class BW_Botswana extends Seeder
             'pantone' => 'Black',
             // Contrast color for readability
             'contrast' => '#FFFFFF',
-        },
+        ],
         [
             // Color name
             'name' => 'White',
@@ -244,7 +244,7 @@ class BW_Botswana extends Seeder
         // Longitude in decimal degrees
         'longitude' => '25.9089',
         // Degrees with decimal
-        'd' => '24.6583° S, 25.9089° E',
+        'dd' => '24.6583° S, 25.9089° E',
         // Degrees, minutes, seconds
         'dms' => '24°39\'29.88" S, 25°54\'32.04" E',
         // Degrees and decimal minutes

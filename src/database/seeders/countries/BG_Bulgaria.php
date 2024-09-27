@@ -247,7 +247,7 @@ class BG_Bulgaria extends Seeder
             // Longitude in decimal degrees
             'longitude' => '23.3219',
             // Degrees with decimal
-            'd' => '42.6977° N, 23.3219° E',
+            'dd' => '42.6977° N, 23.3219° E',
             // Degrees, minutes, seconds
             'dms' => '42°41\'51.72" N, 23°19\'18.84" E',
             // Degrees and decimal minutes

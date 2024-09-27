@@ -237,7 +237,7 @@ class AO_Angola extends Seeder
             // Longitude in decimal degrees
             'longitude' => '13.2894',
             // Degrees with decimal
-            'd' => '8.8390° S, 13.2894° E',
+            'dd' => '8.8390° S, 13.2894° E',
             // Degrees, minutes, seconds
             'dms' => '8°50\'20.40" S, 13°17\'21.84" E',
             // Degrees and decimal minutes

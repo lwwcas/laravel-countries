@@ -251,7 +251,7 @@ class CM_Cameroon extends Seeder
             // Longitude in decimal degrees
             'longitude' => '11.5021',
             // Degrees with decimal
-            'd' => '3.8480° N, 11.5021° E',
+            'dd' => '3.8480° N, 11.5021° E',
             // Degrees, minutes, seconds
             'dms' => '3°50\'52.80" N, 11°30\'07.56" E',
             // Degrees and decimal minutes

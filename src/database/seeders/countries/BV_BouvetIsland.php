@@ -233,7 +233,7 @@ class BV_BouvetIsland extends Seeder
             // Longitude in decimal degrees
             'longitude' => '3.3464',
             // Degrees with decimal
-            'd' => '54.4208° S, 3.3464° E',
+            'dd' => '54.4208° S, 3.3464° E',
             // Degrees, minutes, seconds
             'dms' => '54°25\'14.88" S, 3°20\'47.04" E',
             // Degrees and decimal minutes

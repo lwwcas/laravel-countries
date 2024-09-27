@@ -260,7 +260,7 @@ class CL_Chile extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-70.6693',
             // Degrees with decimal
-            'd' => '33.4489° S, 70.6693° W',
+            'dd' => '33.4489° S, 70.6693° W',
             // Degrees, minutes, seconds
             'dms' => '33°26\'56.04" S, 70°40\'09.48" W',
             // Degrees and decimal minutes

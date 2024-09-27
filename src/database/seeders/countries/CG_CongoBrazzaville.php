@@ -253,7 +253,7 @@ class CG_CongoBrazzaville extends Seeder
             // Longitude in decimal degrees
             'longitude' => '15.2834',
             // Degrees with decimal
-            'd' => '4.2678° S, 15.2834° E',
+            'dd' => '4.2678° S, 15.2834° E',
             // Degrees, minutes, seconds
             'dms' => '4°16\'04.08" S, 15°17\'00.24" E',
             // Degrees and decimal minutes

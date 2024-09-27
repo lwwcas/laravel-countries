@@ -272,7 +272,7 @@ class ET_Ethiopia extends Seeder
             // Longitude in decimal degrees
             'longitude' => '40.4897',
             // Degrees with decimal
-            'd' => '9.1450° N, 40.4897° E',
+            'dd' => '9.1450° N, 40.4897° E',
             // Degrees, minutes, seconds
             'dms' => '9°8\'42.00" N, 40°29\'22.92" E',
             // Degrees and decimal minutes

@@ -254,7 +254,7 @@ class CF_CentralAfricanRepublic extends Seeder
             // Longitude in decimal degrees
             'longitude' => '20.9394',
             // Degrees with decimal
-            'd' => '6.6111° N, 20.9394° E',
+            'dd' => '6.6111° N, 20.9394° E',
             // Degrees, minutes, seconds
             'dms' => '6°36\'40.00" N, 20°56\'21.84" E',
             // Degrees and decimal minutes

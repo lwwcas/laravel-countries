@@ -246,7 +246,7 @@ class CY_Cyprus extends Seeder
             // Longitude in decimal degrees
             'longitude' => '33.4299',
             // Degrees with decimal
-            'd' => '35.1264° N, 33.4299° E',
+            'dd' => '35.1264° N, 33.4299° E',
             // Degrees, minutes, seconds
             'dms' => '35°7\'35.04" N, 33°25\'47.64" E',
             // Degrees and decimal minutes

@@ -257,7 +257,7 @@ class FR_France extends Seeder
             // Longitude in decimal degrees
             'longitude' => '1.8883335',
             // Degrees with decimal
-            'd' => '46.6034° N, 1.8883° E',
+            'dd' => '46.6034° N, 1.8883° E',
             // Degrees, minutes, seconds
             'dms' => '46°36\'12.08" N, 1°53\'18.00" E',
             // Degrees and decimal minutes

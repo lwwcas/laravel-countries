@@ -15,7 +15,6 @@ return new class() extends Migration
     {
         Schema::create('lc_countries_geographical', function (Blueprint $table) {
             $table->increments('id');
-            $table->uuid('uuid');
             $table->integer('lc_country_id')->unsigned();
             $table->string('type');
             $table->string('features_type');
@@ -23,7 +22,6 @@ return new class() extends Migration
             $table->json('geometry');
 
             $table->foreign('lc_country_id')->references('id')->on('lc_countries')->onDelete('cascade');
-            $table->timestamps();
         });
     }
 

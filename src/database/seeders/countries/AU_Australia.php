@@ -241,7 +241,7 @@ class AU_Australia extends Seeder
             // Longitude in decimal degrees
             'longitude' => '149.1300',
             // Degrees with decimal
-            'd' => '35.2809° S, 149.1300° E',
+            'dd' => '35.2809° S, 149.1300° E',
             // Degrees, minutes, seconds
             'dms' => '35°16\'51.24" S, 149°07\'48.00" E',
             // Degrees and decimal minutes

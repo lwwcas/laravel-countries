@@ -226,7 +226,7 @@ class JP_Japan extends Seeder
             // Longitude in decimal degrees
             'longitude' => '139.839478',
             // Degrees with decimal
-            'd' => '35.652832° N, 139.839478° E',
+            'dd' => '35.652832° N, 139.839478° E',
             // Degrees, minutes, seconds
             'dms' => '35°39\'10.20" N, 139°50\'22.12" E',
             // Degrees and decimal minutes

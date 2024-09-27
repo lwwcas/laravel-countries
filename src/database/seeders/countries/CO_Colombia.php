@@ -251,7 +251,7 @@ class CO_Colombia extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-74.0721',
             // Degrees with decimal
-            'd' => '4.7110° N, 74.0721° W',
+            'dd' => '4.7110° N, 74.0721° W',
             // Degrees, minutes, seconds
             'dms' => '4°42\'39.60" N, 74°4\'19.56" W',
             // Degrees and decimal minutes

@@ -284,7 +284,7 @@ class DM_Dominica extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-61.3710',
             // Degrees with decimal
-            'd' => '15.4150° N, 61.3710° W',
+            'dd' => '15.4150° N, 61.3710° W',
             // Degrees, minutes, seconds
             'dms' => '15°24\'54.00" N, 61°22\'15.60" W',
             // Degrees and decimal minutes

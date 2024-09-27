@@ -121,7 +121,7 @@ class AD_Andorra extends Seeder
         ];
 
         // Set the foundation date
-        $this->founded_date = '1278-09-08'; // Date of the Paréage Agreement
+        $this->independence_day = '1278-09-08'; // Date of the Paréage Agreement
 
         // List international organizations the country is part of
         $this->international_organizations = ['United Nations', 'Council of Europe', 'OSCE', 'IMF']; // International affiliations

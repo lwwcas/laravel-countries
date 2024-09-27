@@ -212,7 +212,7 @@ class CC_CocosKeelingIslands extends Seeder
             // Longitude in decimal degrees
             'longitude' => '96.8333',
             // Degrees with decimal
-            'd' => '12.1889° S, 96.8333° E',
+            'dd' => '12.1889° S, 96.8333° E',
             // Degrees, minutes, seconds
             'dms' => '12°11\'20.04" S, 96°49\'59.88" E',
             // Degrees and decimal minutes

@@ -246,7 +246,7 @@ class DO_DominicanRepublic extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-70.1627',
             // Degrees with decimal
-            'd' => '18.7357° N, 70.1627° W',
+            'dd' => '18.7357° N, 70.1627° W',
             // Degrees, minutes, seconds
             'dms' => '18°44\'8.52" N, 70°9\'45.72" W',
             // Degrees and decimal minutes

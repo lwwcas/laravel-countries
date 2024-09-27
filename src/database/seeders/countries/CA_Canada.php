@@ -253,7 +253,7 @@ class CA_Canada extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-75.6972',
             // Degrees with decimal
-            'd' => '45.4215° N, 75.6972° W',
+            'dd' => '45.4215° N, 75.6972° W',
             // Degrees, minutes, seconds
             'dms' => '45°25\'17.40" N, 75°41\'49.92" W',
             // Degrees and decimal minutes

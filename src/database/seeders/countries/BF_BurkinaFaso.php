@@ -245,7 +245,7 @@ class BF_BurkinaFaso extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-1.5197',
             // Degrees with decimal
-            'd' => '12.3714° N, 1.5197° W',
+            'dd' => '12.3714° N, 1.5197° W',
             // Degrees, minutes, seconds
             'dms' => '12°22\'17.04" N, 1°31\'10.92" W',
             // Degrees and decimal minutes

@@ -150,7 +150,7 @@ class AQ_Antarctica extends Seeder
             // Longitude in decimal degrees
             'longitude' => '0.0000',  // All longitudinal lines meet at the poles
             // Degrees with decimal
-            'd' => '90.0000° S, 0.0000° E',
+            'dd' => '90.0000° S, 0.0000° E',
             // Degrees, minutes, seconds
             'dms' => '90°00\'00.00" S, 0°00\'00.00" E',
             // Degrees and decimal minutes

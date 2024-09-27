@@ -265,7 +265,7 @@ class CV_CapeVerde extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-23.5133',
             // Degrees with decimal
-            'd' => '14.9331° N, 23.5133° W',
+            'dd' => '14.9331° N, 23.5133° W',
             // Degrees, minutes, seconds
             'dms' => '14°55\'59.16" N, 23°30\'47.88" W',
             // Degrees and decimal minutes

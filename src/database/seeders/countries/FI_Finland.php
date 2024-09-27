@@ -231,7 +231,7 @@ class FI_Finland extends Seeder
             // Longitude in decimal degrees
             'longitude' => '25.7482',
             // Degrees with decimal
-            'd' => '61.9241° N, 25.7482° E',
+            'dd' => '61.9241° N, 25.7482° E',
             // Degrees, minutes, seconds
             'dms' => '61°55\'26.76" N, 25°44\'53.52" E',
             // Degrees and decimal minutes

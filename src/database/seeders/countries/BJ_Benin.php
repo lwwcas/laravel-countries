@@ -244,7 +244,7 @@ class BJ_Benin extends Seeder
             // Longitude in decimal degrees
             'longitude' => '2.6289',
             // Degrees with decimal
-            'd' => '6.4969° N, 2.6289° E',
+            'dd' => '6.4969° N, 2.6289° E',
             // Degrees, minutes, seconds
             'dms' => '6°29\'48.84" N, 2°37\'44.04" E',
             // Degrees and decimal minutes

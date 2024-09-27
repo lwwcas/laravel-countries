@@ -230,7 +230,7 @@ class DK_Denmark extends Seeder
           // Longitude in decimal degrees
           'longitude' => '12.5683',
           // Degrees with decimal
-          'd' => '55.6761° N, 12.5683° E',
+          'dd' => '55.6761° N, 12.5683° E',
           // Degrees, minutes, seconds
           'dms' => '55°40\'33.96" N, 12°34\'5.88" E',
           // Degrees and decimal minutes

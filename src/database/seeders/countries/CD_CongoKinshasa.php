@@ -262,7 +262,7 @@ class CD_CongoKinshasa extends Seeder
             // Longitude in decimal degrees
             'longitude' => '15.2663',
             // Degrees with decimal
-            'd' => '4.4419° S, 15.2663° E',
+            'dd' => '4.4419° S, 15.2663° E',
             // Degrees, minutes, seconds
             'dms' => '4°26\'30.84" S, 15°15\'58.68" E',
             // Degrees and decimal minutes

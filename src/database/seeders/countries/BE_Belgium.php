@@ -247,7 +247,7 @@ class BE_Belgium extends Seeder
             // Longitude in decimal degrees
             'longitude' => '4.3517',
             // Degrees with decimal
-            'd' => '50.8503° N, 4.3517° E',
+            'dd' => '50.8503° N, 4.3517° E',
             // Degrees, minutes, seconds
             'dms' => '50°51\'01.08" N, 4°21\'06.12" E',
             // Degrees and decimal minutes

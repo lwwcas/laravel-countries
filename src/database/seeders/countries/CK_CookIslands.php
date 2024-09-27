@@ -222,7 +222,7 @@ class CK_CookIslands extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-159.7776',
             // Degrees with decimal
-            'd' => '21.2367° S, 159.7776° W',
+            'dd' => '21.2367° S, 159.7776° W',
             // Degrees, minutes, seconds
             'dms' => '21°14\'12.12" S, 159°46\'39.36" W',
             // Degrees and decimal minutes

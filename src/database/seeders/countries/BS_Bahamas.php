@@ -241,7 +241,7 @@ class BS_Bahamas extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-77.3504',
             // Degrees with decimal
-            'd' => '25.0443° N, 77.3504° W',
+            'dd' => '25.0443° N, 77.3504° W',
             // Degrees, minutes, seconds
             'dms' => '25°2\'39.48" N, 77°21\'1.44" W',
             // Degrees and decimal minutes

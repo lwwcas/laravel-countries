@@ -259,7 +259,7 @@ class DE_Germany extends Seeder
             // Longitude in decimal degrees
             'longitude' => '13.4050',
             // Degrees with decimal
-            'd' => '52.5200° N, 13.4050° E',
+            'dd' => '52.5200° N, 13.4050° E',
             // Degrees, minutes, seconds
             'dms' => '52°31\'12.00" N, 13°24\'18.00" E',
             // Degrees and decimal minutes

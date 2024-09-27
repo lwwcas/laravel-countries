@@ -286,7 +286,7 @@ class FJ_Fiji extends Seeder
             // Longitude in decimal degrees
             'longitude' => '178.0650',
             // Degrees with decimal
-            'd' => '17.7134° S, 178.0650° E',
+            'dd' => '17.7134° S, 178.0650° E',
             // Degrees, minutes, seconds
             'dms' => '17°42\'48.24" S, 178°3\'54.00" E',
             // Degrees and decimal minutes

@@ -262,7 +262,7 @@ class BZ_Belize extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-88.4976',
             // Degrees with decimal
-            'd' => '17.1899° N, 88.4976° W',
+            'dd' => '17.1899° N, 88.4976° W',
             // Degrees, minutes, seconds
             'dms' => '17°11\'23.64" N, 88°29\'51.36" W',
             // Degrees and decimal minutes
