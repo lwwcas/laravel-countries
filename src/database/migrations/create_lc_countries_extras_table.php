@@ -15,7 +15,6 @@ return new class() extends Migration
     {
         Schema::create('lc_countries_extras', function (Blueprint $table) {
             $table->increments('id')->comment('Primary key: auto-incremented extra information ID.');
-            $table->uuid('uuid')->comment('UUID for uniquely identifying each extra information record.');
             $table->integer('lc_country_id')->unsigned()->comment('Foreign key linking to the lc_countries table.');
 
             $table->string('national_sport')->nullable()->comment('The national sport of the country, if applicable.');

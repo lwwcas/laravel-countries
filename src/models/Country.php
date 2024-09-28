@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Lwwcas\LaravelCountries\Models\CountryCoordinates;
+use Lwwcas\LaravelCountries\Models\CountryExtras;
 use Lwwcas\LaravelCountries\trait\WithCoordinatesBootstrap;
 use Lwwcas\LaravelCountries\trait\WithFlagBootstrap;
 
@@ -115,6 +117,8 @@ class Country extends Model
             'flag_colors_hsl' => 'array',
             'flag_colors_hsv' => 'array',
             'flag_colors_pantone' => 'array',
+
+            'visible' => 'bool',
         ];
     }
 
@@ -189,6 +193,26 @@ class Country extends Model
     public function geographical()
     {
         return $this->hasMany(CountryGeographical::class, 'lc_country_id');
+    }
+
+    /**
+     * Get the extra data for the country.
+     *
+     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function extras()
+    {
+        return $this->hasMany(CountryExtras::class, 'lc_country_id');
+    }
+
+    /**
+     * Get the coordinates for the country.
+     *
+     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function coordinates()
+    {
+        return $this->hasMany(CountryCoordinates::class, 'lc_country_id');
     }
 
     /**

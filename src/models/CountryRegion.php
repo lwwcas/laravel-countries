@@ -49,6 +49,27 @@ class CountryRegion extends Model
         'visible',     // A boolean flag indicating if the country is visible in the application.
     ];
 
+    /**
+     * The model's default values for attributes.
+     *
+     * @var array
+     */
+    protected $attributes = [
+        'visible' => true,
+    ];
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'visible' => 'bool',
+        ];
+    }
+
 
     /**
      * Perform any actions required before the model boots.
@@ -59,10 +80,25 @@ class CountryRegion extends Model
     {
         parent::booting();
 
+        // Applying a global scope to always filter countries where 'visible' is true
+        static::addGlobalScope('visible', function (Builder $builder) {
+            $builder->where('visible', true);
+        });
+
         // Apply a global scope to always eager load the translations
         static::addGlobalScope('translation', function (Builder $builder) {
             $builder->withTranslation();
         });
+    }
+
+    /**
+     * Retrieve a query builder without applying the 'visible' global scope.
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public static function withNotVisible()
+    {
+        return static::withoutGlobalScope('visible');
     }
 
     /**

@@ -5,7 +5,7 @@ namespace Lwwcas\LaravelCountries\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CountryGeographical extends Model
+class CountryCoordinates extends Model
 {
     use HasFactory;
 
@@ -14,7 +14,7 @@ class CountryGeographical extends Model
      *
      * @var string
      */
-    protected $table = 'lc_countries_geographical';
+    protected $table = 'lc_countries_coordinates';
 
     /**
      * The attributes that are mass assignable.
@@ -23,10 +23,12 @@ class CountryGeographical extends Model
      */
     protected $fillable = [
         'lc_country_id',
-        'type',
-        'features_type',
-        'properties',
-        'geometry',
+        'latitude',
+        'longitude',
+        'degrees_with_decimal',
+        'degrees_minutes_seconds',
+        'degrees_and_decimal_minutes',
+        'gps',
     ];
 
     /**
@@ -37,8 +39,7 @@ class CountryGeographical extends Model
     protected function casts(): array
     {
         return [
-            'properties' => 'object',
-            'geometry' => 'object',
+            'gps' => 'object',
         ];
     }
 
@@ -48,24 +49,5 @@ class CountryGeographical extends Model
     public function country()
     {
         return $this->belongsTo(Country::class, 'lc_country_id');
-    }
-
-    /**
-     * Get the geographical data as a GeoJSON feature collection.
-     *
-     * @return array
-     */
-    public function getGeodata()
-    {
-        $data = [
-            'type' => $this->type,
-            'features' => [
-                'type' => $this->features_type,
-                'properties' => json_decode($this->properties, true),
-                'geometry' => json_decode($this->geometry, true),
-            ],
-        ];
-
-        return $data;
     }
 }

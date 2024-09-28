@@ -21,6 +21,7 @@ return new class() extends Migration
             $table->string('locale')->index();
 
             $table->unique(['lc_country_id', 'locale']);
+            $table->unique(['slug', 'locale']);
             $table->foreign('lc_country_id')->references('id')->on('lc_countries')->onDelete('cascade');
         });
     }
