@@ -68,7 +68,7 @@ class FK_FalklandIslands extends Seeder
         $this->internet_penetration = '60%'; // Moderate internet penetration
 
         // Set the national cybersecurity agency
-        $this->cybersecurity_agency = 'None'; // No dedicated cybersecurity agency
+        $this->cybersecurity_agency = null; // No dedicated cybersecurity agency
 
         // List popular web technologies in the Falkland Islands
         $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS'];

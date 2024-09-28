@@ -272,134 +272,13 @@ class AS_AmericanSamoa extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-170.7020',
             // Degrees with decimal
-            'dd' => '14.2756° S, 170.7020° W',
+            'd' => '14.2756° S, 170.7020° W',
             // Degrees, minutes, seconds
             'dms' => '14°16\'32.16" S, 170°42\'07.20" W',
             // Degrees and decimal minutes
             'dm' => '14°16.536\' S, 170°42.120\' W',
             // Various GPS formats
-            'gps' => [
-                [
-                    // Format description
-                    'format' => '[N,S]dd°mm\'ss.ssss", [E,W]ddd°mm\'ss.ssss"',
-                    // Coordinates in this format
-                    'coordinates' => 'S14°16\'32.16", W170°42\'07.20"',
-                ],
-                [
-                    // Format description
-                    'format' => 'dd°mm\'ss.ssss"[N,S], ddd°mm\'ss.ssss"[E,W]',
-                    // Coordinates in this format
-                    'coordinates' => '14°16\'32.16"S, 170°42\'07.20"W',
-                ],
-                [
-                    // Format description
-                    'format' => '[-]dd mm ss.ssss, [-]ddd mm ss.ssss',
-                    // Coordinates in this format
-                    'coordinates' => '-14 16 32.16, -170 42 07.20',
-                ],
-                [
-                    // Format description
-                    'format' => 'ISO 6709: [-]ddmmss.ssss, [-]dddmmss.ssss',
-                    // Coordinates in this format
-                    'coordinates' => '-141632.16, -1704207.20',
-                ],
-                [
-                    // Format description
-                    'format' => '[-]dd.dddd [-]ddd.dddd',
-                    // Coordinates in this format
-                    'coordinates' => '-14.2756 -170.7020',
-                ],
-                [
-                    // Format description
-                    'format' => '[-]dd.ddddd°,[-]ddd.ddddd° (Dec Degs)',
-                    // Coordinates in this format
-                    'coordinates' => '-14.27560°,-170.70200°',
-                ],
-                [
-                    // Format description
-                    'format' => 'dd.ddddd[N,S]ddd.ddddd[E,W] (Dec Degs Micro)',
-                    // Coordinates in this format
-                    'coordinates' => '14.2756000S170.7020000W',
-                ],
-                [
-                    // Format description
-                    'format' => 'ddmm.mmmm[N,S]dddmm.mmmm[E,W] (Dec Min)',
-                    // Coordinates in this format
-                    'coordinates' => '1416.536S17042.120W',
-                ],
-                [
-                    // Format description
-                    'format' => 'dd°mm\'ss.sss"[N,S], ddd°mm\'ss.sss"[E,W] (Deg Min Secs)',
-                    // Coordinates in this format
-                    'coordinates' => '14°16\'32.16"S, 170°42\'07.20"W',
-                ],
-                [
-                    // Format description
-                    'format' => 'ddmmss.sss[N,S]dddmmss.sss[E,W] (Deg Mins Secs)',
-                    // Coordinates in this format
-                    'coordinates' => '141632.16S1704207.20W',
-                ],
-                [
-                    // Format description
-                    'format' => '[N,S] dd mm.mmm [E,W] ddd mm.mmm',
-                    // Coordinates in this format
-                    'coordinates' => 'S 14 16.536 W 170 42.120',
-                ],
-                [
-                    // Format description
-                    'format' => 'dd:mm:ss[N,S],ddd:mm:ss[E,W]',
-                    // Coordinates in this format
-                    'coordinates' => '14:16:32S,170:42:07W',
-                ],
-                [
-                    // Format description
-                    'format' => 'dd:mm:ss.ss[N,S] ddd:mm:ss.ss[E,W]',
-                    // Coordinates in this format
-                    'coordinates' => '14:16:32.16S 170:42:07.20W',
-                ],
-                [
-                    // Format description
-                    'format' => 'dd°mm\'ss"[N,S] ddd°mm\'ss"[E,W]',
-                    // Coordinates in this format
-                    'coordinates' => '14°16\'32"S 170°42\'07"W',
-                ],
-                [
-                    // Format description
-                    'format' => '[-]dd°mm\'ss" [-]ddd°mm\'ss"',
-                    // Coordinates in this format
-                    'coordinates' => '-14°16\'32" -170°42\'07"',
-                ],
-                [
-                    // Format description
-                    'format' => 'dd mm\' ss" [N,S] ddd mm\' ss" [E,W]',
-                    // Coordinates in this format
-                    'coordinates' => '14d 16\' 32" S 170d 42\' 07" W',
-                ],
-                [
-                    // Format description
-                    'format' => 'dd.dddd[N,S] ddd.dddd[E,W]',
-                    // Coordinates in this format
-                    'coordinates' => '14.2756S 170.7020W',
-                ],
-                [
-                    // Format description
-                    'format' => '[-]dd° mm.mmmmm [-]ddd° mm.mmmmm',
-                    // Coordinates in this format
-                    'coordinates' => '-14° 16.536, -170° 42.120',
-                ],
-                [
-                    // Format description
-                    'format' => '[-] mmmm.mmmmm, [-] mmmm.mmmmm',
-                    // Coordinates in this format
-                    'coordinates' => '-1416.536, -17042.120',
-                ],
-                [
-                    // Format description
-                    'format' => 'mmmm.mmmmm[N,S] mmmm.mmmmm[E,W]',
-                    // Coordinates in this format
-                    'coordinates' => '1416.536S, 17042.120W',
-                ],
-            ],
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

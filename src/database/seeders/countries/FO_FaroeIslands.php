@@ -68,7 +68,7 @@ class FO_FaroeIslands extends Seeder
         $this->internet_penetration = '98%'; // High internet penetration rate
 
         // Set the national cybersecurity agency
-        $this->cybersecurity_agency = 'None'; // No dedicated cybersecurity agency
+        $this->cybersecurity_agency = null; // No dedicated cybersecurity agency
 
         // List popular web technologies in the Faroe Islands
         $this->popular_technologies = ['PHP', 'JavaScript', 'React', 'WordPress'];

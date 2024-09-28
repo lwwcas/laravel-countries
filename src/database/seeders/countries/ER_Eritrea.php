@@ -68,7 +68,7 @@ class ER_Eritrea extends Seeder
         $this->internet_penetration = '1%'; // One of the lowest internet penetration rates in the world due to limited infrastructure
 
         // Set the national cybersecurity agency
-        $this->cybersecurity_agency = 'None'; // Eritrea lacks a formal cybersecurity agency
+        $this->cybersecurity_agency = null; // Eritrea lacks a formal cybersecurity agency
 
         // List popular web technologies in Eritrea
         $this->popular_technologies = ['PHP', 'HTML', 'CSS'];

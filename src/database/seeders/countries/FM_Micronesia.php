@@ -68,7 +68,7 @@ class FM_Micronesia extends Seeder
         $this->internet_penetration = '38%'; // Moderate internet penetration due to infrastructure challenges across the islands
 
         // Set the national cybersecurity agency
-        $this->cybersecurity_agency = 'None'; // No dedicated cybersecurity agency
+        $this->cybersecurity_agency = null; // No dedicated cybersecurity agency
 
         // List popular web technologies in Micronesia
         $this->popular_technologies = ['PHP', 'HTML/CSS', 'JavaScript', 'WordPress'];

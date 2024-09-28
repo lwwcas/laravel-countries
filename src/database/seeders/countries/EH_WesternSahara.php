@@ -68,7 +68,7 @@ class EH_WesternSahara extends Seeder
         $this->internet_penetration = '22%'; // Percentage of the population with internet access is low due to territorial disputes and infrastructure limitations
 
         // Set the national cybersecurity agency
-        $this->cybersecurity_agency = 'None'; // The region lacks a formal cybersecurity agency
+        $this->cybersecurity_agency = null; // The region lacks a formal cybersecurity agency
 
         // List popular web technologies in Western Sahara
         $this->popular_technologies = ['PHP', 'JavaScript'];
@@ -262,7 +262,7 @@ class EH_WesternSahara extends Seeder
             // Longitude in decimal degrees
             'longitude' => '-12.8858',
             // Degrees with decimal
-            'dd' => '24.2155° N, 12.8858° W',
+            'd' => '24.2155° N, 12.8858° W',
             // Degrees, minutes, seconds
             'dms' => '24°12\'55.80" N, 12°53\'8.88" W',
             // Degrees and decimal minutes

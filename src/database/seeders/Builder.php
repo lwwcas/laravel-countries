@@ -39,7 +39,7 @@ class Builder
         $region = CountryRegion::whereSlug($country->region, $country->lang)
             ->firstOrFail();
 
-        $_country = $region->countries()->create([
+        $countryCreated = $region->countries()->create([
             'capital' => $country->capital,
             'official_name' => $country->official_name,
             'iso_alpha_2' => $country->iso_alpha_2,
@@ -93,6 +93,31 @@ class Builder
                 'slug' => Str::slug($country->name, '-'),
             ],
         ]);
+
+        $countryCreated->extras()->create([
+            'national_sport' => $country->national_sport,
+            'cybersecurity_agency' => $country->cybersecurity_agency,
+            'popular_technologies' => $country->popular_technologies ?? [],
+            'internet' => [
+                'speed' => [
+                    'average_fixed' => $country->internet_speed['average'] ?? null,
+                    'average_mobile' => $country->internet_speed['average'] ?? null,
+                ],
+                'penetration' => $country->internet_penetration,
+
+            ],
+            'religions' => $country->religions ?? [],
+            'international_organizations' => $country->international_organizations ?? [],
+        ]);
+
+        $countryCreated->coordinates()->create([
+            'latitude' => $country->coordinates['latitude'] ?? null,
+            'longitude' => $country->coordinates['longitude'] ?? null,
+            'degrees_with_decimal' => $country->coordinates['dd'] ?? null,
+            'degrees_minutes_seconds' => $country->coordinates['dms'] ?? null,
+            'degrees_and_decimal_minutes' => $country->coordinates['dm'] ?? null,
+            'gps' => [],
+        ]);
     }
 
     protected function oldBuilder(Seeder $country)
@@ -131,56 +156,6 @@ class Builder
                 'geometry' => json_encode($geographical['features'][0]['geometry']),
             ]);
         }
-    }
-
-    /**
-     * Given an array of gps formats, this method will generate a new array
-     * that replaces the format string with the corresponding GpsFormatEnum
-     * value. If the format is not recognized, it is skipped.
-     *
-     * @param array $gps
-     * @return array
-     */
-    protected function gpsFormatsArrayGenerate(array $gps): array
-    {
-        $newArray = [];
-
-        foreach ($gps as $entry) {
-            $format = $entry['format'];
-
-            $enumValue = match ($format) {
-                '[N,S]dd°mm\'ss.ssss", [E,W]ddd°mm\'ss.ssss"' => GpsFormatEnum::DDMMSS_NS_EW,
-                'dd°mm\'ss.ssss"[N,S], ddd°mm\'ss.ssss"[E,W]' => GpsFormatEnum::DDMMSS_NS_EW_ALT,
-                '[-]dd mm ss.ssss, [-]ddd mm ss.ssss' => GpsFormatEnum::DECIMAL_WITH_SIGNS,
-                'ISO 6709: [-]ddmmss.ssss, [-]dddmmss.ssss' => GpsFormatEnum::ISO_6709,
-                '[-]dd.dddd [-]ddd.dddd' => GpsFormatEnum::DECIMAL_DDDD,
-                '[-]dd.ddddd°,[-]ddd.ddddd° (Dec Degs)' => GpsFormatEnum::DEC_DEG,
-                'dd.ddddd[N,S]ddd.ddddd[E,W] (Dec Degs Micro)' => GpsFormatEnum::DEC_DEG_MICRO,
-                'ddmm.mmmm[N,S]dddmm.mmmm[E,W] (Dec Min)' => GpsFormatEnum::DEC_MIN,
-                'dd°mm\'ss.sss"[N,S], ddd°mm\'ss.sss"[E,W] (Deg Min Secs)' => GpsFormatEnum::DEG_MIN_SEC,
-                'ddmmss.sss[N,S]dddmmss.sss[E,W] (Deg Mins Secs)' => GpsFormatEnum::DEG_MIN_SECS,
-                '[N,S] dd mm.mmm [E,W] ddd mm.mmm' => GpsFormatEnum::NS_DD_MM,
-                'dd:mm:ss[N,S],ddd:mm:ss[E,W]' => GpsFormatEnum::DD_MM_SS_NS_EW,
-                'dd:mm:ss.ss[N,S] ddd:mm:ss.ss[E,W]' => GpsFormatEnum::DD_MM_SS_SS_NS_EW,
-                'dd°mm\'ss"[N,S] ddd°mm\'ss"[E,W]' => GpsFormatEnum::DEG_MIN_SEC_ALT,
-                '[-]dd°mm\'ss" [-]ddd°mm\'ss"' => GpsFormatEnum::DDMMSSSS,
-                'dd mm\' ss" [N,S] ddd mm\' ss" [E,W]' => GpsFormatEnum::COMPACT_MM,
-                'dd.dddd[N,S] ddd.dddd[E,W]' => GpsFormatEnum::DEC_DD_MM,
-                '[-]dd° mm.mmmmm [-]ddd° mm.mmmmm' => GpsFormatEnum::DEG_MIN_MMMMM,
-                '[-] mmmm.mmmmm, [-] mmmm.mmmmm' => GpsFormatEnum::COMPACT_DEC_MM,
-                'mmmm.mmmmm[N,S] mmmm.mmmmm[E,W]' => GpsFormatEnum::COMPACT_MM_NS,
-                default => null,
-            };
-
-            if ($enumValue !== null) {
-                $newArray[$enumValue->value] = [
-                    'format' => $enumValue->format(),
-                    'coordinates' => $entry['coordinates'] ?? null,
-                ];
-            }
-        }
-
-        return $newArray;
     }
 
     /**
