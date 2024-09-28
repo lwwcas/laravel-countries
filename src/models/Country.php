@@ -188,31 +188,31 @@ class Country extends Model
     /**
      * Get the geographical data for the country.
      *
-     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     * @return Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function geographical()
     {
-        return $this->hasMany(CountryGeographical::class, 'lc_country_id');
+        return $this->hasOne(CountryGeographical::class, 'lc_country_id');
     }
 
     /**
      * Get the extra data for the country.
      *
-     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     * @return Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function extras()
     {
-        return $this->hasMany(CountryExtras::class, 'lc_country_id');
+        return $this->hasOne(CountryExtras::class, 'lc_country_id');
     }
 
     /**
      * Get the coordinates for the country.
      *
-     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     * @return Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function coordinates()
     {
-        return $this->hasMany(CountryCoordinates::class, 'lc_country_id');
+        return $this->hasOne(CountryCoordinates::class, 'lc_country_id');
     }
 
     /**

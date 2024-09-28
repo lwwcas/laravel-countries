@@ -4,6 +4,7 @@ namespace Lwwcas\LaravelCountries\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class CountryExtras extends Model
 {
@@ -15,6 +16,13 @@ class CountryExtras extends Model
      * @var string
      */
     protected $table = 'lc_countries_extras';
+
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
@@ -47,10 +55,12 @@ class CountryExtras extends Model
     }
 
     /**
-     * Get the country.
+     * Get the country that owns the CountryGeographical
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function country()
+    public function country(): HasOne
     {
-        return $this->belongsTo(Country::class, 'lc_country_id');
+        return $this->hasOne(Country::class, 'lc_country_id');
     }
 }

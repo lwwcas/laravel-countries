@@ -4,6 +4,7 @@ namespace Lwwcas\LaravelCountries\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class CountryCoordinates extends Model
 {
@@ -15,6 +16,13 @@ class CountryCoordinates extends Model
      * @var string
      */
     protected $table = 'lc_countries_coordinates';
+
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
@@ -39,15 +47,17 @@ class CountryCoordinates extends Model
     protected function casts(): array
     {
         return [
-            'gps' => 'object',
+            'gps' => 'array',
         ];
     }
 
     /**
-     * Get the country.
+     * Get the country that owns the CountryGeographical
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function country()
+    public function country(): HasOne
     {
-        return $this->belongsTo(Country::class, 'lc_country_id');
+        return $this->hasOne(Country::class, 'lc_country_id');
     }
 }
