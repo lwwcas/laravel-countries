@@ -2,8 +2,8 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
 class CZ_CzechRepublic extends CountrySeeder
 {
@@ -258,128 +258,7 @@ class CZ_CzechRepublic extends CountrySeeder
             // Degrees and decimal minutes
             'dm' => '50°4.530\' N, 14°26.268\' E',
             // Various GPS formats
-            'gps' => [
-                [
-                    // Format description
-                    'format' => '[N,S]dd°mm\'ss.ssss", [E,W]ddd°mm\'ss.ssss"',
-                    // Coordinates in this format
-                    'coordinates' => 'N50°4\'31.80", E14°26\'16.08"',
-                ],
-                [
-                    // Format description
-                    'format' => 'dd°mm\'ss.ssss"[N,S], ddd°mm\'ss.ssss"[E,W]',
-                    // Coordinates in this format
-                    'coordinates' => '50°4\'31.80"N, 14°26\'16.08"E',
-                ],
-                [
-                    // Format description
-                    'format' => '[-]dd mm ss.ssss, [-]ddd mm ss.ssss',
-                    // Coordinates in this format
-                    'coordinates' => '50 04 31.80, 14 26 16.08',
-                ],
-                [
-                    // Format description
-                    'format' => 'ISO 6709: [-]ddmmss.ssss, [-]dddmmss.ssss',
-                    // Coordinates in this format
-                    'coordinates' => '500431.80, 0142616.08',
-                ],
-                [
-                    // Format description
-                    'format' => '[-]dd.dddd [-]ddd.dddd',
-                    // Coordinates in this format
-                    'coordinates' => '50.0755 14.4378',
-                ],
-                [
-                    // Format description
-                    'format' => '[-]dd.ddddd°,[-]ddd.ddddd° (Dec Degs)',
-                    // Coordinates in this format
-                    'coordinates' => '50.07550°, 14.43780°',
-                ],
-                [
-                    // Format description
-                    'format' => 'dd.ddddd[N,S]ddd.ddddd[E,W] (Dec Degs Micro)',
-                    // Coordinates in this format
-                    'coordinates' => '50.0755000N14.4378000E',
-                ],
-                [
-                    // Format description
-                    'format' => 'ddmm.mmmm[N,S]dddmm.mmmm[E,W] (Dec Min)',
-                    // Coordinates in this format
-                    'coordinates' => '5004.530N01426.268E',
-                ],
-                [
-                    // Format description
-                    'format' => 'dd°mm\'ss.sss"[N,S], ddd°mm\'ss.sss"[E,W] (Deg Min Secs)',
-                    // Coordinates in this format
-                    'coordinates' => '50°4\'31.80"N, 14°26\'16.08"E',
-                ],
-                [
-                    // Format description
-                    'format' => 'ddmmss.sss[N,S]dddmmss.sss[E,W] (Deg Mins Secs)',
-                    // Coordinates in this format
-                    'coordinates' => '500431.80N0142616.08E',
-                ],
-                [
-                    // Format description
-                    'format' => '[N,S] dd mm.mmm [E,W] ddd mm.mmm',
-                    // Coordinates in this format
-                    'coordinates' => 'N 50 04.530 E 14 26.268',
-                ],
-                [
-                    // Format description
-                    'format' => 'dd:mm:ss[N,S],ddd:mm:ss[E,W]',
-                    // Coordinates in this format
-                    'coordinates' => '50:04:31N,14:26:16E',
-                ],
-                [
-                    // Format description
-                    'format' => 'dd:mm:ss.ss[N,S] ddd:mm:ss.ss[E,W]',
-                    // Coordinates in this format
-                    'coordinates' => '50:04:31.80N 14:26:16.08E',
-                ],
-                [
-                    // Format description
-                    'format' => 'dd°mm\'ss"[N,S] ddd°mm\'ss"[E,W]',
-                    // Coordinates in this format
-                    'coordinates' => '50°4\'31"N 14°26\'16"E',
-                ],
-                [
-                    // Format description
-                    'format' => '[-]dd°mm\'ss" [-]ddd°mm\'ss"',
-                    // Coordinates in this format
-                    'coordinates' => '50°4\'31" 14°26\'16"',
-                ],
-                [
-                    // Format description
-                    'format' => 'dd mm\' ss" [N,S] ddd mm\' ss" [E,W]',
-                    // Coordinates in this format
-                    'coordinates' => '50d 04\' 31" N 14d 26\' 16" E',
-                ],
-                [
-                    // Format description
-                    'format' => 'dd.dddd[N,S] ddd.dddd[E,W]',
-                    // Coordinates in this format
-                    'coordinates' => '50.0755N 14.4378E',
-                ],
-                [
-                    // Format description
-                    'format' => '[-]dd° mm.mmmmm [-]ddd° mm.mmmmm',
-                    // Coordinates in this format
-                    'coordinates' => '50° 04.530, 14° 26.268',
-                ],
-                [
-                    // Format description
-                    'format' => '[-] mmmm.mmmmm, [-] mmmm.mmmmm',
-                    // Coordinates in this format
-                    'coordinates' => '5004.530, 01426.268',
-                ],
-                [
-                    // Format description
-                    'format' => 'mmmm.mmmmm[N,S] mmmm.mmmmm[E,W]',
-                    // Coordinates in this format
-                    'coordinates' => '5004.530N, 01426.268E',
-                ],
-            ],
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);
