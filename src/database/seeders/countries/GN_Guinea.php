@@ -2,8 +2,8 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
 class GN_Guinea extends CountrySeeder
 {
@@ -29,53 +29,237 @@ class GN_Guinea extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Guinea';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Guinea';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'GN';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'GIN';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '324';
+
+        // Set the international dialing code
         $this->international_phone = '224';
 
-        $this->languages = ['fr','ff'];
+        // Define the languages spoken in the country
+        $this->languages = ['fr']; // French is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.gn'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '10 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '5 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '9%'; // As of recent estimates
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'National Cybersecurity Agency of Guinea';
+
+        // List popular web technologies in Guinea
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'GN';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2420477';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Guinean franc',
+            // Currency code
+            'code' => 'GNF',
+            // Currency symbol
+            'symbol' => 'FG',
+            // Main unit
+            'main_unit' => 'franc',
+            // Subunit
+            'sub_unit' => 'centime',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['500', '1000', '2000', '5000', '10000', '20000'],
+            // Main coins
+            'coins_main' => [],
+            // Subunit coins
+            'coins_sub' => [],
+        ];
+
+        // Set the population
+        $this->population = 13132795; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 245857; // km²
+
+        // Set the capital city
+        $this->capital = 'Conakry';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Africa/Conakry',
+                // Standard time offset
+                'standard_time' => 'UTC+0', // Greenwich Mean Time (GMT)
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1958-10-02'; // Independence from France
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union (AU)',
+            'Economic Community of West African States (ECOWAS)',
+            'Organisation of Islamic Cooperation (OIC)',
+            'Non-Aligned Movement',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 10.0; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Guinea
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Guinea-Bissau', 'iso_alpha_2' => 'GW'],
+            ['name' => 'Senegal', 'iso_alpha_2' => 'SN'],
+            ['name' => 'Mali', 'iso_alpha_2' => 'ML'],
+            ['name' => 'Ivory Coast', 'iso_alpha_2' => 'CI'],
+            ['name' => 'Liberia', 'iso_alpha_2' => 'LR'],
+            ['name' => 'Sierra Leone', 'iso_alpha_2' => 'SL'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇬🇳',
+            // Unicode code points
             'uCode' => 'U+1F1EC U+1F1F3',
+            // HTML entities
+            'html' => '&#x1F1EC;&#x1F1F3;',
+            // CSS entities
+            'css' => '\\1F1EC\\1F1F3',
+            // Decimal Unicode entities
+            'decimal' => '&#127468;&#127475;',
+            // Direct UTF-8 string
+            'utf8' => '🇬🇳',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDEC\uD83C\uDDF3',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-gn:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1EC;&#x1F1F3;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffff00',
-                '#008000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#CE1126',
+                // RGB color values
+                'rgb' => '206,17,38',
+                // CMYK color values
+                'cmyk' => '0,92,82,19',
+                // HSL color values
+                'hsl' => '350,84%,44%',
+                // HSV color values
+                'hsv' => '350,92%,81%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,0',
-                '0,128,0',
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FCD116',
+                // RGB color values
+                'rgb' => '252,209,22',
+                // CMYK color values
+                'cmyk' => '0,17,91,1',
+                // HSL color values
+                'hsl' => '47,97%,54%',
+                // HSV color values
+                'hsv' => '47,91%,99%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#009460',
+                // RGB color values
+                'rgb' => '0,148,96',
+                // CMYK color values
+                'cmyk' => '100,0,35,42',
+                // HSL color values
+                'hsl' => '160,100%,29%',
+                // HSV color values
+                'hsv' => '160,100%,58%',
+                // Pantone color code
+                'pantone' => '3405 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '11 00 N',
-                'desc' => '10.429302215576172',
-            ],
-            'longitude' => [
-                'classic' => '10 00 W',
-                'desc' => '-10.98954963684082',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '12.633333',
-                'min' => '7',
-            ],
-            'longitude' => [
-                'max' => '-4',
-                'min' => '-15.366667',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '9.9456',
+            // Longitude in decimal degrees
+            'longitude' => '-9.6966',
+            // Degrees with decimal
+            'dd' => '9.9456° N, 9.6966° W',
+            // Degrees, minutes, seconds
+            'dms' => '9°56\'44.16" N, 9°41\'47.76" W',
+            // Degrees and decimal minutes
+            'dm' => '9°56.736\' N, 9°41.796\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

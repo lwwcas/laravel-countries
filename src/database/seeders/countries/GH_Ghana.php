@@ -2,8 +2,8 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
 class GH_Ghana extends CountrySeeder
 {
@@ -29,55 +29,256 @@ class GH_Ghana extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Ghana';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Ghana';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'GH';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'GHA';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '288';
+
+        // Set the international dialing code
         $this->international_phone = '233';
 
-        $this->languages = ['en'];
+        // Define the languages spoken in the country
+        $this->languages = ['en']; // English is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.gh'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '20 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '10 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '50%'; // Growing internet access in Ghana
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'National Cyber Security Centre (NCSC)';
+
+        // List popular web technologies in Ghana
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'GH';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2300660';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Ghanaian cedi',
+            // Currency code
+            'code' => 'GHS',
+            // Currency symbol
+            'symbol' => 'GH₵',
+            // Main unit
+            'main_unit' => 'cedi',
+            // Subunit
+            'sub_unit' => 'pesewa',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '2', '5', '10', '20', '50', '100', '200'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '20', '50 pesewas'],
+        ];
+
+        // Set the population
+        $this->population = 31072940; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 238535; // km²
+
+        // Set the capital city
+        $this->capital = 'Accra';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Africa/Accra',
+                // Standard time offset
+                'standard_time' => 'UTC+0', // Greenwich Mean Time (GMT)
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1957-03-06'; // Independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union (AU)',
+            'Economic Community of West African States (ECOWAS)',
+            'Commonwealth of Nations',
+            'Non-Aligned Movement',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 68.5; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity',
+            'Islam',
+            'Traditional African religions',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary presidential constitutional republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Ghana
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Ivory Coast', 'iso_alpha_2' => 'CI'],
+            ['name' => 'Burkina Faso', 'iso_alpha_2' => 'BF'],
+            ['name' => 'Togo', 'iso_alpha_2' => 'TG'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇬🇭',
+            // Unicode code points
             'uCode' => 'U+1F1EC U+1F1ED',
+            // HTML entities
+            'html' => '&#x1F1EC;&#x1F1ED;',
+            // CSS entities
+            'css' => '\\1F1EC\\1F1ED',
+            // Decimal Unicode entities
+            'decimal' => '&#127468;&#127469;',
+            // Direct UTF-8 string
+            'utf8' => '🇬🇭',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDEC\uD83C\uDDED',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-gh:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1EC;&#x1F1ED;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffff00',
-                '#008000',
-                '#000000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#CE1126',
+                // RGB color values
+                'rgb' => '206,17,38',
+                // CMYK color values
+                'cmyk' => '0,92,82,19',
+                // HSL color values
+                'hsl' => '350,84%,44%',
+                // HSV color values
+                'hsv' => '350,92%,81%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,0',
-                '0,128,0',
-                '0,0,0',
+            [
+                // Color name
+                'name' => 'Gold',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FCD116',
+                // RGB color values
+                'rgb' => '252,209,22',
+                // CMYK color values
+                'cmyk' => '0,17,91,1',
+                // HSL color values
+                'hsl' => '47,97%,54%',
+                // HSV color values
+                'hsv' => '47,91%,99%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#006B3F',
+                // RGB color values
+                'rgb' => '0,107,63',
+                // CMYK color values
+                'cmyk' => '100,0,41,58',
+                // HSL color values
+                'hsl' => '158,100%,21%',
+                // HSV color values
+                'hsv' => '158,100%,42%',
+                // Pantone color code
+                'pantone' => '3425 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Black',
+                // Web color name
+                'web_name' => 'black',
+                // Hexadecimal color code
+                'hex' => '#000000',
+                // RGB color values
+                'rgb' => '0,0,0',
+                // CMYK color values
+                'cmyk' => '0,0,0,100',
+                // HSL color values
+                'hsl' => '0,0%,0%',
+                // HSV color values
+                'hsv' => '0,0%,0%',
+                // Pantone color code
+                'pantone' => 'Black C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '8 00 N',
-                'desc' => '7.921330451965332',
-            ],
-            'longitude' => [
-                'classic' => '2 00 W',
-                'desc' => '-1.2043862342834473',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '11.15',
-                'min' => '4.733333',
-            ],
-            'longitude' => [
-                'max' => '1.192778',
-                'min' => '-4',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '5.6037',
+            // Longitude in decimal degrees
+            'longitude' => '-0.1870',
+            // Degrees with decimal
+            'dd' => '5.6037° N, 0.1870° W',
+            // Degrees, minutes, seconds
+            'dms' => '5°36\'13.32" N, 0°11\'13.20" W',
+            // Degrees and decimal minutes
+            'dm' => '5°36.222\' N, 0°11.220\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

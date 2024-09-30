@@ -2,8 +2,8 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
 class LA_LaoPDR extends CountrySeeder
 {
@@ -29,53 +29,236 @@ class LA_LaoPDR extends CountrySeeder
      */
     public function run()
     {
-        $this->name = 'Lao PDR';
+        // Set the country's common name
+        $this->name = 'Laos';
+
+        // Set the country's official name
         $this->official_name = 'Lao People\'s Democratic Republic';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'LA';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'LAO';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '418';
+
+        // Set the international dialing code
         $this->international_phone = '856';
 
-        $this->languages = ['lo'];
+        // Define the languages spoken in the country
+        $this->languages = ['lo']; // Lao is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.la'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '10 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '5 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '30%'; // As per recent estimates
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Ministry of Posts and Telecommunications';
+
+        // List popular web technologies in Laos
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'LA';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1655842';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Lao kip',
+            // Currency code
+            'code' => 'LAK',
+            // Currency symbol
+            'symbol' => '₭',
+            // Main unit
+            'main_unit' => 'kip',
+            // Subunit
+            'sub_unit' => 'att',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['500', '1000', '2000', '5000', '10,000', '20,000', '50,000', '100,000'],
+            // Main coins
+            'coins_main' => [], // Coins are not in use
+            // Subunit coins
+            'coins_sub' => [], // Coins are not in use
+        ];
+
+        // Set the population
+        $this->population = 7123205; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 236800; // km²
+
+        // Set the capital city
+        $this->capital = 'Vientiane';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Vientiane',
+                // Standard time offset
+                'standard_time' => 'UTC+7',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1975-12-02'; // Establishment of the Lao People's Democratic Republic
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Association of Southeast Asian Nations (ASEAN)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Non-Aligned Movement',
+            'East Asia Summit',
+            'Mekong River Commission',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 19.1; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Theravada Buddhism',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary Marxist–Leninist one-party socialist republic';
+
+        // Set the national sport
+        $this->national_sport = 'Muay Lao (Lao kickboxing)';
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'China', 'iso_alpha_2' => 'CN'],
+            ['name' => 'Myanmar', 'iso_alpha_2' => 'MM'],
+            ['name' => 'Vietnam', 'iso_alpha_2' => 'VN'],
+            ['name' => 'Cambodia', 'iso_alpha_2' => 'KH'],
+            ['name' => 'Thailand', 'iso_alpha_2' => 'TH'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇱🇦',
+            // Unicode code points
             'uCode' => 'U+1F1F1 U+1F1E6',
+            // HTML entities
+            'html' => '&#x1F1F1;&#x1F1E6;',
+            // CSS entities
+            'css' => '\\1F1F1\\1F1E6',
+            // Decimal Unicode entities
+            'decimal' => '&#127473;&#127462;',
+            // Direct UTF-8 string
+            'utf8' => '🇱🇦',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF1\uD83C\uDDE6',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-la:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F1;&#x1F1E6;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#00008b',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#E31B23',
+                // RGB color values
+                'rgb' => '227,27,35',
+                // CMYK color values
+                'cmyk' => '0,88,85,11',
+                // HSL color values
+                'hsl' => '357°,79%,50%',
+                // HSV color values
+                'hsv' => '357°,88%,89%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '0,0,139',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#0B47A1',
+                // RGB color values
+                'rgb' => '11,71,161',
+                // CMYK color values
+                'cmyk' => '93,56,0,37',
+                // HSL color values
+                'hsl' => '217°,87%,34%',
+                // HSV color values
+                'hsv' => '217°,93%,63%',
+                // Pantone color code
+                'pantone' => '288 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '18 00 N',
-                'desc' => '18.65074920654297',
-            ],
-            'longitude' => [
-                'classic' => '105 00 E',
-                'desc' => '104.15293884277344',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '22.5',
-                'min' => '13.933333',
-            ],
-            'longitude' => [
-                'max' => '107.633333',
-                'min' => '100.095833',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '19.8563',
+            // Longitude in decimal degrees
+            'longitude' => '102.4955',
+            // Degrees with decimal
+            'dd' => '19.8563° N, 102.4955° E',
+            // Degrees, minutes, seconds
+            'dms' => '19°51\'22.68" N, 102°29\'43.80" E',
+            // Degrees and decimal minutes
+            'dm' => '19°51.378\' N, 102°29.730\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

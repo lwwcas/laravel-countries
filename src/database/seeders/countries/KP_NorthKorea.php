@@ -2,8 +2,8 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
 class KP_NorthKorea extends CountrySeeder
 {
@@ -29,53 +29,230 @@ class KP_NorthKorea extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'North Korea';
+
+        // Set the country's official name
         $this->official_name = 'Democratic People\'s Republic of Korea';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'KP';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'PRK';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '408';
+
+        // Set the international dialing code
         $this->international_phone = '850';
 
-        $this->languages = ['ko'];
+        // Define the languages spoken in the country
+        $this->languages = ['ko']; // Korean
+
+        // Define the top-level domain(s)
         $this->tld = ['.kp'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => 'Limited',
+            // Average mobile connection speed
+            'average_speed_mobile' => 'Limited',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '0.1%'; // Very low due to government restrictions
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'None'; // No public cybersecurity agency
+
+        // List popular web technologies in North Korea
+        $this->popular_technologies = ['HTML', 'CSS', 'JavaScript']; // Limited due to restrictions
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'KR';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1873107';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'North Korean won',
+            // Currency code
+            'code' => 'KPW',
+            // Currency symbol
+            'symbol' => '₩',
+            // Main unit
+            'main_unit' => 'won',
+            // Subunit
+            'sub_unit' => 'chon',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '50', '100', '200', '500', '1000', '2000', '5000'],
+            // Main coins
+            'coins_main' => ['1', '5', '10', '50', '100'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '50'],
+        ];
+
+        // Set the population
+        $this->population = 25549604; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 120538; // km²
+
+        // Set the capital city
+        $this->capital = 'Pyongyang';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Pyongyang',
+                // Standard time offset
+                'standard_time' => 'UTC+9',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1948-09-09'; // Establishment of the DPRK
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Non-Aligned Movement',
+            'G77',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 28.5; // Estimated GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Irreligion (state atheism)',
+            'Traditional beliefs (Cheondoism, Buddhism, Confucianism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary one-party socialist republic under a totalitarian dictatorship';
+
+        // Set the national sport
+        $this->national_sport = 'Mass Games (Arirang Festival)';
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'China', 'iso_alpha_2' => 'CN'],
+            ['name' => 'South Korea', 'iso_alpha_2' => 'KR'],
+            ['name' => 'Russia', 'iso_alpha_2' => 'RU'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇰🇵',
+            // Unicode code points
             'uCode' => 'U+1F1F0 U+1F1F5',
+            // HTML entities
+            'html' => '&#x1F1F0;&#x1F1F5;',
+            // CSS entities
+            'css' => '\\1F1F0\\1F1F5',
+            // Decimal Unicode entities
+            'decimal' => '&#127472;&#127477;',
+            // Direct UTF-8 string
+            'utf8' => '🇰🇵',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF0\uD83C\uDDF5',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-kp:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F0;&#x1F1F5;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffffff',
-                '#0000ff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#ED1C27',
+                // RGB color values
+                'rgb' => '237,28,39',
+                // CMYK color values
+                'cmyk' => '0,88,84,7',
+                // HSL color values
+                'hsl' => '356°,88%,52%',
+                // HSV color values
+                'hsv' => '356°,88%,93%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,255',
-                '0,0,255',
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#024FA2',
+                // RGB color values
+                'rgb' => '2,79,162',
+                // CMYK color values
+                'cmyk' => '99,51,0,36',
+                // HSL color values
+                'hsl' => '212°,98%,32%',
+                // HSV color values
+                'hsv' => '212°,99%,63%',
+                // Pantone color code
+                'pantone' => '286 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '40 00 N',
-                'desc' => '40.077640533447266',
-            ],
-            'longitude' => [
-                'classic' => '127 00 E',
-                'desc' => '127.13385009765625',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '43.003889',
-                'min' => '37.6775',
-            ],
-            'longitude' => [
-                'max' => '130.672222',
-                'min' => '124.1875',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '40.3399',
+            // Longitude in decimal degrees
+            'longitude' => '127.5101',
+            // Degrees with decimal
+            'dd' => '40.3399° N, 127.5101° E',
+            // Degrees, minutes, seconds
+            'dms' => '40°20\'23.64" N, 127°30\'36.36" E',
+            // Degrees and decimal minutes
+            'dm' => '40°20.394\' N, 127°30.606\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

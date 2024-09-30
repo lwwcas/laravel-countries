@@ -2,8 +2,8 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
 class LB_Lebanon extends CountrySeeder
 {
@@ -29,53 +29,235 @@ class LB_Lebanon extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Lebanon';
+
+        // Set the country's official name
         $this->official_name = 'Lebanese Republic';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'LB';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'LBN';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '422';
+
+        // Set the international dialing code
         $this->international_phone = '961';
 
-        $this->languages = ['ar','fr'];
+        // Define the languages spoken in the country
+        $this->languages = ['ar', 'fr']; // Arabic is official, French is recognized
+
+        // Define the top-level domain(s)
         $this->tld = ['.lb'];
-        $this->wmo = 'LB';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '10 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '20 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '78%'; // As per recent estimates
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Lebanese National Cybersecurity Center';
+
+        // List popular web technologies in Lebanon
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'Java', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'LE';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '272103';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Lebanese pound',
+            // Currency code
+            'code' => 'LBP',
+            // Currency symbol
+            'symbol' => 'ل.ل',
+            // Main unit
+            'main_unit' => 'pound',
+            // Subunit
+            'sub_unit' => 'piastre',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1000', '5000', '10,000', '20,000', '50,000', '100,000'],
+            // Main coins
+            'coins_main' => ['250', '500'],
+            // Subunit coins
+            'coins_sub' => ['50', '100'],
+        ];
+
+        // Set the population
+        $this->population = 6825445; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 10452; // km²
+
+        // Set the capital city
+        $this->capital = 'Beirut';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Beirut',
+                // Standard time offset
+                'standard_time' => 'UTC+2',
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+3',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1943-11-22'; // Independence from France
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Arab League',
+            'Organisation of Islamic Cooperation (OIC)',
+            'Non-Aligned Movement',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Organisation internationale de la Francophonie (OIF)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 51.8; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam (Sunni and Shia)',
+            'Christianity (Maronite, Greek Orthodox, Melkite Catholic, etc.)',
+            'Druze',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary confessionalist parliamentary republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer) and Basketball'; // Both are popular in Lebanon
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Syria', 'iso_alpha_2' => 'SY'],
+            ['name' => 'Israel', 'iso_alpha_2' => 'IL'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇱🇧',
+            // Unicode code points
             'uCode' => 'U+1F1F1 U+1F1E7',
+            // HTML entities
+            'html' => '&#x1F1F1;&#x1F1E7;',
+            // CSS entities
+            'css' => '\\1F1F1\\1F1E7',
+            // Decimal Unicode entities
+            'decimal' => '&#127473;&#127463;',
+            // Direct UTF-8 string
+            'utf8' => '🇱🇧',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF1\uD83C\uDDE7',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-lb:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F1;&#x1F1E7;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffffff',
-                '#008000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#ED1C24',
+                // RGB color values
+                'rgb' => '237,28,36',
+                // CMYK color values
+                'cmyk' => '0,88,85,7',
+                // HSL color values
+                'hsl' => '358°,85%,52%',
+                // HSV color values
+                'hsv' => '358°,88%,93%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,255',
-                '0,128,0',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#007A3D',
+                // RGB color values
+                'rgb' => '0,122,61',
+                // CMYK color values
+                'cmyk' => '100,0,50,52',
+                // HSL color values
+                'hsl' => '152°,100%,24%',
+                // HSV color values
+                'hsv' => '152°,100%,48%',
+                // Pantone color code
+                'pantone' => '356 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '33 50 N',
-                'desc' => '33.925411224365234',
-            ],
-            'longitude' => [
-                'classic' => '35 50 E',
-                'desc' => '35.89972686767578',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '34.69',
-                'min' => '33.078333',
-            ],
-            'longitude' => [
-                'max' => '36.592778',
-                'min' => '35.103611',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '33.8547',
+            // Longitude in decimal degrees
+            'longitude' => '35.8623',
+            // Degrees with decimal
+            'dd' => '33.8547° N, 35.8623° E',
+            // Degrees, minutes, seconds
+            'dms' => '33°51\'16.92" N, 35°51\'44.28" E',
+            // Degrees and decimal minutes
+            'dm' => '33°51.282\' N, 35°51.738\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

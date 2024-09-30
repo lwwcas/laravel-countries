@@ -2,8 +2,8 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
 class GW_GuineaBissau extends CountrySeeder
 {
@@ -29,55 +29,256 @@ class GW_GuineaBissau extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Guinea-Bissau';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Guinea-Bissau';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'GW';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'GNB';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '624';
+
+        // Set the international dialing code
         $this->international_phone = '245';
 
-        $this->languages = ['pt'];
+        // Define the languages spoken in the country
+        $this->languages = ['pt']; // Portuguese is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.gw'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '5 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '3 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '5%'; // As of recent estimates
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'None'; // No dedicated cybersecurity agency
+
+        // List popular web technologies in Guinea-Bissau
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'GW';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2372248';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'West African CFA franc',
+            // Currency code
+            'code' => 'XOF',
+            // Currency symbol
+            'symbol' => 'CFA',
+            // Main unit
+            'main_unit' => 'franc',
+            // Subunit
+            'sub_unit' => 'centime',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['500', '1000', '2000', '5000', '10,000'],
+            // Main coins
+            'coins_main' => ['5', '10', '25', '50', '100', '200', '250', '500'],
+            // Subunit coins
+            'coins_sub' => [],
+        ];
+
+        // Set the population
+        $this->population = 1604528; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 36125; // km²
+
+        // Set the capital city
+        $this->capital = 'Bissau';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Africa/Bissau',
+                // Standard time offset
+                'standard_time' => 'UTC+0', // Greenwich Mean Time (GMT)
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1973-09-24'; // Independence from Portugal
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union (AU)',
+            'Economic Community of West African States (ECOWAS)',
+            'Organisation of Islamic Cooperation (OIC)',
+            'Community of Portuguese Language Countries (CPLP)',
+            'Non-Aligned Movement',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 1.5; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam',
+            'Traditional African religions',
+            'Christianity (Roman Catholicism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Semi-presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Wrestling'; // Wrestling is traditional, football is popular
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Senegal', 'iso_alpha_2' => 'SN'],
+            ['name' => 'Guinea', 'iso_alpha_2' => 'GN'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇬🇼',
+            // Unicode code points
             'uCode' => 'U+1F1EC U+1F1FC',
+            // HTML entities
+            'html' => '&#x1F1EC;&#x1F1FC;',
+            // CSS entities
+            'css' => '\\1F1EC\\1F1FC',
+            // Decimal Unicode entities
+            'decimal' => '&#127468;&#127484;',
+            // Direct UTF-8 string
+            'utf8' => '🇬🇼',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDEC\uD83C\uDDFC',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-gw:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1EC;&#x1F1FC;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffff00',
-                '#008000',
-                '#000000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#CE1126',
+                // RGB color values
+                'rgb' => '206,17,38',
+                // CMYK color values
+                'cmyk' => '0,92,82,19',
+                // HSL color values
+                'hsl' => '350,84%,44%',
+                // HSV color values
+                'hsv' => '350,92%,81%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,0',
-                '0,128,0',
-                '0,0,0',
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FCD116',
+                // RGB color values
+                'rgb' => '252,209,22',
+                // CMYK color values
+                'cmyk' => '0,17,91,1',
+                // HSL color values
+                'hsl' => '47,97%,54%',
+                // HSV color values
+                'hsv' => '47,91%,99%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#009E49',
+                // RGB color values
+                'rgb' => '0,158,73',
+                // CMYK color values
+                'cmyk' => '100,0,54,38',
+                // HSL color values
+                'hsl' => '146,100%,31%',
+                // HSV color values
+                'hsv' => '146,100%,62%',
+                // Pantone color code
+                'pantone' => '348 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Black',
+                // Web color name
+                'web_name' => 'black',
+                // Hexadecimal color code
+                'hex' => '#000000',
+                // RGB color values
+                'rgb' => '0,0,0',
+                // CMYK color values
+                'cmyk' => '0,0,0,100',
+                // HSL color values
+                'hsl' => '0,0%,0%',
+                // HSV color values
+                'hsv' => '0,0%,0%',
+                // Pantone color code
+                'pantone' => 'Black C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '12 00 N',
-                'desc' => '12.115862846374512',
-            ],
-            'longitude' => [
-                'classic' => '15 00 W',
-                'desc' => '-14.748136520385742',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '12.683333',
-                'min' => '5',
-            ],
-            'longitude' => [
-                'max' => '-4',
-                'min' => '-16.651944',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '11.8037',
+            // Longitude in decimal degrees
+            'longitude' => '-15.1804',
+            // Degrees with decimal
+            'dd' => '11.8037° N, 15.1804° W',
+            // Degrees, minutes, seconds
+            'dms' => '11°48\'13.32" N, 15°10\'49.44" W',
+            // Degrees and decimal minutes
+            'dm' => '11°48.222\' N, 15°10.824\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

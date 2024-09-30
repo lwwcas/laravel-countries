@@ -2,8 +2,8 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
 class IE_Ireland extends CountrySeeder
 {
@@ -29,51 +29,233 @@ class IE_Ireland extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Ireland';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Ireland';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'IE';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'IRL';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '372';
+
+        // Set the international dialing code
         $this->international_phone = '353';
 
-        $this->languages = ['ga','en'];
+        // Define the languages spoken in the country
+        $this->languages = ['en', 'ga']; // English and Irish are official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.ie'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '100 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '40 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '90%'; // As per recent estimates
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'National Cyber Security Centre (NCSC)';
+
+        // List popular web technologies in Ireland
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'Java'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'IE';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2963597';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Euro',
+            // Currency code
+            'code' => 'EUR',
+            // Currency symbol
+            'symbol' => '€',
+            // Main unit
+            'main_unit' => 'euro',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100', '200', '500'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['1', '2', '5', '10', '20', '50 cents'],
+        ];
+
+        // Set the population
+        $this->population = 4977400; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 70273; // km²
+
+        // Set the capital city
+        $this->capital = 'Dublin';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Europe/Dublin',
+                // Standard time offset
+                'standard_time' => 'UTC+0', // Greenwich Mean Time (GMT)
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+1', // Irish Standard Time (IST)
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1922-12-06'; // Independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'European Union (EU)',
+            'Organisation for Economic Co-operation and Development (OECD)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Council of Europe',
+            'Organization for Security and Co-operation in Europe (OSCE)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 388.7; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary republic';
+
+        // Set the national sport
+        $this->national_sport = 'Gaelic games'; // Gaelic football and hurling are popular
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'United Kingdom', 'iso_alpha_2' => 'GB'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇮🇪',
+            // Unicode code points
             'uCode' => 'U+1F1EE U+1F1EA',
+            // HTML entities
+            'html' => '&#x1F1EE;&#x1F1EA;',
+            // CSS entities
+            'css' => '\\1F1EE\\1F1EA',
+            // Decimal Unicode entities
+            'decimal' => '&#127470;&#127466;',
+            // Direct UTF-8 string
+            'utf8' => '🇮🇪',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDEE\uD83C\uDDEA',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-ie:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1EE;&#x1F1EA;',
         ];
-        $this->color = [
-            'hex' => [
-                '#008000',
-                '#0000ff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#169B62',
+                // RGB color values
+                'rgb' => '22,155,98',
+                // CMYK color values
+                'cmyk' => '86,0,37,39',
+                // HSL color values
+                'hsl' => '154,76%,35%',
+                // HSV color values
+                'hsv' => '154,86%,61%',
+                // Pantone color code
+                'pantone' => '347 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,128,0',
-                '0,0,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Orange',
+                // Web color name
+                'web_name' => 'orange',
+                // Hexadecimal color code
+                'hex' => '#FF883E',
+                // RGB color values
+                'rgb' => '255,136,62',
+                // CMYK color values
+                'cmyk' => '0,47,76,0',
+                // HSL color values
+                'hsl' => '23,100%,62%',
+                // HSV color values
+                'hsv' => '23,76%,100%',
+                // Pantone color code
+                'pantone' => '151 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '53 00 N',
-                'desc' => '53.1827278137207',
-            ],
-            'longitude' => [
-                'classic' => '8 00 W',
-                'desc' => '-8.196102142333984',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '55.433333',
-                'min' => '51.425556',
-            ],
-            'longitude' => [
-                'max' => '-6.0025',
-                'min' => '-10.680833',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '53.4129',
+            // Longitude in decimal degrees
+            'longitude' => '-8.2439',
+            // Degrees with decimal
+            'dd' => '53.4129° N, 8.2439° W',
+            // Degrees, minutes, seconds
+            'dms' => '53°24\'46.44" N, 8°14\'38.04" W',
+            // Degrees and decimal minutes
+            'dm' => '53°24.774\' N, 8°14.634\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

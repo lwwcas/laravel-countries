@@ -2,8 +2,8 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
 class HK_HongKongSARChina extends CountrySeeder
 {
@@ -29,52 +29,212 @@ class HK_HongKongSARChina extends CountrySeeder
      */
     public function run()
     {
-        $this->name = 'Hong Kong SAR China';
+        // Set the country's common name
+        $this->name = 'Hong Kong';
+
+        // Set the country's official name
         $this->official_name = 'Hong Kong Special Administrative Region of the People\'s Republic of China';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'HK';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'HKG';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '344';
+
+        // Set the international dialing code
         $this->international_phone = '852';
 
-        $this->languages = ['zh','en'];
-        $this->tld = ['.hk',".\u9999\u6e2f"];
+        // Define the languages spoken in the territory
+        $this->languages = ['zh', 'en']; // Chinese and English are official languages
+
+        // Define the top-level domain(s)
+        $this->tld = ['.hk'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = ['.香港']; // Chinese character TLD
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '150 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '80 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '90%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Office of the Government Chief Information Officer (OGCIO)';
+
+        // List popular web technologies in Hong Kong
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'WordPress', 'Java'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'HK';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1819730';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Hong Kong dollar',
+            // Currency code
+            'code' => 'HKD',
+            // Currency symbol
+            'symbol' => '$',
+            // Main unit
+            'main_unit' => 'dollar',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['10', '20', '50', '100', '500', '1000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['10', '20', '50 cents'],
+        ];
+
+        // Set the population
+        $this->population = 7481800; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 1106; // km²
+
+        // Set the capital city
+        $this->capital = null; // Hong Kong is a city territory
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Hong_Kong',
+                // Standard time offset
+                'standard_time' => 'UTC+8',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = null; // Hong Kong is a Special Administrative Region of China
+
+        // List international organizations the territory is part of
+        $this->international_organizations = [
+            'World Trade Organization (WTO)',
+            'Asia-Pacific Economic Cooperation (APEC)',
+            'International Olympic Committee (IOC)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 366; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Buddhism',
+            'Taoism',
+            'Confucianism',
+            'Christianity',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Special Administrative Region of the People\'s Republic of China';
+
+        // Set the national sport
+        $this->national_sport = 'Dragon Boat Racing'; // Popular sport in Hong Kong
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'China', 'iso_alpha_2' => 'CN'],
+        ];
+
+        // Define the territory's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇭🇰',
+            // Unicode code points
             'uCode' => 'U+1F1ED U+1F1F0',
+            // HTML entities
+            'html' => '&#x1F1ED;&#x1F1F0;',
+            // CSS entities
+            'css' => '\\1F1ED\\1F1F0',
+            // Decimal Unicode entities
+            'decimal' => '&#127469;&#127472;',
+            // Direct UTF-8 string
+            'utf8' => '🇭🇰',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDED\uD83C\uDDF0',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-hk:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1ED;&#x1F1F0;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffffff',
+
+        // Define the colors of the territory's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Flag Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#BA1F1A',
+                // RGB color values
+                'rgb' => '186,31,26',
+                // CMYK color values
+                'cmyk' => '0,83,86,27',
+                // HSL color values
+                'hsl' => '2,76%,41%',
+                // HSV color values
+                'hsv' => '2,86%,73%',
+                // Pantone color code
+                'pantone' => '1795 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '22 15 N',
-                'desc' => '22.336156845092773',
-            ],
-            'longitude' => [
-                'classic' => '114 10 E',
-                'desc' => '114.18696594238281',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '22.3193',
+            // Longitude in decimal degrees
+            'longitude' => '114.1694',
+            // Degrees with decimal
+            'dd' => '22.3193° N, 114.1694° E',
+            // Degrees, minutes, seconds
+            'dms' => '22°19\'9.48" N, 114°10\'9.84" E',
+            // Degrees and decimal minutes
+            'dm' => '22°19.158\' N, 114°10.164\' E',
+            // GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '22.566667',
-                'min' => '22.15',
-            ],
-            'longitude' => [
-                'max' => '114.433333',
-                'min' => '113.833333',
-            ],
-        ];
+
 
         $this->geographical = json_decode($this->geographical(), true);
 

@@ -2,8 +2,8 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
 class IL_Israel extends CountrySeeder
 {
@@ -29,51 +29,218 @@ class IL_Israel extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Israel';
+
+        // Set the country's official name
         $this->official_name = 'State of Israel';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'IL';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'ISR';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '376';
+
+        // Set the international dialing code
         $this->international_phone = '972';
 
-        $this->languages = ['he','ar'];
+        // Define the languages spoken in the country
+        $this->languages = ['he', 'ar']; // Hebrew and Arabic are official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.il'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '100 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '40 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '88%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Israel National Cyber Directorate (INCD)';
+
+        // List popular web technologies in Israel
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'Java', 'Node.js'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'IS';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '294640';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Israeli new shekel',
+            // Currency code
+            'code' => 'ILS',
+            // Currency symbol
+            'symbol' => '₪',
+            // Main unit
+            'main_unit' => 'shekel',
+            // Subunit
+            'sub_unit' => 'agora',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['20', '50', '100', '200'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['10', '50 agorot'],
+        ];
+
+        // Set the population
+        $this->population = 9197600; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 20770; // km², including disputed territories
+
+        // Set the capital city
+        $this->capital = 'Jerusalem'; // Note: Jerusalem is proclaimed as the capital by Israel, but this status is not widely recognized internationally
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Jerusalem',
+                // Standard time offset
+                'standard_time' => 'UTC+2',
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+3',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1948-05-14'; // Declaration of independence from the British Mandate
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Organisation for Economic Co-operation and Development (OECD)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Mediterranean Union',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 387; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Judaism',
+            'Islam',
+            'Christianity',
+            'Druze',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Parliamentary constitutional republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is popular in Israel
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Lebanon', 'iso_alpha_2' => 'LB'],
+            ['name' => 'Syria', 'iso_alpha_2' => 'SY'],
+            ['name' => 'Jordan', 'iso_alpha_2' => 'JO'],
+            ['name' => 'Egypt', 'iso_alpha_2' => 'EG'],
+            ['name' => 'Palestine', 'iso_alpha_2' => 'PS'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇮🇱',
+            // Unicode code points
             'uCode' => 'U+1F1EE U+1F1F1',
+            // HTML entities
+            'html' => '&#x1F1EE;&#x1F1F1;',
+            // CSS entities
+            'css' => '\\1F1EE\\1F1F1',
+            // Decimal Unicode entities
+            'decimal' => '&#127470;&#127473;',
+            // Direct UTF-8 string
+            'utf8' => '🇮🇱',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDEE\uD83C\uDDF1',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-il:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1EE;&#x1F1F1;',
         ];
-        $this->color = [
-            'hex' => [
-                '#0000ff',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#0038B8',
+                // RGB color values
+                'rgb' => '0,56,184',
+                // CMYK color values
+                'cmyk' => '100,70,0,28',
+                // HSL color values
+                'hsl' => '222,100%,36%',
+                // HSV color values
+                'hsv' => '222,100%,72%',
+                // Pantone color code
+                'pantone' => '293 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,0,255',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '31 30 N',
-                'desc' => '31.814193725585938',
-            ],
-            'longitude' => [
-                'classic' => '34 45 E',
-                'desc' => '34.75337219238281',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '33.286111',
-                'min' => '29.516667',
-            ],
-            'longitude' => [
-                'max' => '35.666667',
-                'min' => '34.283333',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '31.0461',
+            // Longitude in decimal degrees
+            'longitude' => '34.8516',
+            // Degrees with decimal
+            'dd' => '31.0461° N, 34.8516° E',
+            // Degrees, minutes, seconds
+            'dms' => '31°2\'45.96" N, 34°51\'5.76" E',
+            // Degrees and decimal minutes
+            'dm' => '31°2.766\' N, 34°51.096\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

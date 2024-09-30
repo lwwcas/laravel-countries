@@ -2,8 +2,8 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
 class LC_SaintLucia extends CountrySeeder
 {
@@ -29,55 +29,251 @@ class LC_SaintLucia extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Saint Lucia';
+
+        // Set the country's official name
         $this->official_name = 'Saint Lucia';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'LC';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'LCA';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '662';
+
+        // Set the international dialing code
         $this->international_phone = '1-758';
 
-        $this->languages = ['en'];
+        // Define the languages spoken in the country
+        $this->languages = ['en']; // English is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.lc'];
-        $this->wmo = 'LC';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '30 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '20 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '65%'; // As per recent estimates
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'None'; // No dedicated cybersecurity agency
+
+        // List popular web technologies in Saint Lucia
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'ST';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '3576468';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'East Caribbean dollar',
+            // Currency code
+            'code' => 'XCD',
+            // Currency symbol
+            'symbol' => '$',
+            // Main unit
+            'main_unit' => 'dollar',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins (only numbers)
+            'coins_sub' => ['1', '2', '5', '10', '25'],
+        ];
+
+        // Set the population
+        $this->population = 183627; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 617; // km²
+
+        // Set the capital city
+        $this->capital = 'Castries';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'America/St_Lucia',
+                // Standard time offset
+                'standard_time' => 'UTC-4',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1979-02-22'; // Independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Commonwealth of Nations',
+            'Organization of American States (OAS)',
+            'Caribbean Community (CARICOM)',
+            'Association of Caribbean States (ACS)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Non-Aligned Movement',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 1.92; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism, Protestantism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary constitutional monarchy';
+
+        // Set the national sport
+        $this->national_sport = 'Cricket'; // Cricket is popular in Saint Lucia
+
+        // Define bordering countries
+        $this->borders = []; // It is an island nation with no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇱🇨',
+            // Unicode code points
             'uCode' => 'U+1F1F1 U+1F1E8',
+            // HTML entities
+            'html' => '&#x1F1F1;&#x1F1E8;',
+            // CSS entities
+            'css' => '\\1F1F1\\1F1E8',
+            // Decimal Unicode entities
+            'decimal' => '&#127473;&#127464;',
+            // Direct UTF-8 string
+            'utf8' => '🇱🇨',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF1\uD83C\uDDE8',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-lc:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F1;&#x1F1E8;',
         ];
-        $this->color = [
-            'hex' => [
-                '#50bfe6',
-                '#fafa37',
-                '#000000',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#6CCFF6',
+                // RGB color values
+                'rgb' => '108,207,246',
+                // CMYK color values
+                'cmyk' => '56,16,0,4',
+                // HSL color values
+                'hsl' => '196°,89%,69%',
+                // HSV color values
+                'hsv' => '196°,56%,96%',
+                // Pantone color code
+                'pantone' => 'Process Cyan',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
-            'rgb' => [
-                '80,191,230',
-                '250,250,55',
-                '0,0,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'Black',
+                // Web color name
+                'web_name' => 'black',
+                // Hexadecimal color code
+                'hex' => '#000000',
+                // RGB color values
+                'rgb' => '0,0,0',
+                // CMYK color values
+                'cmyk' => '0,0,0,100',
+                // HSL color values
+                'hsl' => '0°,0%,0%',
+                // HSV color values
+                'hsv' => '0°,0%,0%',
+                // Pantone color code
+                'pantone' => 'Black C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Gold',
+                // Web color name
+                'web_name' => 'gold',
+                // Hexadecimal color code
+                'hex' => '#FCD116',
+                // RGB color values
+                'rgb' => '252,209,22',
+                // CMYK color values
+                'cmyk' => '0,17,91,1',
+                // HSL color values
+                'hsl' => '47°,98%,54%',
+                // HSV color values
+                'hsv' => '47°,91%,99%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '13 53 N',
-                'desc' => '13.86330509185791',
-            ],
-            'longitude' => [
-                'classic' => '60 58 W',
-                'desc' => '-60.9665641784668',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '14.1',
-                'min' => '13.7',
-            ],
-            'longitude' => [
-                'max' => '-60.866667',
-                'min' => '-61.066667',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '13.9094',
+            // Longitude in decimal degrees
+            'longitude' => '-60.9789',
+            // Degrees with decimal
+            'dd' => '13.9094° N, 60.9789° W',
+            // Degrees, minutes, seconds
+            'dms' => '13°54\'33.84" N, 60°58\'44.04" W',
+            // Degrees and decimal minutes
+            'dm' => '13°54.564\' N, 60°58.734\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

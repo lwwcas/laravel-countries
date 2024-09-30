@@ -2,8 +2,8 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
 class GT_Guatemala extends CountrySeeder
 {
@@ -29,51 +29,215 @@ class GT_Guatemala extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Guatemala';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Guatemala';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'GT';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'GTM';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '320';
+
+        // Set the international dialing code
         $this->international_phone = '502';
 
-        $this->languages = ['es'];
+        // Define the languages spoken in the country
+        $this->languages = ['es']; // Spanish is the official language, with 23 recognized indigenous languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.gt'];
-        $this->wmo = 'GU';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '20 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '15 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '45%'; // As of recent estimates
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'CERT-gt (Computer Emergency Response Team of Guatemala)';
+
+        // List popular web technologies in Guatemala
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'GT';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '3595528';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Guatemalan quetzal',
+            // Currency code
+            'code' => 'GTQ',
+            // Currency symbol
+            'symbol' => 'Q',
+            // Main unit
+            'main_unit' => 'quetzal',
+            // Subunit
+            'sub_unit' => 'centavo',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '5', '10', '20', '50', '100', '200'],
+            // Main coins
+            'coins_main' => ['1'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '25', '50 centavos'],
+        ];
+
+        // Set the population
+        $this->population = 17915568; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 108889; // km²
+
+        // Set the capital city
+        $this->capital = 'Guatemala City';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'America/Guatemala',
+                // Standard time offset
+                'standard_time' => 'UTC-6', // Central Standard Time (CST)
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1821-09-15'; // Independence from Spain
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Organization of American States (OAS)',
+            'Central American Integration System (SICA)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Non-Aligned Movement',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 76.7; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism, Protestantism)',
+            'Indigenous Mayan religions',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary presidential constitutional republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Guatemala
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Mexico', 'iso_alpha_2' => 'MX'],
+            ['name' => 'Belize', 'iso_alpha_2' => 'BZ'],
+            ['name' => 'Honduras', 'iso_alpha_2' => 'HN'],
+            ['name' => 'El Salvador', 'iso_alpha_2' => 'SV'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇬🇹',
+            // Unicode code points
             'uCode' => 'U+1F1EC U+1F1F9',
+            // HTML entities
+            'html' => '&#x1F1EC;&#x1F1F9;',
+            // CSS entities
+            'css' => '\\1F1EC\\1F1F9',
+            // Decimal Unicode entities
+            'decimal' => '&#127468;&#127481;',
+            // Direct UTF-8 string
+            'utf8' => '🇬🇹',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDEC\uD83C\uDDF9',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-gt:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1EC;&#x1F1F9;',
         ];
-        $this->color = [
-            'hex' => [
-                '#0066ff',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'sky blue',
+                // Hexadecimal color code
+                'hex' => '#4997D0',
+                // RGB color values
+                'rgb' => '73,151,208',
+                // CMYK color values
+                'cmyk' => '65,27,0,18',
+                // HSL color values
+                'hsl' => '205,61%,55%',
+                // HSV color values
+                'hsv' => '205,65%,82%',
+                // Pantone color code
+                'pantone' => '2925 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,102,255',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '15 30 N',
-                'desc' => '15.670565605163574',
-            ],
-            'longitude' => [
-                'classic' => '90 15 W',
-                'desc' => '-90.3486557006836',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '17.816667',
-                'min' => '13.751111',
-            ],
-            'longitude' => [
-                'max' => '-87.05',
-                'min' => '-92.583333',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '15.7835',
+            // Longitude in decimal degrees
+            'longitude' => '-90.2308',
+            // Degrees with decimal
+            'dd' => '15.7835° N, 90.2308° W',
+            // Degrees, minutes, seconds
+            'dms' => '15°47\'0.60" N, 90°13\'50.88" W',
+            // Degrees and decimal minutes
+            'dm' => '15°47.010\' N, 90°13.848\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

@@ -2,8 +2,8 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
 class KI_Kiribati extends CountrySeeder
 {
@@ -29,47 +29,256 @@ class KI_Kiribati extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Kiribati';
+
+        // Set the country's official name
         $this->official_name = 'Independent and Sovereign Republic of Kiribati';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'KI';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'KIR';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '296';
+
+        // Set the international dialing code
         $this->international_phone = '686';
 
-        $this->languages = ['en'];
+        // Define the languages spoken in the country
+        $this->languages = ['en', 'gil']; // English and Gilbertese are official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.ki'];
-        $this->wmo = 'KB';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '2 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '1 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '15%'; // As per recent estimates
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'None'; // No dedicated cybersecurity agency
+
+        // List popular web technologies in Kiribati
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS']; // Common technologies
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'KR';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '4030945';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Australian dollar',
+            // Currency code
+            'code' => 'AUD',
+            // Currency symbol
+            'symbol' => '$',
+            // Main unit
+            'main_unit' => 'dollar',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '20', '50'], // Only numbers as per your request
+        ];
+
+        // Set the population
+        $this->population = 119446; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 811; // km²
+
+        // Set the capital city
+        $this->capital = 'South Tarawa';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Pacific/Tarawa',
+                // Standard time offset
+                'standard_time' => 'UTC+12',
+                // No daylight saving time observed
+            ],
+            [
+                'timezone_id' => 'Pacific/Enderbury',
+                'standard_time' => 'UTC+13',
+            ],
+            [
+                'timezone_id' => 'Pacific/Kiritimati',
+                'standard_time' => 'UTC+14',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1979-07-12'; // Independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Commonwealth of Nations',
+            'Pacific Islands Forum',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 0.2; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism, Protestantism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is popular in Kiribati
+
+        // Define bordering countries
+        $this->borders = []; // It is an island nation with no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇰🇮',
+            // Unicode code points
             'uCode' => 'U+1F1F0 U+1F1EE',
+            // HTML entities
+            'html' => '&#x1F1F0;&#x1F1EE;',
+            // CSS entities
+            'css' => '\\1F1F0\\1F1EE',
+            // Decimal Unicode entities
+            'decimal' => '&#127472;&#127470;',
+            // Direct UTF-8 string
+            'utf8' => '🇰🇮',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF0\uD83C\uDDEE',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-ki:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F0;&#x1F1EE;',
         ];
-        $this->color = [
-            'hex' => [
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#C8102E',
+                // RGB color values
+                'rgb' => '200,16,46',
+                // CMYK color values
+                'cmyk' => '0,92,77,22',
+                // HSL color values
+                'hsl' => '350°,86%,42%',
+                // HSV color values
+                'hsv' => '350°,92%,78%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#0033A0',
+                // RGB color values
+                'rgb' => '0,51,160',
+                // CMYK color values
+                'cmyk' => '100,68,0,37',
+                // HSL color values
+                'hsl' => '220°,100%,31%',
+                // HSV color values
+                'hsv' => '220°,100%,63%',
+                // Pantone color code
+                'pantone' => '286 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFCD00',
+                // RGB color values
+                'rgb' => '255,205,0',
+                // CMYK color values
+                'cmyk' => '0,20,100,0',
+                // HSL color values
+                'hsl' => '48°,100%,50%',
+                // HSV color values
+                'hsv' => '48°,100%,100%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '1 25 N',
-                'desc' => '1.842833161354065',
-            ],
-            'longitude' => [
-                'classic' => '173 00 E',
-                'desc' => '-157.6758270263672',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '4.716667',
-                'min' => '-10.3',
-            ],
-            'longitude' => [
-                'max' => '-174.533333',
-                'min' => '179.716667',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '1.8709',
+            // Longitude in decimal degrees
+            'longitude' => '-157.3630',
+            // Degrees with decimal
+            'dd' => '1.8709° N, 157.3630° W',
+            // Degrees, minutes, seconds
+            'dms' => '1°52\'15.24" N, 157°21\'46.80" W',
+            // Degrees and decimal minutes
+            'dm' => '1°52.254\' N, 157°21.780\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

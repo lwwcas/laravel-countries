@@ -2,8 +2,8 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
 class IN_India extends CountrySeeder
 {
@@ -29,55 +29,264 @@ class IN_India extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'India';
+
+        // Set the country's official name
         $this->official_name = 'Republic of India';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'IN';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'IND';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '356';
+
+        // Set the international dialing code
         $this->international_phone = '91';
 
-        $this->languages = ['hi','en'];
+        // Define the languages spoken in the country
+        $this->languages = ['hi', 'en']; // Hindi and English are official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.in'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '55 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '12 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '50%'; // As per recent estimates
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Indian Computer Emergency Response Team (CERT-In)';
+
+        // List popular web technologies in India
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'Java', 'Node.js', 'Angular', 'React'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'IN';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1269750';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Indian rupee',
+            // Currency code
+            'code' => 'INR',
+            // Currency symbol
+            'symbol' => '₹',
+            // Main unit
+            'main_unit' => 'rupee',
+            // Subunit
+            'sub_unit' => 'paise',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['10', '20', '50', '100', '200', '500', '2000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['50'],
+        ];
+
+        // Set the population
+        $this->population = 1393409038; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 3287263; // km²
+
+        // Set the capital city
+        $this->capital = 'New Delhi';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Kolkata',
+                // Standard time offset
+                'standard_time' => 'UTC+5:30',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1947-08-15'; // Independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Commonwealth of Nations',
+            'South Asian Association for Regional Cooperation (SAARC)',
+            'BRICS',
+            'G20',
+            'Non-Aligned Movement',
+            'Shanghai Cooperation Organisation (SCO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 2875; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Hinduism',
+            'Islam',
+            'Christianity',
+            'Sikhism',
+            'Buddhism',
+            'Jainism',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Federal parliamentary constitutional republic';
+
+        // Set the national sport
+        $this->national_sport = 'Field Hockey'; // Field hockey is the national sport, though cricket is the most popular
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Pakistan', 'iso_alpha_2' => 'PK'],
+            ['name' => 'China', 'iso_alpha_2' => 'CN'],
+            ['name' => 'Nepal', 'iso_alpha_2' => 'NP'],
+            ['name' => 'Bhutan', 'iso_alpha_2' => 'BT'],
+            ['name' => 'Bangladesh', 'iso_alpha_2' => 'BD'],
+            ['name' => 'Myanmar', 'iso_alpha_2' => 'MM'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇮🇳',
+            // Unicode code points
             'uCode' => 'U+1F1EE U+1F1F3',
+            // HTML entities
+            'html' => '&#x1F1EE;&#x1F1F3;',
+            // CSS entities
+            'css' => '\\1F1EE\\1F1F3',
+            // Decimal Unicode entities
+            'decimal' => '&#127470;&#127475;',
+            // Direct UTF-8 string
+            'utf8' => '🇮🇳',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDEE\uD83C\uDDF3',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-in:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1EE;&#x1F1F3;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ffa500',
-                '#00008b',
-                '#ffffff',
-                '#008000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Saffron',
+                // Web color name
+                'web_name' => 'orange',
+                // Hexadecimal color code
+                'hex' => '#FF9933',
+                // RGB color values
+                'rgb' => '255,153,51',
+                // CMYK color values
+                'cmyk' => '0,40,80,0',
+                // HSL color values
+                'hsl' => '30,100%,60%',
+                // HSV color values
+                'hsv' => '30,80%,100%',
+                // Pantone color code
+                'pantone' => '1585 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
-            'rgb' => [
-                '255,165,0',
-                '0,0,139',
-                '255,255,255',
-                '0,128,0',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'India Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#138808',
+                // RGB color values
+                'rgb' => '19,136,8',
+                // CMYK color values
+                'cmyk' => '86,0,94,47',
+                // HSL color values
+                'hsl' => '115,89%,28%',
+                // HSV color values
+                'hsv' => '115,94%,53%',
+                // Pantone color code
+                'pantone' => '362 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Navy Blue (Ashoka Chakra)',
+                // Web color name
+                'web_name' => 'navy',
+                // Hexadecimal color code
+                'hex' => '#000080',
+                // RGB color values
+                'rgb' => '0,0,128',
+                // CMYK color values
+                'cmyk' => '100,100,0,50',
+                // HSL color values
+                'hsl' => '240,100%,25%',
+                // HSV color values
+                'hsv' => '240,100%,50%',
+                // Pantone color code
+                'pantone' => '2758 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '20 00 N',
-                'desc' => '23.4060115814209',
-            ],
-            'longitude' => [
-                'classic' => '77 00 E',
-                'desc' => '79.45809173583984',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '35.9558333333',
-                'min' => '6.755556',
-            ],
-            'longitude' => [
-                'max' => '97.35',
-                'min' => '67.016667',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '20.5937',
+            // Longitude in decimal degrees
+            'longitude' => '78.9629',
+            // Degrees with decimal
+            'dd' => '20.5937° N, 78.9629° E',
+            // Degrees, minutes, seconds
+            'dms' => '20°35\'37.32" N, 78°57\'46.44" E',
+            // Degrees and decimal minutes
+            'dm' => '20°35.622\' N, 78°57.774\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

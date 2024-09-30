@@ -2,8 +2,8 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
 class IT_Italy extends CountrySeeder
 {
@@ -29,53 +29,240 @@ class IT_Italy extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Italy';
+
+        // Set the country's official name
         $this->official_name = 'Italian Republic';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'IT';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'ITA';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '380';
+
+        // Set the international dialing code
         $this->international_phone = '39';
 
-        $this->languages = ['it'];
+        // Define the languages spoken in the country
+        $this->languages = ['it']; // Italian is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.it'];
-        $this->wmo = 'IY';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '100 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '50 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '75%'; // As per recent estimates
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'National Cybersecurity Agency (Agenzia per la Cybersicurezza Nazionale)';
+
+        // List popular web technologies in Italy
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Java', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'IT';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '3175395';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Euro',
+            // Currency code
+            'code' => 'EUR',
+            // Currency symbol
+            'symbol' => '€',
+            // Main unit
+            'main_unit' => 'euro',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100', '200', '500'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins (only numbers)
+            'coins_sub' => ['1', '2', '5', '10', '20', '50'],
+        ];
+
+        // Set the population
+        $this->population = 60367477; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 301340; // km²
+
+        // Set the capital city
+        $this->capital = 'Rome';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Europe/Rome',
+                // Standard time offset
+                'standard_time' => 'UTC+1', // Central European Time (CET)
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+2', // Central European Summer Time (CEST)
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1861-03-17'; // Unification of Italy
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'European Union (EU)',
+            'NATO',
+            'G7',
+            'G20',
+            'Organisation for Economic Co-operation and Development (OECD)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Council of Europe',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 2001.0; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary constitutional republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Italy
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Austria', 'iso_alpha_2' => 'AT'],
+            ['name' => 'France', 'iso_alpha_2' => 'FR'],
+            ['name' => 'San Marino', 'iso_alpha_2' => 'SM'],
+            ['name' => 'Slovenia', 'iso_alpha_2' => 'SI'],
+            ['name' => 'Switzerland', 'iso_alpha_2' => 'CH'],
+            ['name' => 'Vatican City', 'iso_alpha_2' => 'VA'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇮🇹',
+            // Unicode code points
             'uCode' => 'U+1F1EE U+1F1F9',
+            // HTML entities
+            'html' => '&#x1F1EE;&#x1F1F9;',
+            // CSS entities
+            'css' => '\\1F1EE\\1F1F9',
+            // Decimal Unicode entities
+            'decimal' => '&#127470;&#127481;',
+            // Direct UTF-8 string
+            'utf8' => '🇮🇹',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDEE\uD83C\uDDF9',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-it:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1EE;&#x1F1F9;',
         ];
-        $this->color = [
-            'hex' => [
-                '#008000',
-                '#ffffff',
-                '#ff0000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#009246',
+                // RGB color values
+                'rgb' => '0,146,70',
+                // CMYK color values
+                'cmyk' => '100,0,52,43',
+                // HSL color values
+                'hsl' => '147,100%,29%',
+                // HSV color values
+                'hsv' => '147,100%,57%',
+                // Pantone color code
+                'pantone' => '17-6153 TCX (Green)',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,128,0',
-                '255,255,255',
-                '255,0,0',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => '11-0601 TCX (Bright White)',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#CE2B37',
+                // RGB color values
+                'rgb' => '206,43,55',
+                // CMYK color values
+                'cmyk' => '0,79,73,19',
+                // HSL color values
+                'hsl' => '355,65%,49%',
+                // HSV color values
+                'hsv' => '355,79%,81%',
+                // Pantone color code
+                'pantone' => '18-1662 TCX (Fiesta)',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '42 50 N',
-                'desc' => '42.7669792175293',
-            ],
-            'longitude' => [
-                'classic' => '12 50 E',
-                'desc' => '12.493823051452637',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '48.533333',
-                'min' => '35.483333',
-            ],
-            'longitude' => [
-                'max' => '20.433333',
-                'min' => '1.35',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '41.8719',
+            // Longitude in decimal degrees
+            'longitude' => '12.5674',
+            // Degrees with decimal
+            'dd' => '41.8719° N, 12.5674° E',
+            // Degrees, minutes, seconds
+            'dms' => '41°52\'18.84" N, 12°34\'2.64" E',
+            // Degrees and decimal minutes
+            'dm' => '41°52.314\' N, 12°34.044\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

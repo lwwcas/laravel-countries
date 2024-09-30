@@ -272,7 +272,7 @@ class AS_AmericanSamoa extends CountrySeeder
             // Longitude in decimal degrees
             'longitude' => '-170.7020',
             // Degrees with decimal
-            'd' => '14.2756° S, 170.7020° W',
+            'dd' => '14.2756° S, 170.7020° W',
             // Degrees, minutes, seconds
             'dms' => '14°16\'32.16" S, 170°42\'07.20" W',
             // Degrees and decimal minutes
