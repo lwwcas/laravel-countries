@@ -2,10 +2,10 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
-class FO_FaroeIslands extends Seeder
+class FO_FaroeIslands extends CountrySeeder
 {
 
     /**

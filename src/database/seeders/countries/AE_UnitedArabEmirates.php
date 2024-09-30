@@ -2,10 +2,10 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
-class AE_UnitedArabEmirates extends Seeder
+class AE_UnitedArabEmirates extends CountrySeeder
 {
 
     /**
@@ -150,7 +150,7 @@ class AE_UnitedArabEmirates extends Seeder
         ];
 
         // Set the founded year
-        $this->founded_year = 1971; // Year of independence
+        $this->independence_day = 1971; // Year of independence
 
         // Define the country's flag emoji representation
         $this->emoji = [

@@ -2,10 +2,10 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
-class CV_CapeVerde extends Seeder
+class CV_CapeVerde extends CountrySeeder
 {
 
     /**

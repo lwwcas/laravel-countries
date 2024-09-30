@@ -2,10 +2,10 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class CZ_CzechRepublic extends Seeder
+class CZ_CzechRepublic extends CountrySeeder
 {
 
     /**

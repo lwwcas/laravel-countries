@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
-class GE_Georgia extends Seeder
+class GE_Georgia extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'asia';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class GE_Georgia extends Seeder
         $this->iso_alpha_3 = 'GEO';
         $this->iso_numeric = '268';
         $this->international_phone = '995';
- 
+
         $this->languages = ['ka'];
         $this->tld = ['.ge'];
         $this->wmo = 'GG';
         $this->geoname_id = '614540';
- 
+
         $this->emoji = [
             'img' => '🇬🇪',
             'uCode' => 'U+1F1EC U+1F1EA',
@@ -75,12 +75,12 @@ class GE_Georgia extends Seeder
                 'min' => '40.013056',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class KE_Kenya extends Seeder
+class KE_Kenya extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'africa';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class KE_Kenya extends Seeder
         $this->iso_alpha_3 = 'KEN';
         $this->iso_numeric = '404';
         $this->international_phone = '254';
- 
+
         $this->languages = ['en','sw'];
         $this->tld = ['.ke'];
         $this->wmo = 'KN';
         $this->geoname_id = '192950';
- 
+
         $this->emoji = [
             'img' => '🇰🇪',
             'uCode' => 'U+1F1F0 U+1F1EA',
@@ -79,12 +79,12 @@ class KE_Kenya extends Seeder
                 'min' => '27.433333',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

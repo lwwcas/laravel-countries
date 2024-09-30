@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class GH_Ghana extends Seeder
+class GH_Ghana extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'africa';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class GH_Ghana extends Seeder
         $this->iso_alpha_3 = 'GHA';
         $this->iso_numeric = '288';
         $this->international_phone = '233';
- 
+
         $this->languages = ['en'];
         $this->tld = ['.gh'];
         $this->wmo = 'GH';
         $this->geoname_id = '2300660';
- 
+
         $this->emoji = [
             'img' => '🇬🇭',
             'uCode' => 'U+1F1EC U+1F1ED',
@@ -79,12 +79,12 @@ class GH_Ghana extends Seeder
                 'min' => '-4',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

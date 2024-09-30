@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class HN_Honduras extends Seeder
+class HN_Honduras extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'americas';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class HN_Honduras extends Seeder
         $this->iso_alpha_3 = 'HND';
         $this->iso_numeric = '340';
         $this->international_phone = '504';
- 
+
         $this->languages = ['es'];
         $this->tld = ['.hn'];
         $this->wmo = 'HO';
         $this->geoname_id = '3608932';
- 
+
         $this->emoji = [
             'img' => '🇭🇳',
             'uCode' => 'U+1F1ED U+1F1F3',
@@ -75,12 +75,12 @@ class HN_Honduras extends Seeder
                 'min' => '-89.333333',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class JM_Jamaica extends Seeder
+class JM_Jamaica extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'americas';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class JM_Jamaica extends Seeder
         $this->iso_alpha_3 = 'JAM';
         $this->iso_numeric = '388';
         $this->international_phone = '1-876';
- 
+
         $this->languages = ['en'];
         $this->tld = ['.jm'];
         $this->wmo = 'JM';
         $this->geoname_id = '3489940';
- 
+
         $this->emoji = [
             'img' => '🇯🇲',
             'uCode' => 'U+1F1EF U+1F1F2',
@@ -77,12 +77,12 @@ class JM_Jamaica extends Seeder
                 'min' => '-78.366667',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

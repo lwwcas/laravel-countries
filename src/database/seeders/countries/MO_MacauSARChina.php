@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class MO_MacauSARChina extends Seeder
+class MO_MacauSARChina extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'asia';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class MO_MacauSARChina extends Seeder
         $this->iso_alpha_3 = 'MAC';
         $this->iso_numeric = '446';
         $this->international_phone = '853';
- 
+
         $this->languages = ['zh','pt'];
         $this->tld = ['.mo'];
         $this->wmo = 'MU';
         $this->geoname_id = '1821275';
- 
+
         $this->emoji = [
             'img' => '🇲🇴',
             'uCode' => 'U+1F1F2 U+1F1F4',
@@ -75,12 +75,12 @@ class MO_MacauSARChina extends Seeder
                 'min' => '113.531389',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"cca2":"mo"},"geometry":{"type":"Polygon","coordinates":[[[113.531662,22.194736],[113.531372,22.201939],[113.532494,22.20583],[113.536102,22.211662],[113.545258,22.214439],[113.554428,22.21273],[113.556374,22.193607],[113.555817,22.186939],[113.552467,22.183052],[113.546097,22.184441],[113.531662,22.194736]]]}}]}';

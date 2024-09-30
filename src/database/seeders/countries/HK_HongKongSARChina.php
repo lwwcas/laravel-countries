@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class HK_HongKongSARChina extends Seeder
+class HK_HongKongSARChina extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'asia';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class HK_HongKongSARChina extends Seeder
         $this->iso_alpha_3 = 'HKG';
         $this->iso_numeric = '344';
         $this->international_phone = '852';
- 
+
         $this->languages = ['zh','en'];
         $this->tld = ['.hk',".\u9999\u6e2f"];
         $this->wmo = 'HK';
         $this->geoname_id = '1819730';
- 
+
         $this->emoji = [
             'img' => '🇭🇰',
             'uCode' => 'U+1F1ED U+1F1F0',
@@ -75,12 +75,12 @@ class HK_HongKongSARChina extends Seeder
                 'min' => '113.833333',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

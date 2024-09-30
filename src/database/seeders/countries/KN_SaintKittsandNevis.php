@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class KN_SaintKittsandNevis extends Seeder
+class KN_SaintKittsandNevis extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'americas';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class KN_SaintKittsandNevis extends Seeder
         $this->iso_alpha_3 = 'KNA';
         $this->iso_numeric = '659';
         $this->international_phone = '1-869';
- 
+
         $this->languages = ['en'];
         $this->tld = ['.kn'];
         $this->wmo = 'AT';
         $this->geoname_id = '3575174';
- 
+
         $this->emoji = [
             'img' => '🇰🇳',
             'uCode' => 'U+1F1F0 U+1F1F3',
@@ -77,12 +77,12 @@ class KN_SaintKittsandNevis extends Seeder
                 'min' => '-62.85',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

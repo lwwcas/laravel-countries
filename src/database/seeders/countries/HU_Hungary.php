@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class HU_Hungary extends Seeder
+class HU_Hungary extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'europe';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class HU_Hungary extends Seeder
         $this->iso_alpha_3 = 'HUN';
         $this->iso_numeric = '348';
         $this->international_phone = '36';
- 
+
         $this->languages = ['hu'];
         $this->tld = ['.hu'];
         $this->wmo = 'HU';
         $this->geoname_id = '719819';
- 
+
         $this->emoji = [
             'img' => '🇭🇺',
             'uCode' => 'U+1F1ED U+1F1FA',
@@ -77,12 +77,12 @@ class HU_Hungary extends Seeder
                 'min' => '16.183333',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

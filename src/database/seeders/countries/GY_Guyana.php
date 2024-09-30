@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class GY_Guyana extends Seeder
+class GY_Guyana extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'americas';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class GY_Guyana extends Seeder
         $this->iso_alpha_3 = 'GUY';
         $this->iso_numeric = '328';
         $this->international_phone = '592';
- 
+
         $this->languages = ['en'];
         $this->tld = ['.gy'];
         $this->wmo = 'GY';
         $this->geoname_id = '3378535';
- 
+
         $this->emoji = [
             'img' => '🇬🇾',
             'uCode' => 'U+1F1EC U+1F1FE',
@@ -75,12 +75,12 @@ class GY_Guyana extends Seeder
                 'min' => '-61.233333',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

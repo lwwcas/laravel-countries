@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class KI_Kiribati extends Seeder
+class KI_Kiribati extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'oceania';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class KI_Kiribati extends Seeder
         $this->iso_alpha_3 = 'KIR';
         $this->iso_numeric = '296';
         $this->international_phone = '686';
- 
+
         $this->languages = ['en'];
         $this->tld = ['.ki'];
         $this->wmo = 'KB';
         $this->geoname_id = '4030945';
- 
+
         $this->emoji = [
             'img' => '🇰🇮',
             'uCode' => 'U+1F1F0 U+1F1EE',
@@ -71,12 +71,12 @@ class KI_Kiribati extends Seeder
                 'min' => '179.716667',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

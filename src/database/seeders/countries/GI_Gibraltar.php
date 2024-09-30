@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class GI_Gibraltar extends Seeder
+class GI_Gibraltar extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'europe';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class GI_Gibraltar extends Seeder
         $this->iso_alpha_3 = 'GIB';
         $this->iso_numeric = '292';
         $this->international_phone = '350';
- 
+
         $this->languages = ['en'];
         $this->tld = ['.gi'];
         $this->wmo = 'GI';
         $this->geoname_id = '2411586';
- 
+
         $this->emoji = [
             'img' => '🇬🇮',
             'uCode' => 'U+1F1EC U+1F1EE',
@@ -71,12 +71,12 @@ class GI_Gibraltar extends Seeder
                 'min' => '-5.35',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

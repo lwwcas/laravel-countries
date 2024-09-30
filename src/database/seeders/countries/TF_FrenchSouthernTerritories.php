@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class TF_FrenchSouthernTerritories extends Seeder
+class TF_FrenchSouthernTerritories extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'oceania';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class TF_FrenchSouthernTerritories extends Seeder
         $this->iso_alpha_3 = 'ATF';
         $this->iso_numeric = '260';
         $this->international_phone = '262';
- 
+
         $this->languages = ['fr'];
         $this->tld = ['.tf'];
         $this->wmo = '0';
         $this->geoname_id = '1546748';
- 
+
         $this->emoji = [
             'img' => '🇹🇫',
             'uCode' => 'U+1F1F9 U+1F1EB',
@@ -71,12 +71,12 @@ class TF_FrenchSouthernTerritories extends Seeder
                 'min' => '50.233333',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

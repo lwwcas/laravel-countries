@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class GP_Guadeloupe extends Seeder
+class GP_Guadeloupe extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'americas';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class GP_Guadeloupe extends Seeder
         $this->iso_alpha_3 = 'GLP';
         $this->iso_numeric = '312';
         $this->international_phone = '590';
- 
+
         $this->languages = ['fr'];
         $this->tld = ['.gp'];
         $this->wmo = 'MF';
         $this->geoname_id = '3579143';
- 
+
         $this->emoji = [
             'img' => '🇬🇵',
             'uCode' => 'U+1F1EC U+1F1F5',
@@ -77,12 +77,12 @@ class GP_Guadeloupe extends Seeder
                 'min' => '-63.15',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

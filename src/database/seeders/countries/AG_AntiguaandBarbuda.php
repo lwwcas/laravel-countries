@@ -2,10 +2,10 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
-class AG_AntiguaandBarbuda extends Seeder
+class AG_AntiguaandBarbuda extends CountrySeeder
 {
 
     /**
@@ -146,7 +146,7 @@ class AG_AntiguaandBarbuda extends Seeder
         $this->borders = []; // Island nation with no land borders
 
         // Set the founded year
-        $this->founded_year = 1981; // Year of independence
+        $this->independence_day = 1981; // Year of independence
 
         // Define the country's flag emoji representation
         $this->emoji = [

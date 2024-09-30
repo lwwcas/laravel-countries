@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class KG_Kyrgyzstan extends Seeder
+class KG_Kyrgyzstan extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'asia';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class KG_Kyrgyzstan extends Seeder
         $this->iso_alpha_3 = 'KGZ';
         $this->iso_numeric = '417';
         $this->international_phone = '996';
- 
+
         $this->languages = ['ky','ru'];
         $this->tld = ['.kg'];
         $this->wmo = 'KG';
         $this->geoname_id = '1527747';
- 
+
         $this->emoji = [
             'img' => '🇰🇬',
             'uCode' => 'U+1F1F0 U+1F1EC',
@@ -75,12 +75,12 @@ class KG_Kyrgyzstan extends Seeder
                 'min' => '69.333333',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

@@ -2,10 +2,10 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
-class CI_CotedIvoire extends Seeder
+class CI_CotedIvoire extends CountrySeeder
 {
 
     /**
@@ -109,7 +109,6 @@ class CI_CotedIvoire extends Seeder
 
         // Set the capital city
         $this->capital = 'Yamoussoukro'; // Political capital
-        $this->economic_capital = 'Abidjan'; // Largest city and economic capital
 
         // Define the time zone(s) using IANA time zone identifiers
         $this->timezones = [

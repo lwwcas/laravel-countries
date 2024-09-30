@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class KR_SouthKorea extends Seeder
+class KR_SouthKorea extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'asia';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class KR_SouthKorea extends Seeder
         $this->iso_alpha_3 = 'KOR';
         $this->iso_numeric = '410';
         $this->international_phone = '82';
- 
+
         $this->languages = ['ko'];
         $this->tld = ['.kr',".\ud55c\uad6d"];
         $this->wmo = 'KO';
         $this->geoname_id = '1835841';
- 
+
         $this->emoji = [
             'img' => '🇰🇷',
             'uCode' => 'U+1F1F0 U+1F1F7',
@@ -79,12 +79,12 @@ class KR_SouthKorea extends Seeder
                 'min' => '124.612222',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

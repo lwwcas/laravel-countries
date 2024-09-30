@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class HT_Haiti extends Seeder
+class HT_Haiti extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'americas';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class HT_Haiti extends Seeder
         $this->iso_alpha_3 = 'HTI';
         $this->iso_numeric = '332';
         $this->international_phone = '509';
- 
+
         $this->languages = ['fr','ht'];
         $this->tld = ['.ht'];
         $this->wmo = 'HA';
         $this->geoname_id = '3723988';
- 
+
         $this->emoji = [
             'img' => '🇭🇹',
             'uCode' => 'U+1F1ED U+1F1F9',
@@ -75,12 +75,12 @@ class HT_Haiti extends Seeder
                 'min' => '-74.483333',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

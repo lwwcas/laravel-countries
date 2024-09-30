@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class KH_Cambodia extends Seeder
+class KH_Cambodia extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'asia';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class KH_Cambodia extends Seeder
         $this->iso_alpha_3 = 'KHM';
         $this->iso_numeric = '116';
         $this->international_phone = '855';
- 
+
         $this->languages = ['km'];
         $this->tld = ['.kh'];
         $this->wmo = 'KP';
         $this->geoname_id = '1831722';
- 
+
         $this->emoji = [
             'img' => '🇰🇭',
             'uCode' => 'U+1F1F0 U+1F1ED',
@@ -75,12 +75,12 @@ class KH_Cambodia extends Seeder
                 'min' => '102.358333',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

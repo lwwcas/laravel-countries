@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class LA_LaoPDR extends Seeder
+class LA_LaoPDR extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'asia';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class LA_LaoPDR extends Seeder
         $this->iso_alpha_3 = 'LAO';
         $this->iso_numeric = '418';
         $this->international_phone = '856';
- 
+
         $this->languages = ['lo'];
         $this->tld = ['.la'];
         $this->wmo = 'LA';
         $this->geoname_id = '1655842';
- 
+
         $this->emoji = [
             'img' => '🇱🇦',
             'uCode' => 'U+1F1F1 U+1F1E6',
@@ -77,12 +77,12 @@ class LA_LaoPDR extends Seeder
                 'min' => '100.095833',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

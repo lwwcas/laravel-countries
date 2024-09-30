@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class LB_Lebanon extends Seeder
+class LB_Lebanon extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'asia';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class LB_Lebanon extends Seeder
         $this->iso_alpha_3 = 'LBN';
         $this->iso_numeric = '422';
         $this->international_phone = '961';
- 
+
         $this->languages = ['ar','fr'];
         $this->tld = ['.lb'];
         $this->wmo = 'LB';
         $this->geoname_id = '272103';
- 
+
         $this->emoji = [
             'img' => '🇱🇧',
             'uCode' => 'U+1F1F1 U+1F1E7',
@@ -77,12 +77,12 @@ class LB_Lebanon extends Seeder
                 'min' => '35.103611',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

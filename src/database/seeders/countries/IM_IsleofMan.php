@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class IM_IsleofMan extends Seeder
+class IM_IsleofMan extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'europe';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class IM_IsleofMan extends Seeder
         $this->iso_alpha_3 = 'IMN';
         $this->iso_numeric = '833';
         $this->international_phone = '44';
- 
+
         $this->languages = ['en','gv'];
         $this->tld = ['.im'];
         $this->wmo = '0';
         $this->geoname_id = '3042225';
- 
+
         $this->emoji = [
             'img' => '🇮🇲',
             'uCode' => 'U+1F1EE U+1F1F2',
@@ -71,12 +71,12 @@ class IM_IsleofMan extends Seeder
                 'min' => '-4.833333',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

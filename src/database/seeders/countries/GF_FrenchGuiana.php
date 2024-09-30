@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class GF_FrenchGuiana extends Seeder
+class GF_FrenchGuiana extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'americas';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class GF_FrenchGuiana extends Seeder
         $this->iso_alpha_3 = 'GUF';
         $this->iso_numeric = '254';
         $this->international_phone = '594';
- 
+
         $this->languages = ['fr'];
         $this->tld = ['.gf'];
         $this->wmo = 'FG';
         $this->geoname_id = '3381670';
- 
+
         $this->emoji = [
             'img' => '🇬🇫',
             'uCode' => 'U+1F1EC U+1F1EB',
@@ -75,12 +75,12 @@ class GF_FrenchGuiana extends Seeder
                 'min' => '-60',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

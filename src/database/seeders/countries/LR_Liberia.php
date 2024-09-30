@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class LR_Liberia extends Seeder
+class LR_Liberia extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'africa';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class LR_Liberia extends Seeder
         $this->iso_alpha_3 = 'LBR';
         $this->iso_numeric = '430';
         $this->international_phone = '231';
- 
+
         $this->languages = ['en'];
         $this->tld = ['.lr'];
         $this->wmo = 'LI';
         $this->geoname_id = '2275384';
- 
+
         $this->emoji = [
             'img' => '🇱🇷',
             'uCode' => 'U+1F1F1 U+1F1F7',
@@ -77,12 +77,12 @@ class LR_Liberia extends Seeder
                 'min' => '-11.472222',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

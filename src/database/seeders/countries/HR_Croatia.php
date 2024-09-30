@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class HR_Croatia extends Seeder
+class HR_Croatia extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'europe';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class HR_Croatia extends Seeder
         $this->iso_alpha_3 = 'HRV';
         $this->iso_numeric = '191';
         $this->international_phone = '385';
- 
+
         $this->languages = ['hr'];
         $this->tld = ['.hr'];
         $this->wmo = 'RH';
         $this->geoname_id = '3202326';
- 
+
         $this->emoji = [
             'img' => '🇭🇷',
             'uCode' => 'U+1F1ED U+1F1F7',
@@ -77,12 +77,12 @@ class HR_Croatia extends Seeder
                 'min' => '13.493333',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

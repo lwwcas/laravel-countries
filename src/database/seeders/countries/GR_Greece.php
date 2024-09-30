@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class GR_Greece extends Seeder
+class GR_Greece extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'europe';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class GR_Greece extends Seeder
         $this->iso_alpha_3 = 'GRC';
         $this->iso_numeric = '300';
         $this->international_phone = '30';
- 
+
         $this->languages = ['el'];
         $this->tld = ['.gr'];
         $this->wmo = 'GR';
         $this->geoname_id = '390903';
- 
+
         $this->emoji = [
             'img' => '🇬🇷',
             'uCode' => 'U+1F1EC U+1F1F7',
@@ -75,12 +75,12 @@ class GR_Greece extends Seeder
                 'min' => '19.381667',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

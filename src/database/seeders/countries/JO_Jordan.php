@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class JO_Jordan extends Seeder
+class JO_Jordan extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'asia';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class JO_Jordan extends Seeder
         $this->iso_alpha_3 = 'JOR';
         $this->iso_numeric = '400';
         $this->international_phone = '962';
- 
+
         $this->languages = ['ar'];
         $this->tld = ['.jo',"\u0627\u0644\u0627\u0631\u062f\u0646."];
         $this->wmo = 'JD';
         $this->geoname_id = '248816';
- 
+
         $this->emoji = [
             'img' => '🇯🇴',
             'uCode' => 'U+1F1EF U+1F1F4',
@@ -79,12 +79,12 @@ class JO_Jordan extends Seeder
                 'min' => '34.9875',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

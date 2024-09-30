@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class GU_Guam extends Seeder
+class GU_Guam extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'oceania';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class GU_Guam extends Seeder
         $this->iso_alpha_3 = 'GUM';
         $this->iso_numeric = '316';
         $this->international_phone = '1-671';
- 
+
         $this->languages = ['en','ch','es'];
         $this->tld = ['.gu'];
         $this->wmo = 'GM';
         $this->geoname_id = '4043988';
- 
+
         $this->emoji = [
             'img' => '🇬🇺',
             'uCode' => 'U+1F1EC U+1F1FA',
@@ -75,12 +75,12 @@ class GU_Guam extends Seeder
                 'min' => '144.619263',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

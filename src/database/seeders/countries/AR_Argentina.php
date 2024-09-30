@@ -2,10 +2,10 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
-class AR_Argentina extends Seeder
+class AR_Argentina extends CountrySeeder
 {
 
     /**
@@ -154,7 +154,7 @@ class AR_Argentina extends Seeder
         ];
 
         // Set the founded year
-        $this->founded_year = 1816; // Year of independence
+        $this->independence_day = 1816; // Year of independence
 
         // Define the country's flag emoji representation
         $this->emoji = [

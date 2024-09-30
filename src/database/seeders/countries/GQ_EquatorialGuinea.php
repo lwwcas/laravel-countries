@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class GQ_EquatorialGuinea extends Seeder
+class GQ_EquatorialGuinea extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'africa';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class GQ_EquatorialGuinea extends Seeder
         $this->iso_alpha_3 = 'GNQ';
         $this->iso_numeric = '226';
         $this->international_phone = '240';
- 
+
         $this->languages = ['es','fr'];
         $this->tld = ['.gq'];
         $this->wmo = 'GQ';
         $this->geoname_id = '2309096';
- 
+
         $this->emoji = [
             'img' => '🇬🇶',
             'uCode' => 'U+1F1EC U+1F1F6',
@@ -79,12 +79,12 @@ class GQ_EquatorialGuinea extends Seeder
                 'min' => '5.05',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

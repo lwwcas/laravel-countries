@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class GM_Gambia extends Seeder
+class GM_Gambia extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'africa';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class GM_Gambia extends Seeder
         $this->iso_alpha_3 = 'GMB';
         $this->iso_numeric = '270';
         $this->international_phone = '220';
- 
+
         $this->languages = ['en'];
         $this->tld = ['.gm'];
         $this->wmo = 'GB';
         $this->geoname_id = '2413451';
- 
+
         $this->emoji = [
             'img' => '🇬🇲',
             'uCode' => 'U+1F1EC U+1F1F2',
@@ -79,12 +79,12 @@ class GM_Gambia extends Seeder
                 'min' => '-16.816944',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class ID_Indonesia extends Seeder
+class ID_Indonesia extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'asia';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class ID_Indonesia extends Seeder
         $this->iso_alpha_3 = 'IDN';
         $this->iso_numeric = '360';
         $this->international_phone = '62';
- 
+
         $this->languages = ['id'];
         $this->tld = ['.id'];
         $this->wmo = 'ID';
         $this->geoname_id = '1643084';
- 
+
         $this->emoji = [
             'img' => '🇮🇩',
             'uCode' => 'U+1F1EE U+1F1E9',
@@ -75,12 +75,12 @@ class ID_Indonesia extends Seeder
                 'min' => '94.970278',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

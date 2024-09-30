@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class HM_HeardIslandandMcDonaldIslands extends Seeder
+class HM_HeardIslandandMcDonaldIslands extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'oceania';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class HM_HeardIslandandMcDonaldIslands extends Seeder
         $this->iso_alpha_3 = 'HMD';
         $this->iso_numeric = '672';
         $this->international_phone = '672';
- 
+
         $this->languages = ['en'];
         $this->tld = ['.hm','.aq'];
         $this->wmo = '0';
         $this->geoname_id = '1547314';
- 
+
         $this->emoji = [
             'img' => '🇭🇲',
             'uCode' => 'U+1F1ED U+1F1F2',
@@ -71,12 +71,12 @@ class HM_HeardIslandandMcDonaldIslands extends Seeder
                 'min' => '72.566667',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

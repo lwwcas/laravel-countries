@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class VA_VaticanCity extends Seeder
+class VA_VaticanCity extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'europe';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class VA_VaticanCity extends Seeder
         $this->iso_alpha_3 = 'VAT';
         $this->iso_numeric = '336';
         $this->international_phone = '';
- 
+
         $this->languages = ['it','la'];
         $this->tld = ['.va'];
         $this->wmo = '0';
         $this->geoname_id = '3164670';
- 
+
         $this->emoji = [
             'img' => '🇻🇦',
             'uCode' => 'U+1F1FB U+1F1E6',
@@ -71,12 +71,12 @@ class VA_VaticanCity extends Seeder
                 'min' => '12.45',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"cca2":"va"},"geometry":{"type":"Polygon","coordinates":[[[12.445090330889,41.903117521785],[12.451653339581,41.907989033391],[12.456660170954,41.901426024699],[12.445090330889,41.903117521785]]]}}]}';

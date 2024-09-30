@@ -2,10 +2,10 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 
-class AF_Afghanistan extends Seeder
+class AF_Afghanistan extends CountrySeeder
 {
 
     /**
@@ -153,7 +153,7 @@ class AF_Afghanistan extends Seeder
         ];
 
         // Set the founded year
-        $this->founded_year = 1919; // Year of independence
+        $this->independence_day = 1919; // Year of independence
 
         // Define the country's flag emoji representation
         $this->emoji = [

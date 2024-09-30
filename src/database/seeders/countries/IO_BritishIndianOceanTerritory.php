@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class IO_BritishIndianOceanTerritory extends Seeder
+class IO_BritishIndianOceanTerritory extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $lang = 'en';
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
     public $region = 'oceania';
- 
+
     /**
      * Run the database seeds.
      *
@@ -35,12 +35,12 @@ class IO_BritishIndianOceanTerritory extends Seeder
         $this->iso_alpha_3 = 'IOT';
         $this->iso_numeric = '86';
         $this->international_phone = '246';
- 
+
         $this->languages = ['en'];
         $this->tld = ['.io'];
         $this->wmo = '0';
         $this->geoname_id = '1282588';
- 
+
         $this->emoji = [
             'img' => '🇮🇴',
             'uCode' => 'U+1F1EE U+1F1F4',
@@ -71,12 +71,12 @@ class IO_BritishIndianOceanTerritory extends Seeder
                 'min' => '71.265278',
             ],
         ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{
