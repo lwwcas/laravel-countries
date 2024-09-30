@@ -1,6 +1,6 @@
 <?php
 
-namespace Lwwcas\LaravelRssReader\Contracts;
+namespace Lwwcas\LaravelCountries\Contracts;
 
 interface CountrySeedInterface
 {

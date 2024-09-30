@@ -2,7 +2,7 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
 class RO_Romania extends CountrySeeder

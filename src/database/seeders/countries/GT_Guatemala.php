@@ -3,7 +3,7 @@
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
-use Lwwcas\LaravelRssReader\Abstract\CountrySeeder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
 class GT_Guatemala extends CountrySeeder
 {
