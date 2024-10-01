@@ -25,6 +25,13 @@ class CountryExtras extends Model
     public $timestamps = false;
 
     /**
+     * @property-read string $localeKey
+     *
+     * @var string
+     */
+    public string $localeKey;
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -52,6 +59,17 @@ class CountryExtras extends Model
             'religions' => 'array',
             'internet' => 'array',
         ];
+    }
+
+    /**
+     * Set the locale key and initialize the model.
+     *
+     * @param array $attributes
+     */
+    public function __construct(array $attributes = [])
+    {
+        $this->localeKey = config('w-countries.locale_key', 'locale');
+        parent::__construct($attributes);
     }
 
     /**

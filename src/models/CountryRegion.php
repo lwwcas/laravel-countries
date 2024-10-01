@@ -29,15 +29,19 @@ class CountryRegion extends Model
     /* Translatable ForeignKey */
     public $translationForeignKey = 'lc_region_id';
 
-    /* @property-read string $localeKey */
-    public string $localeKey;
-
     /**
      * Indicates if the model should be timestamped.
      *
      * @var bool
      */
     public $timestamps = false;
+
+    /**
+     * @property-read string $localeKey
+     *
+     * @var string
+     */
+    public string $localeKey;
 
     /**
      * The attributes that are mass assignable.
@@ -73,6 +77,16 @@ class CountryRegion extends Model
         ];
     }
 
+    /**
+     * Set the locale key and initialize the model.
+     *
+     * @param array $attributes
+     */
+    public function __construct(array $attributes = [])
+    {
+        $this->localeKey = config('w-countries.locale_key', 'locale');
+        parent::__construct($attributes);
+    }
 
     /**
      * Perform any actions required before the model boots.

@@ -37,7 +37,11 @@ class Country extends Model
     /* Translatable ForeignKey */
     public $translationForeignKey = 'lc_country_id';
 
-    /* @property-read string $localeKey */
+    /**
+     * @property-read string $localeKey
+     *
+     * @var string
+     */
     public string $localeKey;
 
     /**
@@ -125,9 +129,14 @@ class Country extends Model
         ];
     }
 
+    /**
+     * Set the locale key and initialize the model.
+     *
+     * @param array $attributes
+     */
     public function __construct(array $attributes = [])
     {
-        $this->localeKey = config('translatable.locale_key', 'locale');
+        $this->localeKey = config('w-countries.locale_key', 'locale');
         parent::__construct($attributes);
     }
 

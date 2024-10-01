@@ -17,15 +17,19 @@ class CountryGeographical extends Model
      */
     protected $table = 'lc_countries_geographical';
 
-    /* @property-read string $localeKey */
-    public string $localeKey;
-
     /**
      * Indicates if the model should be timestamped.
      *
      * @var bool
      */
     public $timestamps = false;
+
+    /**
+     * @property-read string $localeKey
+     *
+     * @var string
+     */
+    public string $localeKey;
 
     /**
      * The attributes that are mass assignable.
@@ -51,6 +55,17 @@ class CountryGeographical extends Model
             'properties' => 'array',
             'geometry' => 'array',
         ];
+    }
+
+    /**
+     * Set the locale key and initialize the model.
+     *
+     * @param array $attributes
+     */
+    public function __construct(array $attributes = [])
+    {
+        $this->localeKey = config('w-countries.locale_key', 'locale');
+        parent::__construct($attributes);
     }
 
     /**

@@ -42,7 +42,7 @@ class WCountriesInstallCommand extends Command
 
         $this->askToRunSeeds();
 
-        // $this->publishConfigFile();
+        $this->publishConfigFile();
 
         $this->askToStarRepoOnGitHub();
 
