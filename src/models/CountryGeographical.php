@@ -17,6 +17,9 @@ class CountryGeographical extends Model
      */
     protected $table = 'lc_countries_geographical';
 
+    /* @property-read string $localeKey */
+    public string $localeKey;
+
     /**
      * Indicates if the model should be timestamped.
      *

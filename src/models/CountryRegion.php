@@ -29,6 +29,9 @@ class CountryRegion extends Model
     /* Translatable ForeignKey */
     public $translationForeignKey = 'lc_region_id';
 
+    /* @property-read string $localeKey */
+    public string $localeKey;
+
     /**
      * Indicates if the model should be timestamped.
      *
