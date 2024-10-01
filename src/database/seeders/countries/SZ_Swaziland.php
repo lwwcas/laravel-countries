@@ -108,10 +108,7 @@ class SZ_Swaziland extends CountrySeeder
         $this->area = 17364; // km²
 
         // Set the capital cities
-        $this->capital = [
-            'legislative_capital' => 'Lobamba',
-            'executive_capital' => 'Mbabane',
-        ];
+        $this->capital = 'Mbabane';
 
         // Define the time zone(s) using IANA time zone identifiers
         $this->timezones = [

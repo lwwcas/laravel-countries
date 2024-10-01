@@ -135,7 +135,7 @@ class UM_USMinorOutlyingIslands extends CountrySeeder
         $this->international_organizations = []; // Not applicable for the United States Minor Outlying Islands
 
         // Set the GDP in billions of USD
-        $this->gdp = 'N/A'; // Not applicable
+        $this->gdp = null; // Not applicable
 
         // List the predominant religions
         $this->religions = []; // No significant population data

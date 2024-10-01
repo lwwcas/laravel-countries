@@ -133,7 +133,7 @@ class VA_VaticanCity extends CountrySeeder
         ];
 
         // Set the GDP in billions of USD
-        $this->gdp = 'N/A'; // Vatican City does not report GDP due to its unique economy
+        $this->gdp = null; // Vatican City does not report GDP due to its unique economy
 
         // List the predominant religions
         $this->religions = [
