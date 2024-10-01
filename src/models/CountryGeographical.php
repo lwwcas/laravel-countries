@@ -18,6 +18,9 @@ class CountryGeographical extends Model
      */
     protected $table = 'lc_countries_geographical';
 
+    /* @property-read string $localeKey */
+    public string $localeKey;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -41,6 +44,12 @@ class CountryGeographical extends Model
         'properties' => Json::class,
         'geometry' => Json::class,
     ];
+
+    public function __construct(array $attributes = [])
+    {
+        $this->localeKey = config('translatable.locale_key', 'locale');
+        parent::__construct($attributes);
+    }
 
     public static function boot()
     {

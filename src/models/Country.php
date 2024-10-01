@@ -30,6 +30,9 @@ class Country extends Model
     /* Translatable ForeignKey */
     public $translationForeignKey = 'lc_country_id';
 
+    /* @property-read string $localeKey */
+    public string $localeKey;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -77,6 +80,12 @@ class Country extends Model
         'coordinates_limit' => Json::class,
         'visible' => 'boolean',
     ];
+
+    public function __construct(array $attributes = [])
+    {
+        $this->localeKey = config('translatable.locale_key', 'locale');
+        parent::__construct($attributes);
+    }
 
     /**
      * The "booting" method of the model.
