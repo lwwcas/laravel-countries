@@ -29,53 +29,231 @@ class TJ_Tajikistan extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Tajikistan';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Tajikistan';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'TJ';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'TJK';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '762';
+
+        // Set the international dialing code
         $this->international_phone = '992';
 
-        $this->languages = ['tg','ru'];
+        // Define the languages spoken in the country
+        $this->languages = ['tg']; // Tajik is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.tj'];
-        $this->wmo = 'TA';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '5 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '4 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '22%'; // Low internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Agency of Information Technology and Cybersecurity of Tajikistan';
+
+        // List popular web technologies in Tajikistan
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'TJ';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1220409';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Tajikistani somoni',
+            // Currency code
+            'code' => 'TJS',
+            // Currency symbol
+            'symbol' => 'SM',
+            // Main unit
+            'main_unit' => 'somoni',
+            // Subunit
+            'sub_unit' => 'diram',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '5', '10', '20', '50', '100', '200'],
+            // Main coins
+            'coins_main' => ['1', '3', '5'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '20', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 9537642; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 143100; // km²
+
+        // Set the capital city
+        $this->capital = 'Dushanbe';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Dushanbe',
+                // Standard time offset
+                'standard_time' => 'UTC+5',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1991-09-09'; // Independence from the Soviet Union
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Commonwealth of Independent States (CIS)',
+            'Shanghai Cooperation Organization (SCO)',
+            'World Trade Organization (WTO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 8.2; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam (Sunni)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Tajikistan
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Afghanistan', 'iso_alpha_2' => 'AF'],
+            ['name' => 'China', 'iso_alpha_2' => 'CN'],
+            ['name' => 'Kyrgyzstan', 'iso_alpha_2' => 'KG'],
+            ['name' => 'Uzbekistan', 'iso_alpha_2' => 'UZ'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇹🇯',
+            // Unicode code points
             'uCode' => 'U+1F1F9 U+1F1EF',
+            // HTML entities
+            'html' => '&#x1F1F9;&#x1F1EF;',
+            // CSS entities
+            'css' => '\\1F1F9\\1F1EF',
+            // Decimal Unicode entities
+            'decimal' => '&#127481;&#127471;',
+            // Direct UTF-8 string
+            'utf8' => '🇹🇯',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF9\uD83C\uDDEF',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-tj:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F9;&#x1F1EF;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffffff',
-                '#008000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#CE1126',
+                // RGB color values
+                'rgb' => '206,17,38',
+                // CMYK color values
+                'cmyk' => '0,92,82,19',
+                // HSL color values
+                'hsl' => '356°,84%,44%',
+                // HSV color values
+                'hsv' => '356°,92%,81%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,255',
-                '0,128,0',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#007A33',
+                // RGB color values
+                'rgb' => '0,122,51',
+                // CMYK color values
+                'cmyk' => '100,0,58,52',
+                // HSL color values
+                'hsl' => '151°,100%,24%',
+                // HSV color values
+                'hsv' => '151°,100%,48%',
+                // Pantone color code
+                'pantone' => '348 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '39 00 N',
-                'desc' => '38.879764556884766',
-            ],
-            'longitude' => [
-                'classic' => '71 00 E',
-                'desc' => '70.89906311035156',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '40.9',
-                'min' => '36.716667',
-            ],
-            'longitude' => [
-                'max' => '75',
-                'min' => '67.416667',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '38.8610',
+            // Longitude in decimal degrees
+            'longitude' => '71.2761',
+            // Degrees with decimal
+            'dd' => '38.8610° N, 71.2761° E',
+            // Degrees, minutes, seconds
+            'dms' => '38°51\'39.60" N, 71°16\'33.96" E',
+            // Degrees and decimal minutes
+            'dm' => '38°51.66\' N, 71°16.566\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

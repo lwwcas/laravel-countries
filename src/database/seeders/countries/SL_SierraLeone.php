@@ -29,53 +29,230 @@ class SL_SierraLeone extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Sierra Leone';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Sierra Leone';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'SL';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'SLE';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '694';
+
+        // Set the international dialing code
         $this->international_phone = '232';
 
-        $this->languages = ['en'];
+        // Define the languages spoken in the country
+        $this->languages = ['en']; // English is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.sl'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '10 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '5 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '20%'; // Low internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'National Cybersecurity Office (NATCOM)';
+
+        // List popular web technologies in Sierra Leone
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'SL';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2403846';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Sierra Leonean leone',
+            // Currency code
+            'code' => 'SLE',
+            // Currency symbol
+            'symbol' => 'Le',
+            // Main unit
+            'main_unit' => 'leone',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '2', '5', '10', '20', '50', '100'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['50'],
+        ];
+
+        // Set the population
+        $this->population = 7976983; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 71740; // km²
+
+        // Set the capital city
+        $this->capital = 'Freetown';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Africa/Freetown',
+                // Standard time offset
+                'standard_time' => 'UTC+0',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1961-04-27'; // Independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union (AU)',
+            'Economic Community of West African States (ECOWAS)',
+            'Commonwealth of Nations',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 4.2; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam',
+            'Christianity',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Sierra Leone
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Guinea', 'iso_alpha_2' => 'GN'],
+            ['name' => 'Liberia', 'iso_alpha_2' => 'LR'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇸🇱',
+            // Unicode code points
             'uCode' => 'U+1F1F8 U+1F1F1',
+            // HTML entities
+            'html' => '&#x1F1F8;&#x1F1F1;',
+            // CSS entities
+            'css' => '\\1F1F8\\1F1F1',
+            // Decimal Unicode entities
+            'decimal' => '&#127480;&#127473;',
+            // Direct UTF-8 string
+            'utf8' => '🇸🇱',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF8\uD83C\uDDF1',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-sl:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F8;&#x1F1F1;',
         ];
-        $this->color = [
-            'hex' => [
-                '#008000',
-                '#ffffff',
-                '#0000ff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#1EB53A',
+                // RGB color values
+                'rgb' => '30,181,58',
+                // CMYK color values
+                'cmyk' => '83,0,68,29',
+                // HSL color values
+                'hsl' => '136°,72%,41%',
+                // HSV color values
+                'hsv' => '136°,83%,71%',
+                // Pantone color code
+                'pantone' => '356 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,128,0',
-                '255,255,255',
-                '0,0,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#0072C6',
+                // RGB color values
+                'rgb' => '0,114,198',
+                // CMYK color values
+                'cmyk' => '100,43,0,22',
+                // HSL color values
+                'hsl' => '208°,100%,39%',
+                // HSV color values
+                'hsv' => '208°,100%,78%',
+                // Pantone color code
+                'pantone' => '286 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '8 30 N',
-                'desc' => '8.521441459655762',
-            ],
-            'longitude' => [
-                'classic' => '11 30 W',
-                'desc' => '-11.843890190124512',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '10',
-                'min' => '5',
-            ],
-            'longitude' => [
-                'max' => '-4',
-                'min' => '-13.316667',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '8.4606',
+            // Longitude in decimal degrees
+            'longitude' => '-11.7799',
+            // Degrees with decimal
+            'dd' => '8.4606° N, 11.7799° W',
+            // Degrees, minutes, seconds
+            'dms' => '8°27\'38.16" N, 11°46\'47.64" W',
+            // Degrees and decimal minutes
+            'dm' => '8°27.636\' N, 11°46.794\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

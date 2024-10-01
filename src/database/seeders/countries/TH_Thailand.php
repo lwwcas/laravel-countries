@@ -29,53 +29,233 @@ class TH_Thailand extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Thailand';
+
+        // Set the country's official name
         $this->official_name = 'Kingdom of Thailand';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'TH';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'THA';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '764';
+
+        // Set the international dialing code
         $this->international_phone = '66';
 
-        $this->languages = ['th'];
-        $this->tld = ['.th',".\u0e44\u0e17\u0e22"];
+        // Define the languages spoken in the country
+        $this->languages = ['th']; // Thai is the official language
+
+        // Define the top-level domain(s)
+        $this->tld = ['.th'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '171 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '27 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '57%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Thailand National Cybersecurity Agency (NCSA)';
+
+        // List popular web technologies in Thailand
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'TH';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1605651';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Thai baht',
+            // Currency code
+            'code' => 'THB',
+            // Currency symbol
+            'symbol' => '฿',
+            // Main unit
+            'main_unit' => 'baht',
+            // Subunit
+            'sub_unit' => 'satang',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['20', '50', '100', '500', '1000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 69799978; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 513120; // km²
+
+        // Set the capital city
+        $this->capital = 'Bangkok';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Bangkok',
+                // Standard time offset
+                'standard_time' => 'UTC+7',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = null; // Thailand was never colonized
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Association of Southeast Asian Nations (ASEAN)',
+            'World Trade Organization (WTO)',
+            'Asia-Pacific Economic Cooperation (APEC)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 543.7; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Buddhism',
+            'Islam',
+            'Christianity',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Constitutional monarchy';
+
+        // Set the national sport
+        $this->national_sport = 'Muay Thai'; // Traditional martial art and the most popular sport
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Myanmar', 'iso_alpha_2' => 'MM'],
+            ['name' => 'Laos', 'iso_alpha_2' => 'LA'],
+            ['name' => 'Cambodia', 'iso_alpha_2' => 'KH'],
+            ['name' => 'Malaysia', 'iso_alpha_2' => 'MY'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇹🇭',
+            // Unicode code points
             'uCode' => 'U+1F1F9 U+1F1ED',
+            // HTML entities
+            'html' => '&#x1F1F9;&#x1F1ED;',
+            // CSS entities
+            'css' => '\\1F1F9\\1F1ED',
+            // Decimal Unicode entities
+            'decimal' => '&#127481;&#127469;',
+            // Direct UTF-8 string
+            'utf8' => '🇹🇭',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF9\uD83C\uDDED',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-th:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F9;&#x1F1ED;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffffff',
-                '#0000ff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#A51931',
+                // RGB color values
+                'rgb' => '165,25,49',
+                // CMYK color values
+                'cmyk' => '0,85,70,35',
+                // HSL color values
+                'hsl' => '350°,73%,37%',
+                // HSV color values
+                'hsv' => '350°,85%,65%',
+                // Pantone color code
+                'pantone' => '1935 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,255',
-                '0,0,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#00247D',
+                // RGB color values
+                'rgb' => '0,36,125',
+                // CMYK color values
+                'cmyk' => '100,71,0,51',
+                // HSL color values
+                'hsl' => '219°,100%,24%',
+                // HSV color values
+                'hsv' => '219°,100%,49%',
+                // Pantone color code
+                'pantone' => '280 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '15 00 N',
-                'desc' => '14.48458194732666',
-            ],
-            'longitude' => [
-                'classic' => '100 00 E',
-                'desc' => '100.85191345214844',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '20.442778',
-                'min' => '5.616667',
-            ],
-            'longitude' => [
-                'max' => '105.766667',
-                'min' => '97.366667',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '15.8700',
+            // Longitude in decimal degrees
+            'longitude' => '100.9925',
+            // Degrees with decimal
+            'dd' => '15.8700° N, 100.9925° E',
+            // Degrees, minutes, seconds
+            'dms' => '15°52\'12" N, 100°59\'33" E',
+            // Degrees and decimal minutes
+            'dm' => '15°52.2\' N, 100°59.55\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

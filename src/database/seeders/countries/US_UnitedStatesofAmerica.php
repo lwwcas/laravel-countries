@@ -29,53 +29,258 @@ class US_UnitedStatesofAmerica extends CountrySeeder
      */
     public function run()
     {
-        $this->name = 'United States of America';
+        // Set the country's common name
+        $this->name = 'United States';
+
+        // Set the country's official name
         $this->official_name = 'United States of America';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'US';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'USA';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '840';
+
+        // Set the international dialing code
         $this->international_phone = '1';
 
-        $this->languages = ['en'];
+        // Define the languages spoken in the country
+        $this->languages = ['en']; // English is the de facto official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.us'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = ['.com', '.org', '.net']; // Common alternative TLDs used in the U.S.
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '150 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '50 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '92%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Cybersecurity and Infrastructure Security Agency (CISA)';
+
+        // List popular web technologies in the United States
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'Node.js', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'US';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '6252001';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'United States dollar',
+            // Currency code
+            'code' => 'USD',
+            // Currency symbol
+            'symbol' => '$',
+            // Main unit
+            'main_unit' => 'dollar',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '5', '10', '20', '50', '100'],
+            // Main coins
+            'coins_main' => ['1', '5', '10', '25'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '25'],
+        ];
+
+        // Set the population
+        $this->population = 331893745; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 9833520; // km²
+
+        // Set the capital city
+        $this->capital = 'Washington, D.C.';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'America/New_York',
+                // Standard time offset
+                'standard_time' => 'UTC-5',
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC-4',
+            ],
+            [
+                // Time zone identifier
+                'timezone_id' => 'America/Chicago',
+                // Standard time offset
+                'standard_time' => 'UTC-6',
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC-5',
+            ],
+            [
+                // Time zone identifier
+                'timezone_id' => 'America/Denver',
+                // Standard time offset
+                'standard_time' => 'UTC-7',
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC-6',
+            ],
+            [
+                // Time zone identifier
+                'timezone_id' => 'America/Los_Angeles',
+                // Standard time offset
+                'standard_time' => 'UTC-8',
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC-7',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1776-07-04'; // Independence from Great Britain
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'North Atlantic Treaty Organization (NATO)',
+            'World Trade Organization (WTO)',
+            'Group of Seven (G7)',
+            'Group of Twenty (G20)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 22675.3; // GDP in billions of USD (2023 estimates)
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity',
+            'Unaffiliated (Atheism/Agnosticism)',
+            'Judaism',
+            'Islam',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Federal presidential constitutional republic';
+
+        // Set the national sport
+        $this->national_sport = 'Baseball'; // Baseball is considered one of the most popular sports, alongside American football and basketball
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Canada', 'iso_alpha_2' => 'CA'],
+            ['name' => 'Mexico', 'iso_alpha_2' => 'MX'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇺🇸',
+            // Unicode code points
             'uCode' => 'U+1F1FA U+1F1F8',
+            // HTML entities
+            'html' => '&#x1F1FA;&#x1F1F8;',
+            // CSS entities
+            'css' => '\\1F1FA\\1F1F8',
+            // Decimal Unicode entities
+            'decimal' => '&#127482;&#127480;',
+            // Direct UTF-8 string
+            'utf8' => '🇺🇸',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDFA\uD83C\uDDF8',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-us:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1FA;&#x1F1F8;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffffff',
-                '#00008b',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#B22234',
+                // RGB color values
+                'rgb' => '178,34,52',
+                // CMYK color values
+                'cmyk' => '0,81,76,30',
+                // HSL color values
+                'hsl' => '350°,68%,42%',
+                // HSV color values
+                'hsv' => '350°,81%,70%',
+                // Pantone color code
+                'pantone' => '193 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,255',
-                '0,0,139',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#3C3B6E',
+                // RGB color values
+                'rgb' => '60,59,110',
+                // CMYK color values
+                'cmyk' => '45,45,0,57',
+                // HSL color values
+                'hsl' => '239°,30%,33%',
+                // HSV color values
+                'hsv' => '239°,46%,43%',
+                // Pantone color code
+                'pantone' => '281 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '38 00 N',
-                'desc' => '39.44325637817383',
-            ],
-            'longitude' => [
-                'classic' => '97 00 W',
-                'desc' => '-98.95733642578125',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '71.441059',
-                'min' => '17.831509',
-            ],
-            'longitude' => [
-                'max' => '-66.885417',
-                'min' => '-179.231086',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '37.0902',
+            // Longitude in decimal degrees
+            'longitude' => '-95.7129',
+            // Degrees with decimal
+            'dd' => '37.0902° N, 95.7129° W',
+            // Degrees, minutes, seconds
+            'dms' => '37°5\'24.72" N, 95°42\'46.44" W',
+            // Degrees and decimal minutes
+            'dm' => '37°5.412\' N, 95°42.774\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

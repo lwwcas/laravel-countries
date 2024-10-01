@@ -29,51 +29,217 @@ class PL_Poland extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Poland';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Poland';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'PL';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'POL';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '616';
+
+        // Set the international dialing code
         $this->international_phone = '48';
 
-        $this->languages = ['pl'];
+        // Define the languages spoken in the country
+        $this->languages = ['pl']; // Polish is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.pl'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = ['.com.pl', '.org.pl', '.edu.pl', '.gov.pl', '.net.pl']; // Common alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '120 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '40 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '83%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Polish Computer Emergency Response Team (CERT Polska)';
+
+        // List popular web technologies in Poland
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'PL';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '798544';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Polish złoty',
+            // Currency code
+            'code' => 'PLN',
+            // Currency symbol
+            'symbol' => 'zł',
+            // Main unit
+            'main_unit' => 'złoty',
+            // Subunit
+            'sub_unit' => 'grosz',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['10', '20', '50', '100', '200', '500'],
+            // Main coins
+            'coins_main' => ['1', '2', '5'],
+            // Subunit coins
+            'coins_sub' => ['1', '2', '5', '10', '20', '50'],
+        ];
+
+        // Set the population
+        $this->population = 37797217; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 312696; // km²
+
+        // Set the capital city
+        $this->capital = 'Warsaw';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Europe/Warsaw',
+                // Standard time offset
+                'standard_time' => 'UTC+1',
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+2',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1918-11-11'; // Independence restored after World War I
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'European Union (EU)',
+            'NATO',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'Schengen Area',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 674.0; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Poland
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Germany', 'iso_alpha_2' => 'DE'],
+            ['name' => 'Czech Republic', 'iso_alpha_2' => 'CZ'],
+            ['name' => 'Slovakia', 'iso_alpha_2' => 'SK'],
+            ['name' => 'Ukraine', 'iso_alpha_2' => 'UA'],
+            ['name' => 'Belarus', 'iso_alpha_2' => 'BY'],
+            ['name' => 'Lithuania', 'iso_alpha_2' => 'LT'],
+            ['name' => 'Russia (Kaliningrad Oblast)', 'iso_alpha_2' => 'RU'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇵🇱',
+            // Unicode code points
             'uCode' => 'U+1F1F5 U+1F1F1',
+            // HTML entities
+            'html' => '&#x1F1F5;&#x1F1F1;',
+            // CSS entities
+            'css' => '\\1F1F5\\1F1F1',
+            // Decimal Unicode entities
+            'decimal' => '&#127477;&#127473;',
+            // Direct UTF-8 string
+            'utf8' => '🇵🇱',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF5\uD83C\uDDF1',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-pl:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F5;&#x1F1F1;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ffffff',
-                '#ff0000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#D4213D',
+                // RGB color values
+                'rgb' => '212,33,61',
+                // CMYK color values
+                'cmyk' => '0,85,71,17',
+                // HSL color values
+                'hsl' => '348°,73%,48%',
+                // HSV color values
+                'hsv' => '348°,85%,83%',
+                // Pantone color code
+                'pantone' => '185 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,255,255',
-                '255,0,0',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '52 00 N',
-                'desc' => '52.147850036621094',
-            ],
-            'longitude' => [
-                'classic' => '20 00 E',
-                'desc' => '19.37775993347168',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '54.833333',
-                'min' => '45.5',
-            ],
-            'longitude' => [
-                'max' => '26.5',
-                'min' => '14',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '51.9194',
+            // Longitude in decimal degrees
+            'longitude' => '19.1451',
+            // Degrees with decimal
+            'dd' => '51.9194° N, 19.1451° E',
+            // Degrees, minutes, seconds
+            'dms' => '51°55\'10" N, 19°8\'42.36" E',
+            // Degrees and decimal minutes
+            'dm' => '51°55.166\' N, 19°8.706\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

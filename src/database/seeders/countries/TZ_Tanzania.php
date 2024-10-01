@@ -29,55 +29,257 @@ class TZ_Tanzania extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Tanzania';
+
+        // Set the country's official name
         $this->official_name = 'United Republic of Tanzania';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'TZ';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'TZA';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '834';
+
+        // Set the international dialing code
         $this->international_phone = '255';
 
-        $this->languages = ['sw','en'];
+        // Define the languages spoken in the country
+        $this->languages = ['sw', 'en']; // Swahili and English are the official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.tz'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '15 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '13 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '29%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Tanzania Computer Emergency Response Team (TZ-CERT)';
+
+        // List popular web technologies in Tanzania
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'TN';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '149590';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Tanzanian shilling',
+            // Currency code
+            'code' => 'TZS',
+            // Currency symbol
+            'symbol' => 'TSh',
+            // Main unit
+            'main_unit' => 'shilling',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['500', '1000', '2000', '5000', '10000'],
+            // Main coins
+            'coins_main' => ['100', '200'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '20', '50'],
+        ];
+
+        // Set the population
+        $this->population = 59734218; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 947303; // km²
+
+        // Set the capital city
+        $this->capital = 'Dodoma';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Africa/Dar_es_Salaam',
+                // Standard time offset
+                'standard_time' => 'UTC+3',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1961-12-09'; // Independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union (AU)',
+            'East African Community (EAC)',
+            'Commonwealth of Nations',
+            'World Trade Organization (WTO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 67.8; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity',
+            'Islam',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Tanzania
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Kenya', 'iso_alpha_2' => 'KE'],
+            ['name' => 'Uganda', 'iso_alpha_2' => 'UG'],
+            ['name' => 'Rwanda', 'iso_alpha_2' => 'RW'],
+            ['name' => 'Burundi', 'iso_alpha_2' => 'BI'],
+            ['name' => 'Democratic Republic of the Congo', 'iso_alpha_2' => 'CD'],
+            ['name' => 'Zambia', 'iso_alpha_2' => 'ZM'],
+            ['name' => 'Malawi', 'iso_alpha_2' => 'MW'],
+            ['name' => 'Mozambique', 'iso_alpha_2' => 'MZ'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇹🇿',
+            // Unicode code points
             'uCode' => 'U+1F1F9 U+1F1FF',
+            // HTML entities
+            'html' => '&#x1F1F9;&#x1F1FF;',
+            // CSS entities
+            'css' => '\\1F1F9\\1F1FF',
+            // Decimal Unicode entities
+            'decimal' => '&#127481;&#127487;',
+            // Direct UTF-8 string
+            'utf8' => '🇹🇿',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF9\uD83C\uDDFF',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-tz:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F9;&#x1F1FF;',
         ];
-        $this->color = [
-            'hex' => [
-                '#008000',
-                '#ffff00',
-                '#007fff',
-                '#000000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#1EB53A',
+                // RGB color values
+                'rgb' => '30,181,58',
+                // CMYK color values
+                'cmyk' => '83,0,68,29',
+                // HSL color values
+                'hsl' => '136°,73%,41%',
+                // HSV color values
+                'hsv' => '136°,83%,71%',
+                // Pantone color code
+                'pantone' => '361 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,128,0',
-                '255,255,0',
-                '0,127,255',
-                '0,0,0',
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#00A3DD',
+                // RGB color values
+                'rgb' => '0,163,221',
+                // CMYK color values
+                'cmyk' => '100,0,14,13',
+                // HSL color values
+                'hsl' => '197°,100%,43%',
+                // HSV color values
+                'hsv' => '197°,100%,87%',
+                // Pantone color code
+                'pantone' => '3005 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Black',
+                // Web color name
+                'web_name' => 'black',
+                // Hexadecimal color code
+                'hex' => '#000000',
+                // RGB color values
+                'rgb' => '0,0,0',
+                // CMYK color values
+                'cmyk' => '0,0,0,100',
+                // HSL color values
+                'hsl' => '0°,0%,0%',
+                // HSV color values
+                'hsv' => '0°,0%,0%',
+                // Pantone color code
+                'pantone' => 'Black C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFD100',
+                // RGB color values
+                'rgb' => '255,209,0',
+                // CMYK color values
+                'cmyk' => '0,18,100,0',
+                // HSL color values
+                'hsl' => '48°,100%,50%',
+                // HSV color values
+                'hsv' => '48°,100%,100%',
+                // Pantone color code
+                'pantone' => '109 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '6 00 S',
-                'desc' => '-6.306897163391113',
-            ],
-            'longitude' => [
-                'classic' => '35 00 E',
-                'desc' => '34.85392761230469',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '0.833333',
-                'min' => '-11.7',
-            ],
-            'longitude' => [
-                'max' => '40.433333',
-                'min' => '29.583333',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '-6.3690',
+            // Longitude in decimal degrees
+            'longitude' => '34.8888',
+            // Degrees with decimal
+            'dd' => '6.3690° S, 34.8888° E',
+            // Degrees, minutes, seconds
+            'dms' => '6°22\'8.40" S, 34°53\'19.68" E',
+            // Degrees and decimal minutes
+            'dm' => '6°22.14\' S, 34°53.328\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

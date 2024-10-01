@@ -29,53 +29,260 @@ class RU_Russia extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Russia';
+
+        // Set the country's official name
         $this->official_name = 'Russian Federation';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'RU';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'RUS';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '643';
+
+        // Set the international dialing code
         $this->international_phone = '7';
 
-        $this->languages = ['ru'];
-        $this->tld = ['.ru','.su',".\u0440\u0444"];
-        $this->wmo = 'RS';
+        // Define the languages spoken in the country
+        $this->languages = ['ru']; // Russian is the official language
+
+        // Define the top-level domain(s)
+        $this->tld = ['.ru'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = ['.su', '.рф']; // Soviet Union legacy domain and Russian Cyrillic domain
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '90 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '40 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '85%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Federal Service for Supervision of Communications, Information Technology, and Mass Media (Roskomnadzor)';
+
+        // List popular web technologies in Russia
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'C#'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'RU';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2017370';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Russian ruble',
+            // Currency code
+            'code' => 'RUB',
+            // Currency symbol
+            'symbol' => '₽',
+            // Main unit
+            'main_unit' => 'ruble',
+            // Subunit
+            'sub_unit' => 'kopek',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['50', '100', '200', '500', '1000', '2000', '5000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['10', '50'],
+        ];
+
+        // Set the population
+        $this->population = 145912025; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 17098242; // km²
+
+        // Set the capital city
+        $this->capital = 'Moscow';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Europe/Moscow',
+                // Standard time offset
+                'standard_time' => 'UTC+3',
+                // No daylight saving time observed
+            ],
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Yekaterinburg',
+                // Standard time offset
+                'standard_time' => 'UTC+5',
+                // No daylight saving time observed
+            ],
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Vladivostok',
+                // Standard time offset
+                'standard_time' => 'UTC+10',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1991-06-12'; // Russia Day, celebrating the declaration of state sovereignty
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Eurasian Economic Union (EAEU)',
+            'Shanghai Cooperation Organisation (SCO)',
+            'Organization for Security and Cooperation in Europe (OSCE)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 1483.5; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Eastern Orthodox)',
+            'Islam',
+            'Buddhism',
+            'Judaism',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Federal semi-presidential constitutional republic';
+
+        // Set the national sport
+        $this->national_sport = 'Ice Hockey'; // Ice hockey and football (soccer) are very popular in Russia
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Norway', 'iso_alpha_2' => 'NO'],
+            ['name' => 'Finland', 'iso_alpha_2' => 'FI'],
+            ['name' => 'Estonia', 'iso_alpha_2' => 'EE'],
+            ['name' => 'Latvia', 'iso_alpha_2' => 'LV'],
+            ['name' => 'Lithuania', 'iso_alpha_2' => 'LT'],
+            ['name' => 'Poland', 'iso_alpha_2' => 'PL'],
+            ['name' => 'Belarus', 'iso_alpha_2' => 'BY'],
+            ['name' => 'Ukraine', 'iso_alpha_2' => 'UA'],
+            ['name' => 'Georgia', 'iso_alpha_2' => 'GE'],
+            ['name' => 'Azerbaijan', 'iso_alpha_2' => 'AZ'],
+            ['name' => 'Kazakhstan', 'iso_alpha_2' => 'KZ'],
+            ['name' => 'China', 'iso_alpha_2' => 'CN'],
+            ['name' => 'Mongolia', 'iso_alpha_2' => 'MN'],
+            ['name' => 'North Korea', 'iso_alpha_2' => 'KP'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇷🇺',
+            // Unicode code points
             'uCode' => 'U+1F1F7 U+1F1FA',
+            // HTML entities
+            'html' => '&#x1F1F7;&#x1F1FA;',
+            // CSS entities
+            'css' => '\\1F1F7\\1F1FA',
+            // Decimal Unicode entities
+            'decimal' => '&#127479;&#127482;',
+            // Direct UTF-8 string
+            'utf8' => '🇷🇺',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF7\uD83C\uDDFA',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-ru:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F7;&#x1F1FA;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ffffff',
-                '#0000ff',
-                '#ff0000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
-            'rgb' => [
-                '255,255,255',
-                '0,0,255',
-                '255,0,0',
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#0033A0',
+                // RGB color values
+                'rgb' => '0,51,160',
+                // CMYK color values
+                'cmyk' => '100,68,0,37',
+                // HSL color values
+                'hsl' => '220°,100%,41%',
+                // HSV color values
+                'hsv' => '220°,100%,63%',
+                // Pantone color code
+                'pantone' => 'Reflex Blue C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#DA291C',
+                // RGB color values
+                'rgb' => '218,41,28',
+                // CMYK color values
+                'cmyk' => '0,81,87,15',
+                // HSL color values
+                'hsl' => '4°,78%,48%',
+                // HSV color values
+                'hsv' => '4°,87%,85%',
+                // Pantone color code
+                'pantone' => 'Red 032 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '60 00 N',
-                'desc' => '63.125186920166016',
-            ],
-            'longitude' => [
-                'classic' => '100 00 E',
-                'desc' => '103.75398254394531',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '86.216667',
-                'min' => '38.7',
-            ],
-            'longitude' => [
-                'max' => '147.172222',
-                'min' => '19.655556',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '61.5240',
+            // Longitude in decimal degrees
+            'longitude' => '105.3188',
+            // Degrees with decimal
+            'dd' => '61.5240° N, 105.3188° E',
+            // Degrees, minutes, seconds
+            'dms' => '61°31\'26.4" N, 105°19\'7.68" E',
+            // Degrees and decimal minutes
+            'dm' => '61°31.44\' N, 105°19.128\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

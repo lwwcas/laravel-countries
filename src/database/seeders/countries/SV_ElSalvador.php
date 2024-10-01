@@ -29,51 +29,210 @@ class SV_ElSalvador extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'El Salvador';
+
+        // Set the country's official name
         $this->official_name = 'Republic of El Salvador';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'SV';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'SLV';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '222';
+
+        // Set the international dialing code
         $this->international_phone = '503';
 
-        $this->languages = ['es'];
+        // Define the languages spoken in the country
+        $this->languages = ['es']; // Spanish is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.sv'];
-        $this->wmo = 'ES';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '15 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '10 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '59%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'El Salvador National Cybersecurity Agency (ANSV)';
+
+        // List popular web technologies in El Salvador
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'SV';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '3585968';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'United States dollar',
+            // Currency code
+            'code' => 'USD',
+            // Currency symbol
+            'symbol' => '$',
+            // Main unit
+            'main_unit' => 'dollar',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '5', '10', '20', '50', '100'],
+            // Main coins
+            'coins_main' => ['1'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 6486201; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 21041; // km²
+
+        // Set the capital city
+        $this->capital = 'San Salvador';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'America/El_Salvador',
+                // Standard time offset
+                'standard_time' => 'UTC-6',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1821-09-15'; // Independence from Spain
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Organization of American States (OAS)',
+            'Central American Integration System (SICA)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 24.4; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism, Evangelicalism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in El Salvador
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Honduras', 'iso_alpha_2' => 'HN'],
+            ['name' => 'Guatemala', 'iso_alpha_2' => 'GT'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇸🇻',
+            // Unicode code points
             'uCode' => 'U+1F1F8 U+1F1FB',
+            // HTML entities
+            'html' => '&#x1F1F8;&#x1F1FB;',
+            // CSS entities
+            'css' => '\\1F1F8\\1F1FB',
+            // Decimal Unicode entities
+            'decimal' => '&#127480;&#127483;',
+            // Direct UTF-8 string
+            'utf8' => '🇸🇻',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF8\uD83C\uDDFB',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-sv:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F8;&#x1F1FB;',
         ];
-        $this->color = [
-            'hex' => [
-                '#0000ff',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#0047AB',
+                // RGB color values
+                'rgb' => '0,71,171',
+                // CMYK color values
+                'cmyk' => '100,58,0,33',
+                // HSL color values
+                'hsl' => '219°,100%,33%',
+                // HSV color values
+                'hsv' => '219°,100%,67%',
+                // Pantone color code
+                'pantone' => '293 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,0,255',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '13 50 N',
-                'desc' => '13.671636581420898',
-            ],
-            'longitude' => [
-                'classic' => '88 55 W',
-                'desc' => '-88.86363220214844',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '14.433333',
-                'min' => '13.158611',
-            ],
-            'longitude' => [
-                'max' => '-87.657222',
-                'min' => '-90.116389',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '13.6929',
+            // Longitude in decimal degrees
+            'longitude' => '-89.2182',
+            // Degrees with decimal
+            'dd' => '13.6929° N, 89.2182° W',
+            // Degrees, minutes, seconds
+            'dms' => '13°41\'34.44" N, 89°13\'5.52" W',
+            // Degrees and decimal minutes
+            'dm' => '13°41.574\' N, 89°13.092\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

@@ -29,51 +29,252 @@ class LK_SriLanka extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Sri Lanka';
+
+        // Set the country's official name
         $this->official_name = 'Democratic Socialist Republic of Sri Lanka';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'LK';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'LKA';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '144';
+
+        // Set the international dialing code
         $this->international_phone = '94';
 
-        $this->languages = ['si','ta'];
-        $this->tld = ['.lk',".\u0b87\u0bb2\u0b99\u0bcd\u0b95\u0bc8",".\u0dbd\u0d82\u0d9a\u0dcf"];
-        $this->wmo = 'SB';
+        // Define the languages spoken in the country
+        $this->languages = ['si', 'ta']; // Sinhala and Tamil are official languages
+
+        // Define the top-level domain(s)
+        $this->tld = ['.lk'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '20 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '15 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '40%'; // As per recent estimates
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Sri Lanka Computer Emergency Response Team (SLCERT)';
+
+        // List popular web technologies in Sri Lanka
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Java', 'Python'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'CE';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1227603';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Sri Lankan rupee',
+            // Currency code
+            'code' => 'LKR',
+            // Currency symbol
+            'symbol' => 'Rs',
+            // Main unit
+            'main_unit' => 'rupee',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['20', '50', '100', '500', '1000', '2000', '5000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 21803000; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 65610; // km²
+
+        // Set the capital city
+        $this->capital = 'Sri Jayawardenepura Kotte'; // Administrative capital
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Colombo',
+                // Standard time offset
+                'standard_time' => 'UTC+5:30',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1948-02-04'; // Independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Commonwealth of Nations',
+            'South Asian Association for Regional Cooperation (SAARC)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Non-Aligned Movement',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 84.5; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Buddhism',
+            'Hinduism',
+            'Islam',
+            'Christianity',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary semi-presidential constitutional republic';
+
+        // Set the national sport
+        $this->national_sport = 'Volleyball'; // Though cricket is more popular
+
+        // Define bordering countries
+        $this->borders = []; // It is an island nation with no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇱🇰',
+            // Unicode code points
             'uCode' => 'U+1F1F1 U+1F1F0',
+            // HTML entities
+            'html' => '&#x1F1F1;&#x1F1F0;',
+            // CSS entities
+            'css' => '\\1F1F1\\1F1F0',
+            // Decimal Unicode entities
+            'decimal' => '&#127473;&#127472;',
+            // Direct UTF-8 string
+            'utf8' => '🇱🇰',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF1\uD83C\uDDF0',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-lk:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F1;&#x1F1F0;',
         ];
-        $this->color = [
-            'hex' => [
-                '#800000',
-                '#ffd700',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Saffron',
+                // Web color name
+                'web_name' => 'orange',
+                // Hexadecimal color code
+                'hex' => '#FF9933',
+                // RGB color values
+                'rgb' => '255,153,51',
+                // CMYK color values
+                'cmyk' => '0,40,80,0',
+                // HSL color values
+                'hsl' => '30°,100%,60%',
+                // HSV color values
+                'hsv' => '30°,80%,100%',
+                // Pantone color code
+                'pantone' => '1375 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
-            'rgb' => [
-                '128,0,0',
-                '255,215,0',
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#006633',
+                // RGB color values
+                'rgb' => '0,102,51',
+                // CMYK color values
+                'cmyk' => '100,0,50,60',
+                // HSL color values
+                'hsl' => '150°,100%,20%',
+                // HSV color values
+                'hsv' => '150°,100%,40%',
+                // Pantone color code
+                'pantone' => '348 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Maroon',
+                // Web color name
+                'web_name' => 'maroon',
+                // Hexadecimal color code
+                'hex' => '#800000',
+                // RGB color values
+                'rgb' => '128,0,0',
+                // CMYK color values
+                'cmyk' => '0,100,100,50',
+                // HSL color values
+                'hsl' => '0°,100%,25%',
+                // HSV color values
+                'hsv' => '0°,100%,50%',
+                // Pantone color code
+                'pantone' => '1805 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFD700',
+                // RGB color values
+                'rgb' => '255,215,0',
+                // CMYK color values
+                'cmyk' => '0,16,100,0',
+                // HSL color values
+                'hsl' => '51°,100%,50%',
+                // HSV color values
+                'hsv' => '51°,100%,100%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '7 00 N',
-                'desc' => '7.789133548736572',
-            ],
-            'longitude' => [
-                'classic' => '81 00 E',
-                'desc' => '80.68072509765625',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '9.833333',
-                'min' => '5.916667',
-            ],
-            'longitude' => [
-                'max' => '81.866667',
-                'min' => '79.516667',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '7.8731',
+            // Longitude in decimal degrees
+            'longitude' => '80.7718',
+            // Degrees with decimal
+            'dd' => '7.8731° N, 80.7718° E',
+            // Degrees, minutes, seconds
+            'dms' => '7°52\'23.16" N, 80°46\'18.48" E',
+            // Degrees and decimal minutes
+            'dm' => '7°52.386\' N, 80°46.308\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

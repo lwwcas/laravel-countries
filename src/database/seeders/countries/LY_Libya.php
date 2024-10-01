@@ -29,55 +29,237 @@ class LY_Libya extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Libya';
+
+        // Set the country's official name
         $this->official_name = 'State of Libya';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'LY';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'LBY';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '434';
+
+        // Set the international dialing code
         $this->international_phone = '218';
 
-        $this->languages = ['ar'];
+        // Define the languages spoken in the country
+        $this->languages = ['ar']; // Arabic is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.ly'];
-        $this->wmo = 'LY';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '10 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '5 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '22%'; // As per recent estimates
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Libya CERT (Computer Emergency Response Team)';
+
+        // List popular web technologies in Libya
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'LB';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2215636';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Libyan dinar',
+            // Currency code
+            'code' => 'LYD',
+            // Currency symbol
+            'symbol' => 'ل.د',
+            // Main unit
+            'main_unit' => 'dinar',
+            // Subunit
+            'sub_unit' => 'dirham',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 1000,
+            // Banknotes in circulation
+            'banknotes' => ['1', '5', '10', '20', '50'],
+            // Main coins
+            'coins_main' => ['0.5', '1'],
+            // Subunit coins
+            'coins_sub' => ['50', '100', '250'],
+        ];
+
+        // Set the population
+        $this->population = 6871292; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 1759540; // km²
+
+        // Set the capital city
+        $this->capital = 'Tripoli';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Africa/Tripoli',
+                // Standard time offset
+                'standard_time' => 'UTC+2',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1951-12-24'; // Independence from Italy
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union (AU)',
+            'Arab League',
+            'Organization of Islamic Cooperation (OIC)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Non-Aligned Movement',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 50.3; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam (Sunni)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary semi-presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)';
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Tunisia', 'iso_alpha_2' => 'TN'],
+            ['name' => 'Algeria', 'iso_alpha_2' => 'DZ'],
+            ['name' => 'Niger', 'iso_alpha_2' => 'NE'],
+            ['name' => 'Chad', 'iso_alpha_2' => 'TD'],
+            ['name' => 'Sudan', 'iso_alpha_2' => 'SD'],
+            ['name' => 'Egypt', 'iso_alpha_2' => 'EG'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇱🇾',
+            // Unicode code points
             'uCode' => 'U+1F1F1 U+1F1FE',
+            // HTML entities
+            'html' => '&#x1F1F1;&#x1F1FE;',
+            // CSS entities
+            'css' => '\\1F1F1\\1F1FE',
+            // Decimal Unicode entities
+            'decimal' => '&#127473;&#127486;',
+            // Direct UTF-8 string
+            'utf8' => '🇱🇾',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF1\uD83C\uDDFE',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-ly:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F1;&#x1F1FE;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#000000',
-                '#008000',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#FF0000',
+                // RGB color values
+                'rgb' => '255,0,0',
+                // CMYK color values
+                'cmyk' => '0,100,100,0',
+                // HSL color values
+                'hsl' => '0°,100%,50%',
+                // HSV color values
+                'hsv' => '0°,100%,100%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '0,0,0',
-                '0,128,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'Black',
+                // Web color name
+                'web_name' => 'black',
+                // Hexadecimal color code
+                'hex' => '#000000',
+                // RGB color values
+                'rgb' => '0,0,0',
+                // CMYK color values
+                'cmyk' => '0,0,0,100',
+                // HSL color values
+                'hsl' => '0°,0%,0%',
+                // HSV color values
+                'hsv' => '0°,0%,0%',
+                // Pantone color code
+                'pantone' => 'Black C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#008000',
+                // RGB color values
+                'rgb' => '0,128,0',
+                // CMYK color values
+                'cmyk' => '100,0,100,50',
+                // HSL color values
+                'hsl' => '120°,100%,25%',
+                // HSV color values
+                'hsv' => '120°,100%,50%',
+                // Pantone color code
+                'pantone' => '356 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '25 00 N',
-                'desc' => '27.23609733581543',
-            ],
-            'longitude' => [
-                'classic' => '17 00 E',
-                'desc' => '18.043556213378906',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '33.15',
-                'min' => '20.8',
-            ],
-            'longitude' => [
-                'max' => '25.5',
-                'min' => '5',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '32.8872',
+            // Longitude in decimal degrees
+            'longitude' => '13.1913',
+            // Degrees with decimal
+            'dd' => '32.8872° N, 13.1913° E',
+            // Degrees, minutes, seconds
+            'dms' => '32°53\'13.92" N, 13°11\'28.68" E',
+            // Degrees and decimal minutes
+            'dm' => '32°53.232\' N, 13°11.478\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

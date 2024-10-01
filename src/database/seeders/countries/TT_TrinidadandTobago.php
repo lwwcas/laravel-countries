@@ -29,53 +29,228 @@ class TT_TrinidadandTobago extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Trinidad and Tobago';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Trinidad and Tobago';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'TT';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'TTO';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '780';
+
+        // Set the international dialing code
         $this->international_phone = '1-868';
 
-        $this->languages = ['en'];
+        // Define the languages spoken in the country
+        $this->languages = ['en']; // English is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.tt'];
-        $this->wmo = 'TD';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '50 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '25 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '70%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Trinidad and Tobago Cyber Security Incident Response Team (TT-CSIRT)';
+
+        // List popular web technologies in Trinidad and Tobago
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'TT';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '3573591';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Trinidad and Tobago dollar',
+            // Currency code
+            'code' => 'TTD',
+            // Currency symbol
+            'symbol' => '$',
+            // Main unit
+            'main_unit' => 'dollar',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '5', '10', '20', '50', '100'],
+            // Main coins
+            'coins_main' => ['1'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 1399491; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 5128; // km²
+
+        // Set the capital city
+        $this->capital = 'Port of Spain';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'America/Port_of_Spain',
+                // Standard time offset
+                'standard_time' => 'UTC-4',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1962-08-31'; // Independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Caribbean Community (CARICOM)',
+            'Organization of American States (OAS)',
+            'World Trade Organization (WTO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 23.8; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholic, Protestant)',
+            'Hinduism',
+            'Islam',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary republic';
+
+        // Set the national sport
+        $this->national_sport = 'Cricket'; // Cricket is one of the most popular sports in Trinidad and Tobago
+
+        // Define bordering countries
+        $this->borders = []; // Trinidad and Tobago is an island nation with no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇹🇹',
+            // Unicode code points
             'uCode' => 'U+1F1F9 U+1F1F9',
+            // HTML entities
+            'html' => '&#x1F1F9;&#x1F1F9;',
+            // CSS entities
+            'css' => '\\1F1F9\\1F1F9',
+            // Decimal Unicode entities
+            'decimal' => '&#127481;&#127481;',
+            // Direct UTF-8 string
+            'utf8' => '🇹🇹',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF9\uD83C\uDDF9',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-tt:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F9;&#x1F1F9;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffffff',
-                '#000000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#D52B1E',
+                // RGB color values
+                'rgb' => '213,43,30',
+                // CMYK color values
+                'cmyk' => '0,80,86,16',
+                // HSL color values
+                'hsl' => '4°,76%,48%',
+                // HSV color values
+                'hsv' => '4°,86%,83%',
+                // Pantone color code
+                'pantone' => '1797 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,255',
-                '0,0,0',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Black',
+                // Web color name
+                'web_name' => 'black',
+                // Hexadecimal color code
+                'hex' => '#000000',
+                // RGB color values
+                'rgb' => '0,0,0',
+                // CMYK color values
+                'cmyk' => '0,0,0,100',
+                // HSL color values
+                'hsl' => '0°,0%,0%',
+                // HSV color values
+                'hsv' => '0°,0%,0%',
+                // Pantone color code
+                'pantone' => 'Black C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '11 00 N',
-                'desc' => '10.68574047088623',
-            ],
-            'longitude' => [
-                'classic' => '61 00 W',
-                'desc' => '-61.1640625',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '20',
-                'min' => '10.033333',
-            ],
-            'longitude' => [
-                'max' => '-60.5',
-                'min' => '-74',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '10.6918',
+            // Longitude in decimal degrees
+            'longitude' => '-61.2225',
+            // Degrees with decimal
+            'dd' => '10.6918° N, 61.2225° W',
+            // Degrees, minutes, seconds
+            'dms' => '10°41\'30.48" N, 61°13\'21.00" W',
+            // Degrees and decimal minutes
+            'dm' => '10°41.508\' N, 61°13.35\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

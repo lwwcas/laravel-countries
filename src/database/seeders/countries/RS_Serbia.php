@@ -29,53 +29,237 @@ class RS_Serbia extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Serbia';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Serbia';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'RS';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'SRB';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '688';
+
+        // Set the international dialing code
         $this->international_phone = '381';
 
-        $this->languages = ['sr'];
-        $this->tld = ['.rs',".\u0441\u0440\u0431"];
-        $this->wmo = 'YG';
+        // Define the languages spoken in the country
+        $this->languages = ['sr']; // Serbian is the official language
+
+        // Define the top-level domain(s)
+        $this->tld = ['.rs'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = ['.com.rs', '.org.rs', '.net.rs', '.gov.rs']; // Common alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '60 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '30 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '76%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'National Center for the Prevention of Security Risks in ICT Systems (CERT-RS)';
+
+        // List popular web technologies in Serbia
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'RS';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '6290252';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Serbian dinar',
+            // Currency code
+            'code' => 'RSD',
+            // Currency symbol
+            'symbol' => 'дин.',
+            // Main unit
+            'main_unit' => 'dinar',
+            // Subunit
+            'sub_unit' => 'para',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['10', '20', '50', '100', '200', '500', '1000', '2000', '5000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['50'],
+        ];
+
+        // Set the population
+        $this->population = 6963764; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 77474; // km²
+
+        // Set the capital city
+        $this->capital = 'Belgrade';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Europe/Belgrade',
+                // Standard time offset
+                'standard_time' => 'UTC+1',
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+2',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '2006-06-05'; // Independence from Serbia and Montenegro
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Council of Europe',
+            'Organization for Security and Cooperation in Europe (OSCE)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 52.9; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Eastern Orthodox)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary constitutional republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Serbia
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Bosnia and Herzegovina', 'iso_alpha_2' => 'BA'],
+            ['name' => 'Bulgaria', 'iso_alpha_2' => 'BG'],
+            ['name' => 'Croatia', 'iso_alpha_2' => 'HR'],
+            ['name' => 'Hungary', 'iso_alpha_2' => 'HU'],
+            ['name' => 'Kosovo', 'iso_alpha_2' => 'XK'],
+            ['name' => 'Montenegro', 'iso_alpha_2' => 'ME'],
+            ['name' => 'North Macedonia', 'iso_alpha_2' => 'MK'],
+            ['name' => 'Romania', 'iso_alpha_2' => 'RO'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇷🇸',
+            // Unicode code points
             'uCode' => 'U+1F1F7 U+1F1F8',
+            // HTML entities
+            'html' => '&#x1F1F7;&#x1F1F8;',
+            // CSS entities
+            'css' => '\\1F1F7\\1F1F8',
+            // Decimal Unicode entities
+            'decimal' => '&#127479;&#127480;',
+            // Direct UTF-8 string
+            'utf8' => '🇷🇸',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF7\uD83C\uDDF8',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-rs:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F7;&#x1F1F8;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#0000cc',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#FF0000',
+                // RGB color values
+                'rgb' => '255,0,0',
+                // CMYK color values
+                'cmyk' => '0,100,100,0',
+                // HSL color values
+                'hsl' => '0°,100%,50%',
+                // HSV color values
+                'hsv' => '0°,100%,100%',
+                // Pantone color code
+                'pantone' => 'Red 032 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '0,0,204',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#002395',
+                // RGB color values
+                'rgb' => '0,35,149',
+                // CMYK color values
+                'cmyk' => '100,76,0,42',
+                // HSL color values
+                'hsl' => '224°,100%,29%',
+                // HSV color values
+                'hsv' => '224°,100%,58%',
+                // Pantone color code
+                'pantone' => 'Reflex Blue C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '44 00 N',
-                'desc' => '44.23297119140625',
-            ],
-            'longitude' => [
-                'classic' => '21 00 E',
-                'desc' => '20.797958374023438',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '46.155556',
-                'min' => '41.866667',
-            ],
-            'longitude' => [
-                'max' => '22.966667',
-                'min' => '18.928889',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '44.0165',
+            // Longitude in decimal degrees
+            'longitude' => '21.0059',
+            // Degrees with decimal
+            'dd' => '44.0165° N, 21.0059° E',
+            // Degrees, minutes, seconds
+            'dms' => '44°0\'59.4" N, 21°0\'21.24" E',
+            // Degrees and decimal minutes
+            'dm' => '44°0.99\' N, 21°0.354\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

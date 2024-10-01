@@ -29,53 +29,239 @@ class LT_Lithuania extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Lithuania';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Lithuania';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'LT';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'LTU';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '440';
+
+        // Set the international dialing code
         $this->international_phone = '370';
 
-        $this->languages = ['lt'];
+        // Define the languages spoken in the country
+        $this->languages = ['lt']; // Lithuanian is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.lt'];
-        $this->wmo = 'LT';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '100 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '50 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '88%'; // As per recent estimates
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'National Cyber Security Centre of Lithuania';
+
+        // List popular web technologies in Lithuania
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'Ruby'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'LI';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '597427';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Euro',
+            // Currency code
+            'code' => 'EUR',
+            // Currency symbol
+            'symbol' => '€',
+            // Main unit
+            'main_unit' => 'euro',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100', '200', '500'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['1', '2', '5', '10', '20', '50'],
+        ];
+
+        // Set the population
+        $this->population = 2794700; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 65300; // km²
+
+        // Set the capital city
+        $this->capital = 'Vilnius';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Europe/Vilnius',
+                // Standard time offset
+                'standard_time' => 'UTC+2',
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+3',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1990-03-11'; // Re-establishment of independence from the Soviet Union
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'European Union (EU)',
+            'North Atlantic Treaty Organization (NATO)',
+            'Schengen Area',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Council of Europe',
+            'Organization for Security and Co-operation in Europe (OSCE)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 59.9; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism)',
+            'Eastern Orthodoxy',
+            'Protestantism',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary semi-presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Basketball'; // Basketball is highly popular in Lithuania
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Latvia', 'iso_alpha_2' => 'LV'],
+            ['name' => 'Belarus', 'iso_alpha_2' => 'BY'],
+            ['name' => 'Poland', 'iso_alpha_2' => 'PL'],
+            ['name' => 'Russia', 'iso_alpha_2' => 'RU'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇱🇹',
+            // Unicode code points
             'uCode' => 'U+1F1F1 U+1F1F9',
+            // HTML entities
+            'html' => '&#x1F1F1;&#x1F1F9;',
+            // CSS entities
+            'css' => '\\1F1F1\\1F1F9',
+            // Decimal Unicode entities
+            'decimal' => '&#127473;&#127481;',
+            // Direct UTF-8 string
+            'utf8' => '🇱🇹',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF1\uD83C\uDDF9',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-lt:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F1;&#x1F1F9;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ffff00',
-                '#008000',
-                '#ff0000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FDB913',
+                // RGB color values
+                'rgb' => '253,185,19',
+                // CMYK color values
+                'cmyk' => '0,27,93,0',
+                // HSL color values
+                'hsl' => '42°,98%,53%',
+                // HSV color values
+                'hsv' => '42°,93%,99%',
+                // Pantone color code
+                'pantone' => '1235 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
-            'rgb' => [
-                '255,255,0',
-                '0,128,0',
-                '255,0,0',
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#007A33',
+                // RGB color values
+                'rgb' => '0,122,51',
+                // CMYK color values
+                'cmyk' => '100,0,58,52',
+                // HSL color values
+                'hsl' => '150°,100%,24%',
+                // HSV color values
+                'hsv' => '150°,100%,48%',
+                // Pantone color code
+                'pantone' => '356 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#C8102E',
+                // RGB color values
+                'rgb' => '200,16,46',
+                // CMYK color values
+                'cmyk' => '0,92,77,22',
+                // HSL color values
+                'hsl' => '348°,85%,42%',
+                // HSV color values
+                'hsv' => '348°,92%,78%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '56 00 N',
-                'desc' => '55.33871841430664',
-            ],
-            'longitude' => [
-                'classic' => '24 00 E',
-                'desc' => '23.87092399597168',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '56.441667',
-                'min' => '53',
-            ],
-            'longitude' => [
-                'max' => '27',
-                'min' => '21',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '55.1694',
+            // Longitude in decimal degrees
+            'longitude' => '23.8813',
+            // Degrees with decimal
+            'dd' => '55.1694° N, 23.8813° E',
+            // Degrees, minutes, seconds
+            'dms' => '55°10\'9.84" N, 23°52\'52.68" E',
+            // Degrees and decimal minutes
+            'dm' => '55°10.164\' N, 23°52.878\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

@@ -29,53 +29,236 @@ class NO_Norway extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Norway';
+
+        // Set the country's official name
         $this->official_name = 'Kingdom of Norway';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'NO';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'NOR';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '578';
+
+        // Set the international dialing code
         $this->international_phone = '47';
 
-        $this->languages = ['no','nb','nn'];
+        // Define the languages spoken in the country
+        $this->languages = ['no', 'nn', 'se']; // Norwegian Bokmål, Nynorsk, and Sami are official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.no'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '150 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '90 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '98%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Norwegian National Security Authority (NSM)';
+
+        // List popular web technologies in Norway
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'React'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'NO';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '3144096';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Norwegian krone',
+            // Currency code
+            'code' => 'NOK',
+            // Currency symbol
+            'symbol' => 'kr',
+            // Main unit
+            'main_unit' => 'krone',
+            // Subunit
+            'sub_unit' => 'øre',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['50', '100', '200', '500', '1000'],
+            // Main coins
+            'coins_main' => ['1', '5', '10', '20'],
+            // Subunit coins
+            'coins_sub' => ['50'],
+        ];
+
+        // Set the population
+        $this->population = 5421241; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 385207; // km²
+
+        // Set the capital city
+        $this->capital = 'Oslo';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Europe/Oslo',
+                // Standard time offset
+                'standard_time' => 'UTC+1',
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+2',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1905-06-07'; // Separation from Sweden
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'European Free Trade Association (EFTA)',
+            'North Atlantic Treaty Organization (NATO)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Organisation for Economic Co-operation and Development (OECD)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 403.3; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Church of Norway)',
+            'Islam',
+            'Secular/No religious affiliation',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary constitutional monarchy';
+
+        // Set the national sport
+        $this->national_sport = 'Cross-country skiing'; // Cross-country skiing is highly popular in Norway
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Sweden', 'iso_alpha_2' => 'SE'],
+            ['name' => 'Finland', 'iso_alpha_2' => 'FI'],
+            ['name' => 'Russia', 'iso_alpha_2' => 'RU'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇳🇴',
+            // Unicode code points
             'uCode' => 'U+1F1F3 U+1F1F4',
+            // HTML entities
+            'html' => '&#x1F1F3;&#x1F1F4;',
+            // CSS entities
+            'css' => '\\1F1F3\\1F1F4',
+            // Decimal Unicode entities
+            'decimal' => '&#127475;&#127476;',
+            // Direct UTF-8 string
+            'utf8' => '🇳🇴',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF3\uD83C\uDDF4',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-no:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F3;&#x1F1F4;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffffff',
-                '#00008b',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#BA0C2F',
+                // RGB color values
+                'rgb' => '186,12,47',
+                // CMYK color values
+                'cmyk' => '0,94,75,27',
+                // HSL color values
+                'hsl' => '346°,89%,39%',
+                // HSV color values
+                'hsv' => '346°,94%,73%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,255',
-                '0,0,139',
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#00205B',
+                // RGB color values
+                'rgb' => '0,32,91',
+                // CMYK color values
+                'cmyk' => '100,85,5,36',
+                // HSL color values
+                'hsl' => '220°,100%,18%',
+                // HSV color values
+                'hsv' => '220°,100%,36%',
+                // Pantone color code
+                'pantone' => '287 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '62 00 N',
-                'desc' => '66.76667022705078',
-            ],
-            'longitude' => [
-                'classic' => '10 00 E',
-                'desc' => '14.899925231933594',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '71.181944',
-                'min' => '56.15',
-            ],
-            'longitude' => [
-                'max' => '31.166667',
-                'min' => '3.033333',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '60.4720',
+            // Longitude in decimal degrees
+            'longitude' => '8.4689',
+            // Degrees with decimal
+            'dd' => '60.4720° N, 8.4689° E',
+            // Degrees, minutes, seconds
+            'dms' => '60°28\'19.2" N, 8°28\'8.04" E',
+            // Degrees and decimal minutes
+            'dm' => '60°28.32\' N, 8°28.134\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

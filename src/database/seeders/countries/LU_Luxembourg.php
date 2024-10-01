@@ -29,53 +29,239 @@ class LU_Luxembourg extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Luxembourg';
+
+        // Set the country's official name
         $this->official_name = 'Grand Duchy of Luxembourg';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'LU';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'LUX';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '442';
+
+        // Set the international dialing code
         $this->international_phone = '352';
 
-        $this->languages = ['fr','de','lb'];
+        // Define the languages spoken in the country
+        $this->languages = ['lb', 'fr', 'de']; // Luxembourgish, French, and German are official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.lu'];
-        $this->wmo = 'BX';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '150 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '50 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '98%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'CERT-LU (Computer Emergency Response Team Luxembourg)';
+
+        // List popular web technologies in Luxembourg
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'Java'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'LU';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2960313';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Euro',
+            // Currency code
+            'code' => 'EUR',
+            // Currency symbol
+            'symbol' => '€',
+            // Main unit
+            'main_unit' => 'euro',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100', '200', '500'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['1', '2', '5', '10', '20', '50'],
+        ];
+
+        // Set the population
+        $this->population = 634730; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 2586; // km²
+
+        // Set the capital city
+        $this->capital = 'Luxembourg City';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Europe/Luxembourg',
+                // Standard time offset
+                'standard_time' => 'UTC+1',
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+2',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1815-06-09'; // Gained independence after the Congress of Vienna
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'European Union (EU)',
+            'North Atlantic Treaty Organization (NATO)',
+            'Schengen Area',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Council of Europe',
+            'Organisation for Economic Co-operation and Development (OECD)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 71.1; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism)',
+            'Protestantism',
+            'Islam',
+            'Judaism',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary constitutional monarchy';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is highly popular in Luxembourg
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Belgium', 'iso_alpha_2' => 'BE'],
+            ['name' => 'Germany', 'iso_alpha_2' => 'DE'],
+            ['name' => 'France', 'iso_alpha_2' => 'FR'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇱🇺',
+            // Unicode code points
             'uCode' => 'U+1F1F1 U+1F1FA',
+            // HTML entities
+            'html' => '&#x1F1F1;&#x1F1FA;',
+            // CSS entities
+            'css' => '\\1F1F1\\1F1FA',
+            // Decimal Unicode entities
+            'decimal' => '&#127473;&#127482;',
+            // Direct UTF-8 string
+            'utf8' => '🇱🇺',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF1\uD83C\uDDFA',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-lu:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F1;&#x1F1FA;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffffff',
-                '#75aadb',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#FF4A4A',
+                // RGB color values
+                'rgb' => '255,74,74',
+                // CMYK color values
+                'cmyk' => '0,71,71,0',
+                // HSL color values
+                'hsl' => '0°,100%,64%',
+                // HSV color values
+                'hsv' => '0°,71%,100%',
+                // Pantone color code
+                'pantone' => 'Warm Red C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,255',
-                '117,170,219',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Sky Blue',
+                // Web color name
+                'web_name' => 'skyblue',
+                // Hexadecimal color code
+                'hex' => '#00A1DE',
+                // RGB color values
+                'rgb' => '0,161,222',
+                // CMYK color values
+                'cmyk' => '100,27,0,13',
+                // HSL color values
+                'hsl' => '196°,100%,44%',
+                // HSV color values
+                'hsv' => '196°,100%,87%',
+                // Pantone color code
+                'pantone' => '2995 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '49 45 N',
-                'desc' => '49.77788162231445',
-            ],
-            'longitude' => [
-                'classic' => '6 10 E',
-                'desc' => '6.094746112823486',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '50.181667',
-                'min' => '49.460833',
-            ],
-            'longitude' => [
-                'max' => '6.505833',
-                'min' => '5.742778',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '49.8153',
+            // Longitude in decimal degrees
+            'longitude' => '6.1296',
+            // Degrees with decimal
+            'dd' => '49.8153° N, 6.1296° E',
+            // Degrees, minutes, seconds
+            'dms' => '49°48\'55.08" N, 6°7\'46.56" E',
+            // Degrees and decimal minutes
+            'dm' => '49°48.918\' N, 6°7.776\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

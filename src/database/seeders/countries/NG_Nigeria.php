@@ -29,51 +29,216 @@ class NG_Nigeria extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Nigeria';
+
+        // Set the country's official name
         $this->official_name = 'Federal Republic of Nigeria';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'NG';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'NGA';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '566';
+
+        // Set the international dialing code
         $this->international_phone = '234';
 
-        $this->languages = ['en'];
+        // Define the languages spoken in the country
+        $this->languages = ['en']; // English is the official language, with many indigenous languages spoken across the country
+
+        // Define the top-level domain(s)
         $this->tld = ['.ng'];
-        $this->wmo = 'NI';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = ['.com.ng', '.org.ng', '.gov.ng']; // Common alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '20 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '15 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '50%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Nigerian Computer Emergency Response Team (ngCERT)';
+
+        // List popular web technologies in Nigeria
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'NG';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2328926';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Nigerian naira',
+            // Currency code
+            'code' => 'NGN',
+            // Currency symbol
+            'symbol' => '₦',
+            // Main unit
+            'main_unit' => 'naira',
+            // Subunit
+            'sub_unit' => 'kobo',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100', '200', '500', '1000'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 206139589; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 923768; // km²
+
+        // Set the capital city
+        $this->capital = 'Abuja';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Africa/Lagos',
+                // Standard time offset
+                'standard_time' => 'UTC+1',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1960-10-01'; // Independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union (AU)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Economic Community of West African States (ECOWAS)',
+            'Organization of the Petroleum Exporting Countries (OPEC)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 514.05; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity',
+            'Islam',
+            'Traditional African Religions',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Federal presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is highly popular in Nigeria
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Benin', 'iso_alpha_2' => 'BJ'],
+            ['name' => 'Cameroon', 'iso_alpha_2' => 'CM'],
+            ['name' => 'Niger', 'iso_alpha_2' => 'NE'],
+            ['name' => 'Chad', 'iso_alpha_2' => 'TD'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇳🇬',
+            // Unicode code points
             'uCode' => 'U+1F1F3 U+1F1EC',
+            // HTML entities
+            'html' => '&#x1F1F3;&#x1F1EC;',
+            // CSS entities
+            'css' => '\\1F1F3\\1F1EC',
+            // Decimal Unicode entities
+            'decimal' => '&#127475;&#127468;',
+            // Direct UTF-8 string
+            'utf8' => '🇳🇬',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF3\uD83C\uDDEC',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-ng:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F3;&#x1F1EC;',
         ];
-        $this->color = [
-            'hex' => [
-                '#008000',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#008753',
+                // RGB color values
+                'rgb' => '0,135,83',
+                // CMYK color values
+                'cmyk' => '100,0,39,47',
+                // HSL color values
+                'hsl' => '156°,100%,27%',
+                // HSV color values
+                'hsv' => '156°,100%,53%',
+                // Pantone color code
+                'pantone' => '349 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,128,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '10 00 N',
-                'desc' => '9.559505462646484',
-            ],
-            'longitude' => [
-                'classic' => '8 00 E',
-                'desc' => '8.077880859375',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '13.866667',
-                'min' => '4.266667',
-            ],
-            'longitude' => [
-                'max' => '14.65',
-                'min' => '2.716667',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '9.0820',
+            // Longitude in decimal degrees
+            'longitude' => '8.6753',
+            // Degrees with decimal
+            'dd' => '9.0820° N, 8.6753° E',
+            // Degrees, minutes, seconds
+            'dms' => '9°4\'55.2" N, 8°40\'31.08" E',
+            // Degrees and decimal minutes
+            'dm' => '9°4.92\' N, 8°40.518\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

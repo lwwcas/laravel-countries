@@ -29,55 +29,255 @@ class MM_Myanmar extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Myanmar';
+
+        // Set the country's official name
         $this->official_name = 'Republic of the Union of Myanmar';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'MM';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'MMR';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '104';
+
+        // Set the international dialing code
         $this->international_phone = '95';
 
-        $this->languages = ['my'];
+        // Define the languages spoken in the country
+        $this->languages = ['my']; // Burmese is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.mm'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '18 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '15 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '34%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Myanmar CERT';
+
+        // List popular web technologies in Myanmar
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'BM';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1327865';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Myanmar kyat',
+            // Currency code
+            'code' => 'MMK',
+            // Currency symbol
+            'symbol' => 'K',
+            // Main unit
+            'main_unit' => 'kyat',
+            // Subunit
+            'sub_unit' => 'pya',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['50', '100', '200', '500', '1000', '5000', '10000'],
+            // Main coins
+            'coins_main' => ['50', '100'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '25'],
+        ];
+
+        // Set the population
+        $this->population = 54817919; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 676578; // km²
+
+        // Set the capital city
+        $this->capital = 'Naypyidaw';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Yangon',
+                // Standard time offset
+                'standard_time' => 'UTC+6:30',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1948-01-04'; // Independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Association of Southeast Asian Nations (ASEAN)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 76.4; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Buddhism (Theravada)',
+            'Christianity',
+            'Islam',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary republic under a military regime';
+
+        // Set the national sport
+        $this->national_sport = 'Chinlone'; // Chinlone is a traditional sport of Myanmar
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'India', 'iso_alpha_2' => 'IN'],
+            ['name' => 'Bangladesh', 'iso_alpha_2' => 'BD'],
+            ['name' => 'China', 'iso_alpha_2' => 'CN'],
+            ['name' => 'Laos', 'iso_alpha_2' => 'LA'],
+            ['name' => 'Thailand', 'iso_alpha_2' => 'TH'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇲🇲',
+            // Unicode code points
             'uCode' => 'U+1F1F2 U+1F1F2',
+            // HTML entities
+            'html' => '&#x1F1F2;&#x1F1F2;',
+            // CSS entities
+            'css' => '\\1F1F2\\1F1F2',
+            // Decimal Unicode entities
+            'decimal' => '&#127474;&#127474;',
+            // Direct UTF-8 string
+            'utf8' => '🇲🇲',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF2\uD83C\uDDF2',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-mm:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F2;&#x1F1F2;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ffff00',
-                '#008000',
-                '#ff0000',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FED100',
+                // RGB color values
+                'rgb' => '254,209,0',
+                // CMYK color values
+                'cmyk' => '0,18,100,0',
+                // HSL color values
+                'hsl' => '50°,100%,50%',
+                // HSV color values
+                'hsv' => '50°,100%,100%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
-            'rgb' => [
-                '255,255,0',
-                '0,128,0',
-                '255,0,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#43B02A',
+                // RGB color values
+                'rgb' => '67,176,42',
+                // CMYK color values
+                'cmyk' => '62,0,76,31',
+                // HSL color values
+                'hsl' => '123°,61%,43%',
+                // HSV color values
+                'hsv' => '123°,76%,69%',
+                // Pantone color code
+                'pantone' => '355 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#EF3340',
+                // RGB color values
+                'rgb' => '239,51,64',
+                // CMYK color values
+                'cmyk' => '0,79,73,6',
+                // HSL color values
+                'hsl' => '355°,85%,57%',
+                // HSV color values
+                'hsv' => '355°,79%,94%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '22 00 N',
-                'desc' => '20.330142974853516',
-            ],
-            'longitude' => [
-                'classic' => '98 00 E',
-                'desc' => '96.52182006835938',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '28.35',
-                'min' => '6',
-            ],
-            'longitude' => [
-                'max' => '102',
-                'min' => '92.190833',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '21.9162',
+            // Longitude in decimal degrees
+            'longitude' => '95.9560',
+            // Degrees with decimal
+            'dd' => '21.9162° N, 95.9560° E',
+            // Degrees, minutes, seconds
+            'dms' => '21°54\'58.32" N, 95°57\'21.60" E',
+            // Degrees and decimal minutes
+            'dm' => '21°54.972\' N, 95°57.360\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

@@ -29,53 +29,229 @@ class MG_Madagascar extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Madagascar';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Madagascar';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'MG';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'MDG';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '450';
+
+        // Set the international dialing code
         $this->international_phone = '261';
 
-        $this->languages = ['fr','mg'];
+        // Define the languages spoken in the country
+        $this->languages = ['mg', 'fr']; // Malagasy and French are official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.mg'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '20 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '10 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '9%'; // Low internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Madagascar CERT';
+
+        // List popular web technologies in Madagascar
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'MG';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1062947';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Malagasy ariary',
+            // Currency code
+            'code' => 'MGA',
+            // Currency symbol
+            'symbol' => 'Ar',
+            // Main unit
+            'main_unit' => 'ariary',
+            // Subunit
+            'sub_unit' => 'iraimbilanja',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 5, // 1 ariary = 5 iraimbilanja
+            // Banknotes in circulation
+            'banknotes' => ['100', '200', '500', '1000', '2000', '5000', '10000', '20000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10', '20', '50', '100'],
+            // Subunit coins
+            'coins_sub' => ['1', '2', '4', '5', '10'],
+        ];
+
+        // Set the population
+        $this->population = 28173112; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 587041; // km²
+
+        // Set the capital city
+        $this->capital = 'Antananarivo';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Indian/Antananarivo',
+                // Standard time offset
+                'standard_time' => 'UTC+3',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1960-06-26'; // Independence from France
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union (AU)',
+            'Organisation internationale de la Francophonie',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 14.2; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism, Protestantism)',
+            'Traditional beliefs',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary semi-presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is highly popular in Madagascar
+
+        // Define bordering countries
+        $this->borders = []; // As an island, Madagascar has no bordering countries
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇲🇬',
+            // Unicode code points
             'uCode' => 'U+1F1F2 U+1F1EC',
+            // HTML entities
+            'html' => '&#x1F1F2;&#x1F1EC;',
+            // CSS entities
+            'css' => '\\1F1F2\\1F1EC',
+            // Decimal Unicode entities
+            'decimal' => '&#127474;&#127468;',
+            // Direct UTF-8 string
+            'utf8' => '🇲🇬',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF2\uD83C\uDDEC',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-mg:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F2;&#x1F1EC;',
         ];
-        $this->color = [
-            'hex' => [
-                '#fc3b2e',
-                '#008000',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#FF0000',
+                // RGB color values
+                'rgb' => '255,0,0',
+                // CMYK color values
+                'cmyk' => '0,100,100,0',
+                // HSL color values
+                'hsl' => '0°,100%,50%',
+                // HSV color values
+                'hsv' => '0°,100%,100%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '252,59,46',
-                '0,128,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#007A33',
+                // RGB color values
+                'rgb' => '0,122,51',
+                // CMYK color values
+                'cmyk' => '100,0,58,52',
+                // HSL color values
+                'hsl' => '146°,100%,24%',
+                // HSV color values
+                'hsv' => '146°,100%,48%',
+                // Pantone color code
+                'pantone' => '348 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '20 00 S',
-                'desc' => '-19.27239418029785',
-            ],
-            'longitude' => [
-                'classic' => '47 00 E',
-                'desc' => '46.69843292236328',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '-11.95',
-                'min' => '-25.6',
-            ],
-            'longitude' => [
-                'max' => '50.483333',
-                'min' => '43.183333',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '-18.7669',
+            // Longitude in decimal degrees
+            'longitude' => '46.8691',
+            // Degrees with decimal
+            'dd' => '18.7669° S, 46.8691° E',
+            // Degrees, minutes, seconds
+            'dms' => '18°46\'0.84" S, 46°52\'8.76" E',
+            // Degrees and decimal minutes
+            'dm' => '18°46.014\' S, 46°52.146\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

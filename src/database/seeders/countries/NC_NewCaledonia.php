@@ -29,53 +29,244 @@ class NC_NewCaledonia extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'New Caledonia';
+
+        // Set the country's official name
         $this->official_name = 'New Caledonia';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'NC';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'NCL';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '540';
+
+        // Set the international dialing code
         $this->international_phone = '687';
 
-        $this->languages = ['fr'];
+        // Define the languages spoken in the country
+        $this->languages = ['fr']; // French is the official language, with many indigenous languages also spoken
+
+        // Define the top-level domain(s)
         $this->tld = ['.nc'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '30 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '20 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '70%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'CERT NC';
+
+        // List popular web technologies in New Caledonia
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'NC';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2139685';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'CFP franc',
+            // Currency code
+            'code' => 'XPF',
+            // Currency symbol
+            'symbol' => '₣',
+            // Main unit
+            'main_unit' => 'franc',
+            // Subunit
+            'sub_unit' => 'centime',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['500', '1000', '5000', '10000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10', '20', '50', '100'],
+            // Subunit coins
+            'coins_sub' => ['1', '2', '5', '10', '20', '50'],
+        ];
+
+        // Set the population
+        $this->population = 271960; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 18575; // km²
+
+        // Set the capital city
+        $this->capital = 'Nouméa';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Pacific/Noumea',
+                // Standard time offset
+                'standard_time' => 'UTC+11',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = null; // New Caledonia is a special collectivity of France
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations (Special Observer)',
+            'Secretariat of the Pacific Community (SPC)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 10.4; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism, Protestantism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'French overseas collectivity';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is highly popular in New Caledonia
+
+        // Define bordering countries
+        $this->borders = []; // New Caledonia is an island and has no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇳🇨',
+            // Unicode code points
             'uCode' => 'U+1F1F3 U+1F1E8',
+            // HTML entities
+            'html' => '&#x1F1F3;&#x1F1E8;',
+            // CSS entities
+            'css' => '\\1F1F3\\1F1E8',
+            // Decimal Unicode entities
+            'decimal' => '&#127475;&#127464;',
+            // Direct UTF-8 string
+            'utf8' => '🇳🇨',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF3\uD83C\uDDE8',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-nc:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F3;&#x1F1E8;',
         ];
-        $this->color = [
-            'hex' => [
-                '#a6aaae',
-                '#ff0000',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#0033A0',
+                // RGB color values
+                'rgb' => '0,51,160',
+                // CMYK color values
+                'cmyk' => '100,68,0,37',
+                // HSL color values
+                'hsl' => '219°,100%,33%',
+                // HSV color values
+                'hsv' => '219°,100%,63%',
+                // Pantone color code
+                'pantone' => '286 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '166,170,174',
-                '255,0,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#D21034',
+                // RGB color values
+                'rgb' => '210,16,52',
+                // CMYK color values
+                'cmyk' => '0,92,75,18',
+                // HSL color values
+                'hsl' => '348°,87%,44%',
+                // HSV color values
+                'hsv' => '348°,92%,82%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#009739',
+                // RGB color values
+                'rgb' => '0,151,57',
+                // CMYK color values
+                'cmyk' => '100,0,62,41',
+                // HSL color values
+                'hsl' => '144°,100%,30%',
+                // HSV color values
+                'hsv' => '144°,100%,59%',
+                // Pantone color code
+                'pantone' => '347 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFD100',
+                // RGB color values
+                'rgb' => '255,209,0',
+                // CMYK color values
+                'cmyk' => '0,18,100,0',
+                // HSL color values
+                'hsl' => '50°,100%,50%',
+                // HSV color values
+                'hsv' => '50°,100%,100%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '21 30 S',
-                'desc' => '-21.31782341003418',
-            ],
-            'longitude' => [
-                'classic' => '165 30 E',
-                'desc' => '165.298583984375',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '-18.016667',
-                'min' => '-22.783333',
-            ],
-            'longitude' => [
-                'max' => '172.05',
-                'min' => '158.246667',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '-20.9043',
+            // Longitude in decimal degrees
+            'longitude' => '165.6180',
+            // Degrees with decimal
+            'dd' => '20.9043° S, 165.6180° E',
+            // Degrees, minutes, seconds
+            'dms' => '20°54\'15.48" S, 165°37\'4.8" E',
+            // Degrees and decimal minutes
+            'dm' => '20°54.258\' S, 165°37.08\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

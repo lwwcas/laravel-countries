@@ -29,55 +29,253 @@ class UZ_Uzbekistan extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Uzbekistan';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Uzbekistan';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'UZ';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'UZB';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '860';
+
+        // Set the international dialing code
         $this->international_phone = '998';
 
-        $this->languages = ['uz','ru'];
+        // Define the languages spoken in the country
+        $this->languages = ['uz', 'ru']; // Uzbek is the official language, Russian is also widely spoken
+
+        // Define the top-level domain(s)
         $this->tld = ['.uz'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '40 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '20 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '64%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Uzbekistan Cyber Security Center (UCSC)';
+
+        // List popular web technologies in Uzbekistan
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'Java'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'UZ';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1512440';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Uzbekistani soʻm',
+            // Currency code
+            'code' => 'UZS',
+            // Currency symbol
+            'symbol' => 'soʻm',
+            // Main unit
+            'main_unit' => 'soʻm',
+            // Subunit
+            'sub_unit' => 'tiyin',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1000', '2000', '5000', '10000', '50000', '100000'],
+            // Main coins
+            'coins_main' => ['50', '100', '200', '500'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '25'],
+        ];
+
+        // Set the population
+        $this->population = 34810000; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 448978; // km²
+
+        // Set the capital city
+        $this->capital = 'Tashkent';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Tashkent',
+                // Standard time offset
+                'standard_time' => 'UTC+5',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1991-09-01'; // Independence from the Soviet Union
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Commonwealth of Independent States (CIS)',
+            'Shanghai Cooperation Organisation (SCO)',
+            'Organization for Security and Co-operation in Europe (OSCE)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 80.5; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam (Sunni)',
+            'Eastern Orthodoxy',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Uzbekistan
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Kazakhstan', 'iso_alpha_2' => 'KZ'],
+            ['name' => 'Kyrgyzstan', 'iso_alpha_2' => 'KG'],
+            ['name' => 'Tajikistan', 'iso_alpha_2' => 'TJ'],
+            ['name' => 'Afghanistan', 'iso_alpha_2' => 'AF'],
+            ['name' => 'Turkmenistan', 'iso_alpha_2' => 'TM'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇺🇿',
+            // Unicode code points
             'uCode' => 'U+1F1FA U+1F1FF',
+            // HTML entities
+            'html' => '&#x1F1FA;&#x1F1FF;',
+            // CSS entities
+            'css' => '\\1F1FA\\1F1FF',
+            // Decimal Unicode entities
+            'decimal' => '&#127482;&#127487;',
+            // Direct UTF-8 string
+            'utf8' => '🇺🇿',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDFA\uD83C\uDDFF',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-uz:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1FA;&#x1F1FF;',
         ];
-        $this->color = [
-            'hex' => [
-                '#0000ff',
-                '#ffffff',
-                '#ff0000',
-                '#008000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#1EB1ED',
+                // RGB color values
+                'rgb' => '30,177,237',
+                // CMYK color values
+                'cmyk' => '87,14,0,7',
+                // HSL color values
+                'hsl' => '198°,86%,52%',
+                // HSV color values
+                'hsv' => '198°,87%,93%',
+                // Pantone color code
+                'pantone' => 'Process Blue C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,0,255',
-                '255,255,255',
-                '255,0,0',
-                '0,128,0',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#3E9141',
+                // RGB color values
+                'rgb' => '62,145,65',
+                // CMYK color values
+                'cmyk' => '57,0,55,43',
+                // HSL color values
+                'hsl' => '122°,40%,41%',
+                // HSV color values
+                'hsv' => '122°,57%,57%',
+                // Pantone color code
+                'pantone' => '356 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#E53935',
+                // RGB color values
+                'rgb' => '229,57,53',
+                // CMYK color values
+                'cmyk' => '0,75,77,10',
+                // HSL color values
+                'hsl' => '2°,77%,55%',
+                // HSV color values
+                'hsv' => '2°,77%,90%',
+                // Pantone color code
+                'pantone' => '485 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '41 00 N',
-                'desc' => '41.77239227294922',
-            ],
-            'longitude' => [
-                'classic' => '64 00 E',
-                'desc' => '63.14588928222656',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '48.583333',
-                'min' => '35.266667',
-            ],
-            'longitude' => [
-                'max' => '80.383333',
-                'min' => '56.083333',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '41.3775',
+            // Longitude in decimal degrees
+            'longitude' => '64.5853',
+            // Degrees with decimal
+            'dd' => '41.3775° N, 64.5853° E',
+            // Degrees, minutes, seconds
+            'dms' => '41°22\'39.00" N, 64°35\'7.08" E',
+            // Degrees and decimal minutes
+            'dm' => '41°22.65\' N, 64°35.118\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

@@ -29,53 +29,233 @@ class MD_Moldova extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Moldova';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Moldova';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'MD';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'MDA';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '498';
+
+        // Set the international dialing code
         $this->international_phone = '373';
 
-        $this->languages = ['ro'];
+        // Define the languages spoken in the country
+        $this->languages = ['ro']; // Romanian is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.md'];
-        $this->wmo = 'RM';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '90 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '40 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '65%'; // Moderate internet penetration
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'CERT Moldova (Computer Emergency Response Team)';
+
+        // List popular web technologies in Moldova
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'MD';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '617790';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Moldovan leu',
+            // Currency code
+            'code' => 'MDL',
+            // Currency symbol
+            'symbol' => 'L',
+            // Main unit
+            'main_unit' => 'leu',
+            // Subunit
+            'sub_unit' => 'ban',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '5', '10', '20', '50', '100', '200', '500', '1000'],
+            // Main coins
+            'coins_main' => ['1', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 2617820; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 33846; // km²
+
+        // Set the capital city
+        $this->capital = 'Chișinău';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Europe/Chisinau',
+                // Standard time offset
+                'standard_time' => 'UTC+2',
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+3',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1991-08-27'; // Declared independence from the Soviet Union
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Council of Europe',
+            'Organization for Security and Co-operation in Europe (OSCE)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Commonwealth of Independent States (CIS)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 11.8; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Eastern Orthodoxy)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Moldova
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Ukraine', 'iso_alpha_2' => 'UA'],
+            ['name' => 'Romania', 'iso_alpha_2' => 'RO'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇲🇩',
+            // Unicode code points
             'uCode' => 'U+1F1F2 U+1F1E9',
+            // HTML entities
+            'html' => '&#x1F1F2;&#x1F1E9;',
+            // CSS entities
+            'css' => '\\1F1F2\\1F1E9',
+            // Decimal Unicode entities
+            'decimal' => '&#127474;&#127465;',
+            // Direct UTF-8 string
+            'utf8' => '🇲🇩',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF2\uD83C\uDDE9',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-md:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F2;&#x1F1E9;',
         ];
-        $this->color = [
-            'hex' => [
-                '#0000ff',
-                '#ffff00',
-                '#ff0000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#0033A0',
+                // RGB color values
+                'rgb' => '0,51,160',
+                // CMYK color values
+                'cmyk' => '100,69,0,37',
+                // HSL color values
+                'hsl' => '220°,100%,41%',
+                // HSV color values
+                'hsv' => '220°,100%,63%',
+                // Pantone color code
+                'pantone' => 'Pantone 286 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,0,255',
-                '255,255,0',
-                '255,0,0',
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFD700',
+                // RGB color values
+                'rgb' => '255,215,0',
+                // CMYK color values
+                'cmyk' => '0,16,100,0',
+                // HSL color values
+                'hsl' => '51°,100%,50%',
+                // HSV color values
+                'hsv' => '51°,100%,100%',
+                // Pantone color code
+                'pantone' => 'Pantone 109 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#D1001F',
+                // RGB color values
+                'rgb' => '209,0,31',
+                // CMYK color values
+                'cmyk' => '0,100,85,18',
+                // HSL color values
+                'hsl' => '350°,100%,41%',
+                // HSV color values
+                'hsv' => '350°,100%,82%',
+                // Pantone color code
+                'pantone' => 'Pantone 199 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '47 00 N',
-                'desc' => '47.203704833984375',
-            ],
-            'longitude' => [
-                'classic' => '29 00 E',
-                'desc' => '28.46834373474121',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '48.467222',
-                'min' => '45.481667',
-            ],
-            'longitude' => [
-                'max' => '30.096111',
-                'min' => '26.672222',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '47.4116',
+            // Longitude in decimal degrees
+            'longitude' => '28.3699',
+            // Degrees with decimal
+            'dd' => '47.4116° N, 28.3699° E',
+            // Degrees, minutes, seconds
+            'dms' => '47°24\'41.76" N, 28°22\'11.64" E',
+            // Degrees and decimal minutes
+            'dm' => '47°24.696\' N, 28°22.194\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

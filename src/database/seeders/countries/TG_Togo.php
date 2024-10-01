@@ -29,55 +29,253 @@ class TG_Togo extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Togo';
+
+        // Set the country's official name
         $this->official_name = 'Togolese Republic';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'TG';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'TGO';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '768';
+
+        // Set the international dialing code
         $this->international_phone = '228';
 
-        $this->languages = ['fr'];
+        // Define the languages spoken in the country
+        $this->languages = ['fr']; // French is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.tg'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '8 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '5 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '20%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Agence Nationale de la Cyber-Sécurité (ANCS)';
+
+        // List popular web technologies in Togo
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'TG';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2363686';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'West African CFA franc',
+            // Currency code
+            'code' => 'XOF',
+            // Currency symbol
+            'symbol' => 'CFA',
+            // Main unit
+            'main_unit' => 'franc',
+            // Subunit
+            'sub_unit' => 'centime',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['500', '1000', '2000', '5000', '10000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10', '25', '50'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 8278724; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 56785; // km²
+
+        // Set the capital city
+        $this->capital = 'Lomé';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Africa/Lome',
+                // Standard time offset
+                'standard_time' => 'UTC+0',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1960-04-27'; // Independence from France
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union (AU)',
+            'Economic Community of West African States (ECOWAS)',
+            'Organisation Internationale de la Francophonie',
+            'World Trade Organization (WTO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 7.8; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity',
+            'Islam',
+            'Traditional African Religions',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Togo
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Ghana', 'iso_alpha_2' => 'GH'],
+            ['name' => 'Benin', 'iso_alpha_2' => 'BJ'],
+            ['name' => 'Burkina Faso', 'iso_alpha_2' => 'BF'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇹🇬',
+            // Unicode code points
             'uCode' => 'U+1F1F9 U+1F1EC',
+            // HTML entities
+            'html' => '&#x1F1F9;&#x1F1EC;',
+            // CSS entities
+            'css' => '\\1F1F9\\1F1EC',
+            // Decimal Unicode entities
+            'decimal' => '&#127481;&#127468;',
+            // Direct UTF-8 string
+            'utf8' => '🇹🇬',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF9\uD83C\uDDEC',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-tg:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F9;&#x1F1EC;',
         ];
-        $this->color = [
-            'hex' => [
-                '#008000',
-                '#ffff00',
-                '#ff0000',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#008751',
+                // RGB color values
+                'rgb' => '0,135,81',
+                // CMYK color values
+                'cmyk' => '100,0,40,47',
+                // HSL color values
+                'hsl' => '149°,100%,26%',
+                // HSV color values
+                'hsv' => '149°,100%,53%',
+                // Pantone color code
+                'pantone' => '348 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,128,0',
-                '255,255,0',
-                '255,0,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFD100',
+                // RGB color values
+                'rgb' => '255,209,0',
+                // CMYK color values
+                'cmyk' => '0,18,100,0',
+                // HSL color values
+                'hsl' => '48°,100%,50%',
+                // HSV color values
+                'hsv' => '48°,100%,100%',
+                // Pantone color code
+                'pantone' => '109 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#D62718',
+                // RGB color values
+                'rgb' => '214,39,24',
+                // CMYK color values
+                'cmyk' => '0,82,89,16',
+                // HSL color values
+                'hsl' => '5°,79%,47%',
+                // HSV color values
+                'hsv' => '5°,89%,84%',
+                // Pantone color code
+                'pantone' => '1795 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '8 00 N',
-                'desc' => '8.513226509094238',
-            ],
-            'longitude' => [
-                'classic' => '1 10 E',
-                'desc' => '0.9800975322723389',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '11.103889',
-                'min' => '6.131944',
-            ],
-            'longitude' => [
-                'max' => '1.816667',
-                'min' => '-4',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '8.6195',
+            // Longitude in decimal degrees
+            'longitude' => '0.8248',
+            // Degrees with decimal
+            'dd' => '8.6195° N, 0.8248° E',
+            // Degrees, minutes, seconds
+            'dms' => '8°37\'10.20" N, 0°49\'29.28" E',
+            // Degrees and decimal minutes
+            'dm' => '8°37.17\' N, 0°49.488\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

@@ -29,53 +29,234 @@ class UG_Uganda extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Uganda';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Uganda';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'UG';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'UGA';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '800';
+
+        // Set the international dialing code
         $this->international_phone = '256';
 
-        $this->languages = ['en','sw'];
+        // Define the languages spoken in the country
+        $this->languages = ['en', 'sw']; // English and Swahili are official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.ug'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '20 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '15 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '24%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'National Information Technology Authority - Uganda (NITA-U)';
+
+        // List popular web technologies in Uganda
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'UG';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '226074';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Ugandan shilling',
+            // Currency code
+            'code' => 'UGX',
+            // Currency symbol
+            'symbol' => 'USh',
+            // Main unit
+            'main_unit' => 'shilling',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1000', '2000', '5000', '10000', '20000', '50000'],
+            // Main coins
+            'coins_main' => ['100', '200', '500', '1000'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '50'],
+        ];
+
+        // Set the population
+        $this->population = 45741000; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 241038; // km²
+
+        // Set the capital city
+        $this->capital = 'Kampala';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Africa/Kampala',
+                // Standard time offset
+                'standard_time' => 'UTC+3',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1962-10-09'; // Independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union (AU)',
+            'East African Community (EAC)',
+            'Commonwealth of Nations',
+            'World Trade Organization (WTO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 37.4; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity',
+            'Islam',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is one of the most popular sports in Uganda
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Kenya', 'iso_alpha_2' => 'KE'],
+            ['name' => 'South Sudan', 'iso_alpha_2' => 'SS'],
+            ['name' => 'Democratic Republic of the Congo', 'iso_alpha_2' => 'CD'],
+            ['name' => 'Rwanda', 'iso_alpha_2' => 'RW'],
+            ['name' => 'Tanzania', 'iso_alpha_2' => 'TZ'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇺🇬',
+            // Unicode code points
             'uCode' => 'U+1F1FA U+1F1EC',
+            // HTML entities
+            'html' => '&#x1F1FA;&#x1F1EC;',
+            // CSS entities
+            'css' => '\\1F1FA\\1F1EC',
+            // Decimal Unicode entities
+            'decimal' => '&#127482;&#127468;',
+            // Direct UTF-8 string
+            'utf8' => '🇺🇬',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF8\uD83C\uDDEC',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-ug:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1FA;&#x1F1EC;',
         ];
-        $this->color = [
-            'hex' => [
-                '#000000',
-                '#ffff00',
-                '#ff0000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Black',
+                // Web color name
+                'web_name' => 'black',
+                // Hexadecimal color code
+                'hex' => '#000000',
+                // RGB color values
+                'rgb' => '0,0,0',
+                // CMYK color values
+                'cmyk' => '0,0,0,100',
+                // HSL color values
+                'hsl' => '0°,0%,0%',
+                // HSV color values
+                'hsv' => '0°,0%,0%',
+                // Pantone color code
+                'pantone' => 'Black C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,0,0',
-                '255,255,0',
-                '255,0,0',
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFCE00',
+                // RGB color values
+                'rgb' => '255,206,0',
+                // CMYK color values
+                'cmyk' => '0,19,100,0',
+                // HSL color values
+                'hsl' => '48°,100%,50%',
+                // HSV color values
+                'hsv' => '48°,100%,100%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#D21034',
+                // RGB color values
+                'rgb' => '210,16,52',
+                // CMYK color values
+                'cmyk' => '0,92,75,18',
+                // HSL color values
+                'hsl' => '347°,87%,44%',
+                // HSV color values
+                'hsv' => '347°,92%,82%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '1 00 N',
-                'desc' => '1.2773280143737793',
-            ],
-            'longitude' => [
-                'classic' => '32 00 E',
-                'desc' => '32.389984130859375',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '4.166667',
-                'min' => '-1.433333',
-            ],
-            'longitude' => [
-                'max' => '34.95',
-                'min' => '29.583333',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '1.3733',
+            // Longitude in decimal degrees
+            'longitude' => '32.2903',
+            // Degrees with decimal
+            'dd' => '1.3733° N, 32.2903° E',
+            // Degrees, minutes, seconds
+            'dms' => '1°22\'23.88" N, 32°17\'25.08" E',
+            // Degrees and decimal minutes
+            'dm' => '1°22.398\' N, 32°17.418\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

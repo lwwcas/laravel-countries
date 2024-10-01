@@ -29,53 +29,229 @@ class PA_Panama extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Panama';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Panama';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'PA';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'PAN';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '591';
+
+        // Set the international dialing code
         $this->international_phone = '507';
 
-        $this->languages = ['es'];
+        // Define the languages spoken in the country
+        $this->languages = ['es']; // Spanish is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.pa'];
-        $this->wmo = 'PM';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = ['.com.pa', '.org.pa', '.net.pa', '.edu.pa', '.gob.pa']; // Common alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '40 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '25 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '70%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Autoridad Nacional para la Innovación Gubernamental (AIG)';
+
+        // List popular web technologies in Panama
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'PA';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '3703430';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Panamanian balboa',
+            // Currency code
+            'code' => 'PAB',
+            // Currency symbol
+            'symbol' => 'B/.',
+            // Main unit
+            'main_unit' => 'balboa',
+            // Subunit
+            'sub_unit' => 'centésimo',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '5', '10', '20', '50'],
+            // Main coins
+            'coins_main' => ['1'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 4314768; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 75417; // km²
+
+        // Set the capital city
+        $this->capital = 'Panama City';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'America/Panama',
+                // Standard time offset
+                'standard_time' => 'UTC-5',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1903-11-03'; // Independence from Colombia
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'Organization of American States (OAS)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 66.8; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism, Protestantism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary presidential constitutional republic';
+
+        // Set the national sport
+        $this->national_sport = 'Baseball'; // Baseball is highly popular in Panama
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Costa Rica', 'iso_alpha_2' => 'CR'],
+            ['name' => 'Colombia', 'iso_alpha_2' => 'CO'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇵🇦',
+            // Unicode code points
             'uCode' => 'U+1F1F5 U+1F1E6',
+            // HTML entities
+            'html' => '&#x1F1F5;&#x1F1E6;',
+            // CSS entities
+            'css' => '\\1F1F5\\1F1E6',
+            // Decimal Unicode entities
+            'decimal' => '&#127477;&#127462;',
+            // Direct UTF-8 string
+            'utf8' => '🇵🇦',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF5\uD83C\uDDE6',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-pa:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F5;&#x1F1E6;',
         ];
-        $this->color = [
-            'hex' => [
-                '#0000ff',
-                '#ffffff',
-                '#ff0000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#FF0000',
+                // RGB color values
+                'rgb' => '255,0,0',
+                // CMYK color values
+                'cmyk' => '0,100,100,0',
+                // HSL color values
+                'hsl' => '0°,100%,50%',
+                // HSV color values
+                'hsv' => '0°,100%,100%',
+                // Pantone color code
+                'pantone' => 'Red 032 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,0,255',
-                '255,255,255',
-                '255,0,0',
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#005BAC',
+                // RGB color values
+                'rgb' => '0,91,172',
+                // CMYK color values
+                'cmyk' => '100,47,0,33',
+                // HSL color values
+                'hsl' => '207°,100%,34%',
+                // HSV color values
+                'hsv' => '207°,100%,67%',
+                // Pantone color code
+                'pantone' => 'Reflex Blue C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '9 00 N',
-                'desc' => '8.646247863769531',
-            ],
-            'longitude' => [
-                'classic' => '80 00 W',
-                'desc' => '-80.50607299804688',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '9.65',
-                'min' => '7.213333',
-            ],
-            'longitude' => [
-                'max' => '-77.283333',
-                'min' => '-82.95',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '8.5380',
+            // Longitude in decimal degrees
+            'longitude' => '-80.7821',
+            // Degrees with decimal
+            'dd' => '8.5380° N, 80.7821° W',
+            // Degrees, minutes, seconds
+            'dms' => '8°32\'16.8" N, 80°46\'55.56" W',
+            // Degrees and decimal minutes
+            'dm' => '8°32.28\' N, 80°46.926\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

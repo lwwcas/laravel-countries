@@ -29,53 +29,232 @@ class OM_Oman extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Oman';
+
+        // Set the country's official name
         $this->official_name = 'Sultanate of Oman';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'OM';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'OMN';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '512';
+
+        // Set the international dialing code
         $this->international_phone = '968';
 
-        $this->languages = ['ar'];
+        // Define the languages spoken in the country
+        $this->languages = ['ar']; // Arabic is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.om'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = ['.com.om', '.gov.om', '.edu.om']; // Common alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '50 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '35 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '80%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Oman National Computer Emergency Readiness Team (OCERT)';
+
+        // List popular web technologies in Oman
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'OM';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '286963';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Omani rial',
+            // Currency code
+            'code' => 'OMR',
+            // Currency symbol
+            'symbol' => 'ر.ع.',
+            // Main unit
+            'main_unit' => 'rial',
+            // Subunit
+            'sub_unit' => 'baisa',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 1000,
+            // Banknotes in circulation
+            'banknotes' => ['1', '5', '10', '20', '50'],
+            // Main coins
+            'coins_main' => ['1', '5', '10', '20', '50'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 5106626; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 309500; // km²
+
+        // Set the capital city
+        $this->capital = 'Muscat';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Muscat',
+                // Standard time offset
+                'standard_time' => 'UTC+4',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1650-11-18'; // Independence from Portugal
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Gulf Cooperation Council (GCC)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'Organization of Islamic Cooperation (OIC)',
+            'League of Arab States',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 82.1; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam (Ibadism, Sunni, Shia)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Absolute monarchy';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is highly popular in Oman
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'United Arab Emirates', 'iso_alpha_2' => 'AE'],
+            ['name' => 'Saudi Arabia', 'iso_alpha_2' => 'SA'],
+            ['name' => 'Yemen', 'iso_alpha_2' => 'YE'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇴🇲',
+            // Unicode code points
             'uCode' => 'U+1F1F4 U+1F1F2',
+            // HTML entities
+            'html' => '&#x1F1F4;&#x1F1F2;',
+            // CSS entities
+            'css' => '\\1F1F4\\1F1F2',
+            // Decimal Unicode entities
+            'decimal' => '&#127476;&#127474;',
+            // Direct UTF-8 string
+            'utf8' => '🇴🇲',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF4\uD83C\uDDF2',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-om:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F4;&#x1F1F2;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffffff',
-                '#008000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#FF0000',
+                // RGB color values
+                'rgb' => '255,0,0',
+                // CMYK color values
+                'cmyk' => '0,100,100,0',
+                // HSL color values
+                'hsl' => '0°,100%,50%',
+                // HSV color values
+                'hsv' => '0°,100%,100%',
+                // Pantone color code
+                'pantone' => 'Red 032 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,255',
-                '0,128,0',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#007A33',
+                // RGB color values
+                'rgb' => '0,122,51',
+                // CMYK color values
+                'cmyk' => '100,0,100,24',
+                // HSL color values
+                'hsl' => '149°,100%,24%',
+                // HSV color values
+                'hsv' => '149°,100%,48%',
+                // Pantone color code
+                'pantone' => 'Green C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '21 00 N',
-                'desc' => '20.566621780395508',
-            ],
-            'longitude' => [
-                'classic' => '57 00 E',
-                'desc' => '56.157962799072266',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '26.505',
-                'min' => '16.633333',
-            ],
-            'longitude' => [
-                'max' => '59.838056',
-                'min' => '45',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '21.4735',
+            // Longitude in decimal degrees
+            'longitude' => '55.9754',
+            // Degrees with decimal
+            'dd' => '21.4735° N, 55.9754° E',
+            // Degrees, minutes, seconds
+            'dms' => '21°28\'24.6" N, 55°58\'31.44" E',
+            // Degrees and decimal minutes
+            'dm' => '21°28.41\' N, 55°58.524\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

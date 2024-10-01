@@ -29,55 +29,220 @@ class LS_Lesotho extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Lesotho';
+
+        // Set the country's official name
         $this->official_name = 'Kingdom of Lesotho';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'LS';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'LSO';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '426';
+
+        // Set the international dialing code
         $this->international_phone = '266';
 
-        $this->languages = ['en','st'];
+        // Define the languages spoken in the country
+        $this->languages = ['en', 'st']; // English and Sesotho are official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.ls'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '20 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '10 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '31%'; // As per recent estimates
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Lesotho Communications Authority';
+
+        // List popular web technologies in Lesotho
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'LS';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '932692';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Lesotho loti',
+            // Currency code
+            'code' => 'LSL',
+            // Currency symbol
+            'symbol' => 'L',
+            // Main unit
+            'main_unit' => 'loti',
+            // Subunit
+            'sub_unit' => 'sente',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['10', '20', '50', '100', '200'],
+            // Main coins
+            'coins_main' => ['1', '2', '5'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '20', '50'],
+        ];
+
+        // Set the population
+        $this->population = 2142249; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 30355; // km²
+
+        // Set the capital city
+        $this->capital = 'Maseru';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Africa/Maseru',
+                // Standard time offset
+                'standard_time' => 'UTC+2',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1966-10-04'; // Independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union (AU)',
+            'Southern African Development Community (SADC)',
+            'Commonwealth of Nations',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 2.7; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism, Protestantism)',
+            'Traditional African religions',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Constitutional monarchy with a parliamentary system';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Lesotho
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'South Africa', 'iso_alpha_2' => 'ZA'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇱🇸',
+            // Unicode code points
             'uCode' => 'U+1F1F1 U+1F1F8',
+            // HTML entities
+            'html' => '&#x1F1F1;&#x1F1F8;',
+            // CSS entities
+            'css' => '\\1F1F1\\1F1F8',
+            // Decimal Unicode entities
+            'decimal' => '&#127473;&#127480;',
+            // Direct UTF-8 string
+            'utf8' => '🇱🇸',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF1\uD83C\uDDF8',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-ls:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F1;&#x1F1F8;',
         ];
-        $this->color = [
-            'hex' => [
-                '#00008b',
-                '#ffffff',
-                '#008000',
-                '#000000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#00209F',
+                // RGB color values
+                'rgb' => '0,32,159',
+                // CMYK color values
+                'cmyk' => '100,80,0,38',
+                // HSL color values
+                'hsl' => '227°,100%,31%',
+                // HSV color values
+                'hsv' => '227°,100%,62%',
             ],
-            'rgb' => [
-                '0,0,139',
-                '255,255,255',
-                '0,128,0',
-                '0,0,0',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+            ],
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#009739',
+                // RGB color values
+                'rgb' => '0,151,57',
+                // CMYK color values
+                'cmyk' => '100,0,62,41',
+                // HSL color values
+                'hsl' => '143°,100%,29%',
+                // HSV color values
+                'hsv' => '143°,100%,59%',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '29 30 S',
-                'desc' => '-29.58175277709961',
-            ],
-            'longitude' => [
-                'classic' => '28 30 E',
-                'desc' => '28.246612548828125',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '-28.616667',
-                'min' => '-30.666667',
-            ],
-            'longitude' => [
-                'max' => '29.316667',
-                'min' => '24',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '-29.6099',
+            // Longitude in decimal degrees
+            'longitude' => '28.2336',
+            // Degrees with decimal
+            'dd' => '29.6099° S, 28.2336° E',
+            // Degrees, minutes, seconds
+            'dms' => '29°36\'35.64" S, 28°14\'1.0" E',
+            // Degrees and decimal minutes
+            'dm' => '29°36.594\' S, 28°14.017\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

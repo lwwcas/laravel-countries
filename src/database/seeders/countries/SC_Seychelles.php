@@ -29,57 +29,267 @@ class SC_Seychelles extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Seychelles';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Seychelles';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'SC';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'SYC';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '690';
+
+        // Set the international dialing code
         $this->international_phone = '248';
 
-        $this->languages = ['fr','en'];
+        // Define the languages spoken in the country
+        $this->languages = ['fr', 'en', 'crs']; // French, English, and Seychellois Creole are official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.sc'];
-        $this->wmo = 'SC';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '15 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '10 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '70%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Seychelles National Information Services Agency (NISA)';
+
+        // List popular web technologies in Seychelles
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'SEY';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '241170';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Seychellois rupee',
+            // Currency code
+            'code' => 'SCR',
+            // Currency symbol
+            'symbol' => '₨',
+            // Main unit
+            'main_unit' => 'rupee',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['10', '25', '50', '100', '500'],
+            // Main coins
+            'coins_main' => ['1', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '25'],
+        ];
+
+        // Set the population
+        $this->population = 98347; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 459; // km²
+
+        // Set the capital city
+        $this->capital = 'Victoria';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Indian/Mahe',
+                // Standard time offset
+                'standard_time' => 'UTC+4',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1976-06-29'; // Independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union (AU)',
+            'Indian Ocean Commission (IOC)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 1.6; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism, Anglicanism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Seychelles
+
+        // Define bordering countries
+        $this->borders = []; // Seychelles is an island nation with no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇸🇨',
+            // Unicode code points
             'uCode' => 'U+1F1F8 U+1F1E8',
+            // HTML entities
+            'html' => '&#x1F1F8;&#x1F1E8;',
+            // CSS entities
+            'css' => '\\1F1F8\\1F1E8',
+            // Decimal Unicode entities
+            'decimal' => '&#127480;&#127464;',
+            // Direct UTF-8 string
+            'utf8' => '🇸🇨',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF8\uD83C\uDDE8',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-sc:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F8;&#x1F1E8;',
         ];
-        $this->color = [
-            'hex' => [
-                '#0000ff',
-                '#ffff00',
-                '#ff0000',
-                '#ffffff',
-                '#008000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#0033A0',
+                // RGB color values
+                'rgb' => '0,51,160',
+                // CMYK color values
+                'cmyk' => '100,68,0,37',
+                // HSL color values
+                'hsl' => '220°,100%,41%',
+                // HSV color values
+                'hsv' => '220°,100%,63%',
+                // Pantone color code
+                'pantone' => 'Reflex Blue C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,0,255',
-                '255,255,0',
-                '255,0,0',
-                '255,255,255',
-                '0,128,0',
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFD100',
+                // RGB color values
+                'rgb' => '255,209,0',
+                // CMYK color values
+                'cmyk' => '0,18,100,0',
+                // HSL color values
+                'hsl' => '48°,100%,50%',
+                // HSV color values
+                'hsv' => '48°,100%,100%',
+                // Pantone color code
+                'pantone' => '109 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#FF3333',
+                // RGB color values
+                'rgb' => '255,51,51',
+                // CMYK color values
+                'cmyk' => '0,80,80,0',
+                // HSL color values
+                'hsl' => '0°,100%,60%',
+                // HSV color values
+                'hsv' => '0°,100%,100%',
+                // Pantone color code
+                'pantone' => '185 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#009739',
+                // RGB color values
+                'rgb' => '0,151,57',
+                // CMYK color values
+                'cmyk' => '100,0,100,41',
+                // HSL color values
+                'hsl' => '147°,100%,30%',
+                // HSV color values
+                'hsv' => '147°,100%,59%',
+                // Pantone color code
+                'pantone' => '348 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '4 35 S',
-                'desc' => '-4.669795036315918',
-            ],
-            'longitude' => [
-                'classic' => '55 40 E',
-                'desc' => '55.47166061401367',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '-3.716667',
-                'min' => '-10.216667',
-            ],
-            'longitude' => [
-                'max' => '56.266667',
-                'min' => '46.216667',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '-4.6796',
+            // Longitude in decimal degrees
+            'longitude' => '55.4919',
+            // Degrees with decimal
+            'dd' => '4.6796° S, 55.4919° E',
+            // Degrees, minutes, seconds
+            'dms' => '4°40\'46.56" S, 55°29\'30.84" E',
+            // Degrees and decimal minutes
+            'dm' => '4°40.776\' S, 55°29.514\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

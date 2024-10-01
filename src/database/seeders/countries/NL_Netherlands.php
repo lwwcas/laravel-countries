@@ -29,49 +29,235 @@ class NL_Netherlands extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Netherlands';
+
+        // Set the country's official name
         $this->official_name = 'Netherlands';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'NL';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'NLD';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '528';
+
+        // Set the international dialing code
         $this->international_phone = '31';
 
-        $this->languages = ['nl'];
+        // Define the languages spoken in the country
+        $this->languages = ['nl']; // Dutch is the official language, with Frisian also recognized in certain regions
+
+        // Define the top-level domain(s)
         $this->tld = ['.nl'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = ['.com', '.org', '.eu']; // Common alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '100 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '50 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '98%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'National Cyber Security Centre (NCSC Netherlands)';
+
+        // List popular web technologies in the Netherlands
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'React', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'NL';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2750405';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Euro',
+            // Currency code
+            'code' => 'EUR',
+            // Currency symbol
+            'symbol' => '€',
+            // Main unit
+            'main_unit' => 'euro',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100', '200', '500'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['1', '2', '5', '10', '20', '50'],
+        ];
+
+        // Set the population
+        $this->population = 17441139; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 41850; // km²
+
+        // Set the capital city
+        $this->capital = 'Amsterdam';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Europe/Amsterdam',
+                // Standard time offset
+                'standard_time' => 'UTC+1',
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+2',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1581-07-26'; // Declaration of independence from the Spanish Empire
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'European Union (EU)',
+            'North Atlantic Treaty Organization (NATO)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Organisation for Economic Co-operation and Development (OECD)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 902.3; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism, Protestantism)',
+            'Islam',
+            'No religious affiliation',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Constitutional monarchy with a parliamentary system';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is highly popular in the Netherlands
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Germany', 'iso_alpha_2' => 'DE'],
+            ['name' => 'Belgium', 'iso_alpha_2' => 'BE'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇳🇱',
+            // Unicode code points
             'uCode' => 'U+1F1F3 U+1F1F1',
+            // HTML entities
+            'html' => '&#x1F1F3;&#x1F1F1;',
+            // CSS entities
+            'css' => '\\1F1F3\\1F1F1',
+            // Decimal Unicode entities
+            'decimal' => '&#127475;&#127473;',
+            // Direct UTF-8 string
+            'utf8' => '🇳🇱',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF3\uD83C\uDDF1',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-nl:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F3;&#x1F1F1;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff8000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#21468B',
+                // RGB color values
+                'rgb' => '33,70,139',
+                // CMYK color values
+                'cmyk' => '100,50,0,45',
+                // HSL color values
+                'hsl' => '217°,61%,34%',
+                // HSV color values
+                'hsv' => '217°,76%,54%',
+                // Pantone color code
+                'pantone' => 'Reflex Blue C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,128,0',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#21468B',
+                // RGB color values
+                'rgb' => '33,70,139',
+                // CMYK color values
+                'cmyk' => '100,50,0,45',
+                // HSL color values
+                'hsl' => '217°,61%,34%',
+                // HSV color values
+                'hsv' => '217°,76%,54%',
+                // Pantone color code
+                'pantone' => 'Reflex Blue C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '52 30 N',
-                'desc' => '52.34225845336914',
-            ],
-            'longitude' => [
-                'classic' => '5 45 E',
-                'desc' => '5.5281572341918945',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '53.583333',
-                'min' => '50.75',
-            ],
-            'longitude' => [
-                'max' => '7.2',
-                'min' => '3.133333',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '52.1326',
+            // Longitude in decimal degrees
+            'longitude' => '5.2913',
+            // Degrees with decimal
+            'dd' => '52.1326° N, 5.2913° E',
+            // Degrees, minutes, seconds
+            'dms' => '52°7\'57.36" N, 5°17\'28.68" E',
+            // Degrees and decimal minutes
+            'dm' => '52°7.956\' N, 5°17.478\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

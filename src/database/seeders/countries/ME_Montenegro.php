@@ -29,51 +29,217 @@ class ME_Montenegro extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Montenegro';
+
+        // Set the country's official name
         $this->official_name = 'Montenegro';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'ME';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'MNE';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '499';
+
+        // Set the international dialing code
         $this->international_phone = '382';
 
-        $this->languages = ['sr','bs','sq','hr'];
+        // Define the languages spoken in the country
+        $this->languages = ['sr', 'me', 'bs', 'sq', 'hr']; // Serbian, Montenegrin, Bosnian, Albanian, and Croatian are recognized languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.me'];
-        $this->wmo = '0';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '50 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '30 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '70%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Montenegro CERT (Computer Emergency Response Team)';
+
+        // List popular web technologies in Montenegro
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'Ruby'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'MJ';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '3194884';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Euro',
+            // Currency code
+            'code' => 'EUR',
+            // Currency symbol
+            'symbol' => '€',
+            // Main unit
+            'main_unit' => 'euro',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100', '200', '500'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['1', '2', '5', '10', '20', '50'],
+        ];
+
+        // Set the population
+        $this->population = 622359; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 13812; // km²
+
+        // Set the capital city
+        $this->capital = 'Podgorica';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Europe/Podgorica',
+                // Standard time offset
+                'standard_time' => 'UTC+1',
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+2',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '2006-06-03'; // Independence from the State Union of Serbia and Montenegro
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'North Atlantic Treaty Organization (NATO)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Council of Europe',
+            'Organization for Security and Co-operation in Europe (OSCE)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 5.8; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Eastern Orthodoxy)',
+            'Islam',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is highly popular in Montenegro
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Serbia', 'iso_alpha_2' => 'RS'],
+            ['name' => 'Bosnia and Herzegovina', 'iso_alpha_2' => 'BA'],
+            ['name' => 'Albania', 'iso_alpha_2' => 'AL'],
+            ['name' => 'Croatia', 'iso_alpha_2' => 'HR'],
+            ['name' => 'Kosovo', 'iso_alpha_2' => 'XK'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇲🇪',
+            // Unicode code points
             'uCode' => 'U+1F1F2 U+1F1EA',
+            // HTML entities
+            'html' => '&#x1F1F2;&#x1F1EA;',
+            // CSS entities
+            'css' => '\\1F1F2\\1F1EA',
+            // Decimal Unicode entities
+            'decimal' => '&#127474;&#127466;',
+            // Direct UTF-8 string
+            'utf8' => '🇲🇪',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF2\uD83C\uDDEA',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-me:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F2;&#x1F1EA;',
         ];
-        $this->color = [
-            'hex' => [
-                '#cc0000',
-                '#cfb53b',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#D4213D',
+                // RGB color values
+                'rgb' => '212,33,61',
+                // CMYK color values
+                'cmyk' => '0,84,71,17',
+                // HSL color values
+                'hsl' => '349°,72%,48%',
+                // HSV color values
+                'hsv' => '349°,84%,83%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '204,0,0',
-                '207,181,59',
+            [
+                // Color name
+                'name' => 'Gold',
+                // Web color name
+                'web_name' => 'gold',
+                // Hexadecimal color code
+                'hex' => '#FFCC33',
+                // RGB color values
+                'rgb' => '255,204,51',
+                // CMYK color values
+                'cmyk' => '0,20,80,0',
+                // HSL color values
+                'hsl' => '45°,100%,60%',
+                // HSV color values
+                'hsv' => '45°,80%,100%',
+                // Pantone color code
+                'pantone' => '1235 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '42 30 N',
-                'desc' => '42.752803802490234',
-            ],
-            'longitude' => [
-                'classic' => '19 18 E',
-                'desc' => '19.237918853759766',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '43.547778',
-                'min' => '41.864167',
-            ],
-            'longitude' => [
-                'max' => '20.3425',
-                'min' => '18.438056',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '42.7087',
+            // Longitude in decimal degrees
+            'longitude' => '19.3744',
+            // Degrees with decimal
+            'dd' => '42.7087° N, 19.3744° E',
+            // Degrees, minutes, seconds
+            'dms' => '42°42\'31.32" N, 19°22\'27.84" E',
+            // Degrees and decimal minutes
+            'dm' => '42°42.522\' N, 19°22.464\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

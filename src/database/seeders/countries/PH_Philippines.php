@@ -29,53 +29,248 @@ class PH_Philippines extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Philippines';
+
+        // Set the country's official name
         $this->official_name = 'Republic of the Philippines';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'PH';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'PHL';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '608';
+
+        // Set the international dialing code
         $this->international_phone = '63';
 
-        $this->languages = ['en', 'tl', 'fil'];
+        // Define the languages spoken in the country
+        $this->languages = ['fil', 'en']; // Filipino and English are official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.ph'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = ['.com.ph', '.org.ph', '.edu.ph', '.gov.ph']; // Common alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '50 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '20 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '70%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Department of Information and Communications Technology (DICT)';
+
+        // List popular web technologies in the Philippines
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'WordPress', 'Python'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'PH';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1694008';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Philippine peso',
+            // Currency code
+            'code' => 'PHP',
+            // Currency symbol
+            'symbol' => '₱',
+            // Main unit
+            'main_unit' => 'peso',
+            // Subunit
+            'sub_unit' => 'centavo',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['20', '50', '100', '200', '500', '1000'],
+            // Main coins
+            'coins_main' => ['1', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 113419674; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 300000; // km²
+
+        // Set the capital city
+        $this->capital = 'Manila';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Manila',
+                // Standard time offset
+                'standard_time' => 'UTC+8',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1946-07-04'; // Independence from the United States
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Association of Southeast Asian Nations (ASEAN)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'Organization of American States (OAS)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 402.6; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism, Protestantism)',
+            'Islam',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary presidential constitutional republic';
+
+        // Set the national sport
+        $this->national_sport = 'Arnis'; // Arnis, a form of martial arts, is the national sport of the Philippines
+
+        // Define bordering countries
+        $this->borders = []; // The Philippines is an archipelago and has no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇵🇭',
+            // Unicode code points
             'uCode' => 'U+1F1F5 U+1F1ED',
+            // HTML entities
+            'html' => '&#x1F1F5;&#x1F1ED;',
+            // CSS entities
+            'css' => '\\1F1F5\\1F1ED',
+            // Decimal Unicode entities
+            'decimal' => '&#127477;&#127469;',
+            // Direct UTF-8 string
+            'utf8' => '🇵🇭',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF5\uD83C\uDDED',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-ph:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F5;&#x1F1ED;',
         ];
-        $this->color = [
-            'hex' => [
-                '#0038A8',
-                '#CE1126',
-                '#FFFFFF',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#CE1126',
+                // RGB color values
+                'rgb' => '206,17,38',
+                // CMYK color values
+                'cmyk' => '0,92,82,19',
+                // HSL color values
+                'hsl' => '354°,84%,44%',
+                // HSV color values
+                'hsv' => '354°,92%,81%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0, 56, 168',
-                '206, 17, 38',
-                '255, 255, 255',
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#0038A8',
+                // RGB color values
+                'rgb' => '0,56,168',
+                // CMYK color values
+                'cmyk' => '100,67,0,34',
+                // HSL color values
+                'hsl' => '218°,100%,33%',
+                // HSV color values
+                'hsv' => '218°,100%,66%',
+                // Pantone color code
+                'pantone' => '287 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FCD116',
+                // RGB color values
+                'rgb' => '252,209,22',
+                // CMYK color values
+                'cmyk' => '0,17,91,1',
+                // HSL color values
+                'hsl' => '47°,97%,54%',
+                // HSV color values
+                'hsv' => '47°,91%,99%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '13 00 N',
-                'desc' => '11.112666130065918',
-            ],
-            'longitude' => [
-                'classic' => '122 00 E',
-                'desc' => '122.50947570800781',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '21.113056',
-                'min' => '4.588889',
-            ],
-            'longitude' => [
-                'max' => '126.604444',
-                'min' => '116.65',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '13.4125',
+            // Longitude in decimal degrees
+            'longitude' => '122.6069',
+            // Degrees with decimal
+            'dd' => '13.4125° N, 122.6069° E',
+            // Degrees, minutes, seconds
+            'dms' => '13°24\'45" N, 122°36\'24.84" E',
+            // Degrees and decimal minutes
+            'dm' => '13°24.75\' N, 122°36.414\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

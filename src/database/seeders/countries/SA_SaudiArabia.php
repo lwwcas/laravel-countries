@@ -29,51 +29,215 @@ class SA_SaudiArabia extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Saudi Arabia';
+
+        // Set the country's official name
         $this->official_name = 'Kingdom of Saudi Arabia';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'SA';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'SAU';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '682';
+
+        // Set the international dialing code
         $this->international_phone = '966';
 
-        $this->languages = ['ar'];
-        $this->tld = ['.sa',".\u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629"];
-        $this->wmo = 'SD';
+        // Define the languages spoken in the country
+        $this->languages = ['ar']; // Arabic is the official language
+
+        // Define the top-level domain(s)
+        $this->tld = ['.sa'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = ['.com.sa', '.net.sa', '.gov.sa', '.org.sa']; // Common alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '150 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '75 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '98%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'National Cybersecurity Authority (NCA)';
+
+        // List popular web technologies in Saudi Arabia
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'SA';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '102358';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Saudi riyal',
+            // Currency code
+            'code' => 'SAR',
+            // Currency symbol
+            'symbol' => '﷼',
+            // Main unit
+            'main_unit' => 'riyal',
+            // Subunit
+            'sub_unit' => 'halala',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '5', '10', '50', '100', '500'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 35202725; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 2149690; // km²
+
+        // Set the capital city
+        $this->capital = 'Riyadh';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Riyadh',
+                // Standard time offset
+                'standard_time' => 'UTC+3',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1932-09-23'; // Unification of the Kingdom of Saudi Arabia
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Organization of Islamic Cooperation (OIC)',
+            'Gulf Cooperation Council (GCC)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 793.0; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam (Sunni Islam)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Absolute monarchy';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Saudi Arabia
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Jordan', 'iso_alpha_2' => 'JO'],
+            ['name' => 'Iraq', 'iso_alpha_2' => 'IQ'],
+            ['name' => 'Kuwait', 'iso_alpha_2' => 'KW'],
+            ['name' => 'Qatar', 'iso_alpha_2' => 'QA'],
+            ['name' => 'United Arab Emirates', 'iso_alpha_2' => 'AE'],
+            ['name' => 'Oman', 'iso_alpha_2' => 'OM'],
+            ['name' => 'Yemen', 'iso_alpha_2' => 'YE'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇸🇦',
+            // Unicode code points
             'uCode' => 'U+1F1F8 U+1F1E6',
+            // HTML entities
+            'html' => '&#x1F1F8;&#x1F1E6;',
+            // CSS entities
+            'css' => '\\1F1F8\\1F1E6',
+            // Decimal Unicode entities
+            'decimal' => '&#127480;&#127462;',
+            // Direct UTF-8 string
+            'utf8' => '🇸🇦',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF8\uD83C\uDDE6',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-sa:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F8;&#x1F1E6;',
         ];
-        $this->color = [
-            'hex' => [
-                '#008000',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#006C35',
+                // RGB color values
+                'rgb' => '0,108,53',
+                // CMYK color values
+                'cmyk' => '100,0,51,58',
+                // HSL color values
+                'hsl' => '148°,100%,21%',
+                // HSV color values
+                'hsv' => '148°,100%,42%',
+                // Pantone color code
+                'pantone' => '349 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,128,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '25 00 N',
-                'desc' => '23.994726181030273',
-            ],
-            'longitude' => [
-                'classic' => '45 00 E',
-                'desc' => '44.4013557434082',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '32.2',
-                'min' => '5',
-            ],
-            'longitude' => [
-                'max' => '55.166667',
-                'min' => '34.566667',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '23.8859',
+            // Longitude in decimal degrees
+            'longitude' => '45.0792',
+            // Degrees with decimal
+            'dd' => '23.8859° N, 45.0792° E',
+            // Degrees, minutes, seconds
+            'dms' => '23°53\'9.24" N, 45°4\'45.12" E',
+            // Degrees and decimal minutes
+            'dm' => '23°53.154\' N, 45°4.752\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

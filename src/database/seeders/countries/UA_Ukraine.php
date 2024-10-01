@@ -29,51 +29,216 @@ class UA_Ukraine extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Ukraine';
+
+        // Set the country's official name
         $this->official_name = 'Ukraine';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'UA';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'UKR';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '804';
+
+        // Set the international dialing code
         $this->international_phone = '380';
 
-        $this->languages = ['uk'];
-        $this->tld = ['.ua',".\u0443\u043a\u0440"];
+        // Define the languages spoken in the country
+        $this->languages = ['uk']; // Ukrainian is the official language
+
+        // Define the top-level domain(s)
+        $this->tld = ['.ua'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '55 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '35 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '65%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'State Service of Special Communication and Information Protection of Ukraine';
+
+        // List popular web technologies in Ukraine
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'UR';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '690791';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Ukrainian hryvnia',
+            // Currency code
+            'code' => 'UAH',
+            // Currency symbol
+            'symbol' => '₴',
+            // Main unit
+            'main_unit' => 'hryvnia',
+            // Subunit
+            'sub_unit' => 'kopiyka',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '2', '5', '10', '20', '50', '100', '200', '500'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['1', '2', '5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 41902416; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 603548; // km²
+
+        // Set the capital city
+        $this->capital = 'Kyiv';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Europe/Kyiv',
+                // Standard time offset
+                'standard_time' => 'UTC+2',
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+3',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1991-08-24'; // Independence from the Soviet Union
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'World Trade Organization (WTO)',
+            'Council of Europe',
+            'Organization for Security and Co-operation in Europe (OSCE)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 155.5; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Eastern Orthodoxy',
+            'Greek Catholicism',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary semi-presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is one of the most popular sports in Ukraine
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Belarus', 'iso_alpha_2' => 'BY'],
+            ['name' => 'Poland', 'iso_alpha_2' => 'PL'],
+            ['name' => 'Slovakia', 'iso_alpha_2' => 'SK'],
+            ['name' => 'Hungary', 'iso_alpha_2' => 'HU'],
+            ['name' => 'Romania', 'iso_alpha_2' => 'RO'],
+            ['name' => 'Moldova', 'iso_alpha_2' => 'MD'],
+            ['name' => 'Russia', 'iso_alpha_2' => 'RU'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇺🇦',
+            // Unicode code points
             'uCode' => 'U+1F1FA U+1F1E6',
+            // HTML entities
+            'html' => '&#x1F1FA;&#x1F1E6;',
+            // CSS entities
+            'css' => '\\1F1FA\\1F1E6',
+            // Decimal Unicode entities
+            'decimal' => '&#127482;&#127462;',
+            // Direct UTF-8 string
+            'utf8' => '🇺🇦',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDFA\uD83C\uDDE6',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-ua:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1FA;&#x1F1E6;',
         ];
-        $this->color = [
-            'hex' => [
-                '#0000ff',
-                '#ffff00',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#0057B7',
+                // RGB color values
+                'rgb' => '0,87,183',
+                // CMYK color values
+                'cmyk' => '100,52,0,28',
+                // HSL color values
+                'hsl' => '210°,100%,36%',
+                // HSV color values
+                'hsv' => '210°,100%,72%',
+                // Pantone color code
+                'pantone' => '285 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,0,255',
-                '255,255,0',
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFD700',
+                // RGB color values
+                'rgb' => '255,215,0',
+                // CMYK color values
+                'cmyk' => '0,16,100,0',
+                // HSL color values
+                'hsl' => '51°,100%,50%',
+                // HSV color values
+                'hsv' => '51°,100%,100%',
+                // Pantone color code
+                'pantone' => '109 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '49 00 N',
-                'desc' => '48.92656326293945',
-            ],
-            'longitude' => [
-                'classic' => '32 00 E',
-                'desc' => '31.47578239440918',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '63.4',
-                'min' => '37.8',
-            ],
-            'longitude' => [
-                'max' => '68.85',
-                'min' => '20.933333',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '48.3794',
+            // Longitude in decimal degrees
+            'longitude' => '31.1656',
+            // Degrees with decimal
+            'dd' => '48.3794° N, 31.1656° E',
+            // Degrees, minutes, seconds
+            'dms' => '48°22\'45.84" N, 31°9\'56.16" E',
+            // Degrees and decimal minutes
+            'dm' => '48°22.764\' N, 31°9.936\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

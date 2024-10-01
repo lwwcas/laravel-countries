@@ -29,55 +29,254 @@ class SY_Syria extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Syria';
+
+        // Set the country's official name
         $this->official_name = 'Syrian Arab Republic';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'SY';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'SYR';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '760';
+
+        // Set the international dialing code
         $this->international_phone = '963';
 
-        $this->languages = ['ar'];
-        $this->tld = ['.sy',"\u0633\u0648\u0631\u064a\u0627."];
+        // Define the languages spoken in the country
+        $this->languages = ['ar']; // Arabic is the official language
+
+        // Define the top-level domain(s)
+        $this->tld = ['.sy'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '5 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '3 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '34%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Syrian Computer Society (SCS)';
+
+        // List popular web technologies in Syria
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'SY';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '163843';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Syrian pound',
+            // Currency code
+            'code' => 'SYP',
+            // Currency symbol
+            'symbol' => '£',
+            // Main unit
+            'main_unit' => 'pound',
+            // Subunit
+            'sub_unit' => 'piastre',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['50', '100', '200', '500', '1000', '2000', '5000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 17500657; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 185180; // km²
+
+        // Set the capital city
+        $this->capital = 'Damascus';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Damascus',
+                // Standard time offset
+                'standard_time' => 'UTC+2',
+                // Daylight saving time offset
+                'daylight_time' => 'UTC+3',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1946-04-17'; // Independence from France
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Arab League',
+            'Organization of Islamic Cooperation (OIC)',
+            'World Trade Organization (WTO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 24.6; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam (Sunni)',
+            'Christianity',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary semi-presidential republic under a dominant-party regime';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Syria
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Turkey', 'iso_alpha_2' => 'TR'],
+            ['name' => 'Iraq', 'iso_alpha_2' => 'IQ'],
+            ['name' => 'Jordan', 'iso_alpha_2' => 'JO'],
+            ['name' => 'Israel', 'iso_alpha_2' => 'IL'],
+            ['name' => 'Lebanon', 'iso_alpha_2' => 'LB'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇸🇾',
+            // Unicode code points
             'uCode' => 'U+1F1F8 U+1F1FE',
+            // HTML entities
+            'html' => '&#x1F1F8;&#x1F1FE;',
+            // CSS entities
+            'css' => '\\1F1F8\\1F1FE',
+            // Decimal Unicode entities
+            'decimal' => '&#127480;&#127486;',
+            // Direct UTF-8 string
+            'utf8' => '🇸🇾',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF8\uD83C\uDDFE',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-sy:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F8;&#x1F1FE;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffffff',
-                '#000000',
-                '#008000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#CE1126',
+                // RGB color values
+                'rgb' => '206,17,38',
+                // CMYK color values
+                'cmyk' => '0,92,82,19',
+                // HSL color values
+                'hsl' => '356°,84%,44%',
+                // HSV color values
+                'hsv' => '356°,92%,81%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,255',
-                '0,0,0',
-                '0,128,0',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Black',
+                // Web color name
+                'web_name' => 'black',
+                // Hexadecimal color code
+                'hex' => '#000000',
+                // RGB color values
+                'rgb' => '0,0,0',
+                // CMYK color values
+                'cmyk' => '0,0,0,100',
+                // HSL color values
+                'hsl' => '0°,0%,0%',
+                // HSV color values
+                'hsv' => '0°,0%,0%',
+                // Pantone color code
+                'pantone' => 'Black',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#007A3D',
+                // RGB color values
+                'rgb' => '0,122,61',
+                // CMYK color values
+                'cmyk' => '100,0,50,52',
+                // HSL color values
+                'hsl' => '154°,100%,24%',
+                // HSV color values
+                'hsv' => '154°,100%,48%',
+                // Pantone color code
+                'pantone' => '348 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '35 00 N',
-                'desc' => '35.03312683105469',
-            ],
-            'longitude' => [
-                'classic' => '38 00 E',
-                'desc' => '38.473472595214844',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '37.280278',
-                'min' => '32',
-            ],
-            'longitude' => [
-                'max' => '42.337778',
-                'min' => '35.6',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '34.8021',
+            // Longitude in decimal degrees
+            'longitude' => '38.9968',
+            // Degrees with decimal
+            'dd' => '34.8021° N, 38.9968° E',
+            // Degrees, minutes, seconds
+            'dms' => '34°48\'7.56" N, 38°59\'48.48" E',
+            // Degrees and decimal minutes
+            'dm' => '34°48.126\' N, 38°59.808\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

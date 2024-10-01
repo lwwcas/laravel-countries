@@ -29,47 +29,225 @@ class MP_NorthernMarianaIslands extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Northern Mariana Islands';
+
+        // Set the country's official name
         $this->official_name = 'Commonwealth of the Northern Mariana Islands';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'MP';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'MNP';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '580';
+
+        // Set the international dialing code
         $this->international_phone = '1-670';
 
-        $this->languages = ['en','ch'];
+        // Define the languages spoken in the country
+        $this->languages = ['en', 'ch', 'tl']; // English, Chamorro, and Carolinian are official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.mp'];
-        $this->wmo = 'MY';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '10 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '5 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '65%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Northern Mariana Islands CERT';
+
+        // List popular web technologies in Northern Mariana Islands
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'MP';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '4041468';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'United States Dollar',
+            // Currency code
+            'code' => 'USD',
+            // Currency symbol
+            'symbol' => '$',
+            // Main unit
+            'main_unit' => 'dollar',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '5', '10', '20', '50', '100'],
+            // Main coins
+            'coins_main' => ['1'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 57559; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 464; // km²
+
+        // Set the capital city
+        $this->capital = 'Saipan';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Pacific/Saipan',
+                // Standard time offset
+                'standard_time' => 'UTC+10',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = null; // The Northern Mariana Islands are a commonwealth of the United States and do not have an independence day
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'World Health Organization (WHO)',
+            'United Nations (represented by the United States)',
+            'Pacific Community (SPC)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 1.24; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism, Protestantism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Commonwealth in political union with the United States';
+
+        // Set the national sport
+        $this->national_sport = 'Baseball'; // Baseball is highly popular in the Northern Mariana Islands
+
+        // Define bordering countries
+        $this->borders = []; // As an island, the Northern Mariana Islands have no bordering countries
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇲🇵',
+            // Unicode code points
             'uCode' => 'U+1F1F2 U+1F1F5',
+            // HTML entities
+            'html' => '&#x1F1F2;&#x1F1F5;',
+            // CSS entities
+            'css' => '\\1F1F2\\1F1F5',
+            // Decimal Unicode entities
+            'decimal' => '&#127474;&#127477;',
+            // Direct UTF-8 string
+            'utf8' => '🇲🇵',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF2\uD83C\uDDF5',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-mp:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F2;&#x1F1F5;',
         ];
-        $this->color = [
-            'hex' => [
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#0033A0',
+                // RGB color values
+                'rgb' => '0,51,160',
+                // CMYK color values
+                'cmyk' => '100,69,0,37',
+                // HSL color values
+                'hsl' => '220°,100%,41%',
+                // HSV color values
+                'hsv' => '220°,100%,63%',
+                // Pantone color code
+                'pantone' => '286 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Gray',
+                // Web color name
+                'web_name' => 'gray',
+                // Hexadecimal color code
+                'hex' => '#808080',
+                // RGB color values
+                'rgb' => '128,128,128',
+                // CMYK color values
+                'cmyk' => '0,0,0,50',
+                // HSL color values
+                'hsl' => '0°,0%,50%',
+                // HSV color values
+                'hsv' => '0°,0%,50%',
+                // Pantone color code
+                'pantone' => 'Cool Gray 6 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '15 12 N',
-                'desc' => '15.262779235839844',
-            ],
-            'longitude' => [
-                'classic' => '145 45 E',
-                'desc' => '145.8045654296875',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '20.5534826',
-                'min' => '4.1103823',
-            ],
-            'longitude' => [
-                'max' => '146.0646485',
-                'min' => '144.886365',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '15.0979',
+            // Longitude in decimal degrees
+            'longitude' => '145.6739',
+            // Degrees with decimal
+            'dd' => '15.0979° N, 145.6739° E',
+            // Degrees, minutes, seconds
+            'dms' => '15°5\'52.44" N, 145°40\'26.04" E',
+            // Degrees and decimal minutes
+            'dm' => '15°5.874\' N, 145°40.434\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

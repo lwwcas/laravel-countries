@@ -29,51 +29,247 @@ class PT_Portugal extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Portugal';
+
+        // Set the country's official name
         $this->official_name = 'Portuguese Republic';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'PT';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'PRT';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '620';
+
+        // Set the international dialing code
         $this->international_phone = '351';
 
-        $this->languages = ['pt'];
+        // Define the languages spoken in the country
+        $this->languages = ['pt']; // Portuguese is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.pt'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = ['.com.pt', '.org.pt', '.gov.pt', '.edu.pt']; // Common alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '140 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '35 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '85%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Centro Nacional de Cibersegurança (CNCS)';
+
+        // List popular web technologies in Portugal
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'WordPress', 'Python'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'PO';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2264397';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Euro',
+            // Currency code
+            'code' => 'EUR',
+            // Currency symbol
+            'symbol' => '€',
+            // Main unit
+            'main_unit' => 'euro',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100', '200', '500'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['1', '2', '5', '10', '20', '50'],
+        ];
+
+        // Set the population
+        $this->population = 10305564; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 92212; // km²
+
+        // Set the capital city
+        $this->capital = 'Lisbon';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Europe/Lisbon',
+                // Standard time offset
+                'standard_time' => 'UTC+0',
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+1',
+            ],
+            [
+                // Time zone identifier
+                'timezone_id' => 'Atlantic/Madeira',
+                // Standard time offset
+                'standard_time' => 'UTC+0',
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+1',
+            ],
+            [
+                // Time zone identifier
+                'timezone_id' => 'Atlantic/Azores',
+                // Standard time offset
+                'standard_time' => 'UTC-1',
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+0',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1143-10-05'; // Portugal’s founding date, Treaty of Zamora
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'European Union (EU)',
+            'North Atlantic Treaty Organization (NATO)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'Schengen Area',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 252.1; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary semi-presidential constitutional republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Portugal
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Spain', 'iso_alpha_2' => 'ES'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇵🇹',
+            // Unicode code points
             'uCode' => 'U+1F1F5 U+1F1F9',
+            // HTML entities
+            'html' => '&#x1F1F5;&#x1F1F9;',
+            // CSS entities
+            'css' => '\\1F1F5\\1F1F9',
+            // Decimal Unicode entities
+            'decimal' => '&#127477;&#127481;',
+            // Direct UTF-8 string
+            'utf8' => '🇵🇹',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF5\uD83C\uDDF9',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-pt:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F5;&#x1F1F9;',
         ];
-        $this->color = [
-            'hex' => [
-                '#008000',
-                '#ff0000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#FF0000',
+                // RGB color values
+                'rgb' => '255,0,0',
+                // CMYK color values
+                'cmyk' => '0,100,100,0',
+                // HSL color values
+                'hsl' => '0°,100%,50%',
+                // HSV color values
+                'hsv' => '0°,100%,100%',
+                // Pantone color code
+                'pantone' => 'Red 032 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,128,0',
-                '255,0,0',
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#006600',
+                // RGB color values
+                'rgb' => '0,102,0',
+                // CMYK color values
+                'cmyk' => '100,0,100,60',
+                // HSL color values
+                'hsl' => '120°,100%,20%',
+                // HSV color values
+                'hsv' => '120°,100%,40%',
+                // Pantone color code
+                'pantone' => '349 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFD700',
+                // RGB color values
+                'rgb' => '255,215,0',
+                // CMYK color values
+                'cmyk' => '0,16,100,0',
+                // HSL color values
+                'hsl' => '51°,100%,50%',
+                // HSV color values
+                'hsv' => '51°,100%,100%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '39 30 N',
-                'desc' => '39.64200973510742',
-            ],
-            'longitude' => [
-                'classic' => '8 00 W',
-                'desc' => '-8.009422302246094',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '42.15',
-                'min' => '30.033333',
-            ],
-            'longitude' => [
-                'max' => '-5',
-                'min' => '-31.266667',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '39.3999',
+            // Longitude in decimal degrees
+            'longitude' => '-8.2245',
+            // Degrees with decimal
+            'dd' => '39.3999° N, 8.2245° W',
+            // Degrees, minutes, seconds
+            'dms' => '39°23\'59.64" N, 8°13\'28.2" W',
+            // Degrees and decimal minutes
+            'dm' => '39°23.994\' N, 8°13.47\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

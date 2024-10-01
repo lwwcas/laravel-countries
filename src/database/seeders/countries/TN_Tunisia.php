@@ -29,51 +29,211 @@ class TN_Tunisia extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Tunisia';
+
+        // Set the country's official name
         $this->official_name = 'Tunisian Republic';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'TN';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'TUN';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '788';
+
+        // Set the international dialing code
         $this->international_phone = '216';
 
-        $this->languages = ['ar'];
+        // Define the languages spoken in the country
+        $this->languages = ['ar']; // Arabic is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.tn'];
-        $this->wmo = 'TS';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '13 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '17 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '66%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Agence Nationale de la Sécurité Informatique (ANSI)';
+
+        // List popular web technologies in Tunisia
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'TN';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2464461';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Tunisian dinar',
+            // Currency code
+            'code' => 'TND',
+            // Currency symbol
+            'symbol' => 'د.ت',
+            // Main unit
+            'main_unit' => 'dinar',
+            // Subunit
+            'sub_unit' => 'millime',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 1000,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50'],
+            // Main coins
+            'coins_main' => ['1'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '20', '50', '100'],
+        ];
+
+        // Set the population
+        $this->population = 11722038; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 163610; // km²
+
+        // Set the capital city
+        $this->capital = 'Tunis';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Africa/Tunis',
+                // Standard time offset
+                'standard_time' => 'UTC+1',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1956-03-20'; // Independence from France
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union (AU)',
+            'Arab League',
+            'Organisation of Islamic Cooperation (OIC)',
+            'Union for the Mediterranean',
+            'World Trade Organization (WTO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 43.9; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam (Sunni)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary semi-presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Tunisia
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Algeria', 'iso_alpha_2' => 'DZ'],
+            ['name' => 'Libya', 'iso_alpha_2' => 'LY'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇹🇳',
+            // Unicode code points
             'uCode' => 'U+1F1F9 U+1F1F3',
+            // HTML entities
+            'html' => '&#x1F1F9;&#x1F1F3;',
+            // CSS entities
+            'css' => '\\1F1F9\\1F1F3',
+            // Decimal Unicode entities
+            'decimal' => '&#127481;&#127475;',
+            // Direct UTF-8 string
+            'utf8' => '🇹🇳',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF9\uD83C\uDDF3',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-tn:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F9;&#x1F1F3;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#E70013',
+                // RGB color values
+                'rgb' => '231,0,19',
+                // CMYK color values
+                'cmyk' => '0,100,92,9',
+                // HSL color values
+                'hsl' => '355°,100%,45%',
+                // HSV color values
+                'hsv' => '355°,100%,91%',
+                // Pantone color code
+                'pantone' => '1795 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '34 00 N',
-                'desc' => '34.33528518676758',
-            ],
-            'longitude' => [
-                'classic' => '9 00 E',
-                'desc' => '9.245259284973145',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '37.566667',
-                'min' => '26',
-            ],
-            'longitude' => [
-                'max' => '13',
-                'min' => '7',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '33.8869',
+            // Longitude in decimal degrees
+            'longitude' => '9.5375',
+            // Degrees with decimal
+            'dd' => '33.8869° N, 9.5375° E',
+            // Degrees, minutes, seconds
+            'dms' => '33°53\'12.84" N, 9°32\'15.00" E',
+            // Degrees and decimal minutes
+            'dm' => '33°53.214\' N, 9°32.25\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

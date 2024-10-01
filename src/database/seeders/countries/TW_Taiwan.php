@@ -29,53 +29,226 @@ class TW_Taiwan extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Taiwan';
+
+        // Set the country's official name
         $this->official_name = 'Republic of China (Taiwan)';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'TW';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'TWN';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '158';
+
+        // Set the international dialing code
         $this->international_phone = '886';
 
-        $this->languages = ['zh'];
-        $this->tld = ['.tw',".\u53f0\u6e7e",".\u53f0\u7063"];
-        $this->wmo = '0';
+        // Define the languages spoken in the country
+        $this->languages = ['zh', 'zh-tw']; // Mandarin Chinese is the official language (Traditional Chinese script)
+
+        // Define the top-level domain(s)
+        $this->tld = ['.tw'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '100 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '55 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '92%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'National Communications Commission (NCC)';
+
+        // List popular web technologies in Taiwan
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'TW';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1668284';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'New Taiwan dollar',
+            // Currency code
+            'code' => 'TWD',
+            // Currency symbol
+            'symbol' => 'NT$',
+            // Main unit
+            'main_unit' => 'dollar',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['100', '200', '500', '1000', '2000'],
+            // Main coins
+            'coins_main' => ['1', '5', '10', '50'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '50'],
+        ];
+
+        // Set the population
+        $this->population = 23503349; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 36197; // km²
+
+        // Set the capital city
+        $this->capital = 'Taipei';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Taipei',
+                // Standard time offset
+                'standard_time' => 'UTC+8',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day (de facto)
+        $this->independence_day = '1912-01-01'; // Founding of the Republic of China
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'World Trade Organization (WTO)',
+            'Asia-Pacific Economic Cooperation (APEC)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 756.5; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Buddhism',
+            'Taoism',
+            'Christianity',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Semi-presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Baseball'; // Baseball is one of the most popular sports in Taiwan
+
+        // Define bordering countries
+        $this->borders = []; // Taiwan is an island nation with no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇹🇼',
+            // Unicode code points
             'uCode' => 'U+1F1F9 U+1F1FC',
+            // HTML entities
+            'html' => '&#x1F1F9;&#x1F1FC;',
+            // CSS entities
+            'css' => '\\1F1F9\\1F1FC',
+            // Decimal Unicode entities
+            'decimal' => '&#127481;&#127484;',
+            // Direct UTF-8 string
+            'utf8' => '🇹🇼',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF9\uD83C\uDDFC',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-tw:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F9;&#x1F1FC;',
         ];
-        $this->color = [
-            'hex' => [
-                '#0000ff',
-                '#ffffff',
-                '#ff0000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#FE0000',
+                // RGB color values
+                'rgb' => '254,0,0',
+                // CMYK color values
+                'cmyk' => '0,100,100,0',
+                // HSL color values
+                'hsl' => '0°,100%,50%',
+                // HSV color values
+                'hsv' => '0°,100%,100%',
+                // Pantone color code
+                'pantone' => 'Red 032 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,0,255',
-                '255,255,255',
-                '255,0,0',
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#000080',
+                // RGB color values
+                'rgb' => '0,0,128',
+                // CMYK color values
+                'cmyk' => '100,100,0,50',
+                // HSL color values
+                'hsl' => '240°,100%,25%',
+                // HSV color values
+                'hsv' => '240°,100%,50%',
+                // Pantone color code
+                'pantone' => '281 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '23 30 N',
-                'desc' => '23.685789108276367',
-            ],
-            'longitude' => [
-                'classic' => '121 00 E',
-                'desc' => '120.89749145507812',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '26.389444',
-                'min' => '21.733333',
-            ],
-            'longitude' => [
-                'max' => '122.107778',
-                'min' => '118.1152555661',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '23.6978',
+            // Longitude in decimal degrees
+            'longitude' => '120.9605',
+            // Degrees with decimal
+            'dd' => '23.6978° N, 120.9605° E',
+            // Degrees, minutes, seconds
+            'dms' => '23°41\'52.08" N, 120°57\'37.80" E',
+            // Degrees and decimal minutes
+            'dm' => '23°41.868\' N, 120°57.63\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

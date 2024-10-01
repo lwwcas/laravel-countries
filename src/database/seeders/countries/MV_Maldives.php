@@ -29,51 +29,228 @@ class MV_Maldives extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Maldives';
+
+        // Set the country's official name
         $this->official_name = 'Republic of the Maldives';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'MV';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'MDV';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '462';
+
+        // Set the international dialing code
         $this->international_phone = '960';
 
-        $this->languages = ['dv'];
+        // Define the languages spoken in the country
+        $this->languages = ['dv']; // Dhivehi is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.mv'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '30 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '20 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '65%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'CERT Maldives';
+
+        // List popular web technologies in the Maldives
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'MV';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1282028';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Maldivian rufiyaa',
+            // Currency code
+            'code' => 'MVR',
+            // Currency symbol
+            'symbol' => 'Rf',
+            // Main unit
+            'main_unit' => 'rufiyaa',
+            // Subunit
+            'sub_unit' => 'laari',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100', '500', '1000'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 540542; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 298; // km²
+
+        // Set the capital city
+        $this->capital = 'Malé';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Indian/Maldives',
+                // Standard time offset
+                'standard_time' => 'UTC+5',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1965-07-26'; // Independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Commonwealth of Nations',
+            'South Asian Association for Regional Cooperation (SAARC)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 5.6; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam (Sunni)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is highly popular in the Maldives
+
+        // Define bordering countries
+        $this->borders = []; // As an island nation, the Maldives has no bordering countries
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇲🇻',
+            // Unicode code points
             'uCode' => 'U+1F1F2 U+1F1FB',
+            // HTML entities
+            'html' => '&#x1F1F2;&#x1F1FB;',
+            // CSS entities
+            'css' => '\\1F1F2\\1F1FB',
+            // Decimal Unicode entities
+            'decimal' => '&#127474;&#127483;',
+            // Direct UTF-8 string
+            'utf8' => '🇲🇻',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF2\uD83C\uDDFB',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-mv:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F2;&#x1F1FB;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#FF0000',
+                // RGB color values
+                'rgb' => '255,0,0',
+                // CMYK color values
+                'cmyk' => '0,100,100,0',
+                // HSL color values
+                'hsl' => '0°,100%,50%',
+                // HSV color values
+                'hsv' => '0°,100%,100%',
+                // Pantone color code
+                'pantone' => '485 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#007A33',
+                // RGB color values
+                'rgb' => '0,122,51',
+                // CMYK color values
+                'cmyk' => '100,0,58,52',
+                // HSL color values
+                'hsl' => '146°,100%,24%',
+                // HSV color values
+                'hsv' => '146°,100%,48%',
+                // Pantone color code
+                'pantone' => '348 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '3 15 N',
-                'desc' => '4.185884952545166',
-            ],
-            'longitude' => [
-                'classic' => '73 00 E',
-                'desc' => '73.53071594238281',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '7.1',
-                'min' => '-0.7',
-            ],
-            'longitude' => [
-                'max' => '73.7',
-                'min' => '72.583333',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '3.2028',
+            // Longitude in decimal degrees
+            'longitude' => '73.2207',
+            // Degrees with decimal
+            'dd' => '3.2028° N, 73.2207° E',
+            // Degrees, minutes, seconds
+            'dms' => '3°12\'10.08" N, 73°13\'14.52" E',
+            // Degrees and decimal minutes
+            'dm' => '3°12.168\' N, 73°13.242\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

@@ -29,51 +29,231 @@ class TM_Turkmenistan extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Turkmenistan';
+
+        // Set the country's official name
         $this->official_name = 'Turkmenistan';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'TM';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'TKM';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '795';
+
+        // Set the international dialing code
         $this->international_phone = '993';
 
-        $this->languages = ['tk','ru'];
+        // Define the languages spoken in the country
+        $this->languages = ['tk']; // Turkmen is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.tm'];
-        $this->wmo = 'TR';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '3 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '2 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '21%'; // Low internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'National Security Agency of Turkmenistan';
+
+        // List popular web technologies in Turkmenistan
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'TM';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1218197';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Turkmenistani manat',
+            // Currency code
+            'code' => 'TMT',
+            // Currency symbol
+            'symbol' => 'm',
+            // Main unit
+            'main_unit' => 'manat',
+            // Subunit
+            'sub_unit' => 'tenge',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '5', '10', '20', '50', '100', '500'],
+            // Main coins
+            'coins_main' => ['1', '2', '5'],
+            // Subunit coins
+            'coins_sub' => ['1', '2', '5', '10', '20', '50'],
+        ];
+
+        // Set the population
+        $this->population = 6031187; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 488100; // km²
+
+        // Set the capital city
+        $this->capital = 'Ashgabat';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Ashgabat',
+                // Standard time offset
+                'standard_time' => 'UTC+5',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1991-10-27'; // Independence from the Soviet Union
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Commonwealth of Independent States (CIS)',
+            'Economic Cooperation Organization (ECO)',
+            'Organization for Security and Co-operation in Europe (OSCE)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 45.9; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam (Sunni)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Wrestling'; // Traditional Turkmen wrestling is popular
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Afghanistan', 'iso_alpha_2' => 'AF'],
+            ['name' => 'Iran', 'iso_alpha_2' => 'IR'],
+            ['name' => 'Kazakhstan', 'iso_alpha_2' => 'KZ'],
+            ['name' => 'Uzbekistan', 'iso_alpha_2' => 'UZ'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇹🇲',
+            // Unicode code points
             'uCode' => 'U+1F1F9 U+1F1F2',
+            // HTML entities
+            'html' => '&#x1F1F9;&#x1F1F2;',
+            // CSS entities
+            'css' => '\\1F1F9\\1F1F2',
+            // Decimal Unicode entities
+            'decimal' => '&#127481;&#127474;',
+            // Direct UTF-8 string
+            'utf8' => '🇹🇲',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF9\uD83C\uDDF2',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-tm:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F9;&#x1F1F2;',
         ];
-        $this->color = [
-            'hex' => [
-                '#008000',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#006400',
+                // RGB color values
+                'rgb' => '0,100,0',
+                // CMYK color values
+                'cmyk' => '100,0,100,60',
+                // HSL color values
+                'hsl' => '120°,100%,20%',
+                // HSV color values
+                'hsv' => '120°,100%,39%',
+                // Pantone color code
+                'pantone' => 'Green C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,128,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#D52B1E',
+                // RGB color values
+                'rgb' => '213,43,30',
+                // CMYK color values
+                'cmyk' => '0,80,86,16',
+                // HSL color values
+                'hsl' => '4°,76%,48%',
+                // HSV color values
+                'hsv' => '4°,86%,83%',
+                // Pantone color code
+                'pantone' => '1797 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '40 00 N',
-                'desc' => '39.2012825012207',
-            ],
-            'longitude' => [
-                'classic' => '60 00 E',
-                'desc' => '59.082252502441406',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '42.566667',
-                'min' => '35.216667',
-            ],
-            'longitude' => [
-                'max' => '66.65',
-                'min' => '52.5',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '38.9697',
+            // Longitude in decimal degrees
+            'longitude' => '59.5563',
+            // Degrees with decimal
+            'dd' => '38.9697° N, 59.5563° E',
+            // Degrees, minutes, seconds
+            'dms' => '38°58\'10.92" N, 59°33\'22.68" E',
+            // Degrees and decimal minutes
+            'dm' => '38°58.182\' N, 59°33.378\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

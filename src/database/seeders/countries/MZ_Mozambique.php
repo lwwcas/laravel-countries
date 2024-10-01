@@ -29,57 +29,277 @@ class MZ_Mozambique extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Mozambique';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Mozambique';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'MZ';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'MOZ';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '508';
+
+        // Set the international dialing code
         $this->international_phone = '258';
 
-        $this->languages = ['pt'];
+        // Define the languages spoken in the country
+        $this->languages = ['pt']; // Portuguese is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.mz'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '10 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '5 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '20%'; // Low internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'CERT-MOZ';
+
+        // List popular web technologies in Mozambique
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'MZ';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1036973';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Mozambican metical',
+            // Currency code
+            'code' => 'MZN',
+            // Currency symbol
+            'symbol' => 'MT',
+            // Main unit
+            'main_unit' => 'metical',
+            // Subunit
+            'sub_unit' => 'centavo',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['20', '50', '100', '200', '500', '1000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '50'],
+        ];
+
+        // Set the population
+        $this->population = 31255435; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 801590; // km²
+
+        // Set the capital city
+        $this->capital = 'Maputo';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Africa/Maputo',
+                // Standard time offset
+                'standard_time' => 'UTC+2',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1975-06-25'; // Independence from Portugal
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union (AU)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Southern African Development Community (SADC)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 15.3; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism, Protestantism)',
+            'Islam',
+            'Traditional African Religions',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary semi-presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is highly popular in Mozambique
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'South Africa', 'iso_alpha_2' => 'ZA'],
+            ['name' => 'Zimbabwe', 'iso_alpha_2' => 'ZW'],
+            ['name' => 'Swaziland', 'iso_alpha_2' => 'SZ'],
+            ['name' => 'Tanzania', 'iso_alpha_2' => 'TZ'],
+            ['name' => 'Zambia', 'iso_alpha_2' => 'ZM'],
+            ['name' => 'Malawi', 'iso_alpha_2' => 'MW'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇲🇿',
+            // Unicode code points
             'uCode' => 'U+1F1F2 U+1F1FF',
+            // HTML entities
+            'html' => '&#x1F1F2;&#x1F1FF;',
+            // CSS entities
+            'css' => '\\1F1F2\\1F1FF',
+            // Decimal Unicode entities
+            'decimal' => '&#127474;&#127487;',
+            // Direct UTF-8 string
+            'utf8' => '🇲🇿',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF2\uD83C\uDDFF',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-mz:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F2;&#x1F1FF;',
         ];
-        $this->color = [
-            'hex' => [
-                '#008000',
-                '#000000',
-                '#ffff00',
-                '#ff0000',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#00A651',
+                // RGB color values
+                'rgb' => '0,166,81',
+                // CMYK color values
+                'cmyk' => '100,0,51,35',
+                // HSL color values
+                'hsl' => '142°,100%,32%',
+                // HSV color values
+                'hsv' => '142°,100%,65%',
+                // Pantone color code
+                'pantone' => '354 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,128,0',
-                '0,0,0',
-                '255,255,0',
-                '255,0,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'Black',
+                // Web color name
+                'web_name' => 'black',
+                // Hexadecimal color code
+                'hex' => '#000000',
+                // RGB color values
+                'rgb' => '0,0,0',
+                // CMYK color values
+                'cmyk' => '0,0,0,100',
+                // HSL color values
+                'hsl' => '0°,0%,0%',
+                // HSV color values
+                'hsv' => '0°,0%,0%',
+                // Pantone color code
+                'pantone' => 'Black C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFD100',
+                // RGB color values
+                'rgb' => '255,209,0',
+                // CMYK color values
+                'cmyk' => '0,18,100,0',
+                // HSL color values
+                'hsl' => '50°,100%,50%',
+                // HSV color values
+                'hsv' => '50°,100%,100%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#EF3340',
+                // RGB color values
+                'rgb' => '239,51,64',
+                // CMYK color values
+                'cmyk' => '0,79,73,6',
+                // HSL color values
+                'hsl' => '355°,82%,57%',
+                // HSV color values
+                'hsv' => '355°,79%,94%',
+                // Pantone color code
+                'pantone' => '1795 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '18 15 S',
-                'desc' => '-17.555864334106445',
-            ],
-            'longitude' => [
-                'classic' => '35 00 E',
-                'desc' => '35.955692291259766',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '15.033333',
-                'min' => '-26.857222',
-            ],
-            'longitude' => [
-                'max' => '40.845278',
-                'min' => '30.231389',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '-18.6657',
+            // Longitude in decimal degrees
+            'longitude' => '35.5296',
+            // Degrees with decimal
+            'dd' => '18.6657° S, 35.5296° E',
+            // Degrees, minutes, seconds
+            'dms' => '18°39\'56.52" S, 35°31\'46.56" E',
+            // Degrees and decimal minutes
+            'dm' => '18°39.942\' S, 35°31.776\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

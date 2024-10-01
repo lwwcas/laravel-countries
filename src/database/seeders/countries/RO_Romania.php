@@ -29,53 +29,235 @@ class RO_Romania extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Romania';
+
+        // Set the country's official name
         $this->official_name = 'Romania';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'RO';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'ROU';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '642';
+
+        // Set the international dialing code
         $this->international_phone = '40';
 
-        $this->languages = ['ro'];
+        // Define the languages spoken in the country
+        $this->languages = ['ro']; // Romanian is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.ro'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = ['.com.ro', '.org.ro', '.net.ro', '.gov.ro']; // Common alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '170 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '55 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '85%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Centrul National de Raspuns la Incidente de Securitate Cibernetica (CERT-RO)';
+
+        // List popular web technologies in Romania
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'RO';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '798549';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Romanian leu',
+            // Currency code
+            'code' => 'RON',
+            // Currency symbol
+            'symbol' => 'lei',
+            // Main unit
+            'main_unit' => 'leu',
+            // Subunit
+            'sub_unit' => 'bani',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '5', '10', '50', '100', '200', '500'],
+            // Main coins
+            'coins_main' => ['1', '5', '10', '50'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '50'],
+        ];
+
+        // Set the population
+        $this->population = 19140658; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 238397; // km²
+
+        // Set the capital city
+        $this->capital = 'Bucharest';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Europe/Bucharest',
+                // Standard time offset
+                'standard_time' => 'UTC+2',
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+3',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1877-05-09'; // Independence from the Ottoman Empire
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'European Union (EU)',
+            'North Atlantic Treaty Organization (NATO)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'Schengen Area (candidate)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 286.5; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Eastern Orthodox)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary semi-presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Romania
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Hungary', 'iso_alpha_2' => 'HU'],
+            ['name' => 'Ukraine', 'iso_alpha_2' => 'UA'],
+            ['name' => 'Moldova', 'iso_alpha_2' => 'MD'],
+            ['name' => 'Bulgaria', 'iso_alpha_2' => 'BG'],
+            ['name' => 'Serbia', 'iso_alpha_2' => 'RS'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇷🇴',
+            // Unicode code points
             'uCode' => 'U+1F1F7 U+1F1F4',
+            // HTML entities
+            'html' => '&#x1F1F7;&#x1F1F4;',
+            // CSS entities
+            'css' => '\\1F1F7\\1F1F4',
+            // Decimal Unicode entities
+            'decimal' => '&#127479;&#127476;',
+            // Direct UTF-8 string
+            'utf8' => '🇷🇴',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF7\uD83C\uDDF4',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-ro:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F7;&#x1F1F4;',
         ];
-        $this->color = [
-            'hex' => [
-                '#0000ff',
-                '#ffff00',
-                '#ff0000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#002B7F',
+                // RGB color values
+                'rgb' => '0,43,127',
+                // CMYK color values
+                'cmyk' => '100,66,0,50',
+                // HSL color values
+                'hsl' => '220°,100%,25%',
+                // HSV color values
+                'hsv' => '220°,100%,50%',
+                // Pantone color code
+                'pantone' => 'Reflex Blue C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,0,255',
-                '255,255,0',
-                '255,0,0',
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFD700',
+                // RGB color values
+                'rgb' => '255,215,0',
+                // CMYK color values
+                'cmyk' => '0,16,100,0',
+                // HSL color values
+                'hsl' => '51°,100%,50%',
+                // HSV color values
+                'hsv' => '51°,100%,100%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#CE1126',
+                // RGB color values
+                'rgb' => '206,17,38',
+                // CMYK color values
+                'cmyk' => '0,92,82,19',
+                // HSL color values
+                'hsl' => '355°,85%,44%',
+                // HSV color values
+                'hsv' => '355°,92%,81%',
+                // Pantone color code
+                'pantone' => 'Red 032 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '46 00 N',
-                'desc' => '45.83774185180664',
-            ],
-            'longitude' => [
-                'classic' => '25 00 E',
-                'desc' => '25.005935668945312',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '48.25',
-                'min' => '43.666667',
-            ],
-            'longitude' => [
-                'max' => '29.65',
-                'min' => '19',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '45.9432',
+            // Longitude in decimal degrees
+            'longitude' => '24.9668',
+            // Degrees with decimal
+            'dd' => '45.9432° N, 24.9668° E',
+            // Degrees, minutes, seconds
+            'dms' => '45°56\'35.52" N, 24°58\'0.48" E',
+            // Degrees and decimal minutes
+            'dm' => '45°56.592\' N, 24°58.008\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

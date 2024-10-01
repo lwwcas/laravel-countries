@@ -29,51 +29,216 @@ class TR_Turkey extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Turkey';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Turkey';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'TR';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'TUR';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '792';
+
+        // Set the international dialing code
         $this->international_phone = '90';
 
-        $this->languages = ['tr'];
+        // Define the languages spoken in the country
+        $this->languages = ['tr']; // Turkish is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.tr'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '30 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '28 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '77%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Turkish National Computer Emergency Response Team (TR-CERT)';
+
+        // List popular web technologies in Turkey
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'TU';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '298795';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Turkish lira',
+            // Currency code
+            'code' => 'TRY',
+            // Currency symbol
+            'symbol' => '₺',
+            // Main unit
+            'main_unit' => 'lira',
+            // Subunit
+            'sub_unit' => 'kuruş',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100', '200'],
+            // Main coins
+            'coins_main' => ['1'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 84339067; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 783356; // km²
+
+        // Set the capital city
+        $this->capital = 'Ankara';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Europe/Istanbul',
+                // Standard time offset
+                'standard_time' => 'UTC+3',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1923-10-29'; // Founding of the Republic of Turkey
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'North Atlantic Treaty Organization (NATO)',
+            'World Trade Organization (WTO)',
+            'Organisation for Economic Co-operation and Development (OECD)',
+            'Organization of Islamic Cooperation (OIC)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 720; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam (Sunni)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Turkey
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Greece', 'iso_alpha_2' => 'GR'],
+            ['name' => 'Bulgaria', 'iso_alpha_2' => 'BG'],
+            ['name' => 'Georgia', 'iso_alpha_2' => 'GE'],
+            ['name' => 'Armenia', 'iso_alpha_2' => 'AM'],
+            ['name' => 'Azerbaijan', 'iso_alpha_2' => 'AZ'],
+            ['name' => 'Iran', 'iso_alpha_2' => 'IR'],
+            ['name' => 'Iraq', 'iso_alpha_2' => 'IQ'],
+            ['name' => 'Syria', 'iso_alpha_2' => 'SY'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇹🇷',
+            // Unicode code points
             'uCode' => 'U+1F1F9 U+1F1F7',
+            // HTML entities
+            'html' => '&#x1F1F9;&#x1F1F7;',
+            // CSS entities
+            'css' => '\\1F1F9\\1F1F7',
+            // Decimal Unicode entities
+            'decimal' => '&#127481;&#127479;',
+            // Direct UTF-8 string
+            'utf8' => '🇹🇷',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF9\uD83C\uDDF7',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-tr:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F9;&#x1F1F7;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#E30A17',
+                // RGB color values
+                'rgb' => '227,10,23',
+                // CMYK color values
+                'cmyk' => '0,96,90,11',
+                // HSL color values
+                'hsl' => '356°,91%,46%',
+                // HSV color values
+                'hsv' => '356°,96%,89%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '39 00 N',
-                'desc' => '39.05101013183594',
-            ],
-            'longitude' => [
-                'classic' => '35 00 E',
-                'desc' => '34.93033981323242',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '42.1',
-                'min' => '35.819444',
-            ],
-            'longitude' => [
-                'max' => '44.8',
-                'min' => '25',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '38.9637',
+            // Longitude in decimal degrees
+            'longitude' => '35.2433',
+            // Degrees with decimal
+            'dd' => '38.9637° N, 35.2433° E',
+            // Degrees, minutes, seconds
+            'dms' => '38°57\'49.32" N, 35°14\'35.88" E',
+            // Degrees and decimal minutes
+            'dm' => '38°57.822\' N, 35°14.598\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

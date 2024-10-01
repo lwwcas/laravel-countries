@@ -29,53 +29,248 @@ class VI_VirginIslandsUS extends CountrySeeder
      */
     public function run()
     {
-        $this->name = 'Virgin Islands, US';
+        // Set the country's common name
+        $this->name = 'United States Virgin Islands';
+
+        // Set the country's official name
         $this->official_name = 'Virgin Islands of the United States';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'VI';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'VIR';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '850';
+
+        // Set the international dialing code
         $this->international_phone = '1-340';
 
-        $this->languages = ['en'];
+        // Define the languages spoken in the country
+        $this->languages = ['en']; // English is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.vi'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '100 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '40 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '80%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'United States Cybersecurity and Infrastructure Security Agency (CISA)';
+
+        // List popular web technologies in the United States Virgin Islands
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'Ruby on Rails'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'VI';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '4796775';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'United States Dollar',
+            // Currency code
+            'code' => 'USD',
+            // Currency symbol
+            'symbol' => '$',
+            // Main unit
+            'main_unit' => 'dollar',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '5', '10', '20', '50', '100'],
+            // Main coins
+            'coins_main' => ['1', '5', '10', '25'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '25'],
+        ];
+
+        // Set the population
+        $this->population = 104425; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 346.36; // km²
+
+        // Set the capital city
+        $this->capital = 'Charlotte Amalie';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'America/St_Thomas',
+                // Standard time offset
+                'standard_time' => 'UTC-4',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = null; // U.S. Territory, no independence day
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations (Observer)',
+            'Caribbean Community (CARICOM)',
+            'Organization of Eastern Caribbean States (OECS)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 4.2; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Protestantism)',
+            'Roman Catholicism',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Territorial government under U.S. federal law';
+
+        // Set the national sport
+        $this->national_sport = 'Basketball'; // Basketball is popular in the United States Virgin Islands
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'British Virgin Islands', 'iso_alpha_2' => 'VG'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇻🇮',
+            // Unicode code points
             'uCode' => 'U+1F1FB U+1F1EE',
+            // HTML entities
+            'html' => '&#x1F1FB;&#x1F1EE;',
+            // CSS entities
+            'css' => '\\1F1FB\\1F1EE',
+            // Decimal Unicode entities
+            'decimal' => '&#127483;&#127470;',
+            // Direct UTF-8 string
+            'utf8' => '🇻🇮',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDFB\uD83C\uDDEE',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-vi:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1FB;&#x1F1EE;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ffffff',
-                '#ffff66',
-                '#0066ff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
-            'rgb' => [
-                '255,255,255',
-                '255,255,102',
-                '0,102,255',
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFD100',
+                // RGB color values
+                'rgb' => '255,209,0',
+                // CMYK color values
+                'cmyk' => '0,18,100,0',
+                // HSL color values
+                'hsl' => '48°,100%,50%',
+                // HSV color values
+                'hsv' => '48°,100%,100%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#005BAC',
+                // RGB color values
+                'rgb' => '0,91,172',
+                // CMYK color values
+                'cmyk' => '100,47,0,33',
+                // HSL color values
+                'hsl' => '206°,100%,34%',
+                // HSV color values
+                'hsv' => '206°,100%,67%',
+                // Pantone color code
+                'pantone' => '2935 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#CE1126',
+                // RGB color values
+                'rgb' => '206,17,38',
+                // CMYK color values
+                'cmyk' => '0,92,82,19',
+                // HSL color values
+                'hsl' => '356°,84%,44%',
+                // HSV color values
+                'hsv' => '356°,92%,81%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '',
-                'desc' => '17.75262451171875',
-            ],
-            'longitude' => [
-                'classic' => '',
-                'desc' => '-64.73542022705078',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '18.458139',
-                'min' => '17.681721',
-            ],
-            'longitude' => [
-                'max' => '-64.565170',
-                'min' => '-65.086281',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '18.3358',
+            // Longitude in decimal degrees
+            'longitude' => '-64.8963',
+            // Degrees with decimal
+            'dd' => '18.3358° N, 64.8963° W',
+            // Degrees, minutes, seconds
+            'dms' => '18°20\'8.88" N, 64°53\'46.68" W',
+            // Degrees and decimal minutes
+            'dm' => '18°20.148\' N, 64°53.778\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

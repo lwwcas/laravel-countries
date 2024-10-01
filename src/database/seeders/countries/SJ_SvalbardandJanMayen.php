@@ -29,47 +29,224 @@ class SJ_SvalbardandJanMayen extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Svalbard and Jan Mayen';
-        $this->official_name = 'Svalbard og Jan Mayen';
-        $this->iso_alpha_2 = 'SJ';
-        $this->iso_alpha_3 = 'SJM';
-        $this->iso_numeric = '744';
-        $this->international_phone = '47';
 
-        $this->languages = ['no'];
+        // Set the country's official name
+        $this->official_name = 'Svalbard og Jan Mayen';
+
+        // Set the ISO 3166-1 alpha-2 code
+        $this->iso_alpha_2 = 'SJ';
+
+        // Set the ISO 3166-1 alpha-3 code
+        $this->iso_alpha_3 = 'SJM';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
+        $this->iso_numeric = '744';
+
+        // Set the international dialing code
+        $this->international_phone = '47'; // Uses the same dialing code as Norway
+
+        // Define the languages spoken in the country
+        $this->languages = ['no']; // Norwegian is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.sj'];
-        $this->wmo = 'SZ';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '20 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '10 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '60%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Norwegian National Security Authority (NSM)';
+
+        // List popular web technologies in Svalbard and Jan Mayen
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'SJ';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '607072';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Norwegian krone',
+            // Currency code
+            'code' => 'NOK',
+            // Currency symbol
+            'symbol' => 'kr',
+            // Main unit
+            'main_unit' => 'krone',
+            // Subunit
+            'sub_unit' => 'øre',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['50', '100', '200', '500', '1000'],
+            // Main coins
+            'coins_main' => ['1', '5', '10', '20'],
+            // Subunit coins
+            'coins_sub' => ['50'],
+        ];
+
+        // Set the population
+        $this->population = 2562; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 61399; // km²
+
+        // Set the capital city
+        $this->capital = 'Longyearbyen'; // For Svalbard, Jan Mayen has no permanent population
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Arctic/Longyearbyen',
+                // Standard time offset
+                'standard_time' => 'UTC+1',
+                // Daylight saving time offset
+                'daylight_time' => 'UTC+2',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = null; // Svalbard and Jan Mayen are under Norwegian sovereignty
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'Norwegian sovereignty (part of the Kingdom of Norway)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 0.045; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Lutheranism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Territory under Norwegian sovereignty';
+
+        // Set the national sport
+        $this->national_sport = 'Skiing'; // Skiing is popular due to the region's cold climate
+
+        // Define bordering countries
+        $this->borders = []; // Svalbard and Jan Mayen are island territories with no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇸🇯',
+            // Unicode code points
             'uCode' => 'U+1F1F8 U+1F1EF',
+            // HTML entities
+            'html' => '&#x1F1F8;&#x1F1EF;',
+            // CSS entities
+            'css' => '\\1F1F8\\1F1EF',
+            // Decimal Unicode entities
+            'decimal' => '&#127480;&#127471;',
+            // Direct UTF-8 string
+            'utf8' => '🇸🇯',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF8\uD83C\uDDEF',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-sj:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F8;&#x1F1EF;',
         ];
-        $this->color = [
-            'hex' => [
+
+        // Define the colors of the country's flag (same as Norway's flag) with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#BA0C2F',
+                // RGB color values
+                'rgb' => '186,12,47',
+                // CMYK color values
+                'cmyk' => '0,93,75,27',
+                // HSL color values
+                'hsl' => '348°,90%,39%',
+                // HSV color values
+                'hsv' => '348°,93%,73%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#00205B',
+                // RGB color values
+                'rgb' => '0,32,91',
+                // CMYK color values
+                'cmyk' => '100,87,42,47',
+                // HSL color values
+                'hsl' => '220°,100%,18%',
+                // HSV color values
+                'hsv' => '220°,100%,36%',
+                // Pantone color code
+                'pantone' => '288 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '78 00 N',
-                'desc' => '71.04893493652344',
-            ],
-            'longitude' => [
-                'classic' => '20 00 E',
-                'desc' => '-8.195747375488281',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '80.816667',
-                'min' => '74.35',
-            ],
-            'longitude' => [
-                'max' => '32.583333',
-                'min' => '10.5',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '78.2232',
+            // Longitude in decimal degrees
+            'longitude' => '15.6469',
+            // Degrees with decimal
+            'dd' => '78.2232° N, 15.6469° E',
+            // Degrees, minutes, seconds
+            'dms' => '78°13\'23.52" N, 15°38\'48.84" E',
+            // Degrees and decimal minutes
+            'dm' => '78°13.392\' N, 15°38.814\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

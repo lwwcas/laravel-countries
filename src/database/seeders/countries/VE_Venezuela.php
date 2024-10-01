@@ -29,53 +29,233 @@ class VE_Venezuela extends CountrySeeder
      */
     public function run()
     {
+
+        // Set the country's common name
         $this->name = 'Venezuela';
+
+        // Set the country's official name
         $this->official_name = 'Bolivarian Republic of Venezuela';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'VE';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'VEN';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '862';
+
+        // Set the international dialing code
         $this->international_phone = '58';
 
-        $this->languages = ['es'];
+        // Define the languages spoken in the country
+        $this->languages = ['es']; // Spanish is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.ve'];
-        $this->wmo = 'VN';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '20 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '5 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '63%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Venezuelan Superintendency of Electronic Certification Services';
+
+        // List popular web technologies in Venezuela
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'VE';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '3625428';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Bolívar Soberano',
+            // Currency code
+            'code' => 'VES',
+            // Currency symbol
+            'symbol' => 'Bs.',
+            // Main unit
+            'main_unit' => 'bolívar',
+            // Subunit
+            'sub_unit' => 'céntimo',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100'],
+            // Main coins
+            'coins_main' => ['1', '5', '10', '50'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10'],
+        ];
+
+        // Set the population
+        $this->population = 28435940; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 916445; // km²
+
+        // Set the capital city
+        $this->capital = 'Caracas';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'America/Caracas',
+                // Standard time offset
+                'standard_time' => 'UTC-4',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1811-07-05'; // Independence from Spain
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Organization of American States (OAS)',
+            'Petrocaribe',
+            'Union of South American Nations (UNASUR)',
+            'Community of Latin American and Caribbean States (CELAC)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 482.4; // GDP in billions of USD (2023 estimates)
+
+        // List the predominant religions
+        $this->religions = [
+            'Roman Catholicism',
+            'Protestantism',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Federal presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Baseball'; // Baseball is the most popular sport in Venezuela
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Brazil', 'iso_alpha_2' => 'BR'],
+            ['name' => 'Colombia', 'iso_alpha_2' => 'CO'],
+            ['name' => 'Guyana', 'iso_alpha_2' => 'GY'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇻🇪',
+            // Unicode code points
             'uCode' => 'U+1F1FB U+1F1EA',
+            // HTML entities
+            'html' => '&#x1F1FB;&#x1F1EA;',
+            // CSS entities
+            'css' => '\\1F1FB\\1F1EA',
+            // Decimal Unicode entities
+            'decimal' => '&#127483;&#127466;',
+            // Direct UTF-8 string
+            'utf8' => '🇻🇪',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDFB\uD83C\uDDEA',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-ve:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1FB;&#x1F1EA;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ffff00',
-                '#0000ff',
-                '#ff0000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFD100',
+                // RGB color values
+                'rgb' => '255,209,0',
+                // CMYK color values
+                'cmyk' => '0,18,100,0',
+                // HSL color values
+                'hsl' => '48°,100%,50%',
+                // HSV color values
+                'hsv' => '48°,100%,100%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
-            'rgb' => [
-                '255,255,0',
-                '0,0,255',
-                '255,0,0',
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#0033A0',
+                // RGB color values
+                'rgb' => '0,51,160',
+                // CMYK color values
+                'cmyk' => '100,69,0,37',
+                // HSL color values
+                'hsl' => '220°,100%,41%',
+                // HSV color values
+                'hsv' => '220°,100%,63%',
+                // Pantone color code
+                'pantone' => 'Reflex Blue C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#D52B1E',
+                // RGB color values
+                'rgb' => '213,43,30',
+                // CMYK color values
+                'cmyk' => '0,80,86,16',
+                // HSL color values
+                'hsl' => '4°,78%,48%',
+                // HSV color values
+                'hsv' => '4°,86%,84%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '8 00 N',
-                'desc' => '7.665388584136963',
-            ],
-            'longitude' => [
-                'classic' => '66 00 W',
-                'desc' => '-66.14541625976562',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '15.7',
-                'min' => '0.766667',
-            ],
-            'longitude' => [
-                'max' => '-59.966667',
-                'min' => '-73.16',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '6.4238',
+            // Longitude in decimal degrees
+            'longitude' => '-66.5897',
+            // Degrees with decimal
+            'dd' => '6.4238° N, 66.5897° W',
+            // Degrees, minutes, seconds
+            'dms' => '6°25\'25.68" N, 66°35\'22.92" W',
+            // Degrees and decimal minutes
+            'dm' => '6°25.428\' N, 66°35.382\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

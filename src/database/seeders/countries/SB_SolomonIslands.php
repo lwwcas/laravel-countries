@@ -29,53 +29,246 @@ class SB_SolomonIslands extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Solomon Islands';
+
+        // Set the country's official name
         $this->official_name = 'Solomon Islands';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'SB';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'SLB';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '90';
+
+        // Set the international dialing code
         $this->international_phone = '677';
 
-        $this->languages = ['en'];
+        // Define the languages spoken in the country
+        $this->languages = ['en']; // English is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.sb'];
-        $this->wmo = 'SO';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '10 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '5 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '18%'; // Low internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Solomon Islands Government Communications Unit';
+
+        // List popular web technologies in the Solomon Islands
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'SL';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2103350';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Solomon Islands dollar',
+            // Currency code
+            'code' => 'SBD',
+            // Currency symbol
+            'symbol' => '$',
+            // Main unit
+            'main_unit' => 'dollar',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['2', '5', '10', '20', '50', '100'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['10', '20', '50'],
+        ];
+
+        // Set the population
+        $this->population = 707851; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 28896; // km²
+
+        // Set the capital city
+        $this->capital = 'Honiara';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Pacific/Guadalcanal',
+                // Standard time offset
+                'standard_time' => 'UTC+11',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1978-07-07'; // Independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Commonwealth of Nations',
+            'Pacific Islands Forum',
+            'World Trade Organization (WTO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 1.55; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Anglican, Roman Catholic, Protestant)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary constitutional monarchy';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in the Solomon Islands
+
+        // Define bordering countries
+        $this->borders = []; // Solomon Islands is an island nation with no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇸🇧',
+            // Unicode code points
             'uCode' => 'U+1F1F8 U+1F1E7',
+            // HTML entities
+            'html' => '&#x1F1F8;&#x1F1E7;',
+            // CSS entities
+            'css' => '\\1F1F8\\1F1E7',
+            // Decimal Unicode entities
+            'decimal' => '&#127480;&#127463;',
+            // Direct UTF-8 string
+            'utf8' => '🇸🇧',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF8\uD83C\uDDE7',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-sb:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F8;&#x1F1E7;',
         ];
-        $this->color = [
-            'hex' => [
-                '#497e48',
-                '#ffff00',
-                '#0048ba',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#0033A0',
+                // RGB color values
+                'rgb' => '0,51,160',
+                // CMYK color values
+                'cmyk' => '100,68,0,37',
+                // HSL color values
+                'hsl' => '220°,100%,41%',
+                // HSV color values
+                'hsv' => '220°,100%,63%',
+                // Pantone color code
+                'pantone' => 'Reflex Blue C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '73,126,72',
-                '255,255,0',
-                '0,72,186',
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#009739',
+                // RGB color values
+                'rgb' => '0,151,57',
+                // CMYK color values
+                'cmyk' => '100,0,100,41',
+                // HSL color values
+                'hsl' => '147°,100%,30%',
+                // HSV color values
+                'hsv' => '147°,100%,59%',
+                // Pantone color code
+                'pantone' => '348 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFD100',
+                // RGB color values
+                'rgb' => '255,209,0',
+                // CMYK color values
+                'cmyk' => '0,18,100,0',
+                // HSL color values
+                'hsl' => '48°,100%,50%',
+                // HSV color values
+                'hsv' => '48°,100%,100%',
+                // Pantone color code
+                'pantone' => '109 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '8 00 S',
-                'desc' => '-9.548112869262695',
-            ],
-            'longitude' => [
-                'classic' => '159 00 E',
-                'desc' => '160.01930236816406',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '-5.166667',
-                'min' => '-12.883333',
-            ],
-            'longitude' => [
-                'max' => '170.2',
-                'min' => '155.516667',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '-9.6457',
+            // Longitude in decimal degrees
+            'longitude' => '160.1562',
+            // Degrees with decimal
+            'dd' => '9.6457° S, 160.1562° E',
+            // Degrees, minutes, seconds
+            'dms' => '9°38\'44.52" S, 160°9\'22.32" E',
+            // Degrees and decimal minutes
+            'dm' => '9°38.742\' S, 160°9.372\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

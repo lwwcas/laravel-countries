@@ -29,53 +29,238 @@ class ML_Mali extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Mali';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Mali';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'ML';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'MLI';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '466';
+
+        // Set the international dialing code
         $this->international_phone = '223';
 
-        $this->languages = ['fr'];
+        // Define the languages spoken in the country
+        $this->languages = ['fr', 'bm']; // French is the official language, Bambara is widely spoken
+
+        // Define the top-level domain(s)
         $this->tld = ['.ml'];
-        $this->wmo = 'MI';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '8 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '3 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '12%'; // Low internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Mali CERT';
+
+        // List popular web technologies in Mali
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'ML';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2453866';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'West African CFA franc',
+            // Currency code
+            'code' => 'XOF',
+            // Currency symbol
+            'symbol' => 'CFA',
+            // Main unit
+            'main_unit' => 'franc',
+            // Subunit
+            'sub_unit' => 'centime',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['500', '1000', '2000', '5000', '10000'],
+            // Main coins
+            'coins_main' => ['50', '100', '200', '500'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '25'],
+        ];
+
+        // Set the population
+        $this->population = 20250833; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 1240192; // km²
+
+        // Set the capital city
+        $this->capital = 'Bamako';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Africa/Bamako',
+                // Standard time offset
+                'standard_time' => 'UTC+0',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1960-09-22'; // Independence from France
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union (AU)',
+            'Economic Community of West African States (ECOWAS)',
+            'Organisation internationale de la Francophonie',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 17.1; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam (Sunni)',
+            'Traditional beliefs',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary semi-presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Mali
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Algeria', 'iso_alpha_2' => 'DZ'],
+            ['name' => 'Niger', 'iso_alpha_2' => 'NE'],
+            ['name' => 'Mauritania', 'iso_alpha_2' => 'MR'],
+            ['name' => 'Senegal', 'iso_alpha_2' => 'SN'],
+            ['name' => 'Guinea', 'iso_alpha_2' => 'GN'],
+            ['name' => 'Ivory Coast', 'iso_alpha_2' => 'CI'],
+            ['name' => 'Burkina Faso', 'iso_alpha_2' => 'BF'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇲🇱',
+            // Unicode code points
             'uCode' => 'U+1F1F2 U+1F1F1',
+            // HTML entities
+            'html' => '&#x1F1F2;&#x1F1F1;',
+            // CSS entities
+            'css' => '\\1F1F2\\1F1F1',
+            // Decimal Unicode entities
+            'decimal' => '&#127474;&#127473;',
+            // Direct UTF-8 string
+            'utf8' => '🇲🇱',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF2\uD83C\uDDF1',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-ml:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F2;&#x1F1F1;',
         ];
-        $this->color = [
-            'hex' => [
-                '#008000',
-                '#ffff00',
-                '#ff0000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#14B53A',
+                // RGB color values
+                'rgb' => '20,181,58',
+                // CMYK color values
+                'cmyk' => '89,0,68,29',
+                // HSL color values
+                'hsl' => '133°,80%,39%',
+                // HSV color values
+                'hsv' => '133°,89%,71%',
+                // Pantone color code
+                'pantone' => '355 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,128,0',
-                '255,255,0',
-                '255,0,0',
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FCD116',
+                // RGB color values
+                'rgb' => '252,209,22',
+                // CMYK color values
+                'cmyk' => '0,17,91,1',
+                // HSL color values
+                'hsl' => '48°,97%,54%',
+                // HSV color values
+                'hsv' => '48°,91%,99%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#CE1126',
+                // RGB color values
+                'rgb' => '206,17,38',
+                // CMYK color values
+                'cmyk' => '0,92,82,19',
+                // HSL color values
+                'hsl' => '352°,85%,44%',
+                // HSV color values
+                'hsv' => '352°,92%,81%',
+                // Pantone color code
+                'pantone' => '200 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '17 00 N',
-                'desc' => '17.35776710510254',
-            ],
-            'longitude' => [
-                'classic' => '4 00 W',
-                'desc' => '-3.5273818969726562',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '26',
-                'min' => '10.15',
-            ],
-            'longitude' => [
-                'max' => '13',
-                'min' => '-12.55',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '12.6392',
+            // Longitude in decimal degrees
+            'longitude' => '-8.0029',
+            // Degrees with decimal
+            'dd' => '12.6392° N, 8.0029° W',
+            // Degrees, minutes, seconds
+            'dms' => '12°38\'21.12" N, 8°0\'10.44" W',
+            // Degrees and decimal minutes
+            'dm' => '12°38.352\' N, 8°0.174\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

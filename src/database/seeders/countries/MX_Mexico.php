@@ -29,53 +29,243 @@ class MX_Mexico extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Mexico';
+
+        // Set the country's official name
         $this->official_name = 'United Mexican States';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'MX';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'MEX';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '484';
+
+        // Set the international dialing code
         $this->international_phone = '52';
 
-        $this->languages = ['es'];
+        // Define the languages spoken in the country
+        $this->languages = ['es']; // Spanish is the official language, with many indigenous languages also spoken
+
+        // Define the top-level domain(s)
         $this->tld = ['.mx'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = ['.com.mx', '.gob.mx', '.edu.mx']; // Common alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '50 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '20 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '65%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Mexico CERT';
+
+        // List popular web technologies in Mexico
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'MX';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '3996063';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Mexican peso',
+            // Currency code
+            'code' => 'MXN',
+            // Currency symbol
+            'symbol' => '$',
+            // Main unit
+            'main_unit' => 'peso',
+            // Subunit
+            'sub_unit' => 'centavo',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['20', '50', '100', '200', '500', '1000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['10', '20', '50'],
+        ];
+
+        // Set the population
+        $this->population = 128932753; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 1964375; // km²
+
+        // Set the capital city
+        $this->capital = 'Mexico City';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'America/Mexico_City',
+                // Standard time offset
+                'standard_time' => 'UTC-6',
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC-5',
+            ],
+            [
+                // Time zone identifier
+                'timezone_id' => 'America/Tijuana',
+                // Standard time offset
+                'standard_time' => 'UTC-8',
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC-7',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1810-09-16'; // Independence from Spain
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Organization of American States (OAS)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'North American Free Trade Agreement (NAFTA)',
+            'G20',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 1260; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism)',
+            'Protestantism',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Federal presidential constitutional republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is highly popular in Mexico
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'United States', 'iso_alpha_2' => 'US'],
+            ['name' => 'Guatemala', 'iso_alpha_2' => 'GT'],
+            ['name' => 'Belize', 'iso_alpha_2' => 'BZ'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇲🇽',
+            // Unicode code points
             'uCode' => 'U+1F1F2 U+1F1FD',
+            // HTML entities
+            'html' => '&#x1F1F2;&#x1F1FD;',
+            // CSS entities
+            'css' => '\\1F1F2\\1F1FD',
+            // Decimal Unicode entities
+            'decimal' => '&#127474;&#127485;',
+            // Direct UTF-8 string
+            'utf8' => '🇲🇽',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF2\uD83C\uDDFD',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-mx:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F2;&#x1F1FD;',
         ];
-        $this->color = [
-            'hex' => [
-                '#008000',
-                '#ffffff',
-                '#ff0000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#006847',
+                // RGB color values
+                'rgb' => '0,104,71',
+                // CMYK color values
+                'cmyk' => '100,0,32,59',
+                // HSL color values
+                'hsl' => '158°,100%,20%',
+                // HSV color values
+                'hsv' => '158°,100%,41%',
+                // Pantone color code
+                'pantone' => '3425 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,128,0',
-                '255,255,255',
-                '255,0,0',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#CE1126',
+                // RGB color values
+                'rgb' => '206,17,38',
+                // CMYK color values
+                'cmyk' => '0,92,82,19',
+                // HSL color values
+                'hsl' => '353°,84%,44%',
+                // HSV color values
+                'hsv' => '353°,92%,81%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '23 00 N',
-                'desc' => '23.909093856811523',
-            ],
-            'longitude' => [
-                'classic' => '102 00 W',
-                'desc' => '-102.6333999633789',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '32.983333',
-                'min' => '14.55',
-            ],
-            'longitude' => [
-                'max' => '-86.716667',
-                'min' => '-119.921667',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '23.6345',
+            // Longitude in decimal degrees
+            'longitude' => '-102.5528',
+            // Degrees with decimal
+            'dd' => '23.6345° N, 102.5528° W',
+            // Degrees, minutes, seconds
+            'dms' => '23°38\'4.2" N, 102°33\'10.08" W',
+            // Degrees and decimal minutes
+            'dm' => '23°38.07\' N, 102°33.168\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

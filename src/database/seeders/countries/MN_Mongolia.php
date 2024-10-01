@@ -29,53 +29,246 @@ class MN_Mongolia extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Mongolia';
+
+        // Set the country's official name
         $this->official_name = 'Mongolia';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'MN';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'MNG';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '496';
+
+        // Set the international dialing code
         $this->international_phone = '976';
 
-        $this->languages = ['mn'];
+        // Define the languages spoken in the country
+        $this->languages = ['mn']; // Mongolian is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.mn'];
-        $this->wmo = 'MO';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '30 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '20 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '45%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Mongolia CERT';
+
+        // List popular web technologies in Mongolia
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'MG';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2029969';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Mongolian tögrög',
+            // Currency code
+            'code' => 'MNT',
+            // Currency symbol
+            'symbol' => '₮',
+            // Main unit
+            'main_unit' => 'tögrög',
+            // Subunit
+            'sub_unit' => 'möngö',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['20', '50', '100', '500', '1000', '5000', '10000', '20000'],
+            // Main coins
+            'coins_main' => ['20', '50', '100', '200', '500'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10'],
+        ];
+
+        // Set the population
+        $this->population = 3325068; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 1564110; // km²
+
+        // Set the capital city
+        $this->capital = 'Ulaanbaatar';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Ulaanbaatar',
+                // Standard time offset
+                'standard_time' => 'UTC+8',
+                // No daylight saving time observed
+            ],
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Hovd',
+                // Standard time offset
+                'standard_time' => 'UTC+7',
+                // No daylight saving time observed
+            ],
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Choibalsan',
+                // Standard time offset
+                'standard_time' => 'UTC+8',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1921-07-11'; // National Day, celebrates independence from China
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Asian Development Bank (ADB)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 14.2; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Buddhism (Tibetan Buddhism)',
+            'Shamanism',
+            'Christianity',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary semi-presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Wrestling'; // Traditional Mongolian wrestling (Bökh) is highly popular
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'China', 'iso_alpha_2' => 'CN'],
+            ['name' => 'Russia', 'iso_alpha_2' => 'RU'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇲🇳',
+            // Unicode code points
             'uCode' => 'U+1F1F2 U+1F1F3',
+            // HTML entities
+            'html' => '&#x1F1F2;&#x1F1F3;',
+            // CSS entities
+            'css' => '\\1F1F2\\1F1F3',
+            // Decimal Unicode entities
+            'decimal' => '&#127474;&#127475;',
+            // Direct UTF-8 string
+            'utf8' => '🇲🇳',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF2\uD83C\uDDF3',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-mn:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F2;&#x1F1F3;',
         ];
-        $this->color = [
-            'hex' => [
-                '#0000ff',
-                '#ff0000',
-                '#ffff00',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#C8102E',
+                // RGB color values
+                'rgb' => '200,16,46',
+                // CMYK color values
+                'cmyk' => '0,100,76,23',
+                // HSL color values
+                'hsl' => '350°,84%,42%',
+                // HSV color values
+                'hsv' => '350°,92%,78%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,0,255',
-                '255,0,0',
-                '255,255,0',
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#0033A0',
+                // RGB color values
+                'rgb' => '0,51,160',
+                // CMYK color values
+                'cmyk' => '100,69,0,37',
+                // HSL color values
+                'hsl' => '220°,100%,41%',
+                // HSV color values
+                'hsv' => '220°,100%,63%',
+                // Pantone color code
+                'pantone' => '286 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFD100',
+                // RGB color values
+                'rgb' => '255,209,0',
+                // CMYK color values
+                'cmyk' => '0,18,100,0',
+                // HSL color values
+                'hsl' => '50°,100%,50%',
+                // HSV color values
+                'hsv' => '50°,100%,100%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '46 00 N',
-                'desc' => '46.83647918701172',
-            ],
-            'longitude' => [
-                'classic' => '105 00 E',
-                'desc' => '103.06689453125',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '52.1',
-                'min' => '41.55',
-            ],
-            'longitude' => [
-                'max' => '119.916667',
-                'min' => '87.783333',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '46.8625',
+            // Longitude in decimal degrees
+            'longitude' => '103.8467',
+            // Degrees with decimal
+            'dd' => '46.8625° N, 103.8467° E',
+            // Degrees, minutes, seconds
+            'dms' => '46°51\'45" N, 103°50\'48" E',
+            // Degrees and decimal minutes
+            'dm' => '46°51.75\' N, 103°50.8\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

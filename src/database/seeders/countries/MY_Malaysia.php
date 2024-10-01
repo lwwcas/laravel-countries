@@ -29,51 +29,257 @@ class MY_Malaysia extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Malaysia';
+
+        // Set the country's official name
         $this->official_name = 'Malaysia';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'MY';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'MYS';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '458';
+
+        // Set the international dialing code
         $this->international_phone = '60';
 
-        $this->languages = ['ms'];
+        // Define the languages spoken in the country
+        $this->languages = ['ms']; // Malay is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.my'];
-        $this->wmo = 'MS';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = ['.com.my', '.gov.my', '.edu.my']; // Common alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '100 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '40 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '85%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'CyberSecurity Malaysia';
+
+        // List popular web technologies in Malaysia
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'MY';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1733045';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Malaysian ringgit',
+            // Currency code
+            'code' => 'MYR',
+            // Currency symbol
+            'symbol' => 'RM',
+            // Main unit
+            'main_unit' => 'ringgit',
+            // Subunit
+            'sub_unit' => 'sen',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '5', '10', '20', '50', '100'],
+            // Main coins
+            'coins_main' => ['1'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '20', '50'],
+        ];
+
+        // Set the population
+        $this->population = 32701945; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 330803; // km²
+
+        // Set the capital city
+        $this->capital = 'Kuala Lumpur';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Kuala_Lumpur',
+                // Standard time offset
+                'standard_time' => 'UTC+8',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1957-08-31'; // Independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Association of Southeast Asian Nations (ASEAN)',
+            'Commonwealth of Nations',
+            'Organisation of Islamic Cooperation (OIC)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 372.7; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam (Official)',
+            'Buddhism',
+            'Christianity',
+            'Hinduism',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Federal constitutional monarchy';
+
+        // Set the national sport
+        $this->national_sport = 'Badminton'; // Badminton is highly popular in Malaysia
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Thailand', 'iso_alpha_2' => 'TH'],
+            ['name' => 'Singapore', 'iso_alpha_2' => 'SG'],
+            ['name' => 'Brunei', 'iso_alpha_2' => 'BN'],
+            ['name' => 'Indonesia', 'iso_alpha_2' => 'ID'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇲🇾',
+            // Unicode code points
             'uCode' => 'U+1F1F2 U+1F1FE',
+            // HTML entities
+            'html' => '&#x1F1F2;&#x1F1FE;',
+            // CSS entities
+            'css' => '\\1F1F2\\1F1FE',
+            // Decimal Unicode entities
+            'decimal' => '&#127474;&#127486;',
+            // Direct UTF-8 string
+            'utf8' => '🇲🇾',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF2\uD83C\uDDFE',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-my:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F2;&#x1F1FE;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ffd700',
-                '#000000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#010066',
+                // RGB color values
+                'rgb' => '1,0,102',
+                // CMYK color values
+                'cmyk' => '99,100,0,60',
+                // HSL color values
+                'hsl' => '240°,100%,20%',
+                // HSV color values
+                'hsv' => '240°,100%,40%',
+                // Pantone color code
+                'pantone' => '280 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,215,0',
-                '0,0,0',
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#DC241F',
+                // RGB color values
+                'rgb' => '220,36,31',
+                // CMYK color values
+                'cmyk' => '0,84,86,14',
+                // HSL color values
+                'hsl' => '2°,77%,49%',
+                // HSV color values
+                'hsv' => '2°,86%,86%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFD100',
+                // RGB color values
+                'rgb' => '255,209,0',
+                // CMYK color values
+                'cmyk' => '0,18,100,0',
+                // HSL color values
+                'hsl' => '50°,100%,50%',
+                // HSV color values
+                'hsv' => '50°,100%,100%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '2 30 N',
-                'desc' => '2.5490005016326904',
-            ],
-            'longitude' => [
-                'classic' => '112 30 E',
-                'desc' => '102.96261596679688',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '7.383333',
-                'min' => '0.85',
-            ],
-            'longitude' => [
-                'max' => '120',
-                'min' => '99.641277',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '4.2105',
+            // Longitude in decimal degrees
+            'longitude' => '101.9758',
+            // Degrees with decimal
+            'dd' => '4.2105° N, 101.9758° E',
+            // Degrees, minutes, seconds
+            'dms' => '4°12\'37.8" N, 101°58\'32.88" E',
+            // Degrees and decimal minutes
+            'dm' => '4°12.63\' N, 101°58.548\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

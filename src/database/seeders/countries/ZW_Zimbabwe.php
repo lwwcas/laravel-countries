@@ -29,57 +29,271 @@ class ZW_Zimbabwe extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Zimbabwe';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Zimbabwe';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'ZW';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'ZWE';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '716';
+
+        // Set the international dialing code
         $this->international_phone = '263';
 
-        $this->languages = ['en','sn','nd'];
+        // Define the languages spoken in the country
+        $this->languages = ['en', 'sn', 'nd']; // English, Shona, and Ndebele are the official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.zw'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '20 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '12 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '28%'; // Low to moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Ministry of Information Communication Technology, Postal and Courier Services';
+
+        // List popular web technologies in Zimbabwe
+        $this->popular_technologies = ['PHP', 'JavaScript', 'Python', 'HTML/CSS'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'ZW';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '878675';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Zimbabwean dollar',
+            // Currency code
+            'code' => 'ZWL',
+            // Currency symbol
+            'symbol' => 'Z$',
+            // Main unit
+            'main_unit' => 'dollar',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['2', '5', '10', '20', '50', '100'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '50'],
+        ];
+
+        // Set the population
+        $this->population = 15092171; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 390757; // km²
+
+        // Set the capital city
+        $this->capital = 'Harare';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Africa/Harare',
+                // Standard time offset
+                'standard_time' => 'UTC+2',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1980-04-18'; // Independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union',
+            'Southern African Development Community (SADC)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 20.5; // GDP in billions of USD (2023 estimates)
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity',
+            'Traditional African religions',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Zimbabwe
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Zambia', 'iso_alpha_2' => 'ZM'],
+            ['name' => 'Mozambique', 'iso_alpha_2' => 'MZ'],
+            ['name' => 'South Africa', 'iso_alpha_2' => 'ZA'],
+            ['name' => 'Botswana', 'iso_alpha_2' => 'BW'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇿🇼',
+            // Unicode code points
             'uCode' => 'U+1F1FF U+1F1FC',
+            // HTML entities
+            'html' => '&#x1F1FF;&#x1F1FC;',
+            // CSS entities
+            'css' => '\\1F1FF\\1F1FC',
+            // Decimal Unicode entities
+            'decimal' => '&#127487;&#127484;',
+            // Direct UTF-8 string
+            'utf8' => '🇿🇼',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDFF\uD83C\uDDFC',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-zw:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1FF;&#x1F1FC;',
         ];
-        $this->color = [
-            'hex' => [
-                '#008000',
-                '#ffff00',
-                '#ff0000',
-                '#000000',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#009639',
+                // RGB color values
+                'rgb' => '0,150,57',
+                // CMYK color values
+                'cmyk' => '100,0,62,41',
+                // HSL color values
+                'hsl' => '143°,100%,29%',
+                // HSV color values
+                'hsv' => '143°,100%,59%',
+                // Pantone color code
+                'pantone' => '355 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,128,0',
-                '255,255,0',
-                '255,0,0',
-                '0,0,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'Gold',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFD100',
+                // RGB color values
+                'rgb' => '255,209,0',
+                // CMYK color values
+                'cmyk' => '0,18,100,0',
+                // HSL color values
+                'hsl' => '49°,100%,50%',
+                // HSV color values
+                'hsv' => '49°,100%,100%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#E03C31',
+                // RGB color values
+                'rgb' => '224,60,49',
+                // CMYK color values
+                'cmyk' => '0,73,78,12',
+                // HSL color values
+                'hsl' => '4°,75%,54%',
+                // HSV color values
+                'hsv' => '4°,78%,88%',
+                // Pantone color code
+                'pantone' => '485 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Black',
+                // Web color name
+                'web_name' => 'black',
+                // Hexadecimal color code
+                'hex' => '#000000',
+                // RGB color values
+                'rgb' => '0,0,0',
+                // CMYK color values
+                'cmyk' => '0,0,0,100',
+                // HSL color values
+                'hsl' => '0°,0%,0%',
+                // HSV color values
+                'hsv' => '0°,0%,0%',
+                // Pantone color code
+                'pantone' => 'Black C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '20 00 S',
-                'desc' => '-19.000280380249023',
-            ],
-            'longitude' => [
-                'classic' => '30 00 E',
-                'desc' => '29.86876106262207',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '-15.6',
-                'min' => '-22.316667',
-            ],
-            'longitude' => [
-                'max' => '33.05',
-                'min' => '25.333333',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '-19.0154',
+            // Longitude in decimal degrees
+            'longitude' => '29.1549',
+            // Degrees with decimal
+            'dd' => '19.0154° S, 29.1549° E',
+            // Degrees, minutes, seconds
+            'dms' => '19°0\'55.44" S, 29°9\'17.64" E',
+            // Degrees and decimal minutes
+            'dm' => '19°0.924\' S, 29°9.294\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

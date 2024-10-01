@@ -29,53 +29,232 @@ class NP_Nepal extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Nepal';
+
+        // Set the country's official name
         $this->official_name = 'Federal Democratic Republic of Nepal';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'NP';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'NPL';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '524';
+
+        // Set the international dialing code
         $this->international_phone = '977';
 
-        $this->languages = ['ne'];
+        // Define the languages spoken in the country
+        $this->languages = ['ne']; // Nepali is the official language, with many other regional languages spoken
+
+        // Define the top-level domain(s)
         $this->tld = ['.np'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '15 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '10 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '34%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Nepal Cyber Security Incident Response Team (NCSIRT)';
+
+        // List popular web technologies in Nepal
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'Laravel'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'NP';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1282988';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Nepalese rupee',
+            // Currency code
+            'code' => 'NPR',
+            // Currency symbol
+            'symbol' => '₨',
+            // Main unit
+            'main_unit' => 'rupee',
+            // Subunit
+            'sub_unit' => 'paisa',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '5', '10', '20', '50', '100', '500', '1000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 29136808; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 147516; // km²
+
+        // Set the capital city
+        $this->capital = 'Kathmandu';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Kathmandu',
+                // Standard time offset
+                'standard_time' => 'UTC+5:45',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1768-09-25'; // Nepal unified under Prithvi Narayan Shah
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'South Asian Association for Regional Cooperation (SAARC)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 36.0; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Hinduism',
+            'Buddhism',
+            'Islam',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Federal parliamentary republic';
+
+        // Set the national sport
+        $this->national_sport = 'Volleyball'; // Volleyball is officially recognized as the national sport of Nepal
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'China', 'iso_alpha_2' => 'CN'],
+            ['name' => 'India', 'iso_alpha_2' => 'IN'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇳🇵',
+            // Unicode code points
             'uCode' => 'U+1F1F3 U+1F1F5',
+            // HTML entities
+            'html' => '&#x1F1F3;&#x1F1F5;',
+            // CSS entities
+            'css' => '\\1F1F3\\1F1F5',
+            // Decimal Unicode entities
+            'decimal' => '&#127475;&#127477;',
+            // Direct UTF-8 string
+            'utf8' => '🇳🇵',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF3\uD83C\uDDF5',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-np:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F3;&#x1F1F5;',
         ];
-        $this->color = [
-            'hex' => [
-                '#dc143c',
-                '#0000ff',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#DC143C',
+                // RGB color values
+                'rgb' => '220,20,60',
+                // CMYK color values
+                'cmyk' => '0,91,73,14',
+                // HSL color values
+                'hsl' => '348°,83%,47%',
+                // HSV color values
+                'hsv' => '348°,91%,86%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '220,20,60',
-                '0,0,255',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#003893',
+                // RGB color values
+                'rgb' => '0,56,147',
+                // CMYK color values
+                'cmyk' => '100,62,0,42',
+                // HSL color values
+                'hsl' => '217°,100%,29%',
+                // HSV color values
+                'hsv' => '217°,100%,58%',
+                // Pantone color code
+                'pantone' => 'Reflex Blue C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '28 00 N',
-                'desc' => '28.259138107299805',
-            ],
-            'longitude' => [
-                'classic' => '84 00 E',
-                'desc' => '83.94416046142578',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '30.45',
-                'min' => '26.45',
-            ],
-            'longitude' => [
-                'max' => '88.183333',
-                'min' => '80',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '28.3949',
+            // Longitude in decimal degrees
+            'longitude' => '84.1240',
+            // Degrees with decimal
+            'dd' => '28.3949° N, 84.1240° E',
+            // Degrees, minutes, seconds
+            'dms' => '28°23\'41.64" N, 84°7\'26.4" E',
+            // Degrees and decimal minutes
+            'dm' => '28°23.694\' N, 84°7.44\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

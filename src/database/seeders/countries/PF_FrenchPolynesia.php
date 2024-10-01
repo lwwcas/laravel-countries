@@ -29,51 +29,225 @@ class PF_FrenchPolynesia extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'French Polynesia';
+
+        // Set the country's official name
         $this->official_name = 'French Polynesia';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'PF';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'PYF';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '258';
+
+        // Set the international dialing code
         $this->international_phone = '689';
 
-        $this->languages = ['fr'];
+        // Define the languages spoken in the country
+        $this->languages = ['fr', 'ty']; // French is the official language, and Tahitian is widely spoken
+
+        // Define the top-level domain(s)
         $this->tld = ['.pf'];
-        $this->wmo = 'PF';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '20 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '15 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '60%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'French Polynesia CERT';
+
+        // List popular web technologies in French Polynesia
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'FP';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '4030656';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'CFP franc',
+            // Currency code
+            'code' => 'XPF',
+            // Currency symbol
+            'symbol' => '₣',
+            // Main unit
+            'main_unit' => 'franc',
+            // Subunit
+            'sub_unit' => 'centime',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['500', '1000', '5000', '10000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10', '20', '50', '100'],
+            // Subunit coins
+            'coins_sub' => ['1', '2', '5', '10', '50'],
+        ];
+
+        // Set the population
+        $this->population = 280904; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 4167; // km²
+
+        // Set the capital city
+        $this->capital = 'Papeete';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Pacific/Tahiti',
+                // Standard time offset
+                'standard_time' => 'UTC-10',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = null; // French Polynesia is an overseas collectivity of France
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'Pacific Islands Forum (PIF)',
+            'Community of Latin American and Caribbean States (CELAC)',
+            'European Union (as an overseas territory of France)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 5.2; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Protestantism, Roman Catholicism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Overseas collectivity of France';
+
+        // Set the national sport
+        $this->national_sport = 'Va\'a (outrigger canoeing)'; // Va'a canoeing is culturally significant in French Polynesia
+
+        // Define bordering countries
+        $this->borders = []; // French Polynesia is an island and has no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇵🇫',
+            // Unicode code points
             'uCode' => 'U+1F1F5 U+1F1EB',
+            // HTML entities
+            'html' => '&#x1F1F5;&#x1F1EB;',
+            // CSS entities
+            'css' => '\\1F1F5\\1F1EB',
+            // Decimal Unicode entities
+            'decimal' => '&#127477;&#127467;',
+            // Direct UTF-8 string
+            'utf8' => '🇵🇫',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF5\uD83C\uDDEB',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-pf:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F5;&#x1F1EB;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#D52B1E',
+                // RGB color values
+                'rgb' => '213,43,30',
+                // CMYK color values
+                'cmyk' => '0,80,86,16',
+                // HSL color values
+                'hsl' => '3°,76%,48%',
+                // HSV color values
+                'hsv' => '3°,86%,84%',
+                // Pantone color code
+                'pantone' => '1795 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFD100',
+                // RGB color values
+                'rgb' => '255,209,0',
+                // CMYK color values
+                'cmyk' => '0,18,100,0',
+                // HSL color values
+                'hsl' => '50°,100%,50%',
+                // HSV color values
+                'hsv' => '50°,100%,100%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '15 00 S',
-                'desc' => '-17.648122787475586',
-            ],
-            'longitude' => [
-                'classic' => '140 00 W',
-                'desc' => '-149.4647216796875',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '16.633333',
-                'min' => '-27.916667',
-            ],
-            'longitude' => [
-                'max' => '-179.8',
-                'min' => '180',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '-17.6797',
+            // Longitude in decimal degrees
+            'longitude' => '-149.4068',
+            // Degrees with decimal
+            'dd' => '17.6797° S, 149.4068° W',
+            // Degrees, minutes, seconds
+            'dms' => '17°40\'46.92" S, 149°24\'24.48" W',
+            // Degrees and decimal minutes
+            'dm' => '17°40.782\' S, 149°24.408\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

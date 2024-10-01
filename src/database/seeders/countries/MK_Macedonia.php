@@ -29,51 +29,217 @@ class MK_Macedonia extends CountrySeeder
      */
     public function run()
     {
-        $this->name = 'Macedonia';
-        $this->official_name = 'Republic of Macedonia';
+        // Set the country's common name
+        $this->name = 'North Macedonia';
+
+        // Set the country's official name
+        $this->official_name = 'Republic of Macedonia'; // Note: The country is now officially recognized as "Republic of North Macedonia"
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'MK';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'MKD';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '807';
+
+        // Set the international dialing code
         $this->international_phone = '389';
 
-        $this->languages = ['mk'];
+        // Define the languages spoken in the country
+        $this->languages = ['mk', 'sq']; // Macedonian and Albanian are official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.mk'];
-        $this->wmo = 'MJ';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '40 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '25 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '78%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Macedonia CERT (Computer Emergency Response Team)';
+
+        // List popular web technologies in North Macedonia
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'Ruby'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'MK';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '718075';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Macedonian denar',
+            // Currency code
+            'code' => 'MKD',
+            // Currency symbol
+            'symbol' => 'ден',
+            // Main unit
+            'main_unit' => 'denar',
+            // Subunit
+            'sub_unit' => 'deni',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['10', '50', '100', '200', '500', '1000', '2000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['50'],
+        ];
+
+        // Set the population
+        $this->population = 2083459; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 25713; // km²
+
+        // Set the capital city
+        $this->capital = 'Skopje';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Europe/Skopje',
+                // Standard time offset
+                'standard_time' => 'UTC+1',
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+2',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1991-09-08'; // Independence from Yugoslavia
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'North Atlantic Treaty Organization (NATO)',
+            'Council of Europe',
+            'World Health Organization (WHO)',
+            'International Monetary Fund (IMF)',
+            'World Trade Organization (WTO)',
+            'Organization for Security and Co-operation in Europe (OSCE)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 12.5; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Eastern Orthodoxy)',
+            'Islam',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Parliamentary republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is highly popular in North Macedonia
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Albania', 'iso_alpha_2' => 'AL'],
+            ['name' => 'Bulgaria', 'iso_alpha_2' => 'BG'],
+            ['name' => 'Greece', 'iso_alpha_2' => 'GR'],
+            ['name' => 'Kosovo', 'iso_alpha_2' => 'XK'],
+            ['name' => 'Serbia', 'iso_alpha_2' => 'RS'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇲🇰',
+            // Unicode code points
             'uCode' => 'U+1F1F2 U+1F1F0',
+            // HTML entities
+            'html' => '&#x1F1F2;&#x1F1F0;',
+            // CSS entities
+            'css' => '\\1F1F2\\1F1F0',
+            // Decimal Unicode entities
+            'decimal' => '&#127474;&#127472;',
+            // Direct UTF-8 string
+            'utf8' => '🇲🇰',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF2\uD83C\uDDF0',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-mk:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F2;&#x1F1F0;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffff00',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#D20000',
+                // RGB color values
+                'rgb' => '210,0,0',
+                // CMYK color values
+                'cmyk' => '0,100,100,18',
+                // HSL color values
+                'hsl' => '0°,100%,41%',
+                // HSV color values
+                'hsv' => '0°,100%,82%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,0',
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFCC00',
+                // RGB color values
+                'rgb' => '255,204,0',
+                // CMYK color values
+                'cmyk' => '0,20,100,0',
+                // HSL color values
+                'hsl' => '48°,100%,50%',
+                // HSV color values
+                'hsv' => '48°,100%,100%',
+                // Pantone color code
+                'pantone' => 'Pantone 116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '41 50 N',
-                'desc' => '41.60045623779297',
-            ],
-            'longitude' => [
-                'classic' => '22 00 E',
-                'desc' => '21.700895309448242',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '42.373056',
-                'min' => '40.866667',
-            ],
-            'longitude' => [
-                'max' => '23.033333',
-                'min' => '20.459167',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '41.6086',
+            // Longitude in decimal degrees
+            'longitude' => '21.7453',
+            // Degrees with decimal
+            'dd' => '41.6086° N, 21.7453° E',
+            // Degrees, minutes, seconds
+            'dms' => '41°36\'30.96" N, 21°44\'43.08" E',
+            // Degrees and decimal minutes
+            'dm' => '41°36.516\' N, 21°44.718\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

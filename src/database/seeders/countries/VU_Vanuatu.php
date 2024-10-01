@@ -29,47 +29,247 @@ class VU_Vanuatu extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Vanuatu';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Vanuatu';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'VU';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'VUT';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '548';
+
+        // Set the international dialing code
         $this->international_phone = '678';
 
-        $this->languages = ['bi','en','fr'];
+        // Define the languages spoken in the country
+        $this->languages = ['bi', 'en', 'fr']; // Bislama, English, and French are the official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.vu'];
-        $this->wmo = 'NV';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '20 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '10 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '35%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Vanuatu CERT';
+
+        // List popular web technologies in Vanuatu
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'VU';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2134431';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Vanuatu vatu',
+            // Currency code
+            'code' => 'VUV',
+            // Currency symbol
+            'symbol' => 'VT',
+            // Main unit
+            'main_unit' => 'vatu',
+            // Subunit
+            'sub_unit' => null, // The Vatu has no subdivisions
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => null,
+            // Banknotes in circulation
+            'banknotes' => ['200', '500', '1000', '2000', '5000', '10000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10', '20', '50', '100'],
+            // Subunit coins (none, only numbers as per your instruction)
+            'coins_sub' => [],
+        ];
+
+        // Set the population
+        $this->population = 307150; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 12189; // km²
+
+        // Set the capital city
+        $this->capital = 'Port Vila';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Pacific/Efate',
+                // Standard time offset
+                'standard_time' => 'UTC+11',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1980-07-30'; // Independence from France and the UK
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Pacific Islands Forum',
+            'Commonwealth of Nations',
+            'World Trade Organization (WTO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 0.86; // GDP in billions of USD (2023 estimates)
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Protestantism)',
+            'Christianity (Catholicism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Parliamentary republic';
+
+        // Set the national sport
+        $this->national_sport = 'Rugby Union'; // Rugby is the most popular sport in Vanuatu
+
+        // Define bordering countries (Vanuatu has no land borders but shares maritime boundaries)
+        $this->borders = [];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇻🇺',
+            // Unicode code points
             'uCode' => 'U+1F1FB U+1F1FA',
+            // HTML entities
+            'html' => '&#x1F1FB;&#x1F1FA;',
+            // CSS entities
+            'css' => '\\1F1FB\\1F1FA',
+            // Decimal Unicode entities
+            'decimal' => '&#127483;&#127482;',
+            // Direct UTF-8 string
+            'utf8' => '🇻🇺',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDFB\uD83C\uDDFA',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-vu:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1FB;&#x1F1FA;',
         ];
-        $this->color = [
-            'hex' => [
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#D21034',
+                // RGB color values
+                'rgb' => '210,16,52',
+                // CMYK color values
+                'cmyk' => '0,92,75,18',
+                // HSL color values
+                'hsl' => '348°,86%,44%',
+                // HSV color values
+                'hsv' => '348°,92%,82%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#007847',
+                // RGB color values
+                'rgb' => '0,120,71',
+                // CMYK color values
+                'cmyk' => '100,0,41,53',
+                // HSL color values
+                'hsl' => '156°,100%,24%',
+                // HSV color values
+                'hsv' => '156°,100%,47%',
+                // Pantone color code
+                'pantone' => '348 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFD100',
+                // RGB color values
+                'rgb' => '255,209,0',
+                // CMYK color values
+                'cmyk' => '0,18,100,0',
+                // HSL color values
+                'hsl' => '48°,100%,50%',
+                // HSV color values
+                'hsv' => '48°,100%,100%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Black',
+                // Web color name
+                'web_name' => 'black',
+                // Hexadecimal color code
+                'hex' => '#000000',
+                // RGB color values
+                'rgb' => '0,0,0',
+                // CMYK color values
+                'cmyk' => '0,0,0,100',
+                // HSL color values
+                'hsl' => '0°,0%,0%',
+                // HSV color values
+                'hsv' => '0°,0%,0%',
+                // Pantone color code
+                'pantone' => 'Black C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '16 00 S',
-                'desc' => '-16.376684188842773',
-            ],
-            'longitude' => [
-                'classic' => '167 00 E',
-                'desc' => '167.5625',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '-13.066667',
-                'min' => '-20.25',
-            ],
-            'longitude' => [
-                'max' => '170.216667',
-                'min' => '166.016667',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '-15.3767',
+            // Longitude in decimal degrees
+            'longitude' => '166.9592',
+            // Degrees with decimal
+            'dd' => '15.3767° S, 166.9592° E',
+            // Degrees, minutes, seconds
+            'dms' => '15°22\'36.12" S, 166°57\'33.12" E',
+            // Degrees and decimal minutes
+            'dm' => '15°22.602\' S, 166°57.552\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

@@ -29,53 +29,234 @@ class SN_Senegal extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Senegal';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Senegal';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'SN';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'SEN';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '686';
+
+        // Set the international dialing code
         $this->international_phone = '221';
 
-        $this->languages = ['fr'];
+        // Define the languages spoken in the country
+        $this->languages = ['fr']; // French is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.sn'];
-        $this->wmo = 'SG';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '20 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '15 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '66%'; // Internet penetration rate is moderate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Agence Nationale de la Sécurité des Systèmes d\'Information (ANSSI)';
+
+        // List popular web technologies in Senegal
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'SN';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2245662';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'West African CFA franc',
+            // Currency code
+            'code' => 'XOF',
+            // Currency symbol
+            'symbol' => 'CFA',
+            // Main unit
+            'main_unit' => 'franc',
+            // Subunit
+            'sub_unit' => 'centime',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['500', '1000', '2000', '5000', '10000'],
+            // Main coins
+            'coins_main' => ['50', '100', '200', '250'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '25'],
+        ];
+
+        // Set the population
+        $this->population = 16743927; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 196722; // km²
+
+        // Set the capital city
+        $this->capital = 'Dakar';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Africa/Dakar',
+                // Standard time offset
+                'standard_time' => 'UTC+0',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1960-04-04'; // Independence from France
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union (AU)',
+            'Economic Community of West African States (ECOWAS)',
+            'Organisation internationale de la Francophonie (OIF)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 25.6; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam (Sunni)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary semi-presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Wrestling'; // Traditional wrestling is the most popular sport in Senegal
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Mauritania', 'iso_alpha_2' => 'MR'],
+            ['name' => 'Mali', 'iso_alpha_2' => 'ML'],
+            ['name' => 'Guinea', 'iso_alpha_2' => 'GN'],
+            ['name' => 'Guinea-Bissau', 'iso_alpha_2' => 'GW'],
+            ['name' => 'The Gambia', 'iso_alpha_2' => 'GM'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇸🇳',
+            // Unicode code points
             'uCode' => 'U+1F1F8 U+1F1F3',
+            // HTML entities
+            'html' => '&#x1F1F8;&#x1F1F3;',
+            // CSS entities
+            'css' => '\\1F1F8\\1F1F3',
+            // Decimal Unicode entities
+            'decimal' => '&#127480;&#127475;',
+            // Direct UTF-8 string
+            'utf8' => '🇸🇳',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF8\uD83C\uDDF3',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-sn:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F8;&#x1F1F3;',
         ];
-        $this->color = [
-            'hex' => [
-                '#008000',
-                '#ffff00',
-                '#ff0000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#00853F',
+                // RGB color values
+                'rgb' => '0,133,63',
+                // CMYK color values
+                'cmyk' => '100,0,53,48',
+                // HSL color values
+                'hsl' => '144°,100%,26%',
+                // HSV color values
+                'hsv' => '144°,100%,52%',
+                // Pantone color code
+                'pantone' => '355 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,128,0',
-                '255,255,0',
-                '255,0,0',
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FDEF42',
+                // RGB color values
+                'rgb' => '253,239,66',
+                // CMYK color values
+                'cmyk' => '0,6,74,0',
+                // HSL color values
+                'hsl' => '55°,98%,63%',
+                // HSV color values
+                'hsv' => '55°,74%,99%',
+                // Pantone color code
+                'pantone' => '109 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#E31B23',
+                // RGB color values
+                'rgb' => '227,27,35',
+                // CMYK color values
+                'cmyk' => '0,88,85,11',
+                // HSL color values
+                'hsl' => '357°,79%,50%',
+                // HSV color values
+                'hsv' => '357°,88%,89%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '14 00 N',
-                'desc' => '14.36251163482666',
-            ],
-            'longitude' => [
-                'classic' => '14 00 W',
-                'desc' => '-14.531643867492676',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '16.666667',
-                'min' => '12.336667',
-            ],
-            'longitude' => [
-                'max' => '-11.3780213874',
-                'min' => '-17.682778',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '14.4974',
+            // Longitude in decimal degrees
+            'longitude' => '-14.4524',
+            // Degrees with decimal
+            'dd' => '14.4974° N, 14.4524° W',
+            // Degrees, minutes, seconds
+            'dms' => '14°29\'50.64" N, 14°27\'8.64" W',
+            // Degrees and decimal minutes
+            'dm' => '14°29.844\' N, 14°27.144\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

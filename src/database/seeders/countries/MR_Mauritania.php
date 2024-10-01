@@ -29,53 +29,234 @@ class MR_Mauritania extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Mauritania';
+
+        // Set the country's official name
         $this->official_name = 'Islamic Republic of Mauritania';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'MR';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'MRT';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '478';
+
+        // Set the international dialing code
         $this->international_phone = '222';
 
-        $this->languages = ['ar'];
+        // Define the languages spoken in the country
+        $this->languages = ['ar', 'fr']; // Arabic is the official language; French is widely used
+
+        // Define the top-level domain(s)
         $this->tld = ['.mr'];
-        $this->wmo = 'MT';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '10 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '5 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '21%'; // Low internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Mauritania CERT';
+
+        // List popular web technologies in Mauritania
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'MR';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2378080';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Mauritanian ouguiya',
+            // Currency code
+            'code' => 'MRU',
+            // Currency symbol
+            'symbol' => 'UM',
+            // Main unit
+            'main_unit' => 'ouguiya',
+            // Subunit
+            'sub_unit' => 'khoums',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 5,
+            // Banknotes in circulation
+            'banknotes' => ['50', '100', '200', '500', '1000'],
+            // Main coins
+            'coins_main' => ['1', '5', '10', '20'],
+            // Subunit coins
+            'coins_sub' => ['1', '5'],
+        ];
+
+        // Set the population
+        $this->population = 4649658; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 1030700; // km²
+
+        // Set the capital city
+        $this->capital = 'Nouakchott';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Africa/Nouakchott',
+                // Standard time offset
+                'standard_time' => 'UTC+0',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1960-11-28'; // Independence from France
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union (AU)',
+            'Arab League',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Organization of Islamic Cooperation (OIC)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 7.5; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam (Sunni)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary semi-presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Mauritania
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Western Sahara', 'iso_alpha_2' => 'EH'],
+            ['name' => 'Algeria', 'iso_alpha_2' => 'DZ'],
+            ['name' => 'Mali', 'iso_alpha_2' => 'ML'],
+            ['name' => 'Senegal', 'iso_alpha_2' => 'SN'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇲🇷',
+            // Unicode code points
             'uCode' => 'U+1F1F2 U+1F1F7',
+            // HTML entities
+            'html' => '&#x1F1F2;&#x1F1F7;',
+            // CSS entities
+            'css' => '\\1F1F2\\1F1F7',
+            // Decimal Unicode entities
+            'decimal' => '&#127474;&#127479;',
+            // Direct UTF-8 string
+            'utf8' => '🇲🇷',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF2\uD83C\uDDF7',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-mr:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F2;&#x1F1F7;',
         ];
-        $this->color = [
-            'hex' => [
-                '#008000',
-                '#ffff00',
-                '#ff0000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#007A5E',
+                // RGB color values
+                'rgb' => '0,122,94',
+                // CMYK color values
+                'cmyk' => '100,0,23,52',
+                // HSL color values
+                'hsl' => '164°,100%,24%',
+                // HSV color values
+                'hsv' => '164°,100%,48%',
+                // Pantone color code
+                'pantone' => '3425 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,128,0',
-                '255,255,0',
-                '255,0,0',
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFD100',
+                // RGB color values
+                'rgb' => '255,209,0',
+                // CMYK color values
+                'cmyk' => '0,18,100,0',
+                // HSL color values
+                'hsl' => '50°,100%,50%',
+                // HSV color values
+                'hsv' => '50°,100%,100%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#FF0000',
+                // RGB color values
+                'rgb' => '255,0,0',
+                // CMYK color values
+                'cmyk' => '0,100,100,0',
+                // HSL color values
+                'hsl' => '0°,100%,50%',
+                // HSV color values
+                'hsv' => '0°,100%,100%',
+                // Pantone color code
+                'pantone' => '485 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '20 00 N',
-                'desc' => '20.258995056152344',
-            ],
-            'longitude' => [
-                'classic' => '12 00 W',
-                'desc' => '-10.364437103271484',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '26.9',
-                'min' => '14.7382733887',
-            ],
-            'longitude' => [
-                'max' => '13',
-                'min' => '-17.079444',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '20.2529',
+            // Longitude in decimal degrees
+            'longitude' => '-10.518',
+            // Degrees with decimal
+            'dd' => '20.2529° N, 10.518° W',
+            // Degrees, minutes, seconds
+            'dms' => '20°15\'10.44" N, 10°31\'4.8" W',
+            // Degrees and decimal minutes
+            'dm' => '20°15.174\' N, 10°31.08\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

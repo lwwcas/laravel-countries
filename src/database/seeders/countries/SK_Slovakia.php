@@ -29,53 +29,235 @@ class SK_Slovakia extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Slovakia';
+
+        // Set the country's official name
         $this->official_name = 'Slovak Republic';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'SK';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'SVK';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '703';
+
+        // Set the international dialing code
         $this->international_phone = '421';
 
-        $this->languages = ['sk'];
+        // Define the languages spoken in the country
+        $this->languages = ['sk']; // Slovak is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.sk'];
-        $this->wmo = 'SQ';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '120 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '50 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '85%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'National Security Authority of Slovakia (NSA)';
+
+        // List popular web technologies in Slovakia
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'SK';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '3057568';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Euro',
+            // Currency code
+            'code' => 'EUR',
+            // Currency symbol
+            'symbol' => '€',
+            // Main unit
+            'main_unit' => 'euro',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100', '200', '500'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '20', '50'],
+        ];
+
+        // Set the population
+        $this->population = 5456362; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 49035; // km²
+
+        // Set the capital city
+        $this->capital = 'Bratislava';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Europe/Bratislava',
+                // Standard time offset
+                'standard_time' => 'UTC+1',
+                // Daylight saving time offset
+                'daylight_time' => 'UTC+2',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1993-01-01'; // Independence from Czechoslovakia
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'European Union (EU)',
+            'Eurozone',
+            'Schengen Area',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 112.3; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Parliamentary republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football and ice hockey are the most popular sports in Slovakia
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Czech Republic', 'iso_alpha_2' => 'CZ'],
+            ['name' => 'Austria', 'iso_alpha_2' => 'AT'],
+            ['name' => 'Poland', 'iso_alpha_2' => 'PL'],
+            ['name' => 'Hungary', 'iso_alpha_2' => 'HU'],
+            ['name' => 'Ukraine', 'iso_alpha_2' => 'UA'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇸🇰',
+            // Unicode code points
             'uCode' => 'U+1F1F8 U+1F1F0',
+            // HTML entities
+            'html' => '&#x1F1F8;&#x1F1F0;',
+            // CSS entities
+            'css' => '\\1F1F8\\1F1F0',
+            // Decimal Unicode entities
+            'decimal' => '&#127480;&#127472;',
+            // Direct UTF-8 string
+            'utf8' => '🇸🇰',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF8\uD83C\uDDF0',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-sk:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F8;&#x1F1F0;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ffffff',
-                '#00008b',
-                '#ff0000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#0033A0',
+                // RGB color values
+                'rgb' => '0,51,160',
+                // CMYK color values
+                'cmyk' => '100,69,0,37',
+                // HSL color values
+                'hsl' => '224°,100%,41%',
+                // HSV color values
+                'hsv' => '224°,100%,63%',
+                // Pantone color code
+                'pantone' => '286 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,255,255',
-                '0,0,139',
-                '255,0,0',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#EF3340',
+                // RGB color values
+                'rgb' => '239,51,64',
+                // CMYK color values
+                'cmyk' => '0,79,64,6',
+                // HSL color values
+                'hsl' => '355°,85%,57%',
+                // HSV color values
+                'hsv' => '355°,79%,94%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '48 40 N',
-                'desc' => '48.70748519897461',
-            ],
-            'longitude' => [
-                'classic' => '19 30 E',
-                'desc' => '19.48488998413086',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '49.6',
-                'min' => '45.5',
-            ],
-            'longitude' => [
-                'max' => '26.5',
-                'min' => '17',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '48.669',
+            // Longitude in decimal degrees
+            'longitude' => '19.699',
+            // Degrees with decimal
+            'dd' => '48.669° N, 19.699° E',
+            // Degrees, minutes, seconds
+            'dms' => '48°40\'8.4" N, 19°41\'56.4" E',
+            // Degrees and decimal minutes
+            'dm' => '48°40.14\' N, 19°41.94\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

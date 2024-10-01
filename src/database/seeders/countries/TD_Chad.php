@@ -29,53 +29,234 @@ class TD_Chad extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Chad';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Chad';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'TD';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'TCD';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '148';
+
+        // Set the international dialing code
         $this->international_phone = '235';
 
-        $this->languages = ['fr','ar'];
+        // Define the languages spoken in the country
+        $this->languages = ['fr', 'ar']; // French and Arabic are the official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.td'];
-        $this->wmo = 'CD';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '4 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '2 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '5%'; // Low internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Agence Nationale de Sécurité Informatique (ANSI)';
+
+        // List popular web technologies in Chad
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'TD';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2434508';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Central African CFA franc',
+            // Currency code
+            'code' => 'XAF',
+            // Currency symbol
+            'symbol' => 'FCFA',
+            // Main unit
+            'main_unit' => 'franc',
+            // Subunit
+            'sub_unit' => 'centime',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['500', '1000', '2000', '5000', '10000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10', '25', '50'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 17351634; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 1284000; // km²
+
+        // Set the capital city
+        $this->capital = 'N\'Djamena';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Africa/Ndjamena',
+                // Standard time offset
+                'standard_time' => 'UTC+1',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1960-08-11'; // Independence from France
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union (AU)',
+            'Economic Community of Central African States (ECCAS)',
+            'Organisation of Islamic Cooperation (OIC)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 11.3; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam (Sunni)',
+            'Christianity (Roman Catholic, Protestant)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Chad
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Libya', 'iso_alpha_2' => 'LY'],
+            ['name' => 'Sudan', 'iso_alpha_2' => 'SD'],
+            ['name' => 'Central African Republic', 'iso_alpha_2' => 'CF'],
+            ['name' => 'Cameroon', 'iso_alpha_2' => 'CM'],
+            ['name' => 'Nigeria', 'iso_alpha_2' => 'NG'],
+            ['name' => 'Niger', 'iso_alpha_2' => 'NE'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇹🇩',
+            // Unicode code points
             'uCode' => 'U+1F1F9 U+1F1E9',
+            // HTML entities
+            'html' => '&#x1F1F9;&#x1F1E9;',
+            // CSS entities
+            'css' => '\\1F1F9\\1F1E9',
+            // Decimal Unicode entities
+            'decimal' => '&#127481;&#127465;',
+            // Direct UTF-8 string
+            'utf8' => '🇹🇩',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF9\uD83C\uDDE9',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-td:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F9;&#x1F1E9;',
         ];
-        $this->color = [
-            'hex' => [
-                '#00008b',
-                '#ffd700',
-                '#cc0000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#00209F',
+                // RGB color values
+                'rgb' => '0,32,159',
+                // CMYK color values
+                'cmyk' => '100,80,0,38',
+                // HSL color values
+                'hsl' => '225°,100%,31%',
+                // HSV color values
+                'hsv' => '225°,100%,62%',
+                // Pantone color code
+                'pantone' => '286 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,0,139',
-                '255,215,0',
-                '204,0,0',
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFD700',
+                // RGB color values
+                'rgb' => '255,215,0',
+                // CMYK color values
+                'cmyk' => '0,16,100,0',
+                // HSL color values
+                'hsl' => '51°,100%,50%',
+                // HSV color values
+                'hsv' => '51°,100%,100%',
+                // Pantone color code
+                'pantone' => '109 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#CE1126',
+                // RGB color values
+                'rgb' => '206,17,38',
+                // CMYK color values
+                'cmyk' => '0,92,82,19',
+                // HSL color values
+                'hsl' => '356°,84%,44%',
+                // HSV color values
+                'hsv' => '356°,92%,81%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '15 00 N',
-                'desc' => '15.367652893066406',
-            ],
-            'longitude' => [
-                'classic' => '19 00 E',
-                'desc' => '18.66758155822754',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '26',
-                'min' => '7.5',
-            ],
-            'longitude' => [
-                'max' => '24',
-                'min' => '2',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '15.4542',
+            // Longitude in decimal degrees
+            'longitude' => '18.7322',
+            // Degrees with decimal
+            'dd' => '15.4542° N, 18.7322° E',
+            // Degrees, minutes, seconds
+            'dms' => '15°27\'15.12" N, 18°43\'55.92" E',
+            // Degrees and decimal minutes
+            'dm' => '15°27.252\' N, 18°43.932\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

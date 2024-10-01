@@ -29,51 +29,210 @@ class NI_Nicaragua extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Nicaragua';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Nicaragua';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'NI';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'NIC';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '558';
+
+        // Set the international dialing code
         $this->international_phone = '505';
 
-        $this->languages = ['es'];
+        // Define the languages spoken in the country
+        $this->languages = ['es']; // Spanish is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.ni'];
-        $this->wmo = 'NK';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '8 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '6 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '28%'; // Low internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'CERT Nicaragua';
+
+        // List popular web technologies in Nicaragua
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'NI';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '3617476';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Nicaraguan córdoba',
+            // Currency code
+            'code' => 'NIO',
+            // Currency symbol
+            'symbol' => 'C$',
+            // Main unit
+            'main_unit' => 'córdoba',
+            // Subunit
+            'sub_unit' => 'centavo',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['10', '20', '50', '100', '200', '500', '1000'],
+            // Main coins
+            'coins_main' => ['1', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 6624554; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 130373; // km²
+
+        // Set the capital city
+        $this->capital = 'Managua';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'America/Managua',
+                // Standard time offset
+                'standard_time' => 'UTC-6',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1821-09-15'; // Independence from Spain
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Central American Integration System (SICA)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 13.1; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism, Evangelicalism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Baseball'; // Baseball is highly popular in Nicaragua
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Honduras', 'iso_alpha_2' => 'HN'],
+            ['name' => 'Costa Rica', 'iso_alpha_2' => 'CR'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇳🇮',
+            // Unicode code points
             'uCode' => 'U+1F1F3 U+1F1EE',
+            // HTML entities
+            'html' => '&#x1F1F3;&#x1F1EE;',
+            // CSS entities
+            'css' => '\\1F1F3\\1F1EE',
+            // Decimal Unicode entities
+            'decimal' => '&#127475;&#127470;',
+            // Direct UTF-8 string
+            'utf8' => '🇳🇮',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF3\uD83C\uDDEE',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-ni:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F3;&#x1F1EE;',
         ];
-        $this->color = [
-            'hex' => [
-                '#0000ff',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#0067C0',
+                // RGB color values
+                'rgb' => '0,103,192',
+                // CMYK color values
+                'cmyk' => '100,46,0,25',
+                // HSL color values
+                'hsl' => '209°,100%,38%',
+                // HSV color values
+                'hsv' => '209°,100%,75%',
+                // Pantone color code
+                'pantone' => 'Reflex Blue C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,0,255',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '13 00 N',
-                'desc' => '12.903773307800293',
-            ],
-            'longitude' => [
-                'classic' => '85 00 W',
-                'desc' => '-84.92182159423828',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '15',
-                'min' => '10.716667',
-            ],
-            'longitude' => [
-                'max' => '-82.566667',
-                'min' => '-87.684167',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '12.8654',
+            // Longitude in decimal degrees
+            'longitude' => '-85.2072',
+            // Degrees with decimal
+            'dd' => '12.8654° N, 85.2072° W',
+            // Degrees, minutes, seconds
+            'dms' => '12°51\'55.44" N, 85°12\'25.92" W',
+            // Degrees and decimal minutes
+            'dm' => '12°51.924\' N, 85°12.432\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

@@ -29,51 +29,210 @@ class SO_Somalia extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Somalia';
+
+        // Set the country's official name
         $this->official_name = 'Federal Republic of Somalia';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'SO';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'SOM';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '706';
+
+        // Set the international dialing code
         $this->international_phone = '252';
 
-        $this->languages = ['so','ar'];
+        // Define the languages spoken in the country
+        $this->languages = ['so', 'ar']; // Somali and Arabic are the official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.so'];
-        $this->wmo = 'SI';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '10 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '5 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '15%'; // Low internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Somali Ministry of Posts, Telecommunications, and Technology';
+
+        // List popular web technologies in Somalia
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'SO';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '51537';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Somali shilling',
+            // Currency code
+            'code' => 'SOS',
+            // Currency symbol
+            'symbol' => 'Sh',
+            // Main unit
+            'main_unit' => 'shilling',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1000', '500', '100', '50'],
+            // Main coins
+            'coins_main' => ['5', '10'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '50'],
+        ];
+
+        // Set the population
+        $this->population = 15893222; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 637657; // km²
+
+        // Set the capital city
+        $this->capital = 'Mogadishu';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Africa/Mogadishu',
+                // Standard time offset
+                'standard_time' => 'UTC+3',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1960-07-01'; // Independence from Italy and Britain
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union (AU)',
+            'Arab League',
+            'Organization of Islamic Cooperation (OIC)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 7.1; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam (Sunni)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Federal parliamentary republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Somalia
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Ethiopia', 'iso_alpha_2' => 'ET'],
+            ['name' => 'Kenya', 'iso_alpha_2' => 'KE'],
+            ['name' => 'Djibouti', 'iso_alpha_2' => 'DJ'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇸🇴',
+            // Unicode code points
             'uCode' => 'U+1F1F8 U+1F1F4',
+            // HTML entities
+            'html' => '&#x1F1F8;&#x1F1F4;',
+            // CSS entities
+            'css' => '\\1F1F8\\1F1F4',
+            // Decimal Unicode entities
+            'decimal' => '&#127480;&#127476;',
+            // Direct UTF-8 string
+            'utf8' => '🇸🇴',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF8\uD83C\uDDF4',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-so:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F8;&#x1F1F4;',
         ];
-        $this->color = [
-            'hex' => [
-                '#007fff',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#4189DD',
+                // RGB color values
+                'rgb' => '65,137,221',
+                // CMYK color values
+                'cmyk' => '71,38,0,13',
+                // HSL color values
+                'hsl' => '211°,68%,56%',
+                // HSV color values
+                'hsv' => '211°,71%,87%',
+                // Pantone color code
+                'pantone' => '285 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,127,255',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '10 00 N',
-                'desc' => '5.948267459869385',
-            ],
-            'longitude' => [
-                'classic' => '49 00 E',
-                'desc' => '47.47360610961914',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '11.983333',
-                'min' => '-1.6594296959',
-            ],
-            'longitude' => [
-                'max' => '51.4',
-                'min' => '41',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '5.1521',
+            // Longitude in decimal degrees
+            'longitude' => '46.1996',
+            // Degrees with decimal
+            'dd' => '5.1521° N, 46.1996° E',
+            // Degrees, minutes, seconds
+            'dms' => '5°9\'7.56" N, 46°11\'58.56" E',
+            // Degrees and decimal minutes
+            'dm' => '5°9.126\' N, 46°11.976\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

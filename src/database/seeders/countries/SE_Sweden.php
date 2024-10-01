@@ -29,51 +29,212 @@ class SE_Sweden extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Sweden';
+
+        // Set the country's official name
         $this->official_name = 'Kingdom of Sweden';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'SE';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'SWE';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '752';
+
+        // Set the international dialing code
         $this->international_phone = '46';
 
-        $this->languages = ['sv'];
+        // Define the languages spoken in the country
+        $this->languages = ['sv']; // Swedish is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.se'];
-        $this->wmo = 'SN';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '170 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '50 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '97%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Swedish Civil Contingencies Agency (MSB)';
+
+        // List popular web technologies in Sweden
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'Ruby'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'SE';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2661886';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Swedish krona',
+            // Currency code
+            'code' => 'SEK',
+            // Currency symbol
+            'symbol' => 'kr',
+            // Main unit
+            'main_unit' => 'krona',
+            // Subunit
+            'sub_unit' => 'öre',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['20', '50', '100', '200', '500', '1000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['50'],
+        ];
+
+        // Set the population
+        $this->population = 10379295; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 450295; // km²
+
+        // Set the capital city
+        $this->capital = 'Stockholm';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Europe/Stockholm',
+                // Standard time offset
+                'standard_time' => 'UTC+1',
+                // Daylight saving time offset
+                'daylight_time' => 'UTC+2',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1523-06-06'; // National Day, celebrating Gustav Vasa's ascension to the throne
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'European Union (EU)',
+            'Nordic Council',
+            'Schengen Area',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 625.9; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Lutheranism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary constitutional monarchy';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football and ice hockey are the most popular sports in Sweden
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Norway', 'iso_alpha_2' => 'NO'],
+            ['name' => 'Finland', 'iso_alpha_2' => 'FI'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇸🇪',
+            // Unicode code points
             'uCode' => 'U+1F1F8 U+1F1EA',
+            // HTML entities
+            'html' => '&#x1F1F8;&#x1F1EA;',
+            // CSS entities
+            'css' => '\\1F1F8\\1F1EA',
+            // Decimal Unicode entities
+            'decimal' => '&#127480;&#127466;',
+            // Direct UTF-8 string
+            'utf8' => '🇸🇪',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF8\uD83C\uDDEA',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-se:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F8;&#x1F1EA;',
         ];
-        $this->color = [
-            'hex' => [
-                '#0000ff',
-                '#ffd700',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#006AA7',
+                // RGB color values
+                'rgb' => '0,106,167',
+                // CMYK color values
+                'cmyk' => '100,37,0,35',
+                // HSL color values
+                'hsl' => '204°,100%,33%',
+                // HSV color values
+                'hsv' => '204°,100%,65%',
+                // Pantone color code
+                'pantone' => '300 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,0,255',
-                '255,215,0',
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FECC00',
+                // RGB color values
+                'rgb' => '254,204,0',
+                // CMYK color values
+                'cmyk' => '0,20,100,0',
+                // HSL color values
+                'hsl' => '48°,100%,50%',
+                // HSV color values
+                'hsv' => '48°,100%,100%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '62 00 N',
-                'desc' => '62.67497253417969',
-            ],
-            'longitude' => [
-                'classic' => '15 00 E',
-                'desc' => '16.798059463500977',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '69.033333',
-                'min' => '46.758333',
-            ],
-            'longitude' => [
-                'max' => '25',
-                'min' => '10.958333',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '60.1282',
+            // Longitude in decimal degrees
+            'longitude' => '18.6435',
+            // Degrees with decimal
+            'dd' => '60.1282° N, 18.6435° E',
+            // Degrees, minutes, seconds
+            'dms' => '60°7\'41.52" N, 18°38\'36.6" E',
+            // Degrees and decimal minutes
+            'dm' => '60°7.692\' N, 18°38.61\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

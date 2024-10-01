@@ -29,51 +29,211 @@ class VN_Vietnam extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Vietnam';
+
+        // Set the country's official name
         $this->official_name = 'Socialist Republic of Vietnam';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'VN';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'VNM';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '704';
+
+        // Set the international dialing code
         $this->international_phone = '84';
 
-        $this->languages = ['vi'];
+        // Define the languages spoken in the country
+        $this->languages = ['vi']; // Vietnamese is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.vn'];
-        $this->wmo = 'VS';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '55 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '35 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '70%'; // Internet penetration rate is high
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Authority of Information Security (AIS)';
+
+        // List popular web technologies in Vietnam
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'Laravel'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'VN';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1562822';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Vietnamese đồng',
+            // Currency code
+            'code' => 'VND',
+            // Currency symbol
+            'symbol' => '₫',
+            // Main unit
+            'main_unit' => 'đồng',
+            // Subunit
+            'sub_unit' => 'hào',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1000', '2000', '5000', '10000', '20000', '50000', '100000', '200000', '500000'],
+            // Main coins
+            'coins_main' => [],
+            // Subunit coins
+            'coins_sub' => [],
+        ];
+
+        // Set the population
+        $this->population = 97875000; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 331212; // km²
+
+        // Set the capital city
+        $this->capital = 'Hanoi';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Ho_Chi_Minh',
+                // Standard time offset
+                'standard_time' => 'UTC+7',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1945-09-02'; // Independence from France
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Association of Southeast Asian Nations (ASEAN)',
+            'World Trade Organization (WTO)',
+            'Asia-Pacific Economic Cooperation (APEC)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 340.6; // GDP in billions of USD (2023 estimates)
+
+        // List the predominant religions
+        $this->religions = [
+            'Buddhism',
+            'Christianity',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Communist single-party state';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Vietnam
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'China', 'iso_alpha_2' => 'CN'],
+            ['name' => 'Laos', 'iso_alpha_2' => 'LA'],
+            ['name' => 'Cambodia', 'iso_alpha_2' => 'KH'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇻🇳',
+            // Unicode code points
             'uCode' => 'U+1F1FB U+1F1F3',
+            // HTML entities
+            'html' => '&#x1F1FB;&#x1F1F3;',
+            // CSS entities
+            'css' => '\\1F1FB\\1F1F3',
+            // Decimal Unicode entities
+            'decimal' => '&#127483;&#127475;',
+            // Direct UTF-8 string
+            'utf8' => '🇻🇳',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDFB\uD83C\uDDF3',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-vn:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1FB;&#x1F1F3;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffff00',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#DA251D',
+                // RGB color values
+                'rgb' => '218,37,29',
+                // CMYK color values
+                'cmyk' => '0,83,87,15',
+                // HSL color values
+                'hsl' => '3°,76%,48%',
+                // HSV color values
+                'hsv' => '3°,87%,85%',
+                // Pantone color code
+                'pantone' => '185 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,0',
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFCD00',
+                // RGB color values
+                'rgb' => '255,205,0',
+                // CMYK color values
+                'cmyk' => '0,20,100,0',
+                // HSL color values
+                'hsl' => '48°,100%,50%',
+                // HSV color values
+                'hsv' => '48°,100%,100%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '16 10 N',
-                'desc' => '16.9404296875',
-            ],
-            'longitude' => [
-                'classic' => '107 50 E',
-                'desc' => '106.8164291381836',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '23.666667',
-                'min' => '8.383333',
-            ],
-            'longitude' => [
-                'max' => '109.466667',
-                'min' => '102.216667',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '14.0583',
+            // Longitude in decimal degrees
+            'longitude' => '108.2772',
+            // Degrees with decimal
+            'dd' => '14.0583° N, 108.2772° E',
+            // Degrees, minutes, seconds
+            'dms' => '14°3\'29.88" N, 108°16\'37.92" E',
+            // Degrees and decimal minutes
+            'dm' => '14°3.498\' N, 108°16.632\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

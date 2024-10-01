@@ -29,51 +29,214 @@ class PE_Peru extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Peru';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Peru';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'PE';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'PER';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '604';
+
+        // Set the international dialing code
         $this->international_phone = '51';
 
-        $this->languages = ['es'];
+        // Define the languages spoken in the country
+        $this->languages = ['es', 'qu', 'ay']; // Spanish is the official language, with Quechua and Aymara recognized as regional languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.pe'];
-        $this->wmo = 'PR';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = ['.com.pe', '.org.pe', '.gob.pe', '.edu.pe']; // Common alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '40 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '20 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '69%'; // Moderate internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'National Cyber Defense Center (CNDI)';
+
+        // List popular web technologies in Peru
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'PE';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '3932488';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Sol',
+            // Currency code
+            'code' => 'PEN',
+            // Currency symbol
+            'symbol' => 'S/.',
+            // Main unit
+            'main_unit' => 'sol',
+            // Subunit
+            'sub_unit' => 'céntimo',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['10', '20', '50', '100', '200'],
+            // Main coins
+            'coins_main' => ['1', '2', '5'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '20', '50'],
+        ];
+
+        // Set the population
+        $this->population = 33481140; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 1285216; // km²
+
+        // Set the capital city
+        $this->capital = 'Lima';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'America/Lima',
+                // Standard time offset
+                'standard_time' => 'UTC-5',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1821-07-28'; // Independence from Spain
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Organization of American States (OAS)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'Union of South American Nations (UNASUR)',
+            'Andean Community',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 227.4; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism, Evangelical)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary presidential constitutional republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Peru
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Ecuador', 'iso_alpha_2' => 'EC'],
+            ['name' => 'Colombia', 'iso_alpha_2' => 'CO'],
+            ['name' => 'Brazil', 'iso_alpha_2' => 'BR'],
+            ['name' => 'Bolivia', 'iso_alpha_2' => 'BO'],
+            ['name' => 'Chile', 'iso_alpha_2' => 'CL'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇵🇪',
+            // Unicode code points
             'uCode' => 'U+1F1F5 U+1F1EA',
+            // HTML entities
+            'html' => '&#x1F1F5;&#x1F1EA;',
+            // CSS entities
+            'css' => '\\1F1F5\\1F1EA',
+            // Decimal Unicode entities
+            'decimal' => '&#127477;&#127466;',
+            // Direct UTF-8 string
+            'utf8' => '🇵🇪',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF5\uD83C\uDDEA',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-pe:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F5;&#x1F1EA;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#D91023',
+                // RGB color values
+                'rgb' => '217,16,35',
+                // CMYK color values
+                'cmyk' => '0,93,84,15',
+                // HSL color values
+                'hsl' => '353°,86%,46%',
+                // HSV color values
+                'hsv' => '353°,93%,85%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '10 00 S',
-                'desc' => '-9.212532997131348',
-            ],
-            'longitude' => [
-                'classic' => '76 00 W',
-                'desc' => '-74.422119140625',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '4.626667',
-                'min' => '-18.333333',
-            ],
-            'longitude' => [
-                'max' => '-68.833333',
-                'min' => '-81.358333',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '-9.1900',
+            // Longitude in decimal degrees
+            'longitude' => '-75.0152',
+            // Degrees with decimal
+            'dd' => '9.1900° S, 75.0152° W',
+            // Degrees, minutes, seconds
+            'dms' => '9°11\'24" S, 75°0\'54.72" W',
+            // Degrees and decimal minutes
+            'dm' => '9°11.4\' S, 75°0.912\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

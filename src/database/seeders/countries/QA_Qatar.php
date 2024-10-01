@@ -29,51 +29,209 @@ class QA_Qatar extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Qatar';
+
+        // Set the country's official name
         $this->official_name = 'State of Qatar';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'QA';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'QAT';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '634';
+
+        // Set the international dialing code
         $this->international_phone = '974';
 
-        $this->languages = ['ar'];
-        $this->tld = ['.qa',"\u0642\u0637\u0631."];
-        $this->wmo = 'QT';
+        // Define the languages spoken in the country
+        $this->languages = ['ar']; // Arabic is the official language
+
+        // Define the top-level domain(s)
+        $this->tld = ['.qa'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = ['.com.qa', '.net.qa', '.org.qa', '.gov.qa']; // Common alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '120 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '80 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '99%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Qatar Computer Emergency Response Team (Q-CERT)';
+
+        // List popular web technologies in Qatar
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'QA';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '289688';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Qatari riyal',
+            // Currency code
+            'code' => 'QAR',
+            // Currency symbol
+            'symbol' => '﷼',
+            // Main unit
+            'main_unit' => 'riyal',
+            // Subunit
+            'sub_unit' => 'dirham',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '5', '10', '50', '100', '500'],
+            // Main coins
+            'coins_main' => ['1'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 2881053; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 11586; // km²
+
+        // Set the capital city
+        $this->capital = 'Doha';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Qatar',
+                // Standard time offset
+                'standard_time' => 'UTC+3',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1971-09-03'; // Independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Arab League',
+            'Gulf Cooperation Council (GCC)',
+            'Organization of Islamic Cooperation (OIC)',
+            'World Trade Organization (WTO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 175.8; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam (Sunni Islam)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Absolute monarchy';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Qatar
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Saudi Arabia', 'iso_alpha_2' => 'SA'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇶🇦',
+            // Unicode code points
             'uCode' => 'U+1F1F6 U+1F1E6',
+            // HTML entities
+            'html' => '&#x1F1F6;&#x1F1E6;',
+            // CSS entities
+            'css' => '\\1F1F6\\1F1E6',
+            // Decimal Unicode entities
+            'decimal' => '&#127478;&#127462;',
+            // Direct UTF-8 string
+            'utf8' => '🇶🇦',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF6\uD83C\uDDE6',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-qa:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F6;&#x1F1E6;',
         ];
-        $this->color = [
-            'hex' => [
-                '#800000',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Maroon',
+                // Web color name
+                'web_name' => 'maroon',
+                // Hexadecimal color code
+                'hex' => '#8A1538',
+                // RGB color values
+                'rgb' => '138,21,56',
+                // CMYK color values
+                'cmyk' => '0,85,59,46',
+                // HSL color values
+                'hsl' => '343°,73%,31%',
+                // HSV color values
+                'hsv' => '343°,85%,54%',
+                // Pantone color code
+                'pantone' => '1955 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '128,0,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '25 30 N',
-                'desc' => '25.413625717163086',
-            ],
-            'longitude' => [
-                'classic' => '51 15 E',
-                'desc' => '51.2602653503418',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '26.441111',
-                'min' => '24.284722',
-            ],
-            'longitude' => [
-                'max' => '52.75',
-                'min' => '50.680556',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '25.3548',
+            // Longitude in decimal degrees
+            'longitude' => '51.1839',
+            // Degrees with decimal
+            'dd' => '25.3548° N, 51.1839° E',
+            // Degrees, minutes, seconds
+            'dms' => '25°21\'17.28" N, 51°11\'2.04" E',
+            // Degrees and decimal minutes
+            'dm' => '25°21.288\' N, 51°11.034\' E',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);

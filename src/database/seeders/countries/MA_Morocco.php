@@ -29,51 +29,212 @@ class MA_Morocco extends CountrySeeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Morocco';
+
+        // Set the country's official name
         $this->official_name = 'Kingdom of Morocco';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'MA';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'MAR';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '504';
+
+        // Set the international dialing code
         $this->international_phone = '212';
 
-        $this->languages = ['ar'];
-        $this->tld = ['.ma',"\u0627\u0644\u0645\u063a\u0631\u0628."];
-        $this->wmo = 'MC';
+        // Define the languages spoken in the country
+        $this->languages = ['ar', 'ber']; // Arabic and Berber are official languages
+
+        // Define the top-level domain(s)
+        $this->tld = ['.ma'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '50 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '20 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '70%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Morocco CERT';
+
+        // List popular web technologies in Morocco
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'Ruby'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'MO';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2542007';
 
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Moroccan dirham',
+            // Currency code
+            'code' => 'MAD',
+            // Currency symbol
+            'symbol' => 'د.م.',
+            // Main unit
+            'main_unit' => 'dirham',
+            // Subunit
+            'sub_unit' => 'centime',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['20', '50', '100', '200'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '20', '50'],
+        ];
+
+        // Set the population
+        $this->population = 36910560; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 446550; // km²
+
+        // Set the capital city
+        $this->capital = 'Rabat';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Africa/Casablanca',
+                // Standard time offset
+                'standard_time' => 'UTC+1',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1956-03-02'; // Independence from France and Spain
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union (AU)',
+            'Arab League',
+            'Organization of Islamic Cooperation (OIC)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 124.7; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam (Sunni)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary constitutional monarchy';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)';
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Algeria', 'iso_alpha_2' => 'DZ'],
+            ['name' => 'Western Sahara', 'iso_alpha_2' => 'EH'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇲🇦',
+            // Unicode code points
             'uCode' => 'U+1F1F2 U+1F1E6',
+            // HTML entities
+            'html' => '&#x1F1F2;&#x1F1E6;',
+            // CSS entities
+            'css' => '\\1F1F2\\1F1E6',
+            // Decimal Unicode entities
+            'decimal' => '&#127474;&#127462;',
+            // Direct UTF-8 string
+            'utf8' => '🇲🇦',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF2\uD83C\uDDE6',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-ma:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F2;&#x1F1E6;',
         ];
-        $this->color = [
-            'hex' => [
-                '#c22229',
-                '#006230',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#C1272D',
+                // RGB color values
+                'rgb' => '193,39,45',
+                // CMYK color values
+                'cmyk' => '0,80,78,24',
+                // HSL color values
+                'hsl' => '357°,67%,46%',
+                // HSV color values
+                'hsv' => '357°,80%,76%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '194,34,41',
-                '0,98,48',
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#006233',
+                // RGB color values
+                'rgb' => '0,98,51',
+                // CMYK color values
+                'cmyk' => '100,0,48,62',
+                // HSL color values
+                'hsl' => '149°,100%,19%',
+                // HSV color values
+                'hsv' => '149°,100%,38%',
+                // Pantone color code
+                'pantone' => '349 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '32 00 N',
-                'desc' => '29.14059066772461',
-            ],
-            'longitude' => [
-                'classic' => '5 00 W',
-                'desc' => '-8.953388214111328',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '36.21',
-                'min' => '5.51',
-            ],
-            'longitude' => [
-                'max' => '2',
-                'min' => '-13.1',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '31.7917',
+            // Longitude in decimal degrees
+            'longitude' => '-7.0926',
+            // Degrees with decimal
+            'dd' => '31.7917° N, 7.0926° W',
+            // Degrees, minutes, seconds
+            'dms' => '31°47\'30.12" N, 7°5\'33.36" W',
+            // Degrees and decimal minutes
+            'dm' => '31°47.502\' N, 7°5.556\' W',
+            // GPS formats
+            'gps' => [],
         ];
 
         $this->geographical = json_decode($this->geographical(), true);
