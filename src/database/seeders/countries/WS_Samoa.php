@@ -13,14 +13,14 @@ class WS_Samoa extends CountrySeeder
      *
      * @var string
      */
-    public $lang = 'en';
+    public ?string $lang = 'en';
 
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'oceania';
+    public ?string $region = 'oceania';
 
     /**
      * Run the database seeds.

@@ -2,8 +2,8 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
 class AR_Argentina extends CountrySeeder
 {
@@ -13,14 +13,14 @@ class AR_Argentina extends CountrySeeder
      *
      * @var string
      */
-    public $lang = 'en';
+    public ?string $lang = 'en';
 
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'americas';
+    public ?string $region = 'americas';
 
     /**
      * Run the database seeds.
@@ -152,9 +152,6 @@ class AR_Argentina extends CountrySeeder
             ['name' => 'Paraguay', 'iso_alpha_2' => 'PY'],
             ['name' => 'Uruguay', 'iso_alpha_2' => 'UY'],
         ];
-
-        // Set the founded year
-        $this->independence_day = 1816; // Year of independence
 
         // Define the country's flag emoji representation
         $this->emoji = [

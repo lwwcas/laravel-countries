@@ -13,14 +13,14 @@ class IL_Israel extends CountrySeeder
      *
      * @var string
      */
-    public $lang = 'en';
+    public ?string $lang = 'en';
 
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'asia';
+    public ?string $region = 'asia';
 
     /**
      * Run the database seeds.

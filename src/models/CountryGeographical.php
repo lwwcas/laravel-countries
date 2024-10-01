@@ -45,8 +45,8 @@ class CountryGeographical extends Model
     protected function casts(): array
     {
         return [
-            'properties' => 'object',
-            'geometry' => 'object',
+            'properties' => 'array',
+            'geometry' => 'array',
         ];
     }
 

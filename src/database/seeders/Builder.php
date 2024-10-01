@@ -5,9 +5,8 @@ namespace Lwwcas\LaravelCountries\Database\Seeders;
 use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
-use Lwwcas\LaravelCountries\Enum\GpsFormatEnum;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Models\Country;
 use Lwwcas\LaravelCountries\Models\CountryRegion;
 use Lwwcas\LaravelCountries\Models\CountryRegionTranslation;
@@ -19,22 +18,23 @@ class Builder
     /**
      * Create a country
      *
-     * @param Seeder $country
+     * @param CountrySeeder $country
      * @return void
      * @throws Exception
      */
-    public static function country(Seeder $country): void
+    public static function country(CountrySeeder $country): void
     {
-        if (property_exists($country, 'flag_colors') == false) {
+        if (property_exists($country, 'flag_colors') == false || $country->borders == null) {
         //    $this->oldBuilder($country);
            return;
+        } else {
+            self::builder2($country);
         }
 
-        self::builder2($country);
         return;
     }
 
-    protected static function builder2(Seeder $country)
+    protected static function builder2(CountrySeeder $country)
     {
         $region = CountryRegion::whereSlug($country->region, $country->lang)
             ->firstOrFail();
@@ -60,6 +60,7 @@ class Builder
                 'main' => $country->timezones[0] ?? [],
                 'others' => array_slice($country->timezones, 1) ?? [],
             ],
+
             'currency' => [
                 'name' => $country->currency['name'] ?? null,
                 'code' => $country->currency['code'] ?? null,
@@ -71,11 +72,23 @@ class Builder
                 ],
                 'unit' => [
                     'main' => $country->currency['main_unit'] ?? null,
-                    'sub' => $country->currency['main_unit'] ?? null,
+                    'sub' => $country->currency['sub_unit'] ?? null,
                     'to_unit' => $country->currency['sub_unit_to_unit'] ?? null,
                 ],
             ],
-            'flag_emoji' => $country->emoji ?? [],
+
+            'flag_emoji' => [
+                'img' => $country->emoji['img'] ?? null,
+                'utf8' => $country->emoji['utf8'] ?? null,
+                'utf16' => $country->emoji['utf16'] ?? null,
+                'uCode' => $country->emoji['uCode'] ?? null,
+                'hex' => $country->emoji['hex'] ?? null,
+                'html' => $country->emoji['html'] ?? null,
+                'css' => $country->emoji['css'] ?? null,
+                'decimal' => $country->emoji['decimal'] ?? null,
+                'shortcode' => $country->emoji['shortcode'] ?? null,
+            ],
+
             'flag_colors' => array_column($country->flag_colors, 'name'),
             'flag_colors_web' => array_column($country->flag_colors, 'web_name'),
             'flag_colors_contrast' => array_column($country->flag_colors, 'contrast'),
@@ -100,8 +113,8 @@ class Builder
             'popular_technologies' => $country->popular_technologies ?? [],
             'internet' => [
                 'speed' => [
-                    'average_fixed' => $country->internet_speed['average'] ?? null,
-                    'average_mobile' => $country->internet_speed['average'] ?? null,
+                    'average_fixed' => $country->internet_speed['average_speed_fixed'] ?? null,
+                    'average_mobile' => $country->internet_speed['average_speed_mobile'] ?? null,
                 ],
                 'penetration' => $country->internet_penetration,
 
@@ -118,6 +131,16 @@ class Builder
             'degrees_and_decimal_minutes' => $country->coordinates['dm'] ?? null,
             'gps' => [],
         ]);
+
+        $geographical = $country->geographical;
+        if (isset($geographical['type'])) {
+            $countryCreated->geographical()->create([
+                'type' => $geographical['type'],
+                'features_type' => $geographical['features'][0]['type'],
+                'properties' => $geographical['features'][0]['properties'],
+                'geometry' => $geographical['features'][0]['geometry'],
+            ]);
+        }
     }
 
     protected function oldBuilder(Seeder $country)

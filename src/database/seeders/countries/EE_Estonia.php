@@ -13,14 +13,14 @@ class EE_Estonia extends CountrySeeder
      *
      * @var string
      */
-    public $lang = 'en';
+    public ?string $lang = 'en';
 
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'europe';
+    public ?string $region = 'europe';
 
     /**
      * Run the database seeds.

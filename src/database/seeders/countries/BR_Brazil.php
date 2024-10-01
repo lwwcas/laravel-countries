@@ -2,8 +2,8 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
 class BR_Brazil extends CountrySeeder
 {
@@ -13,14 +13,14 @@ class BR_Brazil extends CountrySeeder
      *
      * @var string
      */
-    public $lang = 'en';
+    public ?string $lang = 'en';
 
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'americas';
+    public ?string $region = 'americas';
 
     /**
      * Run the database seeds.

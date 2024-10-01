@@ -14,7 +14,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var string
      */
-    public string $lang = 'en';
+    public ?string $lang = 'en';
 
     /**
      * Attribute that defines the region of the country.
@@ -22,7 +22,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var string
      */
-    public string $region = null;
+    public ?string $region = null;
 
     /**
      * The common name of the country.
@@ -30,7 +30,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var string
      */
-    public string $name = null;
+    public ?string $name = null;
 
     /**
      * The official name of the country.
@@ -38,7 +38,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var string
      */
-    public string $official_name = null;
+    public ?string $official_name = null;
 
     /**
      * ISO 3166-1 Alpha-2 code of the country (two-letter country code).
@@ -46,7 +46,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var string
      */
-    public string $iso_alpha_2 = null;
+    public ?string $iso_alpha_2 = null;
 
     /**
      * ISO 3166-1 Alpha-3 code of the country (three-letter country code).
@@ -54,7 +54,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var string
      */
-    public string $iso_alpha_3 = null;
+    public ?string $iso_alpha_3 = null;
 
     /**
      * ISO 3166-1 Numeric code of the country.
@@ -62,7 +62,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var string
      */
-    public string $iso_numeric = null;
+    public ?string $iso_numeric = null;
 
     /**
      * International phone code of the country.
@@ -70,7 +70,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var string
      */
-    public string $international_phone = null;
+    public ?string $international_phone = null;
 
     /**
      * Array of languages spoken in the country.
@@ -79,7 +79,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var array
      */
-    public array $languages = null;
+    public ?array $languages = null;
 
     /**
      * Array of top-level domains (TLD) used by the country.
@@ -87,7 +87,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var array
      */
-    public array $tld = null;
+    public ?array $tld = null;
 
     /**
      * Array of alternative top-level domains (TLD) used by the country.
@@ -95,7 +95,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var array
      */
-    public array $alternative_tlds = null;
+    public ?array $alternative_tlds = null;
 
     /**
      * Array that defines average internet speeds for the country.
@@ -104,7 +104,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var array
      */
-    public array $internet_speed = null;
+    public ?array $internet_speed = null;
 
     /**
      * Internet penetration percentage in the country.
@@ -112,7 +112,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var string
      */
-    public string $internet_penetration = null;
+    public ?string $internet_penetration = null;
 
     /**
      * The name of the country's cybersecurity agency.
@@ -120,7 +120,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var string
      */
-    public string $cybersecurity_agency = null;
+    public ?string $cybersecurity_agency = null;
 
     /**
      * Array of popular technologies and platforms used in the country.
@@ -128,7 +128,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var array
      */
-    public array $popular_technologies = null;
+    public ?array $popular_technologies = null;
 
     /**
      * World Meteorological Organization (WMO) country code.
@@ -136,7 +136,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var string
      */
-    public string $wmo = null;
+    public ?string $wmo = null;
 
     /**
      * The GeoNames ID for the country, used in the GeoNames geographical database.
@@ -144,7 +144,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var string
      */
-    public string $geoname_id = null;
+    public ?string $geoname_id = null;
 
     /**
      * Array of currency information for the country.
@@ -152,7 +152,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var array
      */
-    public array $currency = null;
+    public ?array $currency = null;
 
     /**
      * Population of the country.
@@ -160,7 +160,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var int
      */
-    public int $population = null;
+    public ?int $population = null;
 
     /**
      * The area of the country in square kilometers.
@@ -168,7 +168,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var int
      */
-    public int $area = null;
+    public ?int $area = null;
 
     /**
      * The capital city of the country.
@@ -176,7 +176,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var string
      */
-    public string $capital = null;
+    public ?string $capital = null;
 
     /**
      * Array of timezones applicable to the country.
@@ -184,7 +184,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var array
      */
-    public array $timezones = null;
+    public ?array $timezones = null;
 
     /**
      * The country's independence day (if applicable).
@@ -192,7 +192,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var string
      */
-    public string $independence_day = null;
+    public ?string $independence_day = null;
 
     /**
      * Array of international organizations the country is a member of.
@@ -200,7 +200,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var array
      */
-    public array $international_organizations = null;
+    public ?array $international_organizations = null;
 
     /**
      * Gross Domestic Product (GDP) of the country in billions of USD.
@@ -208,7 +208,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var int
      */
-    public int $gdp = null;
+    public ?int $gdp = null;
 
     /**
      * Array of major religions practiced in the country.
@@ -216,7 +216,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var array
      */
-    public array $religions = null;
+    public ?array $religions = null;
 
     /**
      * The form of government of the country.
@@ -224,7 +224,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var string
      */
-    public string $government = null;
+    public ?string $government = null;
 
     /**
      * The national sport of the country (if applicable).
@@ -232,7 +232,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var string
      */
-    public string $national_sport = null;
+    public ?string $national_sport = null;
 
     /**
      * Array of neighboring countries, including their names and ISO Alpha-2 codes.
@@ -240,7 +240,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var array
      */
-    public array $borders = null;
+    public ?array $borders = [];
 
     /**
      * Array representing the country's flag emoji and Unicode code points.
@@ -248,7 +248,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var array
      */
-    public array $emoji = null;
+    public ?array $emoji = null;
 
     /**
      * Array of colors in the country's flag.
@@ -256,7 +256,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var array
      */
-    public array $flag_colors = null;
+    public ?array $flag_colors = null;
 
     /**
      * Array representing the geographical coordinates of the country.
@@ -264,7 +264,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var array
      */
-    public array $coordinates = null;
+    public ?array $coordinates = null;
 
     /**
      * Array containing geographical boundary information of the country.
@@ -272,7 +272,7 @@ abstract class CountrySeeder extends Seeder implements CountrySeedInterface
      *
      * @var array
      */
-    public array $geographical = null;
+    public ?array $geographical = null;
 
 
 }

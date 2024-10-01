@@ -2,8 +2,8 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
 class FM_Micronesia extends CountrySeeder
 {
@@ -13,14 +13,14 @@ class FM_Micronesia extends CountrySeeder
      *
      * @var string
      */
-    public $lang = 'en';
+    public ?string $lang = 'en';
 
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'oceania';
+    public ?string $region = 'oceania';
 
     /**
      * Run the database seeds.
@@ -98,7 +98,7 @@ class FM_Micronesia extends CountrySeeder
             // Main coins
             'coins_main' => ['1', '5', '10', '25'],
             // Subunit coins
-            'coins_sub' => ['1 cent'],
+            'coins_sub' => ['1'],
         ];
 
         // Set the population

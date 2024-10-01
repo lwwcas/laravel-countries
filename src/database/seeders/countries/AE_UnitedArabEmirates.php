@@ -2,8 +2,8 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
 class AE_UnitedArabEmirates extends CountrySeeder
 {
@@ -13,14 +13,14 @@ class AE_UnitedArabEmirates extends CountrySeeder
      *
      * @var string
      */
-    public $lang = 'en';
+    public ?string $lang = 'en';
 
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'asia';
+    public ?string $region = 'asia';
 
     /**
      * Run the database seeds.
@@ -148,9 +148,6 @@ class AE_UnitedArabEmirates extends CountrySeeder
             ['name' => 'Oman', 'iso_alpha_2' => 'OM'],
             ['name' => 'Saudi Arabia', 'iso_alpha_2' => 'SA'],
         ];
-
-        // Set the founded year
-        $this->independence_day = 1971; // Year of independence
 
         // Define the country's flag emoji representation
         $this->emoji = [

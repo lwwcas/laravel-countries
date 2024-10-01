@@ -2,8 +2,8 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
 class EC_Ecuador extends CountrySeeder
 {
@@ -13,14 +13,14 @@ class EC_Ecuador extends CountrySeeder
      *
      * @var string
      */
-    public $lang = 'en';
+    public ?string $lang = 'en';
 
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'americas';
+    public ?string $region = 'americas';
 
     /**
      * Run the database seeds.
@@ -98,7 +98,7 @@ class EC_Ecuador extends CountrySeeder
             // Main coins
             'coins_main' => ['1', '5', '10', '25'],
             // Subunit coins
-            'coins_sub' => ['1 cent', '5 cents', '10 cents', '25 cents'],
+            'coins_sub' => ['1', '5', '10', '25'],
         ];
 
         // Set the population

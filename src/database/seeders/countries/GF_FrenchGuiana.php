@@ -13,14 +13,14 @@ class GF_FrenchGuiana extends CountrySeeder
      *
      * @var string
      */
-    public $lang = 'en';
+    public ?string $lang = 'en';
 
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'americas';
+    public ?string $region = 'americas';
 
     /**
      * Run the database seeds.

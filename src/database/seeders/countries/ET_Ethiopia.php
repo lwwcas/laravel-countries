@@ -13,14 +13,14 @@ class ET_Ethiopia extends CountrySeeder
      *
      * @var string
      */
-    public $lang = 'en';
+    public ?string $lang = 'en';
 
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'africa';
+    public ?string $region = 'africa';
 
     /**
      * Run the database seeds.
