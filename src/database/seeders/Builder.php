@@ -24,18 +24,14 @@ class Builder
      */
     public static function country(CountrySeeder $country): void
     {
-        if (property_exists($country, 'flag_colors') == false || $country->borders == null) {
-        //    $this->oldBuilder($country);
-           return;
-        } else {
-            self::builder2($country);
-        }
-
+        self::builder($country);
         return;
     }
 
-    protected static function builder2(CountrySeeder $country)
+    protected static function builder(CountrySeeder $country)
     {
+        DB::beginTransaction();
+
         $region = CountryRegion::whereSlug($country->region, $country->lang)
             ->firstOrFail();
 
@@ -141,44 +137,9 @@ class Builder
                 'geometry' => $geographical['features'][0]['geometry'],
             ]);
         }
-    }
 
-    protected function oldBuilder(Seeder $country)
-    {
-        $region = CountryRegion::whereSlug($country->region, $country->lang)
-            ->firstOrFail();
-
-        $_country = $region->countries()->create([
-            'official_name' => $country->official_name,
-            'iso_alpha_2' => $country->iso_alpha_2,
-            'iso_alpha_3' => $country->iso_alpha_3,
-            'iso_numeric' => $country->iso_numeric,
-            'international_phone' => $country->international_phone,
-            'languages' => $country->languages,
-            'tld' => json_encode($country->tld),
-            'wmo' => $country->wmo,
-            'geoname_id' => $country->geoname_id,
-            'emoji' => $country->emoji,
-            'color_hex' => $country->color['hex'],
-            'color_rgb' => $country->color['rgb'],
-            'coordinates' => $country->coordinates,
-            'coordinates_limit' => $country->coordinates_limit,
-            'visible' => true,
-            'en' => [
-                'name' => $country->name,
-                'slug' => Str::slug($country->name, '-'),
-            ],
-        ]);
-
-        $geographical = $country->geographical;
-        if (isset($geographical['type'])) {
-            $_country->geographical()->create([
-                'type' => $geographical['type'],
-                'features_type' => $geographical['features'][0]['type'],
-                'properties' => json_encode($geographical['features'][0]['properties']),
-                'geometry' => json_encode($geographical['features'][0]['geometry']),
-            ]);
-        }
+        DB::commit();
+        return;
     }
 
     /**
