@@ -19,6 +19,14 @@ class CountryRegionTranslationFactory extends Factory
      */
     protected $model = CountryRegionTranslation::class;
 
+    protected $regions = [
+        'Africa',
+        'Americas',
+        'Asia',
+        'Europe',
+        'Oceania',
+    ];
+
     /**
      * Define the model's default state.
      *
@@ -26,7 +34,7 @@ class CountryRegionTranslationFactory extends Factory
      */
     public function definition(): array
     {
-        $name = fake()->country();
+        $name = fake()->randomElements($this->regions)[0] . ' ' . fake()->word();
         return [
             'lc_region_id' => CountryRegionFactory::new()->create()->id,
             'name' => $name,

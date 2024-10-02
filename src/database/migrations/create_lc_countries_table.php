@@ -51,7 +51,7 @@ return new class() extends Migration
             $table->json('flag_colors_hsv')->nullable()->comment('HSV (Hue, Saturation, Value) color values for the flag.');
             $table->json('flag_colors_pantone')->nullable()->comment('Pantone color codes for the country’s flag.');
 
-            $table->boolean('visible')->default(true)->comment('Visibility flag to determine if the country is publicly visible.');
+            $table->boolean('is_visible')->default(true)->comment('Visibility flag to determine if the country is publicly visible.');
             $table->timestamps();
 
             $table->unique(['lc_region_id', 'iso_alpha_2'])->comment('Unique constraint to ensure no duplicate ISO alpha-2 codes within the same region.');

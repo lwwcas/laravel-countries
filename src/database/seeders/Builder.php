@@ -3,7 +3,6 @@
 namespace Lwwcas\LaravelCountries\Database\Seeders;
 
 use Exception;
-use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
@@ -95,7 +94,7 @@ class Builder
             'flag_colors_hsv' => array_column($country->flag_colors, 'hsv'),
             'flag_colors_pantone' => array_column($country->flag_colors, 'pantone'),
 
-            'visible' => true,
+            'is_visible' => true,
 
             'en' => [
                 'name' => $country->name,

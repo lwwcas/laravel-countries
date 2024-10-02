@@ -3,10 +3,10 @@
 namespace Lwwcas\LaravelCountries\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Lwwcas\LaravelCountries\Abstract\CountryModel;
 
-class CountryCoordinates extends Model
+class CountryCoordinates extends CountryModel
 {
     use HasFactory;
 
@@ -23,13 +23,6 @@ class CountryCoordinates extends Model
      * @var bool
      */
     public $timestamps = false;
-
-    /**
-     * @property-read string $localeKey
-     *
-     * @var string
-     */
-    public string $localeKey;
 
     /**
      * The attributes that are mass assignable.
@@ -56,17 +49,6 @@ class CountryCoordinates extends Model
         return [
             'gps' => 'array',
         ];
-    }
-
-    /**
-     * Set the locale key and initialize the model.
-     *
-     * @param array $attributes
-     */
-    public function __construct(array $attributes = [])
-    {
-        $this->localeKey = config('w-countries.locale_key', 'locale');
-        parent::__construct($attributes);
     }
 
     /**

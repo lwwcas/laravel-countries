@@ -5,11 +5,26 @@ namespace Lwwcas\LaravelCountries\Models;
 use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Lwwcas\LaravelCountries\Abstract\CountryModel;
+use Lwwcas\LaravelCountries\Models\Concerns\HasTranslationGlobalScope;
+use Lwwcas\LaravelCountries\Models\Concerns\HasVisibleGlobalScope;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereIso;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereIsoAlpha2;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereName;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereSlug;
+use Lwwcas\LaravelCountries\Models\Concerns\VisibleAttributes;
 
-class CountryRegion extends Model
+class CountryRegion extends CountryModel
 {
-    use HasFactory, Translatable;
+    use HasFactory,
+        Translatable,
+        HasVisibleGlobalScope,
+        HasTranslationGlobalScope,
+        HasWhereSlug,
+        HasWhereName,
+        HasWhereIso,
+        HasWhereIsoAlpha2,
+        VisibleAttributes;
 
     public $translationModel = CountryRegionTranslation::class;
 
@@ -37,13 +52,6 @@ class CountryRegion extends Model
     public $timestamps = false;
 
     /**
-     * @property-read string $localeKey
-     *
-     * @var string
-     */
-    public string $localeKey;
-
-    /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -53,7 +61,7 @@ class CountryRegion extends Model
         'icao',        // The ICAO (International Civil Aviation Organization) country code for aviation purposes.
         'iucn',        // The IUCN (International Union for Conservation of Nature) region code for conservation data.
         'tdwg',        // The TDWG (World Geographical Scheme for Recording Plant Distributions) code, used in biodiversity studies.
-        'visible',     // A boolean flag indicating if the country is visible in the application.
+        'is_visible',     // A boolean flag indicating if the country is visible in the application.
     ];
 
     /**
@@ -62,7 +70,7 @@ class CountryRegion extends Model
      * @var array
      */
     protected $attributes = [
-        'visible' => true,
+        'is_visible' => true,
     ];
 
     /**
@@ -73,19 +81,8 @@ class CountryRegion extends Model
     protected function casts(): array
     {
         return [
-            'visible' => 'bool',
+            'is_visible' => 'boolean',
         ];
-    }
-
-    /**
-     * Set the locale key and initialize the model.
-     *
-     * @param array $attributes
-     */
-    public function __construct(array $attributes = [])
-    {
-        $this->localeKey = config('w-countries.locale_key', 'locale');
-        parent::__construct($attributes);
     }
 
     /**
@@ -97,9 +94,9 @@ class CountryRegion extends Model
     {
         parent::booting();
 
-        // Applying a global scope to always filter countries where 'visible' is true
-        static::addGlobalScope('visible', function (Builder $builder) {
-            $builder->where('visible', true);
+        // Applying a global scope to always filter countries where 'is_visible' is true
+        static::addGlobalScope('is_visible', function (Builder $builder) {
+            $builder->where('is_visible', true);
         });
 
         // Apply a global scope to always eager load the translations
@@ -109,27 +106,9 @@ class CountryRegion extends Model
     }
 
     /**
-     * Retrieve a query builder without applying the 'visible' global scope.
+     * Get the countries that are located in this region.
      *
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public static function withNotVisible()
-    {
-        return static::withoutGlobalScope('visible');
-    }
-
-    /**
-     * Retrieve a query builder without applying the 'translation' global scope.
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public static function withNotTranslation()
-    {
-        return static::withoutGlobalScope('translation');
-    }
-
-    /**
-     * Get the countries.
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function countries()
     {
@@ -137,42 +116,39 @@ class CountryRegion extends Model
     }
 
     /**
-     * Find a region by slug.
+     * Filter the query by the ICAO (International Civil Aviation Organization) region code
      *
-     * @param string $slug
-     *
-     * @return Illuminate\Database\Eloquent\Collection
+     * @param Builder $query
+     * @param string $icao
+     * @return Builder
      */
-    public function scopeWhereSlug($query, $slug, $locale = null)
+    public function scopeWhereICAO($query, string $icao)
     {
-        $query = $query->whereTranslation('slug', $slug);
-        if ($locale !== null) {
-            $query = $query->whereTranslation('locale', $locale);
-        }
-        return $query->withTranslation();
+        return $query->where('icao', $icao);
     }
 
     /**
-     * Find a region by name.
+     * Filter the query by the IUCN (International Union for Conservation of Nature) region code
      *
-     * @param string $name
-     *
-     * @return Illuminate\Database\Eloquent\Collection
+     * @param Builder $query
+     * @param string $iucn
+     * @return Builder
      */
-    public function scopeWhereName($query, $name)
+    public function scopeWhereIUCN($query, string $iucn)
     {
-        return $query->whereTranslation('name', $name)->withTranslation();
+        return $query->where('iucn', $iucn);
     }
 
     /**
-     * Find a region by uuid.
+     * Filter the query by the TDWG (Taxonomic Databases Working Group) region code
      *
-     * @param string $uuid
-     *
-     * @return Illuminate\Database\Eloquent\Collection
+     * @param Builder $query
+     * @param string $tdwg
+     * @return Builder
      */
-    public function scopeWhereUuid($query, $uuid)
+    public function scopeWhereTDWG($query, string $tdwg)
     {
-        return $query->where('uuid', $uuid)->withTranslation();
+        return $query->where('tdwg', $tdwg);
     }
+
 }

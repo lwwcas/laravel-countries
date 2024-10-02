@@ -5,19 +5,40 @@ namespace Lwwcas\LaravelCountries\Models;
 use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Lwwcas\LaravelCountries\Abstract\CountryModel;
+use Lwwcas\LaravelCountries\Models\Concerns\HasTranslationGlobalScope;
+use Lwwcas\LaravelCountries\Models\Concerns\HasVisibleGlobalScope;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereIso;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereIsoAlpha2;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereIsoAlpha3;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereIsoNumeric;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereName;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereSlug;
+use Lwwcas\LaravelCountries\Models\Concerns\VisibleAttributes;
 use Lwwcas\LaravelCountries\Models\CountryCoordinates;
 use Lwwcas\LaravelCountries\Models\CountryExtras;
+use Lwwcas\LaravelCountries\Models\CountryGeographical;
+use Lwwcas\LaravelCountries\Models\CountryRegion;
+use Lwwcas\LaravelCountries\Models\CountryTranslation;
 use Lwwcas\LaravelCountries\trait\WithCoordinatesBootstrap;
 use Lwwcas\LaravelCountries\trait\WithFlagBootstrap;
 
-class Country extends Model
+class Country extends CountryModel
 {
     use HasFactory,
         Translatable,
+        HasVisibleGlobalScope,
+        HasTranslationGlobalScope,
         WithFlagBootstrap,
-        WithCoordinatesBootstrap;
+        WithCoordinatesBootstrap,
+        HasWhereSlug,
+        HasWhereName,
+        HasWhereIso,
+        HasWhereIsoAlpha2,
+        HasWhereIsoAlpha3,
+        HasWhereIsoNumeric,
+        VisibleAttributes;
 
     public $translationModel = CountryTranslation::class;
 
@@ -36,13 +57,6 @@ class Country extends Model
 
     /* Translatable ForeignKey */
     public $translationForeignKey = 'lc_country_id';
-
-    /**
-     * @property-read string $localeKey
-     *
-     * @var string
-     */
-    public string $localeKey;
 
     /**
      * The attributes that are mass assignable.
@@ -86,7 +100,7 @@ class Country extends Model
         'flag_colors_hsv', // HSV (Hue, Saturation, Value) color values for the flag.
         'flag_colors_pantone', // Pantone color codes for the flag.
 
-        'visible', // Boolean flag indicating whether the country is visible in the application.
+        'is_visible', // Boolean flag indicating whether the country is visible in the application.
     ];
 
 
@@ -96,7 +110,7 @@ class Country extends Model
      * @var array
      */
     protected $attributes = [
-        'visible' => true,
+        'is_visible' => true,
     ];
 
     /**
@@ -125,19 +139,8 @@ class Country extends Model
             'flag_colors_hsv' => 'array',
             'flag_colors_pantone' => 'array',
 
-            'visible' => 'bool',
+            'is_visible' => 'boolean',
         ];
-    }
-
-    /**
-     * Set the locale key and initialize the model.
-     *
-     * @param array $attributes
-     */
-    public function __construct(array $attributes = [])
-    {
-        $this->localeKey = config('w-countries.locale_key', 'locale');
-        parent::__construct($attributes);
     }
 
     /**
@@ -163,34 +166,14 @@ class Country extends Model
         parent::booting();
 
         // Applying a global scope to always filter countries where 'visible' is true
-        static::addGlobalScope('visible', function (Builder $builder) {
-            $builder->where('visible', true);
+        static::addGlobalScope('is_visible', function (Builder $builder) {
+            $builder->where('is_visible', true);
         });
 
         // Apply a global scope to always eager load the translations
         static::addGlobalScope('translation', function (Builder $builder) {
             $builder->withTranslation();
         });
-    }
-
-    /**
-     * Retrieve a query builder without applying the 'visible' global scope.
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public static function withNotVisible()
-    {
-        return static::withoutGlobalScope('visible');
-    }
-
-    /**
-     * Retrieve a query builder without applying the 'translation' global scope.
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public static function withNotTranslation()
-    {
-        return static::withoutGlobalScope('translation');
     }
 
     /**
@@ -234,39 +217,15 @@ class Country extends Model
     }
 
     /**
-     * Find a country by uuid.
+     * Find a country by UIDs.
      *
-     * @param string $uuid
-     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param string $uid
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeWhereUuid($query, $uuid)
+    public function scopeWhereUid($query, $uid)
     {
-        return $query->where('uuid', $uuid);
-    }
-
-    /**
-     * Find a country by slug.
-     *
-     * @param string $slug
-     *
-     * @return Illuminate\Database\Eloquent\Collection
-     */
-    public function scopeWhereSlug($query, $slug)
-    {
-        return $query->whereTranslation('slug', $slug);
-    }
-
-    /**
-     * Find a country by name.
-     *
-     * @param string $name
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function scopeWhereName($query, $name)
-    {
-        return $query->whereTranslation('name', $name);
+        return $query->where('uid', $uid);
     }
 
     /**
@@ -279,57 +238,6 @@ class Country extends Model
     public function scopeWhereOficialName($query, $officialName)
     {
         return $query->where('official_name', $officialName);
-    }
-
-    /**
-     * Find a country by iso.
-     *
-     * @param string $iso
-     *
-     * @return Illuminate\Database\Eloquent\Collection
-     */
-    public function scopeWhereIso($query, $iso)
-    {
-        return $query
-            ->where('iso_alpha_2', $iso)
-            ->orWhere('iso_alpha_3', $iso)
-            ->orWhere('iso_numeric', $iso);
-    }
-
-    /**
-     * Find a country by iso Alpha 2.
-     *
-     * @param string $isoAlpha2
-     *
-     * @return Illuminate\Database\Eloquent\Collection
-     */
-    public function scopeWhereIsoAlpha2($query, $isoAlpha2)
-    {
-        return $query->where('iso_alpha_2', $isoAlpha2);
-    }
-
-    /**
-     * Find a country by iso Alpha 3.
-     *
-     * @param string $isoAlpha3
-     *
-     * @return Illuminate\Database\Eloquent\Collection
-     */
-    public function scopeWhereIsoAlpha3($query, $isoAlpha3)
-    {
-        return $query->where('iso_alpha_3', $isoAlpha3);
-    }
-
-    /**
-     * Find a country by iso Numeric.
-     *
-     * @param string $isoNumeric
-     *
-     * @return Illuminate\Database\Eloquent\Collection
-     */
-    public function scopeWhereIsoNumeric($query, $isoNumeric)
-    {
-        return $query->where('iso_numeric', $isoNumeric);
     }
 
     /**
@@ -412,72 +320,6 @@ class Country extends Model
             default => $query->where('tld', 'LIKE', '%' . $domainInLowercase . '%'),
         };
 
-    }
-
-    /**
-     * Determine if the country is visible.
-     *
-     * @return bool
-     */
-    public function isVisible(): bool
-    {
-        return (bool) $this->visible;
-    }
-
-    /**
-     * Determine if the country is hidden.
-     *
-     * @return bool
-     */
-    public function isHidden(): bool
-    {
-        return (bool) !$this->visible;
-    }
-
-    /**
-     * Set the country as visible.
-     *
-     * @return $this
-     */
-    public function setVisibleTrue(): self
-    {
-        $this->visible = true;
-        $this->save();
-
-        return $this;
-    }
-
-    /**
-     * Set the country as visible.
-     *
-     * @return $this
-     */
-    public function setCountryVisible()
-    {
-        return $this->setVisibleTrue();
-    }
-
-    /**
-     * Set the country as hidden.
-     *
-     * @return $this
-     */
-    public function setVisibleFalse(): self
-    {
-        $this->visible = false;
-        $this->save();
-
-        return $this;
-    }
-
-    /**
-     * Set the country as hidden.
-     *
-     * @return $this
-     */
-    public function setCountryHidden()
-    {
-        return $this->setVisibleFalse();
     }
 
 }

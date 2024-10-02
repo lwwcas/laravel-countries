@@ -3,6 +3,7 @@
 namespace Lwwcas\LaravelCountries\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 use Lwwcas\LaravelCountries\Models\CountryRegion;
 
 /**
@@ -18,6 +19,14 @@ class CountryRegionFactory extends Factory
      */
     protected $model = CountryRegion::class;
 
+    protected $regions = [
+        'Africa',
+        'Americas',
+        'Asia',
+        'Europe',
+        'Oceania',
+    ];
+
     /**
      * Define the model's default state.
      *
@@ -26,7 +35,12 @@ class CountryRegionFactory extends Factory
     public function definition(): array
     {
         return [
-            'uuid' => fake()->uuid(),
+            'iso_alpha_2' => fake()->countryCode(),
+            'icao' => Str::upper(fake()->randomLetter(2)),
+            'iucn' => fake()->randomElements($this->regions)[0] . ' ' . fake()->word(),
+            'tdwg' => fake()->word(),
+            'is_visible' => true,
         ];
     }
+
 }

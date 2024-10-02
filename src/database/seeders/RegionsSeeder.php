@@ -71,7 +71,8 @@ class RegionsSeeder extends Seeder
                 'icao' => $region['icao_region'],
                 'iucn' => $region['iucn_region'],
                 'tdwg' => $region['tdwg'],
-                'visible' => true,
+                'is_visible' => true,
+
                 'en' => [
                     'slug' => Str::slug($region['name'], '-'),
                     'name' => Str::title($region['name']),

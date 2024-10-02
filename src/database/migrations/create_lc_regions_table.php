@@ -19,7 +19,7 @@ return new class() extends Migration
             $table->string('icao', 10)->comment('International Civil Aviation Organization (ICAO) region');
             $table->string('iucn', 10)->comment('International Union for Conservation of Nature (IUCN) region');
             $table->string('tdwg', 10)->comment('World Geographical Scheme for Recording Plant Distributions code');
-            $table->boolean('visible')->default(true);
+            $table->boolean('is_visible')->default(true);
         });
     }
 
