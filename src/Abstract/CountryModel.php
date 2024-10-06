@@ -3,9 +3,12 @@
 namespace Lwwcas\LaravelCountries\Abstract;
 
 use Illuminate\Database\Eloquent\Model;
+use Lwwcas\LaravelCountries\Models\Concerns\HasConfigs;
 
 abstract class CountryModel extends Model
 {
+    use HasConfigs;
+
     /**
      * @property-read string $localeKey
      *
@@ -20,7 +23,7 @@ abstract class CountryModel extends Model
      */
     public function __construct(array $attributes = [])
     {
-        $this->localeKey = config('w-countries.locale_key', 'locale');
+        $this->localeKey = $this->getConfigLocaleKey();
 
         parent::__construct($attributes);
     }

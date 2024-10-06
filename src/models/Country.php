@@ -5,6 +5,8 @@ namespace Lwwcas\LaravelCountries\Models;
 use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
 use Lwwcas\LaravelCountries\Abstract\CountryModel;
 use Lwwcas\LaravelCountries\Models\Concerns\HasTranslationGlobalScope;
@@ -266,6 +268,28 @@ class Country extends CountryModel
     public function scopeWhereGeoname($query, $geonameId)
     {
         return $query->where('geoname_id', $geonameId);
+    }
+
+    public function getListWithNamesAndSlugs(bool $is_cached = true)
+    {
+        $countries = [];
+        $is_cached = $this->getConfigIsCache() === true || $is_cached === true;
+        $cacheName = $this->getConfigPrefixCache() . 'countries.list.names_slugs';
+
+        if (Cache::has($cacheName) && $is_cached === true) {
+            $countries = Cache::get($cacheName);
+            return $countries;
+        }
+
+        $countries = Country::with(['translations' => function ($query) {
+            $query->select('lc_country_id', 'name', 'slug')->where('locale', 'pt');
+        }])
+            ->select('id', 'uid', 'official_name', 'iso_alpha_2', 'iso_alpha_3')
+            ->get();
+
+        Cache::add($cacheName, $countries, $this->getConfigBigTimeCache());
+
+        return $countries;
     }
 
 }
