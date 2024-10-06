@@ -57,7 +57,18 @@ class CountryFactory extends Factory
             'timezones' => null,
             'currency' => null,
 
-            'flag_emoji' => null,
+            'flag_emoji' => [
+                'img' => fake()->emoji(),
+                'utf8' => '&#'. fake()->numberBetween(128512, 128567)  . ';',
+                'utf16' => '\\uD83C\\uDDE6\\uD83C\\uDDE9',
+                'uCode' => 'U+1F1E6 U+1F1E9',
+                'hex' => '&#x1F1E6;&#x1F1E9',
+                'html' => '&#x1F1E6;&#x1F1E9;',
+                'css' => '\\1F1E6\\1F1E9',
+                'decimal' => '&#127462;&#127465;',
+                'shortcode' => ':flag-'. Str::lower(fake()->countryCode()) .':',
+            ],
+
             'flag_colors' => null,
             'flag_colors_web' => null,
             'flag_colors_contrast' => null,

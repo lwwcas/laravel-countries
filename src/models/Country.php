@@ -9,12 +9,19 @@ use Illuminate\Support\Str;
 use Lwwcas\LaravelCountries\Abstract\CountryModel;
 use Lwwcas\LaravelCountries\Models\Concerns\HasTranslationGlobalScope;
 use Lwwcas\LaravelCountries\Models\Concerns\HasVisibleGlobalScope;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereBorders;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereDomain;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereIndependenceDay;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereIso;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereIsoAlpha2;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereIsoAlpha3;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereIsoNumeric;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereLanguages;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereName;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWherePhoneCode;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereSlug;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereStatistics;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereWmo;
 use Lwwcas\LaravelCountries\Models\Concerns\VisibleAttributes;
 use Lwwcas\LaravelCountries\Models\CountryCoordinates;
 use Lwwcas\LaravelCountries\Models\CountryExtras;
@@ -38,6 +45,13 @@ class Country extends CountryModel
         HasWhereIsoAlpha2,
         HasWhereIsoAlpha3,
         HasWhereIsoNumeric,
+        HasWhereWmo,
+        HasWherePhoneCode,
+        HasWhereDomain,
+        HasWhereLanguages,
+        HasWhereStatistics,
+        HasWhereBorders,
+        HasWhereIndependenceDay,
         VisibleAttributes;
 
     public $translationModel = CountryTranslation::class;
@@ -138,6 +152,8 @@ class Country extends CountryModel
             'flag_colors_hsl' => 'array',
             'flag_colors_hsv' => 'array',
             'flag_colors_pantone' => 'array',
+
+            'independence_day' => 'date:Y-m-d',
 
             'is_visible' => 'boolean',
         ];
@@ -250,76 +266,6 @@ class Country extends CountryModel
     public function scopeWhereGeoname($query, $geonameId)
     {
         return $query->where('geoname_id', $geonameId);
-    }
-
-    /**
-     * Find a country by WMO (World Meteorological Organization) code.
-     *
-     * @param string $wmo
-     *
-     * @return Illuminate\Database\Eloquent\Collection
-     */
-    public function scopeWhereWmo($query, $wmo)
-    {
-        return $query->where('wmo', $wmo);
-    }
-
-    /**
-     * Find a country by WMO (World Meteorological Organization) code.
-     *
-     * @param string $wmo
-     *
-     * @return Illuminate\Database\Eloquent\Collection
-     */
-    public function scopeWhereWmoCode($query, $wmo)
-    {
-        return $query->whereWmo($wmo);
-    }
-
-    /**
-     * Find a country by WMO (World Meteorological Organization) code.
-     *
-     * @param string $wmo
-     *
-     * @return Illuminate\Database\Eloquent\Collection
-     */
-    public function scopeWhereWorldMeteorologicalOrganizationCode($query, $wmo)
-    {
-        return $query->whereWmo($wmo);
-    }
-
-    /**
-     * Find a country by international phone.
-     *
-     * @param string $internationalPhone
-     *
-     * @return Illuminate\Database\Eloquent\Collection
-     */
-    public function scopeWherePhoneCode($query, $internationalPhone)
-    {
-        return $query->where('international_phone', $internationalPhone);
-    }
-
-    /**
-     * Find a country by domain (TLD).
-     *
-     * @param string $domain
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function scopeWhereDomain($query, $domain)
-    {
-        $databaseDriver = config('database.default');
-        $domainInLowercase = Str::lower($domain);
-        $domainInJsonFormat = json_encode($domainInLowercase);
-
-        return match ($databaseDriver) {
-            'mysql', 'mariadb' => $query->whereRaw('JSON_CONTAINS(tld, ?)', [$domainInJsonFormat]),
-            'pgsql' => $query->whereRaw('tld @> ?', ['["' . $domainInLowercase . '"]']),
-            'sqlite' => $query->where('tld', 'LIKE', '%' . $domainInLowercase . '%'),
-            default => $query->where('tld', 'LIKE', '%' . $domainInLowercase . '%'),
-        };
-
     }
 
 }

@@ -34,4 +34,5 @@ class CountryTranslationFactory extends Factory
             'locale' => fake()->locale(),
         ];
     }
+
 }

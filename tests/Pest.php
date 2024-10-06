@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Lwwcas\LaravelCountries\Tests\TestCase;
 
 /*
