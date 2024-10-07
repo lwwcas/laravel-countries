@@ -1,135 +1,11 @@
 <?php
 
-namespace Lwwcas\LaravelCountries\Trait;
+namespace Lwwcas\LaravelCountries\trait;
 
-use Illuminate\Support\Str;
 use Lwwcas\LaravelCountries\Models\Country;
 
-trait WithFlagBootstrap
+trait WithFlagColorBootstrap
 {
-    /**
-     * Find a country by flag color.
-     *
-     * @param string $flagColor
-     *
-     * @return Illuminate\Database\Eloquent\Collection
-     */
-    public function scopeWhereFlagColor($query, $flagColor)
-    {
-        $flagColorFormatted = '%' . Str::lower($flagColor) . '%';
-        return $query
-            ->where('color_hex', 'LIKE', $flagColorFormatted)
-            ->orWhere('color_rgb', 'LIKE', $flagColorFormatted)
-            ->withTranslation();
-    }
-
-    /**
-     * Find a country by flag emoji.
-     *
-     * @param string $flagEmoji
-     *
-     * @return Illuminate\Database\Eloquent\Collection
-     */
-    public function scopeWhereFlagEmoji($query, $flagEmoji)
-    {
-        $formattedFlagEmoji = '%' . $flagEmoji . '%';
-        return $query
-            ->where('emoji->img', 'LIKE', $formattedFlagEmoji)
-            ->orWhere('emoji->uCode', 'LIKE', $formattedFlagEmoji)
-            ->withTranslation();
-    }
-
-    /**
-     * Get the flag colors.
-     *
-     * @param string $type hex or rgb
-     *
-     * @return array
-     */
-    public function colors(string $type = 'hex'): array
-    {
-        $colors = [];
-        if ($type == 'hex') {
-            $colors = $this->color_hex;
-        }
-        if ($type == 'rgb') {
-            $colors = $this->color_rgb;
-        }
-
-        return (array) $colors;
-    }
-
-    /**
-     * Get the flag information of the country in a format that is easier to consume.
-     *
-     * @return string|null
-     */
-    public function flag()
-    {
-        return collect([
-            'emoji' => [
-                'icon' => $this->flagEmoji(),
-                'uCode' => $this->flagCode(),
-            ],
-            'colors' => [
-                'rgb' => $this->flagColorsInRgb(),
-                'hex' => $this->flagColorsInHex(),
-            ],
-        ]);
-    }
-
-    /**
-     * Get the flag emoji of the country.
-     *
-     * @return string|null
-     */
-    public function flagEmoji(): string|null
-    {
-        return $this->emoji['img'];
-    }
-
-    /**
-     * Get the flag's Unicode code point as a string.
-     *
-     * @return string|null
-     */
-    public function flagCode(): string|null
-    {
-        return $this->emoji['uCode'];
-    }
-
-    /**
-     * Get the flag colors as an array.
-     *
-     * @param string $type The type of color representation. Can be 'hex' or 'rgb'.
-     *
-     * @return array The flag colors in the specified format.
-     */
-    public function flagColors(string $type = 'hex'): array
-    {
-        return $this->colors($type);
-    }
-
-    /**
-     * Get the flag colors in RGB format.
-     *
-     * @return array The flag colors in RGB format.
-     */
-    public function flagColorsInRgb(): array
-    {
-        return $this->flagColors('rgb');
-    }
-
-    /**
-     * Get the flag colors in HEX format.
-     *
-     * @return array The flag colors in HEX format.
-     */
-    public function flagColorsInHex(): array
-    {
-        return $this->flagColors('hex');
-    }
-
     /**
      * Get the gradient direction based on the given direction string.
      *
@@ -171,10 +47,10 @@ trait WithFlagBootstrap
      *
      * @return string|null The CSS gradient string or null if no colors are set.
      */
-    public function generateFlagGradient(string $startsOn = null): string|null
+    public function getFlagGradient(string $startsOn = null): string|null
     {
         $direction = $this->getGradientDirection($startsOn);
-        $hexColors = $this->color_hex;
+        $hexColors = $this->getFlagColorsHex();
         if (empty($hexColors)) {
             return null;
         }
@@ -193,10 +69,10 @@ trait WithFlagBootstrap
      * @return string|null The CSS gradient string or null if no colors are set.
      */
 
-    public function generateCombinedFlagGradient(Country $otherCountry, string $startsOn = null): string|null
+    public function getCombinedFlagGradient(Country $otherCountry, string $startsOn = null): string|null
     {
-        $thisColors = $this->color_hex;
-        $otherColors = $otherCountry->color_hex;
+        $thisColors = $this->getFlagColorsHex();
+        $otherColors = $otherCountry->getFlagColorsHex();
         $direction = $this->getGradientDirection($startsOn);
 
         $colors = array_merge($thisColors, $otherColors);
@@ -205,7 +81,7 @@ trait WithFlagBootstrap
             return null;
         }
 
-        return 'background: linear-gradient('. $direction .', ' . implode(', ', $colors) . ');';
+        return 'background: linear-gradient(' . $direction . ', ' . implode(', ', $colors) . ');';
     }
 
     /**
@@ -215,9 +91,9 @@ trait WithFlagBootstrap
      *
      * @return string|null The CSS gradient string or null if no colors are set.
      */
-    public function generateFlagStripes(string $direction = 'horizontal'): string|null
+    public function getFlagStripes(string $direction = 'horizontal'): string|null
     {
-        $colors = $this->color_hex;
+        $colors = $this->getFlagColorsHex();
         if (empty($colors)) {
             return null;
         }
@@ -242,9 +118,9 @@ trait WithFlagBootstrap
      *
      * @return string A CSS string of border rules.
      */
-    public function generateFlagBorders(): string|null
+    public function getFlagBorders(): string|null
     {
-        $colors = $this->color_hex;
+        $colors = $this->getFlagColorsHex();
         if (empty($colors)) {
             return null;
         }

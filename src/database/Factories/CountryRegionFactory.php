@@ -35,7 +35,7 @@ class CountryRegionFactory extends Factory
     public function definition(): array
     {
         return [
-            'iso_alpha_2' => fake()->countryCode(),
+            'iso_alpha_2' => fake()->countryCode() . rand(1, 9999),
             'icao' => Str::upper(fake()->randomLetter(2)),
             'iucn' => fake()->randomElements($this->regions)[0] . ' ' . fake()->word(),
             'tdwg' => fake()->word(),

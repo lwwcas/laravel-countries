@@ -8,11 +8,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Str;
 use Lwwcas\LaravelCountries\Abstract\CountryModel;
 use Lwwcas\LaravelCountries\Models\Concerns\HasCountriesList;
+use Lwwcas\LaravelCountries\Models\Concerns\HasFlagColorsGetters;
 use Lwwcas\LaravelCountries\Models\Concerns\HasTranslationGlobalScope;
 use Lwwcas\LaravelCountries\Models\Concerns\HasVisibleGlobalScope;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereBorders;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereCurrency;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereDomain;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereFlagColors;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereFlags;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereIndependenceDay;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereIso;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereIsoAlpha2;
@@ -31,7 +34,7 @@ use Lwwcas\LaravelCountries\Models\CountryGeographical;
 use Lwwcas\LaravelCountries\Models\CountryRegion;
 use Lwwcas\LaravelCountries\Models\CountryTranslation;
 use Lwwcas\LaravelCountries\trait\WithCoordinatesBootstrap;
-use Lwwcas\LaravelCountries\trait\WithFlagBootstrap;
+use Lwwcas\LaravelCountries\trait\WithFlagColorBootstrap;
 
 class Country extends CountryModel
 {
@@ -39,7 +42,9 @@ class Country extends CountryModel
         Translatable,
         HasVisibleGlobalScope,
         HasTranslationGlobalScope,
-        WithFlagBootstrap,
+        HasFlagColorsGetters,
+        HasWhereFlagColors,
+        WithFlagColorBootstrap,
         WithCoordinatesBootstrap,
         HasWhereSlug,
         HasWhereName,

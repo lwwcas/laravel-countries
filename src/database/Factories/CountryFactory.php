@@ -26,6 +26,7 @@ class CountryFactory extends Factory
     public function definition(): array
     {
         $name = fake()->country() . ' ' . fake()->word();
+        $colors = $this->randomColors();
 
         return [
             'lc_region_id' => CountryRegionFactory::new()->create()->id,
@@ -82,15 +83,15 @@ class CountryFactory extends Factory
                 'shortcode' => ':flag-'. Str::lower(fake()->countryCode()) .':',
             ],
 
-            'flag_colors' => null,
-            'flag_colors_web' => null,
-            'flag_colors_contrast' => null,
-            'flag_colors_hex' => null,
-            'flag_colors_rgb' => null,
-            'flag_colors_cmyk' => null,
-            'flag_colors_hsl' => null,
-            'flag_colors_hsv' => null,
-            'flag_colors_pantone' => null,
+            'flag_colors' => $colors['flag_colors'],
+            'flag_colors_web' => $colors['flag_colors_web'],
+            'flag_colors_contrast' => $colors['flag_colors_contrast'],
+            'flag_colors_hex' => $colors['flag_colors_hex'],
+            'flag_colors_rgb' => $colors['flag_colors_rgb'],
+            'flag_colors_cmyk' => $colors['flag_colors_cmyk'],
+            'flag_colors_hsl' => $colors['flag_colors_hsl'],
+            'flag_colors_hsv' => $colors['flag_colors_hsv'],
+            'flag_colors_pantone' => $colors['flag_colors_pantone'],
 
             'is_visible' => true,
         ];
@@ -147,31 +148,76 @@ class CountryFactory extends Factory
         return $ltd;
     }
 
+
     /**
-     * Generates an array of random hex and rgb colors.
+     * Generates a random list of color data for a country.
      *
-     * The number of colors is randomly determined between 1 and 4.
-     * The function returns an associative array with two keys: 'hex' and 'rgb'.
-     * The 'hex' key contains an array of hex color codes.
-     * The 'rgb' key contains an array of rgb color codes.
+     * Each list contains a random number of colors, between 1 and 5.
+     *
+     * The colors are generated in the following formats:
+     * - flag_colors: a list of color names
+     * - flag_colors_web: a list of color names as web-safe color codes
+     * - flag_colors_contrast: a list of either #FFFFFF or #000000
+     * - flag_colors_hex: a list of hex color codes
+     * - flag_colors_rgb: a list of RGB color codes
+     * - flag_colors_cmyk: a list of CMYK color codes
+     * - flag_colors_hsl: a list of HSL color codes
+     * - flag_colors_hsv: a list of HSV color codes
+     * - flag_colors_pantone: a list of Pantone color codes
      *
      * @return array
      */
-    protected function generateColors(): array
+    protected function randomColors(): array
     {
-        $rand = fake()->numberBetween(1, 4);
-        $hexColors = [];
-        $rbgColors = [];
+        $result = [
+            'flag_colors' => [],
+            'flag_colors_web' => [],
+            'flag_colors_contrast' => [],
+            'flag_colors_hex' => [],
+            'flag_colors_rgb' => [],
+            'flag_colors_cmyk' => [],
+            'flag_colors_hsl' => [],
+            'flag_colors_hsv' => [],
+            'flag_colors_pantone' => [],
+        ];
+
+        $rand = rand(1, 5);
+        $contrast = [
+            '#FFFFFF',
+            '#000000',
+        ];
+        $colorName = [
+            'Red',
+            'Blue',
+            'Green',
+            'Yellow',
+            'Purple',
+            'Orange',
+            'Pink',
+            'Brown',
+            'Black',
+            'White',
+            'Gray',
+            'Cyan',
+            'Magenta',
+            'Violet',
+            'Teal',
+        ];
 
         foreach (range(1, $rand) as $item) {
-            $hexColors[] = fake()->hexColor();
-            $rbgColors[] = fake()->rgbColor();
+            $color = fake()->randomElements($colorName)[0];
+            $result['flag_colors'][] = $color;
+            $result['flag_colors_web'][] = Str::slug($color);
+            $result['flag_colors_contrast'][] = fake()->randomElements($contrast)[0];
+            $result['flag_colors_hex'][] = fake()->hexColor();
+            $result['flag_colors_rgb'][] = fake()->rgbColor();
+            $result['flag_colors_cmyk'][] = fake()->numberBetween(0, 100) . ',' . fake()->numberBetween(0, 100) . ',' . fake()->numberBetween(0, 100) . ',' . fake()->numberBetween(0, 100);
+            $result['flag_colors_hsl'][] = fake()->numberBetween(0, 100) . ',' . fake()->numberBetween(0, 100) . '%,' . fake()->numberBetween(0, 100) . '%';
+            $result['flag_colors_hsv'][] = fake()->numberBetween(0, 100) . ',' . fake()->numberBetween(0, 100) . '%,' . fake()->numberBetween(0, 100) . '%';
+            $result['flag_colors_pantone'][] = 'Pantone ' . fake()->numberBetween(10, 900) . ' C' ;
         }
 
-        return [
-            'hex' => $hexColors,
-            'rgb' => $rbgColors,
-        ];
+        return $result;
     }
 
 
