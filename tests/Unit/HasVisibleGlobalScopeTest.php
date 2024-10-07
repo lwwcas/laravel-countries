@@ -28,7 +28,7 @@ it('should remove the visible global scope on Region Model', function () {
     ]);
 
     $regions = CountryRegion::withNotVisible()->get();
-    $hiddenRegions = CountryRegion::withNotVisible()->where('visible', false)->get();
+    $hiddenRegions = CountryRegion::withNotVisible()->where('is_visible', false)->get();
 
     expect($regions->count())->toEqual(15);
     expect($regions)->each->toBeInstanceOf(CountryRegion::class);
@@ -60,7 +60,7 @@ it('should remove the visible global scope on Country Model', function () {
     ]);
 
     $countries = Country::withNotVisible()->get();
-    $hiddenCountries = Country::withNotVisible()->where('visible', false)->get();
+    $hiddenCountries = Country::withNotVisible()->where('is_visible', false)->get();
 
     expect($countries->count())->toEqual(15);
     expect($countries)->each->toBeInstanceOf(Country::class);

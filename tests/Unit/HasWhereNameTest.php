@@ -11,7 +11,7 @@ use Lwwcas\LaravelCountries\Models\CountryRegion;
 it('should can filters countries by Name', function () {
     CountryTranslationFactory::new()->create([
         'name' => 'Brazil',
-        'slug' => 'brazil-slug',
+        'slug' => 'brazil',
         'locale' => 'en',
     ]);
 
@@ -20,7 +20,7 @@ it('should can filters countries by Name', function () {
     $country = Country::whereName('Brazil')->first();
 
     expect($country)->toBeInstanceOf(Country::class);
-    expect($country->slug)->toEqual('brazil-slug');
+    expect($country->slug)->toEqual('brazil');
     expect($country->slug)->toBeString();
 });
 
@@ -32,14 +32,14 @@ it('should can filters countries by Name on specific locale', function () {
     CountryTranslationFactory::new()->create([
         'lc_country_id' => $country->id,
         'name' => 'Brazil EN',
-        'slug' => 'brazil-slug',
+        'slug' => 'brazil-en',
         'locale' => 'en',
     ]);
 
     CountryTranslationFactory::new()->create([
         'lc_country_id' => $country->id,
         'name' => 'Brazil IT',
-        'slug' => 'brazil-slug-it',
+        'slug' => 'brazil-it',
         'locale' => 'it',
     ]);
 
@@ -48,21 +48,21 @@ it('should can filters countries by Name on specific locale', function () {
 
     expect($country)->toBeInstanceOf(Country::class);
     expect($country->slug)->toBeString();
-    expect($country->slug)->toEqual('brazil-slug');
+    expect($country->slug)->toEqual('brazil-en');
 
     App::setLocale('it');
     $country = Country::whereName('Brazil EN')->first();
 
     expect($country)->toBeInstanceOf(Country::class);
     expect($country->slug)->toBeString();
-    expect($country->slug)->toEqual('brazil-slug-it');
+    expect($country->slug)->toEqual('brazil-it');
 
 });
 
 it('should can filters regions by Name', function () {
     CountryRegionTranslationFactory::new()->create([
         'name' => 'Europe',
-        'slug' => 'europa-slug',
+        'slug' => 'europe',
         'locale' => 'en',
     ]);
 
@@ -71,7 +71,7 @@ it('should can filters regions by Name', function () {
     $region = CountryRegion::whereName('Europe')->first();
 
     expect($region)->toBeInstanceOf(CountryRegion::class);
-    expect($region->slug)->toEqual('europa-slug');
+    expect($region->slug)->toEqual('europe');
     expect($region->slug)->toBeString();
 });
 
@@ -81,14 +81,14 @@ it('should can filters regions by Name on specific locale', function () {
     CountryRegionTranslationFactory::new()->create([
         'lc_region_id' => $region->id,
         'name' => 'Europe EN',
-        'slug' => 'europa-slug',
+        'slug' => 'europe-en',
         'locale' => 'en',
     ]);
 
     CountryRegionTranslationFactory::new()->create([
         'lc_region_id' => $region->id,
         'name' => 'Europe IT',
-        'slug' => 'europa-slug-it',
+        'slug' => 'europe-it',
         'locale' => 'it',
     ]);
 
@@ -97,12 +97,12 @@ it('should can filters regions by Name on specific locale', function () {
 
     expect($region)->toBeInstanceOf(CountryRegion::class);
     expect($region->slug)->toBeString();
-    expect($region->slug)->toEqual('europa-slug');
+    expect($region->slug)->toEqual('europe-en');
 
     App::setLocale('it');
     $region = CountryRegion::whereName('Europe EN')->first();
 
     expect($region)->toBeInstanceOf(CountryRegion::class);
     expect($region->slug)->toBeString();
-    expect($region->slug)->toEqual('europa-slug-it');
+    expect($region->slug)->toEqual('europe-it');
 });
