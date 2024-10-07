@@ -11,6 +11,7 @@ use Lwwcas\LaravelCountries\Models\Concerns\HasCountriesList;
 use Lwwcas\LaravelCountries\Models\Concerns\HasTranslationGlobalScope;
 use Lwwcas\LaravelCountries\Models\Concerns\HasVisibleGlobalScope;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereBorders;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereCurrency;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereDomain;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereIndependenceDay;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereIso;
@@ -53,6 +54,7 @@ class Country extends CountryModel
         HasWhereStatistics,
         HasWhereBorders,
         HasWhereIndependenceDay,
+        HasWhereCurrency,
         HasCountriesList,
         VisibleAttributes;
 

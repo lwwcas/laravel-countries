@@ -26,10 +26,6 @@ class CountryFactory extends Factory
     public function definition(): array
     {
         $name = fake()->country() . ' ' . fake()->word();
-        $emoji = [
-            'img' => fake()->emoji(),
-            'uCode'=> fake()->numerify('U+##### U+#####'),
-        ];
 
         return [
             'lc_region_id' => CountryRegionFactory::new()->create()->id,
@@ -55,7 +51,24 @@ class CountryFactory extends Factory
             'alternative_tld' => $this->randomLtd(),
             'borders' => $this->randomLanguages(),
             'timezones' => null,
-            'currency' => null,
+
+            'currency' => [
+                'name' => fake()->word(),
+                'code' => fake()->currencyCode(),
+                'symbol' => fake()->currencyCode() . fake()->randomLetter(),
+                'banknotes' => [
+                    2, 5, 10, 20, 50, 100
+                ],
+                'coins' => [
+                    'main' => [1, 2],
+                    'sub' => [1, 5, 10, 25, 50],
+                ],
+                'unit' => [
+                    'main' => fake()->word(),
+                    'sub' => fake()->word(),
+                    'to_unit' => fake()->randomElements([1, 100, 1000, null])[0],
+                ],
+            ],
 
             'flag_emoji' => [
                 'img' => fake()->emoji(),
