@@ -5,16 +5,23 @@ namespace Lwwcas\LaravelCountries\Trait;
 trait WithCoordinatesBootstrap
 {
     /**
-     * Get the coordinates in classic degree format (e.g. 10 00 S, 55 00 W).
+     * Get the latitude of the country in decimal degrees.
      *
-     * @return array<string, string> ['latitude' => '10 00 S', 'longitude' => '55 00 W']
+     * @return float|null The latitude of the country in decimal degrees, or null if the value is not set.
      */
-    public function coordinatesInClassic(): array
+    public function latitude(): ?float
     {
-        return [
-            'latitude' => $this->coordinates->latitude->classic ?? null,
-            'longitude' => $this->coordinates->longitude->classic ?? null,
-        ];
+        return $this->coordinates->latitude ?? null;
+    }
+
+    /**
+     * Get the longitude of the country in decimal degrees.
+     *
+     * @return float|null The longitude of the country in decimal degrees, or null if the value is not set.
+     */
+    public function longitude(): ?float
+    {
+        return $this->coordinates->longitude ?? null;
     }
 
     /**
@@ -25,30 +32,71 @@ trait WithCoordinatesBootstrap
     public function coordinatesInDecimal(): array
     {
         return [
-            'latitude' => $this->coordinates->latitude->desc ?? null,
-            'longitude' => $this->coordinates->longitude->desc ?? null,
+            'latitude' => $this->latitude() ?? null,
+            'longitude' => $this->longitude() ?? null,
         ];
     }
 
     /**
-     * Calculate the center of the country's geographical limits.
+     * Get the coordinates in the format of degrees with decimal minutes.
      *
-     * @return array<string, float> ['latitude' => float, 'longitude' => float]
+     * @return string|null The coordinates in the format of degrees with decimal minutes, or null if the value is not set.
      */
-    public function getCenterOfLimits(): array
+    public function coordinatesInDegreesWithDecimal(): ?string
     {
-        $minLatitude = $this->coordinates->latitude->desc;
-        $maxLatitude = $this->coordinates_limit->latitude->desc;
-        $centerLatitude = ($minLatitude + $maxLatitude) / 2;
+        return $this->coordinates->degrees_with_decimal ?? null;
+    }
 
-        $minLongitude = $this->coordinates->longitude->desc;
-        $maxLongitude = $this->coordinates_limit->longitude->desc;
-        $centerLongitude = ($minLongitude + $maxLongitude) / 2;
+    /**
+     * Get the coordinates in the format of degrees with decimal minutes.
+     *
+     * @return string|null The coordinates in the format of degrees with decimal minutes, or null if the value is not set.
+     */
+    public function coordinatesInDD(): ?string
+    {
+        return $this->coordinatesInDegreesWithDecimal();
+    }
 
-        return [
-            'latitude' => $centerLatitude,
-            'longitude' => $centerLongitude,
-        ];
+    /**
+     * Get the coordinates in the format of degrees with minutes and seconds.
+     *
+     * @return string|null The coordinates in the format of degrees with minutes and seconds, or null if the value is not set.
+     */
+    public function coordinatesInDegreesMinutesSeconds(): ?string
+    {
+        return $this->coordinates->degrees_minutes_seconds ?? null;
+    }
+
+    /**
+     * Get the coordinates in the format of degrees with minutes and seconds.
+     *
+     * @return string|null The coordinates in the format of degrees with minutes and seconds, or null if the value is not set.
+     */
+    public function coordinatesInDMS(): ?string
+    {
+        return $this->coordinatesInDegreesMinutesSeconds();
+    }
+
+    /**
+     * Get the coordinates in the format of degrees with decimal minutes.
+     *
+     * @return string|null The coordinates in the format of degrees with decimal minutes, or null if the value is not set.
+     */
+
+    public function coordinatesInDegreesAndDecimalMinutes(): ?string
+    {
+        return $this->coordinates->degrees_and_decimal_minutes ?? null;
+    }
+
+    /**
+     * Get the coordinates in the format of degrees with decimal minutes.
+     *
+     * @return string|null The coordinates in the format of degrees with decimal minutes, or null if the value is not set.
+     */
+
+    public function coordinatesInDDM(): ?string
+    {
+        return $this->coordinates->degrees_and_decimal_minutes ?? null;
     }
 
     /**
@@ -58,7 +106,8 @@ trait WithCoordinatesBootstrap
      */
     public function isInNorthernHemisphere(): bool
     {
-        return $this->coordinates->latitude->classic > 0;
+        // Latitude > 0 indica que o país está no Hemisfério Norte
+        return $this->latitude() > 0;
     }
 
     /**
@@ -68,81 +117,8 @@ trait WithCoordinatesBootstrap
      */
     public function isInSouthernHemisphere(): bool
     {
-        return $this->coordinates->latitude->classic < 0;
-    }
-
-    /**
-     * Convert the country's coordinates from the classic format to the decimal format.
-     *
-     * @return array<string, float> ['latitude' => float, 'longitude' => float]
-     */
-    public function convertClassicToDecimal(): array
-    {
-        $classicCoordinates = $this->coordinatesInClassic();
-
-        return [
-            'latitude' => (string) $this->classicCoordinateToDecimal($classicCoordinates['latitude']),
-            'longitude' => (string) $this->classicCoordinateToDecimal($classicCoordinates['longitude']),
-        ];
-    }
-
-    /**
-     * Get the coordinates in decimal format with degrees, minutes, and seconds.
-     *
-     * @return string The coordinates in the format 'dd.dddd° dd dddd°' where 'dd' is the degree, 'ddd' is the minute, and 'dddd' is the second.
-     * Output example: 13.299612° S 176.170120° W
-     */
-    public function coordinatesInDecimalDegrees(): string
-    {
-        $coordinates = $this->coordinatesInDecimal();
-
-        $latitude = (float) $coordinates['latitude'];
-        $latitudeDirection = $latitude < 0 ? 'S' : 'N';
-
-        $longitude = (float) $coordinates['longitude'];
-        $longitudeDirection = $longitude < 0 ? 'W' : 'E';
-
-        return sprintf('%.6f° %s %.6f° %s', abs($latitude), $latitudeDirection, abs($longitude), $longitudeDirection);
-    }
-
-
-    /**
-     * Get the coordinates in degrees minutes seconds format.
-     *
-     * @return string The coordinates in the format 'dd° mm' ss.s" direction' where 'dd' is the degree, 'mm' is the minute, 'ss.s' is the second, and 'direction' is 'N' or 'S'.
-     * Output example: 13° 17' 58.60" S 176° 10' 42.43" W
-     */
-    public function coordinatesInDegreesMinutesSeconds()
-    {
-        $coordinates = $this->coordinatesInDecimal();
-        $decimalLatitude = (float) $coordinates['latitude'];
-        $decimalLongitude = (float) $coordinates['longitude'];
-
-        /**
-         * Convert a coordinate in decimal format to the format 'dd° mm' ss.s" direction'
-         * where 'dd' is the degree, 'mm' is the minute, 'ss.s' is the second, and 'direction' is 'N' or 'S'.
-         * Output example: 13° 17' 58.60" S
-         *
-         * @param float $decimal The coordinate in decimal format.
-         * @return string The coordinate in the format 'dd° mm' ss.s" direction'
-         */
-        function convertToDMS($decimal)
-        {
-            $degrees = (int) abs($decimal);
-            $minutes = (int) abs(($decimal - $degrees) * 60);
-            $seconds = round(abs(($decimal - $degrees - $minutes / 60) * 3600), 2);
-
-            return sprintf("%d° %d' %.2f\" %s", $degrees, $minutes, $seconds, $decimal < 0 ? 'S' : 'N');
-        }
-
-        $latitudeDMS = convertToDMS($decimalLatitude);
-        $longitudeDMS = convertToDMS($decimalLongitude);
-
-        $longitudeDirection = $decimalLongitude < 0 ? 'W' : 'E';
-        $longitudeDMS = str_replace('N', $longitudeDirection, $longitudeDMS);
-        $longitudeDMS = str_replace('S', $longitudeDirection, $longitudeDMS);
-
-        return "$latitudeDMS $longitudeDMS";
+        // Latitude < 0 indica que o país está no Hemisfério Sul
+        return $this->latitude() < 0;
     }
 
     /**
