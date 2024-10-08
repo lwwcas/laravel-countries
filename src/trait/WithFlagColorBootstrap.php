@@ -39,7 +39,6 @@ trait WithFlagColorBootstrap
         return $direction;
     }
 
-
     /**
      * Generate a CSS linear gradient string from the country's flag colors.
      *

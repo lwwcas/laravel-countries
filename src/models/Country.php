@@ -9,13 +9,13 @@ use Illuminate\Support\Str;
 use Lwwcas\LaravelCountries\Abstract\CountryModel;
 use Lwwcas\LaravelCountries\Models\Concerns\HasCountriesList;
 use Lwwcas\LaravelCountries\Models\Concerns\HasFlagColorsGetters;
+use Lwwcas\LaravelCountries\Models\Concerns\HasFlagEmojiGetters;
 use Lwwcas\LaravelCountries\Models\Concerns\HasTranslationGlobalScope;
 use Lwwcas\LaravelCountries\Models\Concerns\HasVisibleGlobalScope;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereBorders;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereCurrency;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereDomain;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereFlagColors;
-use Lwwcas\LaravelCountries\Models\Concerns\HasWhereFlags;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereIndependenceDay;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereIso;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereIsoAlpha2;
@@ -42,6 +42,7 @@ class Country extends CountryModel
         Translatable,
         HasVisibleGlobalScope,
         HasTranslationGlobalScope,
+        HasFlagEmojiGetters,
         HasFlagColorsGetters,
         HasWhereFlagColors,
         WithFlagColorBootstrap,
