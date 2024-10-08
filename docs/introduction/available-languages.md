@@ -18,7 +18,7 @@ We currently support the following languages:
 
 > **Note**: The "Number of Countries" refers to the estimated number of countries where the language is either official or widely spoken.
 
-## ⚙️ Language Management Features
+## Language Management Features
 
 - **Flexible Installation and Uninstallation**: You can install or uninstall any of the supported languages at any time, or install all of them at once using a simple artisan command:
 
@@ -31,7 +31,7 @@ This provides flexibility in managing your application's languages, without comp
 <img src="/assets/terminal-language-command.png" alt="Artisan language command" >
 <img src="/assets/terminal-language-command-1.png" alt="Artisan language command" style="padding-top:25px;">
 
-## 🔧 Additional Language Options
+## Additional Language Options
 
 ### **Default Language (English)**
 
@@ -47,7 +47,7 @@ As new languages become available, they can be installed in **under a minute**, 
 
 With these features, managing languages in **Laravel Countries** is straightforward and efficient, ensuring your application is ready for users in multiple languages.
 
-## 🛠️ Required Dependencies
+## Required Dependencies
 
 This package relies on **[Spatie's Laravel Translatable](https://github.com/spatie/laravel-translatable)** to handle translations efficiently. The **spatie/laravel-package-tools** version **^1.16.0** or higher is required for proper functionality and will be installed automatically when you install **Laravel Countries** as a required dependency.
 

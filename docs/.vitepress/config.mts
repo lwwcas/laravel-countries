@@ -46,6 +46,8 @@ export default defineConfig({
                     { text: 'Available Languages?', link: '/introduction/available-languages' },
                     { text: 'How to integrate into my project?', link: '/introduction/how-to-integrate-into-my-project' },
                     { text: 'Quick snippets of all country data', link: '/introduction/quick-snippets-of-all-country-data' },
+                    { text: 'Response data', link: '/introduction/response-data' },
+                    { text: 'GeoJSON Structure', link: '/introduction/geojson-structure' },
                     { text: 'Version Constraints', link: '/introduction/version-constraints' },
                     { text: 'Getting Started', link: '/introduction/getting-started' },
                 ]

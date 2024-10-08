@@ -127,7 +127,6 @@ class Country extends CountryModel
         'is_visible', // Boolean flag indicating whether the country is visible in the application.
     ];
 
-
     /**
      * The model's default values for attributes.
      *
