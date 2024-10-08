@@ -93,6 +93,19 @@ HTML;
         return $this->flag_emoji['utf16'] ?: null;
     }
 
+    /**
+     * Get the flag emoji as UTF-16 with HTML and JavaScript.
+     *
+     * This method returns the flag emoji as a UTF-16 encoded string wrapped
+     * in an HTML element, and also includes a JavaScript code to update the
+     * HTML element with the flag emoji.
+     *
+     * @param string $divId The ID of the `<div>` element in which to display
+     *                      the flag emoji.
+     * @return string The flag emoji as a UTF-16 encoded string wrapped in an
+     *                HTML element, and also including a JavaScript code to
+     *                update the HTML element with the flag emoji.
+     */
     public function getFlagEmojiUtf16WithCode(string $divId = 'emoji-utf16')
     {
         return <<<HTML
@@ -101,6 +114,18 @@ HTML;
         HTML;
     }
 
+    /**
+     * Get the flag emoji as a UTF-16 encoded string wrapped in an HTML element.
+     *
+     * This method returns the flag emoji as a UTF-16 encoded string wrapped
+     * in an HTML element. The element is a `<span>` element with the flag
+     * emoji as its content.
+     *
+     * @param string $divId The ID of the `<div>` element in which to display
+     *                      the flag emoji.
+     * @return string The flag emoji as a UTF-16 encoded string wrapped in an
+     *                HTML element.
+     */
     public function getFlagEmojiUtf16WithHtmlCode(string $divId = 'emoji-utf16')
     {
         return <<<HTML
@@ -108,6 +133,21 @@ HTML;
 HTML;
     }
 
+    /**
+     * Get the flag emoji as a UTF-16 encoded string with JavaScript.
+     *
+     * This method returns the flag emoji as a UTF-16 encoded string, and
+     * also includes a JavaScript code to update the HTML element with the
+     * given ID to display the flag emoji.
+     *
+     * @param string $divId The ID of the `<div>` element in which to display
+     *                      the flag emoji.
+     * @param bool $withTag Whether to return a complete `<script>` tag or
+     *                      just the JavaScript code.
+     * @return string The flag emoji as a UTF-16 encoded string, and also
+     *                including a JavaScript code to update the HTML element
+     *                with the flag emoji.
+     */
     public function getFlagEmojiUtf16WithScriptCode(string $divId = 'emoji-utf16', bool $withTag = false)
     {
         if ($withTag) {
