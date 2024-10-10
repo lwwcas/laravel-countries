@@ -95,9 +95,9 @@ Everything here applies to both `Country::class` and `CountryRegion::class`, so 
 
 | Field        | Description                                                                                       |
 |--------------|---------------------------------------------------------------------------------------------------|
-| [isVisible()](/region/workflow.html#is-visible)             | Returns a boolean indicating if the region's `is_visible` flag is `true`. |
-| [isHidden()](/region/workflow.html#is-hidden)               | Returns a boolean indicating if the region's `is_visible` flag is `false`. |
-| [setVisibleTrue()](/region/workflow.html#set-visible-true)  | Sets the region's `is_visible` flag to `true`.                  |
-| [setVisibleFalse()](/region/workflow.html#set-visible-false)| Sets the region's `is_visible` flag to `false`.                 |
-| [setModelVisible()](/region/workflow.html#set-model-visible) | Sets the region's `is_visible` flag to `true`.                  |
-| [setModelHidden()](/region/workflow.html#set-model-hidden)  | Sets the region's `is_visible` flag to `false`.                 |
+| isVisible()             | Returns a boolean indicating if the country/regio `is_visible` flag is `true`. |
+| isHidden()               | Returns a boolean indicating if the country/regio `is_visible` flag is `false`. |
+| setVisibleTrue()  | Sets the country/regio `is_visible` flag to `true`.                  |
+| setVisibleFalse() | Sets the country/regio `is_visible` flag to `false`.                 |
+| setModelVisible() | Sets the country/regio `is_visible` flag to `true`.                  |
+| setModelHidden()  | Sets the country/regio `is_visible` flag to `false`.                 |
