@@ -47,6 +47,60 @@ As new languages become available, they can be installed in **under a minute**, 
 
 With these features, managing languages in **Laravel Countries** is straightforward and efficient, ensuring your application is ready for users in multiple languages.
 
+## Configuration
+
+We copy the configuration file to our project.
+
+You will have to configure the locales your app should use.
+
+In `config/translatable.php` you can customize a lot of what the translation package offers. However, we **don’t recommend** making deep changes to this file, as it could lead to conflicts or bugs in our package.
+
+::: info
+Note: We're actively working on improvements to prevent this from happening in the future!
+:::
+
+
+```php
+    /*
+    |--------------------------------------------------------------------------
+    | Application Locales
+    |--------------------------------------------------------------------------
+    |
+    | Contains an array with the applications available locales.
+    |
+    */
+    'locales' => [
+        'en',
+        'fr',
+        'es' => [
+            'MX', // mexican spanish
+            'CO', // colombian spanish
+        ],
+    ],
+
+    ...
+
+    /*
+    |--------------------------------------------------------------------------
+    | Fallback Locale
+    |--------------------------------------------------------------------------
+    |
+    | A fallback locale is the locale being used to return a translation
+    | when the requested translation is not existing. To disable it
+    | set it to false.
+    | If set to null it will loop through all configured locales until
+    | one existing is found or end of list reached. The locales are looped
+    | from top to bottom and for country based locales the simple one
+    | is used first. So "es" will be checked before "es_MX".
+    |
+    */
+    'fallback_locale' => 'en',
+
+    ...
+
+```
+
+
 ## Required Dependencies
 
 This package relies on **[Spatie's Laravel Translatable](https://github.com/spatie/laravel-translatable)** to handle translations efficiently. The **spatie/laravel-package-tools** version **^1.16.0** or higher is required for proper functionality and will be installed automatically when you install **Laravel Countries** as a required dependency.

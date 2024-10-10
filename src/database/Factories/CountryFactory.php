@@ -25,7 +25,7 @@ class CountryFactory extends Factory
      */
     public function definition(): array
     {
-        $name = fake()->country() . ' ' . fake()->word();
+        $name = fake()->country() . ' ' . fake()->word(). rand(1, 9999);
         $colors = $this->randomColors();
 
         return [

@@ -22,4 +22,19 @@ trait HasWhereSlug
         return $query;
     }
 
+    /**
+     * Find a model by slug (or where).
+     *
+     * @param string $slug
+     *
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function scopeOrWhereSlug($query, string $slug): Builder
+    {
+        $slug = Str::slug($slug);
+
+        $query->orWhereTranslation('slug', $slug);
+        return $query;
+    }
+
 }

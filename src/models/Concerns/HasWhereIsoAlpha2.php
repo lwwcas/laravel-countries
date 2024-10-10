@@ -17,4 +17,16 @@ trait HasWhereIsoAlpha2
     {
         return $query->where('iso_alpha_2', $isoAlpha2);
     }
+
+    /**
+     * Find a model by iso Alpha 2, or if not found, retrieve all results.
+     *
+     * @param string $isoAlpha2
+     *
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function scopeOrWhereIsoAlpha2($query, string $isoAlpha2): Builder
+    {
+        return $query->orWhere('iso_alpha_2', $isoAlpha2);
+    }
 }

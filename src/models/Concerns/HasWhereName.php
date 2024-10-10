@@ -18,4 +18,10 @@ trait HasWhereName
         $query->whereTranslation('name', $name);
         return $query;
     }
+
+    public function scopeOrWhereName($query, string $name): Builder
+    {
+        $query->orWhereTranslation('name', $name);
+        return $query;
+    }
 }

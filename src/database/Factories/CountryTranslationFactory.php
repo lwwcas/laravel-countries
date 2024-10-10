@@ -26,7 +26,7 @@ class CountryTranslationFactory extends Factory
      */
     public function definition(): array
     {
-        $name = fake()->country() . ' ' . fake()->word();
+        $name = fake()->country() . ' ' . fake()->word() . rand(1, 9999);
         return [
             'lc_country_id' => CountryFactory::new()->create()->id,
             'name' => $name,

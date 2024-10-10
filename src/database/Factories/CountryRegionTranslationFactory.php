@@ -34,7 +34,7 @@ class CountryRegionTranslationFactory extends Factory
      */
     public function definition(): array
     {
-        $name = fake()->randomElements($this->regions)[0] . ' ' . fake()->word();
+        $name = fake()->randomElements($this->regions)[0] . ' ' . fake()->word() . rand(1, 9999);
         return [
             'lc_region_id' => CountryRegionFactory::new()->create()->id,
             'name' => $name,

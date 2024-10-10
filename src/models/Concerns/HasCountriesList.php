@@ -22,23 +22,12 @@ trait HasCountriesList
      *
      * This method return a list of countries with their names and slugs.
      * The list is cached for a long time to avoid to query the database too much.
-     * If the cache is not enabled, the method will query the database.
      *
-     * @param bool $is_cached
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function withNamesAndSlugs(bool $is_cached = true)
+    public function withNamesAndSlugs()
     {
-        $countries = [];
-        $is_cached = self::getConfigIsCache() === true || $is_cached === true;
-        $cacheName = self::getConfigPrefixCache() . 'countries.list.names_slugs';
-
-        if (Cache::has($cacheName) && $is_cached === true) {
-            $countries = Cache::get($cacheName);
-            return $countries;
-        }
-
-        $countries = Country::select(
+        return Country::select(
             'lc_countries.id',
             'lc_countries.uid',
             'lc_countries.official_name',
@@ -56,10 +45,6 @@ trait HasCountriesList
                 $query->select('lc_country_id', 'name', 'slug');
             }])
             ->orderBy('name', 'asc');
-
-        Cache::add($cacheName, $countries, self::getConfigBigTimeCache());
-
-        return $countries;
     }
 
     /**
@@ -67,23 +52,12 @@ trait HasCountriesList
      *
      * This method return a list of countries with their names, slugs and flags.
      * The list is cached for a long time to avoid to query the database too much.
-     * If the cache is not enabled, the method will query the database.
      *
-     * @param bool $is_cached
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function withNamesSlugsAndFlags(bool $is_cached = true)
+    public function withNamesSlugsAndFlags()
     {
-        $countries = [];
-        $is_cached = self::getConfigIsCache() === true || $is_cached === true;
-        $cacheName = self::getConfigPrefixCache() . 'countries.list.names_slugs_flags';
-
-        if (Cache::has($cacheName) && $is_cached === true) {
-            $countries = Cache::get($cacheName);
-            return $countries;
-        }
-
-        $countries = Country::select(
+        return Country::select(
             'lc_countries.id',
             'lc_countries.uid',
             'lc_countries.official_name',
@@ -102,10 +76,6 @@ trait HasCountriesList
                 $query->select('lc_country_id', 'name', 'slug');
             }])
             ->orderBy('name', 'asc');
-
-        Cache::add($cacheName, $countries, self::getConfigBigTimeCache());
-
-        return $countries;
     }
 
 }

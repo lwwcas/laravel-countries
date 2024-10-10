@@ -57,11 +57,11 @@ class CountryRegion extends CountryModel
      * @var array
      */
     protected $fillable = [
-        'iso_alpha_2', // The ISO 3166-1 alpha-2 country code (e.g., "US" for United States).
-        'icao',        // The ICAO (International Civil Aviation Organization) country code for aviation purposes.
+        'iso_alpha_2', // The ISO 3166-1 alpha-2 region code (e.g., "US" for United States).
+        'icao',        // The ICAO (International Civil Aviation Organization) region code for aviation purposes.
         'iucn',        // The IUCN (International Union for Conservation of Nature) region code for conservation data.
         'tdwg',        // The TDWG (World Geographical Scheme for Recording Plant Distributions) code, used in biodiversity studies.
-        'is_visible',     // A boolean flag indicating if the country is visible in the application.
+        'is_visible',     // A boolean flag indicating if the region is visible in the queries.
     ];
 
     /**
@@ -128,6 +128,18 @@ class CountryRegion extends CountryModel
     }
 
     /**
+     * Filter the query by the ICAO (International Civil Aviation Organization) region code, adding the filter with an "or where" clause
+     *
+     * @param Builder $query
+     * @param string $icao
+     * @return Builder
+     */
+    public function scopeOrWhereICAO($query, string $icao)
+    {
+        return $query->orWhere('icao', $icao);
+    }
+
+    /**
      * Filter the query by the IUCN (International Union for Conservation of Nature) region code
      *
      * @param Builder $query
@@ -140,6 +152,18 @@ class CountryRegion extends CountryModel
     }
 
     /**
+     * Filter the query by the IUCN (International Union for Conservation of Nature) region code, adding the filter with an "or where" clause
+     *
+     * @param Builder $query
+     * @param string $iucn
+     * @return Builder
+     */
+    public function scopeOrWhereIUCN($query, string $iucn)
+    {
+        return $query->orWhere('iucn', $iucn);
+    }
+
+    /**
      * Filter the query by the TDWG (Taxonomic Databases Working Group) region code
      *
      * @param Builder $query
@@ -149,6 +173,18 @@ class CountryRegion extends CountryModel
     public function scopeWhereTDWG($query, string $tdwg)
     {
         return $query->where('tdwg', $tdwg);
+    }
+
+    /**
+     * Filter the query by the TDWG (Taxonomic Databases Working Group) region code, adding the filter with an "or where" clause
+     *
+     * @param Builder $query
+     * @param string $tdwg
+     * @return Builder
+     */
+    public function scopeOrWhereTDWG($query, string $tdwg)
+    {
+        return $query->orWhere('tdwg', $tdwg);
     }
 
 }

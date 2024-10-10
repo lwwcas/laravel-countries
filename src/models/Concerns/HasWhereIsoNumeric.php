@@ -17,4 +17,17 @@ trait HasWhereIsoNumeric
     {
         return $query->where('iso_numeric', $isoNumeric);
     }
+
+    /**
+     * Filter the query by the ISO Numeric, or-ing the query when the builder
+     * already has a where clause.
+     *
+     * @param Builder $query
+     * @param string $isoNumeric
+     * @return Builder
+     */
+    public function scopeOrWhereIsoNumeric($query, string $isoNumeric): Builder
+    {
+        return $query->orWhere('iso_numeric', $isoNumeric);
+    }
 }

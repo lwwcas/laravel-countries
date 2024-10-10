@@ -62,6 +62,10 @@ class WCountriesInstallCommand extends Command
             '--tag' => 'lwwcas-countries-config',
         ]);
 
+        $this->callSilently('vendor:publish', [
+            '--tag' => 'translatable',
+        ]);
+
         $this->newLine();
         return $this;
     }

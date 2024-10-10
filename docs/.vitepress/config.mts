@@ -51,7 +51,67 @@ export default defineConfig({
                     { text: 'Version Constraints', link: '/introduction/version-constraints' },
                     { text: 'Getting Started', link: '/introduction/getting-started' },
                 ]
-            }
+            },
+            {
+                text: 'The Basics',
+                items: [
+                    { text: 'Usage', link: '/the-basics/usage' },
+                    { text: 'Flags', link: '/the-basics/flags' },
+                    { text: 'Scopes', link: '/the-basics/scopes' },
+                    { text: 'Global Scopes', link: '/the-basics/global-scopes' },
+                ]
+            },
+            {
+                text: 'Country',
+                items: [
+                    { text: 'Your First Look', link: '/' },
+                    { text: 'Workflow', link: '/' },
+                    { text: 'Translations', link: '/' },
+
+                ]
+            },
+            {
+                text: 'Flag',
+                items: [
+                    { text: 'Your First Look', link: '/' },
+                    { text: 'Workflow', link: '/' },
+                    { text: 'Colors', link: '/' },
+                    { text: 'Emoji', link: '/' },
+
+                ]
+            },
+            {
+                text: 'Coordinates',
+                items: [
+                    { text: 'Your First Look', link: '/' },
+                    { text: 'Workflow', link: '/' },
+                    { text: 'Content', link: '/' },
+                ]
+            },
+            {
+                text: 'Demography',
+                items: [
+                    { text: 'Your First Look', link: '/' },
+                    { text: 'Workflow', link: '/' },
+                ]
+            },
+            {
+                text: 'Geographical',
+                items: [
+                    { text: 'Your First Look', link: '/' },
+                    { text: 'Workflow', link: '/' },
+                    { text: 'Content', link: '/' },
+                ]
+            },
+            {
+                text: 'Region',
+                items: [
+                    { text: 'Your First Look', link: '/region/first-look' },
+                    { text: 'Workflow', link: '/region/workflow' },
+                    { text: 'Translations', link: '/region/translations' },
+
+                ]
+            },
         ],
 
         socialLinks: [
