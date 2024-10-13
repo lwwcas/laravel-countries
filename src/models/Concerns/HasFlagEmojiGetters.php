@@ -5,6 +5,17 @@ namespace Lwwcas\LaravelCountries\Models\Concerns;
 trait HasFlagEmojiGetters
 {
     /**
+     * Get the flag emoji by type.
+     *
+     * @param string $type The type of flag emoji to return. Defaults to 'img'.
+     * @return string|null The flag emoji for the given type.
+     */
+    public function getFlagEmojiBy(string $type = 'img')
+    {
+        return $this->flag_emoji[$type] ?: null;
+    }
+
+    /**
      * Get the flag emoji as an image.
      *
      * This method is an alias for `getFlagEmojiImg()`.
@@ -33,7 +44,8 @@ trait HasFlagEmojiGetters
      *
      * @return string|null The flag emoji as an image.
      */
-    public function getFlagEmojiImg() {
+    public function getFlagEmojiImg()
+    {
         return $this->flag_emoji['img'] ?: null;
     }
 
@@ -61,7 +73,8 @@ HTML;
      *
      * @return string|null The flag emoji as a UTF-8 encoded string.
      */
-    public function getFlagEmojiUtf8() {
+    public function getFlagEmojiUtf8()
+    {
         return $this->flag_emoji['utf8'] ?: null;
     }
 
@@ -89,7 +102,8 @@ HTML;
      *
      * @return string|null The flag emoji as a UTF-16 encoded string.
      */
-    public function getFlagEmojiUtf16() {
+    public function getFlagEmojiUtf16()
+    {
         return $this->flag_emoji['utf16'] ?: null;
     }
 
@@ -182,7 +196,8 @@ SCRIPT;
      *
      * @return string|null The flag emoji as a Unicode code point.
      */
-    public function getFlagEmojiUCode() {
+    public function getFlagEmojiUCode()
+    {
         return $this->flag_emoji['uCode'] ?: null;
     }
 

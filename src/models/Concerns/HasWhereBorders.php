@@ -157,7 +157,7 @@ trait HasWhereBorders
                     'official_name' => $country->official_name,
                     'name' => $translation->name ?? null,
                     'locale' => $translation->locale ?? null,
-                    'flag_emoji' => $country->flag_emoji[$emojiType],
+                    'flag_emoji' => $country->getFlagEmojiBy('img'),
                 ];
             })
             ->toArray();
