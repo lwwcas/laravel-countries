@@ -33,6 +33,7 @@ We currently offer country flags in 9 different formats:
 }
 
 ```
+
 For each of these formats, we provide dedicated `getters` and `where` methods to make their usage even easy-to-use and more convenient for you.
 
 ## Flag Getters

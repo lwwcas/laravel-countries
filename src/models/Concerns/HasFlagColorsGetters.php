@@ -25,7 +25,7 @@ trait HasFlagColorsGetters
      */
     public function getFlagColorsName(): array
     {
-        return $this->flag_colors_name ?: [];
+        return $this->flag_colors ?: [];
     }
 
     /**

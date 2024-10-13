@@ -66,6 +66,8 @@ Offers a list mapping ISO Alpha-2 codes to Names.
 ::: code-group
 
 ```php [Input]
+use Lwwcas\LaravelCountries\Models\Country;
+
 Country::getList()->alpha2AndName();
 ```
 
@@ -93,6 +95,8 @@ Returns a list of emojis img.
 ::: code-group
 
 ```php [Input]
+use Lwwcas\LaravelCountries\Models\Country;
+
 Country::getList()->onlyEmojiInImg();
 ```
 

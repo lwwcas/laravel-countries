@@ -82,11 +82,12 @@ export default defineConfig({
             {
                 text: 'Flag',
                 items: [
-                    { text: 'Your First Look', link: '/' },
-                    { text: 'Workflow', link: '/' },
-                    { text: 'Colors', link: '/' },
-                    { text: 'Emoji', link: '/' },
-                    { text: 'Facade', link: '/' },
+                    { text: 'Your First Look', link: '/flag/first-look' },
+                    { text: 'Workflow', link: '/flag/workflow' },
+                    { text: 'Colors', link: '/flag/colors' },
+                    { text: 'Emoji', link: '/flag/emoji' },
+                    { text: 'Emoji Getters', link: '/flag/emoji-getters' },
+                    { text: 'Facade', link: '/flag/facade' },
                 ]
             },
             {
