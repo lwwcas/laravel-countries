@@ -62,7 +62,6 @@ export default defineConfig({
                 text: 'Country',
                 items: [
                     { text: 'Your First Look', link: '/country/first-look' },
-                    { text: 'List Countries', link: '/country/list-countries' },
                     { text: 'Workflow', link: '/country/workflow' },
                     { text: 'Method Listing', link: '/country/method-listing' },
                     { text: 'Currency', link: '/country/currency' },
@@ -72,12 +71,22 @@ export default defineConfig({
                 ]
             },
             {
+                text: 'List of Countries',
+                items: [
+                    { text: 'Your First Look', link: '/list-country/first-look' },
+                    { text: 'Scope', link: '/list-country/scope' },
+                    { text: 'Single List', link: '/list-country/single-list' },
+                    { text: 'Pair List', link: '/list-country/pair-list' },
+                ]
+            },
+            {
                 text: 'Flag',
                 items: [
                     { text: 'Your First Look', link: '/' },
                     { text: 'Workflow', link: '/' },
                     { text: 'Colors', link: '/' },
                     { text: 'Emoji', link: '/' },
+                    { text: 'Facade', link: '/' },
                 ]
             },
             {
