@@ -50,9 +50,9 @@ Ensure that your environment meets these requirements to guarantee smooth instal
 
 The following table outlines the compatibility of the **Laravel Countries** package version **4.11.0.0** with different Laravel versions:
 
-| Package Version | Laravel 9.x | Laravel 10.x | Laravel 11.x |
+| Package Version | Laravel 10.x | Laravel 11.x | Laravel Recommend |
 |-----------------|-------------|--------------|--------------|
-| 4.11.x.x        | ✅ Compatible  | ✅ Compatible  | ✅ Compatible  |
+| 4.11.x.x        | ✅ Compatible  | ✅ Compatible  | Laravel 11.x
 
 This table shows that version **4.11.0.0** of the **Laravel Countries** package is fully compatible with Laravel versions **9.x**, **10.x**, and **11.x**,
 

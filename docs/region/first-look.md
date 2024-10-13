@@ -31,7 +31,7 @@ We've presented it as an array for simplicity, but in reality, you'll be working
 
 Using this collection, you can easily access any country within the filtered region through the relationship `->countries()->get()`.
 
-### Code
+### Input
 ```php
 use Lwwcas\LaravelCountries\Models\CountryRegion as Region;
 

@@ -1,4 +1,6 @@
-# Quick snippets of all country data
+# Quick snippets
+
+All country data
 
 ## Country Data Explanation
 

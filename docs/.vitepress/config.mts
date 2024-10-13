@@ -44,10 +44,7 @@ export default defineConfig({
                 items: [
                     { text: 'What is Laravel Countries?', link: '/introduction/what-is-laravel-countries' },
                     { text: 'Available Languages?', link: '/introduction/available-languages' },
-                    { text: 'How to integrate into my project?', link: '/introduction/how-to-integrate-into-my-project' },
-                    { text: 'Quick snippets of all country data', link: '/introduction/quick-snippets-of-all-country-data' },
-                    { text: 'Response data', link: '/introduction/response-data' },
-                    { text: 'GeoJSON Structure', link: '/introduction/geojson-structure' },
+                    { text: 'Quick snippets', link: '/introduction/quick-snippets-of-all-country-data' },
                     { text: 'Version Constraints', link: '/introduction/version-constraints' },
                     { text: 'Getting Started', link: '/introduction/getting-started' },
                 ]
@@ -64,10 +61,14 @@ export default defineConfig({
             {
                 text: 'Country',
                 items: [
-                    { text: 'Your First Look', link: '/' },
-                    { text: 'Workflow', link: '/' },
-                    { text: 'Translations', link: '/' },
-
+                    { text: 'Your First Look', link: '/country/first-look' },
+                    { text: 'List Countries', link: '/country/list-countries' },
+                    { text: 'Workflow', link: '/country/workflow' },
+                    { text: 'Method Listing', link: '/country/method-listing' },
+                    { text: 'Currency', link: '/country/currency' },
+                    { text: 'Borders', link: '/country/borders' },
+                    { text: 'Relationships', link: '/country/relationships' },
+                    { text: 'Translations', link: '/country/translations' },
                 ]
             },
             {
@@ -77,7 +78,6 @@ export default defineConfig({
                     { text: 'Workflow', link: '/' },
                     { text: 'Colors', link: '/' },
                     { text: 'Emoji', link: '/' },
-
                 ]
             },
             {
@@ -110,6 +110,15 @@ export default defineConfig({
                     { text: 'Workflow', link: '/region/workflow' },
                     { text: 'Translations', link: '/region/translations' },
 
+                ]
+            },
+            {
+                text: 'Setup',
+                items: [
+                    { text: 'How to Integrate', link: '/setup/how-to-integrate-into-my-project' },
+                    { text: 'Supported Databases', link: '/setup/supported-databases' },
+                    { text: 'ER model', link: '/setup/er-model' },
+                    { text: 'Migrations', link: '/setup/migrations' },
                 ]
             },
         ],

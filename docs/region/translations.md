@@ -28,10 +28,24 @@ We don't recommend using this approach to access the information.
 
 The magic happens when you set your default language:
 
+**[More about config translate](/introduction/available-languages.html#configuration)**
+
 ```config.php
 usually in config file app.php as
 
 'locale' => env('APP_LOCALE', 'en')
+
+and in config file translatable.php as
+
+'locales' => [
+    'en',
+    'fr',
+    'es' => [
+        'MX', // mexican spanish
+        'CO', // colombian spanish
+    ],
+],
+
 ```
 
 Let's suppose we start with English:
