@@ -22,4 +22,65 @@ CountryRegion::all();
 
 ## List of Countries
 
-TODO:
+This is the easiest and most straightforward way to get a list of countries.
+
+Whether you need country names, codes, or even their flags, this method provides it all in a simple and efficient way. It’s perfect for quickly accessing country information without any hassle.
+
+::: tip
+If you liked this simple version, you definitely need to check out the **[`Full version`](/list-country/pair-list.html)** of the country list! There's so much more you can do more details, more options, and even deeper customizations to fit all your needs.
+:::
+
+## ID and Name
+
+Offers a list of countries with IDs associated with their translated names. Useful for quickly fetching country names based on their IDs.
+
+::: code-group
+
+```php [Input]
+use Lwwcas\LaravelCountries\Models\Country;
+
+Country::getList()->idAndName();
+```
+
+```php [Output]
+Illuminate\Support\Collection {
+  items: array:245 [▼
+    248 => "Afghanistan"
+    260 => "Åland Islands"
+    251 => "Albania"
+    305 => "Algeria"
+    256 => "American Samoa"
+    246 => "Andorra"
+    253 => "Angola"
+    250 => "Anguilla"
+    254 => "Antarctica"
+    ...
+```
+
+:::
+
+## Only Emoji in Img
+
+Returns a list of emojis img.
+
+::: code-group
+
+```php [Input]
+Country::getList()->onlyEmojiInImg();
+```
+
+```php [Output]
+Illuminate\Support\Collection {
+  items: array:245 [▼
+    0 => "🇦🇫"
+    1 => "🇦🇽"
+    2 => "🇦🇱"
+    3 => "🇩🇿"
+    4 => "🇦🇸"
+    5 => "🇦🇩"
+    6 => "🇦🇴"
+    7 => "🇦🇮"
+    8 => "🇦🇶"
+    9 => "🇦🇬"
+    ...
+```
