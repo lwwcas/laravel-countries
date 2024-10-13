@@ -68,7 +68,8 @@ Country::whereIso('BR')->first();
 Country::whereIsoAlpha3('BRA')->first();
 Country::whereSlug('brasil')->first();
 ```
-### Testing
+
+### Testing With Pest Php
 
 ```  bash
 composer test

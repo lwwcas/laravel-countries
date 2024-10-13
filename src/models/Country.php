@@ -4,6 +4,7 @@ namespace Lwwcas\LaravelCountries\Models;
 
 use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Str;
 use Lwwcas\LaravelCountries\Abstract\CountryModel;
@@ -33,8 +34,8 @@ use Lwwcas\LaravelCountries\Models\CountryExtras;
 use Lwwcas\LaravelCountries\Models\CountryGeographical;
 use Lwwcas\LaravelCountries\Models\CountryRegion;
 use Lwwcas\LaravelCountries\Models\CountryTranslation;
-use Lwwcas\LaravelCountries\trait\WithCoordinatesBootstrap;
-use Lwwcas\LaravelCountries\trait\WithFlagColorBootstrap;
+use Lwwcas\LaravelCountries\Trait\WithCoordinatesBootstrap;
+use Lwwcas\LaravelCountries\Trait\WithFlagColorBootstrap;
 
 class Country extends CountryModel
 {
@@ -202,6 +203,44 @@ class Country extends CountryModel
     }
 
     /**
+     * Interact with the user's first name.
+     */
+    protected function officialName(): Attribute
+    {
+        return Attribute::make(
+            get: fn(string $value) => ucfirst($value),
+        );
+    }
+
+    /**
+     * Mutator for the iso_alpha_2 attribute.
+     *
+     * It ensures the ISO Alpha 2 code is always uppercased.
+     *
+     * @return \Illuminate\Database\Eloquent\Concerns\HasAttributes
+     */
+    protected function isoAlpha2(): Attribute
+    {
+        return Attribute::make(
+            get: fn(string $value) => Str::upper($value),
+        );
+    }
+
+    /**
+     * Mutator for the iso_alpha_3 attribute.
+     *
+     * It ensures the ISO Alpha 3 code is always uppercased.
+     *
+     * @return \Illuminate\Database\Eloquent\Concerns\HasAttributes
+     */
+    protected function isoAlpha3(): Attribute
+    {
+        return Attribute::make(
+            get: fn(string $value) => Str::upper($value),
+        );
+    }
+
+    /**
      * Get the region that owns the Country
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -254,6 +293,18 @@ class Country extends CountryModel
     }
 
     /**
+     * Find a country by UIDs or where the country's UIDs is a given value.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param string $uid
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeOrWhereUid($query, $uid)
+    {
+        return $query->orWhere('uid', $uid);
+    }
+
+    /**
      * Find a country by official name.
      *
      * @param string $officialName
@@ -266,6 +317,43 @@ class Country extends CountryModel
     }
 
     /**
+     * Find a country by official name with OR operator.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param string $officialName
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeOrWhereOficialName($query, $officialName)
+    {
+        return $query->orWhere('official_name', $officialName);
+    }
+
+    /**
+     * Find a country by official name with LIKE condition.
+     *
+     * @param string $officialName
+     *
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function scopeWhereOficialNameLike($query, $officialName)
+    {
+        return $query->whereLike('official_name', '%'. $officialName .'%');
+    }
+
+    /**
+     * Find a country by official name with LIKE condition and OR operator.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param string $officialName
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+
+    public function scopeOrWhereOficialNameLike($query, $officialName)
+    {
+        return $query->orWhereLike('official_name', '%'. $officialName .'%');
+    }
+
+    /**
      * Find a country by Geoname ID.
      *
      * @param int $geonameId
@@ -275,6 +363,18 @@ class Country extends CountryModel
     public function scopeWhereGeoname($query, $geonameId)
     {
         return $query->where('geoname_id', $geonameId);
+    }
+
+    /**
+     * Find a country by Geoname ID with OR operator.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param int $geonameId
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeOrWhereGeoname($query, $geonameId)
+    {
+        return $query->orWhere('geoname_id', $geonameId);
     }
 
 }

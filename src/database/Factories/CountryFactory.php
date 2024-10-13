@@ -51,7 +51,7 @@ class CountryFactory extends Factory
             'tld' => $this->randomLtd(),
             'alternative_tld' => $this->randomLtd(),
             'borders' => $this->randomLanguages(),
-            'timezones' => null,
+            'timezones' => [],
 
             'currency' => [
                 'name' => fake()->word(),

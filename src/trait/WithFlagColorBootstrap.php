@@ -1,6 +1,6 @@
 <?php
 
-namespace Lwwcas\LaravelCountries\trait;
+namespace Lwwcas\LaravelCountries\Trait;
 
 use Lwwcas\LaravelCountries\Models\Country;
 
