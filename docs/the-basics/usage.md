@@ -59,6 +59,33 @@ Illuminate\Support\Collection {
 
 :::
 
+## Alpha-2 and Name
+
+Offers a list mapping ISO Alpha-2 codes to Names.
+
+::: code-group
+
+```php [Input]
+Country::getList()->alpha2AndName();
+```
+
+```php [Output]
+Illuminate\Support\Collection {
+  items: array:245 [▼
+    "AF" => "Afghanistan"
+    "AX" => "Åland Islands"
+    "AL" => "Albania"
+    "DZ" => "Algeria"
+    "AS" => "American Samoa"
+    "AD" => "Andorra"
+    "AO" => "Angola"
+    "AI" => "Anguilla"
+    "AQ" => "Antarctica"
+    ...
+```
+
+:::
+
 ## Only Emoji in Img
 
 Returns a list of emojis img.

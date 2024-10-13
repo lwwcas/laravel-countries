@@ -381,6 +381,114 @@ Illuminate\Support\Collection {
 
 :::
 
+## Alpha-2 and ID
+
+Offers a list mapping ISO Alpha-2 codes to id.
+
+::: code-group
+
+```php [Input]
+Country::getList()->alpha2AndId();
+```
+
+```php [Output]
+Illuminate\Support\Collection {
+  items: array:245 [▼
+    "AF" => 248
+    "AX" => 260
+    "AL" => 251
+    "DZ" => 305
+    "AS" => 256
+    "AD" => 246
+    "AO" => 253
+    "AI" => 250
+    "AQ" => 254
+    ...
+```
+
+:::
+
+## Alpha-2 and UID
+
+Offers a list mapping ISO Alpha-2 codes to uid.
+
+::: code-group
+
+```php [Input]
+Country::getList()->alpha2AndUid();
+```
+
+```php [Output]
+Illuminate\Support\Collection {
+  items: array:245 [▼
+    "AF" => "01J9VCYESCNW4EWFYB9ENTNCN2"
+    "AX" => "01J9VCYEYFYD063XMYZR653QEB"
+    "AL" => "01J9VCYET590JW3HK27CHBXYPH"
+    "DZ" => "01J9VCYFDSTZ8F5VSDB2XFHGQJ"
+    "AS" => "01J9VCYEX2RXVM2XNS61VZ11KR"
+    "AD" => "01J9VCYERPV0Q73J9MA9TBEKJ6"
+    "AO" => "01J9VCYETMYK5GYHBD84539V1W"
+    "AI" => "01J9VCYESY8K411YFR48P7JPP1"
+    "AQ" => "01J9VCYEV40SY7GX48CKEK4N05"
+    ...
+```
+
+:::
+
+## Alpha-2 and Name
+
+Offers a list mapping ISO Alpha-2 codes to Names.
+
+::: code-group
+
+```php [Input]
+Country::getList()->alpha2AndName();
+```
+
+```php [Output]
+Illuminate\Support\Collection {
+  items: array:245 [▼
+    "AF" => "Afghanistan"
+    "AX" => "Åland Islands"
+    "AL" => "Albania"
+    "DZ" => "Algeria"
+    "AS" => "American Samoa"
+    "AD" => "Andorra"
+    "AO" => "Angola"
+    "AI" => "Anguilla"
+    "AQ" => "Antarctica"
+    ...
+```
+
+:::
+
+## Alpha-2 and Official Name
+
+Offers a list mapping ISO Alpha-2 codes to Official Name.
+
+::: code-group
+
+```php [Input]
+Country::getList()->alpha2AndOfficialName();
+```
+
+```php [Output]
+Illuminate\Support\Collection {
+  items: array:245 [▼
+    "AF" => "Islamic Emirate of Afghanistan"
+    "AX" => "Åland Islands"
+    "AL" => "Republic of Albania"
+    "DZ" => "People's Democratic Republic of Algeria"
+    "AS" => "American Samoa"
+    "AD" => "Principality of Andorra"
+    "AO" => "Republic of Angola"
+    "AI" => "Anguilla"
+    "AQ" => "Antarctica"
+    ...
+```
+
+:::
+
 ## Alpha-2 and Alpha-3 Codes
 
 Offers a list mapping ISO Alpha-2 codes to ISO Alpha-3 codes. Useful for converting between two-letter and three-letter country codes.
@@ -403,6 +511,114 @@ Illuminate\Support\Collection {
     "AO" => "AGO"
     "AI" => "AIA"
     "AQ" => "ATA"
+    ...
+```
+
+:::
+
+## Alpha-3 and ID
+
+Offers a list mapping ISO Alpha-3 codes to id.
+
+::: code-group
+
+```php [Input]
+Country::getList()->alpha3AndId();
+```
+
+```php [Output]
+Illuminate\Support\Collection {
+  items: array:245 [▼
+    "AFG" => 248
+    "ALA" => 260
+    "ALB" => 251
+    "DZA" => 305
+    "ASM" => 256
+    "AND" => 246
+    "AGO" => 253
+    "AIA" => 250
+    "ATA" => 254
+    ...
+```
+
+:::
+
+## Alpha-3 and UID
+
+Offers a list mapping ISO Alpha-3 codes to uid.
+
+::: code-group
+
+```php [Input]
+Country::getList()->alpha3AndUid();
+```
+
+```php [Output]
+Illuminate\Support\Collection {
+  items: array:245 [▼
+    "AFG" => "01J9VCYESCNW4EWFYB9ENTNCN2"
+    "ALA" => "01J9VCYEYFYD063XMYZR653QEB"
+    "ALB" => "01J9VCYET590JW3HK27CHBXYPH"
+    "DZA" => "01J9VCYFDSTZ8F5VSDB2XFHGQJ"
+    "ASM" => "01J9VCYEX2RXVM2XNS61VZ11KR"
+    "AND" => "01J9VCYERPV0Q73J9MA9TBEKJ6"
+    "AGO" => "01J9VCYETMYK5GYHBD84539V1W"
+    "AIA" => "01J9VCYESY8K411YFR48P7JPP1"
+    "ATA" => "01J9VCYEV40SY7GX48CKEK4N05"
+    ...
+```
+
+:::
+
+## Alpha-3 and Name
+
+Offers a list mapping ISO Alpha-3 codes to Names.
+
+::: code-group
+
+```php [Input]
+Country::getList()->alpha3AndName();
+```
+
+```php [Output]
+Illuminate\Support\Collection {
+  items: array:245 [▼
+    "AFG" => "Afghanistan"
+    "ALA" => "Åland Islands"
+    "ALB" => "Albania"
+    "DZA" => "Algeria"
+    "ASM" => "American Samoa"
+    "AND" => "Andorra"
+    "AGO" => "Angola"
+    "AIA" => "Anguilla"
+    "ATA" => "Antarctica"
+    ...
+```
+
+:::
+
+## Alpha-3 and Official Name
+
+Offers a list mapping ISO Alpha-3 codes to Official Name.
+
+::: code-group
+
+```php [Input]
+Country::getList()->alpha3AndOfficialName();
+```
+
+```php [Output]
+Illuminate\Support\Collection {
+  items: array:245 [▼
+    "AFG" => "Islamic Emirate of Afghanistan"
+    "ALA" => "Åland Islands"
+    "ALB" => "Republic of Albania"
+    "DZA" => "People's Democratic Republic of Algeria"
+    "ASM" => "American Samoa"
+    "AND" => "Principality of Andorra"
+    "AGO" => "Republic of Angola"
+    "AIA" => "Anguilla"
+    "ATA" => "Antarctica"
     ...
 ```
 

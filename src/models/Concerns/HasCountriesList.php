@@ -49,7 +49,8 @@ trait HasCountriesList
             ->with(['translations' => function ($query) {
                 $query->select('lc_country_id', 'name', 'slug');
             }])
-            ->orderBy('name', 'asc');
+            ->orderBy('name', 'asc')
+            ->limit(9);
     }
 
     /**
@@ -80,8 +81,7 @@ trait HasCountriesList
             ->with(['translations' => function ($query) {
                 $query->select('lc_country_id', 'name', 'slug');
             }])
-            ->orderBy('name', 'asc')
-            ->limit(9);
+            ->orderBy('name', 'asc');
     }
 
 }

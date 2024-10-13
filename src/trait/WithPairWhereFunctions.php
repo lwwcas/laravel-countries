@@ -245,6 +245,58 @@ trait WithPairWhereFunctions
     }
 
     /**
+     * Get a list of countries with their iso_alpha_2 codes and ids.
+     *
+     * This method returns a list of countries with their iso_alpha_2 codes and ids.
+     * The list is cached for a long time to avoid querying the database too much.
+     *
+     * @return Collection
+     */
+    public function alpha2AndId()
+    {
+        return $this->withNamesAndSlugs()->pluck('id', 'iso_alpha_2');
+    }
+
+    /**
+     * Get a list of countries with their iso_alpha_2 codes and UIDs.
+     *
+     * This method returns a list of countries with their iso_alpha_2 codes and UIDs.
+     * The list is cached for a long time to avoid querying the database too much.
+     *
+     * @return Collection
+     */
+    public function alpha2AndUid()
+    {
+        return $this->withNamesAndSlugs()->pluck('uid', 'iso_alpha_2');
+    }
+
+    /**
+     * Get a list of countries with their iso_alpha_2 codes and names.
+     *
+     * This method returns a list of countries with their iso_alpha_2 codes and names.
+     * The list is cached for a long time to avoid querying the database too much.
+     *
+     * @return Collection
+     */
+    public function alpha2AndName()
+    {
+        return $this->withNamesAndSlugs()->pluck('name', 'iso_alpha_2');
+    }
+
+    /**
+     * Get a list of countries with their iso_alpha_2 codes and official names.
+     *
+     * This method returns a list of countries with their iso_alpha_2 codes and official names.
+     * The list is cached for a long time to avoid querying the database too much.
+     *
+     * @return Collection
+     */
+    public function alpha2AndOfficialName()
+    {
+        return $this->withNamesAndSlugs()->pluck('official_name', 'iso_alpha_2');
+    }
+
+    /**
      * Get a list of countries with their iso_alpha_2 and iso_alpha_3 codes.
      *
      * This method returns a list of countries with their iso_alpha_2 and iso_alpha_3 codes.
@@ -269,6 +321,59 @@ trait WithPairWhereFunctions
     {
         $result = $this->withNamesSlugsAndFlags()->pluck('flag_emoji', 'iso_alpha_2') ?? collect([]);
         return (new FlagEmoji($result));
+    }
+
+
+    /**
+     * Get a list of countries with their iso_alpha_3 codes and ids.
+     *
+     * This method returns a list of countries with their iso_alpha_3 codes and ids.
+     * The list is cached for a long time to avoid querying the database too much.
+     *
+     * @return Collection
+     */
+    public function alpha3AndId()
+    {
+        return $this->withNamesAndSlugs()->pluck('id', 'iso_alpha_3');
+    }
+
+    /**
+     * Get a list of countries with their iso_alpha_3 codes and UIDs.
+     *
+     * This method returns a list of countries with their iso_alpha_3 codes and UIDs.
+     * The list is cached for a long time to avoid querying the database too much.
+     *
+     * @return Collection
+     */
+    public function alpha3AndUid()
+    {
+        return $this->withNamesAndSlugs()->pluck('uid', 'iso_alpha_3');
+    }
+
+    /**
+     * Get a list of countries with their iso_alpha_3 codes and names.
+     *
+     * This method returns a list of countries with their iso_alpha_3 codes and names.
+     * The list is cached for a long time to avoid querying the database too much.
+     *
+     * @return Collection
+     */
+    public function alpha3AndName()
+    {
+        return $this->withNamesAndSlugs()->pluck('name', 'iso_alpha_3');
+    }
+
+    /**
+     * Get a list of countries with their iso_alpha_3 codes and official names.
+     *
+     * This method returns a list of countries with their iso_alpha_3 codes and official names.
+     * The list is cached for a long time to avoid querying the database too much.
+     *
+     * @return Collection
+     */
+    public function alpha3AndOfficialName()
+    {
+        return $this->withNamesAndSlugs()->pluck('official_name', 'iso_alpha_3');
     }
 
     /**
