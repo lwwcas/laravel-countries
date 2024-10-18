@@ -165,13 +165,7 @@ trait HasWhereFlagColors
      */
     protected function scopeWhereFlagByOneColor($query, string $name, string $tableName)
     {
-        $databaseDriver = config('database.default');
-        return match ($databaseDriver) {
-            'mysql', 'mariadb' => $query->whereRaw('JSON_CONTAINS('. $tableName .', ?)', [$name]),
-            'pgsql' => $query->whereRaw($tableName .' @> ?', ['["' . $name . '"]']),
-            'sqlite' => $query->where($tableName, 'LIKE', '%' . $name . '%'),
-            default => $query->where($tableName, 'LIKE', '%' . $name . '%'),
-        };
+        return $query->whereLike($tableName, '%' . $name . '%');
     }
 
     /**
@@ -184,15 +178,9 @@ trait HasWhereFlagColors
      */
     protected function scopeWhereFlagByManyColors($query, array $names, string $tableName)
     {
-        $databaseDriver = config('database.default');
-        return $query->where(function ($query) use ($names, $databaseDriver, $tableName) {
+        return $query->where(function ($query) use ($names, $tableName) {
             foreach ($names as $color) {
-                match ($databaseDriver) {
-                    'mysql', 'mariadb' => $query->orWhereRaw('JSON_CONTAINS('. $tableName .', json_quote(?))', [$color]),
-                    'pgsql' => $query->orWhereRaw($tableName . '::jsonb @> ?', [json_encode([$color])]),
-                    'sqlite' => $query->orWhere($tableName, 'LIKE', '%"' . $color . '"%'),
-                    default => $query->orWhere($tableName, 'LIKE', '%"' . $color . '"%'),
-                };
+                $query->orWhereLike($tableName, '%' . $color . '%');
             }
         });
     }
