@@ -96,7 +96,7 @@ trait WithCoordinatesBootstrap
 
     public function coordinatesInDDM(): ?string
     {
-        return $this->coordinates->degrees_and_decimal_minutes ?? null;
+        return $this->coordinatesInDegreesAndDecimalMinutes();
     }
 
     /**
@@ -106,7 +106,6 @@ trait WithCoordinatesBootstrap
      */
     public function isInNorthernHemisphere(): bool
     {
-        // Latitude > 0 indica que o país está no Hemisfério Norte
         return $this->latitude() > 0;
     }
 
@@ -117,7 +116,6 @@ trait WithCoordinatesBootstrap
      */
     public function isInSouthernHemisphere(): bool
     {
-        // Latitude < 0 indica que o país está no Hemisfério Sul
         return $this->latitude() < 0;
     }
 

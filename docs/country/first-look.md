@@ -342,128 +342,6 @@ With UILDs being less complex, your queries are easier to write and manage. This
 #### Sufficient Uniqueness for Static Data
 Since countries rarely change, UILD offers all the uniqueness we need without the overhead of UUID. It’s a perfect match for managing entities like countries, where the dataset is relatively small and stable.
 
-## GeoJSON Structure
-
-**GeoJSON** (Geographic JSON) is a format for encoding geographic data structures using JSON. It is widely used in mapping applications and geospatial analysis to represent various geographical features like points, lines, and polygons.
-
-<img src="/assets/brazil-map.png" alt="Brazil Map">
-
-### GeoJSON
-
-This GeoJSON object represents the full geographical boundaries of Brazil, utilizing the **FeatureCollection** structure and a **MultiPolygon** geometry type to handle the complexity of the country's borders, including islands and coastal regions. Below, we break down the key components relevant to developers working with geospatial data:
-
-### 🔑 Key Components
-
-1. **FeatureCollection**:
-   - The root object is a **FeatureCollection**, which is a standard GeoJSON structure that contains multiple **Feature** objects. In this case, it encapsulates Brazil’s geographic representation.
-
-2. **Feature**:
-   - Each **Feature** represents a single geographic entity. Here, Brazil is represented as a **Feature**, with metadata included in the **properties** section. This modular design allows developers to easily manage multiple geographic objects within a single **FeatureCollection**.
-
-3. **Properties**:
-   - The **properties** object holds non-spatial data about the feature. In this example, the ISO Alpha-2 country code `"br"` is included as a property under `"cca2"`. These properties can be extended to include additional metadata, such as population data or administrative classifications, depending on your use case.
-
-4. **Geometry**:
-   - The **geometry** field defines the spatial shape of the feature. For Brazil, the geometry type is **"MultiPolygon"**, which allows the representation of the country's complex boundaries, including multiple distinct areas like islands or disjointed regions. This makes it ideal for use in applications that require detailed boundary mapping or geospatial analysis.
-
-### GeoJSON Example
-
-Brazil GeoJson Example
-
-::: details Click me to view the example
-
-```json
-{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": { "cca2": "br" },
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
-          [
-            [
-              [-48.55056, -27.82139],
-              [-48.55667, -27.82278],
-              [-48.563057, -27.82139],
-              [-48.565285, -27.816669],
-              [-48.566673, -27.81111],
-              [-48.566673, -27.79889],
-              [-48.56583, -27.79278],
-              [-48.55056, -27.69611],
-              [-48.53167, -27.646946],
-              [-48.502785, -27.56167],
-              [-48.50111, -27.556114],
-              [-48.50111, -27.549168],
-              [-48.503334, -27.544445],
-              [-48.52167, -27.51833],
-              [-48.527779, -27.491669],
-              [-48.52361, -27.46639],
-              [-48.51833, -27.43556],
-              [-48.51723, -27.430836],
-              [-48.43084, -27.39],
-              [-48.42473, -27.388889],
-              [-48.418335, -27.388889],
-              [-48.414169, -27.39167],
-              [-48.410835, -27.395557],
-              [-48.37195, -27.44361],
-              [-48.371117, -27.44972],
-              [-48.40639, -27.59278],
-              [-48.412506, -27.60111],
-              [-48.44833, -27.63084],
-              [-48.45889, -27.641945],
-              [-48.49667, -27.71139],
-              [-48.499725, -27.722504],
-              [-48.500557, -27.728615],
-              [-48.499725, -27.73473],
-              [-48.498337, -27.74028],
-              [-48.492226, -27.74861],
-              [-48.485, -27.75611],
-              [-48.479729, -27.765],
-              [-48.479729, -27.77167],
-              [-48.48222, -27.776669],
-              [-48.48611, -27.78],
-              [-48.54056, -27.816669],
-              [-48.55056, -27.82139]
-            ]
-          ],
-          [
-            [
-              [-48.58112, -26.39167],
-              [-48.58584, -26.425556],
-              [-48.62611, -26.39333],
-              [-48.70556, -26.31444],
-              [-48.707779, -26.309723],
-              [-48.70473, -26.305557],
-              [-48.55, -26.16972],
-              [-48.54472, -26.167778],
-              [-48.537781, -26.16722],
-              [-48.52639, -26.17056],
-              [-48.51723, -26.17611],
-              [-48.51445, -26.18028],
-              [-48.485, -26.22889],
-              [-48.485, -26.234169],
-              [-48.49028, -26.243057],
-              [-48.517784, -26.280003],
-              [-48.52723, -26.29222],
-              [-48.531113, -26.29556],
-              [-48.54028, -26.307781],
-              [-48.54501, -26.317223],
-              [-48.5789, -26.38667],
-              [-48.58112, -26.39167]
-            ]
-          ],
-          ...
-        ]
-      }
-    }
-  ]
-}
-```
-
-:::
-
 ### Use Cases
 
 GeoJSON is commonly used in various applications, such as:
@@ -493,4 +371,240 @@ GeoJSON is commonly used in various applications, such as:
 
 Need a quick way to work with countries? Here are some handy snippets to get you started! Whether you're fetching countries by name, ISO codes, or filtering by regions, we've got you covered.
 
-Check out the **[full documentation](/introduction/quick-snippets-of-all-country-data.html#quick-snippets)** to see all the details and explore everything you can do with countries.
+::: details Click me to view the code
+
+### Brazil Country Profile
+
+### 1. **Name**
+
+- **Brazil**: The common name of the country.
+- This is the informal or short name used to reference the country.
+
+### 2. **Official Name**
+
+- **Federative Republic of Brazil**: The full official name of the country.
+- This is the formal name used in official contexts, treaties, and legal documents.
+
+### 3. **ISO Codes**
+
+- **ISO Alpha-2**: **BR**
+  - The two-letter ISO 3166-1 code for the country.
+  - Used for international shipping, data exchange, and internet domains.
+- **ISO Alpha-3**: **BRA**
+  - The three-letter ISO 3166-1 code for the country.
+  - Used in international standards to represent the country.
+- **ISO Numeric**: **076**
+  - The numeric ISO 3166-1 code for the country.
+  - Used in data formats requiring numeric data, such as customs and trade databases.
+
+### 4. **International Phone Code**
+
+- **+55**: The country’s international dialing code.
+- Used to make international calls to Brazil.
+
+### 5. **Languages**
+
+- **['pt']**: Official languages spoken in the country.
+- **pt** stands for Portuguese, the official language of Brazil.
+
+### 6. **Top-Level Domains (TLDs)**
+
+- **['.br']**: The country’s internet domain suffix.
+- Used in web addresses specific to Brazil (e.g., websites ending in `.br`).
+- **Alternative TLDs**: No significant alternative TLDs.
+
+### 7. **WMO Code**
+
+- **BZ**: The country’s code according to the **World Meteorological Organization**.
+- Used in weather forecasting and climate monitoring systems.
+
+### 8. **Geoname ID**
+
+- **3469034**: The unique identifier from the **GeoNames** database for Brazil.
+- Useful for obtaining detailed geographical and administrative information about the country.
+
+### 9. **Emoji Representation**
+
+- **🇧🇷**
+  - **Unicode**: U+1F1E7 U+1F1F7
+  - **HTML Entities**: `&#x1F1E7;&#x1F1F7;`
+  - **CSS**: `\1F1E7\1F1F7`
+  - **Decimal**: `&#127463;&#127479;`
+  - **UTF-8**: `🇧🇷`
+  - **UTF-16**: `\uD83C\uDDE7\uD83C\uDDF7`
+  - **Shortcode**: `:flag-br:`
+  - **Hexadecimal**: `&#x1F1E7;&#x1F1F7;`
+- Used in user interfaces, social media, and web content to represent the country visually.
+
+### 10. **Flag Colors**
+
+- **Green**:
+  - **Web Name**: green
+  - **Hex**: `#009C3B`
+  - **RGB**: `0,156,59`
+  - **CMYK**: `100,0,62,39`
+  - **HSL**: `147°,100%,31%`
+  - **HSV**: `147°,100%,61%`
+  - **Pantone**: Green C
+  - **Contrast Color**: `#FFFFFF`
+- **Yellow**:
+  - **Web Name**: yellow
+  - **Hex**: `#FFDF00`
+  - **RGB**: `255,223,0`
+  - **CMYK**: `0,13,100,0`
+  - **HSL**: `51°,100%,50%`
+  - **HSV**: `51°,100%,100%`
+  - **Pantone**: Yellow 012 C
+  - **Contrast Color**: `#000000`
+- **Blue**:
+  - **Web Name**: blue
+  - **Hex**: `#002776`
+  - **RGB**: `0,39,118`
+  - **CMYK**: `100,67,0,54`
+  - **HSL**: `217°,100%,23%`
+  - **HSV**: `217°,100%,46%`
+  - **Pantone**: Reflex Blue C
+  - **Contrast Color**: `#FFFFFF`
+- **White**:
+  - **Web Name**: white
+  - **Hex**: `#FFFFFF`
+  - **RGB**: `255,255,255`
+  - **CMYK**: `0,0,0,0`
+  - **HSL**: `0°,0%,100%`
+  - **HSV**: `0°,0%,100%`
+  - **Pantone**: White
+  - **Contrast Color**: `#000000`
+- These colors represent the primary colors in Brazil’s national flag.
+
+### 11. **Population and Area**
+
+- **Population**: `212,559,417`
+  - As of recent estimates.
+- **Area**: `8,515,767 km²`
+  - Total area of the country in square kilometers.
+
+### 12. **Capital City**
+
+- **Brasília**: The capital city of Brazil.
+
+### 13. **Time Zones**
+
+- **America/Sao_Paulo**:
+  - **Standard Time**: `UTC−3`
+- **America/Manaus**:
+  - **Standard Time**: `UTC−4`
+- **America/Rio_Branco**:
+  - **Standard Time**: `UTC−5`
+- Brazil spans multiple time zones due to its large geographical size.
+
+### 14. **Independence Day**
+
+- **1822-09-07**: Date of independence from Portugal.
+- Celebrated annually as a national holiday.
+
+### 15. **International Organizations**
+
+- **Memberships**:
+  - United Nations (UN)
+  - World Trade Organization (WTO)
+  - BRICS
+  - G20
+  - Mercosur
+  - Organization of American States (OAS)
+  - Union of South American Nations (UNASUR)
+  - Community of Latin American and Caribbean States (CELAC)
+- Brazil actively participates in various international organizations.
+
+### 16. **Gross Domestic Product (GDP)**
+
+- **$1,445 billion USD**
+  - GDP in billions of USD.
+
+### 17. **Religions**
+
+- **Predominant Religions**:
+  - Christianity (Roman Catholicism, Protestantism)
+  - Spiritism
+  - Afro-Brazilian religions
+- Reflects the diverse religious landscape of the country.
+
+### 18. **Government**
+
+- **Federal presidential constitutional republic**
+  - Describes the form of government in Brazil.
+
+### 19. **National Sport**
+
+- **Football (Soccer)**
+  - The most popular and widely played sport in the country.
+
+### 20. **Bordering Countries**
+
+- **Argentina** (`AR`)
+- **Bolivia** (`BO`)
+- **Colombia** (`CO`)
+- **French Guiana** (`GF`)
+- **Guyana** (`GY`)
+- **Paraguay** (`PY`)
+- **Peru** (`PE`)
+- **Suriname** (`SR`)
+- **Uruguay** (`UY`)
+- **Venezuela** (`VE`)
+- Brazil shares borders with multiple South American countries.
+
+### 21. **Currency Information**
+
+- **Name**: Brazilian Real
+- **Code**: BRL
+- **Symbol**: R$
+- **Main Unit**: Real
+- **Sub Unit**: Centavo
+- **Sub Unit to Main Unit**: 100 centavos = 1 real
+- **Banknotes**: `2, 5, 10, 20, 50, 100, 200`
+- **Main Coins**: `1`
+- **Sub Coins**: `5, 10, 25, 50`
+
+### 22. **Internet Information**
+
+- **Average Internet Speeds**:
+  - **Fixed Broadband**: `100 Mbps`
+  - **Mobile Connection**: `30 Mbps`
+- **Internet Penetration**: `75%`
+  - Percentage of the population with internet access.
+
+### 23. **National Cybersecurity Agency**
+
+- **Department of Information Security and Cybersecurity**
+  - Portuguese: `Departamento de Segurança da Informação e Comunicações`
+
+### 24. **Popular Technologies**
+
+- **Commonly Used Technologies**:
+  - PHP
+  - JavaScript
+  - Java
+  - Python
+  - .NET
+  - WordPress
+- These technologies are widely used in Brazil's tech industry.
+
+### 25. **UID and Region**
+
+- **UID**: Unique identifier (ULID) for the country.
+- **LC Region ID**: Foreign key linking the country to a specific region.
+
+### 26. **Visibility**
+
+- **Is Visible**: `True`
+  - Indicates that the country is visible in the application or system.
+
+### 27. **Coordinates Details**
+
+- **Latitude**: `-15.7939`
+- **Longitude**: `-47.8828`
+- **Degrees with Decimal**: `15.7939° S, 47.8828° W`
+- **Degrees, Minutes, Seconds**: `15°47'38.04" S, 47°52'58.08" W`
+- **Degrees and Decimal Minutes**: `15°47.634' S, 47°52.968' W`
+- **GPS Formats**: Various formats used in GPS devices.
+
+:::

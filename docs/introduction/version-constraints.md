@@ -18,6 +18,15 @@ A version consists of four parts: **MAJOR.LARAVEL.MINOR.PATCH**. For example, ve
 
 > **Note**: This section offers a brief overview of how Semantic Versioning is used and applied in Laravel Countries
 
+## Version Compatibility
+
+The following table outlines the compatibility of the **Laravel Countries** package version with different Laravel versions:
+
+| Package Version | Laravel   |  Status |
+|-----------------|----------|--------------|
+| 4.11.x.x        | 11       |  ✅
+| 4.11.x.x        | 10       |  ✅
+
 ## Requirements
 
 The **Laravel Countries** package has the following system and package requirements to ensure proper functionality. Below is a breakdown of the required versions for both runtime and development environments.
@@ -46,15 +55,6 @@ The following dependencies are required for development and testing purposes:
 
 Ensure that your environment meets these requirements to guarantee smooth installation and usage of the **Laravel Countries** package.
 
-## Version Compatibility
-
-The following table outlines the compatibility of the **Laravel Countries** package version **4.11.0.0** with different Laravel versions:
-
-| Package Version | Laravel 10.x | Laravel 11.x | Laravel Recommend |
-|-----------------|-------------|--------------|--------------|
-| 4.11.x.x        | ✅ Compatible  | ✅ Compatible  | Laravel 11.x
-
-This table shows that version **4.11.0.0** of the **Laravel Countries** package is fully compatible with Laravel versions **9.x**, **10.x**, and **11.x**,
 
 ## Releasing a New Version
 

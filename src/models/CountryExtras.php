@@ -55,12 +55,12 @@ class CountryExtras extends CountryModel
     }
 
     /**
-     * Get the country that owns the CountryGeographical
+     * Get the country that owns the CountryExtras
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function country(): HasOne
     {
-        return $this->hasOne(Country::class, 'lc_country_id');
+        return $this->hasOne(Country::class, 'id', 'lc_country_id');
     }
 }

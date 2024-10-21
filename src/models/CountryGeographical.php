@@ -57,7 +57,7 @@ class CountryGeographical extends CountryModel
      */
     public function country(): HasOne
     {
-        return $this->hasOne(Country::class, 'lc_country_id');
+        return $this->hasOne(Country::class, 'id', 'lc_country_id');
     }
 
     /**
@@ -65,14 +65,14 @@ class CountryGeographical extends CountryModel
      *
      * @return array
      */
-    public function getGeodata()
+    public function getGeoData()
     {
         $data = [
             'type' => $this->type,
             'features' => [
                 'type' => $this->features_type,
-                'properties' => json_decode($this->properties, true),
-                'geometry' => json_decode($this->geometry, true),
+                'properties' => $this->properties,
+                'geometry' => $this->geometry,
             ],
         ];
 

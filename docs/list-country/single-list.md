@@ -205,7 +205,7 @@ Illuminate\Support\Collection {
 The flags method (`onlyFlag()` and `onlyEmoji()`) returns a Facade called `FlagEmoji`, which can be used to work with the collection of flag emojis.
 
 ::: tip
-Read more about **[`FlagEmoji`](/)** Facade
+Read more about **[`FlagEmoji`](/flag/emoji.html)** Facade
 :::
 
 ## Only Flag

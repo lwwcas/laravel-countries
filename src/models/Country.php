@@ -377,4 +377,15 @@ class Country extends CountryModel
         return $query->orWhere('geoname_id', $geonameId);
     }
 
+    /**
+     * Get the geographical data as a GeoJSON feature collection.
+     *
+     * @return array
+     */
+    public function getGeoData()
+    {
+        return $this->geographical()->first()->getGeoData();
+
+    }
+
 }

@@ -44,7 +44,6 @@ export default defineConfig({
                 items: [
                     { text: 'What is Laravel Countries?', link: '/introduction/what-is-laravel-countries' },
                     { text: 'Available Languages?', link: '/introduction/available-languages' },
-                    { text: 'Quick snippets', link: '/introduction/quick-snippets-of-all-country-data' },
                     { text: 'Version Constraints', link: '/introduction/version-constraints' },
                     { text: 'Getting Started', link: '/introduction/getting-started' },
                 ]
@@ -92,9 +91,8 @@ export default defineConfig({
             {
                 text: 'Coordinates',
                 items: [
-                    { text: 'Your First Look', link: '/' },
-                    { text: 'Workflow', link: '/' },
-                    { text: 'Content', link: '/' },
+                    { text: 'Your First Look', link: '/coordinates/first-look' },
+                    { text: 'Workflow', link: '/coordinates/workflow' },
                 ]
             },
             {
@@ -107,9 +105,8 @@ export default defineConfig({
             {
                 text: 'Geographical',
                 items: [
-                    { text: 'Your First Look', link: '/' },
-                    { text: 'Workflow', link: '/' },
-                    { text: 'Content', link: '/' },
+                    { text: 'Your First Look', link: '/geographical/first-look' },
+                    { text: 'Workflow', link: '/geographical/workflow' },
                 ]
             },
             {
