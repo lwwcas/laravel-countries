@@ -111,3 +111,9 @@ If **Laravel Countries** has saved you time or helped in your project, consider 
 - **Donate via PayPal:** [PayPal](https://www.paypal.com/paypalme/LucasDuarte)
 
 Your contributions help keep the project alive and ensure continuous improvements. Every bit of support is greatly appreciated! 🙏
+
+## 🍀 Fully Tested with Pest PHP
+
+With 247 tests passed and a whopping 959 assertions covered, you can trust that everything is shipshape!
+
+No bugs here only good vibes! 😄

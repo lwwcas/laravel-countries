@@ -98,8 +98,8 @@ export default defineConfig({
             {
                 text: 'Demography',
                 items: [
-                    { text: 'Your First Look', link: '/' },
-                    { text: 'Workflow', link: '/' },
+                    { text: 'Your First Look', link: '/demography/first-look' },
+                    // { text: 'Workflow', link: '/demography/workflow' },
                 ]
             },
             {
