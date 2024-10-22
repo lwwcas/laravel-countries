@@ -1,7 +1,5 @@
 # Basic Usage Global Scopes
 
-## Usage
-
 In country model and region model, two global scopes are automatically applied during the class boot process.
 
 These scopes are enabled by default, and no additional configuration is required to activate them.

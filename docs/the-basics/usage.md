@@ -1,7 +1,5 @@
 # Basic Usage
 
-## Usage
-
 To import `Country::class`, use the following code:
 
 ```php{1}

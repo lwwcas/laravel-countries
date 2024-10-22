@@ -1,7 +1,5 @@
 # Basic Usage Countries Scopes
 
-## Usage
-
 Scopes in Laravel allow you to reuse query logic efficiently.
 
 The `whereSlug()` method shown here simplifies filtering countries by their slug.
