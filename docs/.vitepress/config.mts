@@ -64,7 +64,9 @@ export default defineConfig({
                     { text: 'Workflow', link: '/country/workflow' },
                     { text: 'Method Listing', link: '/country/method-listing' },
                     { text: 'Currency', link: '/country/currency' },
+                    { text: 'Domain', link: '/' },
                     { text: 'Borders', link: '/country/borders' },
+                    { text: 'Independence Day', link: '/country/independence' },
                     { text: 'Relationships', link: '/country/relationships' },
                     { text: 'Translations', link: '/country/translations' },
                 ]

@@ -2,6 +2,7 @@
 
 namespace Lwwcas\LaravelCountries\Models\Concerns;
 
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 
 trait HasWhereCurrency
@@ -42,15 +43,7 @@ trait HasWhereCurrency
      */
     public function scopeWhereCurrencyCode($query, string $currency)
     {
-        $databaseDriver = config('database.default');
-        $currencyInLowercase = Str::lower($currency);
-
-        return match ($databaseDriver) {
-            'mysql', 'mariadb' => $query->whereRaw('JSON_UNQUOTE(JSON_EXTRACT(currency, "$.code")) = ?', [$currencyInLowercase]),
-            'pgsql' => $query->whereRaw('currency->>\'code\' = ?', [$currencyInLowercase]),
-            'sqlite' => $query->where('currency', 'LIKE', '%"code":"' . $currencyInLowercase . '"%'),
-            default => $query->where('currency', 'LIKE', '%"code":"' . $currencyInLowercase . '"%'),
-        };
+        return $query->whereJsonContains('currency->code', $currency);
     }
 
     /**
@@ -63,17 +56,9 @@ trait HasWhereCurrency
      */
     public function scopeWhereCurrencyCodes($query, array $currencies)
     {
-        $databaseDriver = config('database.default');
-        $currenciesInLowercase = array_map(fn($currency) => Str::lower($currency), $currencies);
-
-        return $query->where(function ($query) use ($currenciesInLowercase, $databaseDriver) {
-            foreach ($currenciesInLowercase as $currency) {
-                match ($databaseDriver) {
-                    'mysql', 'mariadb' => $query->orWhereRaw('JSON_UNQUOTE(JSON_EXTRACT(currency, "$.code")) = ?', [$currency]),
-                    'pgsql' => $query->orWhereRaw('currency->>\'code\' = ?', [$currency]),
-                    'sqlite' => $query->orWhere('currency', 'LIKE', '%"code":"' . $currency . '"%'),
-                    default => $query->orWhere('currency', 'LIKE', '%"code":"' . $currency . '"%'),
-                };
+        return $query->where(function (Builder $query) use ($currencies) {
+            foreach ($currencies as $code) {
+                $query->orWhereJsonContains('currency->code', $code);
             }
         });
     }
@@ -88,15 +73,7 @@ trait HasWhereCurrency
      */
     public function scopeWhereCurrencyName($query, string $currency)
     {
-        $databaseDriver = config('database.default');
-        $currencyInLowercase = Str::lower($currency);
-
-        return match ($databaseDriver) {
-            'mysql', 'mariadb' => $query->whereRaw('JSON_UNQUOTE(JSON_EXTRACT(currency, "$.name")) = ?', [$currencyInLowercase]),
-            'pgsql' => $query->whereRaw('currency->>\'name\' = ?', [$currencyInLowercase]),
-            'sqlite' => $query->where('currency', 'LIKE', '%"name":"' . $currencyInLowercase . '"%'),
-            default => $query->where('currency', 'LIKE', '%"name":"' . $currencyInLowercase . '"%'),
-        };
+        return $query->whereJsonContains('currency->name', $currency);
     }
 
     /**
@@ -109,16 +86,9 @@ trait HasWhereCurrency
      */
     public function scopeWhereCurrencyNames($query, array $currencies)
     {
-        $databaseDriver = config('database.default');
-
-        return $query->where(function ($query) use ($currencies, $databaseDriver) {
-            foreach ($currencies as $currency) {
-                match ($databaseDriver) {
-                    'mysql', 'mariadb' => $query->orWhereRaw('JSON_UNQUOTE(JSON_EXTRACT(currency, "$.name")) = ?', [$currency]),
-                    'pgsql' => $query->orWhereRaw('currency->>\'name\' = ?', [$currency]),
-                    'sqlite' => $query->orWhere('currency', 'LIKE', '%"name":"' . $currency . '"%'),
-                    default => $query->orWhere('currency', 'LIKE', '%"name":"' . $currency . '"%'),
-                };
+        return $query->where(function (Builder $query) use ($currencies) {
+            foreach ($currencies as $name) {
+                $query->orWhereJsonContains('currency->name', $name);
             }
         });
     }

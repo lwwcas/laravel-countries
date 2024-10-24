@@ -6,7 +6,7 @@ use Lwwcas\LaravelCountries\Models\Country;
 it('should filters countries by Domain TLD', function () {
     CountryFactory::new()->create([
         'official_name' => 'United States of America',
-        'tld' => json_encode(['.com', '.net']),
+        'tld' => ['.com', '.net'],
     ]);
     CountryFactory::new()->count(10)->create();
 
@@ -20,7 +20,7 @@ it('should filters countries by Domain TLD', function () {
 it('should filters countries and excludes those without the specified domain in their TLD', function () {
     CountryFactory::new()->create([
         'official_name' => 'United States of America',
-        'tld' => json_encode(['.com', '.net']),
+        'tld' => ['.com', '.net'],
     ]);
     CountryFactory::new()->count(10)->create();
 

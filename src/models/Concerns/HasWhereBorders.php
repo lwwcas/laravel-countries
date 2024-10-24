@@ -2,6 +2,7 @@
 
 namespace Lwwcas\LaravelCountries\Models\Concerns;
 
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 use Lwwcas\LaravelCountries\Models\Country;
 
@@ -18,15 +19,8 @@ trait HasWhereBorders
      */
     public function scopeWhereBorder($query, string $board)
     {
-        $databaseDriver = config('database.default');
         $boardInLowercase = Str::lower($board);
-
-        return match ($databaseDriver) {
-            'mysql', 'mariadb' => $query->whereRaw('JSON_CONTAINS(borders, ?)', [$boardInLowercase]),
-            'pgsql' => $query->whereRaw('borders @> ?', ['["' . $boardInLowercase . '"]']),
-            'sqlite' => $query->where('borders', 'LIKE', '%' . $boardInLowercase . '%'),
-            default => $query->where('borders', 'LIKE', '%' . $boardInLowercase . '%'),
-        };
+        return $query->whereJsonContains('borders', $boardInLowercase);
     }
 
     /**
@@ -39,12 +33,11 @@ trait HasWhereBorders
     public function scopeWhereBorders($query, array $boards)
     {
         $boardsInLowercase = array_map(fn($lang) => Str::lower($lang), $boards);
-
-        foreach ($boardsInLowercase as $board) {
-            $query->orWhere('borders', 'LIKE', '%' . $board . '%');
-        }
-
-        return $query;
+        return $query->where(function (Builder $query) use ($boardsInLowercase) {
+            foreach ($boardsInLowercase as $board) {
+                $query->whereJsonContains('borders', $board);
+            }
+        });
     }
 
     /**

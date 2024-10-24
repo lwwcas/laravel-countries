@@ -4,17 +4,6 @@ The `Country::class` provides a simple and effective way to manage and query cou
 
 Here’s a quick introduction to what you can do with this model:
 
-## Usage
-
-To start using `Country::class`, just add this to your code:
-
-```php{1}
-use Lwwcas\LaravelCountries\Models\Country;
-
-Country::all();
-
-```
-
 ## Data Example
 
 You'll find all the information you can retrieve by filtering a country.
@@ -341,31 +330,6 @@ With UILDs being less complex, your queries are easier to write and manage. This
 
 #### Sufficient Uniqueness for Static Data
 Since countries rarely change, UILD offers all the uniqueness we need without the overhead of UUID. It’s a perfect match for managing entities like countries, where the dataset is relatively small and stable.
-
-### Use Cases
-
-GeoJSON is commonly used in various applications, such as:
-
-### 1. **Mapping Applications**
-
-- Used in interactive maps to display geographic data like country borders, rivers, roads, and regions.
-- Example: Displaying country borders with **MultiPolygon**.
-
-### 2. **Geospatial Analysis**
-
-- Used to perform geospatial analysis, such as measuring distances, areas, or determining if a point lies within a certain region.
-- Example: Determining whether a GPS coordinate falls within a polygon representing a country.
-
-### 3. **Data Visualization**
-
-- Used in data visualization tools to overlay geographical data on maps for insights, such as population density, climate data, and election results.
-- Example: Visualizing a country’s boundary overlaid with population density.
-
-### 4. **API Integration**
-
-- Many APIs (such as geolocation services or environmental data providers) use GeoJSON to return geographic data in a structured format.
-- Example: Using a GeoJSON response from an API to plot data points on a map.
-
 
 ## Quick snippets
 

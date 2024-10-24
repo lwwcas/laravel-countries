@@ -1,9 +1,7 @@
 <?php
 
 use Lwwcas\LaravelCountries\Database\Factories\CountryFactory;
-use Lwwcas\LaravelCountries\Database\Factories\CountryTranslationFactory;
 use Lwwcas\LaravelCountries\Models\Country;
-use Lwwcas\LaravelCountries\Models\CountryTranslation;
 
 it('should filters countries by border', function () {
     CountryFactory::new()->create([

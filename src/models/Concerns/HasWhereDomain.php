@@ -2,6 +2,7 @@
 
 namespace Lwwcas\LaravelCountries\Models\Concerns;
 
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 
 trait HasWhereDomain
@@ -15,16 +16,25 @@ trait HasWhereDomain
      */
     public function scopeWhereDomain($query, $domain)
     {
-        $databaseDriver = config('database.default');
         $domainInLowercase = Str::lower($domain);
-        $domainInJsonFormat = json_encode($domainInLowercase);
+        return $query->whereJsonContains('tld', $domainInLowercase);
+    }
 
-        return match ($databaseDriver) {
-            'mysql', 'mariadb' => $query->whereRaw('JSON_CONTAINS(tld, ?)', [$domainInJsonFormat]),
-            'pgsql' => $query->whereRaw('tld @> ?', ['["' . $domainInLowercase . '"]']),
-            'sqlite' => $query->where('tld', 'LIKE', '%' . $domainInLowercase . '%'),
-            default => $query->where('tld', 'LIKE', '%' . $domainInLowercase . '%'),
-        };
+    /**
+     * Find a country by multiple domains (TLD).
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  string[]  $domains
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeWhereDomains($query, array $domains)
+    {
+        $domainsInLowercase = array_map(fn($lang) => Str::lower($lang), $domains);
+        return $query->where(function (Builder $query) use ($domainsInLowercase) {
+            foreach ($domainsInLowercase as $domain) {
+                $query->whereJsonContains('tld', $domain);
+            }
+        });
     }
 
     /**
@@ -36,15 +46,24 @@ trait HasWhereDomain
      */
     public function scopeWhereDomainAlternative($query, $domain)
     {
-        $databaseDriver = config('database.default');
         $domainInLowercase = Str::lower($domain);
-        $domainInJsonFormat = json_encode($domainInLowercase);
+        return $query->whereJsonContains('alternative_tld', $domainInLowercase);
+    }
 
-        return match ($databaseDriver) {
-            'mysql', 'mariadb' => $query->whereRaw('JSON_CONTAINS(alternative_tld, ?)', [$domainInJsonFormat]),
-            'pgsql' => $query->whereRaw('alternative_tld @> ?', ['["' . $domainInLowercase . '"]']),
-            'sqlite' => $query->where('alternative_tld', 'LIKE', '%' . $domainInLowercase . '%'),
-            default => $query->where('alternative_tld', 'LIKE', '%' . $domainInLowercase . '%'),
-        };
+    /**
+     * Find a country by multiple alternative domains (TLD).
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  string[]  $domains
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeWhereDomainsAlternative($query, array $domains)
+    {
+        $domainsInLowercase = array_map(fn($lang) => Str::lower($lang), $domains);
+        return $query->where(function (Builder $query) use ($domainsInLowercase) {
+            foreach ($domainsInLowercase as $domain) {
+                $query->whereJsonContains('alternative_tld', $domain);
+            }
+        });
     }
 }
