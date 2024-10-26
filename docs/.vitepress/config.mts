@@ -67,7 +67,7 @@ export default defineConfig({
                     { text: 'Domain', link: '/country/domain' },
                     { text: 'Borders', link: '/country/borders' },
                     { text: 'Independence Day', link: '/country/independence' },
-                    { text: 'Relationships', link: '/country/relationships' },
+                    // { text: 'Relationships', link: '/country/relationships' },
                     { text: 'Translations', link: '/country/translations' },
                 ]
             },
