@@ -64,7 +64,7 @@ export default defineConfig({
                     { text: 'Workflow', link: '/country/workflow' },
                     { text: 'Method Listing', link: '/country/method-listing' },
                     { text: 'Currency', link: '/country/currency' },
-                    { text: 'Domain', link: '/' },
+                    { text: 'Domain', link: '/country/domain' },
                     { text: 'Borders', link: '/country/borders' },
                     { text: 'Independence Day', link: '/country/independence' },
                     { text: 'Relationships', link: '/country/relationships' },
@@ -137,7 +137,7 @@ export default defineConfig({
 
         footer: {
             message: 'Released under the MIT License.',
-            copyright: 'Copyright © 2018-present | Developed by <a href="https://lucasduarte.dev">Lucas Duarte</a>'
+            copyright: 'Copyright © 2018-present | Developed by <a href="https://www.linkedin.com/in/lucasduarteoliveiramonteiro/">Lucas Duarte</a>'
         }
     }
 })

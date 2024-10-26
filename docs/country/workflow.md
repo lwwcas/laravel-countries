@@ -89,7 +89,7 @@ $countries = Country::where('population', '>', 180)
     ->get();
 
 foreach ($countries as $country) {
-    echo $country->officialName . "\n";
+    echo $country->official_name . "\n";
 }
 
 // Possible Output:

@@ -2,7 +2,7 @@
 
 A scope in Laravel is a reusable query. It helps keep things clean and makes queries easy to chain. You can think of it as a shortcut for adding common query conditions to your models.
 
-## getList() method
+## Get List Method
 
 The `getList()` method returns a new instance of the current class. It's just a simple way to start building custom queries for countries.
 
