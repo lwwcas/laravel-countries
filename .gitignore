@@ -1,6 +1,9 @@
 build
 composer.lock
+package-lock.json
 vendor
 coverage
 node_modules
-package-lock.json
+
+.vitepress/cache/
+.vitepress/dist/
