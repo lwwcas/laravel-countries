@@ -9,6 +9,7 @@ All notable changes to `laravel-countries` will be documented in this file
 ## 3.4.5 - 2023-14-04
 
 - Refactor all seed naming system
+
 ## 3.4.4 - 2023-14-04
 
 - Adding German language to country data and its translations
@@ -49,4 +50,3 @@ All notable changes to `laravel-countries` will be documented in this file
 ## 3.0.0 - 2020-11-01
 
 - Complete module refactoring
-
