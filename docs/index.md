@@ -7,7 +7,7 @@ hero:
   text: "An amazing developer experience"
   tagline: Access all country data in minutes with elegant syntax
   image:
-    src: /assets/hero.png
+    src: https://raw.githubusercontent.com/lwwcas/laravel-countries/refs/heads/master/docs/assets/hero.png
     alt: world-icon
 
   actions:
@@ -25,8 +25,8 @@ hero:
 
 features:
   - icon:
-      light: /assets/features/laravel-light.png
-      dark: /assets/features/laravel.png
+      light: https://raw.githubusercontent.com/lwwcas/laravel-countries/refs/heads/master/docs/assets/features/laravel-light.png
+      dark: https://raw.githubusercontent.com/lwwcas/laravel-countries/refs/heads/master/docs/assets/features/laravel.png
       width: 120
       height: 26
     title: Thinking in Laravel
@@ -35,8 +35,8 @@ features:
     link: /introduction/what-is-laravel-countries.html#what-about-laravel
 
   - icon:
-      light: /assets/features/star-light.png
-      dark: /assets/features/star.png
+      light: https://raw.githubusercontent.com/lwwcas/laravel-countries/refs/heads/master/docs/assets/features/star-light.png
+      dark: https://raw.githubusercontent.com/lwwcas/laravel-countries/refs/heads/master/docs/assets/features/star.png
       width: 26
       height: 26
     title: GitHub Stars
@@ -46,8 +46,8 @@ features:
     link: https://github.com/lwwcas/laravel-countries/stargazers
 
   - icon:
-      light: /assets/features/translate-light.png
-      dark: /assets/features/translate.png
+      light: https://raw.githubusercontent.com/lwwcas/laravel-countries/refs/heads/master/docs/assets/features/translate-light.png
+      dark: https://raw.githubusercontent.com/lwwcas/laravel-countries/refs/heads/master/docs/assets/features/translate.png
       width: 32
       height: 32
     title: For the whole world
@@ -56,24 +56,24 @@ features:
     link: /introduction/available-languages
 
   - icon:
-      light: /assets/features/statistics-light.png
-      dark: /assets/features/statistics.png
+      light: https://raw.githubusercontent.com/lwwcas/laravel-countries/refs/heads/master/docs/assets/features/statistics-light.png
+      dark: https://raw.githubusercontent.com/lwwcas/laravel-countries/refs/heads/master/docs/assets/features/statistics.png
       width: 32
       height: 32
     title: Country Data
     details: Provides detailed country information including ISO 3166-1 Alpha-2 (ISO2) and Alpha-3 (ISO3) codes, international phone code, capital city, currency, national flag and its colors, top-level domain (TLD), Geonames ID, GeoJSON, geographical coordinates, and more.
 
   - icon:
-      light: /assets/features/query-light.png
-      dark: /assets/features/query.png
+      light: https://raw.githubusercontent.com/lwwcas/laravel-countries/refs/heads/master/docs/assets/features/query-light.png
+      dark: https://raw.githubusercontent.com/lwwcas/laravel-countries/refs/heads/master/docs/assets/features/query.png
       width: 32
       height: 32
     title: Inspired by the Power of Eloquent
     details: Leveraging the Power of Eloquent. Built with a deep integration of Laravel's Eloquent ORM, all country data is stored in the database, enabling effortless access through clean, efficient, and optimized queries.
 
   - icon:
-      light: /assets/features/code-light.png
-      dark: /assets/features/code.png
+      light: https://raw.githubusercontent.com/lwwcas/laravel-countries/refs/heads/master/docs/assets/features/code-light.png
+      dark: https://raw.githubusercontent.com/lwwcas/laravel-countries/refs/heads/master/docs/assets/features/code.png
       width: 32
       height: 32
     title: Plug and Play

@@ -7,13 +7,11 @@ export default defineConfig({
     title: "Laravel Countries",
     description: "Access all country data in minutes with elegant syntax",
 
-    outDir: '../docs/src',
-
     head: [
         [
             'link', {
                 rel: 'icon',
-                href: '/assets/favicon/favicon.png'
+                href: 'https://raw.githubusercontent.com/lwwcas/laravel-countries/refs/heads/master/docs/assets/favicon/favicon.png'
             }
         ],
         [
@@ -37,7 +35,7 @@ export default defineConfig({
             { text: 'Documentation', link: '/introduction/what-is-laravel-countries' }
         ],
 
-        logo: '/assets/logo.png',
+        logo: 'https://raw.githubusercontent.com/lwwcas/laravel-countries/refs/heads/master/docs/assets/logo.png',
         siteTitle: false,
 
         sidebar: [
