@@ -30,7 +30,7 @@ The magic happens when you set your default language:
 
 **[More about config translate](/introduction/available-languages.html#configuration)**
 
-```config.php
+```text
 usually in config file app.php as
 
 'locale' => env('APP_LOCALE', 'en')

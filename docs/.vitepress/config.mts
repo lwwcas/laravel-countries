@@ -7,6 +7,8 @@ export default defineConfig({
     title: "Laravel Countries",
     description: "Access all country data in minutes with elegant syntax",
 
+    outDir: '../docs/src',
+
     head: [
         [
             'link', {

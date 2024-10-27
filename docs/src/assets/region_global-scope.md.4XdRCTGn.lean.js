@@ -1,0 +1,1 @@
+import{_ as e,c as o,o as t}from"./chunks/framework.C72X4JAr.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"region/global-scope.md","filePath":"region/global-scope.md"}'),a={name:"region/global-scope.md"};function r(c,s,n,l,p,i){return t(),o("div")}const m=e(a,[["render",r]]);export{d as __pageData,m as default};

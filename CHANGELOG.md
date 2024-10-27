@@ -49,4 +49,3 @@ All notable changes to `laravel-countries` will be documented in this file
 ## 3.0.0 - 2020-11-01
 
 - Complete module refactoring
-
