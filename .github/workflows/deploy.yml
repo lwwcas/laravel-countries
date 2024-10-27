@@ -39,14 +39,14 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ${{ matrix.node-version }}
           cache: npm # or pnpm / yarn
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Install dependencies
-        run: npm install --ignore-scripts --omit=optional --legacy-peer-deps # or pnpm install / yarn install / bun install
+        run: npm ci --omit=optional --legacy-peer-deps # or pnpm install / yarn install / bun install
 
       - name: Build with VitePress
         run: npm run docs:build # or pnpm docs:build / yarn docs:build / bun run docs:build
@@ -63,6 +63,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     needs: build
     runs-on: ubuntu-latest
+
     name: Deploy
     steps:
       - name: Deploy to GitHub Pages
