@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class AS_AmericanSamoa extends Seeder
+class AS_AmericanSamoa extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'oceania';
- 
+    public ?string $region = 'oceania';
+
     /**
      * Run the database seeds.
      *
@@ -29,60 +29,263 @@ class AS_AmericanSamoa extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'American Samoa';
+
+        // Set the country's official name
         $this->official_name = 'American Samoa';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'AS';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'ASM';
-        $this->iso_numeric = '16';
-        $this->international_phone = '1-684';
- 
-        $this->languages = ['en','sm'];
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
+        $this->iso_numeric = '016';
+
+        // Set the international dialing code
+        $this->international_phone = '+1-684';
+
+        // Define the languages spoken in the country
+        $this->languages = ['en', 'sm']; // English and Samoan
+
+        // Define the top-level domain(s)
         $this->tld = ['.as'];
-        $this->wmo = '0';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '5 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '3 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '40%'; // Percentage of the population with internet access
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'American Samoa Telecommunications Authority (ASTCA)'; // Responsible for telecommunications and possibly cybersecurity
+
+        // List popular web technologies in American Samoa
+        $this->popular_technologies = ['PHP', 'JavaScript', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'AS';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '5880801';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'United States Dollar',
+            // Currency code
+            'code' => 'USD',
+            // Currency symbol
+            'symbol' => '$',
+            // Main unit
+            'main_unit' => 'dollar',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '2', '5', '10', '20', '50', '100'],
+            // Main coins
+            'coins_main' => ['1'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 55197; // As of recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 199; // km²
+
+        // Set the capital city
+        $this->capital = 'Pago Pago';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            // Time zone identifier
+            'timezone_id' => 'Pacific/Pago_Pago',
+            // Standard time offset
+            'standard_time' => 'UTC−11', // Samoa Standard Time
+        ];
+
+        // Set the independence day
+        $this->independence_day = null; // American Samoa is an unincorporated territory of the United States
+
+        // List international organizations the country is part of
+        $this->international_organizations = ['Pacific Community (SPC)']; // Regional affiliations
+
+        // Set the GDP in billions of USD
+        $this->gdp = 0.6; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = ['Christianity']; // Predominant religion
+
+        // Describe the form of government
+        $this->government = 'Unincorporated unorganized territory of the United States with local self-government';
+
+        // Set the national sport
+        $this->national_sport = 'American Football'; // Popular sport in American Samoa
+
+        // Define bordering countries
+        $this->borders = []; // Island territory with no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇦🇸',
+            // Unicode code points
             'uCode' => 'U+1F1E6 U+1F1F8',
+            // HTML entities
+            'html' => '&#x1F1E6;&#x1F1F8;',
+            // CSS entities
+            'css' => '\\1F1E6\\1F1F8',
+            // Decimal Unicode entities
+            'decimal' => '&#127462;&#127480;',
+            // Direct UTF-8 string
+            'utf8' => '🇦🇸',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDE6\uD83C\uDDF8',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-as:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1E6;&#x1F1F8;',
         ];
-        $this->color = [
-            'hex' => [
-                '#1a63c2',
-                '#ff0000',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'navy',
+                // Hexadecimal color code
+                'hex' => '#002B7F',
+                // RGB color values
+                'rgb' => '0,43,127',
+                // CMYK color values
+                'cmyk' => '100,66,0,50',
+                // HSL color values
+                'hsl' => '219,100%,25%',
+                // HSV color values
+                'hsv' => '219,100%,50%',
+                // Pantone color code
+                'pantone' => 'Pantone 280 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '26,99,194',
-                '255,0,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#C8102E',
+                // RGB color values
+                'rgb' => '200,16,46',
+                // CMYK color values
+                'cmyk' => '0,92,77,22',
+                // HSL color values
+                'hsl' => '348,85%,42%',
+                // HSV color values
+                'hsv' => '348,92%,78%',
+                // Pantone color code
+                'pantone' => 'Pantone 186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'Pantone White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Gold',
+                // Web color name
+                'web_name' => 'gold',
+                // Hexadecimal color code
+                'hex' => '#FFD700',
+                // RGB color values
+                'rgb' => '255,215,0',
+                // CMYK color values
+                'cmyk' => '0,16,100,0',
+                // HSL color values
+                'hsl' => '51,100%,50%',
+                // HSV color values
+                'hsv' => '51,100%,100%',
+                // Pantone color code
+                'pantone' => 'Pantone 116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Brown',
+                // Web color name
+                'web_name' => 'saddlebrown',
+                // Hexadecimal color code
+                'hex' => '#8B4513',
+                // RGB color values
+                'rgb' => '139,69,19',
+                // CMYK color values
+                'cmyk' => '0,50,86,45',
+                // HSL color values
+                'hsl' => '25,76%,31%',
+                // HSV color values
+                'hsv' => '25,86%,55%',
+                // Pantone color code
+                'pantone' => 'Pantone 1545 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '14 20 S',
-                'desc' => '-14.31956672668457',
-            ],
-            'longitude' => [
-                'classic' => '170 00 W',
-                'desc' => '-170.7403564453125',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '-14.2756',
+            // Longitude in decimal degrees
+            'longitude' => '-170.7020',
+            // Degrees with decimal
+            'dd' => '14.2756° S, 170.7020° W',
+            // Degrees, minutes, seconds
+            'dms' => '14°16\'32.16" S, 170°42\'07.20" W',
+            // Degrees and decimal minutes
+            'dm' => '14°16.536\' S, 170°42.120\' W',
+            // Various GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '-11.049690',
-                'min' => '-14.382470',
-            ],
-            'longitude' => [
-                'max' => '-169.416077',
-                'min' => '-171.091873',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

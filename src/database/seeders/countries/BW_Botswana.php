@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class BW_Botswana extends Seeder
+class BW_Botswana extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'africa';
- 
+    public ?string $region = 'africa';
+
     /**
      * Run the database seeds.
      *
@@ -29,60 +29,235 @@ class BW_Botswana extends Seeder
      */
     public function run()
     {
-        $this->name = 'Botswana';
-        $this->official_name = 'Republic of Botswana';
-        $this->iso_alpha_2 = 'BW';
-        $this->iso_alpha_3 = 'BWA';
-        $this->iso_numeric = '72';
-        $this->international_phone = '267';
- 
-        $this->languages = ['en','tn'];
-        $this->tld = ['.bw'];
-        $this->wmo = 'BC';
-        $this->geoname_id = '933860';
- 
-        $this->emoji = [
-            'img' => '🇧🇼',
-            'uCode' => 'U+1F1E7 U+1F1FC',
-        ];
-        $this->color = [
-            'hex' => [
-                '#76acdc',
-                '#000000',
-                '#ffffff',
-            ],
-            'rgb' => [
-                '118,172,220',
-                '0,0,0',
-                '255,255,255',
-            ],
-        ];
-        $this->coordinates = [
-            'latitude' => [
-                'classic' => '22 00 S',
-                'desc' => '-22.186752319335938',
-            ],
-            'longitude' => [
-                'classic' => '24 00 E',
-                'desc' => '23.81494140625',
-            ],
-        ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '-17.833333',
-                'min' => '-26.833333',
-            ],
-            'longitude' => [
-                'max' => '29.016667',
-                'min' => '20',
-            ],
-        ];
- 
+
+    // Set the country's common name
+    $this->name = 'Botswana';
+
+    // Set the country's official name
+    $this->official_name = 'Republic of Botswana';
+
+    // Set the ISO 3166-1 alpha-2 code
+    $this->iso_alpha_2 = 'BW';
+
+    // Set the ISO 3166-1 alpha-3 code
+    $this->iso_alpha_3 = 'BWA';
+
+    // Set the ISO 3166-1 numeric code (usually three digits)
+    $this->iso_numeric = '072';
+
+    // Set the international dialing code
+    $this->international_phone = '267';
+
+    // Define the languages spoken in the country
+    $this->languages = ['en', 'tn']; // English and Tswana are official languages
+
+    // Define the top-level domain(s)
+    $this->tld = ['.bw'];
+
+    // Define alternative top-level domains
+    $this->alternative_tlds = []; // No significant alternative TLDs
+
+    // Define average internet speeds
+    $this->internet_speed = [
+        // Average fixed broadband speed
+        'average_speed_fixed' => '20 Mbps',
+        // Average mobile connection speed
+        'average_speed_mobile' => '15 Mbps',
+    ];
+
+    // Define internet penetration rate
+    $this->internet_penetration = '48%'; // Percentage of the population with internet access
+
+    // Set the national cybersecurity agency
+    $this->cybersecurity_agency = 'Botswana Computer Incident Response Team (BTCIRT)';
+
+    // List popular web technologies in Botswana
+    $this->popular_technologies = ['PHP', 'JavaScript', 'WordPress'];
+
+    // Set the WMO (World Meteorological Organization) country code
+    $this->wmo = 'BC';
+
+    // Set the GeoName ID for geographical data reference
+    $this->geoname_id = '933860';
+
+    // Define the currency information
+    $this->currency = [
+        // Currency name
+        'name' => 'Botswana pula',
+        // Currency code
+        'code' => 'BWP',
+        // Currency symbol
+        'symbol' => 'P',
+        // Main unit
+        'main_unit' => 'pula',
+        // Subunit
+        'sub_unit' => 'thebe',
+        // Subunit to main unit conversion
+        'sub_unit_to_unit' => 100,
+        // Banknotes in circulation
+        'banknotes' => ['10', '20', '50', '100', '200'],
+        // Main coins
+        'coins_main' => ['1', '2', '5'],
+        // Subunit coins
+        'coins_sub' => ['5', '10', '25', '50'],
+    ];
+
+    // Set the population
+    $this->population = 2351625; // As of recent estimates
+
+    // Set the area in square kilometers
+    $this->area = 581730; // km²
+
+    // Set the capital city
+    $this->capital = 'Gaborone';
+
+    // Define the time zone(s) using IANA time zone identifiers
+    $this->timezones = [
+        // Time zone identifier
+        'timezone_id' => 'Africa/Gaborone',
+        // Standard time offset
+        'standard_time' => 'UTC+2', // Central Africa Time (CAT)
+    ];
+
+    // Set the independence day
+    $this->independence_day = '1966-09-30'; // Date of independence from the United Kingdom
+
+    // List international organizations the country is part of
+    $this->international_organizations = [
+        'United Nations',
+        'African Union',
+        'Southern African Development Community (SADC)',
+        'Commonwealth of Nations',
+        'World Trade Organization (WTO)',
+    ];
+
+    // Set the GDP in billions of USD
+    $this->gdp = 18.6; // GDP in billions of USD
+
+    // List the predominant religions
+    $this->religions = ['Christianity', 'Traditional African religions'];
+
+    // Describe the form of government
+    $this->government = 'Unitary parliamentary republic';
+
+    // Set the national sport
+    $this->national_sport = 'Football (Soccer)'; // Football is popular, along with athletics
+
+    // Define bordering countries
+    $this->borders = [
+        ['name' => 'Namibia', 'iso_alpha_2' => 'NA'],
+        ['name' => 'South Africa', 'iso_alpha_2' => 'ZA'],
+        ['name' => 'Zimbabwe', 'iso_alpha_2' => 'ZW'],
+        ['name' => 'Zambia', 'iso_alpha_2' => 'ZM'],
+    ];
+
+    // Define the country's flag emoji representation
+    $this->emoji = [
+        // Native emoji image
+        'img' => '🇧🇼',
+        // Unicode code points
+        'uCode' => 'U+1F1E7 U+1F1FC',
+        // HTML entities
+        'html' => '&#x1F1E7;&#x1F1FC;',
+        // CSS entities
+        'css' => '\\1F1E7\\1F1FC',
+        // Decimal Unicode entities
+        'decimal' => '&#127463;&#127484;',
+        // Direct UTF-8 string
+        'utf8' => '🇧🇼',
+        // UTF-16 surrogate pairs
+        'utf16' => '\uD83C\uDDE7\uD83C\uDDFC',
+        // Shortcode in Emojione, Slack
+        'shortcode' => ':flag-bw:',
+        // Hexadecimal entity
+        'hex' => '&#x1F1E7;&#x1F1FC;',
+    ];
+
+    // Define the colors of the country's flag with accurate color values
+    $this->flag_colors = [
+        [
+            // Color name
+            'name' => 'Blue',
+            // Web color name
+            'web_name' => 'light blue',
+            // Hexadecimal color code
+            'hex' => '#75AADB',
+            // RGB color values
+            'rgb' => '117,170,219',
+            // CMYK color values
+            'cmyk' => '47,22,0,14',
+            // HSL color values
+            'hsl' => '207,60%,66%',
+            // HSV color values
+            'hsv' => '207,47%,86%',
+            // Pantone color code
+            'pantone' => '2905 C',
+            // Contrast color for readability
+            'contrast' => '#000000',
+        ],
+        [
+            // Color name
+            'name' => 'Black',
+            // Web color name
+            'web_name' => 'black',
+            // Hexadecimal color code
+            'hex' => '#000000',
+            // RGB color values
+            'rgb' => '0,0,0',
+            // CMYK color values
+            'cmyk' => '0,0,0,100',
+            // HSL color values
+            'hsl' => '0,0%,0%',
+            // HSV color values
+            'hsv' => '0,0%,0%',
+            // Pantone color code
+            'pantone' => 'Black',
+            // Contrast color for readability
+            'contrast' => '#FFFFFF',
+        ],
+        [
+            // Color name
+            'name' => 'White',
+            // Web color name
+            'web_name' => 'white',
+            // Hexadecimal color code
+            'hex' => '#FFFFFF',
+            // RGB color values
+            'rgb' => '255,255,255',
+            // CMYK color values
+            'cmyk' => '0,0,0,0',
+            // HSL color values
+            'hsl' => '0,0%,100%',
+            // HSV color values
+            'hsv' => '0,0%,100%',
+            // Pantone color code
+            'pantone' => 'White',
+            // Contrast color for readability
+            'contrast' => '#000000',
+        ],
+    ];
+
+    // Define the geographical coordinates
+    $this->coordinates = [
+        // Latitude in decimal degrees
+        'latitude' => '-24.6583',
+        // Longitude in decimal degrees
+        'longitude' => '25.9089',
+        // Degrees with decimal
+        'dd' => '24.6583° S, 25.9089° E',
+        // Degrees, minutes, seconds
+        'dms' => '24°39\'29.88" S, 25°54\'32.04" E',
+        // Degrees and decimal minutes
+        'dm' => '24°39.498\' S, 25°54.534\' E',
+        // Various GPS formats
+        'gps' => [],
+    ];
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

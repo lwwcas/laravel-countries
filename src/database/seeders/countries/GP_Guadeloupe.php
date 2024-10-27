@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class GP_Guadeloupe extends Seeder
+class GP_Guadeloupe extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'americas';
- 
+    public ?string $region = 'americas';
+
     /**
      * Run the database seeds.
      *
@@ -29,60 +29,231 @@ class GP_Guadeloupe extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Guadeloupe';
+
+        // Set the country's official name
         $this->official_name = 'Guadeloupe';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'GP';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'GLP';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '312';
+
+        // Set the international dialing code
         $this->international_phone = '590';
- 
-        $this->languages = ['fr'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['fr']; // French is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.gp'];
-        $this->wmo = 'MF';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '30 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '20 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '60%'; // Internet access in Guadeloupe
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'None'; // No dedicated cybersecurity agency
+
+        // List popular web technologies in Guadeloupe
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'GP';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '3579143';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Euro',
+            // Currency code
+            'code' => 'EUR',
+            // Currency symbol
+            'symbol' => '€',
+            // Main unit
+            'main_unit' => 'euro',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100', '200', '500'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['1', '2', '5', '10', '20', '50 cents'],
+        ];
+
+        // Set the population
+        $this->population = 400132; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 1628; // km²
+
+        // Set the capital city
+        $this->capital = 'Basse-Terre';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'America/Guadeloupe',
+                // Standard time offset
+                'standard_time' => 'UTC-4', // Atlantic Standard Time (AST)
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = null; // Guadeloupe is an overseas department of France
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'European Union (EU)',
+            'Association of Caribbean States (ACS)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 9.0; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Overseas department of France';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport
+
+        // Define bordering countries
+        $this->borders = []; // Guadeloupe is an island and has no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇬🇵',
+            // Unicode code points
             'uCode' => 'U+1F1EC U+1F1F5',
+            // HTML entities
+            'html' => '&#x1F1EC;&#x1F1F5;',
+            // CSS entities
+            'css' => '\\1F1EC\\1F1F5',
+            // Decimal Unicode entities
+            'decimal' => '&#127468;&#127477;',
+            // Direct UTF-8 string
+            'utf8' => '🇬🇵',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDEC\uD83C\uDDF5',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-gp:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1EC;&#x1F1F5;',
         ];
-        $this->color = [
-            'hex' => [
-                '#01a368',
-                '#ed0a3f',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#002395',
+                // RGB color values
+                'rgb' => '0,35,149',
+                // CMYK color values
+                'cmyk' => '100,77,0,42',
+                // HSL color values
+                'hsl' => '228,100%,29%',
+                // HSV color values
+                'hsv' => '228,100%,58%',
+                // Pantone color code
+                'pantone' => 'Reflex Blue C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '1,163,104',
-                '237,10,63',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#ED2939',
+                // RGB color values
+                'rgb' => '237,41,57',
+                // CMYK color values
+                'cmyk' => '0,83,76,7',
+                // HSL color values
+                'hsl' => '355,84%,55%',
+                // HSV color values
+                'hsv' => '355,83%,93%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '16 15 N',
-                'desc' => '16.256731033325195',
-            ],
-            'longitude' => [
-                'classic' => '61 35 W',
-                'desc' => '-61.56741714477539',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '16.2650',
+            // Longitude in decimal degrees
+            'longitude' => '-61.5500',
+            // Degrees with decimal
+            'dd' => '16.2650° N, 61.5500° W',
+            // Degrees, minutes, seconds
+            'dms' => '16°15\'54.00" N, 61°33\'0.00" W',
+            // Degrees and decimal minutes
+            'dm' => '16°15.900\' N, 61°33.000\' W',
+            // GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '18.116667',
-                'min' => '15',
-            ],
-            'longitude' => [
-                'max' => '-61',
-                'min' => '-63.15',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

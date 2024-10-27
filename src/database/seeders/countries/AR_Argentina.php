@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class AR_Argentina extends Seeder
+class AR_Argentina extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'americas';
- 
+    public ?string $region = 'americas';
+
     /**
      * Run the database seeds.
      *
@@ -29,58 +29,238 @@ class AR_Argentina extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Argentina';
+
+        // Set the country's official name
         $this->official_name = 'Argentine Republic';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'AR';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'ARG';
-        $this->iso_numeric = '32';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
+        $this->iso_numeric = '032';
+
+        // Set the international dialing code
         $this->international_phone = '54';
- 
-        $this->languages = ['es','gn'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['es-AR']; // Spanish (Argentina)
+
+        // Define the top-level domain(s)
         $this->tld = ['.ar'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = [
+            '.com.ar', // Used for commercial entities
+            '.gov.ar', // Used by government entities
+            '.org.ar', // Used by non-profit organizations
+            '.edu.ar', // Used by educational institutions
+            '.net.ar', // Used by network providers
+            '.lat',    // TLD for Latin communities
+            '.com',    // Global domain used by Argentine companies
+        ];
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '40 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '20 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '75%'; // Percentage of the population with internet access
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'CERT Argentina'; // Cybersecurity Incident Response Team
+
+        // List popular web technologies in Argentina
+        $this->popular_technologies = ['PHP', 'JavaScript', 'React', 'WordPress']; // Popular web technologies in Argentina
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'AG';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '3865483';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Argentine Peso',
+            // Currency code
+            'code' => 'ARS',
+            // Currency symbol
+            'symbol' => '$',
+            // Main unit
+            'main_unit' => 'peso',
+            // Subunit
+            'sub_unit' => 'centavo',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100, // One peso is subdivided into 100 centavos
+            // Banknotes in circulation
+            'banknotes' => ['20', '50', '100', '200', '500', '1000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 45376763; // As of recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 2780400; // km²
+
+        // Set the capital city
+        $this->capital = 'Buenos Aires';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            // Primary time zone identifier
+            'timezone_id' => 'America/Argentina/Buenos_Aires',
+            // Standard time offset
+            'standard_time' => 'UTC−3', // Argentina Standard Time
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1816-07-09'; // Date of Independence (YYYY-MM-DD)
+
+        // List international organizations the country is part of
+        $this->international_organizations = ['United Nations', 'Mercosur', 'OAS', 'G20']; // International affiliations
+
+        // Set the GDP in billions of USD
+        $this->gdp = 450.0; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = ['Christianity (Roman Catholicism)', 'Atheism']; // Predominant religions
+
+        // Describe the form of government
+        $this->government = 'Federal presidential constitutional republic';
+
+        // Set the national sport
+        $this->national_sport = 'Pato'; // Official national sport; Football (Soccer) is the most popular
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Bolivia', 'iso_alpha_2' => 'BO'],
+            ['name' => 'Brazil', 'iso_alpha_2' => 'BR'],
+            ['name' => 'Chile', 'iso_alpha_2' => 'CL'],
+            ['name' => 'Paraguay', 'iso_alpha_2' => 'PY'],
+            ['name' => 'Uruguay', 'iso_alpha_2' => 'UY'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇦🇷',
+            // Unicode code points
             'uCode' => 'U+1F1E6 U+1F1F7',
+            // HTML entities
+            'html' => '&#x1F1E6;&#x1F1F7;',
+            // CSS entities
+            'css' => '\\1F1E6\\1F1F7',
+            // Decimal Unicode entities
+            'decimal' => '&#127462;&#127479;',
+            // Direct UTF-8 string
+            'utf8' => '🇦🇷',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDE6\uD83C\uDDF7',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-ar:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1E6;&#x1F1F7;',
         ];
-        $this->color = [
-            'hex' => [
-                '#75aadb',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Sky Blue',
+                // Web color name
+                'web_name' => 'lightblue',
+                // Hexadecimal color code
+                'hex' => '#74ACDF',
+                // RGB color values
+                'rgb' => '116,172,223',
+                // CMYK color values
+                'cmyk' => '48,15,0,13',
+                // HSL color values
+                'hsl' => '204,66%,66%',
+                // HSV color values
+                'hsv' => '204,48%,87%',
+                // Pantone color code
+                'pantone' => 'Pantone 292 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
-            'rgb' => [
-                '117,170,219',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'Pantone White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Sun Yellow',
+                // Web color name
+                'web_name' => 'gold',
+                // Hexadecimal color code
+                'hex' => '#F6B40E',
+                // RGB color values
+                'rgb' => '246,180,14',
+                // CMYK color values
+                'cmyk' => '0,27,94,4',
+                // HSL color values
+                'hsl' => '42,93%,51%',
+                // HSV color values
+                'hsv' => '42,94%,96%',
+                // Pantone color code
+                'pantone' => 'Pantone 1235 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '34 00 S',
-                'desc' => '-37.071964263916016',
-            ],
-            'longitude' => [
-                'classic' => '64 00 W',
-                'desc' => '-64.85450744628906',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '-34.6037',
+            // Longitude in decimal degrees
+            'longitude' => '-58.3816',
+            // Degrees with decimal
+            'dd' => '34.6037° S, 58.3816° W',
+            // Degrees, minutes, seconds
+            'dms' => '34°36\'13.32" S, 58°22\'53.76" W',
+            // Degrees and decimal minutes
+            'dm' => '34°36.222\' S, 58°22.896\' W',
+            // Various GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '-21.783333',
-                'min' => '-58.116667',
-            ],
-            'longitude' => [
-                'max' => '-53.65',
-                'min' => '-73.533333',
-            ],
-        ];
- 
+
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class FJ_Fiji extends Seeder
+class FJ_Fiji extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'oceania';
- 
+    public ?string $region = 'oceania';
+
     /**
      * Run the database seeds.
      *
@@ -29,56 +29,277 @@ class FJ_Fiji extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Fiji';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Fiji';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'FJ';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'FJI';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '242';
+
+        // Set the international dialing code
         $this->international_phone = '679';
- 
-        $this->languages = ['en','fj','hi','ur'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['en', 'fj', 'hif']; // English, Fijian, and Fiji Hindi are widely spoken
+
+        // Define the top-level domain(s)
         $this->tld = ['.fj'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '30 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '15 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '55%'; // Growing internet access in the region
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'CERT Fiji (Cybersecurity Emergency Response Team)';
+
+        // List popular web technologies in Fiji
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'FJ';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2205218';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Fijian dollar',
+            // Currency code
+            'code' => 'FJD',
+            // Currency symbol
+            'symbol' => '$',
+            // Main unit
+            'main_unit' => 'dollar',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '20', '50 cents'],
+        ];
+
+        // Set the population
+        $this->population = 896444; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 18274; // km²
+
+        // Set the capital city
+        $this->capital = 'Suva';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Pacific/Fiji',
+                // Standard time offset
+                'standard_time' => 'UTC+12', // Fiji Time (FJT)
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+13', // Fiji Summer Time (FJST), observed seasonally
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1970-10-10'; // Independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Pacific Islands Forum (PIF)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 5.1; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Methodism)',
+            'Hinduism',
+            'Islam',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Parliamentary republic';
+
+        // Set the national sport
+        $this->national_sport = 'Rugby'; // Rugby is very popular in Fiji, especially Rugby Sevens
+
+        // Define bordering countries
+        $this->borders = []; // Fiji is an island nation and has no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇫🇯',
+            // Unicode code points
             'uCode' => 'U+1F1EB U+1F1EF',
+            // HTML entities
+            'html' => '&#x1F1EB;&#x1F1EF;',
+            // CSS entities
+            'css' => '\\1F1EB\\1F1EF',
+            // Decimal Unicode entities
+            'decimal' => '&#127467;&#127471;',
+            // Direct UTF-8 string
+            'utf8' => '🇫🇯',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDEB\uD83C\uDDEF',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-fj:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1EB;&#x1F1EF;',
         ];
-        $this->color = [
-            'hex' => [
-                '#75aadb',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Sky Blue',
+                // Web color name
+                'web_name' => 'skyblue',
+                // Hexadecimal color code
+                'hex' => '#00BFFF',
+                // RGB color values
+                'rgb' => '0,191,255',
+                // CMYK color values
+                'cmyk' => '100,25,0,0',
+                // HSL color values
+                'hsl' => '195,100%,50%',
+                // HSV color values
+                'hsv' => '195,100%,100%',
+                // Pantone color code
+                'pantone' => '306 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '117,170,219',
+            [
+                // Color name
+                'name' => 'Union Jack Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#CF142B',
+                // RGB color values
+                'rgb' => '207,20,43',
+                // CMYK color values
+                'cmyk' => '0,90,79,19',
+                // HSL color values
+                'hsl' => '350,82%,44%',
+                // HSV color values
+                'hsv' => '350,90%,81%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Union Jack Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#00247D',
+                // RGB color values
+                'rgb' => '0,36,125',
+                // CMYK color values
+                'cmyk' => '100,71,0,51',
+                // HSL color values
+                'hsl' => '224,100%,24%',
+                // HSV color values
+                'hsv' => '224,100%,49%',
+                // Pantone color code
+                'pantone' => '280 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Union Jack White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Shield Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#FF0000',
+                // RGB color values
+                'rgb' => '255,0,0',
+                // CMYK color values
+                'cmyk' => '0,100,100,0',
+                // HSL color values
+                'hsl' => '0,100%,50%',
+                // HSV color values
+                'hsv' => '0,100%,100%',
+                // Pantone color code
+                'pantone' => 'Red 032 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '18 00 S',
-                'desc' => '-17.658161163330078',
-            ],
-            'longitude' => [
-                'classic' => '175 00 E',
-                'desc' => '178.1472625732422',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '-17.7134',
+            // Longitude in decimal degrees
+            'longitude' => '178.0650',
+            // Degrees with decimal
+            'dd' => '17.7134° S, 178.0650° E',
+            // Degrees, minutes, seconds
+            'dms' => '17°42\'48.24" S, 178°3\'54.00" E',
+            // Degrees and decimal minutes
+            'dm' => '17°42.804\' S, 178°3.900\' E',
+            // Various GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '-12.466667',
-                'min' => '-21.016667',
-            ],
-            'longitude' => [
-                'max' => '-179.983333',
-                'min' => '180',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

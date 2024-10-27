@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class GB_UnitedKingdom extends Seeder
+class GB_UnitedKingdom extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'europe';
- 
+    public ?string $region = 'europe';
+
     /**
      * Run the database seeds.
      *
@@ -29,60 +29,240 @@ class GB_UnitedKingdom extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'United Kingdom';
+
+        // Set the country's official name
         $this->official_name = 'United Kingdom of Great Britain and Northern Ireland';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'GB';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'GBR';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '826';
+
+        // Set the international dialing code
         $this->international_phone = '44';
- 
-        $this->languages = ['en'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['en']; // English is the official language, with regional languages like Welsh and Scottish Gaelic
+
+        // Define the top-level domain(s)
         $this->tld = ['.uk'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = ['.co.uk', '.org.uk', '.gov.uk'];
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '90 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '30 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '94%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'NCSC (National Cyber Security Centre)';
+
+        // List popular web technologies in the United Kingdom
+        $this->popular_technologies = ['PHP', 'JavaScript', 'React', 'Python'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'UK';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2635167';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Pound sterling',
+            // Currency code
+            'code' => 'GBP',
+            // Currency symbol
+            'symbol' => '£',
+            // Main unit
+            'main_unit' => 'pound',
+            // Subunit
+            'sub_unit' => 'penny',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['1p', '2p', '5p', '10p', '20p', '50p'],
+        ];
+
+        // Set the population
+        $this->population = 67886011; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 243610; // km²
+
+        // Set the capital city
+        $this->capital = 'London';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Europe/London',
+                // Standard time offset
+                'standard_time' => 'UTC+0', // Greenwich Mean Time (GMT)
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+1', // British Summer Time (BST)
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = null; // The United Kingdom does not have an official independence day
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Commonwealth of Nations',
+            'NATO',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 2827; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Church of England, Roman Catholicism)',
+            'Islam',
+            'Secularism (Atheism, Agnosticism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Constitutional monarchy and parliamentary democracy';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football (soccer) is the most popular sport in the UK
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Ireland', 'iso_alpha_2' => 'IE'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇬🇧',
+            // Unicode code points
             'uCode' => 'U+1F1EC U+1F1E7',
+            // HTML entities
+            'html' => '&#x1F1EC;&#x1F1E7;',
+            // CSS entities
+            'css' => '\\1F1EC\\1F1E7',
+            // Decimal Unicode entities
+            'decimal' => '&#127468;&#127463;',
+            // Direct UTF-8 string
+            'utf8' => '🇬🇧',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDEC\uD83C\uDDE7',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-gb:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1EC;&#x1F1E7;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffffff',
-                '#0000cc',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Union Jack Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#00247D',
+                // RGB color values
+                'rgb' => '0,36,125',
+                // CMYK color values
+                'cmyk' => '100,71,0,51',
+                // HSL color values
+                'hsl' => '224,100%,24%',
+                // HSV color values
+                'hsv' => '224,100%,49%',
+                // Pantone color code
+                'pantone' => '280 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,255',
-                '0,0,204',
+            [
+                // Color name
+                'name' => 'Union Jack Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#CF142B',
+                // RGB color values
+                'rgb' => '207,20,43',
+                // CMYK color values
+                'cmyk' => '0,90,79,19',
+                // HSL color values
+                'hsl' => '350,82%,44%',
+                // HSV color values
+                'hsv' => '350,90%,81%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Union Jack White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '54 00 N',
-                'desc' => '54.56088638305664',
-            ],
-            'longitude' => [
-                'classic' => '2 00 W',
-                'desc' => '-2.2125117778778076',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '51.5074',
+            // Longitude in decimal degrees
+            'longitude' => '-0.1278',
+            // Degrees with decimal
+            'dd' => '51.5074° N, 0.1278° W',
+            // Degrees, minutes, seconds
+            'dms' => '51°30\'26.64" N, 0°7\'40.08" W',
+            // Degrees and decimal minutes
+            'dm' => '51°30.444\' N, 0°7.668\' W',
+            // Various GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '61.5',
-                'min' => '49.866667',
-            ],
-            'longitude' => [
-                'max' => '2.866667',
-                'min' => '-13.65',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

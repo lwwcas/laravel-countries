@@ -1,0 +1,1 @@
+import{_ as e,c as o,o as r}from"./chunks/framework.C72X4JAr.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"demography/workflow.md","filePath":"demography/workflow.md"}'),t={name:"demography/workflow.md"};function a(s,c,n,p,d,f){return r(),o("div")}const _=e(t,[["render",a]]);export{l as __pageData,_ as default};

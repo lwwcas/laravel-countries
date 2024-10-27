@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class BT_Bhutan extends Seeder
+class BT_Bhutan extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'asia';
- 
+    public ?string $region = 'asia';
+
     /**
      * Run the database seeds.
      *
@@ -29,60 +29,232 @@ class BT_Bhutan extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Bhutan';
+
+        // Set the country's official name
         $this->official_name = 'Kingdom of Bhutan';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'BT';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'BTN';
-        $this->iso_numeric = '64';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
+        $this->iso_numeric = '064';
+
+        // Set the international dialing code
         $this->international_phone = '975';
- 
-        $this->languages = ['dz'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['dz']; // Dzongkha is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.bt'];
-        $this->wmo = '0';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '20 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '10 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '50%'; // Percentage of the population with internet access
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Bhutan Computer Incident Response Team (BtCIRT)';
+
+        // List popular web technologies in Bhutan
+        $this->popular_technologies = ['PHP', 'JavaScript', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'BT';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1252634';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Bhutanese ngultrum',
+            // Currency code
+            'code' => 'BTN',
+            // Currency symbol
+            'symbol' => 'Nu.',
+            // Main unit
+            'main_unit' => 'ngultrum',
+            // Subunit
+            'sub_unit' => 'chetrum',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '5', '10', '20', '50', '100', '500', '1,000'],
+            // Main coins
+            'coins_main' => ['1'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 771608; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 38394; // km²
+
+        // Set the capital city
+        $this->capital = 'Thimphu';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            // Time zone identifier
+            'timezone_id' => 'Asia/Thimphu',
+            // Standard time offset
+            'standard_time' => 'UTC+6', // Bhutan Time (BTT)
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1907-12-17'; // Date of establishment of monarchy
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'SAARC',
+            'BIMSTEC',
+            'World Trade Organization (WTO)',
+            'Non-Aligned Movement',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 2.53; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = ['Buddhism (Vajrayana)', 'Hinduism'];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary constitutional monarchy';
+
+        // Set the national sport
+        $this->national_sport = 'Archery';
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'China', 'iso_alpha_2' => 'CN'],
+            ['name' => 'India', 'iso_alpha_2' => 'IN'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇧🇹',
+            // Unicode code points
             'uCode' => 'U+1F1E7 U+1F1F9',
+            // HTML entities
+            'html' => '&#x1F1E7;&#x1F1F9;',
+            // CSS entities
+            'css' => '\\1F1E7\\1F1F9',
+            // Decimal Unicode entities
+            'decimal' => '&#127463;&#127481;',
+            // Direct UTF-8 string
+            'utf8' => '🇧🇹',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDE7\uD83C\uDDF9',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-bt:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1E7;&#x1F1F9;',
         ];
-        $this->color = [
-            'hex' => [
-                '#e48400',
-                '#ffd700',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'golden yellow',
+                // Hexadecimal color code
+                'hex' => '#FFCC00',
+                // RGB color values
+                'rgb' => '255,204,0',
+                // CMYK color values
+                'cmyk' => '0,20,100,0',
+                // HSL color values
+                'hsl' => '48,100%,50%',
+                // HSV color values
+                'hsv' => '48,100%,100%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
-            'rgb' => [
-                '228,132,0',
-                '255,215,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'Orange',
+                // Web color name
+                'web_name' => 'saffron',
+                // Hexadecimal color code
+                'hex' => '#FF6600',
+                // RGB color values
+                'rgb' => '255,102,0',
+                // CMYK color values
+                'cmyk' => '0,60,100,0',
+                // HSL color values
+                'hsl' => '24,100%,50%',
+                // HSV color values
+                'hsv' => '24,100%,100%',
+                // Pantone color code
+                'pantone' => '1655 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '27 30 N',
-                'desc' => '27.416879653930664',
-            ],
-            'longitude' => [
-                'classic' => '90 30 E',
-                'desc' => '90.43476104736328',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '27.5142',
+            // Longitude in decimal degrees
+            'longitude' => '89.6329',
+            // Degrees with decimal
+            'dd' => '27.5142° N, 89.6329° E',
+            // Degrees, minutes, seconds
+            'dms' => '27°30\'51.12" N, 89°37\'58.44" E',
+            // Degrees and decimal minutes
+            'dm' => '27°30.852\' N, 89°37.974\' E',
+            // Various GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '30',
-                'min' => '26.716667',
-            ],
-            'longitude' => [
-                'max' => '92.033333',
-                'min' => '80',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

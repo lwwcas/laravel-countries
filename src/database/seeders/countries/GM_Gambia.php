@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class GM_Gambia extends Seeder
+class GM_Gambia extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'africa';
- 
+    public ?string $region = 'africa';
+
     /**
      * Run the database seeds.
      *
@@ -29,62 +29,260 @@ class GM_Gambia extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Gambia';
+
+        // Set the country's official name
         $this->official_name = 'Republic of the Gambia';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'GM';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'GMB';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '270';
+
+        // Set the international dialing code
         $this->international_phone = '220';
- 
-        $this->languages = ['en'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['en']; // English is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.gm'];
-        $this->wmo = 'GB';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '15 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '7 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '19%'; // As of recent estimates
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'National Cyber Security Authority';
+
+        // List popular web technologies in the Gambia
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'GM';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2413451';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Gambian dalasi',
+            // Currency code
+            'code' => 'GMD',
+            // Currency symbol
+            'symbol' => 'D',
+            // Main unit
+            'main_unit' => 'dalasi',
+            // Subunit
+            'sub_unit' => 'butut',
+            // Sub_unit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100', '200'],
+            // Main coins
+            'coins_main' => ['1'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '25', '50 bututs'],
+        ];
+
+        // Set the population
+        $this->population = 2416668; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 10689; // km²
+
+        // Set the capital city
+        $this->capital = 'Banjul';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Africa/Banjul',
+                // Standard time offset
+                'standard_time' => 'UTC+0', // Greenwich Mean Time (GMT)
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1965-02-18'; // Independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union (AU)',
+            'Economic Community of West African States (ECOWAS)',
+            'Commonwealth of Nations',
+            'Organisation of Islamic Cooperation (OIC)',
+            'Non-Aligned Movement',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 1.9; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Wrestling'; // Wrestling is traditional, but football is also popular
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Senegal', 'iso_alpha_2' => 'SN'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇬🇲',
+            // Unicode code points
             'uCode' => 'U+1F1EC U+1F1F2',
+            // HTML entities
+            'html' => '&#x1F1EC;&#x1F1F2;',
+            // CSS entities
+            'css' => '\\1F1EC\\1F1F2',
+            // Decimal Unicode entities
+            'decimal' => '&#127468;&#127474;',
+            // Direct UTF-8 string
+            'utf8' => '🇬🇲',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDEC\uD83C\uDDF2',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-gm:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1EC;&#x1F1F2;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#00008b',
-                '#008000',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#CE1126',
+                // RGB color values
+                'rgb' => '206,17,38',
+                // CMYK color values
+                'cmyk' => '0,92,82,19',
+                // HSL color values
+                'hsl' => '350,84%,44%',
+                // HSV color values
+                'hsv' => '350,92%,81%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '0,0,139',
-                '0,128,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#003F87',
+                // RGB color values
+                'rgb' => '0,63,135',
+                // CMYK color values
+                'cmyk' => '100,53,0,47',
+                // HSL color values
+                'hsl' => '212,100%,26%',
+                // HSV color values
+                'hsv' => '212,100%,53%',
+                // Pantone color code
+                'pantone' => '286 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#007A33',
+                // RGB color values
+                'rgb' => '0,122,51',
+                // CMYK color values
+                'cmyk' => '100,0,58,52',
+                // HSL color values
+                'hsl' => '149,100%,24%',
+                // HSV color values
+                'hsv' => '149,100%,48%',
+                // Pantone color code
+                'pantone' => '348 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '13 28 N',
-                'desc' => '13.440265655517578',
-            ],
-            'longitude' => [
-                'classic' => '16 34 W',
-                'desc' => '-15.490884780883789',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '13.4432',
+            // Longitude in decimal degrees
+            'longitude' => '-15.3101',
+            // Degrees with decimal
+            'dd' => '13.4432° N, 15.3101° W',
+            // Degrees, minutes, seconds
+            'dms' => '13°26\'35.52" N, 15°18\'36.36" W',
+            // Degrees and decimal minutes
+            'dm' => '13°26.592\' N, 15°18.606\' W',
+            // GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '13.816667',
-                'min' => '7',
-            ],
-            'longitude' => [
-                'max' => '-4',
-                'min' => '-16.816944',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class CN_China extends Seeder
+class CN_China extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'asia';
- 
+    public ?string $region = 'asia';
+
     /**
      * Run the database seeds.
      *
@@ -29,58 +29,234 @@ class CN_China extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'China';
+
+        // Set the country's official name
         $this->official_name = 'People\'s Republic of China';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'CN';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'CHN';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '156';
+
+        // Set the international dialing code
         $this->international_phone = '86';
- 
-        $this->languages = ['zh'];
-        $this->tld = ['.cn',".\u4e2d\u56fd",".\u4e2d\u570b",".\u516c\u53f8",".\u7f51\u7edc"];
-        $this->wmo = 'CI';
+
+        // Define the languages spoken in the country
+        $this->languages = ['zh']; // Mandarin Chinese is the official language
+
+        // Define the top-level domain(s)
+        $this->tld = ['.cn'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = ['.中国', '.xn--fiqs8s']; // Internationalized TLDs for China
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '190 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '50 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '61%'; // Percentage of the population with internet access
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Cyberspace Administration of China (CAC)';
+
+        // List popular web technologies in China
+        $this->popular_technologies = ['PHP', 'JavaScript', 'Python', 'Node.js', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'CH';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1814991';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Renminbi (Yuan)',
+            // Currency code
+            'code' => 'CNY',
+            // Currency symbol
+            'symbol' => '¥',
+            // Main unit
+            'main_unit' => 'yuan',
+            // Subunit
+            'sub_unit' => 'fen',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '5', '10', '20', '50', '100'],
+            // Main coins
+            'coins_main' => ['1', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10'],
+        ];
+
+        // Set the population
+        $this->population = 1411778724; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 9600000; // km²
+
+        // Set the capital city
+        $this->capital = 'Beijing';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Shanghai',
+                // Standard time offset
+                'standard_time' => 'UTC+8', // China Standard Time (CST)
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1949-10-01'; // Date of the founding of the People's Republic of China
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Shanghai Cooperation Organization (SCO)',
+            'G20',
+            'Asia-Pacific Economic Cooperation (APEC)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 14402.6; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Buddhism',
+            'Taoism',
+            'Islam',
+            'Christianity',
+            'Folk religions',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary one-party socialist republic';
+
+        // Set the national sport
+        $this->national_sport = 'Table tennis (Ping Pong)'; // Table tennis is considered the national sport
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Afghanistan', 'iso_alpha_2' => 'AF'],
+            ['name' => 'Bhutan', 'iso_alpha_2' => 'BT'],
+            ['name' => 'India', 'iso_alpha_2' => 'IN'],
+            ['name' => 'Kazakhstan', 'iso_alpha_2' => 'KZ'],
+            ['name' => 'Kyrgyzstan', 'iso_alpha_2' => 'KG'],
+            ['name' => 'Laos', 'iso_alpha_2' => 'LA'],
+            ['name' => 'Mongolia', 'iso_alpha_2' => 'MN'],
+            ['name' => 'Myanmar', 'iso_alpha_2' => 'MM'],
+            ['name' => 'Nepal', 'iso_alpha_2' => 'NP'],
+            ['name' => 'North Korea', 'iso_alpha_2' => 'KP'],
+            ['name' => 'Pakistan', 'iso_alpha_2' => 'PK'],
+            ['name' => 'Russia', 'iso_alpha_2' => 'RU'],
+            ['name' => 'Tajikistan', 'iso_alpha_2' => 'TJ'],
+            ['name' => 'Vietnam', 'iso_alpha_2' => 'VN'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇨🇳',
+            // Unicode code points
             'uCode' => 'U+1F1E8 U+1F1F3',
+            // HTML entities
+            'html' => '&#x1F1E8;&#x1F1F3;',
+            // CSS entities
+            'css' => '\\1F1E8\\1F1F3',
+            // Decimal Unicode entities
+            'decimal' => '&#127464;&#127475;',
+            // Direct UTF-8 string
+            'utf8' => '🇨🇳',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDE8\uD83C\uDDF3',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-cn:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1E8;&#x1F1F3;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffd700',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#DE2910',
+                // RGB color values
+                'rgb' => '222,41,16',
+                // CMYK color values
+                'cmyk' => '0,82,93,13',
+                // HSL color values
+                'hsl' => '7,87%,47%',
+                // HSV color values
+                'hsv' => '7,93%,87%',
+                // Pantone color code
+                'pantone' => '485 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,215,0',
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFDE00',
+                // RGB color values
+                'rgb' => '255,222,0',
+                // CMYK color values
+                'cmyk' => '0,13,100,0',
+                // HSL color values
+                'hsl' => '52,100%,50%',
+                // HSV color values
+                'hsv' => '52,100%,100%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '35 00 N',
-                'desc' => '36.55308532714844',
-            ],
-            'longitude' => [
-                'classic' => '105 00 E',
-                'desc' => '103.97543334960938',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '39.916668',
+            // Longitude in decimal degrees
+            'longitude' => '116.383331',
+            // Degrees with decimal
+            'dd' => '39.916668° N, 116.383331° E',
+            // Degrees, minutes, seconds
+            'dms' => '39°55\'00.00" N, 116°22\'59.99" E',
+            // Degrees and decimal minutes
+            'dm' => '39°55.000\' N, 116°22.999\' E',
+            // Various GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '20.7',
-                'min' => '6.183333',
-            ],
-            'longitude' => [
-                'max' => '117.816667',
-                'min' => '106.7',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

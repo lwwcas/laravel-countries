@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class GR_Greece extends Seeder
+class GR_Greece extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'europe';
- 
+    public ?string $region = 'europe';
+
     /**
      * Run the database seeds.
      *
@@ -29,58 +29,222 @@ class GR_Greece extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Greece';
+
+        // Set the country's official name
         $this->official_name = 'Hellenic Republic';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'GR';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'GRC';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '300';
+
+        // Set the international dialing code
         $this->international_phone = '30';
- 
-        $this->languages = ['el'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['el']; // Greek is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.gr'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = ['.ελ']; // Greek alphabet TLD
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '45 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '35 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '75%'; // As per recent estimates
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'National Cyber Security Authority';
+
+        // List popular web technologies in Greece
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'WordPress', 'Joomla'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'GR';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '390903';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Euro',
+            // Currency code
+            'code' => 'EUR',
+            // Currency symbol
+            'symbol' => '€',
+            // Main unit
+            'main_unit' => 'euro',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100', '200', '500'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['1', '2', '5', '10', '20', '50 cents'],
+        ];
+
+        // Set the population
+        $this->population = 10724599; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 131957; // km²
+
+        // Set the capital city
+        $this->capital = 'Athens';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Europe/Athens',
+                // Standard time offset
+                'standard_time' => 'UTC+2', // Eastern European Time (EET)
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+3', // Eastern European Summer Time (EEST)
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1821-03-25'; // Independence from the Ottoman Empire
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'European Union (EU)',
+            'NATO',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Organization for Security and Co-operation in Europe (OSCE)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 209.8; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Eastern Orthodox Church)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary constitutional republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Greece
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Albania', 'iso_alpha_2' => 'AL'],
+            ['name' => 'North Macedonia', 'iso_alpha_2' => 'MK'],
+            ['name' => 'Bulgaria', 'iso_alpha_2' => 'BG'],
+            ['name' => 'Turkey', 'iso_alpha_2' => 'TR'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇬🇷',
+            // Unicode code points
             'uCode' => 'U+1F1EC U+1F1F7',
+            // HTML entities
+            'html' => '&#x1F1EC;&#x1F1F7;',
+            // CSS entities
+            'css' => '\\1F1EC\\1F1F7',
+            // Decimal Unicode entities
+            'decimal' => '&#127468;&#127479;',
+            // Direct UTF-8 string
+            'utf8' => '🇬🇷',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDEC\uD83C\uDDF7',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-gr:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1EC;&#x1F1F7;',
         ];
-        $this->color = [
-            'hex' => [
-                '#0000ff',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#0D5EAF',
+                // RGB color values
+                'rgb' => '13,94,175',
+                // CMYK color values
+                'cmyk' => '93,46,0,31',
+                // HSL color values
+                'hsl' => '212,86%,37%',
+                // HSV color values
+                'hsv' => '212,93%,69%',
+                // Pantone color code
+                'pantone' => 'Reflex Blue C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,0,255',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '39 00 N',
-                'desc' => '39.68437194824219',
-            ],
-            'longitude' => [
-                'classic' => '22 00 E',
-                'desc' => '21.897409439086914',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '37.9838',
+            // Longitude in decimal degrees
+            'longitude' => '23.7275',
+            // Degrees with decimal
+            'dd' => '37.9838° N, 23.7275° E',
+            // Degrees, minutes, seconds
+            'dms' => '37°59\'1.68" N, 23°43\'39.00" E',
+            // Degrees and decimal minutes
+            'dm' => '37°59.028\' N, 23°43.650\' E',
+            // GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '44',
-                'min' => '34.8',
-            ],
-            'longitude' => [
-                'max' => '29.648056',
-                'min' => '19.381667',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

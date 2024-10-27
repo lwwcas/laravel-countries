@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class CA_Canada extends Seeder
+class CA_Canada extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'americas';
- 
+    public ?string $region = 'americas';
+
     /**
      * Run the database seeds.
      *
@@ -29,58 +29,244 @@ class CA_Canada extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Canada';
+
+        // Set the country's official name
         $this->official_name = 'Canada';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'CA';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'CAN';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '124';
+
+        // Set the international dialing code
         $this->international_phone = '1';
- 
-        $this->languages = ['en','fr'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['en', 'fr']; // English and French are official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.ca'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '150 Mbps', // As of recent data
+            // Average mobile connection speed
+            'average_speed_mobile' => '70 Mbps', // As of recent data
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '93%'; // Percentage of the population with internet access
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Canadian Centre for Cyber Security';
+
+        // List popular web technologies in Canada
+        $this->popular_technologies = ['PHP', 'JavaScript', 'Java', 'Python', '.NET', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'CN';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '6251999';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Canadian dollar',
+            // Currency code
+            'code' => 'CAD',
+            // Currency symbol
+            'symbol' => '$',
+            // Main unit
+            'main_unit' => 'dollar',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Sub_unit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['0.05', '0.10', '0.25'],
+        ];
+
+        // Set the population
+        $this->population = 38005238; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 9984670; // km²
+
+        // Set the capital city
+        $this->capital = 'Ottawa';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'America/St_Johns',
+                // Standard time offset
+                'standard_time' => 'UTC−3:30',
+            ],
+            [
+                'timezone_id' => 'America/Halifax',
+                'standard_time' => 'UTC−4',
+            ],
+            [
+                'timezone_id' => 'America/Toronto',
+                'standard_time' => 'UTC−5',
+            ],
+            [
+                'timezone_id' => 'America/Winnipeg',
+                'standard_time' => 'UTC−6',
+            ],
+            [
+                'timezone_id' => 'America/Edmonton',
+                'standard_time' => 'UTC−7',
+            ],
+            [
+                'timezone_id' => 'America/Vancouver',
+                'standard_time' => 'UTC−8',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1867-07-01'; // Date of Confederation
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'NATO',
+            'G7',
+            'G20',
+            'Commonwealth of Nations',
+            'Organisation internationale de la Francophonie',
+            'World Trade Organization (WTO)',
+            'Organization of American States (OAS)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 1643; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Catholic, Protestant)',
+            'Islam',
+            'Hinduism',
+            'Sikhism',
+            'Buddhism',
+            'Judaism',
+            'No religious affiliation',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Federal parliamentary constitutional monarchy';
+
+        // Set the national sport
+        $this->national_sport = 'Ice Hockey and Lacrosse';
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'United States', 'iso_alpha_2' => 'US'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇨🇦',
+            // Unicode code points
             'uCode' => 'U+1F1E8 U+1F1E6',
+            // HTML entities
+            'html' => '&#x1F1E8;&#x1F1E6;',
+            // CSS entities
+            'css' => '\\1F1E8\\1F1E6',
+            // Decimal Unicode entities
+            'decimal' => '&#127464;&#127462;',
+            // Direct UTF-8 string
+            'utf8' => '🇨🇦',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDE8\uD83C\uDDE6',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-ca:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1E8;&#x1F1E6;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#FF0000',
+                // RGB color values
+                'rgb' => '255,0,0',
+                // CMYK color values
+                'cmyk' => '0,100,100,0',
+                // HSL color values
+                'hsl' => '0,100%,50%',
+                // HSV color values
+                'hsv' => '0,100%,100%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '60 00 N',
-                'desc' => '62.832908630371094',
-            ],
-            'longitude' => [
-                'classic' => '95 00 W',
-                'desc' => '-95.91332244873047',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '45.4215',
+            // Longitude in decimal degrees
+            'longitude' => '-75.6972',
+            // Degrees with decimal
+            'dd' => '45.4215° N, 75.6972° W',
+            // Degrees, minutes, seconds
+            'dms' => '45°25\'17.40" N, 75°41\'49.92" W',
+            // Degrees and decimal minutes
+            'dm' => '45°25.290\' N, 75°41.832\' W',
+            // Various GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '83.116667',
-                'min' => '40',
-            ],
-            'longitude' => [
-                'max' => '-52.666667',
-                'min' => '-141.666667',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

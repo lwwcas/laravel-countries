@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class IS_Iceland extends Seeder
+class IS_Iceland extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'europe';
- 
+    public ?string $region = 'europe';
+
     /**
      * Run the database seeds.
      *
@@ -29,60 +29,238 @@ class IS_Iceland extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Iceland';
+
+        // Set the country's official name
         $this->official_name = 'Iceland';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'IS';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'ISL';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '352';
+
+        // Set the international dialing code
         $this->international_phone = '354';
- 
-        $this->languages = ['is'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['is']; // Icelandic is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.is'];
-        $this->wmo = 'IL';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '150 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '100 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '98%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'CERT-IS';
+
+        // List popular web technologies in Iceland
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'Java', '.NET'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'IC';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2629691';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Icelandic króna',
+            // Currency code
+            'code' => 'ISK',
+            // Currency symbol
+            'symbol' => 'kr',
+            // Main unit
+            'main_unit' => 'króna',
+            // Subunit
+            'sub_unit' => 'eyrir',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['500', '1000', '2000', '5000', '10,000'],
+            // Main coins
+            'coins_main' => ['1', '5', '10', '50', '100'],
+            // Subunit coins
+            'coins_sub' => [], // Subunit coins are no longer used
+        ];
+
+        // Set the population
+        $this->population = 366425; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 103000; // km²
+
+        // Set the capital city
+        $this->capital = 'Reykjavík';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Atlantic/Reykjavik',
+                // Standard time offset
+                'standard_time' => 'UTC+0',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1944-06-17'; // Independence from Denmark
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'NATO',
+            'Organisation for Economic Co-operation and Development (OECD)',
+            'European Free Trade Association (EFTA)',
+            'Council of Europe',
+            'Arctic Council',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 25; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Lutheranism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary republic';
+
+        // Set the national sport
+        $this->national_sport = 'Glíma (Icelandic wrestling)';
+
+        // Define bordering countries
+        $this->borders = []; // It is an island with no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇮🇸',
+            // Unicode code points
             'uCode' => 'U+1F1EE U+1F1F8',
+            // HTML entities
+            'html' => '&#x1F1EE;&#x1F1F8;',
+            // CSS entities
+            'css' => '\\1F1EE\\1F1F8',
+            // Decimal Unicode entities
+            'decimal' => '&#127470;&#127480;',
+            // Direct UTF-8 string
+            'utf8' => '🇮🇸',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDEE\uD83C\uDDF8',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-is:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1EE;&#x1F1F8;',
         ];
-        $this->color = [
-            'hex' => [
-                '#0000cc',
-                '#ffffff',
-                '#ff0000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#003897',
+                // RGB color values
+                'rgb' => '0,56,151',
+                // CMYK color values
+                'cmyk' => '100,63,0,0',
+                // HSL color values
+                'hsl' => '219,100%,29%',
+                // HSV color values
+                'hsv' => '219,100%,59%',
+                // Pantone color code
+                'pantone' => '287 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,0,204',
-                '255,255,255',
-                '255,0,0',
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#D72828',
+                // RGB color values
+                'rgb' => '215,40,40',
+                // CMYK color values
+                'cmyk' => '0,81,81,16',
+                // HSL color values
+                'hsl' => '0,69%,50%',
+                // HSV color values
+                'hsv' => '0,81%,84%',
+                // Pantone color code
+                'pantone' => '1795 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '65 00 N',
-                'desc' => '64.9285659790039',
-            ],
-            'longitude' => [
-                'classic' => '18 00 W',
-                'desc' => '-18.961700439453125',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '64.1466',
+            // Longitude in decimal degrees
+            'longitude' => '-21.9426',
+            // Degrees with decimal
+            'dd' => '64.1466° N, 21.9426° W',
+            // Degrees, minutes, seconds
+            'dms' => '64°8\'47.76" N, 21°56\'33.36" W',
+            // Degrees and decimal minutes
+            'dm' => '64°8.796\' N, 21°56.556\' W',
+            // GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '66.566667',
-                'min' => '63.3',
-            ],
-            'longitude' => [
-                'max' => '-13.2',
-                'min' => '-24.533333',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

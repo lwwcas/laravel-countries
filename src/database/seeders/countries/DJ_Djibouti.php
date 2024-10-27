@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class DJ_Djibouti extends Seeder
+class DJ_Djibouti extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'africa';
- 
+    public ?string $region = 'africa';
+
     /**
      * Run the database seeds.
      *
@@ -29,62 +29,260 @@ class DJ_Djibouti extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Djibouti';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Djibouti';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'DJ';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'DJI';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '262';
+
+        // Set the international dialing code
         $this->international_phone = '253';
- 
-        $this->languages = ['fr','ar'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['fr', 'ar']; // French and Arabic are the official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.dj'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '10 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '5 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '21%'; // Percentage of the population with internet access
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Agence Nationale de la Sécurité des Systèmes d\'Information (ANSSI)';
+
+        // List popular web technologies in Djibouti
+        $this->popular_technologies = ['PHP', 'JavaScript', 'WordPress', 'Python'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'DJ';
-        $this->geoname_id = '223816';
- 
+
+        // Set the GeoName ID for geographical data reference
+        $this->geoname_id = '223817';
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Djiboutian franc',
+            // Currency code
+            'code' => 'DJF',
+            // Currency symbol
+            'symbol' => 'Fdj',
+            // Main unit
+            'main_unit' => 'franc',
+            // Subunit
+            'sub_unit' => 'centime',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['500', '1,000', '2,000', '5,000', '10,000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10', '20', '50', '100'],
+            // Subunit coins
+            'coins_sub' => ['1 centime', '5 centimes', '10 centimes'],
+        ];
+
+        // Set the population
+        $this->population = 1078373; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 23200; // km²
+
+        // Set the capital city
+        $this->capital = 'Djibouti City';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Africa/Djibouti',
+                // Standard time offset
+                'standard_time' => 'UTC+3', // East Africa Time (EAT)
+                // Djibouti does not observe daylight saving time
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1977-06-27'; // Date of independence from France
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Arab League',
+            'Intergovernmental Authority on Development (IGAD)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 3.38; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam (Sunni)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary dominant-party presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football (soccer) is the most popular sport
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Eritrea', 'iso_alpha_2' => 'ER'],
+            ['name' => 'Ethiopia', 'iso_alpha_2' => 'ET'],
+            ['name' => 'Somalia', 'iso_alpha_2' => 'SO'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇩🇯',
+            // Unicode code points
             'uCode' => 'U+1F1E9 U+1F1EF',
+            // HTML entities
+            'html' => '&#x1F1E9;&#x1F1EF;',
+            // CSS entities
+            'css' => '\\1F1E9\\1F1EF',
+            // Decimal Unicode entities
+            'decimal' => '&#127465;&#127471;',
+            // Direct UTF-8 string
+            'utf8' => '🇩🇯',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDE9\uD83C\uDDEF',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-dj:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1E9;&#x1F1EF;',
         ];
-        $this->color = [
-            'hex' => [
-                '#75aadb',
-                '#008000',
-                '#ffffff',
-                '#ff0000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Sky Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#00A1DE',
+                // RGB color values
+                'rgb' => '0,161,222',
+                // CMYK color values
+                'cmyk' => '100,27,0,13',
+                // HSL color values
+                'hsl' => '196,100%,44%',
+                // HSV color values
+                'hsv' => '196,100%,87%',
+                // Pantone color code
+                'pantone' => '299 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '117,170,219',
-                '0,128,0',
-                '255,255,255',
-                '255,0,0',
+            [
+                // Color name
+                'name' => 'Grass Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#007A33',
+                // RGB color values
+                'rgb' => '0,122,51',
+                // CMYK color values
+                'cmyk' => '100,0,58,52',
+                // HSL color values
+                'hsl' => '148,100%,24%',
+                // HSV color values
+                'hsv' => '148,100%,48%',
+                // Pantone color code
+                'pantone' => 'Pantone 356 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#FF0000',
+                // RGB color values
+                'rgb' => '255,0,0',
+                // CMYK color values
+                'cmyk' => '0,100,100,0',
+                // HSL color values
+                'hsl' => '0,100%,50%',
+                // HSV color values
+                'hsv' => '0,100%,100%',
+                // Pantone color code
+                'pantone' => 'Red 032 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '11 30 N',
-                'desc' => '11.742591857910156',
-            ],
-            'longitude' => [
-                'classic' => '43 00 E',
-                'desc' => '42.63182830810547',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '11.8251',
+            // Longitude in decimal degrees
+            'longitude' => '42.5903',
+            // Degrees with decimal
+            'dd' => '11.8251° N, 42.5903° E',
+            // Degrees, minutes, seconds
+            'dms' => '11°49\'30.36" N, 42°35\'25.08" E',
+            // Degrees and decimal minutes
+            'dm' => '11°49.506\' N, 42°35.418\' E',
+            // Various GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '13',
-                'min' => '10.9825',
-            ],
-            'longitude' => [
-                'max' => '43.451944',
-                'min' => '41',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

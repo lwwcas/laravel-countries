@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class BM_Bermuda extends Seeder
+class BM_Bermuda extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'americas';
- 
+    public ?string $region = 'americas';
+
     /**
      * Run the database seeds.
      *
@@ -29,60 +29,223 @@ class BM_Bermuda extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Bermuda';
+
+        // Set the country's official name
         $this->official_name = 'Bermuda';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'BM';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'BMU';
-        $this->iso_numeric = '60';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
+        $this->iso_numeric = '060';
+
+        // Set the international dialing code
         $this->international_phone = '1-441';
- 
-        $this->languages = ['en'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['en']; // English is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.bm'];
-        $this->wmo = 'BE';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '20 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '15 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '95%'; // Percentage of the population with internet access
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Department of ICT Policy & Innovation';
+
+        // List popular web technologies in Bermuda
+        $this->popular_technologies = ['PHP', 'JavaScript', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'BU';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '3573345';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Bermudian dollar',
+            // Currency code
+            'code' => 'BMD',
+            // Currency symbol
+            'symbol' => '$',
+            // Main unit
+            'main_unit' => 'dollar',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['2', '5', '10', '20', '50', '100'],
+            // Main coins
+            'coins_main' => ['1'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 63903; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 54; // km²
+
+        // Set the capital city
+        $this->capital = 'Hamilton';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            // Time zone identifier
+            'timezone_id' => 'Atlantic/Bermuda',
+            // Standard time offset
+            'standard_time' => 'UTC−4', // Atlantic Standard Time
+        ];
+
+        // Set the independence day
+        $this->independence_day = null; // Bermuda is a British Overseas Territory
+
+        // List international organizations the country is part of
+        $this->international_organizations = []; // Represented by the UK in international organizations
+
+        // Set the GDP in billions of USD
+        $this->gdp = 5.6; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = ['Christianity (Anglican, Catholic, Methodist)'];
+
+        // Describe the form of government
+        $this->government = 'Self-governing British Overseas Territory with parliamentary representative democracy';
+
+        // Set the national sport
+        $this->national_sport = 'Cricket'; // Cricket is very popular
+
+        // Define bordering countries
+        $this->borders = []; // Island territory with no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇧🇲',
+            // Unicode code points
             'uCode' => 'U+1F1E7 U+1F1F2',
+            // HTML entities
+            'html' => '&#x1F1E7;&#x1F1F2;',
+            // CSS entities
+            'css' => '\\1F1E7\\1F1F2',
+            // Decimal Unicode entities
+            'decimal' => '&#127463;&#127474;',
+            // Direct UTF-8 string
+            'utf8' => '🇧🇲',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDE7\uD83C\uDDF2',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-bm:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1E7;&#x1F1F2;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ed0a3f',
-                '#0066ff',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#C8102E',
+                // RGB color values
+                'rgb' => '200,16,46',
+                // CMYK color values
+                'cmyk' => '0,92,76,22',
+                // HSL color values
+                'hsl' => '350,85%,42%',
+                // HSV color values
+                'hsv' => '350,92%,78%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '237,10,63',
-                '0,102,255',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'navy blue',
+                // Hexadecimal color code
+                'hex' => '#00247D',
+                // RGB color values
+                'rgb' => '0,36,125',
+                // CMYK color values
+                'cmyk' => '100,71,0,51',
+                // HSL color values
+                'hsl' => '220,100%,25%',
+                // HSV color values
+                'hsv' => '220,100%,49%',
+                // Pantone color code
+                'pantone' => '280 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '32 20 N',
-                'desc' => '32.302669525146484',
-            ],
-            'longitude' => [
-                'classic' => '64 45 W',
-                'desc' => '-64.7516860961914',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '32.2949',
+            // Longitude in decimal degrees
+            'longitude' => '-64.7814',
+            // Degrees with decimal
+            'dd' => '32.2949° N, 64.7814° W',
+            // Degrees, minutes, seconds
+            'dms' => '32°17\'41.64" N, 64°46\'53.04" W',
+            // Degrees and decimal minutes
+            'dm' => '32°17.694\' N, 64°46.884\' W',
+            // Various GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '32.390556',
-                'min' => '32.246944',
-            ],
-            'longitude' => [
-                'max' => '-64.633333',
-                'min' => '-64.882778',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

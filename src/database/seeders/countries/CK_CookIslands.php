@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class CK_CookIslands extends Seeder
+class CK_CookIslands extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'oceania';
- 
+    public ?string $region = 'oceania';
+
     /**
      * Run the database seeds.
      *
@@ -29,58 +29,213 @@ class CK_CookIslands extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Cook Islands';
+
+        // Set the country's official name
         $this->official_name = 'Cook Islands';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'CK';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'COK';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '184';
+
+        // Set the international dialing code
         $this->international_phone = '682';
- 
-        $this->languages = ['en'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['en', 'rar']; // English and Cook Islands Māori (Rarotongan) are official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.ck'];
-        $this->wmo = 'KU';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '10 Mbps', // Estimated average speed
+            // Average mobile connection speed
+            'average_speed_mobile' => '5 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '50%'; // Percentage of the population with internet access
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = null; // No dedicated national cybersecurity agency
+
+        // List popular web technologies in the Cook Islands
+        $this->popular_technologies = ['PHP', 'JavaScript', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = null; // No specific WMO code
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1899402';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'New Zealand dollar',
+            // Currency code
+            'code' => 'NZD',
+            // Currency symbol
+            'symbol' => '$',
+            // Main unit
+            'main_unit' => 'dollar',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['0.10', '0.20', '0.50'],
+        ];
+
+        // Set the population
+        $this->population = 17564; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 236; // km²
+
+        // Set the capital city
+        $this->capital = 'Avarua';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Pacific/Rarotonga',
+                // Standard time offset
+                'standard_time' => 'UTC-10', // Cook Islands Standard Time (CIST)
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1965-08-04'; // Date of self-governance in free association with New Zealand
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations (Non-member observer)',
+            'Pacific Islands Forum',
+            'Secretariat of the Pacific Community',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 0.38; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Cook Islands Christian Church, Roman Catholicism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Parliamentary democracy in free association with New Zealand';
+
+        // Set the national sport
+        $this->national_sport = 'Rugby union'; // Rugby union is the most popular sport
+
+        // Define bordering countries
+        $this->borders = []; // Island territory with no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇨🇰',
+            // Unicode code points
             'uCode' => 'U+1F1E8 U+1F1F0',
+            // HTML entities
+            'html' => '&#x1F1E8;&#x1F1F0;',
+            // CSS entities
+            'css' => '\\1F1E8\\1F1F0',
+            // Decimal Unicode entities
+            'decimal' => '&#127464;&#127472;',
+            // Direct UTF-8 string
+            'utf8' => '🇨🇰',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDE8\uD83C\uDDF0',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-ck:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1E8;&#x1F1F0;',
         ];
-        $this->color = [
-            'hex' => [
-                '#01796f',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#00247D',
+                // RGB color values
+                'rgb' => '0,36,125',
+                // CMYK color values
+                'cmyk' => '100,71,0,51',
+                // HSL color values
+                'hsl' => '220,100%,24%',
+                // HSV color values
+                'hsv' => '220,100%,49%',
+                // Pantone color code
+                'pantone' => '280 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '1,121,111',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '21 14 S',
-                'desc' => '-21.22330665588379',
-            ],
-            'longitude' => [
-                'classic' => '159 46 W',
-                'desc' => '-159.7405548095703',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '-21.2367',
+            // Longitude in decimal degrees
+            'longitude' => '-159.7776',
+            // Degrees with decimal
+            'dd' => '21.2367° S, 159.7776° W',
+            // Degrees, minutes, seconds
+            'dms' => '21°14\'12.12" S, 159°46\'39.36" W',
+            // Degrees and decimal minutes
+            'dm' => '21°14.202\' S, 159°46.656\' W',
+            // Various GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '-8.918611',
-                'min' => '-21.953056',
-            ],
-            'longitude' => [
-                'max' => '-157.3375',
-                'min' => '-171.783333',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

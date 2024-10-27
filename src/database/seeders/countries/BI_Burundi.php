@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class BI_Burundi extends Seeder
+class BI_Burundi extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'africa';
- 
+    public ?string $region = 'africa';
+
     /**
      * Run the database seeds.
      *
@@ -29,60 +29,233 @@ class BI_Burundi extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Burundi';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Burundi';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'BI';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'BDI';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '108';
+
+        // Set the international dialing code
         $this->international_phone = '257';
- 
-        $this->languages = ['fr','rn'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['rn', 'fr', 'en', 'sw']; // Kirundi and French are official; English and Swahili are recognized
+
+        // Define the top-level domain(s)
         $this->tld = ['.bi'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '5 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '10 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '5%'; // Percentage of the population with internet access
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'National Agency for the Security of Information Systems (ANSMSI)';
+
+        // List popular web technologies in Burundi
+        $this->popular_technologies = ['PHP', 'JavaScript', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'BI';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '433561';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Burundian franc',
+            // Currency code
+            'code' => 'BIF',
+            // Currency symbol
+            'symbol' => 'FBu',
+            // Main unit
+            'main_unit' => 'franc',
+            // Subunit
+            'sub_unit' => 'centime',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['10', '20', '50', '100', '500', '1,000', '2,000', '5,000', '10,000'],
+            // Main coins
+            'coins_main' => ['1', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '50'],
+        ];
+
+        // Set the population
+        $this->population = 11890781; // As of recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 27834; // km²
+
+        // Set the capital city
+        $this->capital = 'Gitega';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            // Time zone identifier
+            'timezone_id' => 'Africa/Bujumbura',
+            // Standard time offset
+            'standard_time' => 'UTC+2', // Central Africa Time
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1962-07-01'; // Date of independence from Belgium
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union',
+            'East African Community',
+            'COMESA',
+            'Organisation of Islamic Cooperation',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 3.1; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = ['Christianity', 'Traditional African religions', 'Islam'];
+
+        // Describe the form of government
+        $this->government = 'Presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)';
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Rwanda', 'iso_alpha_2' => 'RW'],
+            ['name' => 'Tanzania', 'iso_alpha_2' => 'TZ'],
+            ['name' => 'Democratic Republic of the Congo', 'iso_alpha_2' => 'CD'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇧🇮',
+            // Unicode code points
             'uCode' => 'U+1F1E7 U+1F1EE',
+            // HTML entities
+            'html' => '&#x1F1E7;&#x1F1EE;',
+            // CSS entities
+            'css' => '\\1F1E7\\1F1EE',
+            // Decimal Unicode entities
+            'decimal' => '&#127463;&#127470;',
+            // Direct UTF-8 string
+            'utf8' => '🇧🇮',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDE7\uD83C\uDDEE',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-bi:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1E7;&#x1F1EE;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffffff',
-                '#008000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#CF2029',
+                // RGB color values
+                'rgb' => '207,32,41',
+                // CMYK color values
+                'cmyk' => '0,85,80,19',
+                // HSL color values
+                'hsl' => '357,73%,47%',
+                // HSV color values
+                'hsv' => '357,85%,81%',
+                // Pantone color code
+                'pantone' => 'Red 032 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,255',
-                '0,128,0',
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#007749',
+                // RGB color values
+                'rgb' => '0,119,73',
+                // CMYK color values
+                'cmyk' => '100,0,39,53',
+                // HSL color values
+                'hsl' => '158,100%,23%',
+                // HSV color values
+                'hsv' => '158,100%,47%',
+                // Pantone color code
+                'pantone' => 'Green C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '3 30 S',
-                'desc' => '-3.365208148956299',
-            ],
-            'longitude' => [
-                'classic' => '30 00 E',
-                'desc' => '29.88650894165039',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '-3.3731',
+            // Longitude in decimal degrees
+            'longitude' => '29.9189',
+            // Degrees with decimal
+            'dd' => '3.3731° S, 29.9189° E',
+            // Degrees, minutes, seconds
+            'dms' => '3°22\'23.16" S, 29°55\'08.04" E',
+            // Degrees and decimal minutes
+            'dm' => '3°22.386\' S, 29°55.134\' E',
+            // Various GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '-2.3425',
-                'min' => '-4.443333',
-            ],
-            'longitude' => [
-                'max' => '30.831389',
-                'min' => '29.023889',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

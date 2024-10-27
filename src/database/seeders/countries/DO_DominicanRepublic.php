@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class DO_DominicanRepublic extends Seeder
+class DO_DominicanRepublic extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'americas';
- 
+    public ?string $region = 'americas';
+
     /**
      * Run the database seeds.
      *
@@ -29,60 +29,237 @@ class DO_DominicanRepublic extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Dominican Republic';
+
+        // Set the country's official name
         $this->official_name = 'Dominican Republic';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'DO';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'DOM';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '214';
-        $this->international_phone = '1-809,1-829,1-849';
- 
-        $this->languages = ['es'];
+
+        // Set the international dialing code
+        $this->international_phone = '1-809, 1-829, 1-849';
+
+        // Define the languages spoken in the country
+        $this->languages = ['es']; // Spanish is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.do'];
-        $this->wmo = 'DR';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '40 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '20 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '74%'; // Percentage of the population with internet access
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Instituto Dominicano de las Telecomunicaciones (INDOTEL)';
+
+        // List popular web technologies in the Dominican Republic
+        $this->popular_technologies = ['PHP', 'JavaScript', 'WordPress', 'Python'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'DO';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '3508796';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Dominican peso',
+            // Currency code
+            'code' => 'DOP',
+            // Currency symbol
+            'symbol' => 'RD$',
+            // Main unit
+            'main_unit' => 'peso',
+            // Subunit
+            'sub_unit' => 'centavo',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['50', '100', '200', '500', '1,000', '2,000'],
+            // Main coins
+            'coins_main' => ['1', '5', '10', '25'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10 centavos'],
+        ];
+
+        // Set the population
+        $this->population = 10996710; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 48671; // km²
+
+        // Set the capital city
+        $this->capital = 'Santo Domingo';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'America/Santo_Domingo',
+                // Standard time offset
+                'standard_time' => 'UTC-4', // Atlantic Standard Time (AST)
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1844-02-27'; // Date of independence from Haiti
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Organization of American States (OAS)',
+            'Caribbean Community (CARICOM) - Observer',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 94.2; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism, Protestantism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Baseball'; // Baseball is the most popular sport in the Dominican Republic
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Haiti', 'iso_alpha_2' => 'HT'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇩🇴',
+            // Unicode code points
             'uCode' => 'U+1F1E9 U+1F1F4',
+            // HTML entities
+            'html' => '&#x1F1E9;&#x1F1F4;',
+            // CSS entities
+            'css' => '\\1F1E9\\1F1F4',
+            // Decimal Unicode entities
+            'decimal' => '&#127465;&#127476;',
+            // Direct UTF-8 string
+            'utf8' => '🇩🇴',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDE9\uD83C\uDDF4',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-do:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1E9;&#x1F1F4;',
         ];
-        $this->color = [
-            'hex' => [
-                '#0000ff',
-                '#ffffff',
-                '#ff0000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#C60C30',
+                // RGB color values
+                'rgb' => '198,12,48',
+                // CMYK color values
+                'cmyk' => '0,94,76,22',
+                // HSL color values
+                'hsl' => '348,89%,41%',
+                // HSV color values
+                'hsv' => '348,94%,78%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,0,255',
-                '255,255,255',
-                '255,0,0',
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#002D62',
+                // RGB color values
+                'rgb' => '0,45,98',
+                // CMYK color values
+                'cmyk' => '100,54,0,62',
+                // HSL color values
+                'hsl' => '212,100%,19%',
+                // HSV color values
+                'hsv' => '212,100%,38%',
+                // Pantone color code
+                'pantone' => '281 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '19 00 N',
-                'desc' => '19.019824981689453',
-            ],
-            'longitude' => [
-                'classic' => '70 40 W',
-                'desc' => '-70.79285430908203',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '18.7357',
+            // Longitude in decimal degrees
+            'longitude' => '-70.1627',
+            // Degrees with decimal
+            'dd' => '18.7357° N, 70.1627° W',
+            // Degrees, minutes, seconds
+            'dms' => '18°44\'8.52" N, 70°9\'45.72" W',
+            // Degrees and decimal minutes
+            'dm' => '18°44.142\' N, 70°9.762\' W',
+            // Various GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '19.933333',
-                'min' => '17.473056',
-            ],
-            'longitude' => [
-                'max' => '-68.316667',
-                'min' => '-71.966667',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

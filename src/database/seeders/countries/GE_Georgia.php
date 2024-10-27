@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class GE_Georgia extends Seeder
+class GE_Georgia extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'asia';
- 
+    public ?string $region = 'asia';
+
     /**
      * Run the database seeds.
      *
@@ -29,58 +29,220 @@ class GE_Georgia extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Georgia';
+
+        // Set the country's official name
         $this->official_name = 'Georgia';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'GE';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'GEO';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '268';
+
+        // Set the international dialing code
         $this->international_phone = '995';
- 
-        $this->languages = ['ka'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['ka']; // Georgian is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.ge'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '40 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '20 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '65%'; // Growing internet access in Georgia
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'CERT.GOV.GE (Computer Emergency Response Team of Georgia)';
+
+        // List popular web technologies in Georgia
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'GG';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '614540';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Georgian lari',
+            // Currency code
+            'code' => 'GEL',
+            // Currency symbol
+            'symbol' => '₾',
+            // Main unit
+            'main_unit' => 'lari',
+            // Subunit
+            'sub_unit' => 'tetri',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100', '200'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['1', '2', '5', '10', '20', '50 tetri'],
+        ];
+
+        // Set the population
+        $this->population = 3714000; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 69700; // km²
+
+        // Set the capital city
+        $this->capital = 'Tbilisi';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Tbilisi',
+                // Standard time offset
+                'standard_time' => 'UTC+4',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1991-04-09'; // Declaration of independence from the Soviet Union
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Council of Europe',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'GUAM Organization for Democracy and Economic Development',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 16.2; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Eastern Orthodox Church)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary republic';
+
+        // Set the national sport
+        $this->national_sport = 'Rugby Union'; // Rugby is popular, but wrestling and football are also significant
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Russia', 'iso_alpha_2' => 'RU'],
+            ['name' => 'Azerbaijan', 'iso_alpha_2' => 'AZ'],
+            ['name' => 'Armenia', 'iso_alpha_2' => 'AM'],
+            ['name' => 'Turkey', 'iso_alpha_2' => 'TR'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇬🇪',
+            // Unicode code points
             'uCode' => 'U+1F1EC U+1F1EA',
+            // HTML entities
+            'html' => '&#x1F1EC;&#x1F1EA;',
+            // CSS entities
+            'css' => '\\1F1EC\\1F1EA',
+            // Decimal Unicode entities
+            'decimal' => '&#127468;&#127466;',
+            // Direct UTF-8 string
+            'utf8' => '🇬🇪',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDEC\uD83C\uDDEA',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-ge:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1EC;&#x1F1EA;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffffff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#E4002B',
+                // RGB color values
+                'rgb' => '228,0,43',
+                // CMYK color values
+                'cmyk' => '0,100,81,11',
+                // HSL color values
+                'hsl' => '350,100%,44%',
+                // HSV color values
+                'hsv' => '350,100%,89%',
+                // Pantone color code
+                'pantone' => '185 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,255',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '42 00 N',
-                'desc' => '42.3207845',
-            ],
-            'longitude' => [
-                'classic' => '43 30 E',
-                'desc' => '43.3713615',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '42.3154',
+            // Longitude in decimal degrees
+            'longitude' => '43.3569',
+            // Degrees with decimal
+            'dd' => '42.3154° N, 43.3569° E',
+            // Degrees, minutes, seconds
+            'dms' => '42°18\'55.44" N, 43°21\'24.84" E',
+            // Degrees and decimal minutes
+            'dm' => '42°18.924\' N, 43°21.414\' E',
+            // GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '43.570556',
-                'min' => '41.15',
-            ],
-            'longitude' => [
-                'max' => '46.635556',
-                'min' => '40.013056',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

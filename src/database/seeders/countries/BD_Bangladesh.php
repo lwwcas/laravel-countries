@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class BD_Bangladesh extends Seeder
+class BD_Bangladesh extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'asia';
- 
+    public ?string $region = 'asia';
+
     /**
      * Run the database seeds.
      *
@@ -29,60 +29,223 @@ class BD_Bangladesh extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Bangladesh';
+
+        // Set the country's official name
         $this->official_name = 'People\'s Republic of Bangladesh';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'BD';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'BGD';
-        $this->iso_numeric = '50';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
+        $this->iso_numeric = '050';
+
+        // Set the international dialing code
         $this->international_phone = '880';
- 
-        $this->languages = ['bn'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['bn']; // Bengali is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.bd'];
-        $this->wmo = 'BW';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = [
+            '.com.bd', // Commercial entities
+            '.edu.bd', // Educational institutions
+            '.gov.bd', // Government entities
+            '.net.bd', // Network providers
+            '.org.bd', // Organizations
+            '.ac.bd', // Academic institutions
+            '.mil.bd', // Military institutions
+        ];
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '40 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '17 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '76%'; // Percentage of the population with internet access
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Bangladesh e-Government Computer Incident Response Team (BGD e-GOV CIRT)';
+
+        // List popular web technologies in Bangladesh
+        $this->popular_technologies = ['PHP', 'JavaScript', 'WordPress', 'Laravel'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'BG';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1210997';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Bangladeshi taka',
+            // Currency code
+            'code' => 'BDT',
+            // Currency symbol
+            'symbol' => '৳',
+            // Main unit
+            'main_unit' => 'taka',
+            // Subunit
+            'sub_unit' => 'poisha',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['2', '5', '10', '20', '50', '100', '500', '1000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 169356251; // As of recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 147570; // km²
+
+        // Set the capital city
+        $this->capital = 'Dhaka';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            // Time zone identifier
+            'timezone_id' => 'Asia/Dhaka',
+            // Standard time offset
+            'standard_time' => 'UTC+6', // Bangladesh Standard Time
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1971-03-26'; // Date of independence from Pakistan
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Commonwealth of Nations',
+            'SAARC',
+            'OIC',
+            'IMF',
+            'World Bank',
+            'WTO',
+            'BIMSTEC',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 450; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = ['Islam', 'Hinduism', 'Buddhism', 'Christianity'];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary constitutional republic';
+
+        // Set the national sport
+        $this->national_sport = 'Kabaddi';
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'India', 'iso_alpha_2' => 'IN'],
+            ['name' => 'Myanmar', 'iso_alpha_2' => 'MM'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇧🇩',
+            // Unicode code points
             'uCode' => 'U+1F1E7 U+1F1E9',
+            // HTML entities
+            'html' => '&#x1F1E7;&#x1F1E9;',
+            // CSS entities
+            'css' => '\\1F1E7\\1F1E9',
+            // Decimal Unicode entities
+            'decimal' => '&#127463;&#127465;',
+            // Direct UTF-8 string
+            'utf8' => '🇧🇩',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDE7\uD83C\uDDE9',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-bd:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1E7;&#x1F1E9;',
         ];
-        $this->color = [
-            'hex' => [
-                '#f4263f',
-                '#006a4d',
-                '#ff9900',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'dark green',
+                // Hexadecimal color code
+                'hex' => '#006A4E',
+                // RGB color values
+                'rgb' => '0,106,78',
+                // CMYK color values
+                'cmyk' => '100,0,26,58',
+                // HSL color values
+                'hsl' => '164,100%,21%',
+                // HSV color values
+                'hsv' => '164,100%,42%',
+                // Pantone color code
+                'pantone' => 'Green C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '244,38,63',
-                '0,106,77',
-                '255,153,0',
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#F42A41',
+                // RGB color values
+                'rgb' => '244,42,65',
+                // CMYK color values
+                'cmyk' => '0,83,73,4',
+                // HSL color values
+                'hsl' => '350,90%,56%',
+                // HSV color values
+                'hsv' => '350,83%,96%',
+                // Pantone color code
+                'pantone' => 'Red 032 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '24 00 N',
-                'desc' => '23.730104446411133',
-            ],
-            'longitude' => [
-                'classic' => '90 00 E',
-                'desc' => '90.30652618408203',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '23.8103',
+            // Longitude in decimal degrees
+            'longitude' => '90.4125',
+            // Degrees with decimal
+            'dd' => '23.8103° N, 90.4125° E',
+            // Degrees, minutes, seconds
+            'dms' => '23°48\'37.08" N, 90°24\'45.00" E',
+            // Degrees and decimal minutes
+            'dm' => '23°48.618\' N, 90°24.750\' E',
+            // Various GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '26.5',
-                'min' => '20.6',
-            ],
-            'longitude' => [
-                'max' => '92.683333',
-                'min' => '84',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

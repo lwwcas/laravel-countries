@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class BS_Bahamas extends Seeder
+class BS_Bahamas extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'americas';
- 
+    public ?string $region = 'americas';
+
     /**
      * Run the database seeds.
      *
@@ -29,60 +29,232 @@ class BS_Bahamas extends Seeder
      */
     public function run()
     {
-        $this->name = 'Bahamas';
+        // Set the country's common name
+        $this->name = 'The Bahamas';
+
+        // Set the country's official name
         $this->official_name = 'Commonwealth of the Bahamas';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'BS';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'BHS';
-        $this->iso_numeric = '44';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
+        $this->iso_numeric = '044';
+
+        // Set the international dialing code
         $this->international_phone = '1-242';
- 
-        $this->languages = ['en'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['en']; // English is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.bs'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '50 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '30 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '85%'; // Percentage of the population with internet access
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Bahamas Computer Emergency Response Team (CERT)';
+
+        // List popular web technologies in the Bahamas
+        $this->popular_technologies = ['PHP', 'JavaScript', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'BA';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '3572887';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Bahamian dollar',
+            // Currency code
+            'code' => 'BSD',
+            // Currency symbol
+            'symbol' => '$',
+            // Main unit
+            'main_unit' => 'dollar',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['0.50', '1', '3', '5', '10', '20', '50', '100'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['0.01', '0.05', '0.10', '0.15', '0.25', '0.50'],
+        ];
+
+        // Set the population
+        $this->population = 393248; // As of recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 13943; // km²
+
+        // Set the capital city
+        $this->capital = 'Nassau';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            // Time zone identifier
+            'timezone_id' => 'America/Nassau',
+            // Standard time offset
+            'standard_time' => 'UTC−5', // Eastern Standard Time
+            // Daylight saving time offset
+            'daylight_saving_time' => 'UTC−4', // Eastern Daylight Time
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1973-07-10'; // Date of independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Commonwealth of Nations',
+            'CARICOM',
+            'Organization of American States (OAS)',
+            'IMF',
+            'World Trade Organization (WTO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 12.16; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = ['Christianity (Protestant, Catholic)'];
+
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary constitutional monarchy';
+
+        // Set the national sport
+        $this->national_sport = 'Sailing';
+
+        // Define bordering countries
+        $this->borders = []; // Island nation with no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇧🇸',
+            // Unicode code points
             'uCode' => 'U+1F1E7 U+1F1F8',
+            // HTML entities
+            'html' => '&#x1F1E7;&#x1F1F8;',
+            // CSS entities
+            'css' => '\\1F1E7\\1F1F8',
+            // Decimal Unicode entities
+            'decimal' => '&#127463;&#127480;',
+            // Direct UTF-8 string
+            'utf8' => '🇧🇸',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDE7\uD83C\uDDF8',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-bs:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1E7;&#x1F1F8;',
         ];
-        $this->color = [
-            'hex' => [
-                '#40e0d0',
-                '#ffff00',
-                '#000000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Aquamarine',
+                // Web color name
+                'web_name' => 'aquamarine',
+                // Hexadecimal color code
+                'hex' => '#00ABC9',
+                // RGB color values
+                'rgb' => '0,171,201',
+                // CMYK color values
+                'cmyk' => '100,15,0,21',
+                // HSL color values
+                'hsl' => '190,100%,39%',
+                // HSV color values
+                'hsv' => '190,100%,79%',
+                // Pantone color code
+                'pantone' => 'Process Blue C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '64,224,208',
-                '255,255,0',
-                '0,0,0',
+            [
+                // Color name
+                'name' => 'Gold',
+                // Web color name
+                'web_name' => 'gold',
+                // Hexadecimal color code
+                'hex' => '#FCD116',
+                // RGB color values
+                'rgb' => '252,209,22',
+                // CMYK color values
+                'cmyk' => '0,17,91,1',
+                // HSL color values
+                'hsl' => '48,98%,54%',
+                // HSV color values
+                'hsv' => '48,91%,99%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Black',
+                // Web color name
+                'web_name' => 'black',
+                // Hexadecimal color code
+                'hex' => '#000000',
+                // RGB color values
+                'rgb' => '0,0,0',
+                // CMYK color values
+                'cmyk' => '0,0,0,100',
+                // HSL color values
+                'hsl' => '0,0%,0%',
+                // HSV color values
+                'hsv' => '0,0%,0%',
+                // Pantone color code
+                'pantone' => 'Black',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '24 15 N',
-                'desc' => '25.035648345947266',
-            ],
-            'longitude' => [
-                'classic' => '76 00 W',
-                'desc' => '-77.39512634277344',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '25.0443',
+            // Longitude in decimal degrees
+            'longitude' => '-77.3504',
+            // Degrees with decimal
+            'dd' => '25.0443° N, 77.3504° W',
+            // Degrees, minutes, seconds
+            'dms' => '25°2\'39.48" N, 77°21\'1.44" W',
+            // Degrees and decimal minutes
+            'dm' => '25°2.658\' N, 77°21.024\' W',
+            // Various GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '29.375',
-                'min' => '20',
-            ],
-            'longitude' => [
-                'max' => '-70',
-                'min' => '-80.483333',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

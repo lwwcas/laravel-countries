@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class CU_Cuba extends Seeder
+class CU_Cuba extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'americas';
- 
+    public ?string $region = 'americas';
+
     /**
      * Run the database seeds.
      *
@@ -29,60 +29,237 @@ class CU_Cuba extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Cuba';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Cuba';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'CU';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'CUB';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '192';
+
+        // Set the international dialing code
         $this->international_phone = '53';
- 
-        $this->languages = ['es'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['es']; // Spanish is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.cu'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '12 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '5 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '43%'; // Percentage of the population with internet access
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Office of Computer Security (OSE)';
+
+        // List popular web technologies in Cuba
+        $this->popular_technologies = ['PHP', 'JavaScript', 'Python', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'CU';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '3562981';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Cuban peso',
+            // Currency code
+            'code' => 'CUP',
+            // Currency symbol
+            'symbol' => '$',
+            // Main unit
+            'main_unit' => 'peso',
+            // Subunit
+            'sub_unit' => 'centavo',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '3', '5', '10', '20', '50', '100', '200', '500', '1000'],
+            // Main coins
+            'coins_main' => ['1', '3', '5', '20'],
+            // Subunit coins
+            'coins_sub' => ['1', '5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 11326616; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 109884; // km²
+
+        // Set the capital city
+        $this->capital = 'Havana';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'America/Havana',
+                // Standard time offset
+                'standard_time' => 'UTC-5', // Cuba Standard Time (CST)
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC-4', // Cuba Daylight Time (CDT)
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1902-05-20'; // Date of independence from the United States (full independence from Spain was declared in 1898)
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Group of 77',
+            'Non-Aligned Movement',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 100.023; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism, Protestantism)',
+            'Afro-Cuban religions (Santería)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary Marxist–Leninist one-party socialist republic';
+
+        // Set the national sport
+        $this->national_sport = 'Baseball'; // Baseball is the national sport of Cuba
+
+        // Define bordering countries
+        $this->borders = []; // Cuba is an island nation with no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇨🇺',
+            // Unicode code points
             'uCode' => 'U+1F1E8 U+1F1FA',
+            // HTML entities
+            'html' => '&#x1F1E8;&#x1F1FA;',
+            // CSS entities
+            'css' => '\\1F1E8\\1F1FA',
+            // Decimal Unicode entities
+            'decimal' => '&#127464;&#127482;',
+            // Direct UTF-8 string
+            'utf8' => '🇨🇺',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDE8\uD83C\uDDFA',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-cu:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1E8;&#x1F1FA;',
         ];
-        $this->color = [
-            'hex' => [
-                '#0000ff',
-                '#ffffff',
-                '#ff0000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#D52B1E',
+                // RGB color values
+                'rgb' => '213,43,30',
+                // CMYK color values
+                'cmyk' => '0,80,90,10',
+                // HSL color values
+                'hsl' => '4,75%,47%',
+                // HSV color values
+                'hsv' => '4,85%,83%',
+                // Pantone color code
+                'pantone' => '199 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,0,255',
-                '255,255,255',
-                '255,0,0',
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#0033A0',
+                // RGB color values
+                'rgb' => '0,51,160',
+                // CMYK color values
+                'cmyk' => '100,69,0,37',
+                // HSL color values
+                'hsl' => '224,100%,41%',
+                // HSV color values
+                'hsv' => '224,100%,63%',
+                // Pantone color code
+                'pantone' => 'Pantone 286 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '21 30 N',
-                'desc' => '22.066335678100586',
-            ],
-            'longitude' => [
-                'classic' => '80 00 W',
-                'desc' => '-79.4531478881836',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '23.1136',
+            // Longitude in decimal degrees
+            'longitude' => '-82.3666',
+            // Degrees with decimal
+            'dd' => '23.1136° N, 82.3666° W',
+            // Degrees, minutes, seconds
+            'dms' => '23°6\'49.00" N, 82°21\'59.76" W',
+            // Degrees and decimal minutes
+            'dm' => '23°6.816\' N, 82°21.996\' W',
+            // Various GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '23.265833',
-                'min' => '19.828056',
-            ],
-            'longitude' => [
-                'max' => '-74.135',
-                'min' => '-84.950833',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

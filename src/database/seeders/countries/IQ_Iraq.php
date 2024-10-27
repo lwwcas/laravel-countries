@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class IQ_Iraq extends Seeder
+class IQ_Iraq extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'asia';
- 
+    public ?string $region = 'asia';
+
     /**
      * Run the database seeds.
      *
@@ -29,62 +29,266 @@ class IQ_Iraq extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Iraq';
+
+        // Set the country's official name
         $this->official_name = 'Republic of Iraq';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'IQ';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'IRQ';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '368';
+
+        // Set the international dialing code
         $this->international_phone = '964';
- 
-        $this->languages = ['ar','ku'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['ar', 'ku']; // Arabic and Kurdish are official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.iq'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '25 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '15 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '49%'; // As per recent estimates
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Iraqi Computer Emergency Response Team (CERT-IQ)';
+
+        // List popular web technologies in Iraq
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'IQ';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '99237';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Iraqi dinar',
+            // Currency code
+            'code' => 'IQD',
+            // Currency symbol
+            'symbol' => 'ع.د',
+            // Main unit
+            'main_unit' => 'dinar',
+            // Subunit
+            'sub_unit' => 'fils',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 1000,
+            // Banknotes in circulation
+            'banknotes' => ['250', '500', '1000', '5000', '10,000', '25,000', '50,000'],
+            // Main coins
+            'coins_main' => [],
+            // Subunit coins (only numbers as per your request)
+            'coins_sub' => [], // Coins are rarely used due to inflation
+        ];
+
+        // Set the population
+        $this->population = 40222493; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 438317; // km²
+
+        // Set the capital city
+        $this->capital = 'Baghdad';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Baghdad',
+                // Standard time offset
+                'standard_time' => 'UTC+3',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1932-10-03'; // Independence from the United Kingdom
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Arab League',
+            'Organization of Islamic Cooperation (OIC)',
+            'Organization of Petroleum Exporting Countries (OPEC)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Non-Aligned Movement',
+            'World Trade Organization (WTO) (observer)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 192; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam (Shia and Sunni)',
+            'Christianity',
+            'Others (Yazidism, Mandaeism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Federal parliamentary republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football is the most popular sport in Iraq
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Iran', 'iso_alpha_2' => 'IR'],
+            ['name' => 'Jordan', 'iso_alpha_2' => 'JO'],
+            ['name' => 'Kuwait', 'iso_alpha_2' => 'KW'],
+            ['name' => 'Saudi Arabia', 'iso_alpha_2' => 'SA'],
+            ['name' => 'Syria', 'iso_alpha_2' => 'SY'],
+            ['name' => 'Turkey', 'iso_alpha_2' => 'TR'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇮🇶',
+            // Unicode code points
             'uCode' => 'U+1F1EE U+1F1F6',
+            // HTML entities
+            'html' => '&#x1F1EE;&#x1F1F6;',
+            // CSS entities
+            'css' => '\\1F1EE\\1F1F6',
+            // Decimal Unicode entities
+            'decimal' => '&#127470;&#127478;',
+            // Direct UTF-8 string
+            'utf8' => '🇮🇶',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDEE\uD83C\uDDF6',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-iq:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1EE;&#x1F1F6;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffffff',
-                '#000000',
-                '#008000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#CE1126',
+                // RGB color values
+                'rgb' => '206,17,38',
+                // CMYK color values
+                'cmyk' => '0,92,82,19',
+                // HSL color values
+                'hsl' => '350,84%,44%',
+                // HSV color values
+                'hsv' => '350,92%,81%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,255',
-                '0,0,0',
-                '0,128,0',
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Black',
+                // Web color name
+                'web_name' => 'black',
+                // Hexadecimal color code
+                'hex' => '#000000',
+                // RGB color values
+                'rgb' => '0,0,0',
+                // CMYK color values
+                'cmyk' => '0,0,0,100',
+                // HSL color values
+                'hsl' => '0,0%,0%',
+                // HSV color values
+                'hsv' => '0,0%,0%',
+                // Pantone color code
+                'pantone' => 'Black C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#007A3D',
+                // RGB color values
+                'rgb' => '0,122,61',
+                // CMYK color values
+                'cmyk' => '100,0,50,52',
+                // HSL color values
+                'hsl' => '152,100%,24%',
+                // HSV color values
+                'hsv' => '152,100%,48%',
+                // Pantone color code
+                'pantone' => '355 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '33 00 N',
-                'desc' => '33.044586181640625',
-            ],
-            'longitude' => [
-                'classic' => '44 00 E',
-                'desc' => '43.77495574951172',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '33.2232',
+            // Longitude in decimal degrees
+            'longitude' => '43.6793',
+            // Degrees with decimal
+            'dd' => '33.2232° N, 43.6793° E',
+            // Degrees, minutes, seconds
+            'dms' => '33°13\'23.52" N, 43°40\'45.48" E',
+            // Degrees and decimal minutes
+            'dm' => '33°13.392\' N, 43°40.758\' E',
+            // GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '37.352778',
-                'min' => '28.866667',
-            ],
-            'longitude' => [
-                'max' => '48.833333',
-                'min' => '38.800871',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

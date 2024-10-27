@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class KH_Cambodia extends Seeder
+class KH_Cambodia extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'asia';
- 
+    public ?string $region = 'asia';
+
     /**
      * Run the database seeds.
      *
@@ -29,58 +29,241 @@ class KH_Cambodia extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Cambodia';
+
+        // Set the country's official name
         $this->official_name = 'Kingdom of Cambodia';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'KH';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'KHM';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '116';
+
+        // Set the international dialing code
         $this->international_phone = '855';
- 
-        $this->languages = ['km'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['km']; // Khmer is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.kh'];
-        $this->wmo = 'KP';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '20 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '15 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '40%'; // As per recent estimates
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'National Cambodia Computer Emergency Response Team (CamCERT)';
+
+        // List popular web technologies in Cambodia
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'CB';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1831722';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Cambodian riel',
+            // Currency code
+            'code' => 'KHR',
+            // Currency symbol
+            'symbol' => '៛',
+            // Main unit
+            'main_unit' => 'riel',
+            // Subunit
+            'sub_unit' => 'sen',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['50', '100', '500', '1000', '2000', '5000', '10,000', '20,000', '50,000', '100,000'],
+            // Main coins
+            'coins_main' => ['50', '100', '200', '500'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '20'],
+        ];
+
+        // Set the population
+        $this->population = 16718971; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 181035; // km²
+
+        // Set the capital city
+        $this->capital = 'Phnom Penh';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Phnom_Penh',
+                // Standard time offset
+                'standard_time' => 'UTC+7',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1953-11-09'; // Independence from France
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Association of Southeast Asian Nations (ASEAN)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Non-Aligned Movement',
+            'East Asia Summit (EAS)',
+            'Organisation Internationale de la Francophonie',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 26.6; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Theravada Buddhism',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary dominant-party parliamentary elective constitutional monarchy';
+
+        // Set the national sport
+        $this->national_sport = 'Khmer traditional wrestling and Bokator';
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Thailand', 'iso_alpha_2' => 'TH'],
+            ['name' => 'Laos', 'iso_alpha_2' => 'LA'],
+            ['name' => 'Vietnam', 'iso_alpha_2' => 'VN'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇰🇭',
+            // Unicode code points
             'uCode' => 'U+1F1F0 U+1F1ED',
+            // HTML entities
+            'html' => '&#x1F1F0;&#x1F1ED;',
+            // CSS entities
+            'css' => '\\1F1F0\\1F1ED',
+            // Decimal Unicode entities
+            'decimal' => '&#127472;&#127469;',
+            // Direct UTF-8 string
+            'utf8' => '🇰🇭',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF0\uD83C\uDDED',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-kh:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F0;&#x1F1ED;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#0000ff',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#A50034',
+                // RGB color values
+                'rgb' => '165,0,52',
+                // CMYK color values
+                'cmyk' => '0,100,68,35',
+                // HSL color values
+                'hsl' => '343°,100%,32%',
+                // HSV color values
+                'hsv' => '343°,100%,65%',
+                // Pantone color code
+                'pantone' => '200 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '0,0,255',
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#032EA1',
+                // RGB color values
+                'rgb' => '3,46,161',
+                // CMYK color values
+                'cmyk' => '98,71,0,37',
+                // HSL color values
+                'hsl' => '226°,96%,32%',
+                // HSV color values
+                'hsv' => '226°,98%,63%',
+                // Pantone color code
+                'pantone' => '287 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '13 00 N',
-                'desc' => '12.570423126220703',
-            ],
-            'longitude' => [
-                'classic' => '105 00 E',
-                'desc' => '104.81391143798828',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '12.5657',
+            // Longitude in decimal degrees
+            'longitude' => '104.9910',
+            // Degrees with decimal
+            'dd' => '12.5657° N, 104.9910° E',
+            // Degrees, minutes, seconds
+            'dms' => '12°33\'56.52" N, 104°59\'27.60" E',
+            // Degrees and decimal minutes
+            'dm' => '12°33.942\' N, 104°59.460\' E',
+            // GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '17.483333',
-                'min' => '9.916667',
-            ],
-            'longitude' => [
-                'max' => '107.566667',
-                'min' => '102.358333',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

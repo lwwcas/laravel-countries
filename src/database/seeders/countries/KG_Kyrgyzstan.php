@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class KG_Kyrgyzstan extends Seeder
+class KG_Kyrgyzstan extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'asia';
- 
+    public ?string $region = 'asia';
+
     /**
      * Run the database seeds.
      *
@@ -29,58 +29,226 @@ class KG_Kyrgyzstan extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Kyrgyzstan';
+
+        // Set the country's official name
         $this->official_name = 'Kyrgyz Republic';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'KG';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'KGZ';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '417';
+
+        // Set the international dialing code
         $this->international_phone = '996';
- 
-        $this->languages = ['ky','ru'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['ky', 'ru']; // Kyrgyz and Russian are official languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.kg'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '18 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '10 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '40%'; // As per recent estimates
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'State Committee for National Security (GKNB)';
+
+        // List popular web technologies in Kyrgyzstan
+        $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'Java'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'KG';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1527747';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Kyrgyzstani som',
+            // Currency code
+            'code' => 'KGS',
+            // Currency symbol
+            'symbol' => 'с',
+            // Main unit
+            'main_unit' => 'som',
+            // Subunit
+            'sub_unit' => 'tyiyn',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['20', '50', '100', '200', '500', '1000', '2000', '5000'],
+            // Main coins
+            'coins_main' => ['1', '3', '5', '10'],
+            // Subunit coins
+            'coins_sub' => ['1', '10', '50'],
+        ];
+
+        // Set the population
+        $this->population = 6524195; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 199951; // km²
+
+        // Set the capital city
+        $this->capital = 'Bishkek';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Asia/Bishkek',
+                // Standard time offset
+                'standard_time' => 'UTC+6',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1991-08-31'; // Independence from the Soviet Union
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Commonwealth of Independent States (CIS)',
+            'Shanghai Cooperation Organisation (SCO)',
+            'Organization of Islamic Cooperation (OIC)',
+            'Turkic Council',
+            'Eurasian Economic Union (EAEU)',
+            'Collective Security Treaty Organization (CSTO)',
+            'Organization for Security and Co-operation in Europe (OSCE)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 8.5; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Islam (Sunni)',
+            'Christianity (Russian Orthodox)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Kok Boru (traditional horse game)';
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'China', 'iso_alpha_2' => 'CN'],
+            ['name' => 'Kazakhstan', 'iso_alpha_2' => 'KZ'],
+            ['name' => 'Tajikistan', 'iso_alpha_2' => 'TJ'],
+            ['name' => 'Uzbekistan', 'iso_alpha_2' => 'UZ'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇰🇬',
+            // Unicode code points
             'uCode' => 'U+1F1F0 U+1F1EC',
+            // HTML entities
+            'html' => '&#x1F1F0;&#x1F1EC;',
+            // CSS entities
+            'css' => '\\1F1F0\\1F1EC',
+            // Decimal Unicode entities
+            'decimal' => '&#127472;&#127468;',
+            // Direct UTF-8 string
+            'utf8' => '🇰🇬',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF0\uD83C\uDDEC',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-kg:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F0;&#x1F1EC;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffff00',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#E8112D',
+                // RGB color values
+                'rgb' => '232,17,45',
+                // CMYK color values
+                'cmyk' => '0,93,81,9',
+                // HSL color values
+                'hsl' => '350°,86%,49%',
+                // HSV color values
+                'hsv' => '350°,93%,91%',
+                // Pantone color code
+                'pantone' => '485 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,255,0',
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFCD00',
+                // RGB color values
+                'rgb' => '255,205,0',
+                // CMYK color values
+                'cmyk' => '0,20,100,0',
+                // HSL color values
+                'hsl' => '48°,100%,50%',
+                // HSV color values
+                'hsv' => '48°,100%,100%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '41 00 N',
-                'desc' => '41.46435546875',
-            ],
-            'longitude' => [
-                'classic' => '75 00 E',
-                'desc' => '74.55522155761719',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '41.2044',
+            // Longitude in decimal degrees
+            'longitude' => '74.7661',
+            // Degrees with decimal
+            'dd' => '41.2044° N, 74.7661° E',
+            // Degrees, minutes, seconds
+            'dms' => '41°12\'15.84" N, 74°45\'57.96" E',
+            // Degrees and decimal minutes
+            'dm' => '41°12.264\' N, 74°45.966\' E',
+            // GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '43.016667',
-                'min' => '39.25',
-            ],
-            'longitude' => [
-                'max' => '80.115833',
-                'min' => '69.333333',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

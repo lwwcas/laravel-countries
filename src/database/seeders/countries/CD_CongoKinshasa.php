@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class CD_CongoKinshasa extends Seeder
+class CD_CongoKinshasa extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'africa';
- 
+    public ?string $region = 'africa';
+
     /**
      * Run the database seeds.
      *
@@ -29,60 +29,253 @@ class CD_CongoKinshasa extends Seeder
      */
     public function run()
     {
-        $this->name = 'Congo - Kinshasa';
+        // Set the country's common name
+        $this->name = 'Democratic Republic of the Congo';
+
+        // Set the country's official name
         $this->official_name = 'Democratic Republic of the Congo';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'CD';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'COD';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '180';
+
+        // Set the international dialing code
         $this->international_phone = '243';
- 
-        $this->languages = ['fr','ln','kg','sw','lu'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['fr', 'ln', 'kg', 'sw', 'lu']; // French is official; Lingala, Kikongo, Swahili, and Tshiluba are national languages
+
+        // Define the top-level domain(s)
         $this->tld = ['.cd'];
-        $this->wmo = 'ZR';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '5 Mbps', // Internet speeds are relatively low
+            // Average mobile connection speed
+            'average_speed_mobile' => '3 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '6%'; // Percentage of the population with internet access
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Agence Nationale de Sécurité des Systèmes d’Information (ANSSI)';
+
+        // List popular web technologies in the Democratic Republic of the Congo
+        $this->popular_technologies = ['PHP', 'JavaScript', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'CG'; // Note: May vary; verify with official sources
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '203312';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Congolese franc',
+            // Currency code
+            'code' => 'CDF',
+            // Currency symbol
+            'symbol' => 'FC',
+            // Main unit
+            'main_unit' => 'franc',
+            // Subunit
+            'sub_unit' => 'centime',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['500', '1,000', '5,000', '10,000', '20,000'],
+            // Main coins
+            'coins_main' => [], // Coins are rarely used due to inflation
+            // Subunit coins
+            'coins_sub' => [],
+        ];
+
+        // Set the population
+        $this->population = 89561403; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 2344858; // km²
+
+        // Set the capital city
+        $this->capital = 'Kinshasa';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Africa/Kinshasa',
+                // Standard time offset
+                'standard_time' => 'UTC+1',
+            ],
+            [
+                'timezone_id' => 'Africa/Lubumbashi',
+                'standard_time' => 'UTC+2',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1960-06-30'; // Date of independence from Belgium
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'African Union',
+            'Southern African Development Community (SADC)',
+            'Economic Community of Central African States (ECCAS)',
+            'Common Market for Eastern and Southern Africa (COMESA)',
+            'Organisation internationale de la Francophonie',
+            'Non-Aligned Movement',
+            'International Monetary Fund (IMF)',
+            'World Trade Organization (WTO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 49.87; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Catholicism, Protestantism, Kimbanguism)',
+            'Islam',
+            'Traditional African religions',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Unitary semi-presidential republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)';
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Angola', 'iso_alpha_2' => 'AO'],
+            ['name' => 'Burundi', 'iso_alpha_2' => 'BI'],
+            ['name' => 'Central African Republic', 'iso_alpha_2' => 'CF'],
+            ['name' => 'Republic of the Congo', 'iso_alpha_2' => 'CG'],
+            ['name' => 'Rwanda', 'iso_alpha_2' => 'RW'],
+            ['name' => 'South Sudan', 'iso_alpha_2' => 'SS'],
+            ['name' => 'Tanzania', 'iso_alpha_2' => 'TZ'],
+            ['name' => 'Uganda', 'iso_alpha_2' => 'UG'],
+            ['name' => 'Zambia', 'iso_alpha_2' => 'ZM'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇨🇩',
+            // Unicode code points
             'uCode' => 'U+1F1E8 U+1F1E9',
+            // HTML entities
+            'html' => '&#x1F1E8;&#x1F1E9;',
+            // CSS entities
+            'css' => '\\1F1E8\\1F1E9',
+            // Decimal Unicode entities
+            'decimal' => '&#127464;&#127465;',
+            // Direct UTF-8 string
+            'utf8' => '🇨🇩',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDE8\uD83C\uDDE9',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-cd:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1E8;&#x1F1E9;',
         ];
-        $this->color = [
-            'hex' => [
-                '#007fff',
-                '#ffff00',
-                '#ff0000',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'sky blue',
+                // Hexadecimal color code
+                'hex' => '#007FFF',
+                // RGB color values
+                'rgb' => '0,127,255',
+                // CMYK color values
+                'cmyk' => '100,50,0,0',
+                // HSL color values
+                'hsl' => '210,100%,50%',
+                // HSV color values
+                'hsv' => '210,100%,100%',
+                // Pantone color code
+                'pantone' => '285 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,127,255',
-                '255,255,0',
-                '255,0,0',
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#CE1126',
+                // RGB color values
+                'rgb' => '206,17,38',
+                // CMYK color values
+                'cmyk' => '0,92,82,19',
+                // HSL color values
+                'hsl' => '350,85%,44%',
+                // HSV color values
+                'hsv' => '350,92%,81%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FCD116',
+                // RGB color values
+                'rgb' => '252,209,22',
+                // CMYK color values
+                'cmyk' => '0,17,91,1',
+                // HSL color values
+                'hsl' => '48,98%,54%',
+                // HSV color values
+                'hsv' => '48,91%,99%',
+                // Pantone color code
+                'pantone' => '116 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '0 00 N',
-                'desc' => '-2.879866123199463',
-            ],
-            'longitude' => [
-                'classic' => '25 00 E',
-                'desc' => '23.6563777923584',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '-4.4419',
+            // Longitude in decimal degrees
+            'longitude' => '15.2663',
+            // Degrees with decimal
+            'dd' => '4.4419° S, 15.2663° E',
+            // Degrees, minutes, seconds
+            'dms' => '4°26\'30.84" S, 15°15\'58.68" E',
+            // Degrees and decimal minutes
+            'dm' => '4°26.514\' S, 15°15.978\' E',
+            // Various GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '5.133333',
-                'min' => '-13.466667',
-            ],
-            'longitude' => [
-                'max' => '31.233333',
-                'min' => '12.266667',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

@@ -3,11 +3,10 @@
 namespace Lwwcas\LaravelCountries\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
-use Lwwcas\LaravelCountries\Casts\Json;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Lwwcas\LaravelCountries\Abstract\CountryModel;
 
-class CountryGeographical extends Model
+class CountryGeographical extends CountryModel
 {
     use HasFactory;
 
@@ -18,8 +17,12 @@ class CountryGeographical extends Model
      */
     protected $table = 'lc_countries_geographical';
 
-    /* @property-read string $localeKey */
-    public string $localeKey;
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
@@ -27,7 +30,6 @@ class CountryGeographical extends Model
      * @var array
      */
     protected $fillable = [
-        'uuid',
         'lc_country_id',
         'type',
         'features_type',
@@ -36,57 +38,41 @@ class CountryGeographical extends Model
     ];
 
     /**
-     * The attributes that should be cast to native types.
+     * Get the attributes that should be cast.
      *
-     * @var array
+     * @return array<string, string>
      */
-    protected $casts = [
-        'properties' => Json::class,
-        'geometry' => Json::class,
-    ];
-
-    public function __construct(array $attributes = [])
+    protected function casts(): array
     {
-        $this->localeKey = config('translatable.locale_key', 'locale');
-        parent::__construct($attributes);
-    }
-
-    public static function boot()
-    {
-        parent::boot();
-        self::creating(function ($model) {
-            $model->uuid = (string) Str::uuid();
-        });
+        return [
+            'properties' => 'array',
+            'geometry' => 'array',
+        ];
     }
 
     /**
-     * Get the country.
+     * Get the country that owns the CountryGeographical
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function country()
+    public function country(): HasOne
     {
-        return $this->belongsTo(Country::class, 'lc_country_id');
+        return $this->hasOne(Country::class, 'id', 'lc_country_id');
     }
 
     /**
-     * Find a region by uuid.
+     * Get the geographical data as a GeoJSON feature collection.
      *
-     * @param string $uuid
-     *
-     * @return Illuminate\Database\Eloquent\Collection
+     * @return array
      */
-    public function scopeWhereUuid($query, $uuid)
-    {
-        return $query->where('uuid', $uuid);
-    }
-
-    public function getGeodata()
+    public function getGeoData()
     {
         $data = [
             'type' => $this->type,
             'features' => [
                 'type' => $this->features_type,
-                'properties' => json_decode($this->properties, true),
-                'geometry' => json_decode($this->geometry, true),
+                'properties' => $this->properties,
+                'geometry' => $this->geometry,
             ],
         ];
 

@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 
-class ES_Spain extends Seeder
+class ES_Spain extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'europe';
- 
+    public ?string $region = 'europe';
+
     /**
      * Run the database seeds.
      *
@@ -29,58 +29,232 @@ class ES_Spain extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Spain';
+
+        // Set the country's official name
         $this->official_name = 'Kingdom of Spain';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'ES';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'ESP';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '724';
+
+        // Set the international dialing code
         $this->international_phone = '34';
- 
-        $this->languages = ['es','eu','ca','gl','oc'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['es']; // Spanish is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.es'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '130 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '45 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '91%'; // High internet penetration rate
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'INCIBE (Instituto Nacional de Ciberseguridad de España)';
+
+        // List popular web technologies in Spain
+        $this->popular_technologies = ['PHP', 'JavaScript', 'React', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'SP';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2510769';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Euro',
+            // Currency code
+            'code' => 'EUR',
+            // Currency symbol
+            'symbol' => '€',
+            // Main unit
+            'main_unit' => 'euro',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100', '200', '500'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['1', '2', '5', '10', '20', '50 cents'],
+        ];
+
+        // Set the population
+        $this->population = 47351567; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 505992; // km²
+
+        // Set the capital city
+        $this->capital = 'Madrid';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Europe/Madrid',
+                // Standard time offset
+                'standard_time' => 'UTC+1', // Central European Time (CET)
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+2', // Central European Summer Time (CEST)
+            ],
+            [
+                // Time zone identifier for Canary Islands
+                'timezone_id' => 'Atlantic/Canary',
+                // Standard time offset
+                'standard_time' => 'UTC+0', // Western European Time (WET)
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+1', // Western European Summer Time (WEST)
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1469-10-19'; // Union of Castile and Aragon, traditionally seen as the start of unified Spain
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'European Union (EU)',
+            'NATO',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'Schengen Area',
+            'Eurozone',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 1434; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Constitutional monarchy';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football (soccer) is the most popular sport in Spain
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'France', 'iso_alpha_2' => 'FR'],
+            ['name' => 'Portugal', 'iso_alpha_2' => 'PT'],
+            ['name' => 'Andorra', 'iso_alpha_2' => 'AD'],
+            ['name' => 'Gibraltar', 'iso_alpha_2' => 'GI'],
+            ['name' => 'Morocco', 'iso_alpha_2' => 'MA'], // Bordering in Ceuta and Melilla
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇪🇸',
+            // Unicode code points
             'uCode' => 'U+1F1EA U+1F1F8',
+            // HTML entities
+            'html' => '&#x1F1EA;&#x1F1F8;',
+            // CSS entities
+            'css' => '\\1F1EA\\1F1F8',
+            // Decimal Unicode entities
+            'decimal' => '&#127466;&#127480;',
+            // Direct UTF-8 string
+            'utf8' => '🇪🇸',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDEA\uD83C\uDDF8',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-es:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1EA;&#x1F1F8;',
         ];
-        $this->color = [
-            'hex' => [
-                '#ff0000',
-                '#ffd700',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#AA151B',
+                // RGB color values
+                'rgb' => '170,21,27',
+                // CMYK color values
+                'cmyk' => '0,88,84,33',
+                // HSL color values
+                'hsl' => '357,77%,37%',
+                // HSV color values
+                'hsv' => '357,88%,67%',
+                // Pantone color code
+                'pantone' => 'Red 032 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '255,0,0',
-                '255,215,0',
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#F1BF00',
+                // RGB color values
+                'rgb' => '241,191,0',
+                // CMYK color values
+                'cmyk' => '0,21,100,0',
+                // HSL color values
+                'hsl' => '47,100%,47%',
+                // HSV color values
+                'hsv' => '47,100%,95%',
+                // Pantone color code
+                'pantone' => '7406 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '40 00 N',
-                'desc' => '40.396026611328125',
-            ],
-            'longitude' => [
-                'classic' => '4 00 W',
-                'desc' => '-3.550692558288574',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '40.4637',
+            // Longitude in decimal degrees
+            'longitude' => '-3.7492',
+            // Degrees with decimal
+            'dd' => '40.4637° N, 3.7492° W',
+            // Degrees, minutes, seconds
+            'dms' => '40°27\'49.32" N, 3°44\'57.12" W',
+            // Degrees and decimal minutes
+            'dm' => '40°27.822\' N, 3°44.952\' W',
+            // Various GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '43.916667',
-                'min' => '27.633333',
-            ],
-            'longitude' => [
-                'max' => '4.333333',
-                'min' => '-18.166667',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class FM_Micronesia extends Seeder
+class FM_Micronesia extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'oceania';
- 
+    public ?string $region = 'oceania';
+
     /**
      * Run the database seeds.
      *
@@ -29,54 +29,235 @@ class FM_Micronesia extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Micronesia';
+
+        // Set the country's official name
         $this->official_name = 'Federated States of Micronesia';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'FM';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'FSM';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '583';
+
+        // Set the international dialing code
         $this->international_phone = '691';
- 
-        $this->languages = ['en'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['en', 'chk', 'pon', 'kos', 'yap']; // English is the official language, along with various indigenous languages (Chuukese, Pohnpeian, Kosraean, Yapese)
+
+        // Define the top-level domain(s)
         $this->tld = ['.fm'];
-        $this->wmo = '0';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '10 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '5 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '38%'; // Moderate internet penetration due to infrastructure challenges across the islands
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = null; // No dedicated cybersecurity agency
+
+        // List popular web technologies in Micronesia
+        $this->popular_technologies = ['PHP', 'HTML/CSS', 'JavaScript', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'FM';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '2081918';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'United States dollar',
+            // Currency code
+            'code' => 'USD',
+            // Currency symbol
+            'symbol' => '$',
+            // Main unit
+            'main_unit' => 'dollar',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['1', '5', '10', '20', '50', '100'],
+            // Main coins
+            'coins_main' => ['1', '5', '10', '25'],
+            // Subunit coins
+            'coins_sub' => ['1'],
+        ];
+
+        // Set the population
+        $this->population = 114164; // As per recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 702; // km²
+
+        // Set the capital city
+        $this->capital = 'Palikir';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Pacific/Pohnpei',
+                // Standard time offset
+                'standard_time' => 'UTC+11', // Pohnpei Time (PONT)
+                // No daylight saving time observed
+            ],
+            [
+                // Time zone identifier for Kosrae
+                'timezone_id' => 'Pacific/Kosrae',
+                // Standard time offset
+                'standard_time' => 'UTC+11', // Kosrae Time (KOST)
+                // No daylight saving time observed
+            ],
+            [
+                // Time zone identifier for Chuuk
+                'timezone_id' => 'Pacific/Chuuk',
+                // Standard time offset
+                'standard_time' => 'UTC+10', // Chuuk Time (CHUT)
+                // No daylight saving time observed
+            ],
+            [
+                // Time zone identifier for Yap
+                'timezone_id' => 'Pacific/Yap',
+                // Standard time offset
+                'standard_time' => 'UTC+10', // Yap Time (YAPT)
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1986-11-03'; // Date of independence in free association with the United States
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'Pacific Islands Forum (PIF)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 0.402; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Roman Catholicism, Protestantism)',
+        ];
+
+        // Describe the form of government
+        $this->government = 'Federal parliamentary republic';
+
+        // Set the national sport
+        $this->national_sport = 'Basketball'; // Basketball is a popular sport in Micronesia
+
+        // Define bordering countries
+        $this->borders = []; // Micronesia is an island nation and has no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇫🇲',
+            // Unicode code points
             'uCode' => 'U+1F1EB U+1F1F2',
+            // HTML entities
+            'html' => '&#x1F1EB;&#x1F1F2;',
+            // CSS entities
+            'css' => '\\1F1EB\\1F1F2',
+            // Decimal Unicode entities
+            'decimal' => '&#127467;&#127474;',
+            // Direct UTF-8 string
+            'utf8' => '🇫🇲',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDEB\uD83C\uDDF2',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-fm:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1EB;&#x1F1F2;',
         ];
-        $this->color = [
-            'hex' => [
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Flag Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#66CCFF',
+                // RGB color values
+                'rgb' => '102,204,255',
+                // CMYK color values
+                'cmyk' => '60,20,0,0',
+                // HSL color values
+                'hsl' => '195,100%,70%',
+                // HSV color values
+                'hsv' => '195,60%,100%',
+                // Pantone color code
+                'pantone' => '305 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
+            [
+                // Color name
+                'name' => 'Star White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '6 55 N',
-                'desc' => '6.869349002838135',
-            ],
-            'longitude' => [
-                'classic' => '158 15 E',
-                'desc' => '158.187255859375',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '7.4256',
+            // Longitude in decimal degrees
+            'longitude' => '150.5508',
+            // Degrees with decimal
+            'dd' => '7.4256° N, 150.5508° E',
+            // Degrees, minutes, seconds
+            'dms' => '7°25\'32.16" N, 150°33\'2.88" E',
+            // Degrees and decimal minutes
+            'dm' => '7°25.536\' N, 150°33.048\' E',
+            // Various GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '10.093611',
-                'min' => '1.026389',
-            ],
-            'longitude' => [
-                'max' => '163.034444',
-                'min' => '137.425',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

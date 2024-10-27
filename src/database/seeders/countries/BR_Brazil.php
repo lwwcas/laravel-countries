@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class BR_Brazil extends Seeder
+class BR_Brazil extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'americas';
- 
+    public ?string $region = 'americas';
+
     /**
      * Run the database seeds.
      *
@@ -29,58 +29,273 @@ class BR_Brazil extends Seeder
      */
     public function run()
     {
+        // Set the country's common name
         $this->name = 'Brazil';
+
+        // Set the country's official name
         $this->official_name = 'Federative Republic of Brazil';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'BR';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'BRA';
-        $this->iso_numeric = '76';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
+        $this->iso_numeric = '076';
+
+        // Set the international dialing code
         $this->international_phone = '55';
- 
-        $this->languages = ['pt'];
+
+        // Define the languages spoken in the country
+        $this->languages = ['pt']; // Portuguese is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.br'];
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '100 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '30 Mbps',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = '75%'; // Percentage of the population with internet access
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Department of Information Security and Cybersecurity (Departamento de Segurança da Informação e Comunicações)';
+
+        // List popular web technologies in Brazil
+        $this->popular_technologies = ['PHP', 'JavaScript', 'Java', 'Python', '.NET', 'WordPress'];
+
+        // Set the WMO (World Meteorological Organization) country code
         $this->wmo = 'BZ';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '3469034';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Brazilian real',
+            // Currency code
+            'code' => 'BRL',
+            // Currency symbol
+            'symbol' => 'R$',
+            // Main unit
+            'main_unit' => 'real',
+            // Subunit
+            'sub_unit' => 'centavo',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['2', '5', '10', '20', '50', '100', '200'],
+            // Main coins
+            'coins_main' => ['1'],
+            // Subunit coins
+            'coins_sub' => ['5', '10', '25', '50'],
+        ];
+
+        // Set the population
+        $this->population = 212559417; // As of recent estimates
+
+        // Set the area in square kilometers
+        $this->area = 8515767; // km²
+
+        // Set the capital city
+        $this->capital = 'Brasília';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'America/Sao_Paulo',
+                // Standard time offset
+                'standard_time' => 'UTC−3',
+            ],
+            [
+                'timezone_id' => 'America/Manaus',
+                'standard_time' => 'UTC−4',
+            ],
+            [
+                'timezone_id' => 'America/Rio_Branco',
+                'standard_time' => 'UTC−5',
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = '1822-09-07'; // Date of independence from Portugal
+
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'World Trade Organization (WTO)',
+            'BRICS',
+            'G20',
+            'Mercosur',
+            'Organization of American States (OAS)',
+            'Union of South American Nations (UNASUR)',
+            'Community of Latin American and Caribbean States (CELAC)',
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = 1445; // GDP in billions of USD
+
+        // List the predominant religions
+        $this->religions = ['Christianity (Roman Catholicism, Protestantism)', 'Spiritism', 'Afro-Brazilian religions'];
+
+        // Describe the form of government
+        $this->government = 'Federal presidential constitutional republic';
+
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)';
+
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Argentina', 'iso_alpha_2' => 'AR'],
+            ['name' => 'Bolivia', 'iso_alpha_2' => 'BO'],
+            ['name' => 'Colombia', 'iso_alpha_2' => 'CO'],
+            ['name' => 'French Guiana', 'iso_alpha_2' => 'GF'],
+            ['name' => 'Guyana', 'iso_alpha_2' => 'GY'],
+            ['name' => 'Paraguay', 'iso_alpha_2' => 'PY'],
+            ['name' => 'Peru', 'iso_alpha_2' => 'PE'],
+            ['name' => 'Suriname', 'iso_alpha_2' => 'SR'],
+            ['name' => 'Uruguay', 'iso_alpha_2' => 'UY'],
+            ['name' => 'Venezuela', 'iso_alpha_2' => 'VE'],
+        ];
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇧🇷',
+            // Unicode code points
             'uCode' => 'U+1F1E7 U+1F1F7',
+            // HTML entities
+            'html' => '&#x1F1E7;&#x1F1F7;',
+            // CSS entities
+            'css' => '\\1F1E7\\1F1F7',
+            // Decimal Unicode entities
+            'decimal' => '&#127463;&#127479;',
+            // Direct UTF-8 string
+            'utf8' => '🇧🇷',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDE7\uD83C\uDDF7',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-br:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1E7;&#x1F1F7;',
         ];
-        $this->color = [
-            'hex' => [
-                '#008000',
-                '#ffff00',
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Green',
+                // Web color name
+                'web_name' => 'green',
+                // Hexadecimal color code
+                'hex' => '#009C3B',
+                // RGB color values
+                'rgb' => '0,156,59',
+                // CMYK color values
+                'cmyk' => '100,0,62,39',
+                // HSL color values
+                'hsl' => '147,100%,31%',
+                // HSV color values
+                'hsv' => '147,100%,61%',
+                // Pantone color code
+                'pantone' => 'Green C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
-                '0,128,0',
-                '255,255,0',
+            [
+                // Color name
+                'name' => 'Yellow',
+                // Web color name
+                'web_name' => 'yellow',
+                // Hexadecimal color code
+                'hex' => '#FFDF00',
+                // RGB color values
+                'rgb' => '255,223,0',
+                // CMYK color values
+                'cmyk' => '0,13,100,0',
+                // HSL color values
+                'hsl' => '51,100%,50%',
+                // HSV color values
+                'hsv' => '51,100%,100%',
+                // Pantone color code
+                'pantone' => 'Yellow 012 C',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#002776',
+                // RGB color values
+                'rgb' => '0,39,118',
+                // CMYK color values
+                'cmyk' => '100,67,0,54',
+                // HSL color values
+                'hsl' => '217,100%,23%',
+                // HSV color values
+                'hsv' => '217,100%,46%',
+                // Pantone color code
+                'pantone' => 'Reflex Blue C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '10 00 S',
-                'desc' => '-10.81045150756836',
-            ],
-            'longitude' => [
-                'classic' => '55 00 W',
-                'desc' => '-52.97311782836914',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '-15.7939',
+            // Longitude in decimal degrees
+            'longitude' => '-47.8828',
+            // Degrees with decimal
+            'dd' => '15.7939° S, 47.8828° W',
+            // Degrees, minutes, seconds
+            'dms' => '15°47\'38.04" S, 47°52\'58.08" W',
+            // Degrees and decimal minutes
+            'dm' => '15°47.634\' S, 47°52.968\' W',
+            // Various GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '5.266667',
-                'min' => '-33.733333',
-            ],
-            'longitude' => [
-                'max' => '-28.85',
-                'min' => '-73.75',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{

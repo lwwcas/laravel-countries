@@ -3,13 +3,28 @@
 namespace Lwwcas\LaravelCountries\Models;
 
 use Astrotomic\Translatable\Translatable;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
+use Lwwcas\LaravelCountries\Abstract\CountryModel;
+use Lwwcas\LaravelCountries\Models\Concerns\HasTranslationGlobalScope;
+use Lwwcas\LaravelCountries\Models\Concerns\HasVisibleGlobalScope;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereIso;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereIsoAlpha2;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereName;
+use Lwwcas\LaravelCountries\Models\Concerns\HasWhereSlug;
+use Lwwcas\LaravelCountries\Models\Concerns\VisibleAttributes;
 
-class CountryRegion extends Model
+class CountryRegion extends CountryModel
 {
-    use HasFactory, Translatable;
+    use HasFactory,
+        Translatable,
+        HasVisibleGlobalScope,
+        HasTranslationGlobalScope,
+        HasWhereSlug,
+        HasWhereName,
+        HasWhereIso,
+        HasWhereIsoAlpha2,
+        VisibleAttributes;
 
     public $translationModel = CountryRegionTranslation::class;
 
@@ -29,8 +44,12 @@ class CountryRegion extends Model
     /* Translatable ForeignKey */
     public $translationForeignKey = 'lc_region_id';
 
-    /* @property-read string $localeKey */
-    public string $localeKey;
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
@@ -38,25 +57,58 @@ class CountryRegion extends Model
      * @var array
      */
     protected $fillable = [
-        'uuid',
+        'iso_alpha_2', // The ISO 3166-1 alpha-2 region code (e.g., "US" for United States).
+        'icao',        // The ICAO (International Civil Aviation Organization) region code for aviation purposes.
+        'iucn',        // The IUCN (International Union for Conservation of Nature) region code for conservation data.
+        'tdwg',        // The TDWG (World Geographical Scheme for Recording Plant Distributions) code, used in biodiversity studies.
+        'is_visible',     // A boolean flag indicating if the region is visible in the queries.
     ];
 
-    public function __construct(array $attributes = [])
+    /**
+     * The model's default values for attributes.
+     *
+     * @var array
+     */
+    protected $attributes = [
+        'is_visible' => true,
+    ];
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
     {
-        $this->localeKey = config('translatable.locale_key', 'locale');
-        parent::__construct($attributes);
+        return [
+            'is_visible' => 'boolean',
+        ];
     }
 
-    public static function boot()
+    /**
+     * Perform any actions required before the model boots.
+     *
+     * @return void
+     */
+    protected static function booting()
     {
-        parent::boot();
-        self::creating(function ($model) {
-            $model->uuid = (string) Str::uuid();
+        parent::booting();
+
+        // Applying a global scope to always filter countries where 'is_visible' is true
+        static::addGlobalScope('is_visible', function (Builder $builder) {
+            $builder->where('is_visible', true);
+        });
+
+        // Apply a global scope to always eager load the translations
+        static::addGlobalScope('translation', function (Builder $builder) {
+            $builder->withTranslation();
         });
     }
 
     /**
-     * Get the countries.
+     * Get the countries that are located in this region.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function countries()
     {
@@ -64,42 +116,75 @@ class CountryRegion extends Model
     }
 
     /**
-     * Find a region by slug.
+     * Filter the query by the ICAO (International Civil Aviation Organization) region code
      *
-     * @param string $slug
-     *
-     * @return Illuminate\Database\Eloquent\Collection
+     * @param Builder $query
+     * @param string $icao
+     * @return Builder
      */
-    public function scopeWhereSlug($query, $slug, $locale = null)
+    public function scopeWhereICAO($query, string $icao)
     {
-        $query = $query->whereTranslation('slug', $slug);
-        if ($locale !== null) {
-            $query = $query->whereTranslation('locale', $locale);
-        }
-        return $query->withTranslation();
+        return $query->where('icao', $icao);
     }
 
     /**
-     * Find a region by name.
+     * Filter the query by the ICAO (International Civil Aviation Organization) region code, adding the filter with an "or where" clause
      *
-     * @param string $name
-     *
-     * @return Illuminate\Database\Eloquent\Collection
+     * @param Builder $query
+     * @param string $icao
+     * @return Builder
      */
-    public function scopeWhereName($query, $name)
+    public function scopeOrWhereICAO($query, string $icao)
     {
-        return $query->whereTranslation('name', $name)->withTranslation();
+        return $query->orWhere('icao', $icao);
     }
 
     /**
-     * Find a region by uuid.
+     * Filter the query by the IUCN (International Union for Conservation of Nature) region code
      *
-     * @param string $uuid
-     *
-     * @return Illuminate\Database\Eloquent\Collection
+     * @param Builder $query
+     * @param string $iucn
+     * @return Builder
      */
-    public function scopeWhereUuid($query, $uuid)
+    public function scopeWhereIUCN($query, string $iucn)
     {
-        return $query->where('uuid', $uuid)->withTranslation();
+        return $query->where('iucn', $iucn);
     }
+
+    /**
+     * Filter the query by the IUCN (International Union for Conservation of Nature) region code, adding the filter with an "or where" clause
+     *
+     * @param Builder $query
+     * @param string $iucn
+     * @return Builder
+     */
+    public function scopeOrWhereIUCN($query, string $iucn)
+    {
+        return $query->orWhere('iucn', $iucn);
+    }
+
+    /**
+     * Filter the query by the TDWG (Taxonomic Databases Working Group) region code
+     *
+     * @param Builder $query
+     * @param string $tdwg
+     * @return Builder
+     */
+    public function scopeWhereTDWG($query, string $tdwg)
+    {
+        return $query->where('tdwg', $tdwg);
+    }
+
+    /**
+     * Filter the query by the TDWG (Taxonomic Databases Working Group) region code, adding the filter with an "or where" clause
+     *
+     * @param Builder $query
+     * @param string $tdwg
+     * @return Builder
+     */
+    public function scopeOrWhereTDWG($query, string $tdwg)
+    {
+        return $query->orWhere('tdwg', $tdwg);
+    }
+
 }

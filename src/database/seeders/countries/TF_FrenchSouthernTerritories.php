@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
 use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
-class TF_FrenchSouthernTerritories extends Seeder
+class TF_FrenchSouthernTerritories extends CountrySeeder
 {
- 
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $lang = 'en';
- 
+    public ?string $lang = 'en';
+
     /**
      * Attribute that defines the language of countries
      *
      * @var string
      */
-    public $region = 'oceania';
- 
+    public ?string $region = 'oceania';
+
     /**
      * Run the database seeds.
      *
@@ -29,54 +29,230 @@ class TF_FrenchSouthernTerritories extends Seeder
      */
     public function run()
     {
-        $this->name = 'French Southern Territories';
+        // Set the country's common name
+        $this->name = 'French Southern and Antarctic Lands';
+
+        // Set the country's official name
         $this->official_name = 'Territory of the French Southern and Antarctic Lands';
+
+        // Set the ISO 3166-1 alpha-2 code
         $this->iso_alpha_2 = 'TF';
+
+        // Set the ISO 3166-1 alpha-3 code
         $this->iso_alpha_3 = 'ATF';
+
+        // Set the ISO 3166-1 numeric code (usually three digits)
         $this->iso_numeric = '260';
-        $this->international_phone = '262';
- 
-        $this->languages = ['fr'];
+
+        // Set the international dialing code
+        $this->international_phone = null; // No specific international dialing code
+
+        // Define the languages spoken in the territory
+        $this->languages = ['fr']; // French is the official language
+
+        // Define the top-level domain(s)
         $this->tld = ['.tf'];
-        $this->wmo = '0';
+
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
+
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => 'Not available',
+            // Average mobile connection speed
+            'average_speed_mobile' => 'Not available',
+        ];
+
+        // Define internet penetration rate
+        $this->internet_penetration = 'Limited'; // Internet access is limited due to remoteness
+
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = null; // No dedicated cybersecurity agency
+
+        // List popular web technologies in the French Southern and Antarctic Lands
+        $this->popular_technologies = ['None']; // No significant technological trends due to sparse population
+
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'FS';
+
+        // Set the GeoName ID for geographical data reference
         $this->geoname_id = '1546748';
- 
+
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Euro',
+            // Currency code
+            'code' => 'EUR',
+            // Currency symbol
+            'symbol' => '€',
+            // Main unit
+            'main_unit' => 'euro',
+            // Subunit
+            'sub_unit' => 'cent',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['5', '10', '20', '50', '100', '200', '500'],
+            // Main coins
+            'coins_main' => ['1', '2'],
+            // Subunit coins
+            'coins_sub' => ['1', '2', '5', '10', '20', '50'],
+        ];
+
+        // Set the population
+        $this->population = 400; // Mainly researchers and military personnel
+
+        // Set the area in square kilometers
+        $this->area = 7747; // km²
+
+        // Set the capital city
+        $this->capital = 'Port-aux-Français';
+
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Indian/Kerguelen',
+                // Standard time offset
+                'standard_time' => 'UTC+5',
+                // No daylight saving time observed
+            ],
+        ];
+
+        // Set the independence day
+        $this->independence_day = null; // The territory is a French overseas territory
+
+        // List international organizations the territory is part of
+        $this->international_organizations = [
+            'None', // The territory is governed by France and not a member of international organizations independently
+        ];
+
+        // Set the GDP in billions of USD
+        $this->gdp = null; // No significant economic activity due to sparse population and remoteness
+
+        // List the predominant religions
+        $this->religions = [
+            'None', // The population is mainly temporary and consists of researchers and military personnel
+        ];
+
+        // Describe the form of government
+        $this->government = 'Overseas territory of France';
+
+        // Set the national sport
+        $this->national_sport = 'None'; // No notable national sport
+
+        // Define bordering countries
+        $this->borders = []; // The territory consists of islands and has no land borders
+
+        // Define the country's flag emoji representation
         $this->emoji = [
+            // Native emoji image
             'img' => '🇹🇫',
+            // Unicode code points
             'uCode' => 'U+1F1F9 U+1F1EB',
+            // HTML entities
+            'html' => '&#x1F1F9;&#x1F1EB;',
+            // CSS entities
+            'css' => '\\1F1F9\\1F1EB',
+            // Decimal Unicode entities
+            'decimal' => '&#127481;&#127467;',
+            // Direct UTF-8 string
+            'utf8' => '🇹🇫',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDF9\uD83C\uDDEB',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-tf:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1F9;&#x1F1EB;',
         ];
-        $this->color = [
-            'hex' => [
+
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Blue',
+                // Web color name
+                'web_name' => 'blue',
+                // Hexadecimal color code
+                'hex' => '#002395',
+                // RGB color values
+                'rgb' => '0,35,149',
+                // CMYK color values
+                'cmyk' => '100,77,0,42',
+                // HSL color values
+                'hsl' => '224°,100%,29%',
+                // HSV color values
+                'hsv' => '224°,100%,58%',
+                // Pantone color code
+                'pantone' => 'Reflex Blue C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
-            'rgb' => [
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0°,0%,100%',
+                // HSV color values
+                'hsv' => '0°,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#ED2939',
+                // RGB color values
+                'rgb' => '237,41,57',
+                // CMYK color values
+                'cmyk' => '0,83,76,7',
+                // HSL color values
+                'hsl' => '354°,84%,55%',
+                // HSV color values
+                'hsv' => '354°,83%,93%',
+                // Pantone color code
+                'pantone' => 'Red 032 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
             ],
         ];
+
+        // Define the geographical coordinates
         $this->coordinates = [
-            'latitude' => [
-                'classic' => '',
-                'desc' => '-49.563865661621094',
-            ],
-            'longitude' => [
-                'classic' => '',
-                'desc' => '69.54277801513672',
-            ],
+            // Latitude in decimal degrees
+            'latitude' => '-49.3489',
+            // Longitude in decimal degrees
+            'longitude' => '70.2196',
+            // Degrees with decimal
+            'dd' => '49.3489° S, 70.2196° E',
+            // Degrees, minutes, seconds
+            'dms' => '49°20\'56.04" S, 70°13\'10.56" E',
+            // Degrees and decimal minutes
+            'dm' => '49°20.934\' S, 70°13.176\' E',
+            // GPS formats
+            'gps' => [],
         ];
-        $this->coordinates_limit = [
-            'latitude' => [
-                'max' => '-37.783333',
-                'min' => '-50.016667',
-            ],
-            'longitude' => [
-                'max' => '77.6',
-                'min' => '50.233333',
-            ],
-        ];
- 
+
         $this->geographical = json_decode($this->geographical(), true);
- 
+
         Builder::country($this);
     }
- 
+
     public function geographical()
     {
         return '{
