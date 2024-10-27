@@ -42,9 +42,6 @@ jobs:
           node-version: 20
           cache: npm # or pnpm / yarn
 
-      - name: Clean up node_modules and package-lock.json
-        run: rm -rf package-lock.json node_modules
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
