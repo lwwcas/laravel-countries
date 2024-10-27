@@ -41,12 +41,19 @@ jobs:
         with:
           node-version: 20
           cache: npm # or pnpm / yarn
+
+      - name: Clean up node_modules and package-lock.json
+        run: rm -rf package-lock.json node_modules
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
+
       - name: Install dependencies
-        run: npm ci --omit=optional --legacy-peer-deps # or pnpm install / yarn install / bun install
+        run: npm ci --ignore-scripts --omit=optional --legacy-peer-deps # or pnpm install / yarn install / bun install
+
       - name: Build with VitePress
         run: npm run docs:build # or pnpm docs:build / yarn docs:build / bun run docs:build
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
