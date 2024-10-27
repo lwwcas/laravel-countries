@@ -48,6 +48,9 @@ jobs:
       - name: Install dependencies
         run: npm ci --omit=optional --legacy-peer-deps # or pnpm install / yarn install / bun install
 
+      - name: Install Rollup Linux Binary
+        run: npm install @rollup/rollup-linux-x64-gnu --legacy-peer-deps
+
       - name: Build with VitePress
         run: npm run docs:build # or pnpm docs:build / yarn docs:build / bun run docs:build
 
