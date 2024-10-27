@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     lang: 'en-US',
+    base: '/laravel-countries/',
 
     title: "Laravel Countries",
     description: "Access all country data in minutes with elegant syntax",
