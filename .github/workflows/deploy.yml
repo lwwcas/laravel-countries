@@ -40,7 +40,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: npm # or pnpm / yarn
+          cache: true
+          cache-dependency-path: '**/package-lock.json'
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

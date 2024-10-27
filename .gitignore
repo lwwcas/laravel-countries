@@ -1,6 +1,5 @@
 build
 composer.lock
-package-lock.json
 vendor
 coverage
 node_modules
