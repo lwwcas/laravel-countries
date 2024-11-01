@@ -16,7 +16,7 @@
 
 </p>
 
-### [Full Documantation](https://lwwcas.github.io/laravel-countries/)
+### [Full Documentation](https://lwwcas.github.io/laravel-countries/)
 
 <br>
 
