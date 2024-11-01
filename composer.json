@@ -1,13 +1,13 @@
 {
     "name": "lwwcas/laravel-countries",
     "description": "A comprehensive package for managing country data in Laravel applications, including multilingual support, geographic coordinates, and detailed metadata for seamless integration with Laravel.",
-    "homepage": "https://github.com/lwwcas/laravel-countries",
+    "homepage": "https://lwwcas.github.io/laravel-countries/",
     "type": "library",
     "license": "MIT",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "authors": [{
-        "name": "Lucas Duarte Oliveira Monteiro",
+        "name": "Lucas Duarte O. Monteiro",
         "email": "lwwcas@gmail.com",
         "homepage": "http://www.lucasduarte.dev",
         "role": "Developer"
