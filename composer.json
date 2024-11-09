@@ -45,7 +45,9 @@
     },
     "autoload": {
         "psr-4": {
-            "Lwwcas\\LaravelCountries\\": "src/"
+            "Lwwcas\\LaravelCountries\\": "src/",
+            "Lwwcas\\LaravelCountries\\Config\\": "src/config/",
+            "Lwwcas\\LaravelCountries\\Database\\migrations\\": "src/database/migrations/"
         }
     },
     "autoload-dev": {
