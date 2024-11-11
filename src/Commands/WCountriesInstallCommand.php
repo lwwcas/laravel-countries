@@ -4,7 +4,7 @@ namespace Lwwcas\LaravelCountries\Commands;
 
 use Illuminate\Console\Command;
 use Lwwcas\LaravelCountries\Trait\WithBasePackageTools;
-use Lwwcas\LaravelCountries\trait\WithLanguages;
+use Lwwcas\LaravelCountries\Trait\WithLanguages;
 
 class WCountriesInstallCommand extends Command
 {
