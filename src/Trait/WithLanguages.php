@@ -9,6 +9,7 @@ use Lwwcas\LaravelCountries\Database\Seeders\Languages\ItalianLanguageSeeder as 
 use Lwwcas\LaravelCountries\Database\Seeders\Languages\PortugueseLanguageSeeder as Portuguese;
 use Lwwcas\LaravelCountries\Database\Seeders\Languages\RussianLanguageSeeder as Russian;
 use Lwwcas\LaravelCountries\Database\Seeders\Languages\SpanishLanguageSeeder as Spanish;
+use Lwwcas\LaravelCountries\Database\Seeders\Languages\TurkishLanguageSeeder as Turkish;
 use Lwwcas\LaravelCountries\Database\Seeders\LwwcasDatabaseSeeder as English;
 use Lwwcas\LaravelCountries\Models\CountryRegionTranslation as RegionsLanguages;
 
@@ -31,6 +32,7 @@ trait WithLanguages
         'Portuguese' => Portuguese::class,
         'Russian' => Russian::class,
         'Spanish' => Spanish::class,
+        'Turkish' => Turkish::class,
     ];
 
     /**
@@ -48,6 +50,7 @@ trait WithLanguages
         'pt' => 'Portuguese',
         'ru' => 'Russian',
         'es' => 'Spanish',
+        'tr' => 'Turkish',
     ];
 
     /**
