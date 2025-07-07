@@ -135,6 +135,7 @@ class HR_Croatia extends CountrySeeder
             'World Health Organization (WHO)',
             'Council of Europe',
             'Organization for Security and Co-operation in Europe (OSCE)',
+            'Schengen Area',
         ];
 
         // Set the GDP in billions of USD

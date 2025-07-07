@@ -135,6 +135,7 @@ class IS_Iceland extends CountrySeeder
             'World Trade Organization (WTO)',
             'International Monetary Fund (IMF)',
             'World Health Organization (WHO)',
+            'Schengen Area',
         ];
 
         // Set the GDP in billions of USD

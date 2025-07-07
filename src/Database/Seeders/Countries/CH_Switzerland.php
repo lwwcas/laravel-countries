@@ -134,6 +134,7 @@ class CH_Switzerland extends CountrySeeder
             'World Health Organization (WHO)',
             'Organisation internationale de la Francophonie',
             'Council of Europe',
+            'Schengen Area',
         ];
 
         // Set the GDP in billions of USD

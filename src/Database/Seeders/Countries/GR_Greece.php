@@ -134,6 +134,7 @@ class GR_Greece extends CountrySeeder
             'International Monetary Fund (IMF)',
             'World Health Organization (WHO)',
             'Organization for Security and Co-operation in Europe (OSCE)',
+            'Schengen Area',
         ];
 
         // Set the GDP in billions of USD

@@ -131,6 +131,7 @@ class BG_Bulgaria extends CountrySeeder
             'Council of Europe',
             'OSCE',
             'WTO',
+            'Schengen Area',
         ];
 
         // Set the GDP in billions of USD
