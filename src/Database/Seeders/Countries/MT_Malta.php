@@ -128,7 +128,7 @@ class MT_Malta extends CountrySeeder
         // List international organizations the country is part of
         $this->international_organizations = [
             'United Nations',
-            'European Union',
+            'European Union (EU)',
             'World Trade Organization (WTO)',
             'International Monetary Fund (IMF)',
             'World Health Organization (WHO)',

@@ -126,7 +126,7 @@ class BG_Bulgaria extends CountrySeeder
         // List international organizations the country is part of
         $this->international_organizations = [
             'United Nations',
-            'European Union',
+            'European Union (EU)',
             'NATO',
             'Council of Europe',
             'OSCE',
