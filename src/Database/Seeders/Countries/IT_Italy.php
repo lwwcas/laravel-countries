@@ -138,6 +138,7 @@ class IT_Italy extends CountrySeeder
             'World Health Organization (WHO)',
             'Council of Europe',
             'Schengen Area',
+            'European Economic Area (EEA)',
         ];
 
         // Set the GDP in billions of USD

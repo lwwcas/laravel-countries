@@ -132,6 +132,7 @@ class BE_Belgium extends CountrySeeder
             'Schengen Area',
             'Eurozone',
             'Benelux',
+            'European Economic Area (EEA)',
         ];
 
         // Set the GDP in billions of USD

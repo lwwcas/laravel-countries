@@ -137,6 +137,7 @@ class HU_Hungary extends CountrySeeder
             'Council of Europe',
             'Visegrád Group',
             'Schengen Area',
+            'European Economic Area (EEA)',
         ];
 
         // Set the GDP in billions of USD

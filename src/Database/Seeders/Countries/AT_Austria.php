@@ -131,7 +131,7 @@ class AT_Austria extends CountrySeeder
         $this->independence_day = '1955-10-26'; // Date of the Declaration of Neutrality
 
         // List international organizations the country is part of
-        $this->international_organizations = ['United Nations', 'European Union', 'Schengen Area', 'Eurozone', 'OECD', 'OSCE'];
+        $this->international_organizations = ['United Nations', 'European Union', 'Schengen Area', 'Eurozone', 'OECD', 'OSCE', 'European Economic Area (EEA)'];
 
         // Set the GDP in billions of USD
         $this->gdp = 455.3; // GDP in billions of USD

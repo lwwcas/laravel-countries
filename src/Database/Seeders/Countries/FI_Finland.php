@@ -135,6 +135,7 @@ class FI_Finland extends CountrySeeder
             'World Health Organization (WHO)',
             'Schengen Area',
             'Eurozone',
+            'European Economic Area (EEA)',
         ];
 
         // Set the GDP in billions of USD

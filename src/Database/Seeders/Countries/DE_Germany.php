@@ -136,6 +136,7 @@ class DE_Germany extends CountrySeeder
             'G7',
             'G20',
             'Schengen Area',
+            'European Economic Area (EEA)',
         ];
 
         // Set the GDP in billions of USD

@@ -132,6 +132,7 @@ class BG_Bulgaria extends CountrySeeder
             'OSCE',
             'WTO',
             'Schengen Area',
+            'European Economic Area (EEA)',
         ];
 
         // Set the GDP in billions of USD
