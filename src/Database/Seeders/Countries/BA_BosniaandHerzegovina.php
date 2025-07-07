@@ -130,6 +130,7 @@ class BA_BosniaandHerzegovina extends CountrySeeder
             'OSCE',
             'CEFTA',
             'Partnership for Peace',
+            'European Union candidate',
         ];
 
         // Set the GDP in billions of USD

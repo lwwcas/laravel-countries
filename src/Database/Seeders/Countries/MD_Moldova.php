@@ -134,6 +134,7 @@ class MD_Moldova extends CountrySeeder
             'International Monetary Fund (IMF)',
             'World Health Organization (WHO)',
             'Commonwealth of Independent States (CIS)',
+            'European Union candidate',
         ];
 
         // Set the GDP in billions of USD

@@ -134,6 +134,7 @@ class ME_Montenegro extends CountrySeeder
             'World Health Organization (WHO)',
             'Council of Europe',
             'Organization for Security and Co-operation in Europe (OSCE)',
+            'European Union candidate',
         ];
 
         // Set the GDP in billions of USD

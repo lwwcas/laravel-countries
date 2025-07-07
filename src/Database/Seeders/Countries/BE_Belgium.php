@@ -126,7 +126,7 @@ class BE_Belgium extends CountrySeeder
         // List international organizations the country is part of
         $this->international_organizations = [
             'United Nations',
-            'European Union (EU)',
+            'European Union',
             'NATO',
             'OECD',
             'Schengen Area',

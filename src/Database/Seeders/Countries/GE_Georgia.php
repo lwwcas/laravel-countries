@@ -132,6 +132,7 @@ class GE_Georgia extends CountrySeeder
             'International Monetary Fund (IMF)',
             'World Health Organization (WHO)',
             'GUAM Organization for Democracy and Economic Development',
+            'European Union candidate',
         ];
 
         // Set the GDP in billions of USD
