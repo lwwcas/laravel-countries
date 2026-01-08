@@ -53,7 +53,7 @@ class RegionsSeeder extends Seeder
             ],
         ];
 
-        if (Schema::hasTable('lc_regions') == false) {
+        if (Schema::connection(config('w-countries.driver'))->hasTable('lc_regions') == false) {
             return;
         }
 

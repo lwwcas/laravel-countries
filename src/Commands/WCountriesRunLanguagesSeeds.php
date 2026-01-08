@@ -37,7 +37,7 @@ class WCountriesRunLanguagesSeeds extends Command
      */
     public function handle()
     {
-        if (Schema::hasTable('lc_countries') == false || Schema::hasTable('lc_regions') == false) {
+        if (Schema::connection('w-countries.driver')->hasTable('lc_countries') == false || Schema::connection('w-countries.driver')->hasTable('lc_regions') == false) {
             $this->error('First install the countries and regions tables.');
             $this->info('Run php artisan w-countries:install for the structure to be installed first.');
             $this->newLine();

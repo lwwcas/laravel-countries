@@ -14,7 +14,7 @@ return new class() extends Migration
      */
     public function up()
     {
-        Schema::create('lc_countries_coordinates', function (Blueprint $table) {
+        Schema::connection(config('w-countries.driver'))->create('lc_countries_coordinates', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('lc_country_id')->unsigned();
             $table->string('latitude')->nullable();
@@ -35,6 +35,6 @@ return new class() extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lc_countries_coordinates');
+        Schema::connection(config('w-countries.driver'))->dropIfExists('lc_countries_coordinates');
     }
 };

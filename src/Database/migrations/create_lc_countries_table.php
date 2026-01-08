@@ -13,7 +13,7 @@ return new class() extends Migration
      */
     public function up()
     {
-        Schema::create('lc_countries', function (Blueprint $table) {
+        Schema::connection(config('w-countries.driver'))->create('lc_countries', function (Blueprint $table) {
             $table->increments('id')->comment('Primary key: auto-incremented country ID.');
             $table->tinyInteger('lc_region_id')->unsigned()->comment('Foreign key referencing the region this country belongs to.');
             $table->ulid('uid')->unique()->comment('Unique ULID for the country, sortable and lexicographically unique.');
@@ -67,6 +67,6 @@ return new class() extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lc_countries');
+        Schema::connection(config('w-countries.driver'))->dropIfExists('lc_countries');
     }
 };

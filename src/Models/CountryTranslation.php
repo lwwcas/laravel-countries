@@ -5,10 +5,12 @@ namespace Lwwcas\LaravelCountries\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Lwwcas\LaravelCountries\Models\Concerns\HasConnection;
 
 class CountryTranslation extends Model
 {
-    use HasFactory;
+    use HasFactory,
+        HasConnection;
 
     /**
      * Indicates if the model should be timestamped.

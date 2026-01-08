@@ -13,7 +13,7 @@ return new class() extends Migration
      */
     public function up()
     {
-        Schema::create('lc_countries_geographical', function (Blueprint $table) {
+        Schema::connection(config('w-countries.driver'))->create('lc_countries_geographical', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('lc_country_id')->unsigned();
             $table->string('type');
@@ -32,6 +32,6 @@ return new class() extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lc_countries_geographical');
+        Schema::connection(config('w-countries.driver'))->dropIfExists('lc_countries_geographical');
     }
 };
