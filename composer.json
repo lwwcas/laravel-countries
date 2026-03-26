@@ -30,7 +30,7 @@
     ],
     "require": {
         "php": "^8.2|^8.3",
-        "laravel/framework": "^10.48|^11.31|^12.0",
+        "laravel/framework": "^10.48|^11.31|^12.0|^13.0",
         "astrotomic/laravel-translatable": "^11.8",
         "spatie/laravel-package-tools": "1.92.*"
     },
@@ -39,7 +39,7 @@
         "laravel/legacy-factories": "^1.4",
         "mockery/mockery": "^1.6",
         "nunomaduro/termwind": "^2.3.0",
-        "orchestra/testbench": "^9.12",
+        "orchestra/testbench": "^9.12|^10.0|^11.0",
         "pestphp/pest": "^3.7",
         "pestphp/pest-plugin-laravel": "^3.1"
     },
@@ -78,9 +78,9 @@
         },
         "compatibility": {
             "laravel": {
-                "current": "10.x, 11.x, 12.x",
-                "planned": ["13.x"],
-                "untested": ["13.x"]
+                "current": "10.x, 11.x, 12.x, 13.x",
+                "planned": [],
+                "untested": []
             }
         },
         "language-management": {
@@ -97,7 +97,7 @@
             "country-relations": "Easily link country data to other models using foreign key relationships.",
             "data-seeding": "Includes customizable seeders for automatic country data population.",
             "artisan-commands": "Includes artisan commands for managing country and language data.",
-            "laravel-compatibility": "Supports Laravel 9.x, 10.x, 11.x, ensuring smooth integration."
+            "laravel-compatibility": "Supports Laravel 10.x, 11.x, 12.x, and 13.x, ensuring smooth integration."
         }
 
     },

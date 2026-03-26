@@ -29,6 +29,10 @@ The following table outlines the compatibility of the **Laravel Countries** pack
 | 4.12.x.x        | 10       |  ✅
 | 4.12.x.x        | 11       |  ✅
 | 4.12.x.x        | 12       |  ✅
+| 4.13.x.x        | 10       |  ✅
+| 4.13.x.x        | 11       |  ✅
+| 4.13.x.x        | 12       |  ✅
+| 4.13.x.x        | 13       |  ✅
 
 ## Requirements
 
@@ -38,7 +42,7 @@ The **Laravel Countries** package has the following system and package requireme
 
 - **PHP**: The package supports PHP versions **^8.2**, and **^8.3**, ensuring compatibility with modern PHP versions.
 
-- **Laravel Framework**: Compatible with Laravel versions **^10.x**, **^11.x**, and **^12.x**. This ensures that the package can be used with the most up-to-date releases of the Laravel framework.
+- **Laravel Framework**: Compatible with Laravel versions **^10.x**, **^11.x**, **^12.x**, and **^13.x**. This ensures that the package can be used with the most up-to-date releases of the Laravel framework.
 
 - **Astrotomic Laravel Translatable**: Requires version **^11.8** of the **Astrotomic Laravel Translatable** package for multilingual support in the application.
 
@@ -52,9 +56,9 @@ The following dependencies are required for development and testing purposes:
 
 - **Laravel Legacy Factories**: Version **^1.0.4** is needed for maintaining compatibility with older Laravel factory structures.
 
-- **Orchestra Testbench**: Version **^7.0** is used for testing the package in a Laravel-like environment without needing a full Laravel application.
+- **Orchestra Testbench**: Version **^9.12|^10.0|^11.0** is used for testing the package in a Laravel-like environment without needing a full Laravel application (supporting Laravel 10-13).
 
-- **PHPUnit**: Version **9.6.0** is required for running unit tests to ensure package reliability and stability.
+- **Pest**: Version **^3.7** with **pestphp/pest-plugin-laravel ^3.1** is required for running tests to ensure package reliability and stability.
 
 Ensure that your environment meets these requirements to guarantee smooth installation and usage of the **Laravel Countries** package.
 
