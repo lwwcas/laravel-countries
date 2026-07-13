@@ -6,7 +6,6 @@ use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Lwwcas\LaravelCountries\Abstract\CountryModel;
-use Lwwcas\LaravelCountries\Models\Concerns\HasConnection;
 use Lwwcas\LaravelCountries\Models\Concerns\HasTranslationGlobalScope;
 use Lwwcas\LaravelCountries\Models\Concerns\HasVisibleGlobalScope;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereIso;
@@ -25,8 +24,7 @@ class CountryRegion extends CountryModel
         HasWhereName,
         HasWhereIso,
         HasWhereIsoAlpha2,
-        VisibleAttributes,
-        HasConnection;
+        VisibleAttributes;
 
     public $translationModel = CountryRegionTranslation::class;
 

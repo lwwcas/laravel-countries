@@ -11,6 +11,7 @@ use Lwwcas\LaravelCountries\Database\Seeders\Languages\RussianLanguageSeeder as 
 use Lwwcas\LaravelCountries\Database\Seeders\Languages\SpanishLanguageSeeder as Spanish;
 use Lwwcas\LaravelCountries\Database\Seeders\LwwcasDatabaseSeeder as English;
 use Lwwcas\LaravelCountries\Models\CountryRegionTranslation as RegionsLanguages;
+use Lwwcas\LaravelCountries\Support\WCountriesConnection;
 
 trait WithLanguages
 {
@@ -158,6 +159,7 @@ trait WithLanguages
         foreach ($filteredLanguages as $language => $class) {
             $this->callSilently('db:seed', [
                 '--class' => $class,
+                '--database' => WCountriesConnection::name(),
             ]);
             $this->comment("{$language} executed successfully.");
         }

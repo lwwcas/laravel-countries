@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 use Lwwcas\LaravelCountries\Models\CountryRegion;
+use Lwwcas\LaravelCountries\Support\WCountriesConnection;
 
 class RegionsSeeder extends Seeder
 {
@@ -53,7 +54,7 @@ class RegionsSeeder extends Seeder
             ],
         ];
 
-        if (Schema::connection(config('w-countries.driver'))->hasTable('lc_regions') == false) {
+        if (Schema::connection(WCountriesConnection::name())->hasTable('lc_regions') == false) {
             return;
         }
 

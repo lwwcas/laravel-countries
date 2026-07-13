@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Lwwcas\LaravelCountries\Support\WCountriesConnection;
 
 return new class() extends Migration
 {
@@ -13,7 +14,7 @@ return new class() extends Migration
      */
     public function up()
     {
-        Schema::connection(config('w-countries.driver'))->create('lc_countries_translations', function (Blueprint $table) {
+        Schema::connection(WCountriesConnection::name())->create('lc_countries_translations', function (Blueprint $table) {
             $table->id('id');
             $table->integer('lc_country_id')->unsigned();
             $table->string('name');
@@ -33,6 +34,6 @@ return new class() extends Migration
      */
     public function down()
     {
-        Schema::connection(config('w-countries.driver'))->dropIfExists('lc_countries_translations');
+        Schema::connection(WCountriesConnection::name())->dropIfExists('lc_countries_translations');
     }
 };

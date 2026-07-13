@@ -2,6 +2,8 @@
 
 When you install **Laravel Countries**, the following database migrations will be executed to create the necessary table structure for storing countries, regions, geographical data, and translations.
 
+By default, migrations run on your application's default database connection. To use a dedicated connection instead, set `DB_CONNECTION_COUNTRIES` in your `.env` file. See [Supported Databases](/setup/supported-databases#custom-database-connection) for setup details.
+
 Here is an overview of the migrations:
 Below is a breakdown of each column and its purpose:
 

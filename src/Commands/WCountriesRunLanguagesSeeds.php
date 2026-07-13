@@ -4,6 +4,7 @@ namespace Lwwcas\LaravelCountries\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Schema;
+use Lwwcas\LaravelCountries\Support\WCountriesConnection;
 use Lwwcas\LaravelCountries\Models\CountryRegionTranslation as RegionsLanguages;
 use Lwwcas\LaravelCountries\Models\CountryRegionTranslation;
 use Lwwcas\LaravelCountries\Models\CountryTranslation;
@@ -37,7 +38,9 @@ class WCountriesRunLanguagesSeeds extends Command
      */
     public function handle()
     {
-        if (Schema::connection('w-countries.driver')->hasTable('lc_countries') == false || Schema::connection('w-countries.driver')->hasTable('lc_regions') == false) {
+        $connection = WCountriesConnection::name();
+
+        if (Schema::connection($connection)->hasTable('lc_countries') == false || Schema::connection($connection)->hasTable('lc_regions') == false) {
             $this->error('First install the countries and regions tables.');
             $this->info('Run php artisan w-countries:install for the structure to be installed first.');
             $this->newLine();

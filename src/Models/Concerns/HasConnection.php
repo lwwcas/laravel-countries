@@ -2,18 +2,12 @@
 
 namespace Lwwcas\LaravelCountries\Models\Concerns;
 
+use Lwwcas\LaravelCountries\Support\WCountriesConnection;
 
 trait HasConnection
 {
-    /**
-     * Return the name of the connection driver
-     *
-     * @return string
-     */
-
-    public function getConnectionName(): string
+    public function getConnectionName(): ?string
     {
-        return config('w-countries.driver');
+        return WCountriesConnection::name();
     }
-
 }

@@ -1,5 +1,5 @@
 {
-    "name": "mixx-bv/laravel-countries",
+    "name": "lwwcas/laravel-countries",
     "description": "A comprehensive package for managing country data in Laravel applications, including multilingual support, geographic coordinates, and detailed metadata for seamless integration with Laravel.",
     "homepage": "https://lwwcas.github.io/laravel-countries/",
     "type": "library",
