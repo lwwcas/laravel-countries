@@ -132,6 +132,7 @@ class RS_Serbia extends CountrySeeder
             'Organization for Security and Cooperation in Europe (OSCE)',
             'World Trade Organization (WTO)',
             'International Monetary Fund (IMF)',
+            'European Union candidate',
         ];
 
         // Set the GDP in billions of USD

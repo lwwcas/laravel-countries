@@ -134,6 +134,7 @@ class MK_Macedonia extends CountrySeeder
             'International Monetary Fund (IMF)',
             'World Trade Organization (WTO)',
             'Organization for Security and Co-operation in Europe (OSCE)',
+            'European Union candidate',
         ];
 
         // Set the GDP in billions of USD

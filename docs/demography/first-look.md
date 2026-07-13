@@ -35,6 +35,26 @@ The `CountryExtras::class` model is flexible and can be used in various scenario
 4. **Showcasing International Organization Memberships**
    Highlight countries that are part of specific international organizations like the UN, NATO, or others, making it easy for users to explore global affiliations.
 
+## European Organizations
+
+Several seeders track European memberships using consistent labels:
+
+| Label | Meaning |
+|-------|---------|
+| `European Union (EU)` | Full EU member state |
+| `European Union candidate` | Official EU candidate country |
+| `European Union (as an overseas territory of France)` | Overseas region represented by France in the EU |
+| `European Economic Area (EEA)` | EEA member (EU states plus Iceland, Liechtenstein, and Norway) |
+| `Schengen Area` | Full Schengen member |
+
+```php [Example]
+$organizations = $country->extras->international_organizations;
+
+$isEuMember = in_array('European Union (EU)', $organizations, true);
+$isSchengen = in_array('Schengen Area', $organizations, true);
+$isEuCandidate = in_array('European Union candidate', $organizations, true);
+```
+
 ## Examples
 
 Here are some example values for the different fields in the `CountryExtras::class` model:
@@ -46,7 +66,7 @@ Here are some example values for the different fields in the `CountryExtras::cla
 | **Popular Technologies**  | `["PHP", "JavaScript", "WordPress"]`                                                                      |
 | **Internet**              | `{"speed": {"average_fixed": "70 Mbps", "average_mobile": "35 Mbps"}, "penetration": "82%"}`              |
 | **Religions**             | `["Islam", "Christianity"]`                                                                               |
-| **International Organizations** | `["United Nations", "European Union", "NATO", "OECD", "Schengen Area", "Eurozone", "Benelux"]`      |
+| **International Organizations** | `["United Nations", "European Union (EU)", "NATO", "OECD", "Schengen Area", "European Economic Area (EEA)", "Eurozone"]`      |
 
 
 > **NOTE**:

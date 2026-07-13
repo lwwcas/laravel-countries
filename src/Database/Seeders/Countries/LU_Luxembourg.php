@@ -136,6 +136,7 @@ class LU_Luxembourg extends CountrySeeder
             'World Health Organization (WHO)',
             'Council of Europe',
             'Organisation for Economic Co-operation and Development (OECD)',
+            'European Economic Area (EEA)',
         ];
 
         // Set the GDP in billions of USD

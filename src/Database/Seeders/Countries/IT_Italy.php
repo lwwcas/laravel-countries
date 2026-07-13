@@ -137,6 +137,8 @@ class IT_Italy extends CountrySeeder
             'International Monetary Fund (IMF)',
             'World Health Organization (WHO)',
             'Council of Europe',
+            'Schengen Area',
+            'European Economic Area (EEA)',
         ];
 
         // Set the GDP in billions of USD

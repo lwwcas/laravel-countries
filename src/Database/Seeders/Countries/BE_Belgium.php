@@ -126,12 +126,13 @@ class BE_Belgium extends CountrySeeder
         // List international organizations the country is part of
         $this->international_organizations = [
             'United Nations',
-            'European Union',
+            'European Union (EU)',
             'NATO',
             'OECD',
             'Schengen Area',
             'Eurozone',
             'Benelux',
+            'European Economic Area (EEA)',
         ];
 
         // Set the GDP in billions of USD
