@@ -25,7 +25,7 @@ class ArabicLanguageSeeder extends Seeder
         'americas' => 'الأمريكيتين',
         'asia' => 'آسيا',
         'europe' => 'أوروبا',
-        'oceania' => 'استراليا',
+        'oceania' => 'أوقيانوسيا',
     ];
 
     /**
@@ -71,7 +71,7 @@ class ArabicLanguageSeeder extends Seeder
             'HT' => 'هايتي',
             'HN' => 'هندوراس',
             'KY' => 'جزر كايمان',
-            'FK' => 'جزر فوكلاند', // More neutral than Malvinas
+            'FK' => 'جزر فوكلاند',
             'TC' => 'جزر تركس وكايكوس',
             'VG' => 'جزر فيرجن البريطانية',
             'VI' => 'جزر فيرجن الأمريكية',
@@ -128,13 +128,13 @@ class ArabicLanguageSeeder extends Seeder
             'LI' => 'ليختنشتاين',
             'LT' => 'ليتوانيا',
             'LU' => 'لوكسمبورغ',
-            'MK' => 'مقدونيا الشمالية', // Corrected: Official Name
+            'MK' => 'مقدونيا الشمالية',
             'MT' => 'مالطا',
             'MD' => 'مولدوفا',
             'ME' => 'الجبل الأسود',
             'MC' => 'موناكو',
             'NO' => 'النرويج',
-            'PL' => 'بولندا', // Corrected: Formatting
+            'PL' => 'بولندا',
             'PT' => 'البرتغال',
             'GB' => 'المملكة المتحدة',
             'CZ' => 'جمهورية التشيك',
@@ -156,7 +156,7 @@ class ArabicLanguageSeeder extends Seeder
             'GS' => 'جورجيا الجنوبية وجزر ساندويتش الجنوبية',
             'GU' => 'غوام',
             'BV' => 'جزيرة بوفيت',
-            'HM' => 'جزيرة هيرد وجزر ماكدونald',
+            'HM' => 'جزيرة هيرد وجزر ماكدونالد',
             'NF' => 'جزيرة نورفولك',
             'CC' => 'جزر كوكوس',
             'CK' => 'جزر كوك',
@@ -192,11 +192,11 @@ class ArabicLanguageSeeder extends Seeder
             'BW' => 'بوتسوانا',
             'BF' => 'بوركينا فاسو',
             'BI' => 'بوروندي',
-            'CV' => 'الرأس الأخضر', // Corrected: Common Name
+            'CV' => 'الرأس الأخضر',
             'TD' => 'تشاد',
             'KM' => 'جزر القمر',
             'CG' => 'الكونغو',
-            'CD' => 'جمهورية الكونغو الديمقراطية', // Corrected: Formal Name
+            'CD' => 'جمهورية الكونغو الديمقراطية',
             'CI' => 'ساحل العاج',
             'DJ' => 'جيبوتي',
             'EG' => 'مصر',
@@ -225,15 +225,15 @@ class ArabicLanguageSeeder extends Seeder
             'KE' => 'كينيا',
             'CF' => 'جمهورية إفريقيا الوسطى',
             'CM' => 'الكاميرون',
-            'RE' => 'ريونيون', // Corrected: Translation
+            'RE' => 'ريونيون',
             'RW' => 'رواندا',
-            'EH' => 'الصحراء الغربية', // Corrected: Typo
+            'EH' => 'الصحراء الغربية',
             'SH' => 'سانت هيلينا',
             'SN' => 'السنغال',
             'SL' => 'سيراليون',
             'SC' => 'سيشيل',
             'SO' => 'الصومال',
-            'SZ' => 'إسواتيني', // Corrected: Official Name
+            'SZ' => 'إسواتيني',
             'SD' => 'السودان',
             'ST' => 'ساو تومي وبرينسيب',
             'TZ' => 'تنزانيا',
@@ -264,7 +264,7 @@ class ArabicLanguageSeeder extends Seeder
             'AE' => 'الإمارات العربية المتحدة',
             'PH' => 'الفلبين',
             'GE' => 'جورجيا',
-            'HK' => 'هونغ كونغ', // Corrected: Formatting
+            'HK' => 'هونغ كونغ',
             'ID' => 'إندونيسيا',
             'IQ' => 'العراق',
             'IR' => 'إيران',
@@ -273,7 +273,7 @@ class ArabicLanguageSeeder extends Seeder
             'JO' => 'الأردن',
             'KW' => 'الكويت',
             'LB' => 'لبنان',
-            'MO' => 'ماكاو', // Corrected: Formatting
+            'MO' => 'ماكاو',
             'MV' => 'جزر المالديف',
             'MY' => 'ماليزيا',
             'MM' => 'ميانمار',
@@ -282,7 +282,7 @@ class ArabicLanguageSeeder extends Seeder
             'OM' => 'عمان',
             'PK' => 'باكستان',
             'KG' => 'قيرغيزستان',
-            'LA' => 'لاوس', // Simplified
+            'LA' => 'لاوس',
             'LK' => 'سريلانكا',
             'SY' => 'سوريا',
             'TJ' => 'طاجيكستان',
@@ -294,7 +294,7 @@ class ArabicLanguageSeeder extends Seeder
             'TR' => 'تركيا',
             'UZ' => 'أوزبكستان',
             'VN' => 'فيتنام',
-            'YE' => 'اليمن', // Added
+            'YE' => 'اليمن',
             'IN' => 'الهند',
         ];
     }
