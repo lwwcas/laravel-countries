@@ -16,7 +16,7 @@ trait WithFlagColorBootstrap
      *
      * @return string The gradient direction in degrees.
      */
-    protected function getGradientDirection(string $startsOn = null): string
+    protected function getGradientDirection(?string $startsOn = null): string
     {
         $gradientDirections = [
             'random' => null,
@@ -46,7 +46,7 @@ trait WithFlagColorBootstrap
      *
      * @return string|null The CSS gradient string or null if no colors are set.
      */
-    public function getFlagGradient(string $startsOn = null): string|null
+    public function getFlagGradient(?string $startsOn = null): string|null
     {
         $direction = $this->getGradientDirection($startsOn);
         $hexColors = $this->getFlagColorsHex();
@@ -68,7 +68,7 @@ trait WithFlagColorBootstrap
      * @return string|null The CSS gradient string or null if no colors are set.
      */
 
-    public function getCombinedFlagGradient(Country $otherCountry, string $startsOn = null): string|null
+    public function getCombinedFlagGradient(Country $otherCountry, ?string $startsOn = null): string|null
     {
         $thisColors = $this->getFlagColorsHex();
         $otherColors = $otherCountry->getFlagColorsHex();

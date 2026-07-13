@@ -12,6 +12,10 @@ use Lwwcas\LaravelCountries\Models\Country;
  */
 class CountryFactory extends Factory
 {
+    private static int $isoAlpha2Sequence = 0;
+
+    private static int $isoAlpha3Sequence = 0;
+
     /**
      * The name of the factory's corresponding model.
      *
@@ -34,8 +38,8 @@ class CountryFactory extends Factory
 
             'official_name' => Str::title($name),
             'capital' => 'Capital ' . Str::title($name),
-            'iso_alpha_2' => fake()->countryCode(),
-            'iso_alpha_3' => fake()->countryISOAlpha3(),
+            'iso_alpha_2' => $this->uniqueIsoAlpha2(),
+            'iso_alpha_3' => $this->uniqueIsoAlpha3(),
             'iso_numeric' => fake()->randomNumber(3, false),
 
             'international_phone' => fake()->randomNumber(3, true),
@@ -218,6 +222,26 @@ class CountryFactory extends Factory
         }
 
         return $result;
+    }
+
+    protected function uniqueIsoAlpha2(): string
+    {
+        return str_pad(
+            strtoupper(base_convert((string) self::$isoAlpha2Sequence++, 10, 36)),
+            2,
+            '0',
+            STR_PAD_LEFT
+        );
+    }
+
+    protected function uniqueIsoAlpha3(): string
+    {
+        return str_pad(
+            strtoupper(base_convert((string) self::$isoAlpha3Sequence++, 10, 36)),
+            3,
+            '0',
+            STR_PAD_LEFT
+        );
     }
 
 

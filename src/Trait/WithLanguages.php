@@ -56,7 +56,7 @@ trait WithLanguages
      *
      * @return $this
      */
-    public function askToRunSeeds(array $languages = null): self
+    public function askToRunSeeds(?array $languages = null): self
     {
         if ($languages === null) {
             $languages = array_keys($this->languages);
