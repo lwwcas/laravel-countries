@@ -3,6 +3,7 @@
 namespace Lwwcas\LaravelCountries\Commands;
 
 use Illuminate\Console\Command;
+use Lwwcas\LaravelCountries\Support\WCountriesConnection;
 use Lwwcas\LaravelCountries\Trait\WithBasePackageTools;
 use Lwwcas\LaravelCountries\Trait\WithLanguages;
 
@@ -78,14 +79,17 @@ class WCountriesInstallCommand extends Command
     public function askToRunMigrations(): self
     {
         if ($this->confirm('Would you like to run the migrations now?')) {
-            $this->comment('Running migrations...');
+            $connection = WCountriesConnection::name();
+
+            $this->comment("Running migrations on the [{$connection}] database connection...");
 
             $this->callSilently('vendor:publish', [
                 '--tag' => 'lwwcas-countries-migrations',
             ]);
 
-            $this->call('migrate');
-            $this->comment('Publishing migrations...');
+            $this->call('migrate', [
+                '--database' => $connection,
+            ]);
 
             $this->info('Migrations executed successfully!');
             $this->setTrueRunMigrations();

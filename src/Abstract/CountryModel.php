@@ -4,10 +4,12 @@ namespace Lwwcas\LaravelCountries\Abstract;
 
 use Illuminate\Database\Eloquent\Model;
 use Lwwcas\LaravelCountries\Models\Concerns\HasConfigs;
+use Lwwcas\LaravelCountries\Models\Concerns\HasConnection;
 
 abstract class CountryModel extends Model
 {
-    use HasConfigs;
+    use HasConfigs,
+        HasConnection;
 
     /**
      * @property-read string $localeKey

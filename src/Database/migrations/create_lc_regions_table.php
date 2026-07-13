@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Lwwcas\LaravelCountries\Support\WCountriesConnection;
 
 return new class() extends Migration
 {
@@ -13,7 +14,7 @@ return new class() extends Migration
      */
     public function up()
     {
-        Schema::create('lc_regions', function (Blueprint $table) {
+        Schema::connection(WCountriesConnection::name())->create('lc_regions', function (Blueprint $table) {
             $table->tinyIncrements('id');
             $table->string('iso_alpha_2', 10)->comment('ISO 3166-1 Alpha-2 code');
             $table->string('icao', 10)->comment('International Civil Aviation Organization (ICAO) region');
@@ -30,6 +31,6 @@ return new class() extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lc_regions');
+        Schema::connection(WCountriesConnection::name())->dropIfExists('lc_regions');
     }
 };

@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Lwwcas\LaravelCountries\Support\WCountriesConnection;
 
 return new class() extends Migration
 {
@@ -13,7 +14,7 @@ return new class() extends Migration
      */
     public function up()
     {
-        Schema::create('lc_region_translations', function (Blueprint $table) {
+        Schema::connection(WCountriesConnection::name())->create('lc_region_translations', function (Blueprint $table) {
             $table->tinyIncrements('id');
             $table->tinyInteger('lc_region_id')->unsigned();
             $table->string('name');
@@ -33,6 +34,6 @@ return new class() extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lc_region_translations');
+        Schema::connection(WCountriesConnection::name())->dropIfExists('lc_region_translations');
     }
 };
