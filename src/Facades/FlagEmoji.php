@@ -52,7 +52,7 @@ final class FlagEmoji
      * @return Collection|FlagEmoji A Collection of all flag emoji attributes, or the flag emoji
      *                              attribute at the given key.
      */
-    public function get(string|int $flagKey = null): Collection|FlagEmoji
+    public function get(string|int|null $flagKey = null): Collection|FlagEmoji
     {
         if ($flagKey !== null) {
            return $this->on_data[$flagKey];
