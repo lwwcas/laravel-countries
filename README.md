@@ -80,6 +80,7 @@ composer test
 ## Credits
 
 - [Lucas Duarte](https://github.com/lwwcas)
+- [Saad Batwa](https://github.com/Saad5400) — detailed review and corrections of Arabic country translations ([PR #45](https://github.com/lwwcas/laravel-countries/pull/45))
 - [All Contributors](../../contributors)
 
 ## License

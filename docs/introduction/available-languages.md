@@ -15,6 +15,9 @@ We currently support the following languages:
 | Russian       | 🇷🇺   | Russia       | 4                   |
 | Spanish       | 🇪🇸   | Spain        | 21                  |
 
+## Translation Credits
+
+- **[Saad Batwa](https://github.com/Saad5400)** — detailed review and corrections of Arabic country names in `ArabicLanguageSeeder` ([PR #45](https://github.com/lwwcas/laravel-countries/pull/45)).
 
 > **Note**: The "Number of Countries" refers to the estimated number of countries where the language is either official or widely spoken.
 
