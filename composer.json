@@ -31,23 +31,22 @@
     "require": {
         "php": "^8.2|^8.3",
         "laravel/framework": "^10.48|^11.31|^12.0|^13.0",
-        "astrotomic/laravel-translatable": "^11.8",
-        "spatie/laravel-package-tools": "1.92.*"
+        "astrotomic/laravel-translatable": "^11.17",
+        "spatie/laravel-package-tools": "^1.93"
     },
     "require-dev": {
         "doctrine/dbal": "^3.0",
         "laravel/legacy-factories": "^1.4",
         "mockery/mockery": "^1.6",
-        "nunomaduro/termwind": "^2.3.0",
-        "orchestra/testbench": "^9.12|^10.0|^11.0",
-        "pestphp/pest": "^3.7",
-        "pestphp/pest-plugin-laravel": "^3.1"
+        "orchestra/testbench": "^8.31|^9.12|^10.0|^11.0",
+        "pestphp/pest": "^2.34|^3.7|^4.4",
+        "pestphp/pest-plugin-laravel": "^2.4|^3.1|^4.1"
     },
     "autoload": {
         "psr-4": {
             "Lwwcas\\LaravelCountries\\": "src/",
             "Lwwcas\\LaravelCountries\\Config\\": "src/config/",
-            "Lwwcas\\LaravelCountries\\Database\\migrations\\": "src/database/migrations/"
+            "Lwwcas\\LaravelCountries\\Database\\migrations\\": "src/Database/migrations/"
         }
     },
     "autoload-dev": {

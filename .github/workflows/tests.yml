@@ -1,0 +1,55 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - master
+      - feature/laravel-13-support
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - laravel: 10
+            php: 8.2
+            framework: ^10.48
+            testbench: ^8.31
+          - laravel: 11
+            php: 8.2
+            framework: ^11.31
+            testbench: ^9.12
+          - laravel: 12
+            php: 8.2
+            framework: ^12.0
+            testbench: ^10.0
+          - laravel: 13
+            php: 8.3
+            framework: ^13.0
+            testbench: ^11.0
+
+    name: Laravel ${{ matrix.laravel }} (PHP ${{ matrix.php }})
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, sqlite, pdo_sqlite
+          coverage: none
+
+      - name: Install dependencies
+        run: |
+          composer require "laravel/framework:${{ matrix.framework }}" --no-interaction --no-update
+          composer require --dev "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+          composer update --prefer-stable --prefer-dist --no-interaction
+
+      - name: Run tests
+        run: vendor/bin/pest
