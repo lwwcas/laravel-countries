@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Database\Eloquent\Collection;
 use Lwwcas\LaravelCountries\Database\Factories\CountryFactory;
 use Lwwcas\LaravelCountries\Database\Factories\CountryRegionFactory;
 use Lwwcas\LaravelCountries\Database\Factories\CountryRegionTranslationFactory;
@@ -19,7 +20,7 @@ it('should remove the translation global scope on Country Model', function () {
         return $country->relationLoaded('translations');
     });
 
-    expect($queryWithoutTranslationScope)->toBeInstanceOf(Illuminate\Database\Eloquent\Collection::class);
+    expect($queryWithoutTranslationScope)->toBeInstanceOf(Collection::class);
     expect($countriesWithoutTranslation->count())->toBe(0);
 });
 
@@ -35,7 +36,7 @@ it('should apply the translation global scope on Country Model', function () {
         return $country->relationLoaded('translations');
     });
 
-    expect($queryWithoutTranslationScope)->toBeInstanceOf(Illuminate\Database\Eloquent\Collection::class);
+    expect($queryWithoutTranslationScope)->toBeInstanceOf(Collection::class);
     expect($countriesWithoutTranslation->count())->toBe(12);
 });
 
@@ -51,7 +52,7 @@ it('should remove the translation global scope on Region Model', function () {
         return $country->relationLoaded('translations');
     });
 
-    expect($queryWithoutTranslationScope)->toBeInstanceOf(Illuminate\Database\Eloquent\Collection::class);
+    expect($queryWithoutTranslationScope)->toBeInstanceOf(Collection::class);
     expect($regionsWithoutTranslation->count())->toBe(0);
 });
 
@@ -67,6 +68,6 @@ it('should apply the translation global scope on Region Model', function () {
         return $country->relationLoaded('translations');
     });
 
-    expect($queryWithoutTranslationScope)->toBeInstanceOf(Illuminate\Database\Eloquent\Collection::class);
+    expect($queryWithoutTranslationScope)->toBeInstanceOf(Collection::class);
     expect($regionsWithoutTranslation->count())->toBe(12);
 });
