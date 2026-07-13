@@ -126,7 +126,7 @@ class RE_Reunion extends CountrySeeder
 
         // List international organizations the country is part of
         $this->international_organizations = [
-            'European Union (EU)',
+            'European Union (as an overseas territory of France)',
             'United Nations (as part of France)',
         ];
 

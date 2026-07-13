@@ -132,7 +132,8 @@ class RO_Romania extends CountrySeeder
             'North Atlantic Treaty Organization (NATO)',
             'World Trade Organization (WTO)',
             'International Monetary Fund (IMF)',
-            'Schengen Area (candidate)',
+            'Schengen Area',
+            'European Economic Area (EEA)',
         ];
 
         // Set the GDP in billions of USD

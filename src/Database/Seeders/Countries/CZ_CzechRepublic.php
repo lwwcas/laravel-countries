@@ -134,6 +134,7 @@ class CZ_CzechRepublic extends CountrySeeder
             'World Health Organization (WHO)',
             'NATO',
             'Schengen Area',
+            'European Economic Area (EEA)',
         ];
 
         // Set the GDP in billions of USD
