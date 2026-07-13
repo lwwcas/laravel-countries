@@ -14,10 +14,12 @@ We currently support the following languages:
 | Portuguese    | 🇧🇷   | Brazil       | 9                   |
 | Russian       | 🇷🇺   | Russia       | 4                   |
 | Spanish       | 🇪🇸   | Spain        | 21                  |
+| Turkish       | 🇹🇷   | Turkey       | 2                   |
 
 ## Translation Credits
 
 - **[Saad Batwa](https://github.com/Saad5400)** — detailed review and corrections of Arabic country names in `ArabicLanguageSeeder` ([PR #45](https://github.com/lwwcas/laravel-countries/pull/45)).
+- **[İlyas Özkurt](https://github.com/ilyasozkurt)** — Turkish country and region translations in `TurkishLanguageSeeder` ([PR #36](https://github.com/lwwcas/laravel-countries/pull/36)).
 
 > **Note**: The "Number of Countries" refers to the estimated number of countries where the language is either official or widely spoken.
 

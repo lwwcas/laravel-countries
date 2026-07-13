@@ -44,6 +44,7 @@ We currently support the following languages:
 | Portuguese    | 🇧🇷   | Brazil       | 9                   |
 | Russian       | 🇷🇺   | Russia       | 4                   |
 | Spanish       | 🇪🇸   | Spain        | 21                  |
+| Turkish       | 🇹🇷   | Turkey       | 2                   |
 
 ## 🚀 Getting Started
 
@@ -81,6 +82,7 @@ composer test
 
 - [Lucas Duarte](https://github.com/lwwcas)
 - [Saad Batwa](https://github.com/Saad5400) — detailed review and corrections of Arabic country translations ([PR #45](https://github.com/lwwcas/laravel-countries/pull/45))
+- [İlyas Özkurt](https://github.com/ilyasozkurt) — Turkish language translations ([PR #36](https://github.com/lwwcas/laravel-countries/pull/36))
 - [All Contributors](../../contributors)
 
 ## License
