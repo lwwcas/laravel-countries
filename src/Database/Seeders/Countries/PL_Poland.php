@@ -133,6 +133,7 @@ class PL_Poland extends CountrySeeder
             'World Trade Organization (WTO)',
             'International Monetary Fund (IMF)',
             'Schengen Area',
+            'European Economic Area (EEA)',
         ];
 
         // Set the GDP in billions of USD

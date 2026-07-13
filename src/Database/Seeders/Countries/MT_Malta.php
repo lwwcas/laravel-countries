@@ -134,6 +134,7 @@ class MT_Malta extends CountrySeeder
             'World Health Organization (WHO)',
             'Commonwealth of Nations',
             'Schengen Area',
+            'European Economic Area (EEA)',
         ];
 
         // Set the GDP in billions of USD

@@ -133,6 +133,7 @@ class SK_Slovakia extends CountrySeeder
             'Schengen Area',
             'World Trade Organization (WTO)',
             'International Monetary Fund (IMF)',
+            'European Economic Area (EEA)',
         ];
 
         // Set the GDP in billions of USD
