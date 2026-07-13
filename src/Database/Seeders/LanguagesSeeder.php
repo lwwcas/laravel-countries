@@ -11,6 +11,7 @@ use Lwwcas\LaravelCountries\Database\Seeders\Languages\ItalianLanguageSeeder as 
 use Lwwcas\LaravelCountries\Database\Seeders\Languages\PortugueseLanguageSeeder as Portuguese;
 use Lwwcas\LaravelCountries\Database\Seeders\Languages\RussianLanguageSeeder as Russian;
 use Lwwcas\LaravelCountries\Database\Seeders\Languages\SpanishLanguageSeeder as Spanish;
+use Lwwcas\LaravelCountries\Database\Seeders\Languages\TurkishLanguageSeeder as Turkish;
 
 class LanguagesSeeder extends Seeder
 {
@@ -30,5 +31,6 @@ class LanguagesSeeder extends Seeder
         $this->call(Dutch::class);
         $this->call(German::class);
         $this->call(Russian::class);
+        $this->call(Turkish::class);
     }
 }

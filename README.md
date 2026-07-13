@@ -44,6 +44,7 @@ We currently support the following languages:
 | Portuguese    | 🇧🇷   | Brazil       | 9                   |
 | Russian       | 🇷🇺   | Russia       | 4                   |
 | Spanish       | 🇪🇸   | Spain        | 21                  |
+| Turkish       | 🇹🇷   | Turkey       | -                   |
 
 ## 🚀 Getting Started
 
