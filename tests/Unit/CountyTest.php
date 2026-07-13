@@ -17,8 +17,8 @@ it('should has a region relationship', function () {
 
     $country = Country::inRandomOrder()->first();
 
-    expect($country->region()->first())->toBeInstanceOf(CountryRegion::class);
-    expect($country->region()->first()->id)->toBe($region->id);
+    expect($country->region)->toBeInstanceOf(CountryRegion::class);
+    expect($country->region->id)->toBe($region->id);
 });
 
 it('should has a geographical relationship', function () {

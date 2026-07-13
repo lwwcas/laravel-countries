@@ -25,7 +25,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
     public function createTables()
     {
-        $migrationsPath = dirname(__DIR__) . '/src/database/migrations';
+        $migrationsPath = dirname(__DIR__) . '/src/Database/migrations';
         $this->loadMigrationsFrom($migrationsPath);
     }
 }

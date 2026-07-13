@@ -29,6 +29,12 @@ The following table outlines the compatibility of the **Laravel Countries** pack
 | 4.12.x.x        | 10       |  ✅
 | 4.12.x.x        | 11       |  ✅
 | 4.12.x.x        | 12       |  ✅
+| 4.13.x.x        | 10       |  ✅
+| 4.13.x.x        | 11       |  ✅
+| 4.13.x.x        | 12       |  ✅
+| 4.13.x.x        | 13       |  ✅
+
+> **Note:** Laravel 10 remains supported via Composer constraints, but it is not covered by the automated test matrix (L11–L13).
 
 ## Requirements
 
@@ -36,13 +42,13 @@ The **Laravel Countries** package has the following system and package requireme
 
 ### Runtime Requirements (Production)
 
-- **PHP**: The package supports PHP versions **^8.2**, and **^8.3**, ensuring compatibility with modern PHP versions.
+- **PHP**: The package supports PHP versions **^8.2** and **^8.3**. Laravel 10–12 work with PHP 8.2+. Laravel 13 requires **PHP ^8.3**.
 
-- **Laravel Framework**: Compatible with Laravel versions **^10.x**, **^11.x**, and **^12.x**. This ensures that the package can be used with the most up-to-date releases of the Laravel framework.
+- **Laravel Framework**: Compatible with Laravel versions **^10.x**, **^11.x**, **^12.x**, and **^13.x**. This ensures that the package can be used with the most up-to-date releases of the Laravel framework.
 
-- **Astrotomic Laravel Translatable**: Requires version **^11.8** of the **Astrotomic Laravel Translatable** package for multilingual support in the application.
+- **Astrotomic Laravel Translatable**: Requires version **^11.17** of the **Astrotomic Laravel Translatable** package for multilingual support in the application.
 
-- **Spatie Laravel Package Tools**: Requires version **^1.92.x** of **Spatie's Laravel Package Tools** to assist in the package setup and management.
+- **Spatie Laravel Package Tools**: Requires version **^1.93** of **Spatie's Laravel Package Tools** to assist in the package setup and management.
 
 ### Development Requirements
 
@@ -52,9 +58,9 @@ The following dependencies are required for development and testing purposes:
 
 - **Laravel Legacy Factories**: Version **^1.0.4** is needed for maintaining compatibility with older Laravel factory structures.
 
-- **Orchestra Testbench**: Version **^7.0** is used for testing the package in a Laravel-like environment without needing a full Laravel application.
+- **Orchestra Testbench**: Version **^9.12|^10.0|^11.0** is used for testing the package in a Laravel-like environment without needing a full Laravel application (supporting Laravel 11-13).
 
-- **PHPUnit**: Version **9.6.0** is required for running unit tests to ensure package reliability and stability.
+- **Pest**: Version **^3.7|^4.4** with **pestphp/pest-plugin-laravel ^3.1|^4.1** is required for running tests. Composer picks the matching Pest major per Laravel version (L11–12 → Pest 3, L13 → Pest 4).
 
 Ensure that your environment meets these requirements to guarantee smooth installation and usage of the **Laravel Countries** package.
 
