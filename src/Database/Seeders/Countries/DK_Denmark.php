@@ -2,23 +2,18 @@
 
 namespace Lwwcas\LaravelCountries\Database\Seeders\Countries;
 
-use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 use Lwwcas\LaravelCountries\Abstract\CountrySeeder;
+use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
 class DK_Denmark extends CountrySeeder
 {
-
     /**
      * Attribute that defines the language of countries
-     *
-     * @var string
      */
     public ?string $lang = 'en';
 
     /**
      * Attribute that defines the language of countries
-     *
-     * @var string
      */
     public ?string $region = 'europe';
 
@@ -29,216 +24,216 @@ class DK_Denmark extends CountrySeeder
      */
     public function run()
     {
-      // Set the country's common name
-      $this->name = 'Denmark';
+        // Set the country's common name
+        $this->name = 'Denmark';
 
-      // Set the country's official namespace
-      $this->official_name = 'Kingdom of Denmark';
+        // Set the country's official namespace
+        $this->official_name = 'Kingdom of Denmark';
 
-      // Set the ISO 3166-1 alpha-2 code
-      $this->iso_alpha_2 = 'DK';
+        // Set the ISO 3166-1 alpha-2 code
+        $this->iso_alpha_2 = 'DK';
 
-      // Set the ISO 3166-1 alpha-3 code
-      $this->iso_alpha_3 = 'DNK';
+        // Set the ISO 3166-1 alpha-3 code
+        $this->iso_alpha_3 = 'DNK';
 
-      // Set the ISO 3166-1 numeric code (usually three digits)
-      $this->iso_numeric = '208';
+        // Set the ISO 3166-1 numeric code (usually three digits)
+        $this->iso_numeric = '208';
 
-      // Set the international dialing code
-      $this->international_phone = '45';
+        // Set the international dialing code
+        $this->international_phone = '45';
 
-      // Define the languages spoken in the country
-      $this->languages = ['da']; // Danish is the official language
+        // Define the languages spoken in the country
+        $this->languages = ['da']; // Danish is the official language
 
-      // Define the top-level domain(s)
-      $this->tld = ['.dk'];
+        // Define the top-level domain(s)
+        $this->tld = ['.dk'];
 
-      // Define alternative top-level domains
-      $this->alternative_tlds = []; // No significant alternative TLDs
+        // Define alternative top-level domains
+        $this->alternative_tlds = []; // No significant alternative TLDs
 
-      // Define average internet speeds
-      $this->internet_speed = [
-          // Average fixed broadband speed
-          'average_speed_fixed' => '150 Mbps',
-          // Average mobile connection speed
-          'average_speed_mobile' => '65 Mbps',
-      ];
+        // Define average internet speeds
+        $this->internet_speed = [
+            // Average fixed broadband speed
+            'average_speed_fixed' => '150 Mbps',
+            // Average mobile connection speed
+            'average_speed_mobile' => '65 Mbps',
+        ];
 
-      // Define internet penetration rate
-      $this->internet_penetration = '98%'; // Percentage of the population with internet access
+        // Define internet penetration rate
+        $this->internet_penetration = '98%'; // Percentage of the population with internet access
 
-      // Set the national cybersecurity agency
-      $this->cybersecurity_agency = 'Center for Cyber Security (CFCS)';
+        // Set the national cybersecurity agency
+        $this->cybersecurity_agency = 'Center for Cyber Security (CFCS)';
 
-      // List popular web technologies in Denmark
-      $this->popular_technologies = ['PHP', 'JavaScript', 'Python', 'WordPress', 'React'];
+        // List popular web technologies in Denmark
+        $this->popular_technologies = ['PHP', 'JavaScript', 'Python', 'WordPress', 'React'];
 
-      // Set the WMO (World Meteorological Organization) country code
-      $this->wmo = 'DN';
+        // Set the WMO (World Meteorological Organization) country code
+        $this->wmo = 'DN';
 
-      // Set the GeoName ID for geographical data reference
-      $this->geoname_id = '2623032';
+        // Set the GeoName ID for geographical data reference
+        $this->geoname_id = '2623032';
 
-      // Define the currency information
-      $this->currency = [
-          // Currency name
-          'name' => 'Danish krone',
-          // Currency code
-          'code' => 'DKK',
-          // Currency symbol
-          'symbol' => 'kr',
-          // Main unit
-          'main_unit' => 'krone',
-          // Subunit
-          'sub_unit' => 'øre',
-          // Subunit to main unit conversion
-          'sub_unit_to_unit' => 100,
-          // Banknotes in circulation
-          'banknotes' => ['50', '100', '200', '500', '1,000'],
-          // Main coins
-          'coins_main' => ['1', '2', '5', '10', '20'],
-          // Subunit coins
-          'coins_sub' => ['50 øre'],
-      ];
+        // Define the currency information
+        $this->currency = [
+            // Currency name
+            'name' => 'Danish krone',
+            // Currency code
+            'code' => 'DKK',
+            // Currency symbol
+            'symbol' => 'kr',
+            // Main unit
+            'main_unit' => 'krone',
+            // Subunit
+            'sub_unit' => 'øre',
+            // Subunit to main unit conversion
+            'sub_unit_to_unit' => 100,
+            // Banknotes in circulation
+            'banknotes' => ['50', '100', '200', '500', '1,000'],
+            // Main coins
+            'coins_main' => ['1', '2', '5', '10', '20'],
+            // Subunit coins
+            'coins_sub' => ['50 øre'],
+        ];
 
-      // Set the population
-      $this->population = 5831404; // As per recent estimates
+        // Set the population
+        $this->population = 5831404; // As per recent estimates
 
-      // Set the area in square kilometers
-      $this->area = 42933; // km²
+        // Set the area in square kilometers
+        $this->area = 42933; // km²
 
-      // Set the capital city
-      $this->capital = 'Copenhagen';
+        // Set the capital city
+        $this->capital = 'Copenhagen';
 
-      // Define the time zone(s) using IANA time zone identifiers
-      $this->timezones = [
-          [
-              // Time zone identifier
-              'timezone_id' => 'Europe/Copenhagen',
-              // Standard time offset
-              'standard_time' => 'UTC+1', // Central European Time (CET)
-              // Daylight saving time offset
-              'daylight_saving_time' => 'UTC+2', // Central European Summer Time (CEST)
-          ],
-      ];
+        // Define the time zone(s) using IANA time zone identifiers
+        $this->timezones = [
+            [
+                // Time zone identifier
+                'timezone_id' => 'Europe/Copenhagen',
+                // Standard time offset
+                'standard_time' => 'UTC+1', // Central European Time (CET)
+                // Daylight saving time offset
+                'daylight_saving_time' => 'UTC+2', // Central European Summer Time (CEST)
+            ],
+        ];
 
-      // Set the independence day
-      $this->independence_day = null; // Denmark does not celebrate an independence day
+        // Set the independence day
+        $this->independence_day = null; // Denmark does not celebrate an independence day
 
-      // List international organizations the country is part of
-      $this->international_organizations = [
-          'United Nations',
-          'European Union (EU)',
-          'World Trade Organization (WTO)',
-          'International Monetary Fund (IMF)',
-          'World Health Organization (WHO)',
-          'NATO',
-          'Schengen Area',
-          'Nordic Council',
-          'European Economic Area (EEA)',
-      ];
+        // List international organizations the country is part of
+        $this->international_organizations = [
+            'United Nations',
+            'European Union (EU)',
+            'World Trade Organization (WTO)',
+            'International Monetary Fund (IMF)',
+            'World Health Organization (WHO)',
+            'NATO',
+            'Schengen Area',
+            'Nordic Council',
+            'European Economic Area (EEA)',
+        ];
 
-      // Set the GDP in billions of USD
-      $this->gdp = 399.1; // GDP in billions of USD
+        // Set the GDP in billions of USD
+        $this->gdp = 399.1; // GDP in billions of USD
 
-      // List the predominant religions
-      $this->religions = [
-          'Christianity (Evangelical Lutheran Church of Denmark)',
-          'Irreligion',
-      ];
+        // List the predominant religions
+        $this->religions = [
+            'Christianity (Evangelical Lutheran Church of Denmark)',
+            'Irreligion',
+        ];
 
-      // Describe the form of government
-      $this->government = 'Unitary parliamentary constitutional monarchy';
+        // Describe the form of government
+        $this->government = 'Unitary parliamentary constitutional monarchy';
 
-      // Set the national sport
-      $this->national_sport = 'Football (Soccer)'; // Football (soccer) is the most popular sport
+        // Set the national sport
+        $this->national_sport = 'Football (Soccer)'; // Football (soccer) is the most popular sport
 
-      // Define bordering countries
-      $this->borders = [
-          ['name' => 'Germany', 'iso_alpha_2' => 'DE'],
-      ];
+        // Define bordering countries
+        $this->borders = [
+            ['name' => 'Germany', 'iso_alpha_2' => 'DE'],
+        ];
 
-      // Define the country's flag emoji representation
-      $this->emoji = [
-          // Native emoji image
-          'img' => '🇩🇰',
-          // Unicode code points
-          'uCode' => 'U+1F1E9 U+1F1F0',
-          // HTML entities
-          'html' => '&#x1F1E9;&#x1F1F0;',
-          // CSS entities
-          'css' => '\\1F1E9\\1F1F0',
-          // Decimal Unicode entities
-          'decimal' => '&#127465;&#127472;',
-          // Direct UTF-8 string
-          'utf8' => '🇩🇰',
-          // UTF-16 surrogate pairs
-          'utf16' => '\uD83C\uDDE9\uD83C\uDDF0',
-          // Shortcode in Emojione, Slack
-          'shortcode' => ':flag-dk:',
-          // Hexadecimal entity
-          'hex' => '&#x1F1E9;&#x1F1F0;',
-      ];
+        // Define the country's flag emoji representation
+        $this->emoji = [
+            // Native emoji image
+            'img' => '🇩🇰',
+            // Unicode code points
+            'uCode' => 'U+1F1E9 U+1F1F0',
+            // HTML entities
+            'html' => '&#x1F1E9;&#x1F1F0;',
+            // CSS entities
+            'css' => '\\1F1E9\\1F1F0',
+            // Decimal Unicode entities
+            'decimal' => '&#127465;&#127472;',
+            // Direct UTF-8 string
+            'utf8' => '🇩🇰',
+            // UTF-16 surrogate pairs
+            'utf16' => '\uD83C\uDDE9\uD83C\uDDF0',
+            // Shortcode in Emojione, Slack
+            'shortcode' => ':flag-dk:',
+            // Hexadecimal entity
+            'hex' => '&#x1F1E9;&#x1F1F0;',
+        ];
 
-      // Define the colors of the country's flag with accurate color values
-      $this->flag_colors = [
-          [
-              // Color name
-              'name' => 'Red',
-              // Web color name
-              'web_name' => 'red',
-              // Hexadecimal color code
-              'hex' => '#C60C30',
-              // RGB color values
-              'rgb' => '198,12,48',
-              // CMYK color values
-              'cmyk' => '0,94,76,22',
-              // HSL color values
-              'hsl' => '348,89%,41%',
-              // HSV color values
-              'hsv' => '348,94%,78%',
-              // Pantone color code
-              'pantone' => '186 C',
-              // Contrast color for readability
-              'contrast' => '#FFFFFF',
-          ],
-          [
-              // Color name
-              'name' => 'White',
-              // Web color name
-              'web_name' => 'white',
-              // Hexadecimal color code
-              'hex' => '#FFFFFF',
-              // RGB color values
-              'rgb' => '255,255,255',
-              // CMYK color values
-              'cmyk' => '0,0,0,0',
-              // HSL color values
-              'hsl' => '0,0%,100%',
-              // HSV color values
-              'hsv' => '0,0%,100%',
-              // Pantone color code
-              'pantone' => 'White',
-              // Contrast color for readability
-              'contrast' => '#000000',
-          ],
-      ];
+        // Define the colors of the country's flag with accurate color values
+        $this->flag_colors = [
+            [
+                // Color name
+                'name' => 'Red',
+                // Web color name
+                'web_name' => 'red',
+                // Hexadecimal color code
+                'hex' => '#C60C30',
+                // RGB color values
+                'rgb' => '198,12,48',
+                // CMYK color values
+                'cmyk' => '0,94,76,22',
+                // HSL color values
+                'hsl' => '348,89%,41%',
+                // HSV color values
+                'hsv' => '348,94%,78%',
+                // Pantone color code
+                'pantone' => '186 C',
+                // Contrast color for readability
+                'contrast' => '#FFFFFF',
+            ],
+            [
+                // Color name
+                'name' => 'White',
+                // Web color name
+                'web_name' => 'white',
+                // Hexadecimal color code
+                'hex' => '#FFFFFF',
+                // RGB color values
+                'rgb' => '255,255,255',
+                // CMYK color values
+                'cmyk' => '0,0,0,0',
+                // HSL color values
+                'hsl' => '0,0%,100%',
+                // HSV color values
+                'hsv' => '0,0%,100%',
+                // Pantone color code
+                'pantone' => 'White',
+                // Contrast color for readability
+                'contrast' => '#000000',
+            ],
+        ];
 
-      // Define the geographical coordinates
-      $this->coordinates = [
-          // Latitude in decimal degrees
-          'latitude' => '55.6761',
-          // Longitude in decimal degrees
-          'longitude' => '12.5683',
-          // Degrees with decimal
-          'dd' => '55.6761° N, 12.5683° E',
-          // Degrees, minutes, seconds
-          'dms' => '55°40\'33.96" N, 12°34\'5.88" E',
-          // Degrees and decimal minutes
-          'dm' => '55°40.566\' N, 12°34.098\' E',
+        // Define the geographical coordinates
+        $this->coordinates = [
+            // Latitude in decimal degrees
+            'latitude' => '55.6761',
+            // Longitude in decimal degrees
+            'longitude' => '12.5683',
+            // Degrees with decimal
+            'dd' => '55.6761° N, 12.5683° E',
+            // Degrees, minutes, seconds
+            'dms' => '55°40\'33.96" N, 12°34\'5.88" E',
+            // Degrees and decimal minutes
+            'dm' => '55°40.566\' N, 12°34.098\' E',
             // Various GPS formats
             'gps' => [],
-      ];
+        ];
 
         $this->geographical = json_decode($this->geographical(), true);
 

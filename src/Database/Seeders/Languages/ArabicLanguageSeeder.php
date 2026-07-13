@@ -7,7 +7,6 @@ use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
 class ArabicLanguageSeeder extends Seeder
 {
-
     /**
      * Attribute that defines the language of countries
      *
@@ -95,7 +94,7 @@ class ArabicLanguageSeeder extends Seeder
             'TT' => 'ترينيداد وتوباغو',
             'UY' => 'أوروجواي',
             'VE' => 'فنزويلا',
-        
+
             // Europe
             'AL' => 'ألبانيا',
             'DE' => 'ألمانيا',
@@ -148,7 +147,7 @@ class ArabicLanguageSeeder extends Seeder
             'UA' => 'أوكرانيا',
             'VA' => 'الفاتيكان',
             'AT' => 'النمسا',
-        
+
             // Oceania
             'AQ' => 'القارة القطبية الجنوبية',
             'AU' => 'أستراليا',
@@ -184,7 +183,7 @@ class ArabicLanguageSeeder extends Seeder
             'TV' => 'توفالو',
             'VU' => 'فانواتو',
             'WF' => 'واليس وفوتونا',
-        
+
             // Africa
             'AO' => 'أنغولا',
             'DZ' => 'الجزائر',
@@ -243,7 +242,7 @@ class ArabicLanguageSeeder extends Seeder
             'ZW' => 'زيمبابوي',
             'ZM' => 'زامبيا',
             'ZA' => 'جنوب إفريقيا',
-        
+
             // Asia
             'AF' => 'أفغانستان',
             'AM' => 'أرمينيا',

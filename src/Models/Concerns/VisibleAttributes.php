@@ -6,8 +6,6 @@ trait VisibleAttributes
 {
     /**
      * Determine if the model is visible.
-     *
-     * @return bool
      */
     public function isVisible(): bool
     {
@@ -16,8 +14,6 @@ trait VisibleAttributes
 
     /**
      * Determine if the model is hidden.
-     *
-     * @return bool
      */
     public function isHidden(): bool
     {

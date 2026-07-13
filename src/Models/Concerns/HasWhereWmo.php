@@ -7,8 +7,7 @@ trait HasWhereWmo
     /**
      * Find a country by WMO (World Meteorological Organization) code.
      *
-     * @param string $wmo
-     *
+     * @param  string  $wmo
      * @return Illuminate\Database\Eloquent\Collection
      */
     public function scopeWhereWmo($query, $wmo)
@@ -19,8 +18,7 @@ trait HasWhereWmo
     /**
      * Find a country by WMO (World Meteorological Organization) code.
      *
-     * @param string $wmo
-     *
+     * @param  string  $wmo
      * @return Illuminate\Database\Eloquent\Collection
      */
     public function scopeWhereWmoCode($query, $wmo)
@@ -31,8 +29,7 @@ trait HasWhereWmo
     /**
      * Find a country by WMO (World Meteorological Organization) code.
      *
-     * @param string $wmo
-     *
+     * @param  string  $wmo
      * @return Illuminate\Database\Eloquent\Collection
      */
     public function scopeWhereWorldMeteorologicalOrganizationCode($query, $wmo)

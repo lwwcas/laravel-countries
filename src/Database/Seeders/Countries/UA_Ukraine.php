@@ -7,18 +7,13 @@ use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
 class UA_Ukraine extends CountrySeeder
 {
-
     /**
      * Attribute that defines the language of countries
-     *
-     * @var string
      */
     public ?string $lang = 'en';
 
     /**
      * Attribute that defines the language of countries
-     *
-     * @var string
      */
     public ?string $region = 'europe';
 

@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  branch-naming:
+    name: Branch naming
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validate branch name
+        run: |
+          BRANCH="${{ github.head_ref }}"
+
+          # Allow automated dependency update branches.
+          if [[ "$BRANCH" =~ ^(dependabot|renovate)/ ]]; then
+            echo "Skipping branch naming check for bot branch: $BRANCH"
+            exit 0
+          fi
+
+          PATTERN='^(feature|bug|bugfix|fix|hotfix|chore|docs|refactor|test|release)/.+'
+
+          if [[ ! "$BRANCH" =~ $PATTERN ]]; then
+            echo "::error::Branch name must use a prefix folder, for example:"
+            echo "  feature/add-turkish-translations"
+            echo "  bug/fix-country-list-limit"
+            echo "  docs/update-migration-guide"
+            echo ""
+            echo "Allowed prefixes: feature/, bug/, bugfix/, fix/, hotfix/, chore/, docs/, refactor/, test/, release/"
+            exit 1
+          fi
+
+          echo "Branch name is valid: $BRANCH"
+
+  pint:
+    name: Pint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, sqlite, pdo_sqlite
+          coverage: none
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-interaction --no-progress
+
+      - name: Run Pint
+        run: composer pint:check

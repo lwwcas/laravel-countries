@@ -87,7 +87,7 @@ it('should filters countries by Oficial Name', function () {
 it('should filters countries by geoname_id', function () {
     CountryFactory::new()->create([
         'official_name' => 'United States of America',
-        'geoname_id' => '4031074'
+        'geoname_id' => '4031074',
     ]);
     CountryFactory::new()->count(10)->create();
 

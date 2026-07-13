@@ -2,13 +2,13 @@
 
 namespace Lwwcas\LaravelCountries\Database\Factories;
 
+use App\Models\Model;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use Lwwcas\LaravelCountries\Database\Factories\CountryRegionFactory;
 use Lwwcas\LaravelCountries\Models\CountryRegionTranslation;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends Factory<Model>
  */
 class CountryRegionTranslationFactory extends Factory
 {
@@ -34,7 +34,8 @@ class CountryRegionTranslationFactory extends Factory
      */
     public function definition(): array
     {
-        $name = fake()->randomElements($this->regions)[0] . ' ' . fake()->word() . rand(1, 9999);
+        $name = fake()->randomElements($this->regions)[0].' '.fake()->word().rand(1, 9999);
+
         return [
             'lc_region_id' => CountryRegionFactory::new()->create()->id,
             'name' => $name,

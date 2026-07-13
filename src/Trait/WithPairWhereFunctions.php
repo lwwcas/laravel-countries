@@ -77,12 +77,13 @@ trait WithPairWhereFunctions
      * This method returns a list of countries with their ids and emojis.
      * The list is cached for a long time to avoid querying the database too much.
      *
-     * @return \Lwwcas\LaravelCountries\Facades\FlagEmoji
+     * @return FlagEmoji
      */
     public function idAndEmoji()
     {
         $result = $this->withNamesSlugsAndFlags()->pluck('flag_emoji', 'id') ?? collect([]);
-        return (new FlagEmoji($result));
+
+        return new FlagEmoji($result);
     }
 
     /**
@@ -148,7 +149,8 @@ trait WithPairWhereFunctions
     public function uidAndEmoji()
     {
         $result = $this->withNamesSlugsAndFlags()->pluck('flag_emoji', 'uid') ?? collect([]);
-        return (new FlagEmoji($result));
+
+        return new FlagEmoji($result);
     }
 
     /**
@@ -196,12 +198,13 @@ trait WithPairWhereFunctions
      * This method returns a list of countries with their names and emojis.
      * The list is cached for a long time to avoid querying the database too much.
      *
-     * @return \Lwwcas\LaravelCountries\Facades\FlagEmoji
+     * @return FlagEmoji
      */
     public function nameAndEmoji()
     {
         $result = $this->withNamesSlugsAndFlags()->pluck('flag_emoji', 'name') ?? collect([]);
-        return (new FlagEmoji($result));
+
+        return new FlagEmoji($result);
     }
 
     /**
@@ -236,12 +239,13 @@ trait WithPairWhereFunctions
      * This method returns a list of countries with their official names and emojis.
      * The list is cached for a long time to avoid querying the database too much.
      *
-     * @return \Lwwcas\LaravelCountries\Facades\FlagEmoji
+     * @return FlagEmoji
      */
     public function officialNameAndEmoji()
     {
         $result = $this->withNamesSlugsAndFlags()->pluck('flag_emoji', 'official_name') ?? collect([]);
-        return (new FlagEmoji($result));
+
+        return new FlagEmoji($result);
     }
 
     /**
@@ -315,14 +319,14 @@ trait WithPairWhereFunctions
      * This method returns a list of countries with their iso_alpha_2 codes and emojis.
      * The list is cached for a long time to avoid querying the database too much.
      *
-     * @return \Lwwcas\LaravelCountries\Facades\FlagEmoji
+     * @return FlagEmoji
      */
     public function alpha2AndEmoji()
     {
         $result = $this->withNamesSlugsAndFlags()->pluck('flag_emoji', 'iso_alpha_2') ?? collect([]);
-        return (new FlagEmoji($result));
-    }
 
+        return new FlagEmoji($result);
+    }
 
     /**
      * Get a list of countries with their iso_alpha_3 codes and ids.
@@ -382,11 +386,12 @@ trait WithPairWhereFunctions
      * This method returns a list of countries with their iso_alpha_3 codes and emojis.
      * The list is cached for a long time to avoid querying the database too much.
      *
-     * @return \Lwwcas\LaravelCountries\Facades\FlagEmoji
+     * @return FlagEmoji
      */
     public function alpha3AndEmoji()
     {
         $result = $this->withNamesSlugsAndFlags()->pluck('flag_emoji', 'iso_alpha_3') ?? collect([]);
-        return (new FlagEmoji($result));
+
+        return new FlagEmoji($result);
     }
 }

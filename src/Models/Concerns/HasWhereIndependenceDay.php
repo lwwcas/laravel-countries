@@ -7,8 +7,7 @@ trait HasWhereIndependenceDay
     /**
      * Filter the query by independence day.
      *
-     * @param Builder $query
-     * @param string $date
+     * @param  Builder  $query
      * @return Builder
      */
     public function scopeWhereIndependenceDay($query, string $date)
@@ -19,8 +18,7 @@ trait HasWhereIndependenceDay
     /**
      * Filter the query by independence year.
      *
-     * @param Builder $query
-     * @param int $year
+     * @param  Builder  $query
      * @return Builder
      */
     public function scopeWhereIndependenceYear($query, int $year)
@@ -31,9 +29,9 @@ trait HasWhereIndependenceDay
     /**
      * Filter the query by independence dates between two dates.
      *
-     * @param Builder $query
-     * @param string $startDate
-     * @param string $endDate
+     * @param  Builder  $query
+     * @param  string  $startDate
+     * @param  string  $endDate
      * @return Builder
      */
     public function scopeWhereIndependenceBetweenDates($query, $startDate, $endDate)
@@ -45,19 +43,18 @@ trait HasWhereIndependenceDay
     /**
      * Filter the query by independence month.
      *
-     * @param Builder $query
-     * @param int $month
+     * @param  Builder  $query
      * @return Builder
      */
     public function scopeWhereIndependenceMonth($query, int $month)
     {
         return $query->whereNotNull('independence_day')->whereMonth('independence_day', $month);
     }
+
     /**
      * Filter the query by independence dates before a certain date.
      *
-     * @param Builder $query
-     * @param string $date
+     * @param  Builder  $query
      * @return Builder
      */
     public function scopeWhereIndependenceBefore($query, string $date)
@@ -68,8 +65,7 @@ trait HasWhereIndependenceDay
     /**
      * Filter the query by independence dates after a certain date.
      *
-     * @param Builder $query
-     * @param string $date
+     * @param  Builder  $query
      * @return Builder
      */
     public function scopeWhereIndependenceAfter($query, string $date)

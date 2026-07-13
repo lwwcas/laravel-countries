@@ -66,8 +66,6 @@ class CountryGeographical extends CountryModel
 
     /**
      * Get the country that owns the CountryGeographical
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function country(): HasOne
     {

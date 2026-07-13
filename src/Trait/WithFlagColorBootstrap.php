@@ -12,8 +12,7 @@ trait WithFlagColorBootstrap
      * The direction can be 'top', 'bottom', 'left', 'right', or 'random'. If 'random'
      * is given, a random direction will be chosen from the predefined directions.
      *
-     * @param string $startsOn The direction string.
-     *
+     * @param  string  $startsOn  The direction string.
      * @return string The gradient direction in degrees.
      */
     protected function getGradientDirection(?string $startsOn = null): string
@@ -42,11 +41,10 @@ trait WithFlagColorBootstrap
     /**
      * Generate a CSS linear gradient string from the country's flag colors.
      *
-     * @param string $startsOn The direction of the stripes. Can be 'top', 'bottom', 'left', 'right', or 'random'.
-     *
+     * @param  string  $startsOn  The direction of the stripes. Can be 'top', 'bottom', 'left', 'right', or 'random'.
      * @return string|null The CSS gradient string or null if no colors are set.
      */
-    public function getFlagGradient(?string $startsOn = null): string|null
+    public function getFlagGradient(?string $startsOn = null): ?string
     {
         $direction = $this->getGradientDirection($startsOn);
         $hexColors = $this->getFlagColorsHex();
@@ -55,20 +53,18 @@ trait WithFlagColorBootstrap
         }
 
         $cssGradient = implode(', ', $hexColors);
+
         return "background: linear-gradient($direction, $cssGradient);";
     }
-
 
     /**
      * Generate a CSS linear gradient string from the combined flag colors of two countries.
      *
-     * @param Country $otherCountry The other country to combine with.
-     * @param string $startsOn The direction of the stripes. Can be 'top', 'bottom', 'left', 'right', or 'random'.
-     *
+     * @param  Country  $otherCountry  The other country to combine with.
+     * @param  string  $startsOn  The direction of the stripes. Can be 'top', 'bottom', 'left', 'right', or 'random'.
      * @return string|null The CSS gradient string or null if no colors are set.
      */
-
-    public function getCombinedFlagGradient(Country $otherCountry, ?string $startsOn = null): string|null
+    public function getCombinedFlagGradient(Country $otherCountry, ?string $startsOn = null): ?string
     {
         $thisColors = $this->getFlagColorsHex();
         $otherColors = $otherCountry->getFlagColorsHex();
@@ -80,17 +76,16 @@ trait WithFlagColorBootstrap
             return null;
         }
 
-        return 'background: linear-gradient(' . $direction . ', ' . implode(', ', $colors) . ');';
+        return 'background: linear-gradient('.$direction.', '.implode(', ', $colors).');';
     }
 
     /**
      * Generate a CSS linear gradient string from the country's flag colors.
      *
-     * @param string $direction The direction of the stripes. Can be 'horizontal' or 'vertical'.
-     *
+     * @param  string  $direction  The direction of the stripes. Can be 'horizontal' or 'vertical'.
      * @return string|null The CSS gradient string or null if no colors are set.
      */
-    public function getFlagStripes(string $direction = 'horizontal'): string|null
+    public function getFlagStripes(string $direction = 'horizontal'): ?string
     {
         $colors = $this->getFlagColorsHex();
         if (empty($colors)) {
@@ -100,11 +95,12 @@ trait WithFlagColorBootstrap
         $percentage = 100 / count($colors);
         $stripes = [];
         foreach ($colors as $color) {
-            $stripes[] = $color . ' ' . $percentage . '%';
+            $stripes[] = $color.' '.$percentage.'%';
         }
 
         $gradientDirection = ($direction === 'vertical') ? 'to bottom' : 'to right';
-        return 'background: linear-gradient(' . $gradientDirection . ', ' . implode(', ', $stripes) . ');';
+
+        return 'background: linear-gradient('.$gradientDirection.', '.implode(', ', $stripes).');';
     }
 
     /**
@@ -117,7 +113,7 @@ trait WithFlagColorBootstrap
      *
      * @return string A CSS string of border rules.
      */
-    public function getFlagBorders(): string|null
+    public function getFlagBorders(): ?string
     {
         $colors = $this->getFlagColorsHex();
         if (empty($colors)) {
@@ -128,10 +124,9 @@ trait WithFlagColorBootstrap
         $sides = ['top', 'right', 'bottom', 'left'];
 
         foreach ($colors as $index => $color) {
-            $borders[] = 'border-' . $sides[$index % 4] . ': 5px solid ' . $color . ';';
+            $borders[] = 'border-'.$sides[$index % 4].': 5px solid '.$color.';';
         }
 
         return implode(' ', $borders);
     }
-
 }

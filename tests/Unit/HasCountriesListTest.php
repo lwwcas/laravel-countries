@@ -13,7 +13,7 @@ function seedCountriesForList(int $count = COUNTRY_LIST_COUNT): void
     foreach (range(1, $count) as $item) {
         CountryFactory::new()->create([
             'en' => [
-                'name' => fake()->country() . ' ' . rand(3, 9999),
+                'name' => fake()->country().' '.rand(3, 9999),
             ],
         ]);
     }

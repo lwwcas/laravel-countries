@@ -7,7 +7,6 @@ use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
 class FrenchLanguageSeeder extends Seeder
 {
-
     /**
      * Attribute that defines the language of countries
      *

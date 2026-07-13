@@ -72,8 +72,6 @@ class CountryExtras extends CountryModel
 
     /**
      * Get the country that owns the CountryExtras
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function country(): HasOne
     {

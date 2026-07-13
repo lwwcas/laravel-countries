@@ -9,8 +9,8 @@ use Lwwcas\LaravelCountries\Models\Concerns\HasConnection;
 
 class CountryTranslation extends Model
 {
-    use HasFactory,
-        HasConnection;
+    use HasConnection,
+        HasFactory;
 
     /**
      * Indicates if the model should be timestamped.

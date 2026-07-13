@@ -7,7 +7,7 @@ use Lwwcas\LaravelCountries\Database\Seeders\Languages\ArabicLanguageSeeder;
  */
 function arabicCountriesFromSeeder(): array
 {
-    return (new ArabicLanguageSeeder())->countries();
+    return (new ArabicLanguageSeeder)->countries();
 }
 
 /**
@@ -15,7 +15,7 @@ function arabicCountriesFromSeeder(): array
  */
 function arabicRegionsFromSeeder(): array
 {
-    $seeder = new ArabicLanguageSeeder();
+    $seeder = new ArabicLanguageSeeder;
     $property = (new ReflectionClass($seeder))->getProperty('regions');
     $property->setAccessible(true);
 

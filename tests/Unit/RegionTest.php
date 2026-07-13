@@ -17,7 +17,7 @@ it('should has a countries relationship', function () {
 
 it('should filters region by icao', function () {
     CountryRegionFactory::new()->create([
-        'icao' => 'AFI'
+        'icao' => 'AFI',
     ]);
     CountryRegionFactory::new()->count(10)->create();
 
@@ -29,7 +29,7 @@ it('should filters region by icao', function () {
 
 it('should filters region by iucn', function () {
     CountryRegionFactory::new()->create([
-        'iucn' => 'Oceania'
+        'iucn' => 'Oceania',
     ]);
     CountryRegionFactory::new()->count(10)->create();
 
@@ -41,7 +41,7 @@ it('should filters region by iucn', function () {
 
 it('should filters region by tdwg', function () {
     CountryRegionFactory::new()->create([
-        'tdwg' => 'OCN'
+        'tdwg' => 'OCN',
     ]);
     CountryRegionFactory::new()->count(10)->create();
 

@@ -7,18 +7,13 @@ use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
 class MX_Mexico extends CountrySeeder
 {
-
     /**
      * Attribute that defines the language of countries
-     *
-     * @var string
      */
     public ?string $lang = 'en';
 
     /**
      * Attribute that defines the language of countries
-     *
-     * @var string
      */
     public ?string $region = 'americas';
 

@@ -6,7 +6,7 @@ use Lwwcas\LaravelCountries\Models\Country;
 it('should filters countries by wmo', function () {
     CountryFactory::new()->create([
         'official_name' => 'United States of America',
-        'wmo' => 'CD'
+        'wmo' => 'CD',
     ]);
     CountryFactory::new()->count(10)->create();
 
@@ -19,7 +19,7 @@ it('should filters countries by wmo', function () {
 it('should filters countries by wmo code', function () {
     CountryFactory::new()->create([
         'official_name' => 'United States of America',
-        'wmo' => 'CD'
+        'wmo' => 'CD',
     ]);
     CountryFactory::new()->count(10)->create();
 
@@ -32,7 +32,7 @@ it('should filters countries by wmo code', function () {
 it('should filters countries by World Meteorological Organization Code', function () {
     CountryFactory::new()->create([
         'official_name' => 'United States of America',
-        'wmo' => 'CD'
+        'wmo' => 'CD',
     ]);
     CountryFactory::new()->count(10)->create();
 

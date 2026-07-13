@@ -7,7 +7,7 @@ trait HasFlagEmojiGetters
     /**
      * Get the flag emoji by type.
      *
-     * @param string $type The type of flag emoji to return. Defaults to 'img'.
+     * @param  string  $type  The type of flag emoji to return. Defaults to 'img'.
      * @return string|null The flag emoji for the given type.
      */
     public function getFlagEmojiBy(string $type = 'img')
@@ -114,8 +114,8 @@ HTML;
      * in an HTML element, and also includes a JavaScript code to update the
      * HTML element with the flag emoji.
      *
-     * @param string $divId The ID of the `<div>` element in which to display
-     *                      the flag emoji.
+     * @param  string  $divId  The ID of the `<div>` element in which to display
+     *                         the flag emoji.
      * @return string The flag emoji as a UTF-16 encoded string wrapped in an
      *                HTML element, and also including a JavaScript code to
      *                update the HTML element with the flag emoji.
@@ -135,8 +135,8 @@ HTML;
      * in an HTML element. The element is a `<span>` element with the flag
      * emoji as its content.
      *
-     * @param string $divId The ID of the `<div>` element in which to display
-     *                      the flag emoji.
+     * @param  string  $divId  The ID of the `<div>` element in which to display
+     *                         the flag emoji.
      * @return string The flag emoji as a UTF-16 encoded string wrapped in an
      *                HTML element.
      */
@@ -154,10 +154,10 @@ HTML;
      * also includes a JavaScript code to update the HTML element with the
      * given ID to display the flag emoji.
      *
-     * @param string $divId The ID of the `<div>` element in which to display
-     *                      the flag emoji.
-     * @param bool $withTag Whether to return a complete `<script>` tag or
-     *                      just the JavaScript code.
+     * @param  string  $divId  The ID of the `<div>` element in which to display
+     *                         the flag emoji.
+     * @param  bool  $withTag  Whether to return a complete `<script>` tag or
+     *                         just the JavaScript code.
      * @return string The flag emoji as a UTF-16 encoded string, and also
      *                including a JavaScript code to update the HTML element
      *                with the flag emoji.
@@ -274,7 +274,7 @@ HTML;
      *
      * This method returns the flag emoji as a CSS value and HTML.
      *
-     * @param string $class The class name for the HTML element.
+     * @param  string  $class  The class name for the HTML element.
      * @return string The flag emoji as a CSS value and HTML.
      */
     public function getFlagEmojiCssWithCode($class = 'emoji-css')
@@ -293,8 +293,8 @@ HTML;
      * display the emoji. If `$withStyle` is `false`, it will return a CSS rule that can be
      * used to style an element.
      *
-     * @param string $class The class name for the HTML element.
-     * @param bool $withTag Whether to return a complete CSS style block or just a CSS rule.
+     * @param  string  $class  The class name for the HTML element.
+     * @param  bool  $withTag  Whether to return a complete CSS style block or just a CSS rule.
      * @return string The flag emoji as a CSS value or a complete CSS style block.
      */
     public function getFlagEmojiCssWithCssCode(string $class = 'emoji-css', bool $withTag = false)
@@ -323,7 +323,7 @@ CSS;
      * with a class name of `$class` that can be used to display the flag emoji. The `alt`
      * attribute of the element is set to a string "Flag of {$this->official_name}".
      *
-     * @param string $class The class name for the HTML element.
+     * @param  string  $class  The class name for the HTML element.
      * @return string The flag emoji as a HTML element.
      */
     public function getFlagEmojiCssWithHtmlCode($class = 'emoji-css')
@@ -371,5 +371,4 @@ HTML;
     {
         return $this->flag_emoji['shortcode'] ?: null;
     }
-
 }

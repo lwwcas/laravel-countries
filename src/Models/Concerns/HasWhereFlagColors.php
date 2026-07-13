@@ -2,6 +2,7 @@
 
 namespace Lwwcas\LaravelCountries\Models\Concerns;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 
 trait HasWhereFlagColors
@@ -9,18 +10,19 @@ trait HasWhereFlagColors
     /**
      * Scope a query to only include countries that have a given flag color.
      *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  string|array  $name
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param  Builder  $query
+     * @return Builder
      */
     public function scopeWhereFlagColor($query, string|array $name)
     {
         if (is_array($name)) {
-            $namesInTitle = array_map(fn($name) => Str::title($name), $name);
+            $namesInTitle = array_map(fn ($name) => Str::title($name), $name);
+
             return $this->whereFlagByManyColors($namesInTitle, 'flag_colors');
         }
 
         $name = (string) Str::title($name);
+
         return $this->whereFlagByOneColor($name, 'flag_colors');
     }
 
@@ -28,27 +30,27 @@ trait HasWhereFlagColors
      * Scope a query to only include countries that have a given flag color in Web
      * color notation.
      *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  string|array  $name
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param  Builder  $query
+     * @return Builder
      */
     public function scopeWhereFlagColorWeb($query, string|array $name)
     {
         if (is_array($name)) {
-            $namesInLowercase = array_map(fn($name) => Str::lower($name), $name);
+            $namesInLowercase = array_map(fn ($name) => Str::lower($name), $name);
+
             return $this->whereFlagByManyColors($namesInLowercase, 'flag_colors_web');
         }
 
         $name = (string) Str::lower($name);
+
         return $this->whereFlagByOneColor($name, 'flag_colors_web');
     }
 
     /**
      * Scope a query to only include countries that have a given contrast color.
      *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  string|array  $contrast
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param  Builder  $query
+     * @return Builder
      */
     public function scopeWhereFlagContrast($query, string|array $contrast)
     {
@@ -62,9 +64,8 @@ trait HasWhereFlagColors
     /**
      * Scope a query to only include countries that have a given flag color in Hex.
      *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  string|array  $hex
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param  Builder  $query
+     * @return Builder
      */
     public function scopeWhereFlagColorHex($query, string|array $hex)
     {
@@ -78,9 +79,8 @@ trait HasWhereFlagColors
     /**
      * Scope a query to only include countries that have a given flag color in RGB.
      *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  string|array  $rgb
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param  Builder  $query
+     * @return Builder
      */
     public function scopeWhereFlagColorRGB($query, string|array $rgb)
     {
@@ -94,9 +94,8 @@ trait HasWhereFlagColors
     /**
      * Scope a query to only include countries that have a given flag color in CMYK.
      *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  string|array  $cmyk
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param  Builder  $query
+     * @return Builder
      */
     public function scopeWhereFlagColorCMYK($query, string|array $cmyk)
     {
@@ -110,9 +109,8 @@ trait HasWhereFlagColors
     /**
      * Scope a query to only include countries that have a given flag color in HSL.
      *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  string|array  $hsl
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param  Builder  $query
+     * @return Builder
      */
     public function scopeWhereFlagColorHSL($query, string|array $hsl)
     {
@@ -126,9 +124,8 @@ trait HasWhereFlagColors
     /**
      * Scope a query to only include countries that have a given flag color in HSV.
      *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  string|array  $hsv
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param  Builder  $query
+     * @return Builder
      */
     public function scopeWhereFlagColorHSV($query, string|array $hsv)
     {
@@ -142,9 +139,8 @@ trait HasWhereFlagColors
     /**
      * Scope a query to only include countries that have a given Pantone color code.
      *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  string|array $pantone
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param  Builder  $query
+     * @return Builder
      */
     public function scopeWhereFlagColorPantone($query, string|array $pantone)
     {
@@ -158,31 +154,26 @@ trait HasWhereFlagColors
     /**
      * Scope a query to only include countries that have one color.
      *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  string  $name
-     * @param  string  $tableName
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param  Builder  $query
+     * @return Builder
      */
     protected function scopeWhereFlagByOneColor($query, string $name, string $tableName)
     {
-        return $query->whereLike($tableName, '%' . $name . '%');
+        return $query->whereLike($tableName, '%'.$name.'%');
     }
 
     /**
      * Scope a query to only include countries that have all the given colors.
      *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  array  $names
-     * @param  string  $tableName
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param  Builder  $query
+     * @return Builder
      */
     protected function scopeWhereFlagByManyColors($query, array $names, string $tableName)
     {
         return $query->where(function ($query) use ($names, $tableName) {
             foreach ($names as $color) {
-                $query->orWhereLike($tableName, '%' . $color . '%');
+                $query->orWhereLike($tableName, '%'.$color.'%');
             }
         });
     }
-
 }

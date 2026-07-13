@@ -82,7 +82,6 @@ trait WithCoordinatesBootstrap
      *
      * @return string|null The coordinates in the format of degrees with decimal minutes, or null if the value is not set.
      */
-
     public function coordinatesInDegreesAndDecimalMinutes(): ?string
     {
         return $this->coordinates->degrees_and_decimal_minutes ?? null;
@@ -93,7 +92,6 @@ trait WithCoordinatesBootstrap
      *
      * @return string|null The coordinates in the format of degrees with decimal minutes, or null if the value is not set.
      */
-
     public function coordinatesInDDM(): ?string
     {
         return $this->coordinatesInDegreesAndDecimalMinutes();
@@ -101,8 +99,6 @@ trait WithCoordinatesBootstrap
 
     /**
      * Check if the country is in the Northern Hemisphere.
-     *
-     * @return bool
      */
     public function isInNorthernHemisphere(): bool
     {
@@ -111,8 +107,6 @@ trait WithCoordinatesBootstrap
 
     /**
      * Check if the country is in the Southern Hemisphere.
-     *
-     * @return bool
      */
     public function isInSouthernHemisphere(): bool
     {
@@ -124,7 +118,6 @@ trait WithCoordinatesBootstrap
      * (Keyhole Markup Language)
      *
      * @return string The coordinates in KML format.
-     *
      */
     public function coordinatesInKLM(): string
     {
@@ -157,9 +150,9 @@ KML;
         $latitude = (float) $coordinates['latitude'];
         $longitude = (float) $coordinates['longitude'];
 
-        return "geotagged\n" .
-            "geo:lat=" . number_format($latitude, 6) . "\n" .
-            "geo:lon=" . number_format($longitude, 6);
+        return "geotagged\n".
+            'geo:lat='.number_format($latitude, 6)."\n".
+            'geo:lon='.number_format($longitude, 6);
     }
 
     /**
@@ -167,18 +160,19 @@ KML;
      *
      * @return string The coordinates in the format of a meta tag for ICBM (GeoURL).
      */
-    public function coordinatesInGeoTagsMetaTagICBM(): string {
+    public function coordinatesInGeoTagsMetaTagICBM(): string
+    {
         $coordinates = $this->coordinatesInDecimal();
         $latitude = (float) $coordinates['latitude'];
         $longitude = (float) $coordinates['longitude'];
 
-        return '<meta name="ICBM" content="' . number_format($latitude, 6) . ', ' . number_format($longitude, 6) . '">';
+        return '<meta name="ICBM" content="'.number_format($latitude, 6).', '.number_format($longitude, 6).'">';
     }
 
     /**
      * Get the coordinates in geo meta tags format.
      *
-     * @param string $locale The locale to use for the placename and region.
+     * @param  string  $locale  The locale to use for the placename and region.
      * @return string The coordinates in geo meta tags format.
      */
     public function coordinatesInGeoMetaTags(string $locale = 'en'): string
@@ -189,9 +183,9 @@ KML;
         $placename = $this->translate($locale)->name ?? $this->official_name;
         $region = $this->region()->first()->translate($locale)->name ?? '';
 
-        return '<meta name="geo.position" content="' . number_format($latitude, 6) . '; ' . number_format($longitude, 6) . '">' . PHP_EOL .
-            '<meta name="geo.placename" content="' . htmlspecialchars($placename) . '">' . PHP_EOL .
-            '<meta name="geo.region" content="' . htmlspecialchars($region) . '">';
+        return '<meta name="geo.position" content="'.number_format($latitude, 6).'; '.number_format($longitude, 6).'">'.PHP_EOL.
+            '<meta name="geo.placename" content="'.htmlspecialchars($placename).'">'.PHP_EOL.
+            '<meta name="geo.region" content="'.htmlspecialchars($region).'">';
     }
 
     /**
@@ -225,7 +219,6 @@ KML;
         $latitude = (float) $coordinates['latitude'];
         $longitude = (float) $coordinates['longitude'];
 
-        return "latitude,longitude\n" . "{$latitude},{$longitude}";
+        return "latitude,longitude\n"."{$latitude},{$longitude}";
     }
-
 }

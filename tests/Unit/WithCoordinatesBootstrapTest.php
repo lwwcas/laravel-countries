@@ -1,4 +1,5 @@
 <?php
+
 use Lwwcas\LaravelCountries\Database\Factories\CountryCoordinatesFactory;
 use Lwwcas\LaravelCountries\Database\Factories\CountryFactory;
 use Lwwcas\LaravelCountries\Database\Factories\CountryRegionFactory;
@@ -96,7 +97,7 @@ it('should returns true when the country is located in the northern hemisphere',
     $country = CountryFactory::new()->create();
     CountryCoordinatesFactory::new()->create([
         'lc_country_id' => $country->id,
-        'latitude' => '8.8390'
+        'latitude' => '8.8390',
     ]);
 
     $data = $country->isInNorthernHemisphere();
@@ -143,9 +144,9 @@ it('should returns coordinates in geo tags format', function () {
     expect($data)->not()->toBeNull();
     expect($data)->toBeString();
 
-    expect($data)->toContain("geotagged");
-    expect($data)->toContain("geo:lat=");
-    expect($data)->toContain("geo:lon=");
+    expect($data)->toContain('geotagged');
+    expect($data)->toContain('geo:lat=');
+    expect($data)->toContain('geo:lon=');
 });
 
 it('should returns coordinates in meta tag ICBM format', function () {
@@ -159,7 +160,7 @@ it('should returns coordinates in meta tag ICBM format', function () {
     expect($data)->not()->toBeNull();
     expect($data)->toBeString();
 
-    expect($data)->toContain("name=\"ICBM\"");
+    expect($data)->toContain('name="ICBM"');
     expect($data)->toContain($country->latitude());
     expect($data)->toContain($country->longitude());
 });
@@ -167,14 +168,14 @@ it('should returns coordinates in meta tag ICBM format', function () {
 it('should returns coordinates in geo meta tag format', function () {
     $region = CountryRegionFactory::new()->create([
         'en' => [
-            'name' => 'Europe'
-        ]
+            'name' => 'Europe',
+        ],
     ]);
     $country = CountryFactory::new()->create([
         'lc_region_id' => $region->id,
         'en' => [
-            'name' => 'Brasil'
-        ]
+            'name' => 'Brasil',
+        ],
     ]);
     CountryCoordinatesFactory::new()->create([
         'lc_country_id' => $country->id,
@@ -186,9 +187,9 @@ it('should returns coordinates in geo meta tag format', function () {
     expect($data)->not()->toBeNull();
     expect($data)->toBeString();
 
-    expect($data)->toContain("name=\"geo.position\"");
-    expect($data)->toContain("name=\"geo.placename\" ");
-    expect($data)->toContain("name=\"geo.region\" ");
+    expect($data)->toContain('name="geo.position"');
+    expect($data)->toContain('name="geo.placename" ');
+    expect($data)->toContain('name="geo.region" ');
     expect($data)->toContain($country->latitude());
     expect($data)->toContain($country->longitude());
 });
@@ -205,7 +206,7 @@ it('should returns coordinates in geo json format', function () {
     expect($data)->toBeString();
     expect($data)->toBeJson();
 
-    expect($data)->toContain("\"type\": \"Point\"");
+    expect($data)->toContain('"type": "Point"');
 });
 
 it('should returns coordinates in csv format', function () {
@@ -219,5 +220,5 @@ it('should returns coordinates in csv format', function () {
     expect($data)->not()->toBeNull();
     expect($data)->toBeString();
 
-    expect($data)->toContain("latitude,longitude");
+    expect($data)->toContain('latitude,longitude');
 });

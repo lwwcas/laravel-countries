@@ -11,13 +11,15 @@ final class FlagEmoji
     use HasFlagEmojiGetters;
 
     protected $flag_emoji = null;
+
     protected $on_data = null;
+
     protected $key = null;
 
     /**
      * FlagEmoji constructor.
      *
-     * @param string $attributes
+     * @param  string  $attributes
      */
     public function __construct(protected Collection|array $attributes)
     {
@@ -38,7 +40,7 @@ final class FlagEmoji
         }
 
         $this->flag_emoji = $attributes;
-        return;
+
     }
 
     /**
@@ -48,14 +50,14 @@ final class FlagEmoji
      * attributes. If `$flagKey` is set, this method will return the flag emoji
      * attribute at the given key.
      *
-     * @param string|int $flagKey The key of the flag emoji attribute to return.
+     * @param  string|int  $flagKey  The key of the flag emoji attribute to return.
      * @return Collection|FlagEmoji A Collection of all flag emoji attributes, or the flag emoji
      *                              attribute at the given key.
      */
     public function get(string|int|null $flagKey = null): Collection|FlagEmoji
     {
         if ($flagKey !== null) {
-           return $this->on_data[$flagKey];
+            return $this->on_data[$flagKey];
         }
 
         return collect($this->on_data);
@@ -69,12 +71,13 @@ final class FlagEmoji
      * constructed with a string, this method will return the flag emoji attribute
      * as a Emoji instance.
      *
-     * @return Emoji|\Illuminate\Support\Collection
+     * @return Emoji|Collection
      */
     public function first(): ?FlagEmoji
     {
         $this->flag_emoji = collect($this->on_data)->first();
         $this->key = collect($this->on_data)->keys()->first();
+
         return $this->flag_emoji;
     }
 
@@ -86,12 +89,13 @@ final class FlagEmoji
      * constructed with a string, this method will return the flag emoji attribute
      * as a Emoji instance.
      *
-     * @return Emoji|\Illuminate\Support\Collection
+     * @return Emoji|Collection
      */
     public function last(): ?FlagEmoji
     {
         $this->flag_emoji = Arr::last($this->on_data);
         $this->key = collect($this->on_data)->keys()->last();
+
         return $this->flag_emoji;
     }
 
@@ -103,7 +107,7 @@ final class FlagEmoji
      * constructed with a string, this method will return the key of the flag emoji
      * attribute as a string.
      *
-     * @return string|\Illuminate\Support\Collection
+     * @return string|Collection
      */
     public function keys()
     {
@@ -118,12 +122,12 @@ final class FlagEmoji
      * constructed with a string, this method will return the key of the flag emoji
      * attribute as a string.
      *
-     * @return string|\Illuminate\Support\Collection
+     * @return string|Collection
      */
     public function key()
     {
         $this->first();
+
         return $this->key;
     }
-
 }

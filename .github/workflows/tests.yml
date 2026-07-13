@@ -4,11 +4,15 @@ on:
   push:
     branches:
       - master
-      - feature/laravel-13-support
   pull_request:
+
+concurrency:
+  group: tests-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
+    name: Laravel ${{ matrix.laravel }} (PHP ${{ matrix.php }})
     runs-on: ubuntu-latest
 
     strategy:
@@ -28,8 +32,6 @@ jobs:
             framework: ^13.0
             testbench: ^11.0
 
-    name: Laravel ${{ matrix.laravel }} (PHP ${{ matrix.php }})
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -45,7 +47,7 @@ jobs:
         run: |
           composer require "laravel/framework:${{ matrix.framework }}" --no-interaction --no-update
           composer require --dev "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
-          composer update --prefer-stable --prefer-dist --no-interaction
+          composer update --prefer-stable --prefer-dist --no-interaction --no-progress
 
       - name: Run tests
-        run: vendor/bin/pest
+        run: composer test

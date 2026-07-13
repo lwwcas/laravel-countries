@@ -7,18 +7,13 @@ use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
 class AR_Argentina extends CountrySeeder
 {
-
     /**
      * Attribute that defines the language of countries
-     *
-     * @var string
      */
     public ?string $lang = 'en';
 
     /**
      * Attribute that defines the language of countries
-     *
-     * @var string
      */
     public ?string $region = 'americas';
 
@@ -254,7 +249,6 @@ class AR_Argentina extends CountrySeeder
             // Various GPS formats
             'gps' => [],
         ];
-
 
         $this->geographical = json_decode($this->geographical(), true);
 

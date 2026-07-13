@@ -9,7 +9,6 @@ trait HasWhereIso
     /**
      * Find a model by iso.
      *
-     * @param string $iso
      *
      * @return Illuminate\Database\Eloquent\Collection
      */
@@ -33,7 +32,6 @@ trait HasWhereIso
     /**
      * Find a model by iso.
      *
-     * @param string $iso
      *
      * @return Illuminate\Database\Eloquent\Collection
      */
@@ -53,5 +51,4 @@ trait HasWhereIso
 
         return $query;
     }
-
 }

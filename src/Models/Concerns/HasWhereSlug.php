@@ -10,7 +10,6 @@ trait HasWhereSlug
     /**
      * Find a model by slug.
      *
-     * @param string $slug
      *
      * @return Illuminate\Database\Eloquent\Collection
      */
@@ -19,13 +18,13 @@ trait HasWhereSlug
         $slug = Str::slug($slug);
 
         $query->whereTranslation('slug', $slug);
+
         return $query;
     }
 
     /**
      * Find a model by slug (or where).
      *
-     * @param string $slug
      *
      * @return Illuminate\Database\Eloquent\Collection
      */
@@ -34,7 +33,7 @@ trait HasWhereSlug
         $slug = Str::slug($slug);
 
         $query->orWhereTranslation('slug', $slug);
+
         return $query;
     }
-
 }

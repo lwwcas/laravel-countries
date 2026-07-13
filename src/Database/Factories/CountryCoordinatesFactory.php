@@ -2,12 +2,12 @@
 
 namespace Lwwcas\LaravelCountries\Database\Factories;
 
+use App\Models\Model;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Lwwcas\LaravelCountries\Database\Factories\CountryFactory;
 use Lwwcas\LaravelCountries\Models\CountryCoordinates;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends Factory<Model>
  */
 class CountryCoordinatesFactory extends Factory
 {
@@ -28,13 +28,13 @@ class CountryCoordinatesFactory extends Factory
 
         return [
             'lc_country_id' => CountryFactory::new()->create()->id,
-            'latitude' =>  fake()->latitude(),
-            'longitude' =>  fake()->longitude(),
+            'latitude' => fake()->latitude(),
+            'longitude' => fake()->longitude(),
 
-            'degrees_with_decimal' =>  fake()->randomFloat() . '° N, ' . fake()->randomFloat() . '° E',
-            'degrees_minutes_seconds' =>  fake()->randomNumber(2, true) . '°'. fake()->randomNumber(2, true) .'\''. fake()->randomFloat(2, 10, 40) . '" N, '. fake()->randomDigitNot(0) .'°'. fake()->numberBetween(1, 98) .'\'' . fake()->randomFloat(2, 10, 80) . '" E',
-            'degrees_and_decimal_minutes' =>  fake()->randomFloat(2, 10, 40) . '°'. fake()->randomFloat(3) .'\' N, '. fake()->randomDigitNot(0) .'°'. fake()->randomFloat(3) .'\' E',
-            'gps' =>  [],
+            'degrees_with_decimal' => fake()->randomFloat().'° N, '.fake()->randomFloat().'° E',
+            'degrees_minutes_seconds' => fake()->randomNumber(2, true).'°'.fake()->randomNumber(2, true).'\''.fake()->randomFloat(2, 10, 40).'" N, '.fake()->randomDigitNot(0).'°'.fake()->numberBetween(1, 98).'\''.fake()->randomFloat(2, 10, 80).'" E',
+            'degrees_and_decimal_minutes' => fake()->randomFloat(2, 10, 40).'°'.fake()->randomFloat(3).'\' N, '.fake()->randomDigitNot(0).'°'.fake()->randomFloat(3).'\' E',
+            'gps' => [],
 
         ];
     }

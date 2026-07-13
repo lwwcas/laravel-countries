@@ -24,20 +24,20 @@ it('resolves the configured countries database connection', function () {
     config()->set('w-countries.driver', 'countries');
 
     expect(WCountriesConnection::name())->toBe('countries');
-    expect((new Country())->getConnectionName())->toBe('countries');
-    expect((new CountryRegion())->getConnectionName())->toBe('countries');
-    expect((new CountryTranslation())->getConnectionName())->toBe('countries');
-    expect((new CountryRegionTranslation())->getConnectionName())->toBe('countries');
-    expect((new CountryCoordinates())->getConnectionName())->toBe('countries');
-    expect((new CountryExtras())->getConnectionName())->toBe('countries');
-    expect((new CountryGeographical())->getConnectionName())->toBe('countries');
+    expect((new Country)->getConnectionName())->toBe('countries');
+    expect((new CountryRegion)->getConnectionName())->toBe('countries');
+    expect((new CountryTranslation)->getConnectionName())->toBe('countries');
+    expect((new CountryRegionTranslation)->getConnectionName())->toBe('countries');
+    expect((new CountryCoordinates)->getConnectionName())->toBe('countries');
+    expect((new CountryExtras)->getConnectionName())->toBe('countries');
+    expect((new CountryGeographical)->getConnectionName())->toBe('countries');
 });
 
 it('falls back to the default application connection', function () {
     config()->set('w-countries.driver', config('database.default'));
 
     expect(WCountriesConnection::name())->toBe(config('database.default'));
-    expect((new Country())->getConnectionName())->toBe(config('database.default'));
+    expect((new Country)->getConnectionName())->toBe(config('database.default'));
 });
 
 it('runs package migrations on the configured connection', function () {
@@ -49,7 +49,7 @@ it('runs package migrations on the configured connection', function () {
         'foreign_key_constraints' => true,
     ]);
 
-    foreach (glob(dirname(__DIR__, 2) . '/src/Database/migrations/*.php') as $migrationFile) {
+    foreach (glob(dirname(__DIR__, 2).'/src/Database/migrations/*.php') as $migrationFile) {
         $migration = include $migrationFile;
         $migration->up();
     }

@@ -8,8 +8,6 @@ trait HasFlagColorsGetters
      * Return an array of a country's flag colors.
      *
      * This will return the same value as `getFlagColorsName()`.
-     *
-     * @return array
      */
     public function getFlagColors(): array
     {
@@ -20,8 +18,6 @@ trait HasFlagColorsGetters
      * Return an array of a country's flag colors as strings.
      *
      * This can be used to get the color names of a country's flag.
-     *
-     * @return array
      */
     public function getFlagColorsName(): array
     {
@@ -33,8 +29,6 @@ trait HasFlagColorsGetters
      *
      * This can be used to get the color codes of a country's flag in web-safe
      * format.
-     *
-     * @return array
      */
     public function getFlagColorsWeb(): array
     {
@@ -45,8 +39,6 @@ trait HasFlagColorsGetters
      * Return an array of a country's flag colors as contrast colors.
      *
      * This can be used to get the contrast colors of a country's flag.
-     *
-     * @return array
      */
     public function getFlagColorsContrast(): array
     {

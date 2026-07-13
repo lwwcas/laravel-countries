@@ -18,7 +18,7 @@ it('should can filter by population', function (int $population, int $where, int
         'population' => 9890400,
         'where' => 9890400,
         'expected' => 10,
-    ]
+    ],
 ]);
 
 it('should can filter by Area Km2', function (int $area, int $where, int $expected) {
@@ -36,7 +36,7 @@ it('should can filter by Area Km2', function (int $area, int $where, int $expect
         'area' => 9890400,
         'where' => 9890400,
         'expected' => 10,
-    ]
+    ],
 ]);
 
 it('should can filter by gdp', function (int $gdp, int $where, int $expected) {
@@ -54,5 +54,5 @@ it('should can filter by gdp', function (int $gdp, int $where, int $expected) {
         'gdp' => 9890400,
         'where' => 9890400,
         'expected' => 10,
-    ]
+    ],
 ]);

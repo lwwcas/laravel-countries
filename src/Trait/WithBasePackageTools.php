@@ -8,32 +8,23 @@ trait WithBasePackageTools
 {
     /**
      * Set the name of the package.
-     *
-     * @var string
      */
     public string $packageName = 'lwwcas-countries';
 
     /**
      * Set the github Url of the package.
-     *
-     * @var string
      */
     protected string $githubUrl = 'https://github.com/lwwcas/laravel-countries';
 
     /**
      * Ask the user if they want to run the migrations.
-     *
-     * @var bool
      */
     protected bool $askToRunMigrations = false;
 
     /**
      * Phrase of motivation.
-     *
-     * @var string
      */
-    protected string|null $withEnd = null;
-
+    protected ?string $withEnd = null;
 
     /**
      * Array of motivational phrases.
@@ -73,7 +64,7 @@ trait WithBasePackageTools
         'Trust the process and trust yourself.',
         'Keep dreaming big and working hard.',
         'Your creativity is a gift to the world.',
-        'Keep building, and watch your dreams soar.'
+        'Keep building, and watch your dreams soar.',
     ];
 
     /**
@@ -92,9 +83,6 @@ trait WithBasePackageTools
 
     /**
      * Open the given URL in the user's default browser.
-     *
-     * @param  string  $url
-     * @return void
      */
     protected function openInBrowser(string $url): void
     {
@@ -106,13 +94,11 @@ trait WithBasePackageTools
         };
 
         exec($command);
-        return;
+
     }
 
     /**
      * Determine if the user chose to run the migrations.
-     *
-     * @return bool
      */
     public function hasRunMigrations(): bool
     {
@@ -127,6 +113,7 @@ trait WithBasePackageTools
     public function setTrueRunMigrations(): self
     {
         $this->askToRunMigrations = true;
+
         return $this;
     }
 
@@ -156,6 +143,7 @@ trait WithBasePackageTools
     {
         if ($this->withEnd != null) {
             $this->info($this->withEnd);
+
             return $this;
         }
 
@@ -164,6 +152,7 @@ trait WithBasePackageTools
         }
 
         $this->info($this->withEnd);
+
         return $this;
     }
 }

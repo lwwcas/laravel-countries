@@ -9,7 +9,6 @@ trait HasWhereIsoAlpha2
     /**
      * Find a model by iso Alpha 2.
      *
-     * @param string $isoAlpha2
      *
      * @return Illuminate\Database\Eloquent\Collection
      */
@@ -21,7 +20,6 @@ trait HasWhereIsoAlpha2
     /**
      * Find a model by iso Alpha 2, or if not found, retrieve all results.
      *
-     * @param string $isoAlpha2
      *
      * @return Illuminate\Database\Eloquent\Collection
      */

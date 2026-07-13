@@ -2,12 +2,12 @@
 
 namespace Lwwcas\LaravelCountries\Database\Factories;
 
+use App\Models\Model;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Lwwcas\LaravelCountries\Database\Factories\CountryFactory;
 use Lwwcas\LaravelCountries\Models\CountryExtras;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends Factory<Model>
  */
 class CountryExtrasFactory extends Factory
 {
@@ -28,13 +28,13 @@ class CountryExtrasFactory extends Factory
 
         return [
             'lc_country_id' => CountryFactory::new()->create()->id,
-            'national_sport' =>  fake()->word(),
-            'cybersecurity_agency' =>  fake()->word(),
+            'national_sport' => fake()->word(),
+            'cybersecurity_agency' => fake()->word(),
 
-            'popular_technologies' =>  fake()->words(),
-            'internet' =>  fake()->words(),
-            'religions' =>  fake()->words(),
-            'international_organizations' =>  fake()->words(),
+            'popular_technologies' => fake()->words(),
+            'internet' => fake()->words(),
+            'religions' => fake()->words(),
+            'international_organizations' => fake()->words(),
         ];
     }
 }

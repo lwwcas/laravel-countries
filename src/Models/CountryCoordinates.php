@@ -66,8 +66,6 @@ class CountryCoordinates extends CountryModel
 
     /**
      * Get the country that owns the CountryCoordinates
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function country(): HasOne
     {

@@ -5,7 +5,9 @@ namespace Lwwcas\LaravelCountries\Models;
 use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Concerns\HasAttributes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Str;
 use Lwwcas\LaravelCountries\Abstract\CountryModel;
 use Lwwcas\LaravelCountries\Models\Concerns\HasCountriesList;
@@ -29,41 +31,36 @@ use Lwwcas\LaravelCountries\Models\Concerns\HasWhereSlug;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereStatistics;
 use Lwwcas\LaravelCountries\Models\Concerns\HasWhereWmo;
 use Lwwcas\LaravelCountries\Models\Concerns\VisibleAttributes;
-use Lwwcas\LaravelCountries\Models\CountryCoordinates;
-use Lwwcas\LaravelCountries\Models\CountryExtras;
-use Lwwcas\LaravelCountries\Models\CountryGeographical;
-use Lwwcas\LaravelCountries\Models\CountryRegion;
-use Lwwcas\LaravelCountries\Models\CountryTranslation;
 use Lwwcas\LaravelCountries\Trait\WithCoordinatesBootstrap;
 use Lwwcas\LaravelCountries\Trait\WithFlagColorBootstrap;
 
 class Country extends CountryModel
 {
-    use HasFactory,
-        Translatable,
-        WithFlagColorBootstrap,
-        WithCoordinatesBootstrap,
-        HasVisibleGlobalScope,
-        HasTranslationGlobalScope,
-        HasFlagEmojiGetters,
+    use HasCountriesList,
+        HasFactory,
         HasFlagColorsGetters,
+        HasFlagEmojiGetters,
+        HasTranslationGlobalScope,
+        HasVisibleGlobalScope,
+        HasWhereBorders,
+        HasWhereCurrency,
+        HasWhereDomain,
         HasWhereFlagColors,
-        HasWhereSlug,
-        HasWhereName,
+        HasWhereIndependenceDay,
         HasWhereIso,
         HasWhereIsoAlpha2,
         HasWhereIsoAlpha3,
         HasWhereIsoNumeric,
-        HasWhereWmo,
-        HasWherePhoneCode,
-        HasWhereDomain,
         HasWhereLanguages,
+        HasWhereName,
+        HasWherePhoneCode,
+        HasWhereSlug,
         HasWhereStatistics,
-        HasWhereBorders,
-        HasWhereIndependenceDay,
-        HasWhereCurrency,
-        HasCountriesList,
-        VisibleAttributes;
+        HasWhereWmo,
+        Translatable,
+        VisibleAttributes,
+        WithCoordinatesBootstrap,
+        WithFlagColorBootstrap;
 
     public $translationModel = CountryTranslation::class;
 
@@ -241,7 +238,7 @@ class Country extends CountryModel
     protected function officialName(): Attribute
     {
         return Attribute::make(
-            get: fn(string $value) => ucfirst($value),
+            get: fn (string $value) => ucfirst($value),
         );
     }
 
@@ -250,12 +247,12 @@ class Country extends CountryModel
      *
      * It ensures the ISO Alpha 2 code is always uppercased.
      *
-     * @return \Illuminate\Database\Eloquent\Concerns\HasAttributes
+     * @return HasAttributes
      */
     protected function isoAlpha2(): Attribute
     {
         return Attribute::make(
-            get: fn(string $value) => Str::upper($value),
+            get: fn (string $value) => Str::upper($value),
         );
     }
 
@@ -264,19 +261,19 @@ class Country extends CountryModel
      *
      * It ensures the ISO Alpha 3 code is always uppercased.
      *
-     * @return \Illuminate\Database\Eloquent\Concerns\HasAttributes
+     * @return HasAttributes
      */
     protected function isoAlpha3(): Attribute
     {
         return Attribute::make(
-            get: fn(string $value) => Str::upper($value),
+            get: fn (string $value) => Str::upper($value),
         );
     }
 
     /**
      * Get the region that owns the Country
      *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function region()
     {
@@ -316,9 +313,9 @@ class Country extends CountryModel
     /**
      * Find a country by UIDs.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param string $uid
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param  Builder  $query
+     * @param  string  $uid
+     * @return Builder
      */
     public function scopeWhereUid($query, $uid)
     {
@@ -328,9 +325,9 @@ class Country extends CountryModel
     /**
      * Find a country by UIDs or where the country's UIDs is a given value.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param string $uid
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param  Builder  $query
+     * @param  string  $uid
+     * @return Builder
      */
     public function scopeOrWhereUid($query, $uid)
     {
@@ -340,8 +337,7 @@ class Country extends CountryModel
     /**
      * Find a country by official name.
      *
-     * @param string $officialName
-     *
+     * @param  string  $officialName
      * @return Illuminate\Database\Eloquent\Collection
      */
     public function scopeWhereOficialName($query, $officialName)
@@ -352,9 +348,9 @@ class Country extends CountryModel
     /**
      * Find a country by official name with OR operator.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param string $officialName
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param  Builder  $query
+     * @param  string  $officialName
+     * @return Builder
      */
     public function scopeOrWhereOficialName($query, $officialName)
     {
@@ -364,33 +360,30 @@ class Country extends CountryModel
     /**
      * Find a country by official name with LIKE condition.
      *
-     * @param string $officialName
-     *
+     * @param  string  $officialName
      * @return Illuminate\Database\Eloquent\Collection
      */
     public function scopeWhereOficialNameLike($query, $officialName)
     {
-        return $query->whereLike('official_name', '%'. $officialName .'%');
+        return $query->whereLike('official_name', '%'.$officialName.'%');
     }
 
     /**
      * Find a country by official name with LIKE condition and OR operator.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param string $officialName
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param  Builder  $query
+     * @param  string  $officialName
+     * @return Builder
      */
-
     public function scopeOrWhereOficialNameLike($query, $officialName)
     {
-        return $query->orWhereLike('official_name', '%'. $officialName .'%');
+        return $query->orWhereLike('official_name', '%'.$officialName.'%');
     }
 
     /**
      * Find a country by Geoname ID.
      *
-     * @param int $geonameId
-     *
+     * @param  int  $geonameId
      * @return Illuminate\Database\Eloquent\Collection
      */
     public function scopeWhereGeoname($query, $geonameId)
@@ -401,9 +394,9 @@ class Country extends CountryModel
     /**
      * Find a country by Geoname ID with OR operator.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param int $geonameId
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param  Builder  $query
+     * @param  int  $geonameId
+     * @return Builder
      */
     public function scopeOrWhereGeoname($query, $geonameId)
     {
@@ -420,5 +413,4 @@ class Country extends CountryModel
         return $this->geographical()->first()->getGeoData();
 
     }
-
 }

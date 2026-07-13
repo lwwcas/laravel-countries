@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Collection;
 use Lwwcas\LaravelCountries\Database\Factories\CountryFactory;
 use Lwwcas\LaravelCountries\Database\Factories\CountryRegionFactory;
 use Lwwcas\LaravelCountries\Database\Factories\CountryRegionTranslationFactory;

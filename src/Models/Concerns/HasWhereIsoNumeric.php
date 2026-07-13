@@ -9,7 +9,6 @@ trait HasWhereIsoNumeric
     /**
      * Find a model by iso Numeric.
      *
-     * @param string $isoNumeric
      *
      * @return Illuminate\Database\Eloquent\Collection
      */
@@ -22,9 +21,7 @@ trait HasWhereIsoNumeric
      * Filter the query by the ISO Numeric, or-ing the query when the builder
      * already has a where clause.
      *
-     * @param Builder $query
-     * @param string $isoNumeric
-     * @return Builder
+     * @param  Builder  $query
      */
     public function scopeOrWhereIsoNumeric($query, string $isoNumeric): Builder
     {

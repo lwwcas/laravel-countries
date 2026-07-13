@@ -321,7 +321,7 @@ it('should checks if country has main notes currency defined', function () {
                 10,
                 20,
                 50,
-                100
+                100,
             ],
         ],
     ]);
@@ -357,7 +357,7 @@ it('should returns an array with name, code, and symbol when the currency is def
     expect($currency)->toHaveKey('symbol');
 });
 
-it('should gets currency code', function (array $currency, string|null $result) {
+it('should gets currency code', function (array $currency, ?string $result) {
     $country = CountryFactory::new()->make([
         'currency' => $currency,
     ]);
@@ -373,7 +373,7 @@ it('should gets currency code', function (array $currency, string|null $result) 
     ['currency' => ['code' => 'EUR'], 'result' => 'EUR'],
 ]);
 
-it('should gets currency name', function (array $currency, string|null $result) {
+it('should gets currency name', function (array $currency, ?string $result) {
     $country = CountryFactory::new()->make([
         'currency' => $currency,
     ]);
@@ -388,7 +388,7 @@ it('should gets currency name', function (array $currency, string|null $result) 
     ['currency' => ['name' => 'Europe'], 'result' => 'Europe'],
 ]);
 
-it('should gets currency symbol', function (array $currency, string|null $result) {
+it('should gets currency symbol', function (array $currency, ?string $result) {
     $country = CountryFactory::new()->make([
         'currency' => $currency,
     ]);
@@ -403,7 +403,7 @@ it('should gets currency symbol', function (array $currency, string|null $result
     ['currency' => ['symbol' => '€'], 'result' => '€'],
 ]);
 
-it('should gets currency main unit', function (array $currency, string|null $result) {
+it('should gets currency main unit', function (array $currency, ?string $result) {
     $country = CountryFactory::new()->make([
         'currency' => $currency,
     ]);
@@ -418,7 +418,7 @@ it('should gets currency main unit', function (array $currency, string|null $res
     ['currency' => ['unit' => ['main' => 'Real']], 'result' => 'Real'],
 ]);
 
-it('should gets currency sub unit', function (array $currency, string|null $result) {
+it('should gets currency sub unit', function (array $currency, ?string $result) {
     $country = CountryFactory::new()->make([
         'currency' => $currency,
     ]);

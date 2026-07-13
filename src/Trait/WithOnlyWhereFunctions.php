@@ -2,6 +2,7 @@
 
 namespace Lwwcas\LaravelCountries\Trait;
 
+use Illuminate\Support\Collection;
 use Lwwcas\LaravelCountries\Facades\FlagEmoji;
 
 trait WithOnlyWhereFunctions
@@ -9,7 +10,7 @@ trait WithOnlyWhereFunctions
     /**
      * Get a list of country IDs.
      *
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
     public function onlyId()
     {
@@ -19,7 +20,7 @@ trait WithOnlyWhereFunctions
     /**
      * Get a list of country UIDs.
      *
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
     public function onlyUid()
     {
@@ -29,7 +30,7 @@ trait WithOnlyWhereFunctions
     /**
      * Get a list of country names.
      *
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
     public function onlyName()
     {
@@ -39,7 +40,7 @@ trait WithOnlyWhereFunctions
     /**
      * Get a list of official country names.
      *
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
     public function onlyOfficialName()
     {
@@ -49,7 +50,7 @@ trait WithOnlyWhereFunctions
     /**
      * Get a list of ISO 3166-1 alpha-2 codes.
      *
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
     public function onlyIso()
     {
@@ -59,7 +60,7 @@ trait WithOnlyWhereFunctions
     /**
      * Get a list of ISO 3166-1 alpha-2 codes.
      *
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
     public function onlyAlpha2()
     {
@@ -69,7 +70,7 @@ trait WithOnlyWhereFunctions
     /**
      * Get a list of ISO 3166-1 alpha-3 codes.
      *
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
     public function onlyAlpha3()
     {
@@ -79,7 +80,7 @@ trait WithOnlyWhereFunctions
     /**
      * Get a list of flag emojis.
      *
-     * @return \Lwwcas\LaravelCountries\Facades\FlagEmoji
+     * @return FlagEmoji
      */
     public function onlyFlag()
     {
@@ -92,23 +93,25 @@ trait WithOnlyWhereFunctions
      * This method return a list of country flag emojis.
      * The list is cached for a long time to avoid to query the database too much.
      *
-     * @return \Lwwcas\LaravelCountries\Facades\FlagEmoji
+     * @return FlagEmoji
      */
     public function onlyEmoji()
     {
         $result = $this->withNamesSlugsAndFlags()->pluck('flag_emoji') ?? collect([]);
-        return (new FlagEmoji($result));
+
+        return new FlagEmoji($result);
     }
 
     /**
      * Get a list of flag emojis in a specific format.
      *
-     * @param string $type The type of emoji to include. Either 'img', 'utf8', 'utf16', 'html' or 'css'.
-     * @return \Illuminate\Support\Collection
+     * @param  string  $type  The type of emoji to include. Either 'img', 'utf8', 'utf16', 'html' or 'css'.
+     * @return Collection
      */
     public function onlyEmojiIn(string $type)
     {
         $result = $this->withNamesSlugsAndFlags()->pluck('flag_emoji') ?? collect([]);
+
         return $result->pluck($type);
     }
 
@@ -118,7 +121,7 @@ trait WithOnlyWhereFunctions
      * This method return a list of country flag emojis as images.
      * The list is cached for a long time to avoid to query the database too much.
      *
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
     public function onlyEmojiInImg()
     {
@@ -131,7 +134,7 @@ trait WithOnlyWhereFunctions
      * This method returns a list of country flag emojis as UTF-8 strings.
      * The list is cached for a long time to avoid to query the database too much.
      *
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
     public function onlyEmojiInUtf8()
     {
@@ -144,7 +147,7 @@ trait WithOnlyWhereFunctions
      * This method returns a list of country flag emojis as UTF-16 strings.
      * The list is cached for a long time to avoid to query the database too much.
      *
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
     public function onlyEmojiInUtf16()
     {
@@ -157,7 +160,7 @@ trait WithOnlyWhereFunctions
      * This method returns a list of country flag emojis as HTML entities.
      * The list is cached for a long time to avoid to query the database too much.
      *
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
     public function onlyEmojiInHtml()
     {
@@ -170,7 +173,7 @@ trait WithOnlyWhereFunctions
      * This method returns a list of country flag emojis as CSS values.
      * The list is cached for a long time to avoid to query the database too much.
      *
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
     public function onlyEmojiInCss()
     {
@@ -183,7 +186,7 @@ trait WithOnlyWhereFunctions
      * This method returns a list of country flag emojis as hex codes.
      * The list is cached for a long time to avoid to query the database too much.
      *
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
     public function onlyEmojiInHex()
     {
@@ -196,7 +199,7 @@ trait WithOnlyWhereFunctions
      * This method returns a list of country flag emojis as Unicode code points.
      * The list is cached for a long time to avoid to query the database too much.
      *
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
     public function onlyEmojiInUCode()
     {
@@ -209,7 +212,7 @@ trait WithOnlyWhereFunctions
      * This method returns a list of country flag emojis as decimal representations.
      * The list is cached for a long time to avoid to query the database too much.
      *
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
     public function onlyEmojiInDecimal()
     {
@@ -222,7 +225,7 @@ trait WithOnlyWhereFunctions
      * This method returns a list of country flag emojis as shortcodes.
      * The list is cached for a long time to avoid to query the database too much.
      *
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
     public function onlyEmojiInShortCode()
     {

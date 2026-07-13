@@ -2,12 +2,14 @@
 
 namespace Lwwcas\LaravelCountries\Models\Concerns;
 
+use Illuminate\Database\Eloquent\Builder;
+
 trait HasVisibleGlobalScope
 {
     /**
      * Retrieve a query builder without applying the 'visible' global scope.
      *
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @return Builder
      */
     public static function withNotVisible()
     {

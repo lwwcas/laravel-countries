@@ -6,7 +6,7 @@ use Lwwcas\LaravelCountries\Models\Country;
 it('should filters countries by international phone code', function () {
     CountryFactory::new()->create([
         'official_name' => 'United States of America',
-        'international_phone' => '228'
+        'international_phone' => '228',
     ]);
     CountryFactory::new()->count(10)->create();
 

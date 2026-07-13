@@ -4,10 +4,10 @@ namespace Lwwcas\LaravelCountries\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Schema;
-use Lwwcas\LaravelCountries\Support\WCountriesConnection;
-use Lwwcas\LaravelCountries\Models\CountryRegionTranslation as RegionsLanguages;
 use Lwwcas\LaravelCountries\Models\CountryRegionTranslation;
+use Lwwcas\LaravelCountries\Models\CountryRegionTranslation as RegionsLanguages;
 use Lwwcas\LaravelCountries\Models\CountryTranslation;
+use Lwwcas\LaravelCountries\Support\WCountriesConnection;
 use Lwwcas\LaravelCountries\Trait\WithBasePackageTools;
 use Lwwcas\LaravelCountries\trait\WithLanguages;
 
@@ -104,7 +104,6 @@ class WCountriesRunLanguagesSeeds extends Command
     /**
      * Install languages from the database.
      *
-     * @param  array  $selectedLanguages
      * @return $this
      */
     protected function installLanguages(array $selectedLanguages): self
@@ -114,12 +113,11 @@ class WCountriesRunLanguagesSeeds extends Command
         return $this;
     }
 
-        /**
-         * Uninstall languages from the database.
-         *
-         * @param array $installedLanguages
-         * @return $this
-         */
+    /**
+     * Uninstall languages from the database.
+     *
+     * @return $this
+     */
     protected function uninstallLanguages(array $installedLanguages): self
     {
         $this->error('Warning: You are about to permanently delete these languages from your database.');
@@ -158,20 +156,21 @@ class WCountriesRunLanguagesSeeds extends Command
         }
 
         CountryTranslation::select('locale')
-        ->where('locale', '!=', 'en')
-        ->whereIn('locale', $keysToDelete)
-        ->delete();
+            ->where('locale', '!=', 'en')
+            ->whereIn('locale', $keysToDelete)
+            ->delete();
 
         CountryRegionTranslation::select('locale')
-        ->where('locale', '!=', 'en')
-        ->whereIn('locale', $keysToDelete)
-        ->delete();
+            ->where('locale', '!=', 'en')
+            ->whereIn('locale', $keysToDelete)
+            ->delete();
 
         foreach ($selectedLanguages as $language) {
             $this->comment("{$language} deleted successfully.");
         }
 
         $this->newLine();
+
         return $this;
     }
 
@@ -203,5 +202,4 @@ class WCountriesRunLanguagesSeeds extends Command
 
         return $installedLanguages;
     }
-
 }

@@ -10,13 +10,13 @@ trait HasWhereDomain
     /**
      * Find a country by domain (TLD).
      *
-     * @param string $domain
-     *
+     * @param  string  $domain
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeWhereDomain($query, $domain)
     {
         $domainInLowercase = Str::lower($domain);
+
         return $query->whereJsonContains('tld', $domainInLowercase);
     }
 
@@ -29,7 +29,8 @@ trait HasWhereDomain
      */
     public function scopeWhereDomains($query, array $domains)
     {
-        $domainsInLowercase = array_map(fn($lang) => Str::lower($lang), $domains);
+        $domainsInLowercase = array_map(fn ($lang) => Str::lower($lang), $domains);
+
         return $query->where(function (Builder $query) use ($domainsInLowercase) {
             foreach ($domainsInLowercase as $domain) {
                 $query->whereJsonContains('tld', $domain);
@@ -40,13 +41,13 @@ trait HasWhereDomain
     /**
      * Find a country by alternative domain (TLD).
      *
-     * @param string $domain
-     *
+     * @param  string  $domain
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeWhereDomainAlternative($query, $domain)
     {
         $domainInLowercase = Str::lower($domain);
+
         return $query->whereJsonContains('alternative_tld', $domainInLowercase);
     }
 
@@ -59,7 +60,8 @@ trait HasWhereDomain
      */
     public function scopeWhereDomainsAlternative($query, array $domains)
     {
-        $domainsInLowercase = array_map(fn($lang) => Str::lower($lang), $domains);
+        $domainsInLowercase = array_map(fn ($lang) => Str::lower($lang), $domains);
+
         return $query->where(function (Builder $query) use ($domainsInLowercase) {
             foreach ($domainsInLowercase as $domain) {
                 $query->whereJsonContains('alternative_tld', $domain);

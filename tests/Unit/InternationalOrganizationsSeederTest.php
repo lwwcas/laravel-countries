@@ -1,5 +1,7 @@
 <?php
 
+use Lwwcas\LaravelCountries\Database\Factories\CountryExtrasFactory;
+use Lwwcas\LaravelCountries\Database\Factories\CountryFactory;
 use Lwwcas\LaravelCountries\Database\Seeders\Countries\AL_Albania;
 use Lwwcas\LaravelCountries\Database\Seeders\Countries\AT_Austria;
 use Lwwcas\LaravelCountries\Database\Seeders\Countries\CH_Switzerland;
@@ -30,9 +32,9 @@ function internationalOrganizationsFromSeeder(string $seederClass): array
 }
 
 it('stores international organizations as an array on country extras', function () {
-    $country = \Lwwcas\LaravelCountries\Database\Factories\CountryFactory::new()->create();
+    $country = CountryFactory::new()->create();
 
-    $extras = \Lwwcas\LaravelCountries\Database\Factories\CountryExtrasFactory::new()->create([
+    $extras = CountryExtrasFactory::new()->create([
         'lc_country_id' => $country->id,
         'international_organizations' => ['European Union (EU)', 'Schengen Area'],
     ]);

@@ -3,9 +3,10 @@
 namespace Lwwcas\LaravelCountries\Facades;
 
 use Illuminate\Support\Facades\Facade;
+use Lwwcas\LaravelCountries\Skeleton\SkeletonClass;
 
 /**
- * @see \Lwwcas\LaravelCountries\Skeleton\SkeletonClass
+ * @see SkeletonClass
  */
 class WCountries extends Facade
 {

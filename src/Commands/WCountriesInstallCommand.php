@@ -38,6 +38,7 @@ class WCountriesInstallCommand extends Command
 
         if ($this->hasRunMigrations() === false) {
             $this->comment('Consider leaving a star in the repository and helping us to be better.');
+
             return 0;
         }
 
@@ -48,6 +49,7 @@ class WCountriesInstallCommand extends Command
         $this->askToStarRepoOnGitHub();
 
         $this->withEnd();
+
         return 1;
     }
 
@@ -58,7 +60,7 @@ class WCountriesInstallCommand extends Command
      */
     public function publishConfigFile(): self
     {
-        $this->comment("Publishing config ...");
+        $this->comment('Publishing config ...');
         $this->callSilently('vendor:publish', [
             '--tag' => 'lwwcas-countries-config',
         ]);
@@ -68,6 +70,7 @@ class WCountriesInstallCommand extends Command
         ]);
 
         $this->newLine();
+
         return $this;
     }
 
@@ -96,7 +99,7 @@ class WCountriesInstallCommand extends Command
         }
 
         $this->newLine();
+
         return $this;
     }
-
 }

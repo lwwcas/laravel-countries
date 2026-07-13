@@ -1,55 +1,100 @@
-# Contributing
+# Contributing to Laravel Countries
 
-Contributions are **welcome** and will be fully **credited**.
+Thank you for contributing! This guide explains how we organize branches, pull requests, and CI checks.
 
-Please read and understand the contribution guide before creating an issue or pull request.
+## Branch naming
 
-## Etiquette
+Create branches using a **prefix folder** that describes the type of change:
 
-This project is open source, and as such, the maintainers give their free time to build and maintain the source code
-held within. They make the code freely available in the hope that it will be of use to other developers. It would be
-extremely unfair for them to suffer abuse or anger for their hard work.
+| Prefix | Use for |
+|--------|---------|
+| `feature/` | New functionality |
+| `fix/` | Bug fixes. `bug/` and `bugfix/` are accepted as aliases for backward compatibility, but please use `fix/` for new branches |
+| `hotfix/` | Urgent production fixes |
+| `docs/` | Documentation only |
+| `chore/` | Maintenance, tooling, dependencies |
+| `refactor/` | Code restructuring without behavior change |
+| `test/` | Test-only changes |
+| `release/` | Release preparation |
 
-Please be considerate towards maintainers when raising issues or presenting pull requests. Let's show the
-world that developers are civilized and selfless people.
+Examples:
 
-It's the duty of the maintainer to ensure that all submissions to the project are of sufficient
-quality to benefit the project. Many developers have different skillsets, strengths, and weaknesses. Respect the maintainer's decision, and do not be upset or abusive if your submission is not used.
+```bash
+git checkout -b feature/add-turkish-translations
+git checkout -b fix/country-list-limit
+git checkout -b docs/update-version-constraints
+```
 
-## Viability
+CI validates branch names on every pull request.
 
-When requesting or submitting new features, first consider whether it might be useful to others. Open
-source projects are used by many developers, who may have entirely different needs to your own. Think about
-whether or not your feature is likely to be used by other users of the project.
+## Commits
 
-## Procedure
+We **encourage** [Conventional Commits](https://www.conventionalcommits.org/), but they are **not required**.
 
-Before filing an issue:
+Suggested format:
 
-- Attempt to replicate the problem, to ensure that it wasn't a coincidental incident.
-- Check to make sure your feature suggestion isn't already present within the project.
-- Check the pull requests tab to ensure that the bug doesn't have a fix in progress.
-- Check the pull requests tab to ensure that the feature isn't already in progress.
+```
+<type>(<scope>): <short description>
+```
 
-Before submitting a pull request:
+Common types: `feat`, `fix`, `docs`, `test`, `refactor`, `chore`.
 
-- Check the codebase to ensure that your feature doesn't already exist.
-- Check the pull requests to ensure that another person hasn't already submitted the feature or fix.
+Examples:
 
-## Requirements
+```
+feat(i18n): add Turkish language seeder
+fix(seeders): correct Arabic country names
+docs: document custom database connection
+```
 
-If the project maintainer has any additional requirements, you will find them listed here.
+## Local checks before opening a PR
 
-- **[PSR-2 Coding Standard](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md)** - The easiest way to apply the conventions is to install [PHP Code Sniffer](https://pear.php.net/package/PHP_CodeSniffer).
+This is a **Laravel package**, not a full application. Use Composer scripts instead of `php artisan`:
 
-- **Add tests!** - Your patch won't be accepted if it doesn't have tests.
+```bash
+composer install
+composer pint        # format code (see pint.json for rules)
+composer pint:check  # verify formatting (CI check)
+composer test        # run Pest tests
+composer check        # pint:check + test — same as CI
+```
 
-- **Document any change in behaviour** - Make sure the `README.md` and any other relevant documentation are kept up-to-date.
+## Continuous Integration
 
-- **Consider our release cycle** - We try to follow [SemVer v2.0.0](https://semver.org/). Randomly breaking public APIs is not an option.
+Every pull request runs:
 
-- **One pull request per feature** - If you want to do more than one thing, send multiple pull requests.
+1. **Branch naming** — validates the branch prefix
+2. **Pint** — code style (`composer pint:check`)
+3. **Tests** — Pest suite on Laravel 11, 12, and 13
 
-- **Send coherent history** - Make sure each individual commit in your pull request is meaningful. If you had to make multiple intermediate commits while developing, please [squash them](https://www.git-scm.com/book/en/v2/Git-Tools-Rewriting-History#Changing-Multiple-Commit-Messages) before submitting.
+Workflow file: [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
 
-**Happy coding**!
+## Pull requests
+
+- Target the `master` branch
+- Fill in the [pull request template](.github/pull_request_template.md)
+- Keep PRs focused on a single concern when possible
+- Add or update tests for behavior changes
+- Update documentation when user-facing behavior changes
+
+## Translations & country data
+
+Most contributions to this package touch country data or translations rather than application logic, so please take a bit of extra care here:
+
+- Mention in the PR which source you used (official government portal, ISO 3166, GeoNames, etc.)
+- Avoid submitting machine-translated content without a manual review pass
+- If you're a native or fluent speaker of the target language, say so — it helps reviewers prioritize
+- Check existing entries for the same country/locale before adding new ones, to avoid duplicates or conflicting values
+- Prefer one PR per language/country over a single PR touching many locales at once
+
+## Fork workflow
+
+1. Fork the repository
+2. Create a branch with the correct prefix (`feature/my-change`)
+3. Run `composer check` locally
+4. Open a PR against `master`
+5. Allow maintainers to modify your branch if requested
+
+## Questions
+
+Open a [GitHub issue](https://github.com/lwwcas/laravel-countries/issues) or check the [documentation](https://lwwcas.github.io/laravel-countries/).

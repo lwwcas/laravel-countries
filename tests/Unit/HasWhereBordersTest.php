@@ -6,7 +6,7 @@ use Lwwcas\LaravelCountries\Models\Country;
 it('should filters countries by border', function () {
     CountryFactory::new()->create([
         'official_name' => 'Brasil',
-        'borders' => ["ar", "bo", "co", "gf", "gy", "py", "pe", "sr", "uy", "ve"],
+        'borders' => ['ar', 'bo', 'co', 'gf', 'gy', 'py', 'pe', 'sr', 'uy', 've'],
     ]);
 
     $country = Country::whereBorder('bo')->first();
@@ -19,7 +19,7 @@ it('should filters countries by border', function () {
 it('should filters countries by borders', function () {
     CountryFactory::new()->create([
         'official_name' => 'Brasil',
-        'borders' => ["ar", "bo", "co", "gf", "gy", "py", "pe", "sr", "uy", "ve"],
+        'borders' => ['ar', 'bo', 'co', 'gf', 'gy', 'py', 'pe', 'sr', 'uy', 've'],
     ]);
 
     $country = Country::whereBorders(['gy', 'pe'])->first();
@@ -33,7 +33,7 @@ it('should filters countries by borders', function () {
 it('should count borders of country', function () {
     CountryFactory::new()->create([
         'official_name' => 'Brasil',
-        'borders' => ["ar", "bo", "co", "gf", "gy", "py", "pe", "sr", "uy", "ve"],
+        'borders' => ['ar', 'bo', 'co', 'gf', 'gy', 'py', 'pe', 'sr', 'uy', 've'],
     ]);
 
     $country = Country::first();
@@ -48,7 +48,7 @@ it('should count borders of country', function () {
 it('should return true if has borders of country', function () {
     CountryFactory::new()->create([
         'official_name' => 'Brasil',
-        'borders' => ["ar", "bo", "co", "gf", "gy", "py", "pe", "sr", "uy", "ve"],
+        'borders' => ['ar', 'bo', 'co', 'gf', 'gy', 'py', 'pe', 'sr', 'uy', 've'],
     ]);
 
     $country = Country::first();
@@ -78,50 +78,50 @@ it('should return borders with information of country', function () {
     CountryFactory::new()->create([
         'official_name' => 'Brasil',
         'iso_alpha_2' => 'BR',
-        'borders' => ["ar", "bo", "co", "gf", "gy", "py", "pe", "sr", "uy", "ve"],
+        'borders' => ['ar', 'bo', 'co', 'gf', 'gy', 'py', 'pe', 'sr', 'uy', 've'],
         'en' => [
             'name' => 'Brazil',
-        ]
+        ],
     ]);
 
     // Second country
     $secondCountry = CountryFactory::new()->create([
         'official_name' => 'Argentine Republic',
         'iso_alpha_2' => 'AR',
-        'borders' => ["bo", "br", "cl", "py", "uy"],
+        'borders' => ['bo', 'br', 'cl', 'py', 'uy'],
         'en' => [
             'name' => 'Argentine',
-        ]
+        ],
     ]);
 
     // Third country
     CountryFactory::new()->create([
         'official_name' => 'Plurinational State of Bolivia',
         'iso_alpha_2' => 'BO',
-        'borders' => ["ar", "br", "cl", "py", "pe"],
+        'borders' => ['ar', 'br', 'cl', 'py', 'pe'],
         'en' => [
             'name' => 'Bolivia',
-        ]
+        ],
     ]);
 
     // Fourth country
     CountryFactory::new()->create([
         'official_name' => 'Republic of Colombia',
         'iso_alpha_2' => 'CO',
-        'borders' => ["br", "ec", "pa", "pe", "ve"],
+        'borders' => ['br', 'ec', 'pa', 'pe', 've'],
         'en' => [
             'name' => 'Colombia',
-        ]
+        ],
     ]);
 
     // Fifth country
     CountryFactory::new()->create([
         'official_name' => 'French Guiana',
         'iso_alpha_2' => 'GF',
-        'borders' => ["br", "sr"],
+        'borders' => ['br', 'sr'],
         'en' => [
             'name' => 'Guiana Francese',
-        ]
+        ],
     ]);
 
     $country = Country::where('iso_alpha_2', 'BR')->first();
@@ -146,50 +146,50 @@ it('should return borders with flag of country', function () {
     CountryFactory::new()->create([
         'official_name' => 'Brasil',
         'iso_alpha_2' => 'BR',
-        'borders' => ["ar", "bo", "co", "gf", "gy", "py", "pe", "sr", "uy", "ve"],
+        'borders' => ['ar', 'bo', 'co', 'gf', 'gy', 'py', 'pe', 'sr', 'uy', 've'],
         'en' => [
             'name' => 'Brazil',
-        ]
+        ],
     ]);
 
     // Second country
     $secondCountry = CountryFactory::new()->create([
         'official_name' => 'Argentine Republic',
         'iso_alpha_2' => 'AR',
-        'borders' => ["bo", "br", "cl", "py", "uy"],
+        'borders' => ['bo', 'br', 'cl', 'py', 'uy'],
         'en' => [
             'name' => 'Argentine',
-        ]
+        ],
     ]);
 
     // Third country
     CountryFactory::new()->create([
         'official_name' => 'Plurinational State of Bolivia',
         'iso_alpha_2' => 'BO',
-        'borders' => ["ar", "br", "cl", "py", "pe"],
+        'borders' => ['ar', 'br', 'cl', 'py', 'pe'],
         'en' => [
             'name' => 'Bolivia',
-        ]
+        ],
     ]);
 
     // Fourth country
     CountryFactory::new()->create([
         'official_name' => 'Republic of Colombia',
         'iso_alpha_2' => 'CO',
-        'borders' => ["br", "ec", "pa", "pe", "ve"],
+        'borders' => ['br', 'ec', 'pa', 'pe', 've'],
         'en' => [
             'name' => 'Colombia',
-        ]
+        ],
     ]);
 
     // Fifth country
     CountryFactory::new()->create([
         'official_name' => 'French Guiana',
         'iso_alpha_2' => 'GF',
-        'borders' => ["br", "sr"],
+        'borders' => ['br', 'sr'],
         'en' => [
             'name' => 'Guiana Francese',
-        ]
+        ],
     ]);
 
     $country = Country::where('iso_alpha_2', 'BR')->first();

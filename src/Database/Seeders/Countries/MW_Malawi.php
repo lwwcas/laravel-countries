@@ -7,18 +7,13 @@ use Lwwcas\LaravelCountries\Database\Seeders\Builder;
 
 class MW_Malawi extends CountrySeeder
 {
-
     /**
      * Attribute that defines the language of countries
-     *
-     * @var string
      */
     public ?string $lang = 'en';
 
     /**
      * Attribute that defines the language of countries
-     *
-     * @var string
      */
     public ?string $region = 'africa';
 
@@ -257,7 +252,6 @@ class MW_Malawi extends CountrySeeder
             // GPS formats
             'gps' => [],
         ];
-
 
         $this->geographical = json_decode($this->geographical(), true);
 

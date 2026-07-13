@@ -8,31 +8,29 @@ use Lwwcas\LaravelCountries\Models\Country;
 
 trait HasWhereBorders
 {
-
     /**
      * Find a country by border.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param string $board
-     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeWhereBorder($query, string $board)
     {
         $boardInLowercase = Str::lower($board);
+
         return $query->whereJsonContains('borders', $boardInLowercase);
     }
 
     /**
      * Find a country by an array of border.
      *
-     * @param array $boards
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeWhereBorders($query, array $boards)
     {
-        $boardsInLowercase = array_map(fn($lang) => Str::lower($lang), $boards);
+        $boardsInLowercase = array_map(fn ($lang) => Str::lower($lang), $boards);
+
         return $query->where(function (Builder $query) use ($boardsInLowercase) {
             foreach ($boardsInLowercase as $board) {
                 $query->whereJsonContains('borders', $board);
@@ -78,12 +76,12 @@ trait HasWhereBorders
         $isoAlpha2 = $this->iso_alpha_2;
 
         $countries = Country::select('id', 'uid', 'official_name', 'iso_alpha_2', 'iso_alpha_3')
-        ->where('iso_alpha_2', '<>', $isoAlpha2)
+            ->where('iso_alpha_2', '<>', $isoAlpha2)
             ->where(function ($query) use ($borderCodes, $isoAlpha2) {
                 foreach ($borderCodes as $borderCode) {
                     $query->orWhere(function ($query) use ($borderCode, $isoAlpha2) {
                         $query->where('iso_alpha_2', Str::upper($borderCode))
-                            ->where('borders', 'LIKE', '%' . Str::lower($isoAlpha2) . '%');
+                            ->where('borders', 'LIKE', '%'.Str::lower($isoAlpha2).'%');
                     });
                 }
             })
@@ -111,7 +109,7 @@ trait HasWhereBorders
     /**
      * Get all countries with which the current country shares a border, including a flag emoji.
      *
-     * @param string $emojiType The type of emoji to include. Either 'img' or 'unicode'.
+     * @param  string  $emojiType  The type of emoji to include. Either 'img' or 'unicode'.
      * @return array An array of countries with which the current country shares a border, with each country including:
      *               - `uid`: The unique identifier of the country.
      *               - `iso_alpha_2`: The ISO 3166-1 alpha-2 code of the country.
@@ -132,7 +130,7 @@ trait HasWhereBorders
                 foreach ($borderCodes as $borderCode) {
                     $query->orWhere(function ($query) use ($borderCode, $isoAlpha2) {
                         $query->where('iso_alpha_2', Str::upper($borderCode))
-                            ->where('borders', 'LIKE', '%' . Str::lower($isoAlpha2) . '%');
+                            ->where('borders', 'LIKE', '%'.Str::lower($isoAlpha2).'%');
                     });
                 }
             })
@@ -140,7 +138,7 @@ trait HasWhereBorders
                 $query->select('lc_country_id', 'name', 'locale');
             }])
             ->get()
-            ->map(function ($country) use ($emojiType) {
+            ->map(function ($country) {
                 $translation = $country->translations->first();
 
                 return [

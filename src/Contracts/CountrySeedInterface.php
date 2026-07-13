@@ -12,5 +12,4 @@ interface CountrySeedInterface
     public function run();
 
     public function geographical();
-
 }

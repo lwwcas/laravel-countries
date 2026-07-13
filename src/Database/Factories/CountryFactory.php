@@ -2,13 +2,13 @@
 
 namespace Lwwcas\LaravelCountries\Database\Factories;
 
+use App\Models\Model;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use Lwwcas\LaravelCountries\Database\Factories\CountryRegionFactory;
 use Lwwcas\LaravelCountries\Models\Country;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends Factory<Model>
  */
 class CountryFactory extends Factory
 {
@@ -18,7 +18,6 @@ class CountryFactory extends Factory
 
     /**
      * The name of the factory's corresponding model.
-     *
      */
     protected $model = Country::class;
 
@@ -29,7 +28,7 @@ class CountryFactory extends Factory
      */
     public function definition(): array
     {
-        $name = fake()->country() . ' ' . fake()->word(). rand(1, 9999);
+        $name = fake()->country().' '.fake()->word().rand(1, 9999);
         $colors = $this->randomColors();
 
         return [
@@ -37,14 +36,14 @@ class CountryFactory extends Factory
             'uid' => fake()->unixTime(),
 
             'official_name' => Str::title($name),
-            'capital' => 'Capital ' . Str::title($name),
+            'capital' => 'Capital '.Str::title($name),
             'iso_alpha_2' => $this->uniqueIsoAlpha2(),
             'iso_alpha_3' => $this->uniqueIsoAlpha3(),
             'iso_numeric' => fake()->randomNumber(3, false),
 
             'international_phone' => fake()->randomNumber(3, true),
             'geoname_id' => fake()->randomNumber(7, true),
-            'wmo' => Str::upper(fake()->randomLetter() . fake()->randomLetter()),
+            'wmo' => Str::upper(fake()->randomLetter().fake()->randomLetter()),
             'independence_day' => fake()->date('Y-m-d'),
 
             'population' => fake()->date('Y-m-d'),
@@ -60,9 +59,9 @@ class CountryFactory extends Factory
             'currency' => [
                 'name' => fake()->word(),
                 'code' => fake()->currencyCode(),
-                'symbol' => fake()->currencyCode() . fake()->randomLetter(),
+                'symbol' => fake()->currencyCode().fake()->randomLetter(),
                 'banknotes' => [
-                    2, 5, 10, 20, 50, 100
+                    2, 5, 10, 20, 50, 100,
                 ],
                 'coins' => [
                     'main' => [1, 2],
@@ -77,14 +76,14 @@ class CountryFactory extends Factory
 
             'flag_emoji' => [
                 'img' => fake()->emoji(),
-                'utf8' => '&#'. fake()->numberBetween(128512, 128567)  . ';',
+                'utf8' => '&#'.fake()->numberBetween(128512, 128567).';',
                 'utf16' => '\\uD83C\\uDDE6\\uD83C\\uDDE9',
                 'uCode' => 'U+1F1E6 U+1F1E9',
                 'hex' => '&#x1F1E6;&#x1F1E9',
                 'html' => '&#x1F1E6;&#x1F1E9;',
                 'css' => '\\1F1E6\\1F1E9',
                 'decimal' => '&#127462;&#127465;',
-                'shortcode' => ':flag-'. Str::lower(fake()->countryCode()) .':',
+                'shortcode' => ':flag-'.Str::lower(fake()->countryCode()).':',
             ],
 
             'flag_colors' => $colors['flag_colors'],
@@ -119,7 +118,7 @@ class CountryFactory extends Factory
 
         $languages = [];
         foreach (range(1, $rand) as $item) {
-             $languages[] = fake()->languageCode();
+            $languages[] = fake()->languageCode();
         }
 
         return $languages;
@@ -146,12 +145,11 @@ class CountryFactory extends Factory
 
         $ltd = [];
         foreach (range(1, $rand) as $item) {
-            $ltd[] = '.' . fake()->languageCode();
+            $ltd[] = '.'.fake()->languageCode();
         }
 
         return $ltd;
     }
-
 
     /**
      * Generates a random list of color data for a country.
@@ -168,8 +166,6 @@ class CountryFactory extends Factory
      * - flag_colors_hsl: a list of HSL color codes
      * - flag_colors_hsv: a list of HSV color codes
      * - flag_colors_pantone: a list of Pantone color codes
-     *
-     * @return array
      */
     protected function randomColors(): array
     {
@@ -215,10 +211,10 @@ class CountryFactory extends Factory
             $result['flag_colors_contrast'][] = fake()->randomElements($contrast)[0];
             $result['flag_colors_hex'][] = fake()->hexColor();
             $result['flag_colors_rgb'][] = fake()->rgbColor();
-            $result['flag_colors_cmyk'][] = fake()->numberBetween(0, 100) . ',' . fake()->numberBetween(0, 100) . ',' . fake()->numberBetween(0, 100) . ',' . fake()->numberBetween(0, 100);
-            $result['flag_colors_hsl'][] = fake()->numberBetween(0, 100) . ',' . fake()->numberBetween(0, 100) . '%,' . fake()->numberBetween(0, 100) . '%';
-            $result['flag_colors_hsv'][] = fake()->numberBetween(0, 100) . ',' . fake()->numberBetween(0, 100) . '%,' . fake()->numberBetween(0, 100) . '%';
-            $result['flag_colors_pantone'][] = 'Pantone ' . fake()->numberBetween(10, 900) . ' C' ;
+            $result['flag_colors_cmyk'][] = fake()->numberBetween(0, 100).','.fake()->numberBetween(0, 100).','.fake()->numberBetween(0, 100).','.fake()->numberBetween(0, 100);
+            $result['flag_colors_hsl'][] = fake()->numberBetween(0, 100).','.fake()->numberBetween(0, 100).'%,'.fake()->numberBetween(0, 100).'%';
+            $result['flag_colors_hsv'][] = fake()->numberBetween(0, 100).','.fake()->numberBetween(0, 100).'%,'.fake()->numberBetween(0, 100).'%';
+            $result['flag_colors_pantone'][] = 'Pantone '.fake()->numberBetween(10, 900).' C';
         }
 
         return $result;
@@ -243,6 +239,4 @@ class CountryFactory extends Factory
             STR_PAD_LEFT
         );
     }
-
-
 }

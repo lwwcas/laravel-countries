@@ -13,18 +13,15 @@ use Lwwcas\LaravelCountries\Models\CountryTranslation;
 
 class Builder
 {
-
     /**
      * Create a country
      *
-     * @param CountrySeeder $country
-     * @return void
      * @throws Exception
      */
     public static function country(CountrySeeder $country): void
     {
         self::builder($country);
-        return;
+
     }
 
     protected static function builder(CountrySeeder $country)
@@ -138,18 +135,15 @@ class Builder
         }
 
         DB::commit();
-        return;
+
     }
 
     /**
      * Create regions translations.
      *
-     * @param array $regions
-     * @param String $lang
-     * @return void
      * @throws Exception
      */
-    public static function regionsTranslations(array $regions, String $lang): void
+    public static function regionsTranslations(array $regions, string $lang): void
     {
         DB::beginTransaction();
 
@@ -160,7 +154,7 @@ class Builder
 
             if ($response == null) {
                 DB::rollBack();
-                throw new Exception('Region ' . $region . ' not found');
+                throw new Exception('Region '.$region.' not found');
             }
 
             CountryRegionTranslation::create([
@@ -172,17 +166,13 @@ class Builder
         }
 
         DB::commit();
-        return;
+
     }
 
     /**
      * Create countries translations.
-     *
-     * @param array $countries
-     * @param String $lang
-     * @return void
      */
-    public static function countriesTranslations(array $countries, String $lang): void
+    public static function countriesTranslations(array $countries, string $lang): void
     {
         DB::beginTransaction();
 
@@ -204,6 +194,6 @@ class Builder
         }
 
         DB::commit();
-        return;
+
     }
 }

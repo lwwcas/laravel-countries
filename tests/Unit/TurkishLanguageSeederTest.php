@@ -9,7 +9,7 @@ use Lwwcas\LaravelCountries\Database\Seeders\LanguagesSeeder;
  */
 function turkishCountriesFromSeeder(): array
 {
-    return (new TurkishLanguageSeeder())->countries();
+    return (new TurkishLanguageSeeder)->countries();
 }
 
 /**
@@ -17,7 +17,7 @@ function turkishCountriesFromSeeder(): array
  */
 function turkishRegionsFromSeeder(): array
 {
-    $seeder = new TurkishLanguageSeeder();
+    $seeder = new TurkishLanguageSeeder;
     $property = (new ReflectionClass($seeder))->getProperty('regions');
     $property->setAccessible(true);
 
@@ -58,7 +58,7 @@ it('translates key countries into turkish', function (string $iso, string $expec
 ]);
 
 it('registers turkish in the install command languages', function () {
-    $command = new WCountriesInstallCommand();
+    $command = new WCountriesInstallCommand;
 
     expect($command->languages)->toHaveKey('Turkish', TurkishLanguageSeeder::class);
     expect($command->languagesByLocale)->toHaveKey('tr', 'Turkish');
