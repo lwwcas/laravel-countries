@@ -34,6 +34,8 @@ The following table outlines the compatibility of the **Laravel Countries** pack
 | 4.13.x.x        | 12       |  ✅
 | 4.13.x.x        | 13       |  ✅
 
+> **Note:** Laravel 10 remains supported via Composer constraints, but it is not covered by the automated test matrix (L11–L13).
+
 ## Requirements
 
 The **Laravel Countries** package has the following system and package requirements to ensure proper functionality. Below is a breakdown of the required versions for both runtime and development environments.
@@ -56,9 +58,9 @@ The following dependencies are required for development and testing purposes:
 
 - **Laravel Legacy Factories**: Version **^1.0.4** is needed for maintaining compatibility with older Laravel factory structures.
 
-- **Orchestra Testbench**: Version **^8.31|^9.12|^10.0|^11.0** is used for testing the package in a Laravel-like environment without needing a full Laravel application (supporting Laravel 10-13).
+- **Orchestra Testbench**: Version **^9.12|^10.0|^11.0** is used for testing the package in a Laravel-like environment without needing a full Laravel application (supporting Laravel 11-13).
 
-- **Pest**: Version **^2.34|^3.7|^4.4** with **pestphp/pest-plugin-laravel ^2.4|^3.1|^4.1** is required for running tests. Composer picks the matching Pest major per Laravel version (L10 → Pest 2, L11–12 → Pest 3, L13 → Pest 4).
+- **Pest**: Version **^3.7|^4.4** with **pestphp/pest-plugin-laravel ^3.1|^4.1** is required for running tests. Composer picks the matching Pest major per Laravel version (L11–12 → Pest 3, L13 → Pest 4).
 
 Ensure that your environment meets these requirements to guarantee smooth installation and usage of the **Laravel Countries** package.
 
