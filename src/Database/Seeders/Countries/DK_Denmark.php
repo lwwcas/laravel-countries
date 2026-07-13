@@ -135,6 +135,7 @@ class DK_Denmark extends CountrySeeder
           'NATO',
           'Schengen Area',
           'Nordic Council',
+          'European Economic Area (EEA)',
       ];
 
       // Set the GDP in billions of USD

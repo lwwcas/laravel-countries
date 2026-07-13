@@ -134,6 +134,7 @@ class NO_Norway extends CountrySeeder
             'International Monetary Fund (IMF)',
             'World Health Organization (WHO)',
             'Organisation for Economic Co-operation and Development (OECD)',
+            'Schengen Area',
         ];
 
         // Set the GDP in billions of USD

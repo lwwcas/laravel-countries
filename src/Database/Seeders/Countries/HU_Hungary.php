@@ -136,6 +136,8 @@ class HU_Hungary extends CountrySeeder
             'World Health Organization (WHO)',
             'Council of Europe',
             'Visegrád Group',
+            'Schengen Area',
+            'European Economic Area (EEA)',
         ];
 
         // Set the GDP in billions of USD

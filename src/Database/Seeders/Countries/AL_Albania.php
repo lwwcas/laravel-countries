@@ -124,7 +124,7 @@ class AL_Albania extends CountrySeeder
         $this->independence_day = '1912-11-28'; // Date of Independence
 
         // List international organizations the country is part of
-        $this->international_organizations = ['United Nations', 'NATO', 'Council of Europe', 'WTO', 'OSCE'];
+        $this->international_organizations = ['United Nations', 'NATO', 'Council of Europe', 'WTO', 'OSCE', 'European Union candidate'];
 
         // Set the GDP in billions of USD
         $this->gdp = 15.28; // GDP in billions of USD

@@ -131,6 +131,7 @@ class UA_Ukraine extends CountrySeeder
             'World Trade Organization (WTO)',
             'Council of Europe',
             'Organization for Security and Co-operation in Europe (OSCE)',
+            'European Union candidate',
         ];
 
         // Set the GDP in billions of USD

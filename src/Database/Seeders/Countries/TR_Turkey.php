@@ -131,6 +131,7 @@ class TR_Turkey extends CountrySeeder
             'World Trade Organization (WTO)',
             'Organisation for Economic Co-operation and Development (OECD)',
             'Organization of Islamic Cooperation (OIC)',
+            'European Union candidate',
         ];
 
         // Set the GDP in billions of USD

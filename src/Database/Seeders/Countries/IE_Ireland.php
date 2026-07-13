@@ -135,6 +135,7 @@ class IE_Ireland extends CountrySeeder
             'World Health Organization (WHO)',
             'Council of Europe',
             'Organization for Security and Co-operation in Europe (OSCE)',
+            'European Economic Area (EEA)',
         ];
 
         // Set the GDP in billions of USD

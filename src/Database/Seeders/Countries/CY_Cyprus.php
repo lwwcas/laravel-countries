@@ -133,6 +133,7 @@ class CY_Cyprus extends CountrySeeder
             'International Monetary Fund (IMF)',
             'World Health Organization (WHO)',
             'Commonwealth of Nations',
+            'European Economic Area (EEA)',
         ];
 
         // Set the GDP in billions of USD

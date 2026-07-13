@@ -135,6 +135,7 @@ class LI_Liechtenstein extends CountrySeeder
             'Schengen Area',
             'Council of Europe',
             'Organization for Security and Co-operation in Europe (OSCE)',
+            'European Economic Area (EEA)',
         ];
 
         // Set the GDP in billions of USD
