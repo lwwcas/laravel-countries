@@ -16,7 +16,9 @@ class WCountriesInstallCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'w-countries:install';
+    protected $signature = 'w-countries:install
+                            {--force : Run without confirmation prompts (required in production on Laravel 11, 12, and 13)}
+                            {--languages= : Comma-separated locales to seed when using --force (e.g. en,pt,es). Defaults to en only}';
 
     /**
      * The console command description.
@@ -36,21 +38,27 @@ class WCountriesInstallCommand extends Command
 
         $this->askToRunMigrations();
 
-        if ($this->hasRunMigrations() === false) {
+        if ($this->hasRunMigrations() === false && ! $this->option('force')) {
             $this->comment('Consider leaving a star in the repository and helping us to be better.');
 
-            return 0;
+            return self::SUCCESS;
+        }
+
+        if ($this->hasRunMigrations() === false) {
+            return self::FAILURE;
         }
 
         $this->askToRunSeeds();
 
         $this->publishConfigFile();
 
-        $this->askToStarRepoOnGitHub();
+        if (! $this->option('force')) {
+            $this->askToStarRepoOnGitHub();
+        }
 
         $this->withEnd();
 
-        return 1;
+        return self::SUCCESS;
     }
 
     /**
@@ -81,24 +89,40 @@ class WCountriesInstallCommand extends Command
      */
     public function askToRunMigrations(): self
     {
-        if ($this->confirm('Would you like to run the migrations now?')) {
-            $connection = WCountriesConnection::name();
-
-            $this->comment("Running migrations on the [{$connection}] database connection...");
-
-            $this->callSilently('vendor:publish', [
-                '--tag' => 'lwwcas-countries-migrations',
-            ]);
-
-            $this->call('migrate', [
-                '--database' => $connection,
-            ]);
-
-            $this->info('Migrations executed successfully!');
-            $this->setTrueRunMigrations();
+        if ($this->option('force') || $this->confirm('Would you like to run the migrations now?')) {
+            $this->runMigrations();
         }
 
         $this->newLine();
+
+        return $this;
+    }
+
+    /**
+     * Publish and run package migrations.
+     */
+    protected function runMigrations(): self
+    {
+        $connection = WCountriesConnection::name();
+
+        $this->comment("Running migrations on the [{$connection}] database connection...");
+
+        $this->callSilently('vendor:publish', [
+            '--tag' => 'lwwcas-countries-migrations',
+        ]);
+
+        $migrateOptions = [
+            '--database' => $connection,
+        ];
+
+        if ($this->option('force')) {
+            $migrateOptions['--force'] = true;
+        }
+
+        $this->call('migrate', $migrateOptions);
+
+        $this->info('Migrations executed successfully!');
+        $this->setTrueRunMigrations();
 
         return $this;
     }

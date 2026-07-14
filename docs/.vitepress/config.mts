@@ -128,6 +128,7 @@ export default defineConfig({
                     { text: 'Supported Databases', link: '/setup/supported-databases' },
                     { text: 'ER model', link: '/setup/er-model' },
                     { text: 'Migrations', link: '/setup/migrations' },
+                    { text: 'Seeders', link: '/setup/seeders' },
                 ]
             },
         ],

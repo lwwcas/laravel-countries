@@ -4,6 +4,7 @@ namespace Lwwcas\LaravelCountries\Providers;
 
 use Lwwcas\LaravelCountries\Commands\WCountriesInstallCommand;
 use Lwwcas\LaravelCountries\Commands\WCountriesRunLanguagesSeeds;
+use Lwwcas\LaravelCountries\Commands\WCountriesSeedCommand;
 use Lwwcas\LaravelCountries\WCountries;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -29,6 +30,7 @@ class WCountriesServiceProvider extends PackageServiceProvider
             ->hasCommands([
                 WCountriesInstallCommand::class,
                 WCountriesRunLanguagesSeeds::class,
+                WCountriesSeedCommand::class,
             ])
             ->publishesServiceProvider('WCountriesServiceProvider');
     }

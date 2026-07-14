@@ -28,6 +28,28 @@ php artisan w-countries:install
 ### And that's it!
 ### Now you're ready to create something incredible
 
+## Production deployment
+
+When deploying to production (Laravel 11, 12, or 13), use `--force` so migrations and seeders run without interactive prompts:
+
+```sh
+php artisan w-countries:install --force --languages=en,pt,es
+```
+
+If migrations already ran during your deploy pipeline, seed the data separately:
+
+```sh
+php artisan w-countries:seed --languages=en,pt,es
+```
+
+For the full list of manual `db:seed` commands, run:
+
+```sh
+php artisan w-countries:seed --show-commands
+```
+
+See the [Seeders guide](/setup/seeders) for all options and seeder class names.
+
 <div class="tip custom-block" style="padding-top: 15px">
 
 For details on how to install or uninstall languages, check out the Languages section [Here](/introduction/available-languages#⚙%EF%B8%8F-language-management-features).

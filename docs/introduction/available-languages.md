@@ -33,6 +33,16 @@ We currently support the following languages:
 
 This provides flexibility in managing your application's languages, without compromising its functionality.
 
+### Manual seeding (production)
+
+If migrations are already deployed and you only need to populate data, use:
+
+```bash
+php artisan w-countries:seed --languages=en,pt,es
+```
+
+In production on Laravel 11, 12, and 13, always use the package commands above or pass `--force` when calling `db:seed` directly. See the full [Seeders guide](/setup/seeders) for manual commands and seeder class names.
+
 <img src="/assets/terminal-language-command.png" alt="Artisan language command" >
 <img src="/assets/terminal-language-command-1.png" alt="Artisan language command" style="padding-top:25px;">
 
