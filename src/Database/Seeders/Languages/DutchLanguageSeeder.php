@@ -231,6 +231,7 @@ class DutchLanguageSeeder extends Seeder
             'RE' => 'Réunion',
             'RO' => 'Roemenië',
             'RS' => 'Servië',
+            'XK' => 'Kosovo',
             'RU' => 'Rusland',
             'RW' => 'Rwanda',
             'SA' => 'Saoedi-Arabië',

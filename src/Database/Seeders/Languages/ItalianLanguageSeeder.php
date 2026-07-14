@@ -242,6 +242,7 @@ class ItalianLanguageSeeder extends Seeder
             'RO' => 'Romania',
             'SM' => 'San Marino',
             'RS' => 'Serbia',
+            'XK' => 'Kosovo',
             'CS' => 'Serbia e Montenegro',
             'SK' => 'Slovacchia',
             'SI' => 'Slovenia',

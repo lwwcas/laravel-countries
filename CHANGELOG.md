@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-countries` will be documented in this file
 
+## Unreleased
+
+- Add Kosovo to the base country dataset with commonly used user-assigned codes `XK`, `XKX`, and `983`, plus borders, flag, coordinates, geography, and translations for every supported language (#42).
+
 ## 3.4.6 - 2023-14-04
 
 - Adding Russian language to country data and its translations

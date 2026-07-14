@@ -243,6 +243,7 @@ use Lwwcas\LaravelCountries\Database\Seeders\Countries\VN_Vietnam;
 use Lwwcas\LaravelCountries\Database\Seeders\Countries\VU_Vanuatu;
 use Lwwcas\LaravelCountries\Database\Seeders\Countries\WF_WallisandFutunaIslands;
 use Lwwcas\LaravelCountries\Database\Seeders\Countries\WS_Samoa;
+use Lwwcas\LaravelCountries\Database\Seeders\Countries\XK_Kosovo;
 use Lwwcas\LaravelCountries\Database\Seeders\Countries\YE_Yemen;
 use Lwwcas\LaravelCountries\Database\Seeders\Countries\YT_Mayotte;
 use Lwwcas\LaravelCountries\Database\Seeders\Countries\ZA_SouthAfrica;
@@ -502,6 +503,7 @@ class LwwcasDatabaseSeeder extends Seeder
         $this->call(VU_Vanuatu::class);
         $this->call(WF_WallisandFutunaIslands::class);
         $this->call(WS_Samoa::class);
+        $this->call(XK_Kosovo::class);
         $this->call(YE_Yemen::class);
         $this->call(YT_Mayotte::class);
         $this->call(ZA_SouthAfrica::class);

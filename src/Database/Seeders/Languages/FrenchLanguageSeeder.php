@@ -242,6 +242,7 @@ class FrenchLanguageSeeder extends Seeder
             'CZ' => 'République tchèque',
             'SM' => 'Saint-Marin',
             'RS' => 'Serbie',
+            'XK' => 'Kosovo',
             'CS' => 'Serbie-et-Monténégro',
             'SK' => 'Slovaquie',
             'SI' => 'Slovénie',

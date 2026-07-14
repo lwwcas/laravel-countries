@@ -230,6 +230,7 @@ class TurkishLanguageSeeder extends Seeder
             'RE' => 'Réunion',
             'RO' => 'Romanya',
             'RS' => 'Sırbistan',
+            'XK' => 'Kosova',
             'RU' => 'Rusya',
             'RW' => 'Ruanda',
             'SA' => 'Suudi Arabistan',

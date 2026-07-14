@@ -230,6 +230,7 @@ class GermanLanguageSeeder extends Seeder
             'RE' => 'Réunion',
             'RO' => 'Rumänien',
             'RS' => 'Serbien',
+            'XK' => 'Kosovo',
             'RU' => 'Russland',
             'RW' => 'Ruanda',
             'SA' => 'Saudi-Arabien',
