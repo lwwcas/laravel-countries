@@ -142,6 +142,7 @@ class PortugueseLanguageSeeder extends Seeder
             'CH' => 'Suíça',
             'SJ' => 'Svalbard e Jan Mayen',
             'RS' => 'Sérvia',
+            'XK' => 'Kosovo',
             'CS' => 'Sérvia e Montenegro',
             'UA' => 'Ucrânia',
             'VA' => 'Vaticano',

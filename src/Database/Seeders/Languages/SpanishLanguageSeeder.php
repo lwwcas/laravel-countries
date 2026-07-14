@@ -191,6 +191,7 @@ class SpanishLanguageSeeder extends Seeder
             'RU' => 'Rusia',
             'SM' => 'San Marino',
             'RS' => 'Serbia',
+            'XK' => 'Kosovo',
             'CS' => 'Serbia y Montenegro',
             'SE' => 'Suecia',
             'CH' => 'Suiza',
