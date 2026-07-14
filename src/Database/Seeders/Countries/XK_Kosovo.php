@@ -30,11 +30,11 @@ class XK_Kosovo extends CountrySeeder
         $this->alternative_tlds = [];
 
         $this->internet_speed = [
-            'average_speed_fixed' => '83 Mbps',
-            'average_speed_mobile' => '52 Mbps',
+            'average_speed_fixed' => '78 Mbps',
+            'average_speed_mobile' => '80 Mbps',
         ];
         $this->internet_penetration = '96%';
-        $this->cybersecurity_agency = 'Kosovo Security Council Secretariat';
+        $this->cybersecurity_agency = 'Cyber Security Agency (Agjencia për Siguri Kibernetike)';
         $this->popular_technologies = ['PHP', 'JavaScript', 'HTML/CSS', 'Python', 'WordPress'];
 
         // KV is used by the WMO for Kosovo.
@@ -53,7 +53,7 @@ class XK_Kosovo extends CountrySeeder
             'coins_sub' => ['1', '2', '5', '10', '20', '50'],
         ];
 
-        $this->population = 1585566;
+        $this->population = 1588566;
         $this->area = 10887;
         $this->capital = 'Pristina';
         $this->timezones = [
