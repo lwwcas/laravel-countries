@@ -9,7 +9,9 @@ The `getList()` method returns a new instance of the current class. It's just a 
 ## Names and Slugs
 
 `withNamesAndSlugs()` gives you a list of countries with their names and slugs.
-It joins lc_countries with lc_countries_translations so you get all the translated names too.
+It joins `lc_countries` with `lc_countries_translations` so you get all the translated names too.
+
+Returns every visible country — there is no built-in limit on the result set.
 
 Useful for when you need the basic country info with translations.
 

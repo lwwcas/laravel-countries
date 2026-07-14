@@ -3,7 +3,6 @@
 namespace Lwwcas\LaravelCountries\Models\Concerns;
 
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Collection;
 use Lwwcas\LaravelCountries\Models\Country;
 use Lwwcas\LaravelCountries\Trait\WithOnlyWhereFunctions;
 use Lwwcas\LaravelCountries\Trait\WithPairWhereFunctions;
@@ -26,10 +25,10 @@ trait HasCountriesList
     /**
      * Return a list of countries with their names and slugs.
      *
-     * This method return a list of countries with their names and slugs.
-     * The list is cached for a long time to avoid to query the database too much.
+     * Joins `lc_countries` with `lc_countries_translations` and returns every
+     * visible country. There is no built-in limit on the result set.
      *
-     * @return Collection
+     * @return Builder<Country>
      */
     public function withNamesAndSlugs()
     {
@@ -56,10 +55,10 @@ trait HasCountriesList
     /**
      * Return a list of countries with their names, slugs and flags.
      *
-     * This method return a list of countries with their names, slugs and flags.
-     * The list is cached for a long time to avoid to query the database too much.
+     * Joins `lc_countries` with `lc_countries_translations` and returns every
+     * visible country. There is no built-in limit on the result set.
      *
-     * @return Collection
+     * @return Builder<Country>
      */
     public function withNamesSlugsAndFlags()
     {

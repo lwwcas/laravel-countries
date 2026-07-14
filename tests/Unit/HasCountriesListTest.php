@@ -31,6 +31,25 @@ it('returns all countries from list query builder methods', function (string $me
     'withNamesSlugsAndFlags',
 ]);
 
+it('does not cap withNamesAndSlugs at 9 countries (issue #49)', function () {
+    seedCountriesForList(20);
+
+    $result = Country::getList()->withNamesAndSlugs()->get();
+
+    expect($result)->toHaveCount(20);
+});
+
+it('does not apply a limit clause to country list queries (issue #49)', function (string $method) {
+    seedCountriesForList(3);
+
+    $sql = Country::getList()->{$method}()->toSql();
+
+    expect($sql)->not->toMatch('/\blimit\b/i');
+})->with([
+    'withNamesAndSlugs',
+    'withNamesSlugsAndFlags',
+]);
+
 it('returns all countries from only list methods', function (string $method) {
     seedCountriesForList();
 
