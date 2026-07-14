@@ -71,6 +71,28 @@ php artisan w-countries:install
 
 That's it — the countries table is seeded and ready to query.
 
+### Production / CI (Laravel 11, 12, and 13)
+
+In production, use `--force` to skip confirmation prompts:
+
+```sh
+php artisan w-countries:install --force
+```
+
+If migrations already ran during deploy and you only need the data:
+
+```sh
+php artisan w-countries:seed --languages=en,pt,es
+```
+
+To list the equivalent manual `db:seed` commands:
+
+```sh
+php artisan w-countries:seed --show-commands
+```
+
+See the [Seeders documentation](https://lwwcas.github.io/laravel-countries/setup/seeders.html) for the full production guide and manual seeder class reference.
+
 ## 🧑‍💻 Usage
 
 ```php

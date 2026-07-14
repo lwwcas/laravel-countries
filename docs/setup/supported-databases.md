@@ -92,7 +92,9 @@ When a custom connection is configured, the package applies it consistently acro
 - Eloquent models
 - Package migrations
 - `w-countries:install` migrations and seeders
-- Language and region seeders
+- `w-countries:seed` and language seeders
 - Artisan commands that validate table availability
+
+For production seeding options and manual `db:seed` commands, see the [Seeders guide](/setup/seeders).
 
 > **Note**: If your application tables reference `lc_countries` with foreign keys, both connections must be able to resolve those relationships. Cross-database foreign keys are not supported by every database engine, so plan your schema accordingly.

@@ -52,6 +52,85 @@ trait WithLanguages
     ];
 
     /**
+     * Resolve language names from a comma-separated locale string.
+     *
+     * @return string[]
+     */
+    public function resolveSelectedLanguagesFromLocales(?string $locales = null, bool $all = false): array
+    {
+        if ($all) {
+            return collect($this->languages)
+                ->keys()
+                ->reject(fn (string $name) => in_array($name, ['None', 'All']))
+                ->values()
+                ->all();
+        }
+
+        if ($locales === null || trim($locales) === '') {
+            return ['English'];
+        }
+
+        $selected = [];
+        foreach (array_map('trim', explode(',', strtolower($locales))) as $locale) {
+            if ($locale === 'all') {
+                return $this->resolveSelectedLanguagesFromLocales(all: true);
+            }
+
+            $languageName = $this->languagesByLocale[$locale] ?? null;
+            if ($languageName === null) {
+                $this->warn("Unknown locale [{$locale}]. Skipping.");
+
+                continue;
+            }
+
+            $selected[] = $languageName;
+        }
+
+        return array_values(array_unique($selected));
+    }
+
+    /**
+     * Build the equivalent manual db:seed command for a seeder class.
+     */
+    public function buildManualSeedCommand(string $seederClass, ?string $database = null): string
+    {
+        $database ??= WCountriesConnection::name();
+
+        return sprintf(
+            'php artisan db:seed --class="%s" --database=%s --force',
+            $seederClass,
+            $database
+        );
+    }
+
+    /**
+     * List all manual db:seed commands indexed by locale.
+     *
+     * @return array<string, array{language: string, locale: string, class: class-string, command: string}>
+     */
+    public function listManualSeedCommands(?string $database = null): array
+    {
+        $commands = [];
+
+        foreach ($this->languagesByLocale as $locale => $languageName) {
+            $class = $this->languages[$languageName] ?? null;
+
+            if ($class === null) {
+                continue;
+            }
+
+            $commands[$locale] = [
+                'language' => $languageName,
+                'locale' => $locale,
+                'class' => $class,
+                'command' => $this->buildManualSeedCommand($class, $database),
+            ];
+        }
+
+        return $commands;
+    }
+
+    /**
      * Ask the user if they want to run the seeds for the languages
      * that are not English.
      *
@@ -59,6 +138,14 @@ trait WithLanguages
      */
     public function askToRunSeeds(?array $languages = null): self
     {
+        if ($this->hasOption('force') && $this->option('force')) {
+            $selectedLanguages = $this->resolveSelectedLanguagesFromLocales($this->option('languages'));
+            $this->runSeeds($selectedLanguages);
+            $this->newLine();
+
+            return $this;
+        }
+
         if ($languages === null) {
             $languages = array_keys($this->languages);
             $key = array_search('English', $languages);
@@ -160,6 +247,7 @@ trait WithLanguages
             $this->callSilently('db:seed', [
                 '--class' => $class,
                 '--database' => WCountriesConnection::name(),
+                '--force' => true,
             ]);
             $this->comment("{$language} executed successfully.");
         }
