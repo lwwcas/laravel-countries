@@ -1,3 +1,15 @@
+---
+title: "Flag Query Scope — Laravel"
+description: "Query scopes for filtering and retrieving country flag data in Laravel Countries."
+head:
+  - - meta
+    - property: og:title
+      content: "Flag Query Scope — Laravel"
+  - - meta
+    - property: og:description
+      content: "Query scopes for filtering and retrieving country flag data in Laravel Countries."
+---
+
 # Scope
 
 A scope in Laravel is a reusable query. It helps keep things clean and makes queries easy to chain. You can think of it as a shortcut for adding common query conditions to your models.

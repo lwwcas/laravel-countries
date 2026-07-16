@@ -1,3 +1,15 @@
+---
+title: "Country Borders — Laravel"
+description: "Query bordering countries for any country using the Laravel Countries Eloquent model."
+head:
+  - - meta
+    - property: og:title
+      content: "Country Borders — Laravel"
+  - - meta
+    - property: og:description
+      content: "Query bordering countries for any country using the Laravel Countries Eloquent model."
+---
+
 # Boards
 
 With the `Borders`, you can easily access each country’s neighboring countries in a simplified, developer-friendly way.

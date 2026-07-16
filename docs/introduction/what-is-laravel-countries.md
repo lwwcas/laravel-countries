@@ -1,3 +1,15 @@
+---
+title: "What is Laravel Countries?"
+description: "Laravel Countries is an Eloquent-first country database package with ISO 3166 codes, flags, GeoJSON, currencies and translations in 9 languages."
+head:
+  - - meta
+    - property: og:title
+      content: "What is Laravel Countries?"
+  - - meta
+    - property: og:description
+      content: "Laravel Countries is an Eloquent-first country database package with ISO 3166 codes, flags, GeoJSON, currencies and translations in 9 languages."
+---
+
 # What is Laravel Countries?
 
 <img src="/assets/hero-map.webp" alt="Hero Map" style="padding-top:15px;">

@@ -1,3 +1,15 @@
+---
+title: "Country Regions — First Look"
+description: "Group and query countries by region and continent using the Laravel Countries package."
+head:
+  - - meta
+    - property: og:title
+      content: "Country Regions — First Look"
+  - - meta
+    - property: og:description
+      content: "Group and query countries by region and continent using the Laravel Countries package."
+---
+
 # Your First Look
 
 The `CountryRegion::class` provides a simple and effective way to manage and query regions in your application.

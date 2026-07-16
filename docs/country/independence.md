@@ -1,3 +1,15 @@
+---
+title: "Country Independence Day — Laravel"
+description: "Access country independence day data via the Laravel Countries Eloquent model."
+head:
+  - - meta
+    - property: og:title
+      content: "Country Independence Day — Laravel"
+  - - meta
+    - property: og:description
+      content: "Access country independence day data via the Laravel Countries Eloquent model."
+---
+
 # Independence Day
 
 Looking to explore countries based on their independence dates? The following methods make it easy to find countries that match specific independence criteria. Whether you're curious about countries that gained independence in a certain year, before or after a particular date, or even within a specific month, these methods have you covered!

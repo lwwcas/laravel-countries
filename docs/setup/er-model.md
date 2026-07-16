@@ -1,3 +1,15 @@
+---
+title: "Entity-Relationship (ER) Model — Laravel Countries"
+description: "Database schema and ER model behind the Laravel Countries package tables."
+head:
+  - - meta
+    - property: og:title
+      content: "Entity-Relationship (ER) Model — Laravel Countries"
+  - - meta
+    - property: og:description
+      content: "Database schema and ER model behind the Laravel Countries package tables."
+---
+
 # ER model
 
 An ER Model (Entity-Relationship Model) is a visual way to represent the structure of a database.

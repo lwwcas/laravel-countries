@@ -1,3 +1,15 @@
+---
+title: "Getting Started — Install Laravel Countries"
+description: "Install the Laravel country database package via Composer and seed ISO codes, flags and translations in minutes."
+head:
+  - - meta
+    - property: og:title
+      content: "Getting Started — Install Laravel Countries"
+  - - meta
+    - property: og:description
+      content: "Install the Laravel country database package via Composer and seed ISO codes, flags and translations in minutes."
+---
+
 # How install Laravel Countries?
 
 <img src="/assets/hero-map.webp" alt="Hero Map" style="padding-top:35px;">

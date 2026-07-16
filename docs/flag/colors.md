@@ -1,3 +1,15 @@
+---
+title: "Flag Colors (HEX/RGB) — Laravel"
+description: "Access each country flag's colors in HEX and RGB via the Laravel Countries package."
+head:
+  - - meta
+    - property: og:title
+      content: "Flag Colors (HEX/RGB) — Laravel"
+  - - meta
+    - property: og:description
+      content: "Access each country flag's colors in HEX and RGB via the Laravel Countries package."
+---
+
 # Colors
 
 This section provides a suite of functions to retrieve the colors used in a country's flag in various formats.

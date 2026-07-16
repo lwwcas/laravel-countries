@@ -1,3 +1,15 @@
+---
+title: "Supported Databases — Laravel Countries"
+description: "Database engines supported by the Laravel Countries migrations and seeders."
+head:
+  - - meta
+    - property: og:title
+      content: "Supported Databases — Laravel Countries"
+  - - meta
+    - property: og:description
+      content: "Database engines supported by the Laravel Countries migrations and seeders."
+---
+
 # Supported Databases
 
 The **Laravel Countries** package has been tested and works perfectly with the following databases:

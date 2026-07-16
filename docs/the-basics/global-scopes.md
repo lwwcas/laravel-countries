@@ -1,3 +1,15 @@
+---
+title: "Global Scopes — Laravel Countries"
+description: "How global scopes are applied automatically to Country model queries in Laravel Countries."
+head:
+  - - meta
+    - property: og:title
+      content: "Global Scopes — Laravel Countries"
+  - - meta
+    - property: og:description
+      content: "How global scopes are applied automatically to Country model queries in Laravel Countries."
+---
+
 # Basic Usage Global Scopes
 
 In country model and region model, two global scopes are automatically applied during the class boot process.

@@ -1,3 +1,15 @@
+---
+title: "Query Scopes — Laravel Country Model"
+description: "Full list of Eloquent query scopes available on the Country model for filtering countries in Laravel."
+head:
+  - - meta
+    - property: og:title
+      content: "Query Scopes — Laravel Country Model"
+  - - meta
+    - property: og:description
+      content: "Full list of Eloquent query scopes available on the Country model for filtering countries in Laravel."
+---
+
 # Basic Usage Countries Scopes
 
 Scopes in Laravel allow you to reuse query logic efficiently.

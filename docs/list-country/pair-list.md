@@ -1,3 +1,15 @@
+---
+title: "Key-Value Country List — Laravel"
+description: "Generate a key-value (code => name) country list for Laravel select inputs and forms."
+head:
+  - - meta
+    - property: og:title
+      content: "Key-Value Country List — Laravel"
+  - - meta
+    - property: og:description
+      content: "Generate a key-value (code => name) country list for Laravel select inputs and forms."
+---
+
 # Pair List
 
 This collection of methods always returns a Laravel collection with a list of items based on the method used.

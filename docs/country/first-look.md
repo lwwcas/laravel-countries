@@ -1,3 +1,15 @@
+---
+title: "The Country Model — First Look"
+description: "Overview of the Country Eloquent model fields: ISO codes, capital, currency, phone code, coordinates and more."
+head:
+  - - meta
+    - property: og:title
+      content: "The Country Model — First Look"
+  - - meta
+    - property: og:description
+      content: "Overview of the Country Eloquent model fields: ISO codes, capital, currency, phone code, coordinates and more."
+---
+
 # Your First Look
 
 The `Country::class` provides a simple and effective way to manage and query countries in your application.

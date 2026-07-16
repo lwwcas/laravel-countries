@@ -1,3 +1,15 @@
+---
+title: "Country Flags in Laravel — SVG, Emoji & Colors"
+description: "Display country flags in Laravel as SVG, emoji or HEX/RGB colors using the Laravel Countries package."
+head:
+  - - meta
+    - property: og:title
+      content: "Country Flags in Laravel — SVG, Emoji & Colors"
+  - - meta
+    - property: og:description
+      content: "Display country flags in Laravel as SVG, emoji or HEX/RGB colors using the Laravel Countries package."
+---
+
 # Basic Usage Flags
 
 On the Flags and Emoji page you can find everything you need to know about

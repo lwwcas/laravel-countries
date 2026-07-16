@@ -1,3 +1,15 @@
+---
+title: "Country Flag Emoji — Laravel"
+description: "Render country flag emoji in Laravel using the Laravel Countries package."
+head:
+  - - meta
+    - property: og:title
+      content: "Country Flag Emoji — Laravel"
+  - - meta
+    - property: og:description
+      content: "Render country flag emoji in Laravel using the Laravel Countries package."
+---
+
 # Emoji
 
 This section lets you easily grab country flags as emojis! It's a fun and simple way to display flags in your projects, perfect for user interfaces or anywhere you need a quick, compact flag representation.

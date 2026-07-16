@@ -1,3 +1,15 @@
+---
+title: "Geographical Data Workflow — Laravel"
+description: "How to query countries by area, GDP and other geographical attributes in Laravel."
+head:
+  - - meta
+    - property: og:title
+      content: "Geographical Data Workflow — Laravel"
+  - - meta
+    - property: og:description
+      content: "How to query countries by area, GDP and other geographical attributes in Laravel."
+---
+
 # Workflow
 
 ## Usage

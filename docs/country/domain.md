@@ -1,3 +1,15 @@
+---
+title: "Country Top-Level Domain (TLD) — Laravel"
+description: "Access each country's top-level domain (TLD) via the Laravel Countries package."
+head:
+  - - meta
+    - property: og:title
+      content: "Country Top-Level Domain (TLD) — Laravel"
+  - - meta
+    - property: og:description
+      content: "Access each country's top-level domain (TLD) via the Laravel Countries package."
+---
+
 # Domain
 
 Below, you'll find a list of methods available, which is used in the `Country` model to help you query countries based on their domain information.

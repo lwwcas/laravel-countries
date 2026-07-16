@@ -1,3 +1,15 @@
+---
+title: "Country Currency Data — Laravel"
+description: "Query country currency data in Laravel using the Country Eloquent model."
+head:
+  - - meta
+    - property: og:title
+      content: "Country Currency Data — Laravel"
+  - - meta
+    - property: og:description
+      content: "Query country currency data in Laravel using the Country Eloquent model."
+---
+
 # Currency
 
 Below, you'll find a list of methods available in the Country model related to currency, along with friendly descriptions of what each method does.
