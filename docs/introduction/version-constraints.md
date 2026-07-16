@@ -1,3 +1,15 @@
+---
+title: "Laravel & PHP Version Compatibility"
+description: "Supported Laravel (10.x–13.x) and PHP (8.2/8.3) versions for the Laravel Countries package."
+head:
+  - - meta
+    - property: og:title
+      content: "Laravel & PHP Version Compatibility"
+  - - meta
+    - property: og:description
+      content: "Supported Laravel (10.x–13.x) and PHP (8.2/8.3) versions for the Laravel Countries package."
+---
+
 # Version Constraints
 
 ## Semantic Versioning

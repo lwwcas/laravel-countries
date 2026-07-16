@@ -1,3 +1,15 @@
+---
+title: "Country Model — Full Method Listing"
+description: "Complete list of Eloquent query methods on the Country model: whereIso, wherePhoneCode, whereLanguage, whereGdp and more."
+head:
+  - - meta
+    - property: og:title
+      content: "Country Model — Full Method Listing"
+  - - meta
+    - property: og:description
+      content: "Complete list of Eloquent query methods on the Country model: whereIso, wherePhoneCode, whereLanguage, whereGdp and more."
+---
+
 # Method Listing
 
 Below, you'll find a list of methods available in the Country model, along with friendly descriptions of what each method does. These methods are organized alphabetically for your convenience.

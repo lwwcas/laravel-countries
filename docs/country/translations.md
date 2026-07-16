@@ -1,3 +1,15 @@
+---
+title: "Country Name Translations — Laravel"
+description: "How country names are translated into 9 languages in the Laravel Countries package."
+head:
+  - - meta
+    - property: og:title
+      content: "Country Name Translations — Laravel"
+  - - meta
+    - property: og:description
+      content: "How country names are translated into 9 languages in the Laravel Countries package."
+---
+
 # About Translatable
 
 This package relies on **[Spatie's Laravel Translatable](https://github.com/spatie/laravel-translatable)** to handle translations efficiently.

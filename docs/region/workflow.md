@@ -1,3 +1,15 @@
+---
+title: "Region Workflow — Laravel Countries"
+description: "How region hierarchies work in the Laravel Countries Eloquent model."
+head:
+  - - meta
+    - property: og:title
+      content: "Region Workflow — Laravel Countries"
+  - - meta
+    - property: og:description
+      content: "How region hierarchies work in the Laravel Countries Eloquent model."
+---
+
 # Workflow
 
 `CountryRegion::class` includes a variety of PHP functions. Many of these functions are used by the package itself; however, you are free to use them in your own applications if you find them convenient.

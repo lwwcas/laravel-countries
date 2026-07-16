@@ -1,3 +1,15 @@
+---
+title: "Single-Column Country List — Laravel"
+description: "Generate a single-column list of country names or codes for dropdowns and selects in Laravel."
+head:
+  - - meta
+    - property: og:title
+      content: "Single-Column Country List — Laravel"
+  - - meta
+    - property: og:description
+      content: "Generate a single-column list of country names or codes for dropdowns and selects in Laravel."
+---
+
 # Single List
 
 This collection of methods always returns a Laravel collection with a list of items based on the method used.

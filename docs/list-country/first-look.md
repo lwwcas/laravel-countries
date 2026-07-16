@@ -1,3 +1,15 @@
+---
+title: "Listing Countries — First Look"
+description: "Retrieve full or partial lists of countries with Laravel Countries' Eloquent model."
+head:
+  - - meta
+    - property: og:title
+      content: "Listing Countries — First Look"
+  - - meta
+    - property: og:description
+      content: "Retrieve full or partial lists of countries with Laravel Countries' Eloquent model."
+---
+
 # List of Countries
 
 ### How to get a simple list of countries?

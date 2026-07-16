@@ -1,3 +1,15 @@
+---
+title: "Country Model Relationships — Laravel"
+description: "Learn how the Country model connects to region, geographical, demography and coordinate data through Eloquent relationships."
+head:
+  - - meta
+    - property: og:title
+      content: "Country Model Relationships — Laravel"
+  - - meta
+    - property: og:description
+      content: "Learn how the Country model connects to region, geographical, demography and coordinate data through Eloquent relationships."
+---
+
 # Relationships
 
 When managing complex datasets like countries, it’s common to encounter multiple types of data, each with unique attributes. To keep our data organized and make our database queries more efficient, we have divided the country-related information into separate tables. Each table focuses on specific details about the country, allowing us to retrieve only the necessary information when required.

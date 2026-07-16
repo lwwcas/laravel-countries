@@ -1,3 +1,15 @@
+---
+title: "Available Languages — Laravel Country Translations"
+description: "See the 9 languages supported by Laravel Countries for translated country and region names, including Arabic, Portuguese, Turkish and more."
+head:
+  - - meta
+    - property: og:title
+      content: "Available Languages — Laravel Country Translations"
+  - - meta
+    - property: og:description
+      content: "See the 9 languages supported by Laravel Countries for translated country and region names, including Arabic, Portuguese, Turkish and more."
+---
+
 # 🌍 Available Languages
 
 ## Languages

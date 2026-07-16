@@ -1,3 +1,15 @@
+---
+title: "Flag Facade — Laravel Countries"
+description: "Use the Flag facade to access flag data without querying the Eloquent model directly."
+head:
+  - - meta
+    - property: og:title
+      content: "Flag Facade — Laravel Countries"
+  - - meta
+    - property: og:description
+      content: "Use the Flag facade to access flag data without querying the Eloquent model directly."
+---
+
 # Facade
 
 The `FlagEmoji` facade is designed to enable you to interact with `flag emoji attributes` independently from the broader country data.

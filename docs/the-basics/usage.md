@@ -1,3 +1,15 @@
+---
+title: "Basic Usage — Laravel Country Eloquent Model"
+description: "Query the Country Eloquent model in Laravel: lookup by ISO code, slug, name and more with built-in query scopes."
+head:
+  - - meta
+    - property: og:title
+      content: "Basic Usage — Laravel Country Eloquent Model"
+  - - meta
+    - property: og:description
+      content: "Query the Country Eloquent model in Laravel: lookup by ISO code, slug, name and more with built-in query scopes."
+---
+
 # Basic Usage
 
 To import `Country::class`, use the following code:

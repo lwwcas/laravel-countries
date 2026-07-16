@@ -1,3 +1,15 @@
+---
+title: "Country Flags — First Look"
+description: "Introduction to flag data (SVG, emoji, colors) available on the Country model in Laravel."
+head:
+  - - meta
+    - property: og:title
+      content: "Country Flags — First Look"
+  - - meta
+    - property: og:description
+      content: "Introduction to flag data (SVG, emoji, colors) available on the Country model in Laravel."
+---
+
 # Your First Look
 
 You'll discover how we offer country flags in various formats, making it super easy for you to display them in your projects. Whether you need flags as emojis, in HTML, or even CSS formats, we've got you covered! You can access these flags in multiple ways, ensuring flexibility and compatibility with your needs.

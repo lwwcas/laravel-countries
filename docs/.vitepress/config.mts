@@ -15,18 +15,6 @@ export default defineConfig({
                 href: 'https://raw.githubusercontent.com/lwwcas/laravel-countries/refs/heads/master/docs/assets/favicon/favicon.png'
             }
         ],
-        [
-            'meta', {
-                name: 'description',
-                content: 'Laravel Countries - Access all country data in minutes with elegant syntax'
-            }
-        ],
-        [
-            'meta', {
-                name: 'keywords',
-                content: 'Lucas Duarte Lwwcas Laravel Package Laravel Package Countries Country Data Flags Geolocation International Codes Data API Country Information World Data Country Names ISO Codes Geonames Language Codes Rich Data Data Retrieval Global Insights Dynamic Data Responsive API Integration Data Structure Elegant Syntax Open Source'
-            }
-        ],
     ],
 
     themeConfig: {

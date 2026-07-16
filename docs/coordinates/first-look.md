@@ -1,3 +1,15 @@
+---
+title: "Country Coordinates — First Look"
+description: "Access latitude/longitude coordinates for every country using the Laravel Countries Eloquent model."
+head:
+  - - meta
+    - property: og:title
+      content: "Country Coordinates — First Look"
+  - - meta
+    - property: og:description
+      content: "Access latitude/longitude coordinates for every country using the Laravel Countries Eloquent model."
+---
+
 # Your First Look
 
 The `CountryCoordinates::class` model gives you access to detailed geographical data of countries. It stores essential information like coordinates, altitude, and other region-specific details, helping you understand the exact location and characteristics of any country in the world.

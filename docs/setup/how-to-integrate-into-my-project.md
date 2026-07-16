@@ -1,3 +1,15 @@
+---
+title: "Integrating Laravel Countries Into Your Project"
+description: "Step-by-step guide to linking the Country model to your own Eloquent models via foreign keys."
+head:
+  - - meta
+    - property: og:title
+      content: "Integrating Laravel Countries Into Your Project"
+  - - meta
+    - property: og:description
+      content: "Step-by-step guide to linking the Country model to your own Eloquent models via foreign keys."
+---
+
 # How to integrate into my project?
 
 To integrate **Laravel Countries** into your existing project, you can simply add a foreign key in your table to reference the `lc_countries` table. Here's an example of how to set this up:

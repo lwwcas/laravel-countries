@@ -1,3 +1,15 @@
+---
+title: "Country Model Workflow"
+description: "How the Country model integrates with your Laravel application via Eloquent relationships."
+head:
+  - - meta
+    - property: og:title
+      content: "Country Model Workflow"
+  - - meta
+    - property: og:description
+      content: "How the Country model integrates with your Laravel application via Eloquent relationships."
+---
+
 # Workflow
 
 `Country::class` includes a variety of PHP functions. Many of these functions are used by the package itself; however, you are free to use them in your own applications if you find them convenient.

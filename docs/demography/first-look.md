@@ -1,3 +1,15 @@
+---
+title: "Country Demography & Population — Laravel"
+description: "Query country population and demographic data using the Laravel Countries Eloquent model."
+head:
+  - - meta
+    - property: og:title
+      content: "Country Demography & Population — Laravel"
+  - - meta
+    - property: og:description
+      content: "Query country population and demographic data using the Laravel Countries Eloquent model."
+---
+
 # Your First Look
 
 The `CountryExtras::class` is designed to extend the information about a country by including extra details like national sports, popular technologies, and much more.

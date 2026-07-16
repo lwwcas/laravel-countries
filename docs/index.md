@@ -1,5 +1,15 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
+title: "Laravel Countries — Eloquent Country Database for Laravel"
+description: "The Eloquent-first country database for Laravel: ISO 3166 codes, flags, GeoJSON, currencies, phone codes and translations in 9 languages."
+head:
+  - - meta
+    - property: og:title
+      content: "Laravel Countries — Eloquent Country Database for Laravel"
+  - - meta
+    - property: og:description
+      content: "The Eloquent-first country database for Laravel: ISO 3166 codes, flags, GeoJSON, currencies, phone codes and translations in 9 languages."
+
 layout: home
 
 hero:

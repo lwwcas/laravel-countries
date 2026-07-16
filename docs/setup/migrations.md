@@ -1,3 +1,15 @@
+---
+title: "Migrations — Laravel Countries"
+description: "How Laravel Countries' migrations create the country, region and translation tables."
+head:
+  - - meta
+    - property: og:title
+      content: "Migrations — Laravel Countries"
+  - - meta
+    - property: og:description
+      content: "How Laravel Countries' migrations create the country, region and translation tables."
+---
+
 # Migrations
 
 When you install **Laravel Countries**, the following database migrations will be executed to create the necessary table structure for storing countries, regions, geographical data, and translations.

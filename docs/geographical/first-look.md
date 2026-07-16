@@ -1,3 +1,15 @@
+---
+title: "Geographical Data — Area & GDP — Laravel"
+description: "Access country area (km²) and GDP data via the Laravel Countries Eloquent model."
+head:
+  - - meta
+    - property: og:title
+      content: "Geographical Data — Area & GDP — Laravel"
+  - - meta
+    - property: og:description
+      content: "Access country area (km²) and GDP data via the Laravel Countries Eloquent model."
+---
+
 # Your First Look
 
 The `CountryGeographical::class` model provides detailed geographical data related to countries, including region classifications, time zones, and various identifiers (e.g., ISO, ITU, ICAO). This data allows for precise categorization and representation of countries across different global and regional systems.

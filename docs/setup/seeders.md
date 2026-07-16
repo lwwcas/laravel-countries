@@ -1,3 +1,15 @@
+---
+title: "Seeders — Laravel Countries"
+description: "How the Laravel Countries seeders populate ISO codes, flags, coordinates and translations into your database."
+head:
+  - - meta
+    - property: og:title
+      content: "Seeders — Laravel Countries"
+  - - meta
+    - property: og:description
+      content: "How the Laravel Countries seeders populate ISO codes, flags, coordinates and translations into your database."
+---
+
 # 🌱 Seeders
 
 > Popule seu banco de dados com **países, regiões e traduções** em poucos comandos — do ambiente local à produção. 🚀
